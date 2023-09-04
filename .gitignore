@@ -1,0 +1,8 @@
+vendor/*
+bootstrap/cache/*
+node_modules
+node_modules/*
+storage/framework
+storage/framework/*
+*.env
+.env

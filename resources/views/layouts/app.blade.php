@@ -4,7 +4,8 @@ if (!isset($seo)) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}" class="{{ (session('localeDir', 'ltr'))}}" dir="{{ (session('localeDir', 'ltr'))}}">
+<html lang="{{ app()->getLocale() }}" class="{{ (session('localeDir', 'ltr'))}}"
+    dir="{{ (session('localeDir', 'ltr'))}}">
 
 <head>
     <meta charset="utf-8">
@@ -27,11 +28,13 @@ if (!isset($seo)) {
     <link href="{{ asset('/vietstar/css/select2.min.css')}}" rel="stylesheet" />
     <link href="{{ asset('/vietstar/css/jquery.multiselect.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/chosen/chosen.min.css')}}" rel="stylesheet">
-    <link href="{{asset('/')}}vendor/bootstrap-date-time-picker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/')}}vendor/bootstrap-date-time-picker/css/bootstrap-datetimepicker.min.css" rel="stylesheet"
+        type="text/css" />
     <link href="{{ asset('/vietstar/css/update.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/responsive.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/font-awsome.min.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/custom-chosen.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     @stack('styles')
     <script src="{{asset('/')}}js/jquery.min.js"></script>
     {!! $siteSetting->ganalytics !!}
@@ -46,14 +49,17 @@ if (!isset($seo)) {
     <script src="{{asset('/')}}js/bootstrap.min.js"></script>
     <script src="{{ asset('/vietstar/js/jquery.multiselect.js')}}" type="text/javascript"></script>
 
-    <script src="{{asset('/')}}vendor/bootstrap-date-time-picker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="{{asset('/')}}vendor/bootstrap-date-time-picker/js/bootstrap-datetimepicker.min.js"
+        type="text/javascript"></script>
     <!-- Owl carousel -->
     <script src="{{asset('/')}}js/owl.carousel.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-    <script src="{{ asset('/') }}admin_assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
-    <script src="{{ asset('/') }}admin_assets/global/plugins/Bootstrap-3-Typeahead/bootstrap3-typeahead.min.js" type="text/javascript"></script>
+    <script src="{{ asset('/') }}admin_assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"
+        type="text/javascript"></script>
+    <script src="{{ asset('/') }}admin_assets/global/plugins/Bootstrap-3-Typeahead/bootstrap3-typeahead.min.js"
+        type="text/javascript"></script>
     <!-- END PAGE LEVEL PLUGINS -->
     <script src="{{ asset('/') }}admin_assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript">
     </script>

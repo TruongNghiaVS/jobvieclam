@@ -1488,7 +1488,7 @@ footer {
   }
 
   .swiper-pagination {
-    bottom: 0;
+    bottom: -10px;
 
     .swiper-pagination-bullet {
       width: auto;
@@ -1508,6 +1508,9 @@ footer {
     }
   }
 }
+
+
+
 
 
 .box-title-bg {

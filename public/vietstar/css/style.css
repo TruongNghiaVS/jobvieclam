@@ -769,8 +769,14 @@ a {
 	}
 }
 
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+	bottom: 0px;
+	z-index: 2;
 
-
+}
 
 
 
@@ -6626,6 +6632,10 @@ blockquote:after {
 	.pricing-unit3 {
 		margin-left: 5px;
 	}
+}
+
+.span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+	background-color: red !important;
 }
 
 /*******************

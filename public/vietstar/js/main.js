@@ -11,7 +11,7 @@ $(document).ready(function () {
             language: 'en',
         });
     }
-    if ($('.daterange').length){
+    if ($('.daterange').length) {
         $('.daterange').daterangepicker({
             autoUpdateInput: false,
             timePicker: false,
@@ -23,8 +23,8 @@ $(document).ready(function () {
             $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
         });
     }
-  
-    $('#atcFilters').on('click', function(){
+
+    $('#atcFilters').on('click', function () {
         $('.filters-job-wrapper').slideToggle();
     });
     $('[data-toggle="tooltip"]').tooltip();
@@ -43,12 +43,12 @@ $(document).ready(function () {
     reviewApplication();
     actionSubMenu();
     $(".currency-mask").formatCurrency({
-        roundToDecimalPlace: 0, 
+        roundToDecimalPlace: 0,
         symbol: ''
     });
     $(".currency-mask").on("change", function () {
         $(".currency-mask").formatCurrency({
-            roundToDecimalPlace: 0, 
+            roundToDecimalPlace: 0,
 
             symbol: ''
         });
@@ -59,19 +59,19 @@ $(window).resize(function () {
 });
 
 function jobExperienceChange() {
-    $('body').on('change', '#job_experience_id', function (){
+    $('body').on('change', '#job_experience_id', function () {
         $('.numberExperience').html(this.value);
     })
-  
+
 }
 
 // Function cho CV TEMPLATE
 function formCVTemplate() {
-    
+
     $('select#cv_language').on('change', function () {
         $('#cv_lang').val(this.value);
         applyCVLangue(this.value)
-       
+
     });
     $('input[type=radio][name=fontSize]').change(function () {
         $('#cv_font_size').val(this.value);
@@ -86,8 +86,8 @@ function formCVTemplate() {
     })
 }
 
-function applyCVLangue(lang){
-   console.log(lang);
+function applyCVLangue(lang) {
+    console.log(lang);
     switch (lang) {
         case 'en':
             console.log('eng');
@@ -107,7 +107,7 @@ function applyCVLangue(lang){
     }
 }
 
-function applyCVFontsize(size){
+function applyCVFontsize(size) {
     $('.cv-template-wrapper').removeClass('fontCVsize12').removeClass('fontCVsize14').removeClass('fontCVsize16');
     switch (size) {
         case '12':
@@ -128,11 +128,11 @@ function applyCVFontsize(size){
 
 function atcApplyJob() {
     $('input[type=radio][name=your_resume]').change(function () {
-        if (this.value == 0){
+        if (this.value == 0) {
             $('.form-check-cv').show();
             $('.form-check-upload').hide();
-            $('#cv_id').attr('name','cv_id');
-        } else if (this.value == 1){
+            $('#cv_id').attr('name', 'cv_id');
+        } else if (this.value == 1) {
             $('.form-check-cv').hide();
             $('.form-check-upload').show();
             $('#cv_id').removeAttr('name');
@@ -164,8 +164,8 @@ function activeCoverCV() {
     });
 }
 
-function multiSelect(){
-    if ($('.multiselect').length){
+function multiSelect() {
+    if ($('.multiselect').length) {
         $('select.multiselect').multiselect({
             search: true,
             selectAll: true,
@@ -177,7 +177,7 @@ function multiSelect(){
     }
 }
 
-function setPaddingBody(){
+function setPaddingBody() {
     var h = $('#main-nav').height();
     $('body.default-page').css('padding-top', '76px')
 }
@@ -197,7 +197,7 @@ function reviewApplication() {
         $('#review-application-status').val(dataValue);
     })
 
-    
+
     $('body').on('click', '#btn-copy-link-review-application', function () {
         $('#myInput').select();
         document.execCommand("copy");
@@ -278,7 +278,7 @@ function swiperSlider() {
             },
         });
     }
-    if ($('.partnerSlider').length){
+    if ($('.partnerSlider').length) {
         var partnerSlider = new Swiper('.partnerSlider', {
             slidesPerView: 2,
             spaceBetween: 20,
@@ -302,7 +302,7 @@ function swiperSlider() {
             },
         });
     }
-    if ($('.swiper-blogs-slider').length){
+    if ($('.swiper-blogs-slider').length) {
         var partnerSlider = new Swiper('.swiper-blogs-slider', {
             slidesPerView: 1,
             spaceBetween: 20,
@@ -339,7 +339,7 @@ function swiperSlider() {
             },
         });
     }
-    if ($('.swiper-suggestions').length){
+    if ($('.swiper-suggestions').length) {
         var mySwiperSuggestions = new Swiper('.swiper-suggestions', {
             slidesPerView: 1,
             spaceBetween: 20,
@@ -370,6 +370,23 @@ function swiperSlider() {
             },
         });
     }
+
+    if ($('.mySwiper').length) {
+        var allJobsSwiper = new Swiper(".mySwiper", {
+            autoplay: {
+                delay: 5000,
+            },
+            loop: true,
+            speed: 1000,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true
+            },
+        });
+    }
+
+
+
     if ($('.slider-hero-banner').length) {
         var sliderHeroBanner = new Swiper(".slider-hero-banner", {
             autoplay: {
@@ -377,21 +394,21 @@ function swiperSlider() {
             },
             loop: true,
             speed: 1000,
-           
+
         });
     }
 }
 
-function actionSubMenu(){
+function actionSubMenu() {
     $('.btn-show-sub-menu').on('click', function () {
         let ref = $(this).attr('data-ref');
         let target = $(this).attr('data-target');
-        if (target == 'true'){
+        if (target == 'true') {
             $(this).attr('data-target', 'false');
             $("[data-ref='" + ref + "']").slideUp(300);
-        } else if (target == 'false'){
+        } else if (target == 'false') {
             $(this).attr('data-target', 'true');
-            $("[data-ref='" + ref + "']").slideDown(300); 
+            $("[data-ref='" + ref + "']").slideDown(300);
         }
     })
 }

@@ -20,8 +20,8 @@ if (!isset($seo)) {
     <link rel="stylesheet" href="{{ asset('/vietstar/css/swiper-bundle.min.css')}}" />
     <!-- Custom Style -->
     <link href="{{ asset('/vietstar/css/style.css')}}" rel="stylesheet">
-    
-    
+
+
     <link href="{{ asset('/vietstar/fonts/icon-vietstart/style.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/recruiter.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/select2.min.css')}}" rel="stylesheet" />
@@ -41,12 +41,12 @@ if (!isset($seo)) {
 
 <body class="default-page">
     @yield('content')
- 
+
     <script src="{{asset('/')}}js/popper.js"></script>
     <script src="{{asset('/')}}js/bootstrap.min.js"></script>
     <script src="{{ asset('/vietstar/js/jquery.multiselect.js')}}" type="text/javascript"></script>
 
-    <script src="{{asset('/')}}vendor/bootstrap-date-time-picker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script> 
+    <script src="{{asset('/')}}vendor/bootstrap-date-time-picker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
     <!-- Owl carousel -->
     <script src="{{asset('/')}}js/owl.carousel.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -55,19 +55,26 @@ if (!isset($seo)) {
     <script src="{{ asset('/') }}admin_assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
     <script src="{{ asset('/') }}admin_assets/global/plugins/Bootstrap-3-Typeahead/bootstrap3-typeahead.min.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL PLUGINS -->
-    <script src="{{ asset('/') }}admin_assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
+    <script src="{{ asset('/') }}admin_assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript">
+    </script>
     <script src="{{ asset('/') }}admin_assets/global/plugins/jquery.scrollTo.min.js" type="text/javascript"></script>
     <!-- Revolution Slider -->
-    <script type="text/javascript" src="{{ asset('/') }}js/revolution-slider/js/jquery.themepunch.tools.min.js"></script>
-    <script type="text/javascript" src="{{ asset('/') }}js/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}js/revolution-slider/js/jquery.themepunch.tools.min.js">
+    </script>
+    <script type="text/javascript" src="{{ asset('/') }}js/revolution-slider/js/jquery.themepunch.revolution.min.js">
+    </script>
     <script src="{{ asset('/vietstar/js/sweetalert.min.js')}}"></script>
     <script src="{{ asset('/vietstar/js/jquery.validate.js')}}"></script>
     <script src="{{ asset('/vietstar/js/additional-methods.min.js')}}"></script>
     <script src="{{ asset('/vietstar/js/swiper-bundle.min.js')}}" type="text/javascript"></script>
-    
+
     <script src="{{ asset('/vietstar/js/jquery.formatCurrency-1.4.0.js')}}" type="text/javascript"></script>
     <script src="{{ asset('/vietstar/js/jquery.formatCurrency.all.js')}}" type="text/javascript"></script>
     <script src="{{ asset('/vietstar/js/main.js')}}" type="text/javascript"></script>
+
+    <script src="{{ asset('/vietstar/js/custom.js')}}" type="text/javascript"></script>
+
+
     {!! NoCaptcha::renderJs() !!}
     @stack('scripts')
     <!-- Custom js -->

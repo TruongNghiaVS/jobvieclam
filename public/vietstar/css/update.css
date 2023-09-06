@@ -1466,8 +1466,67 @@ button:focus {
 .header-bar .search-form #advanced-search {
     font-weight: 600;
     font-size: 14px;
-    line-height: 19px
+    line-height: 19px;
 }
+
+
+.action-search-form{
+    width: 100%;
+    float: right;
+}
+.form-group-search-box{
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+.form-group-search-box.active{
+    max-height: 150px;
+    overflow:unset;
+}
+
+.advance-search{
+    display: flex;
+    flex-direction: row;
+}
+.advance-search__reset,.advance-search__box{ 
+    cursor: pointer;
+    padding: 5px 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.advance-search__reset:hover,.advance-search__open:hover span ,.advance-search__close:hover span{
+    text-decoration: underline;
+}
+
+.search-icon{
+    margin-right: 5px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.advance-search__open{
+    display: flex;
+}
+.advance-search__close{
+    display: none;
+}
+.advance-search__close span::before {
+    position: relative;
+    top: 0;
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    transform: rotate(-45deg);
+    margin-right: 0.5em;
+    margin-left: 1.0em;
+}
+
+
+
 
 .header-bar .search-form #advanced-search .fa-search-plus {
     font-size: 19px;
@@ -3440,7 +3499,7 @@ div#industry_id_chosen {
 @media (min-width: 992px) {
     .header-bar {
         position: relative;
-        height: 400px
+        height: 500px
     }
 
     .header-bar .header-bar__title {

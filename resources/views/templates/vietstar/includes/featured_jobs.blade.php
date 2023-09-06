@@ -59,10 +59,7 @@ $numberOfColumns = 9;
 
             </div>
 
-            <div id="parent">
-    <a href="#" id="a1">1</a>
-    <a href="#" id="a2">2</a>
-</div>
+   
     
             <div class="swiper-slide">
                 <div class="row">

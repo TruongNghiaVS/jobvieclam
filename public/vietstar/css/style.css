@@ -715,6 +715,9 @@ a {
 	position: relative;
 }
 
+h4.tablinks:hover {
+ color: #9c1b1e;
+}
 
 
 .tablinks:before {

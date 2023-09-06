@@ -35,7 +35,7 @@ h1{
 }
 
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Barlow", sans-serif,Lexend,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color EmojiSans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color EmojiSans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-family: "Barlow", sans-serif;
   min-height: 100vh;
   position: relative;
   font-size: 16px;

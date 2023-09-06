@@ -1375,17 +1375,17 @@ footer .contact-detail p i.far {
 
 .lanmak-phone span {
     background-color: #981b1e;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Barlow", sans-serif,Lexend,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color EmojiSans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color EmojiSans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji
+    font-family: "Barlow", sans-serif
 }
 
 .lanmak-facebook span {
     background-color: #981b1e;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Barlow", sans-serif,Lexend,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color EmojiSans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color EmojiSans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji
+    font-family: "Barlow", sans-serif
 }
 
 .lanmak-zalo span {
     background-color: #981b1e;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Barlow", sans-serif,Lexend,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color EmojiSans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color EmojiSans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji
+    font-family: "Barlow", sans-serif
 }
 
 span a {
@@ -2195,13 +2195,13 @@ footer .inner-copyright .copyright {
 }
 
 .login-btn {
-    background-color: #ffffff !important
+    background-color: #ffffff !important;
 }
 
 .login-btn:hover,
 .login-btn:focus {
     background-color: var(--bs-primary) !important;
-    color: #ffffff
+    color: #ffffff !important;
 }
 
 .socialLogin a .fab {
@@ -3482,16 +3482,20 @@ div#industry_id_chosen {
 .main-menu .main-menu-static li .nav-link {
     text-decoration: none;
     font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 18px;
     line-height: 19px;
     color: var(--text-main)
 }
 
 .main-menu .login-btn {
-    margin-right: 10px
+    margin-right: 10px;
+    color: #981B1E;
 }
-
+.main-menu .login-btn ,.btn.btn-primary {
+    font-size: 18px;
+    font-weight: 600;
+}
 .container-navbar {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3814,7 +3818,8 @@ div#industry_id_chosen {
 
     .navbar .main-menu .main-menu-static>li {
         height: 76px;
-        position: relative
+        position: relative;
+        margin: 0 15px;
     }
 
     .navbar .main-menu .main-menu-static>li::after {
@@ -6526,7 +6531,7 @@ div#industry_id_chosen {
 }
 
 .fontCVOpenSans {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Barlow", sans-serif,Lexend,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color EmojiSans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color EmojiSans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji !important
+    font-family: "Barlow", sans-serif !important
 }
 
 .progress-bar.bg-danger {

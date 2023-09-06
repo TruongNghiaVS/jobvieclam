@@ -32,6 +32,13 @@
                         <div class="desc">
                             Ứng viên đang bật tìm việc trung bình/ thời điểm.
                         </div>
+
+                        <div id="parent">
+    <a href="#" id="a1">1</a>
+    <a href="#" id="a2">2</a>
+</div>
+
+
                     </div>
                 </div>
             </div>

@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;500;700&display=swap');
+
 
 :root {
 	--bs-primary: #981B1E !important;
@@ -37,7 +39,7 @@
 }
 
 body {
-	font-family: "Open Sans", sans-serif;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Barlow", sans-serif,Lexend,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color EmojiSans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color EmojiSans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 	min-height: 100vh;
 	position: relative;
 	font-size: 16px;

@@ -1502,14 +1502,19 @@ button:focus {
     margin-right: 5px;
     text-decoration: none;
     display: flex;
-    align-items: center;
-    justify-content: center;
+}
+.advance-search__open, .advance-search__close {
+    text-align: end;
 }
 .advance-search__open{
     display: flex;
+    align-items: center;
+    justify-content: end;
 }
 .advance-search__close{
     display: none;
+    align-items: center;
+    justify-content: end;
 }
 .advance-search__close span::before {
     position: relative;

@@ -605,7 +605,9 @@ a {
 	position: relative;
 }
 
-
+.btn-submit-search{
+	padding-top: 10px;padding-bottom: 10px; width:100%;
+}
 
 .header-bar .search-form .form-control {
 	padding-left: 40px;

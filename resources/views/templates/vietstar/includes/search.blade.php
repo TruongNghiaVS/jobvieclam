@@ -77,7 +77,7 @@
                                         </div>
                                     </div>
                                 <div class="action-search-form">
-                                <button type="submit" class="btn btn-primary mb-3" style="padding-top: 10px;padding-bottom: 10px;">{{__('Search')}}</button>
+                                <button type="submit" class="btn btn-primary mb-3 btn-submit-search" >{{__('Search')}}</button>
                                 </div>
                             </div>
                         

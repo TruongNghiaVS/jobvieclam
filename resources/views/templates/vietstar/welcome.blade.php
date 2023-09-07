@@ -8,10 +8,13 @@
 @include('templates.vietstar.includes.search')
 <!-- Search End --> 
 
+<!-- Top Employers start -->
+@include('templates.vietstar.includes.home_top_partners')
+<!-- Top Employers end -->
 
-<!-- Search start -->
+<!-- Home job list start -->
 @include('templates.vietstar.includes.home_job_list')
-<!-- Search End --> 
+<!-- Home job list end --> 
 
 
 <!-- Việc làm theo lĩnh vực -->
@@ -32,13 +35,6 @@
                         <div class="desc">
                             Ứng viên đang bật tìm việc trung bình/ thời điểm.
                         </div>
-
-                        <div id="parent">
-    <a href="#" id="a1">1</a>
-    <a href="#" id="a2">2</a>
-</div>
-
-
                     </div>
                 </div>
             </div>
@@ -176,8 +172,7 @@
 </section> -->
 
 
-<!-- Top Employers start -->
-@include('templates.vietstar.includes.home_top_partners')
+
 <!-- Testimonials start -->
 @include('templates.vietstar.includes.home_blogs')
 <!-- Testimonials End -->

@@ -598,18 +598,7 @@ a {
   /* height: 104px; */
 }
 
-/* Partner */
-.partner {
-  padding-top: 80px;
-  padding-bottom: 70px;
-}
-.partner .partner-item__img img {
-  display:block;
-  width:100%;
-  min-width: 140px;
-  height:140px;
-  object-fit: contain;
-}
+
 
 /*.About us */
 .about-us {

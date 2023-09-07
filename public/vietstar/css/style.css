@@ -799,12 +799,71 @@ h4.tablinks:hover {
 	padding-bottom: 70px;
 }
 
-.partner .partner-item__img img {
+.partner  {
 	display: block;
 	width: 100%;
 	min-width: 140px;
-	height: 140px;
 	object-fit: contain;
+}
+
+
+/* Partner */
+.partner-item__box {
+    align-items: center;
+    background: #fff;
+    border: 1px solid #dee0e2;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    min-height: 184px;
+	width: 250px;
+    padding: 16px;
+    transition: .3s;
+}
+.partner-item__img{
+    display: block;
+	height: 125px;
+    width: 125px;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+.partner-item__name{
+   width: 100%;
+   text-align: center;
+   font-size: 18px;
+   margin:10px 0;
+   padding: 0 20px;
+   font-weight: 600;
+}
+.partner-item__box:hover {
+	border: 1px solid #9c1b1e;
+    box-shadow: 0 10px 30px rgba(235, 76, 76, 0.2);
+}
+
+
+/* .partner-slide_previous a {
+	text-decoration: none;
+	display: inline-block;
+	padding: 8px 16px;
+}
+  
+.partner-slide_previous a:hover {
+	background-color: #ddd;
+	color: black;
+}
+  
+.partner-slide_previous  .previous {
+	background-color: #f1f1f1;
+	color: black;
+}
+  
+.partner-slide_previous .next {
+	background-color: #04AA6D;
+	color: white;
+}
+   */
+.round {
+	border-radius: 50%;
 }
 
 /*.About us */

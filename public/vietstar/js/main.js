@@ -280,24 +280,28 @@ function swiperSlider() {
     }
     if ($('.partnerSlider').length) {
         var partnerSlider = new Swiper('.partnerSlider', {
-            slidesPerView: 2,
-            spaceBetween: 20,
-            pagination: false,
-            navigation: false,
-            autoplay: true,
+            autoplay: {
+                delay: 5000,
+            },
             loop: true,
+            speed: 1000,
+
+            navigation: {
+                nextEl: ".next",
+                prevEl: ".previous",
+              },
             breakpoints: {
                 320: {
                     slidesPerView: 2,
-                    spaceBetween: 20,
+                    spaceBetween: 20,   grabCursor: false,
                 },
                 768: {
                     slidesPerView: 3,
-                    spaceBetween: 20,
+                    spaceBetween: 10,   grabCursor: false,
                 },
                 1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 20,
+                    slidesPerView: 5,
+                    spaceBetween: 10,   grabCursor: false,
                 },
             },
         });
@@ -305,10 +309,14 @@ function swiperSlider() {
     if ($('.swiper-blogs-slider').length) {
         var partnerSlider = new Swiper('.swiper-blogs-slider', {
             slidesPerView: 1,
+            autoplay: {
+                delay: 5000,
+            },
+            loop: true,
+            speed: 1000,
             spaceBetween: 20,
             pagination: false,
             navigation: false,
-            autoplay: true,
             loop: true,
             breakpoints: {
                 320: {

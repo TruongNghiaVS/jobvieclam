@@ -600,6 +600,10 @@ a {
 	font-weight: 700;
 	line-height: 65px;
 }
+.header-bar-content-search{
+	position: absolute;
+	
+}
 
 .header-bar .search-form {
 	position: relative;
@@ -866,6 +870,11 @@ h4.tablinks:hover {
 	border-radius: 50%;
 }
 
+.jobs-by-industry_box{
+	height: 200px;
+	width: 100%;
+}
+
 /*.About us */
 .about-us {
 	position: relative;
@@ -994,6 +1003,37 @@ h4.tablinks:hover {
 	font-weight: 700;
 	margin-bottom: 4px;
 }
+.section-jobs-by-industry .alljobs_swiper{
+	width: 100%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: red;
+	padding: 20px;
+	overflow: hidden;
+}
+.section-jobs-by-industry .swiper-slide {
+	text-align: center;
+      font-size: 18px;
+      background: #fff;
+      height: 200px;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+}
+
+
 
 .card-news .card-news__content .card-news__content-detail {
 	font-size: 13px;

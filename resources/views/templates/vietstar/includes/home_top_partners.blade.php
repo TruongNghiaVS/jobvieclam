@@ -1,11 +1,12 @@
 <section class="partner cb-section pt-0">
-    <div class="box-title-bg">
+    
+    <div class="container">
+      <div class="box-title-bg">
       <h2 class="section-title text-uppercase">{{ __('Nhà tuyển dụng hàng đầu') }}</h2>
     </div>
-    <div class="container">
-      <div>
+      <!-- <div>
         <h5>Người tìm việc có cơ hội làm việc tại các doanh nghiệp hàng đầu</h5>
-      </div>
+      </div> -->
       <div class="swiper partnerSlider">
         <div class="swiper-wrapper">
           @if(isset($topCompanyIds) && count($topCompanyIds))

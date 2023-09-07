@@ -289,8 +289,8 @@ function swiperSlider() {
            
             breakpoints: {
                 320: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,   grabCursor: false,
+                    slidesPerView: 2.1,
+                    spaceBetween: 0,   grabCursor: false,
                 },
                 768: {
                     slidesPerView: 3,
@@ -361,20 +361,34 @@ function swiperSlider() {
 
     if ($('.alljobs_swiper').length) {
         var allJobsSwiper = new Swiper(".alljobs_swiper", {
-            autoplay: {
-                delay: 5000,
-            },
-            loop: true,
-            speed: 1000,
+            slidesPerView: 5,
+            slidesPerColumn: 1,
+        //slidesPerColumnFill: "row",
+            slidesPerGroup: 5,
+            spaceBetween: 30,
             pagination: {
-                el: ".swiper-pagination",
+                el: '.swiper-pagination',
                 clickable: true,
-                renderBullet: function (index, className) {
-                    return '<span class="' + className + '">' + (index + 1) + "</span>";
-                },
             },
         });
     }
+
+
+    if ($('.test').length) {
+        var test = new Swiper(".test", {
+            slidesPerView: 5,
+            grid: {
+              rows: 1,
+            },
+            spaceBetween: 30,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+        });
+    }
+
+
 
     if ($('.mySwiper').length) {
         var allJobsSwiper = new Swiper(".mySwiper", {

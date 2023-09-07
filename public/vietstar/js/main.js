@@ -286,10 +286,7 @@ function swiperSlider() {
             loop: true,
             speed: 1000,
 
-            navigation: {
-                nextEl: ".next",
-                prevEl: ".previous",
-              },
+           
             breakpoints: {
                 320: {
                     slidesPerView: 2,

@@ -907,6 +907,16 @@ h4.tablinks:hover {
 	background-color: var(--white);
 	border-radius: 6px;
 	box-shadow: 0 .25rem 1.25rem rgba(0, 0, 0, .1) !important;
+	margin-top: 2px;
+}
+
+.card-news:hover{
+	background: #f6f6f6;
+    outline: 1px solid #9c1b1e;
+}
+
+.card-news:hover .card-news__content-title a{
+	color: #9c1b1e !important;
 }
 
 .card-news .card-news__icon {

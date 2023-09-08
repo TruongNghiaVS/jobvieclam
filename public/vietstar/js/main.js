@@ -363,7 +363,7 @@ function swiperSlider() {
         var allJobsSwiper = new Swiper(".alljobs_swiper", {
             slidesPerView: 4,
             slidesPerColumn: 1,
-        //slidesPerColumnFill: "row",
+            slidesPerColumnFill: "row",
             slidesPerGroup: 4,
             spaceBetween: 20,
             pagination: {

@@ -1769,6 +1769,9 @@ h3.seekertxt span {
     background: #fff;
     margin: 0 auto 15px;
 }
+.iner__box-desc{
+	padding: 0 10px;
+}
 .iner__box-icon img{
 	max-width: 80px;
     max-height: 80px;
@@ -1800,6 +1803,53 @@ h3.seekertxt span {
 .section-jobs-by-industry .swiper-button-prev{
 	position: absolute;
 	left: 100px;
+}
+/************************************************
+
+           ==advertising-banner==
+
+*************************************************/
+
+
+.advertising-banner{
+	margin: 30px 0;
+	padding: 10px;
+}
+.advertising-banner .item{
+	-webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+}
+.advertising-banner .item .image a {
+    display: block;
+    position: relative;
+    padding-top: 87.8787878788%;
+}
+.advertising-banner .item .image img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+/************************************************
+
+           ==banner==
+
+*************************************************/
+
+.banner .item {
+	width: 100%;
+}
+.banner .item a{
+	display: block;
+	border-radius: 5px;
+	overflow:  ;
+}
+.banner .item a img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 

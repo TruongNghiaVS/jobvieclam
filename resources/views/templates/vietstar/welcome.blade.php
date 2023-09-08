@@ -12,6 +12,10 @@
 @include('templates.vietstar.includes.home_top_partners')
 <!-- Top Employers end -->
 
+<!-- advertising_banner -->
+@include('templates.vietstar.includes.banner')
+<!-- advertising_banner --> 
+
 <!-- Home job list start -->
 @include('templates.vietstar.includes.home_job_list')
 <!-- Home job list end --> 
@@ -20,6 +24,13 @@
 <!-- Việc làm theo lĩnh vực -->
 @include('templates.vietstar.includes.home_jobs_by_industry')
 <!-- Việc làm theo lĩnh vực End --> 
+
+
+
+<!-- advertising_banner -->
+@include('templates.vietstar.includes.advertising_banner')
+<!-- advertising_banner --> 
+
 
 <!-- Thống kê việc làm theo ngành nghề -->
 <section class="section-employment-statistics">

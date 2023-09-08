@@ -5,7 +5,7 @@
 ?>
 
 <div class="r-news">
-    <div class="swiper alljobs_swiper">
+    <div class="swiper mySwiper">
         <div class="swiper-wrapper">
             @foreach($allJobs->chunk($numberOfColumns) as $chunk)
 
@@ -55,10 +55,4 @@
         <div class="swiper-pagination"></div>
     </div>
 </div>
-
-
-
-
-
-
 @endif

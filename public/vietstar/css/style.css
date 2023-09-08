@@ -1844,7 +1844,7 @@ h3.seekertxt span {
 .banner .item a{
 	display: block;
 	border-radius: 5px;
-	overflow:  ;
+	overflow: hidden ;
 }
 .banner .item a img {
 	width: 100%;

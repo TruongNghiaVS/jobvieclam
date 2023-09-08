@@ -361,15 +361,31 @@ function swiperSlider() {
 
     if ($('.alljobs_swiper').length) {
         var allJobsSwiper = new Swiper(".alljobs_swiper", {
-            slidesPerView: 5,
+            slidesPerView: 4,
             slidesPerColumn: 1,
         //slidesPerColumnFill: "row",
-            slidesPerGroup: 5,
-            spaceBetween: 30,
+            slidesPerGroup: 4,
+            spaceBetween: 20,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
             },
+        });
+    }
+
+
+    if ($('.jobs-by-industry_swiper').length) {
+        var allJobsSwiper = new Swiper(".jobs-by-industry_swiper", {
+            slidesPerView: 5,
+            spaceBetween: 30,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              },
         });
     }
 

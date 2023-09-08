@@ -21,28 +21,41 @@
                           <img width="45" height="45" src="{{asset('company_logos/'.$company->logo)}}" alt="vietstar">
                           </a>
                           </div>
-                        <div class="card-news__content">
-                          @if(Auth::check() && Auth::user()->isFavouriteJob($latestJob->slug))
-                              <a class="save-job box-meta" href="{{route('remove.from.favourite', $latestJob->slug)}}">
-                              <button class="btn-pin-job active" type="button"><span class="iconmoon fa fa-flag"></span></button>
-                            </a>
-                            @else
-                            <a class="save-job box-meta" href="{{route('add.to.favourite', $latestJob->slug)}}">
-                              <button class="btn-pin-job" type="button"><span class="iconmoon icon-flag "></span></button>
-                              </a>
-                          @endif
-                          <h6 class="card-news__content-title"><a href="{{route('job.detail', [$latestJob->slug])}}" title="{{$latestJob->title}}">{{$latestJob->title}}</a></h6>
-                            <p class="card-news__content-detail"><a href="{{route('company.detail', $company->slug)}}" title="{{$company->name}}">{{$company->name}}</a></p>
-                          <div class="card-news__content-footer">
-                            <div class="card-news__content-footer__location">
-                                <span class="badge rounded-pill pill pill-location">{{$latestJob->getCity('city')}}</span>
-                              <span class="badge rounded-pill pill pill-worktime">{{$latestJob->getJobType('job_type')}}</span>
+                          <div class="card-news__content">
+                                @if(Auth::check() && Auth::user()->isFavouriteJob($latestJob->slug))
+                                <a class="save-job box-meta"
+                                    href="{{route('remove.from.favourite', $latestJob->slug)}}">
+                                    <button class="btn-pin-job active" type="button"><span
+                                            class="iconmoon fa fa-flag"></span></button>
+                                </a>
+                                @else
+                                <a class="save-job box-meta" href="{{route('add.to.favourite', $latestJob->slug)}}">
+                                    <button class="btn-pin-job" type="button"><span
+                                            class="iconmoon icon-flag "></span></button>
+                                </a>
+                                @endif
+                                <h6 class="card-news__content-title"><a
+                                        href="{{route('job.detail', [$latestJob->slug])}}"
+                                        title="{{$latestJob->title}}">{{$latestJob->title}}</a></h6>
+                                <p class="card-news__content-detail"><a
+                                        href="{{route('company.detail', $company->slug)}}"
+                                        title="{{$company->name}}">{{$company->name}}</a></p>
+                                <div class="card-news__content-salary">
+                                        {{ $latestJob->salary_from }} - {{ $latestJob->salary_to }}
+                                        ({{ $latestJob->salary_currency }})
+                                </div>
+                                <div class="card-news__content-footer">
+                                    <div class="card-news__content-footer__location">
+                                        <span
+                                            class="badge rounded-pill pill pill-location">{{$latestJob->getCity('city')}}</span>
+                                        <span
+                                            class="badge rounded-pill pill pill-worktime">{{$latestJob->getJobType('job_type')}}</span>
+                                    </div>
+                                    <div class="card-news__content-footer__salary">
+                                       
+                                    </div>
+                                </div>
                             </div>
-                            <v class="card-news__content-footer__salary">
-                            {{ $latestJob->salary_from }} - {{ $latestJob->salary_to }} ({{ $latestJob->salary_currency }})
-                            </div>
-                          <iv>
-                        </div>
                       </div>
                   </div>
                   @endif

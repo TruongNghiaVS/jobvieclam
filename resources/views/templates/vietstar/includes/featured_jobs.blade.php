@@ -38,6 +38,10 @@ $numberOfColumns = 9;
                                 <p class="card-news__content-detail"><a
                                         href="{{route('company.detail', $company->slug)}}"
                                         title="{{$company->name}}">{{$company->name}}</a></p>
+                                <div class="card-news__content-salary">
+                                        {{ $featuredJob->salary_from }} - {{ $featuredJob->salary_to }}
+                                        ({{ $featuredJob->salary_currency }})
+                                </div>
                                 <div class="card-news__content-footer">
                                     <div class="card-news__content-footer__location">
                                         <span
@@ -46,8 +50,7 @@ $numberOfColumns = 9;
                                             class="badge rounded-pill pill pill-worktime">{{$featuredJob->getJobType('job_type')}}</span>
                                     </div>
                                     <div class="card-news__content-footer__salary">
-                                        {{ $featuredJob->salary_from }} - {{ $featuredJob->salary_to }}
-                                        ({{ $featuredJob->salary_currency }})
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -93,6 +96,10 @@ $numberOfColumns = 9;
                                 <p class="card-news__content-detail"><a
                                         href="{{route('company.detail', $company->slug)}}"
                                         title="{{$company->name}}">{{$company->name}}</a></p>
+                                <div class="card-news__content-salary">
+                                        {{ $featuredJob->salary_from }} - {{ $featuredJob->salary_to }}
+                                        ({{ $featuredJob->salary_currency }})
+                                </div>
                                 <div class="card-news__content-footer">
                                     <div class="card-news__content-footer__location">
                                         <span
@@ -101,8 +108,7 @@ $numberOfColumns = 9;
                                             class="badge rounded-pill pill pill-worktime">{{$featuredJob->getJobType('job_type')}}</span>
                                     </div>
                                     <div class="card-news__content-footer__salary">
-                                        {{ $featuredJob->salary_from }} - {{ $featuredJob->salary_to }}
-                                        ({{ $featuredJob->salary_currency }})
+                                       
                                     </div>
                                 </div>
                             </div>

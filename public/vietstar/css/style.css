@@ -989,6 +989,12 @@ h4.tablinks:hover {
 	color: #9c1b1e !important;
 }
 
+.card-news__content-salary {
+ color: #9c1b1e;
+ font-size: 15px;
+ font-weight: 600;
+}
+
 .card-news .card-news__icon {
 	width: 40px;
 	height: 40px;
@@ -1003,7 +1009,7 @@ h4.tablinks:hover {
 .card-news .card-news__content .card-news__content-title {
 	font-size: 14px;
 	font-weight: 700;
-	margin-bottom: 4px;
+	margin-bottom: 7px;
 }
 .section-jobs-by-industry .alljobs_swiper{
 	width: 100%;
@@ -1039,7 +1045,7 @@ h4.tablinks:hover {
 .card-news .card-news__content .card-news__content-detail {
 	font-size: 13px;
 	font-weight: 400;
-	margin-bottom: 12px;
+	margin-bottom: 5px;
 }
 
 .card-news .card-news__content .card-news__content-detail a {
@@ -1061,7 +1067,7 @@ h4.tablinks:hover {
 	line-height: 26px;
 }
 
-.card-news .card-news__content-footer .card-news__content-footer__salary::before,
+.card-news .card-news__content-salary::before,
 .dolar-sign::before {
 	font-family: "Font Awesome 5 Pro";
 	content: "\f155";

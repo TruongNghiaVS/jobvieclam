@@ -646,7 +646,7 @@ a {
   display: flex;
   width: 100%;
 }
-.blogs-slider::after {
+/* .blogs-slider::after {
   content: "";
   height: 100%;
   position: absolute;
@@ -654,28 +654,12 @@ a {
   right: 0;
   background-color: var(--grey-2);
   z-index: 1;
-}
-.blogs-slider * {
-  z-index: 2;
-}
-.blogs-slider .card-list {
-  margin-top: 24px;
-  width: 100%;
-  height: 264px;
-}
-.blogs-slider .card-list-item {
-  width: 200px;
-  height: 100%;
-}
-.blogs-slider .card-list-item .card-list-item__title {
-  height: 44px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
+} */
 
+.blogs-slider {
+  background-color:#696974;
+  
+}
 /* For Recruiter */
 .for-recruiter {
   padding-top: 36px;

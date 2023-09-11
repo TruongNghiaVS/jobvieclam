@@ -419,6 +419,21 @@ function swiperSlider() {
     }
 
 
+
+    if ($('.sectionBlock__swiper').length) {
+        var sectionBlock__swiper = new Swiper(".sectionBlock__swiper", {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            freeMode: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            
+        });
+    }
+
+
     if ($('.test').length) {
         var test = new Swiper(".test", {
             slidesPerView: 5,

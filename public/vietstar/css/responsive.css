@@ -264,14 +264,14 @@
     background-position-x: -60px;
     background-position-y: 0;
   }
-
+/* 
   .blogs-slider::after {
     width: 50%;
-  }
+  } */
 
-  .blogs-slider .__row .card-list {
+  /* .blogs-slider .__row .card-list {
     width: 930px;
-  }
+  } */
 }
 
 @media (min-width:1200px) {
@@ -342,10 +342,10 @@
     padding-top: 64px;
     padding-left: 96px;
   }
-
+/* 
   .blogs-slider::after {
     width: 63%;
-  }
+  } */
 
   .blogs-slider .__row {
     flex-direction: row;

@@ -206,14 +206,14 @@
     background-position-y: 0;
   }
 
-  .blogs-slider::after {
+  /* .blogs-slider::after {
     width: 50%;
   }
 
   .blogs-slider .__row .card-list {
     width: 930px;
   }
-}
+} */
 
 @media (min-width:1200px) {
   .container {
@@ -284,9 +284,9 @@
     padding-left: 96px;
   }
 
-  .blogs-slider::after {
+  /* .blogs-slider::after {
     width: 63%;
-  }
+  } */
 
   .blogs-slider .__row {
     flex-direction: row;

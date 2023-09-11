@@ -31,7 +31,7 @@
                     <div class="col-xl-6 col-md-7 col-lg-7 col-xxl-6 shadow p-4 search-form-box">
                         
                         <div class="row">
-                            <div class="col-lg-12"><h3 class="header-bar__title mb-3" style="max-width: 100%; width: 100%">{{ __('Opportunities for dream jobs') }}</h3></div>
+                            <div class="col-lg-12"><h3 class="header-bar__title mb-3" style="max-width: 100%; width: 100%">Tìm kiếm cơ hội việc làm</h3></div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">

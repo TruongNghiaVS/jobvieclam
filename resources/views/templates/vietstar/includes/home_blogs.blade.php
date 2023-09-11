@@ -1,8 +1,8 @@
 <!-- Blogs slider -->
 <section class="blogs-slider section-static">
     <div class="container">
-      <h2 class="section-title">{{ __('Blog') }}</h2>
-      <div class="__row justify-content-between">
+      <!-- <h2 class="section-title">{{ __('Blog') }}</h2> -->
+      <!-- <div class="__row justify-content-between">
         <div class="card-list d-flex flex-row gap-24">
             <div class="swiper swiper-blogs-slider">
                 <div class="swiper-wrapper">
@@ -33,12 +33,16 @@
                     @endif
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- button -->
-        <div class="d-flex align-self-center">
+        <!-- <div class="d-flex align-self-center">
           <a class="btn btn-viewall-post"  href="{{ route('blogs') }} {{ Request::url() == route('blogs') ? 'active' : '' }}" ><span>{{__('View All Blog Posts')}}</span> <i
               class="fas fa-arrow-right ms-2"></i></a>
-        </div>
+        </div> -->
+
+
+
+        
       </div>
     </div>
 </section>

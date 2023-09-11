@@ -429,6 +429,33 @@ function swiperSlider() {
                 el: ".swiper-pagination",
                 clickable: true,
             },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    grabCursor: true,
+                },
+                567: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                    grabCursor: false,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                    grabCursor: false,
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                    grabCursor: false,
+                },
+                1200: {
+                    slidesPerView: 5,
+                    spaceBetween: 20,
+                    grabCursor: false,
+                },
+            },
             
         });
     }

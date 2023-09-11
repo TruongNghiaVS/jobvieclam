@@ -1688,9 +1688,9 @@ h2.section-title {
 .footer-links li a {
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 30px;
-    color: var(--dark)
+    font-size: 15px;
+    line-height: 40px;
+    color: var(--dark);
 }
 
 .footer-links li a:hover,
@@ -1720,13 +1720,16 @@ footer .company-information .company-description {
 footer .footer-widget {
     margin-bottom: 20px
 }
+.inner-copyright .footer-widget-contact{
+    margin-top: 20px;
+}
 
 footer .footer-widget .widget-title {
     font-weight: 700;
-    font-size: 14px;
+    font-size: 20px;
     line-height: 22px;
     color: #170f49;
-    margin-bottom: 20px
+    margin-bottom: 20px;
 }
 
 footer .footer-widget.footer-widget-contact .contact-detail {

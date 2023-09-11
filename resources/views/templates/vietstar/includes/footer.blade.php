@@ -3,14 +3,14 @@
       <div class="container">
         <div class=" text-md-start">
           <div class="row mt-3">
-            <div class="col-md-12 col-lg-3 col-xl-3">
+            <div class="col-md-12 col-lg-3">
                 <div class="company-information">
                     <a class="navbar-brand" href="{{url('/')}}">
                         <img src="{{ asset('/vietstar/imgs/logo-new.svg') }}" alt="vietstar">
                     </a>
-                    <div class="company-description">
+                    <!-- <div class="company-description">
                         Jobvieclam là  website dành cho nhà tuyển dụng và người  tìm việc, thuộc sở hữu của Công ty Cổ phần Tập đoàn Vietstar. Chúng tôi còn là đơn vị cung ứng nhân sự (headhunt) cho các doanh nghiệp. Vietstar sở hữu đội ngũ chuyên viên tuyển dụng có nhiều kinh nghiệm, năng động và nhiệt huyết.
-                    </div>
+                    </div> -->
 
                     <div class="socials">
                         <a href="#" class="social"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12 col-lg-6 col-xl-6">
+            <div class="col-md-12 col-lg-9">
                 <div class="row">
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-widget">
@@ -84,23 +84,24 @@
                 </div>
             </div>
             
-            <div class="col-md-12 col-lg-3 col-xl-3">
-                <div class="footer-widget footer-widget-contact">
-                    <h4 class="widget-title">{{__('Contact')}}</h4>
-                    <h5>CÔNG TY CỔ PHẦN TẬP ĐOÀN VIETSTAR</h5>
-                    <ul class="contact-detail">
-                        
-                        <li style="padding-left: 0">Tầng 03, Long Mã Building, 602 Cộng
-                        Hòa, Phường 13, Quận Tân Bình, TP.HCM</li>
-                        <li><i class="far fa-phone"></i>02871000 555</li>
-                        <li><i class="far fa-envelope"></i>info@jobvieclam.com</li>
-                    </ul>
-                </div>
-            </div>
+            
           </div>
         </div>
       </div>
     </section>
+    <div class="container">
+        <div class="inner-copyright">
+                <div class="footer-widget footer-widget-contact">
+                    <h5>CÔNG TY CỔ PHẦN TẬP ĐOÀN VIETSTAR</h5>
+                    <ul class="contact-detail">
+                            <li style="padding-left: 0">Tầng 03, Long Mã Building, 602 Cộng
+                            Hòa, Phường 13, Quận Tân Bình, TP.HCM</li>
+                            <li><i class="far fa-phone"></i>02871000 555</li>
+                            <li><i class="far fa-envelope"></i>info@jobvieclam.com</li>
+                    </ul>
+                </div>
+        </div>
+    </div>
     <div class="container">
         <div class="inner-copyright">
             <p class="copyright">Copyright © 2022</p>

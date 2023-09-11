@@ -1072,7 +1072,6 @@ section#flash-badge-banner{
 }
 
 .card-news:hover{
-	background: #f6f6f6;
     outline: 1px solid #9c1b1e;
 }
 
@@ -1092,6 +1091,7 @@ section#flash-badge-banner{
     text-transform: uppercase;
     vertical-align: middle;
 	color: white;
+	margin-bottom: 7px;
 }
 .content-title-box .label.label-danger{
 	background-color: #d9534f;
@@ -1100,6 +1100,11 @@ section#flash-badge-banner{
 .content-title-box .label.label-warning{
 	background-color: #ff8243!important;
 }
+
+.content-title-box .label.tag-diamond-employer-home{
+	background-color: #00b14f!important;
+}
+
 
 
 

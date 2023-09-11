@@ -32,9 +32,13 @@ $numberOfColumns = 9;
                                             class="iconmoon icon-flag "></span></button>
                                 </a>
                                 @endif
-                                <h6 class="card-news__content-title"><a
-                                        href="{{route('job.detail', [$featuredJob->slug])}}"
-                                        title="{{$featuredJob->title}}">{{$featuredJob->title}}</a></h6>
+                                <div class="content-title-box">
+                                    <span class="label label-danger">Hot</span>
+                                    <h6 class="card-news__content-title"><a
+                                            href="{{route('job.detail', [$featuredJob->slug])}}"
+                                            title="{{$featuredJob->title}}">{{$featuredJob->title}}</a></h6>
+                                </div>
+                                
                                 <p class="card-news__content-detail"><a
                                         href="{{route('company.detail', $company->slug)}}"
                                         title="{{$company->name}}">{{$company->name}}</a></p>
@@ -90,9 +94,12 @@ $numberOfColumns = 9;
                                             class="iconmoon icon-flag "></span></button>
                                 </a>
                                 @endif
-                                <h6 class="card-news__content-title"><a
-                                        href="{{route('job.detail', [$featuredJob->slug])}}"
-                                        title="{{$featuredJob->title}}">{{$featuredJob->title}}</a></h6>
+                                <div class="content-title-box">
+                                    <span class="label label-warning">Gấp</span>
+                                    <h6 class="card-news__content-title"><a
+                                            href="{{route('job.detail', [$featuredJob->slug])}}"
+                                            title="{{$featuredJob->title}}">{{$featuredJob->title}}</a></h6>
+                                </div>
                                 <p class="card-news__content-detail"><a
                                         href="{{route('company.detail', $company->slug)}}"
                                         title="{{$company->name}}">{{$company->name}}</a></p>

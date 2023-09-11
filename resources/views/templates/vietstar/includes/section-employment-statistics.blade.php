@@ -2,7 +2,7 @@
         <div class="cbox-impressive-numbers__item--wrapper">
         <div class="container">
         <h2 class="section-title section-title-decorated section-title-decorated-white">Con số ấn tượng</h2>
-        <div class="section-subtitle">TopCV là công ty công nghệ nhân sự (HR Tech) hàng đầu Việt Nam. Với năng lực lõi là công nghệ, đặc biệt là trí tuệ nhân tạo (AI), sứ mệnh của TopCV đặt ra cho mình là thay đổi thị trường tuyển dụng - nhân sự ngày một hiệu quả hơn. Bằng công nghệ, chúng tôi tạo ra nền tảng cho phép người lao động tạo CV, phát triển được các kỹ năng cá nhân, xây dựng hình ảnh chuyên nghiệp trong mắt nhà tuyển dụng và tiếp cận với các cơ hội việc làm phù hợp.</div>
+        <div class="section-subtitle">Công ty Cổ phần Tập đoàn Vietstar ( VIETSTAR GROUP JOINT STOCK COMPANY) là một trong những công ty uy tín tại Việt Nam trong lĩnh vực cung cấp giải pháp xử</div>
 
         <div class="row">
             <div class="col-md-6 col-lg-4 mb-4">

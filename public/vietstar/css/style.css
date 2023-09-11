@@ -1076,6 +1076,34 @@ section#flash-badge-banner{
     outline: 1px solid #9c1b1e;
 }
 
+.content-title-box {
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.content-title-box .label{
+	border-radius: 100px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    padding: 3px 7px;
+    text-transform: uppercase;
+    vertical-align: middle;
+	color: white;
+}
+.content-title-box .label.label-danger{
+	background-color: #d9534f;
+}
+
+.content-title-box .label.label-warning{
+	background-color: #ff8243!important;
+}
+
+
+
+
 .card-news:hover .card-news__content-title a{
 	color: #9c1b1e !important;
 }
@@ -1100,7 +1128,8 @@ section#flash-badge-banner{
 .card-news .card-news__content .card-news__content-title {
 	font-size: 14px;
 	font-weight: 700;
-	margin-bottom: 7px;
+	margin: 10px 0;
+	margin-left: 5px;
 }
 .section-jobs-by-industry .alljobs_swiper{
 	width: 100%;

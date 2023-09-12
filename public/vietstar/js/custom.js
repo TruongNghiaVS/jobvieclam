@@ -17,5 +17,11 @@ function openCity(evt, cityName) {
 }
 
 
+const clearFilter =  document.querySelector("#clearFilter")
+
+clearFilter.addEventListener('click' ,()=>{
+    $("#benefit_id option:selected").prop("selected", false);
+    $('#benefit_id').val('').trigger('change')
+})
 
 

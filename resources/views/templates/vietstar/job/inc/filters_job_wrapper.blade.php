@@ -120,14 +120,14 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-3">
-                    <div class="form-group" id="benefit_id_dd">
+                    <div class="form-group form-group-custom-multiselect" id="benefit_id_dd">
                         <label>{{__('Select desired benefits')}}</label>
                         {!! Form::select('benefit_id[]', $benefits, Request::get('benefit_id', null), ['class'=>'form-control form-select shadow-sm multiselect', 'id'=>'benefit_id','multiple'=>true, "data-placeholder"=>"Month"]) !!}
                     </div>
                 </div>
                 <div class="col-sm-12 col-lg-12">
                     <div class="form-group form-group-control  form-submit">
-                        <button class="btn btn-reset" id="clearFilter">Xóa bộ lọc</button>
+                        <button type="button" class="btn btn-reset" id="clearFilter">Xóa bộ lọc</button>
                         <button class="btn btn-submit" type="submit"><i class="far fa-search"></i> Tìm Ngay</button>
                     </div>
                 </div>

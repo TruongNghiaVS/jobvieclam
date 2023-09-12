@@ -177,6 +177,11 @@ function multiSelect() {
     }
 }
 
+
+
+
+
+
 function setPaddingBody() {
     var h = $('#main-nav').height();
     $('body.default-page').css('padding-top', '76px')
@@ -547,8 +552,7 @@ reset_btn.addEventListener('click',()=>{
     $('#city_id').val('').trigger('chosen:updated');
     $('#job_type_id').val('').trigger('chosen:updated');
     $('#career_level_id').val('').trigger('chosen:updated');
-    $('#industry_id').val('').trigger('chosen:updated');
-    
+    $('#industry_id').val('').trigger('chosen:updated'); 
 })
 
 // Open search advance

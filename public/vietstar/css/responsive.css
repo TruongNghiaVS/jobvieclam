@@ -369,7 +369,7 @@
 
 
 
-/* Extra small devices (phones, 600px and down) */
+/* Extra small devices (phones, 767px and down) */
 @media only screen and (max-width: 767px) {
 
   .col-sm-6 {
@@ -526,7 +526,9 @@
 @media only screen and (min-width: 768px) and (max-width: 992px) {
 
 
-
+  .col-sm-6 {
+    width: 100%;
+  }
 
   .header-bar {
     height: 500px;

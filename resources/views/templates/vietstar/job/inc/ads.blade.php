@@ -4,22 +4,51 @@ $ads = \App\AdBanner::all();
 <div id="adbanner" class="carousel slide" data-ride="carousel">
 
     <!-- Indicators -->
-    <ul class="carousel-indicators">
-        <!-- @foreach($ads as $key => $ad) -->
-        <li data-target="#adbanner" data-slide-to="{{ $key + 1 }}" {{$key==0 ? 'class=active' : ''}}></li>
-        <!-- @endforeach -->
-    </ul>
+
     <!-- The slideshow -->
     <div class="carousel-inner">
 
-        <!-- @foreach($ads as $key => $ad) -->
-        <div class="carousel-item {{$key==0 ? 'active' : ''}}">
-            <img src="https://ads.careerbuilder.vn/www/images/a5b2628391fac3d894caa7e1a29d12fa.jpg"
-                alt="{{ $ad->image }}">
+        <div class="col">
+            <div class="row">
+                <div class="item">
+                    <div class="image loadAds">
+                        <a href="http://localhost:8000/">
+                            <img src="https://ads.careerbuilder.vn/www/images/a5b2628391fac3d894caa7e1a29d12fa.jpg" alt="#">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="item">
+                    <div class="image loadAds">
+                        <a href="http://localhost:8000/">
+                            <img src="https://ads.careerbuilder.vn/www/images/40322bfe0026051c3092d837b500e854.jpg" alt="#">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="item">
+                    <div class="image loadAds">
+                        <a href="http://localhost:8000/">
+                            <img src="https://ads.careerbuilder.vn/www/images/cd36bdd64ecdebbeeafc6347057ee992.png" alt="#">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="item">
+                    <div class="image loadAds">
+                        <a href="http://localhost:8000/">
+                            <img src="https://ads.careerbuilder.vn/www/images/b818531cf76fdafbf772e3d95f5f102a.png" alt="#">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- @endforeach -->
     </div>
-    <!-- Left and right controls -->
+</div>
+<!-- Left and right controls -->
 </div>
 @push('scripts')
 <script src="{{asset('/')}}js/jquery.min.js"></script>
@@ -28,20 +57,20 @@ $ads = \App\AdBanner::all();
 @push('styles')
 <link href="{{ asset('/vietstar/css/style.css')}}" rel="stylesheet">
 <style>
-.gad {}
+    .gad {}
 
-#adbanner,
-.carousel-inner,
-.carousel-inner>.carousel-item {
-    width: 100%;
-    height: 100%;
-}
+    #adbanner,
+    .carousel-inner,
+    .carousel-inner>.carousel-item {
+        width: 100%;
+        height: 100%;
+    }
 
-.carousel-inner>.carousel-item>img,
-.carousel-inner>.carousel-item>a>img {
-    width: 100%;
-    height: 100%;
-    margin: auto;
-}
+    .carousel-inner>.carousel-item>img,
+    .carousel-inner>.carousel-item>a>img {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    }
 </style>
 @endpush

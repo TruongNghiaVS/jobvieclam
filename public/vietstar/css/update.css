@@ -2925,6 +2925,18 @@ footer .inner-copyright .copyright {
     color: #840608;
 }
 
+/* .carousel-inner */
+.carousel-inner .item .image.loadAds {
+    width: 100%;
+}
+
+.carousel-inner .item .image.loadAds a {
+    width: 100%;
+}
+
+.carousel-inner .item .image.loadAds a img {
+    width: 100%;
+}
 
 
 

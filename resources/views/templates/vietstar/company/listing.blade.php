@@ -33,7 +33,7 @@
                         </div>
                     </div>
                 </div>
-             
+
             </div>
         </div>
     </div>
@@ -78,12 +78,16 @@
                                     </div>
                                 </div>
                             </div>
-                            @if(Auth::check() && Auth::user()->isFavouriteCompany($company->slug)) 
-                                <a class="save-company-favorite" href="{{ route('remove.from.favourite.company', ['company_slug' => $company->slug]) }}"><i class="fas fa-heart iconoutline"></i></a>
-                            @else 
-                                <a class="save-company-favorite" href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"><i class="far fa-heart"></i></a>
+                            @if(Auth::check() && Auth::user()->isFavouriteCompany($company->slug))
+                            <a class="save-company-favorite"
+                                href="{{ route('remove.from.favourite.company', ['company_slug' => $company->slug]) }}"><i
+                                    class="fas fa-heart iconoutline"></i></a>
+                            @else
+                            <a class="save-company-favorite"
+                                href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"><i
+                                    class="far fa-heart"></i></a>
                             @endif
-                           
+
                         </div>
 
                     </div>
@@ -127,6 +131,7 @@
 .formrow iframe {
     height: 78px;
 }
+
 i.fas.fa-heart.iconoutline {
     font-size: 24px;
     color: #981b1d;

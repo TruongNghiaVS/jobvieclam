@@ -1471,52 +1471,64 @@ button:focus {
 }
 
 
-.action-search-form{
+.action-search-form {
     width: 100%;
     float: right;
 }
-.form-group-search-box{
+
+.form-group-search-box {
     max-height: 0;
     overflow: hidden;
     transition: all 0.5s;
 }
-.form-group-search-box.active{
+
+.form-group-search-box.active {
     max-height: 150px;
-    overflow:unset;
+    overflow: unset;
 }
 
-.advance-search{
+.advance-search {
     display: flex;
     flex-direction: row;
 }
-.advance-search__reset,.advance-search__box{ 
+
+.advance-search__reset,
+.advance-search__box {
     cursor: pointer;
     padding: 5px 20px;
     margin-bottom: 10px;
     font-weight: 500;
 }
-.advance-search__reset:hover,.advance-search__open:hover span ,.advance-search__close:hover span{
+
+.advance-search__reset:hover,
+.advance-search__open:hover span,
+.advance-search__close:hover span {
     text-decoration: underline;
 }
 
-.search-icon{
+.search-icon {
     margin-right: 5px;
     text-decoration: none;
     display: flex;
 }
-.advance-search__open, .advance-search__close {
+
+.advance-search__open,
+.advance-search__close {
     text-align: end;
 }
-.advance-search__open{
+
+.advance-search__open {
     display: flex;
     align-items: center;
     justify-content: end;
 }
-.advance-search__close{
+
+.advance-search__close {
     display: none;
     align-items: center;
     justify-content: end;
 }
+
 .advance-search__close span::before {
     position: relative;
     top: 0;
@@ -1720,7 +1732,8 @@ footer .company-information .company-description {
 footer .footer-widget {
     margin-bottom: 20px
 }
-.inner-copyright .footer-widget-contact{
+
+.inner-copyright .footer-widget-contact {
     margin-top: 20px;
 }
 
@@ -2645,9 +2658,9 @@ footer .inner-copyright .copyright {
 
 .page-heading-tool .search-job .form-wrap .form-group {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 calc((100% - 40px) / 3);
-    flex: 0 0 calc((100% - 40px) / 3);
-    max-width: calc((100% - 40px) / 3);
+    -ms-flex: 0 0 calc((100% - 100px) / 3);
+    flex: 0 0 calc((100% - 100px) / 3);
+    max-width: calc((100% - 100px) / 3);
     margin-bottom: 0
 }
 
@@ -2698,20 +2711,28 @@ footer .inner-copyright .copyright {
 
 .page-heading-tool .search-job .form-wrap .form-group.form-submit {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 35px;
-    flex: 0 0 35px;
-    max-width: 35px
+    -ms-flex: 0 0 95px;
+    flex: 0 0 95px;
+    max-width: 95px
 }
 
 .page-heading-tool .search-job .form-wrap .form-group.form-submit .btn-gradient {
     padding: 0;
-    width: 35px;
+    width: 100%;
     height: 35px;
     border: 1px solid var(--bs-primary);
     background-color: var(--bs-primary);
     color: #ffffff;
     border-radius: 4px
 }
+
+.page-heading-tool .search-job .form-wrap .form-group.form-submit .btn-gradient:hover {
+    color: #fff;
+    background-color: rgba(var(--bs-primary-rgb), .85);
+    border-color: rgba(var(--bs-primary-rgb), .85);
+}
+
+
 
 .page-heading-tool .search-job .form-wrap .form-group.form-submit .btn-gradient i {
     color: #ffffff
@@ -2723,20 +2744,17 @@ footer .inner-copyright .copyright {
 
 .filters-job-wrapper {
     background-color: #fff;
-    margin-bottom: 20px;
-    padding: 20px 0;
     display: none
 }
 
-.filters-job-wrapper .filters-wrapper {
-    padding-top: 20px
-}
+.filters-job-wrapper .filters-wrapper {}
 
 .filters-job-wrapper .filters-wrapper .form-group {
     padding: 0;
     border-width: 0;
     -webkit-box-shadow: unset;
-    box-shadow: unset
+    box-shadow: unset;
+    margin-top: 10px;
 }
 
 .filters-job-wrapper .filters-wrapper .form-group .form-control {
@@ -2793,6 +2811,24 @@ footer .inner-copyright .copyright {
     color: #ffffff;
     margin-right: 10px
 }
+
+.filters-wrapper .close-input-filter {
+    display: flex;
+    justify-content: start;
+    height: 100%;
+    cursor: pointer;
+}
+
+.filters-wrapper .close-input-filter i {
+    padding: 10px;
+}
+
+.filters-wrapper .close-input-filter i:hover {
+    color: #840608;
+}
+
+
+
 
 .ms-options .ms-search input {
     font-size: 14px;
@@ -3559,10 +3595,13 @@ div#industry_id_chosen {
     margin-right: 10px;
     color: #981B1E;
 }
-.main-menu .login-btn ,.btn.btn-primary {
+
+.main-menu .login-btn,
+.btn.btn-primary {
     font-size: 18px;
     font-weight: 600;
 }
+
 .container-navbar {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4287,7 +4326,7 @@ div#industry_id_chosen {
         margin-bottom: 16px
     }
 
-   
+
 
     .header-bar .header-bar__title {
         width: 520px !important;

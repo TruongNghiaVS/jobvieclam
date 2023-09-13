@@ -27,6 +27,11 @@ $(document).ready(function () {
     $('#atcFilters').on('click', function () {
         $('.filters-job-wrapper').slideToggle();
     });
+
+    $('.close-input-filter').on('click', function () {
+        $('.filters-job-wrapper').slideToggle();
+    });
+
     $('[data-toggle="tooltip"]').tooltip();
     var cvLang = $('select#cv_language').val();
     var cvFontsize = $('input[type=radio][name=fontSize]').val();
@@ -291,19 +296,19 @@ function swiperSlider() {
             loop: true,
             speed: 1000,
 
-           
+
             breakpoints: {
                 320: {
                     slidesPerView: 2.1,
-                    spaceBetween: 0,   grabCursor: false,
+                    spaceBetween: 0, grabCursor: false,
                 },
                 768: {
                     slidesPerView: 3,
-                    spaceBetween: 10,   grabCursor: false,
+                    spaceBetween: 10, grabCursor: false,
                 },
                 1024: {
                     slidesPerView: 5,
-                    spaceBetween: 10,   grabCursor: false,
+                    spaceBetween: 10, grabCursor: false,
                 },
             },
         });
@@ -384,15 +389,15 @@ function swiperSlider() {
             slidesPerView: 5,
             spaceBetween: 30,
             pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
+                el: ".swiper-pagination",
+                clickable: true,
             },
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
-              },
+            },
 
-              breakpoints: {
+            breakpoints: {
                 320: {
                     slidesPerView: 1,
                     spaceBetween: 20,
@@ -419,7 +424,7 @@ function swiperSlider() {
                     grabCursor: false,
                 },
             },
-            
+
         });
     }
 
@@ -461,7 +466,7 @@ function swiperSlider() {
                     grabCursor: false,
                 },
             },
-            
+
         });
     }
 
@@ -470,12 +475,12 @@ function swiperSlider() {
         var test = new Swiper(".test", {
             slidesPerView: 5,
             grid: {
-              rows: 1,
+                rows: 1,
             },
             spaceBetween: 30,
             pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
+                el: ".swiper-pagination",
+                clickable: true,
             },
         });
     }
@@ -524,38 +529,38 @@ function actionSubMenu() {
     })
 }
 
-const opensearchbox_btn =  document.querySelector('.advance-search__open');
-const closesearchbox_btn =  document.querySelector('.advance-search__close');
-const form_group_search =  document.querySelectorAll('.form-group-search-box');
+const opensearchbox_btn = document.querySelector('.advance-search__open');
+const closesearchbox_btn = document.querySelector('.advance-search__close');
+const form_group_search = document.querySelectorAll('.form-group-search-box');
 // Open advance search func
-function opensearchbox(){
-    opensearchbox_btn.style.display="none";
-    closesearchbox_btn.style.display="flex";
+function opensearchbox() {
+    opensearchbox_btn.style.display = "none";
+    closesearchbox_btn.style.display = "flex";
     form_group_search.forEach(item => {
         item.classList.add('active');
     })
 }
 
 // Close advance search func
-function closesearchbox(){
-    opensearchbox_btn.style.display="flex";
-    closesearchbox_btn.style.display="none";
+function closesearchbox() {
+    opensearchbox_btn.style.display = "flex";
+    closesearchbox_btn.style.display = "none";
     form_group_search.forEach(item => {
         item.classList.remove('active');
     })
 }
 
 // Open reset form search
-const reset_btn =  document.querySelector('.advance-search__reset');
-reset_btn.addEventListener('click',()=>{
+const reset_btn = document.querySelector('.advance-search__reset');
+reset_btn.addEventListener('click', () => {
     document.getElementById("search-form").reset();
     $('#city_id').val('').trigger('chosen:updated');
     $('#job_type_id').val('').trigger('chosen:updated');
     $('#career_level_id').val('').trigger('chosen:updated');
-    $('#industry_id').val('').trigger('chosen:updated'); 
+    $('#industry_id').val('').trigger('chosen:updated');
 })
 
 // Open search advance
-const search_input =  document.querySelector('.search-input');
-search_input.addEventListener('focus',()=>opensearchbox())
+const search_input = document.querySelector('.search-input');
+search_input.addEventListener('focus', () => opensearchbox())
 

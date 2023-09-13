@@ -7,7 +7,8 @@
                 <div class="form-horizontal">
                     <div class="form-wrap">
                         <div class="form-group form-keyword">
-                            <input type="search" class="keyword form-control" id="search" name="search" placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
+                            <input type="search" class="keyword form-control" id="search" name="search"
+                                placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
                         </div>
                         <div class="form-group form-select-chosen" id="functional_area_dd">
                             {!! Form::select('functional_area_id[]', ['' => __('Select functional area')]+$funclAreas,
@@ -30,13 +31,7 @@
                 <button type="button" class="btn btn-filter" id="atcFilters" title="Lọc">
                     <i class="far fa-filter"></i> {{__('Filter')}}
                 </button>
-                <div class="switch-group">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" name="wfh" value="1" {{ Request::get('wfh') == 1 ? 'checked' : '' }} type="checkbox" role="switch" id="flexSwitchWFH">
-                        <label class="form-check-label" for="flexSwitchWFH">{{__('Work from home')}}</label>
-                    </div>
 
-                </div>
             </div>
         </div>
     </div>
@@ -150,19 +145,19 @@
 {!! Form::close() !!}
 @push('scripts')
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#benefit_id').multiselect({
-            texts: {
-                placeholder: "{{__('Select desired benefits')}}"
-            }
-        });
+$(document).ready(function() {
+    $('#benefit_id').multiselect({
+        texts: {
+            placeholder: "{{__('Select desired benefits')}}"
+        }
     });
-    $('#benefit_id').each(function() {
-        $(this).multiselect({
-            texts: {
-                placeholder: "{{__('Select desired benefits')}}", // or $(this).prop('title'),
-            },
-        });
+});
+$('#benefit_id').each(function() {
+    $(this).multiselect({
+        texts: {
+            placeholder: "{{__('Select desired benefits')}}", // or $(this).prop('title'),
+        },
     });
+});
 </script>
 @endpush

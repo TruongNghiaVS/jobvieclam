@@ -564,3 +564,7 @@ reset_btn.addEventListener('click', () => {
 const search_input = document.querySelector('.search-input');
 search_input.addEventListener('focus', () => opensearchbox())
 
+const sort_item_wrapped__item_list = document.querySelectorAll('.sort-item-wrapped__item');
+
+
+

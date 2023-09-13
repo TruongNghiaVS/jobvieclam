@@ -16,8 +16,7 @@
                     <div class="form-horizontal">
                         <div class="form-wrap">
                             <div class="form-group form-keyword">
-                                <input type="search" class="keyword form-control" id="search" name="search"
-                                    placeholder="{{__('Select city, company name...')}}" autocomplete="off">
+                                <input type="search" class="keyword form-control" id="search" name="search" placeholder="{{__('Select city, company name...')}}" autocomplete="off">
                             </div>
                             <div class="form-group form-select-chosen" id="industry_id_dd">
                                 {{ Form::select('industry_id', $industries, null, ['class'=>'form-control form-select shadow-sm chosen', 'id'=>'industry_id', 'placeholder'=>__('Select Industry')]) }}
@@ -55,8 +54,7 @@
                         </div>
                         <div class="jobinfo">
                             <div class="info">
-                                <h3 class="job-title"><a href="{{route('company.detail',$company->slug)}}"
-                                        title="{{$company->name}}">{{$company->name}}</a></h3>
+                                <h3 class="job-title"><a href="{{route('company.detail',$company->slug)}}" title="{{$company->name}}">{{$company->name}}</a></h3>
                                 <div class="box-meta">
                                     <i class="far fa-map-marker-alt"></i> {{__('Street Address')}}:
                                     {{$company->location}}
@@ -79,13 +77,9 @@
                                 </div>
                             </div>
                             @if(Auth::check() && Auth::user()->isFavouriteCompany($company->slug))
-                            <a class="save-company-favorite"
-                                href="{{ route('remove.from.favourite.company', ['company_slug' => $company->slug]) }}"><i
-                                    class="fas fa-heart iconoutline"></i></a>
+                            <a class="save-company-favorite" href="{{ route('remove.from.favourite.company', ['company_slug' => $company->slug]) }}"><i class="fas fa-heart iconoutline"></i></a>
                             @else
-                            <a class="save-company-favorite"
-                                href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"><i
-                                    class="far fa-heart"></i></a>
+                            <a class="save-company-favorite" href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"><i class="far fa-heart"></i></a>
                             @endif
 
                         </div>
@@ -128,51 +122,51 @@
 @endsection
 @push('styles')
 <style type="text/css">
-.formrow iframe {
-    height: 78px;
-}
+    .formrow iframe {
+        height: 78px;
+    }
 
-i.fas.fa-heart.iconoutline {
-    font-size: 24px;
-    color: #981b1d;
-}
+    i.fas.fa-heart.iconoutline {
+        font-size: 24px;
+        color: #981b1d;
+    }
 </style>
 @endpush
 @push('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
 <script type="text/javascript">
-$(document).ready(function() {
-    // js chosen dropdown select
-    $(".chosen").chosen();
-    $(document).on('click', '#send_company_message', function() {
-        var postData = $('#send-company-message-form').serialize();
-        $.ajax({
-            type: 'POST',
-            url: "{{ route('contact.company.message.send') }}",
-            data: postData,
-            //dataType: 'json',
-            success: function(data) {
-                response = JSON.parse(data);
-                var res = response.success;
-                if (res == 'success') {
-                    var errorString = '<div role="alert" class="alert alert-success">' +
-                        response.message + '</div>';
-                    $('#alert_messages').html(errorString);
-                    $('#send-company-message-form').hide('slow');
-                    $(document).scrollTo('.alert', 2000);
-                } else {
-                    var errorString = '<div class="alert alert-danger" role="alert"><ul>';
+    $(document).ready(function() {
+        // js chosen dropdown select
+        $(".chosen").chosen();
+        $(document).on('click', '#send_company_message', function() {
+            var postData = $('#send-company-message-form').serialize();
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('contact.company.message.send') }}",
+                data: postData,
+                //dataType: 'json',
+                success: function(data) {
                     response = JSON.parse(data);
-                    $.each(response, function(index, value) {
-                        errorString += '<li>' + value + '</li>';
-                    });
-                    errorString += '</ul></div>';
-                    $('#alert_messages').html(errorString);
-                    $(document).scrollTo('.alert', 2000);
-                }
-            },
+                    var res = response.success;
+                    if (res == 'success') {
+                        var errorString = '<div role="alert" class="alert alert-success">' +
+                            response.message + '</div>';
+                        $('#alert_messages').html(errorString);
+                        $('#send-company-message-form').hide('slow');
+                        $(document).scrollTo('.alert', 2000);
+                    } else {
+                        var errorString = '<div class="alert alert-danger" role="alert"><ul>';
+                        response = JSON.parse(data);
+                        $.each(response, function(index, value) {
+                            errorString += '<li>' + value + '</li>';
+                        });
+                        errorString += '</ul></div>';
+                        $('#alert_messages').html(errorString);
+                        $(document).scrollTo('.alert', 2000);
+                    }
+                },
+            });
         });
     });
-});
 </script>
 @endpush

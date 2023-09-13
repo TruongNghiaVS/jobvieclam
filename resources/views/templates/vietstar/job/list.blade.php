@@ -9,12 +9,25 @@
 @include('templates.vietstar.job.inc.filters_job_wrapper')
 
 <!-- Inner Page Title end -->
-<div class="listpgWraper">
+<div class="listpgWraper Jobpage">
     <div class="container">
         <form action="{{route('job.list')}}" method="get">
             <!-- Search Result and sidebar start -->
             <div class="row">
                 <div class="col-lg-9 col-sm-12">
+                    <div class="job-sorting-section">
+                        <div class="sort-wrapped">
+                            <div class="title sort-label">Sắp xếp theo</div>
+                            <div class="sort-item-wrapped">
+                                <div class="sort-item-wrapped__item active">Mặc định</div>
+                                <div class="sort-item-wrapped__item">Liên quan</div>
+                                <div class="sort-item-wrapped__item">Lương &lpar; cao - thấp &rpar; </div>
+                                <div class="sort-item-wrapped__item">Ngày đăng &lpar; mới nhất &rpar;</div>
+                                <div class="sort-item-wrapped__item">Ngày đăng &lpar; cũ nhất &rpar;</div>
+                                <div class="sort-item-wrapped__item">Làm việc từ xa</div>
+                            </div>
+                        </div>
+                    </div>
                     @include('flash::message')
                     <!-- Search List -->
                     <div class="searchList jobs-side-list">

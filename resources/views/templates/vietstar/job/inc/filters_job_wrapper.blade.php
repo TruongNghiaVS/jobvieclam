@@ -7,8 +7,7 @@
                 <div class="form-horizontal">
                     <div class="form-wrap">
                         <div class="form-group form-keyword">
-                            <input type="search" class="keyword form-control" id="search" name="search"
-                                placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
+                            <input type="search" class="keyword form-control" id="search" name="search" placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
                         </div>
                         <div class="form-group form-select-chosen" id="functional_area_dd">
                             {!! Form::select('functional_area_id[]', ['' => __('Select functional area')]+$funclAreas,
@@ -33,9 +32,7 @@
                 </button>
                 <div class="switch-group">
                     <div class="form-check form-switch">
-                        <input class="form-check-input" name="wfh" value="1"
-                            {{ Request::get('wfh') == 1 ? 'checked' : '' }} type="checkbox" role="switch"
-                            id="flexSwitchWFH">
+                        <input class="form-check-input" name="wfh" value="1" {{ Request::get('wfh') == 1 ? 'checked' : '' }} type="checkbox" role="switch" id="flexSwitchWFH">
                         <label class="form-check-label" for="flexSwitchWFH">{{__('Work from home')}}</label>
                     </div>
 
@@ -140,7 +137,7 @@
                             'id'=>'benefit_id','multiple'=>true, "data-placeholder"=>"Month"]) !!}
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-1">
+                    <div class="col-sm-6 col-lg-1 close-filter-box">
                         <div class="close-input-filter">
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </div>
@@ -153,19 +150,19 @@
 {!! Form::close() !!}
 @push('scripts')
 <script type="text/javascript">
-$(document).ready(function() {
-    $('#benefit_id').multiselect({
-        texts: {
-            placeholder: "{{__('Select desired benefits')}}"
-        }
+    $(document).ready(function() {
+        $('#benefit_id').multiselect({
+            texts: {
+                placeholder: "{{__('Select desired benefits')}}"
+            }
+        });
     });
-});
-$('#benefit_id').each(function() {
-    $(this).multiselect({
-        texts: {
-            placeholder: "{{__('Select desired benefits')}}", // or $(this).prop('title'),
-        },
+    $('#benefit_id').each(function() {
+        $(this).multiselect({
+            texts: {
+                placeholder: "{{__('Select desired benefits')}}", // or $(this).prop('title'),
+            },
+        });
     });
-});
 </script>
 @endpush

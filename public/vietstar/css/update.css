@@ -2638,6 +2638,19 @@ footer .inner-copyright .copyright {
     border-radius: 20px;
 }
 
+.inpostad {
+    width: 100%;
+    padding: 0 !important;
+    margin: 20px 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.inpostad img {
+    width: 100%;
+    object-fit: cover;
+}
+
 .jobs-side-list .item-job .jobinfo .caption .user-actio {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 35%;

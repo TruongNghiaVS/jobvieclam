@@ -27,7 +27,7 @@
   }
 }
 
-@media (max-width: 768px) and (max-width: 1024px){
+@media (max-width: 768px) and (max-width: 1024px) {
   .section-search-seekers .form-search-seekers {
     flex-direction: column;
     gap: 16px;
@@ -72,12 +72,13 @@
   .fc-more-cell div {
     margin-top: 10px;
   }
+
   .tab.tab-nav {
     overflow: auto;
     white-space: nowrap;
     padding: 0 10px;
   }
- 
+
 
 
 }
@@ -95,7 +96,7 @@
     width: 100%;
     overflow: hidden;
   }
-  
+
 }
 
 @media (min-width:360px) and (max-width: 992px) {
@@ -114,8 +115,8 @@
     flex-direction: column;
     align-items: center;
   }
-  
-  
+
+
 }
 
 @media (max-width:992px) {
@@ -181,18 +182,21 @@
     margin-left: unset;
     padding: 16px;
   }
+
   .partner-item__box {
     margin: 0;
     width: 100%;
     padding: 8px;
   }
-  .partner-item__name{
-    
+
+  .partner-item__name {
+
     padding: 17px 23px;
     font-size: 16px;
 
   }
-  .section-jobs-by-industry .swiper-pagination{
+
+  .section-jobs-by-industry .swiper-pagination {
     display: none;
   }
 }
@@ -208,7 +212,7 @@
     padding-right: 8px;
   }
 
-  
+
 
   .navbar .navbar-brand {
     width: fit-content;
@@ -264,7 +268,8 @@
     background-position-x: -60px;
     background-position-y: 0;
   }
-/* 
+
+  /* 
   .blogs-slider::after {
     width: 50%;
   } */
@@ -342,7 +347,8 @@
     padding-top: 64px;
     padding-left: 96px;
   }
-/* 
+
+  /* 
   .blogs-slider::after {
     width: 63%;
   } */
@@ -365,15 +371,16 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 767px) {
-  
-  .col-sm-6{
+
+  .col-sm-6 {
     width: 100%;
   }
 
-  .header-bar{
+  .header-bar {
     margin-bottom: 0;
     position: relative;
   }
+
   .header-bar .header-bar-bg {
     position: absolute;
     top: 0;
@@ -381,6 +388,7 @@
     height: 400px;
     width: 100%;
   }
+
   .header-bar .header-bar-content-search {
     position: absolute;
     top: 400px;
@@ -388,52 +396,126 @@
     height: 100%;
   }
 
-  .form-group-search-box.active{
+  .form-group-search-box.active {
     max-width: unset;
     height: 100%;
-  
+
   }
-  .header-bar .search-form  {
+
+  .header-bar .search-form {
     padding-bottom: 0 !important;
   }
-  .header-bar .search-form .action-search-form{
+
+  .header-bar .search-form .action-search-form {
     position: unset;
     max-width: unset;
-    
+
   }
+
   .advance-search {
     display: flex;
     padding: 10px 16px;
   }
-  .advance-search__reset, .advance-search__box{
+
+  .advance-search__reset,
+  .advance-search__box {
     padding: 0;
     margin: 0;
     width: 50%;
   }
-  .form-group-search-box.active{
+
+  .form-group-search-box.active {
     max-height: 230px;
   }
-  .search-form-box{
+
+  .search-form-box {
     box-shadow: none !important;
   }
 
   .partner {
     margin-top: 20px;
   }
+
   .section-jobs-by-industry .swiper-button-next {
-    right:0
+    right: 0
   }
-  .section-jobs-by-industry .swiper-button-prev{
+
+  .section-jobs-by-industry .swiper-button-prev {
     left: 0;
   }
-/************************************************
+
+  /************************************************
 
            ==advertising-banner==
 
 *************************************************/
-.advertising-banner .item {
-  margin-bottom:10px;
-}
+  .advertising-banner .item {
+    margin-bottom: 10px;
+  }
+
+  /************************************************
+
+           ==Job page==
+
+*************************************************/
+  .filters-job-wrapper {
+    padding: 20px 0;
+  }
+
+  .filters-job-wrapper .filters-wrapper {
+    position: relative;
+    top: 40px;
+  }
+
+
+
+  .close-filter-box {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    height: 30px;
+
+  }
+
+  .filters-wrapper .close-input-filter {
+    justify-content: end;
+  }
+
+  .jobs-side-list .item-job {
+    padding: 10px;
+  }
+
+  .jobs-side-list .item-job .jobinfo .info .companyName a {
+    font-size: 14px;
+  }
+
+  .jobs-side-list .item-job .jobinfo .info .box-meta .rank-salary span {
+    display: flex;
+    align-items: center;
+  }
+
+  .jobs-side-list .item-job .jobinfo .info .box-meta .rank-salary {
+    font-size: 13px;
+  }
+
+  .jobs-side-list .item-job .jobinfo .caption .welfare span {
+    padding: 5px;
+  }
+
+  .jobs-side-list .item-job .jobinfo .caption .box-meta {
+    margin-right: 0;
+    margin: 5px 0;
+  }
+
+
+
+  .jobs-side-list .item-job .jobinfo {
+    padding-left: 15px;
+  }
+
+
+
+
 
 
 }
@@ -442,65 +524,102 @@
 
 /* Medium devices (landscape tablets, 600px and up) */
 @media only screen and (min-width: 768px) and (max-width: 992px) {
- 
 
 
-  
+
+
   .header-bar {
     height: 500px;
   }
+
   .header-bar .header-bar-content-search {
     height: 500px;
     position: absolute;
     top: 550px;
     left: 0;
-    width:100%;
+    width: 100%;
     box-shadow: unset !important;
   }
-  .header-bar .search-form{
+
+  .header-bar .search-form {
     padding: 0;
   }
-  .form-group-search-box{
-    max-height:220px;
+
+  .form-group-search-box {
+    max-height: 220px;
   }
+
   .partner {
     margin-top: 600px;
   }
-.search-form-box{
-  width: 100%;
-}
-  .search-form-box .col-sm-6{
+
+  .search-form-box {
     width: 100%;
   }
-  .header-bar .search-form .action-search-form{
+
+  .search-form-box .col-sm-6 {
+    width: 100%;
+  }
+
+  .header-bar .search-form .action-search-form {
     max-width: unset;
-    position:unset;
+    position: unset;
   }
-  .form-group-search-box{
-    margin-bottom: 10px ;
+
+  .form-group-search-box {
+    margin-bottom: 10px;
   }
-  .advance-search{
+
+  .advance-search {
     display: flex;
     flex-direction: row;
   }
-  .advance-search__box ,.advance-search__reset {
+
+  .advance-search__box,
+  .advance-search__reset {
     width: 50%;
   }
-  .form-group-search-box.active{
+
+  .form-group-search-box.active {
     max-height: 250px;
   }
+
   .advance-search__box {
     display: none;
   }
+
   .section-jobs-by-industry .swiper-button-next {
-    right:0
+    right: 0
   }
-  .section-jobs-by-industry .swiper-button-prev{
+
+  .section-jobs-by-industry .swiper-button-prev {
     left: 0;
   }
+
+  /************************************************
+
+           ==Job page==
+
+*************************************************/
+  .filters-job-wrapper {
+    padding: 20px 27px;
+  }
+
+
+  .filters-job-wrapper .filters-wrapper {
+    position: relative;
+    top: 40px;
+  }
+
+  .filters-wrapper .close-input-filter {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    height: 30px;
+
+  }
+
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {}
-
-

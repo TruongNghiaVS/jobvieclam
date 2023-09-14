@@ -2530,7 +2530,7 @@ footer .inner-copyright .copyright {
 .jobs-side-list .item-job .jobinfo .info .job-title-name a {
     font-style: normal;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 19px;
     line-height: 1.3;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
@@ -2569,8 +2569,8 @@ footer .inner-copyright .copyright {
 
 .jobs-side-list .item-job .jobinfo .info .companyName a {
     font-weight: 500;
-    font-size: 18px;
-    line-height: 18px;
+    font-size: 17px;
+    line-height: 17px;
     color: #333333;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out
@@ -2586,7 +2586,7 @@ footer .inner-copyright .copyright {
 .jobs-side-list .item-job .jobinfo .info .box-meta .rank-salary {
     display: flex;
     color: #981b1e;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
     position: relative;
 }

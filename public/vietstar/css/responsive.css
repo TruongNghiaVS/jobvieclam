@@ -533,8 +533,21 @@
     flex-wrap: unset
   }
 
+  .page-job-detail__floating-header .box {
+    padding-bottom: 0;
+  }
 
+  .page-job-detail__floating-header .box .col-logo {
+    align-items: center;
+    margin-bottom: 10px;
+  }
 
+  .page-job-detail__floating-header .box [class^=col-] {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    align-items: center;
+  }
 }
 
 
@@ -641,6 +654,22 @@
   .job-detail-banner .job-detail-banner__group .btn {
     margin-bottom: 0;
     margin-top: 20px;
+  }
+
+  .page-job-detail__floating-header .box .col-logo {
+    width: 20%;
+  }
+
+  .col-md-11.col-xs-12.col-info {
+    width: 80%;
+  }
+
+  .col-md-11.col-xs-12.col-info .col-lg-8 {
+    width: 50%;
+  }
+
+  .col-md-11.col-xs-12.col-info .col-lg-4s {
+    width: 50%;
   }
 
 }

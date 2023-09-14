@@ -2383,6 +2383,11 @@ footer .inner-copyright .copyright {
     justify-content: space-between
 }
 
+.jobs-side-list .item-job:hover {
+    background: #f6f6f6;
+    outline: 1px solid #d3d5d9;
+}
+
 .navbar__link-separator {
     border-right: 2px solid hsla(0, 4%, 9%, 0.4);
     height: 18px;
@@ -2533,11 +2538,16 @@ footer .inner-copyright .copyright {
 }
 
 .jobs-side-list .item-job .jobinfo .info .job-title-box .save-job {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 40px;
+}
+
+.jobs-side-list .item-job .jobinfo .info .job-title-box .save-job:hover {
+    background-color: #f6f0f0;
 }
 
 .jobs-side-list .item-job .jobinfo .info .job-title-box .save-job i {
@@ -2932,6 +2942,8 @@ footer .inner-copyright .copyright {
 
 .carousel-inner .item .image.loadAds a {
     width: 100%;
+    border-radius: 2px;
+    overflow: hidden;
 }
 
 .carousel-inner .item .image.loadAds a img {

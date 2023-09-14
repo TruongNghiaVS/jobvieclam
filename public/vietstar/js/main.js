@@ -551,20 +551,29 @@ function closesearchbox() {
 }
 
 // Open reset form search
-const reset_btn = document.querySelector('.advance-search__reset');
-reset_btn.addEventListener('click', () => {
-    document.getElementById("search-form").reset();
-    $('#city_id').val('').trigger('chosen:updated');
-    $('#job_type_id').val('').trigger('chosen:updated');
-    $('#career_level_id').val('').trigger('chosen:updated');
-    $('#industry_id').val('').trigger('chosen:updated');
-})
+// const reset_btn = document.querySelector('.advance-search__reset');
+// reset_btn.addEventListener('click', () => {
+//     document.getElementById("search-form").reset();
+//     $('#city_id').val('').trigger('chosen:updated');
+//     $('#job_type_id').val('').trigger('chosen:updated');
+//     $('#career_level_id').val('').trigger('chosen:updated');
+//     $('#industry_id').val('').trigger('chosen:updated');
+// })
 
 // Open search advance
-const search_input = document.querySelector('.search-input');
-search_input.addEventListener('focus', () => opensearchbox())
+// const search_input = document.querySelector('.search-input');
+// search_input.addEventListener('focus', () => opensearchbox())
 
-const sort_item_wrapped__item_list = document.querySelectorAll('.sort-item-wrapped__item');
 
+
+const buttons = document.querySelectorAll('.sort-item-wrapped__item');
+console.log(buttons);
+buttons.forEach(button => {
+    button.addEventListener('click', function () {
+        console.log("sdasd");
+        buttons.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
 
 

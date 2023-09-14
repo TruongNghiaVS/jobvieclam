@@ -54,9 +54,6 @@
     background-size: 160%;
   }
 
-  .job-detail-banner {
-    flex-direction: column;
-  }
 
   /* for full calendar */
   .fc-dayGridMonth-view .fc-body .fc-row {
@@ -507,14 +504,34 @@
     margin: 5px 0;
   }
 
-
-
   .jobs-side-list .item-job .jobinfo {
     padding-left: 15px;
   }
 
 
 
+  .job-detail-banner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .job-detail-banner .job-detail-banner__detail {
+    margin-bottom: 10px;
+  }
+
+  .job-detail-banner .job-detail-banner__group .btn {
+    margin-bottom: 10px;
+  }
+
+  .nav-tabs-default {
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-direction: row;
+
+    flex-wrap: unset
+  }
 
 
 
@@ -619,6 +636,11 @@
     right: 0;
     height: 30px;
 
+  }
+
+  .job-detail-banner .job-detail-banner__group .btn {
+    margin-bottom: 0;
+    margin-top: 20px;
   }
 
 }

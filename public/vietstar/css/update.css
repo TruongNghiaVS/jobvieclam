@@ -2055,19 +2055,16 @@ footer .inner-copyright .copyright {
 }
 
 .job-detail-banner .job-detail-banner__actions {
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
+    display: flex;
     justify-content: flex-start;
-    gap: 0
+    padding-right: 5px;
+    flex-direction: row;
+    margin-top: 5px;
 }
 
-.job-detail-banner .job-detail-banner__actions .btn {
-    max-height: 48px
-}
 
-.job-detail-banner .job-detail-banner__actions .btn.apply {
-    margin-bottom: 16px
-}
+
+.job-detail-banner .job-detail-banner__actions .btn.apply {}
 
 .job-detail-banner .job-detail-banner_info_actions .btn {
     margin-right: 16px
@@ -2085,9 +2082,9 @@ footer .inner-copyright .copyright {
     color: #ffffff
 }
 
+
 .nav-tabs-default {
     margin-bottom: 0;
-    margin-top: 20px
 }
 
 .nav-tabs-default .nav-item .nav-link {
@@ -2105,6 +2102,10 @@ footer .inner-copyright .copyright {
 .company-job-detail .job-detail-banner__detail .banner__due-day {
     padding-left: 28px;
     position: relative
+}
+
+.company-job-detail .job-detail-banner__detail .banner__due-day a {
+    color: var(--bs-primary);
 }
 
 .company-job-detail .job-detail-banner__detail .banner__due-day i {

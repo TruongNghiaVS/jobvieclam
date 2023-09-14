@@ -2402,7 +2402,7 @@ footer .inner-copyright .copyright {
     flex: 0 0 140px;
     max-width: 140px;
     display: flex;
-    align-items: center;
+    align-items: start;
 }
 
 .jobs-side-list .item-job .logo-company .pic {
@@ -2959,8 +2959,8 @@ footer .inner-copyright .copyright {
 .sort-wrapped {
     display: flex;
     -webkit-box-align: center;
-    align-items: center;
     gap: 8px;
+    flex-direction: column;
 }
 
 .Jobpage {

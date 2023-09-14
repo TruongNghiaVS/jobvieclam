@@ -595,11 +595,9 @@ section.company-job-detail.job-detail-title .job-detail-banner {
 	margin-bottom: unset;
 }
 
-.related-jobs .related-jobs__jobs {
-	display: flex;
-	gap: 12px;
-	flex-direction: column;
-	margin-bottom: 36px;
+.related-jobs .related-jobs-company {
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 /* Header Bar */

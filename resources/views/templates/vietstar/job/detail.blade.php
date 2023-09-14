@@ -13,11 +13,6 @@
 $company = $job->getCompany();
 @endphp
 
-
-
-
-
-
 <section class="container job-detail">
     <section class="job-detail-title">
         <div class="job-detail-banner d-flex gap-24">
@@ -111,7 +106,14 @@ $company = $job->getCompany();
                 {{ __('Company Information') }}
             </button>
         </li>
+        <li class="nav-item">
+            <button class="nav-link" id="related-jobs-tab" data-toggle="tab" data-target="#related-jobs-pane"
+                aria-controls="related-jobs">
+                {{ __('Company Information') }}
+            </button>
+        </li>
     </ul>
+
     <div class="tab-content">
         <div class="tab-pane show active" id="detail" aria-labelledby="detail-tab">
             @include('flash::message')
@@ -461,60 +463,99 @@ $company = $job->getCompany();
 
                     </section>
                 </div>
-                <div class="col-xxl-4 col-lg-4">
-                    @if ($company->jobs->count() > 0)
-                    <!-- current jobs -->
-                    <section class="related-jobs">
-                        <div class="related-jobs__title d-flex justify-content-between align-items-center">
-                            <h6>Vị trí đang tuyển</h6>
-                        </div>
-                        <div class="row related-jobs__jobs">
-                            <div class="col-12">
-                                @foreach ($company->jobs as $cjob)
-                                <div class="card-news gap-16 mb-2">
-                                    <div class="card-news__icon">
-                                        <img src="{{ asset('company_logos/'.$company->logo) }}"
-                                            alt="{{ $company->name }}">
+
+            </div>
+        </div>
+        <div class="tab-pane" id="related-jobs-pane" aria-labelledby="related-jobs-tab">
+            <section class="related-jobs">
+
+                <div class="related-jobs-company row g-2">
+                    @foreach ($company->jobs as $cjob)
+                    <div class="col-6">
+                        <div class="card-news p-3">
+                            <div class="card-news__icon">
+                                <img src="{{ asset('company_logos/'.$company->logo) }}" alt="{{ $company->name }}">
+                            </div>
+                            <div class="card-news__content">
+                                <h6 class="card-news__content-title"><a href="{{route('job.detail', [$cjob->slug])}}"
+                                        title="{{$cjob->title}}">{{$cjob->title}}</a></h6>
+                                <p class="card-news__content-detail">{{ $company->name }}</p>
+                                <div class="card-news__content-footer">
+                                    <div class="card-news__content-footer__location">
+                                        <span class="badge rounded-pill pill pill-location">{{ $cjob->location }}</span>
+                                        <span
+                                            class="badge rounded-pill pill pill-worktime">{{ $cjob->city->city }}</span>
                                     </div>
-                                    <div class="card-news__content">
-                                        <h6 class="card-news__content-title"><a
-                                                href="{{route('job.detail', [$cjob->slug])}}"
-                                                title="{{$cjob->title}}">{{$cjob->title}}</a></h6>
-                                        <p class="card-news__content-detail">{{ $company->name }}</p>
-                                        <div class="card-news__content-footer">
-                                            <div class="card-news__content-footer__location">
-                                                <span
-                                                    class="badge rounded-pill pill pill-location">{{ $cjob->location }}</span>
-                                                <span
-                                                    class="badge rounded-pill pill pill-worktime">{{ $cjob->city->city }}</span>
-                                            </div>
-                                            <div class="card-news__content-footer__salary">
-                                                {{$cjob->salary_from.' '.$cjob->salary_currency}} -
-                                                {{$cjob->salary_to.' '.$cjob->salary_currency}}
-                                            </div>
+                                    <div class="card-news__content-footer__salary">
+                                        {{$cjob->salary_from.' '.$cjob->salary_currency}} -
+                                        {{$cjob->salary_to.' '.$cjob->salary_currency}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </section>
+
+
+            <!-- @if ($company->jobs->count() > 0) -->
+
+            <!-- <section class="related-jobs">
+                    <div class="related-jobs__title d-flex justify-content-between align-items-center">
+                        <h6>Vị trí đang tuyển</h6>
+                    </div>
+                    <div class="row related-jobs__jobs">
+                        <div class="col-12">
+                            @foreach ($company->jobs as $cjob)
+                            <div class="card-news gap-16 mb-2">
+                                <div class="card-news__icon">
+                                    <img src="{{ asset('company_logos/'.$company->logo) }}" alt="{{ $company->name }}">
+                                </div>
+                                <div class="card-news__content">
+                                    <h6 class="card-news__content-title"><a
+                                            href="{{route('job.detail', [$cjob->slug])}}"
+                                            title="{{$cjob->title}}">{{$cjob->title}}</a></h6>
+                                    <p class="card-news__content-detail">{{ $company->name }}</p>
+                                    <div class="card-news__content-footer">
+                                        <div class="card-news__content-footer__location">
+                                            <span
+                                                class="badge rounded-pill pill pill-location">{{ $cjob->location }}</span>
+                                            <span
+                                                class="badge rounded-pill pill pill-worktime">{{ $cjob->city->city }}</span>
+                                        </div>
+                                        <div class="card-news__content-footer__salary">
+                                            {{$cjob->salary_from.' '.$cjob->salary_currency}} -
+                                            {{$cjob->salary_to.' '.$cjob->salary_currency}}
                                         </div>
                                     </div>
                                 </div>
-                                @endforeach
                             </div>
+                            @endforeach
                         </div>
-                    </section>
-                    @endif
-                    <!-- map company -->
-                    <section class="related-jobs">
-                        <div class="related-jobs__title">
-                            <h6>Map</h6>
+                    </div>
+                </section> -->
+            <!-- @endif -->
+            <!-- map company -->
+            <!-- <section class="related-jobs">
+                    <div class="related-jobs__title">
+                        <h6>Map</h6>
 
-                            <div class="gmap">
-                                {!!$company->map!!}
-                            </div>
+                        <div class="gmap">
+                            {!!$company->map!!}
                         </div>
-                    </section>
-                </div>
-            </div>
+                    </div>
+                </section> -->
+
+
+
+
         </div>
     </div>
 </section>
+
+
+
 @include('templates.vietstar.includes.footer')
 @endsection
 @push('styles')

@@ -513,6 +513,7 @@ section.company-job-detail.job-detail-title {
 	top: 75px;
 	left: 0;
 	width: 100%;
+
 }
 
 .filters-job-wrapper.job-detail.is-sticky {
@@ -520,6 +521,7 @@ section.company-job-detail.job-detail-title {
 	top: 150px;
 	left: 0;
 	width: 100%;
+
 }
 
 
@@ -539,7 +541,6 @@ section.company-job-detail.job-detail-title .job-detail-banner {
 	width: 100%;
 	z-index: 900;
 	box-shadow: 0 0 5px rgba(0, 0, 0, .3);
-	display: none;
 	animation: slideDown 1s ease-out;
 }
 
@@ -552,6 +553,7 @@ section.company-job-detail.job-detail-title .job-detail-banner {
 
 .page-job-detail__floating-header .box {
 	padding: 20px 0;
+	display: none;
 }
 
 .page-job-detail__floating-header .box [class^=col-] {

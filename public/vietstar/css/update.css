@@ -2652,6 +2652,16 @@ footer .inner-copyright .copyright {
     border-radius: 20px;
 }
 
+/* Related Job */
+.related-jobs-item.item-job {
+    border: 1px solid #d3d5d9;
+    ;
+}
+
+.related-jobs-wapper {
+    margin-top: 20px;
+}
+
 .inpostad {
     width: 100%;
     padding: 0 !important;
@@ -3793,7 +3803,8 @@ div#industry_id_chosen {
 #main-nav {
     height: 76px;
     display: block;
-    background-color: #ffffff !important
+    background-color: #ffffff !important;
+    z-index: 10;
 }
 
 .navbar-lang {

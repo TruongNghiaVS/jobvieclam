@@ -263,7 +263,7 @@ $company = $job->getCompany();
             @include('flash::message')
             <!-- Job detail title -->
             <div class="row">
-                <div class="col-xxl-8 col-xl-12 pe-xxl-4">
+                <div class="col-xxl-12 col-xl-12 pe-xxl-4">
                     <div class="tab-content">
                         <!-- Job detail -->
                         <section class="job-detail-content">
@@ -427,55 +427,7 @@ $company = $job->getCompany();
                         </section>
                     </div>
                 </div>
-                <div class="col-xxl-4 col-xl-12">
-                    <!-- realated jobs -->
-                    <section class="related-jobs">
-                        <div class="related-jobs__title d-flex justify-content-between align-items-center">
-                            <h6>{{__('Related Jobs')}}</h6>
-                            <a class="btn btn-round btn-link btn-sm main-color"
-                                href="{{ route('job.list', ['job_titles[]'=>$job->title ?? '', 'country_ids[]'=>$job->country_id?? '', 'state_ids[]'=>$job->state_id?? '', 'city_ids[]'=>$job->city_id ?? '']) }}">
-                                {{ __('View all jobs') }}<i class="fas fa-arrow-right ms-2"></i></a>
-                        </div>
-                        <div class="row related-jobs__jobs pe-2">
-                            @if(isset($relatedJobs) && count($relatedJobs))
-                            @foreach($relatedJobs as $relatedJob)
-                            <?php $relatedJobCompany = $relatedJob->getCompany(); ?>
-                            @if(null !== $relatedJobCompany && $relatedJob->id != $job->id)
-                            <!--Job start-->
-                            <div class="col-xl-4 col-xxl-12">
-                                <div class="card-news gap-16 mb-2">
-                                    <div class="card-news__icon">
-                                        <img src="{{ asset('/company_logos/'.$relatedJobCompany->logo)  }}"
-                                            alt="{{ $relatedJobCompany->name }}">
-                                    </div>
-                                    <div class="card-news__content">
-                                        <h6 class="card-news__content-title"><a
-                                                href="{{route('job.detail', [$relatedJob->slug])}}"
-                                                title="{{$relatedJob->title}}">{{$relatedJob->title}}</a></h6>
-                                        <p class="card-news__content-detail">{{$relatedJobCompany->name}}</p>
-                                        <div class="card-news__content-footer">
-                                            <div class="card-news__content-footer__location">
-                                                <span
-                                                    class="badge rounded-pill pill pill-location">{{$relatedJob->getCity('city')}}</span>
-                                                <span
-                                                    class="badge rounded-pill pill pill-worktime">{{$relatedJob->getJobType('job_type')}}</span>
-                                            </div>
-                                            <div class="card-news__content-footer__salary">
-                                                {{$relatedJob->salary_from.' '.$relatedJob->salary_currency}} -
-                                                {{$relatedJob->salary_to.' '.$relatedJob->salary_currency}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!--Job end-->
-                            @endif
-                            @endforeach
-                            @endif
-                        </div>
-                    </section>
-                </div>
+                
             </div>
         </div>
         <div class="tab-pane" id="profile" aria-labelledby="profile-tab">
@@ -793,6 +745,13 @@ $company = $job->getCompany();
 
         @if ($company->jobs->count() > 0)
         <section class="related-jobs-other">
+            <div class="related-jobs__title d-flex justify-content-between align-items-center">
+                <h6>Công việc liên quan</h6>
+                <a class="btn btn-round btn-link btn-sm main-color" href="http://jobvieclam.com/jobs?job_titles%5B%5D=Nh%C3%A2n%20Vi%C3%AAn%20Nh%C3%A2n%20S%E1%BB%B1%20-%20Tuy%E1%BB%83n%20D%E1%BB%A5ng%20%28HR%29&amp;country_ids%5B%5D=&amp;state_ids%5B%5D=&amp;city_ids%5B%5D=48710">
+                Xem tất cả công việc<i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+
+
             <div class="related-jobs-company row g-2" bis_skin_checked="1">
                 <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
                     <div class="card-news p-3" bis_skin_checked="1">

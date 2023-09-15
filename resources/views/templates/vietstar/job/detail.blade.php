@@ -3,15 +3,154 @@
 <!-- Header start -->
 @include('templates.vietstar.includes.header')
 
-<!-- Company cover -->
-<!-- <section class="public-profile-cover" style="background-image: url({{ asset('/vietstar/imgs/company-cover.jpg') }})">
-  
-</section> -->
-
-
 @php
 $company = $job->getCompany();
 @endphp
+<!-- Company cover -->
+<div class="page-heading-tool job-detail ">
+    <div class="container">
+        <div class="tool-wrapper">
+
+            <div class="search-job">
+                <div class="form-horizontal">
+                    <div class="form-wrap">
+                        <div class="form-group form-keyword">
+                            <input type="search" class="keyword form-control" id="search" name="search" placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
+                        </div>
+                        <div class="form-group form-select-chosen" id="functional_area_dd">
+                            <select class="form-control form-select" name="functional_area_id" id="functional_area">
+                                <option value="">Chọn phòng ban</option>
+                                <option value="Nhân sự">Nhân sự</option>
+                                <option value="Hành chính">Hành chính</option>
+                                <option value="Kế toán">Kế toán</option>
+                            </select>
+                        </div>
+                        <div class="form-group form-select-chosen" id="city_dd2">
+                            <select class="form-control form-select" name="city_id" id="city">
+                                <option value="">Chọn địa điểm</option>
+                                <option value="3">HCM</option>
+                                <option value="5">Hà Nội</option>
+                                <option value="5">Đà Nẵng</option>
+                            </select>
+                        </div>
+                        <div class="form-group form-submit">
+                            <button class="btn-gradient" type="submit">
+                                Tìm kiếm
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-filter toollips">
+                <button type="button" class="btn btn-filter" id="atcFilters" title="Lọc">
+                    <i class="far fa-filter"></i> Lọc
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="filters-job-wrapper job-detail">
+    <div class="container">
+        <div class="filters-wrapper">
+            <form action="{{route('job.list')}}" method="get">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-2">
+                        <div class="form-group form-select">
+                            <label>Lương</label>
+                            <select class="form-control form-select" name="salary" id="salary">
+                                <option value="">Tất cả</option>
+                                <option value="3">Từ 3.000.000 đ</option>
+                                <option value="5">Từ 5.000.000 đ</option>
+                                <option value="7">Từ 7.000.000 đ</option>
+                                <option value="10">Từ 10.000.000 đ</option>
+                                <option value="15">Từ 15.000.000 đ</option>
+                                <option value="20">Từ 20.000.000 đ</option>
+                                <option value="30">Từ 30.000.000 đ</option>
+                                <option value="40">Từ 40.000.000 đ</option>
+                                <option value="50">Từ 50.000.000 đ</option>
+                                <option value="60">Từ 60.000.000 đ</option>
+                                <option value="70">Từ 70.000.000 đ</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="form-group" id="degree_level_dd">
+                            <label>Cấp bậc</label>
+                            <select class="form-control form-select" id="level" name="level">
+                                <option value="">Tất cả</option>
+                                <option value="sinh-vien-thuc-tap-sinh_1" data-id="1">
+                                    Sinh viên/ Thực tập sinh
+                                </option>
+                                <option value="moi-tot-nghiep_2" data-id="2">
+                                    Mới tốt nghiệp
+                                </option>
+                                <option value="nhan-vien_3" data-id="3">
+                                    Nhân viên
+                                </option>
+                                <option value="truong-nhom-giam-sat_4" data-id="4">
+                                    Trưởng nhóm / Giám sát
+                                </option>
+                                <option value="quan-ly_5" data-id="5">
+                                    Quản lý
+                                </option>
+                                <option value="quan-ly-cap-cao_11" data-id="11">
+                                    Quản lý cấp cao
+                                </option>
+                                <option value="dieu-hanh-cap-cao_12" data-id="12">
+                                    Điều hành cấp cao
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="form-group" id="job_type_dd">
+                            <label>Hình thức việc làm</label>
+                            <select class="form-control form-select" name="job_type" id="job_type">
+                                <option value="">Tất cả</option>
+                                <option data-id="1000" value="nhan-vien-chinh-thuc_1000">
+                                    Nhân viên chính thức
+                                </option>
+                                <option data-id="0100" value="tam-thoi-du-an_0100">
+                                    Tạm thời/Dự án
+                                </option>
+                                <option data-id="0010" value="thoi-vu-nghe-tu-do_0010">
+                                    Thời vụ - Nghề tự do
+                                </option>
+                                <option data-id="0001" value="thuc-tap_0001">
+                                    Thực tập
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="form-group form-group-custom-multiselect" id="benefit_id_dd">
+                            <label>Chọn phúc lợi mong muốn</label>
+                            <select class="form-control form-select shadow-sm multiselect" name="benefit_id" id="benefit" multiple>
+                                <option value="">Chọn phòng ban</option>
+                                <option value="Nhân sự">Nhân sự</option>
+                                <option value="Hành chính">Hành chính</option>
+                                <option value="Kế toán">Kế toán</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-1 close-filter-box">
+                        <div class="close-input-filter">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 <section class="container job-detail">
     <section class="job-detail-title">
@@ -611,12 +750,14 @@ $company = $job->getCompany();
             $(window).scroll(function() {
                 var scrollTop = $(window).scrollTop();
                 if (scrollTop > 300) {
-
                     $('.page-job-detail__floating-header').addClass('is-sticky');
+                    $('.job-detail').addClass('is-sticky');
+                    $('.filters-job-wrapper').addClass('shadow-sm');
+
                 } else {
-
                     $('.page-job-detail__floating-header').removeClass('is-sticky');
-
+                    $('.job-detail').removeClass('is-sticky');
+                    $('.filters-job-wrapper').removeClass('shadow-sm');
                 }
             });
         });

@@ -502,6 +502,29 @@ section.company-job-detail.job-detail-title {
 	overflow: hidden;
 }
 
+/* .page-heading-tool.job-detail {
+	position: fixed;
+	top: 75px;
+	left: 0;
+	width: 100%;
+} */
+.page-heading-tool.job-detail.is-sticky {
+	position: fixed;
+	top: 75px;
+	left: 0;
+	width: 100%;
+	animation: slideDown 1s ease-out;
+}
+
+.filters-job-wrapper.job-detail.is-sticky {
+	position: fixed;
+	top: 150px;
+	left: 0;
+	width: 100%;
+}
+
+
+
 section.company-job-detail.job-detail-title .job-detail-banner {
 	border-radius: 0;
 	border-bottom-right-radius: 5px;
@@ -518,7 +541,7 @@ section.company-job-detail.job-detail-title .job-detail-banner {
 	z-index: 900;
 	box-shadow: 0 0 5px rgba(0, 0, 0, .3);
 	display: none;
-	animation: slideDown 0.5s ease-out;
+	animation: slideDown 1s ease-out;
 }
 
 .page-job-detail__floating-header.is-sticky {

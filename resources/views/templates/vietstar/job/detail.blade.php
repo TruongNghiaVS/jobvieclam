@@ -1063,7 +1063,7 @@ $(document).ready(function($) {
     $(document).ready(function() {
         $(window).scroll(function() {
             var scrollTop = $(window).scrollTop();
-            if (scrollTop > 300) {
+            if (scrollTop > 400) {
                 $('.page-job-detail__floating-header').addClass('is-sticky');
                 $('.job-detail').addClass('is-sticky');
                 $('.filters-job-wrapper').addClass('shadow-sm');

@@ -513,7 +513,6 @@ section.company-job-detail.job-detail-title {
 	top: 75px;
 	left: 0;
 	width: 100%;
-	animation: slideDown 1s ease-out;
 }
 
 .filters-job-wrapper.job-detail.is-sticky {

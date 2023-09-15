@@ -2533,8 +2533,11 @@ footer .inner-copyright .copyright {
     font-weight: 700;
     font-size: 19px;
     line-height: 1.3;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+
+    color: var(--text-main);
+}
+
+.jobs-side-list .item-job .jobinfo .info .job-title-name a:hover {
     color: #981B1E;
 }
 

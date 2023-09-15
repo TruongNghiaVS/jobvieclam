@@ -7,6 +7,9 @@
 $company = $job->getCompany();
 @endphp
 <!-- Company cover -->
+
+
+<!-- SEARCH STICKY -->
 <div class="page-heading-tool job-detail ">
     <div class="container">
         <div class="tool-wrapper">
@@ -51,7 +54,7 @@ $company = $job->getCompany();
     </div>
 </div>
 
-
+<!-- SEARCH ADVANDCE STICKY -->
 <div class="filters-job-wrapper job-detail">
     <div class="container">
         <div class="filters-wrapper">
@@ -154,6 +157,7 @@ $company = $job->getCompany();
 
 
 <section class="container job-detail">
+    <!-- JOB DESCRIPTION -->
     <section class="job-detail-title">
         <div class="job-detail-banner d-flex gap-24">
             <div class="job-detail-banner__icon">
@@ -233,7 +237,7 @@ $company = $job->getCompany();
             </div>
         </div>
     </section>
-
+    <!--TAB PANE NAV -->
     <ul class="nav nav-tabs nav-tabs-default">
         <li class="nav-item">
             <button class="nav-link active" id="detail-tab" data-toggle="tab" data-target="#detail"
@@ -253,7 +257,7 @@ $company = $job->getCompany();
             </button>
         </li>
     </ul>
-
+    <!--TAB CONTENT -->
     <div class="tab-content">
         <div class="tab-pane show active" id="detail" aria-labelledby="detail-tab">
             @include('flash::message')
@@ -606,9 +610,10 @@ $company = $job->getCompany();
 
             </div>
         </div>
+        <!-- related jobs of company -->
         <div class="tab-pane" id="related-jobs-pane" aria-labelledby="related-jobs-tab">
-            <section class="related-jobs">
 
+            <section class="related-jobs">
                 <div class="related-jobs-wapper jobs-side-list">
                     <div class="related-jobs-item item-job mb-3">
                         <div class="logo-company">
@@ -771,7 +776,7 @@ $company = $job->getCompany();
 
                                 </div>
 
-                                <div class="user-actio" bis_skin_checked="1">
+                                <div class="user-action" bis_skin_checked="1">
 
                                 </div>
                             </div>
@@ -780,90 +785,198 @@ $company = $job->getCompany();
                 </div>
 
 
-
-
-                <!-- <div class="related-jobs-company row g-2">
-                    @foreach ($company->jobs as $cjob)
-                    <div class="col-12">
-                        <div class="card-news p-3">
-                            <div class="card-news__icon">
-                                <img src="{{ asset('company_logos/'.$company->logo) }}" alt="{{ $company->name }}">
-                            </div>
-                            <div class="card-news__content">
-                                <h6 class="card-news__content-title"><a href="{{route('job.detail', [$cjob->slug])}}"
-                                        title="{{$cjob->title}}">{{$cjob->title}}</a></h6>
-                                <p class="card-news__content-detail">{{ $company->name }}</p>
-                                <div class="card-news__content-footer">
-                                    <div class="card-news__content-footer__location">
-                                        <span class="badge rounded-pill pill pill-location">{{ $cjob->location }}</span>
-                                        <span
-                                            class="badge rounded-pill pill pill-worktime">{{ $cjob->city->city }}</span>
-                                    </div>
-                                    <div class="card-news__content-footer__salary">
-                                        {{$cjob->salary_from.' '.$cjob->salary_currency}} -
-                                        {{$cjob->salary_to.' '.$cjob->salary_currency}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div> -->
             </section>
-
-
-            @if ($company->jobs->count() > 0)
-            <section class="related-jobs">
-                <div class="related-jobs__title d-flex justify-content-between align-items-center">
-                    <h6>Vị trí đang tuyển</h6>
-                </div>
-                <div class="row related-jobs__jobs">
-                    <div class="col-12">
-                        @foreach ($company->jobs as $cjob)
-                        <div class="card-news gap-16 mb-2">
-                            <div class="card-news__icon">
-                                <img src="{{ asset('company_logos/'.$company->logo) }}" alt="{{ $company->name }}">
-                            </div>
-                            <div class="card-news__content">
-                                <h6 class="card-news__content-title"><a href="{{route('job.detail', [$cjob->slug])}}"
-                                        title="{{$cjob->title}}">{{$cjob->title}}</a></h6>
-                                <p class="card-news__content-detail">{{ $company->name }}</p>
-                                <div class="card-news__content-footer">
-                                    <div class="card-news__content-footer__location">
-                                        <span class="badge rounded-pill pill pill-location">{{ $cjob->location }}</span>
-                                        <span
-                                            class="badge rounded-pill pill pill-worktime">{{ $cjob->city->city }}</span>
-                                    </div>
-                                    <div class="card-news__content-footer__salary">
-                                        {{$cjob->salary_from.' '.$cjob->salary_currency}} -
-                                        {{$cjob->salary_to.' '.$cjob->salary_currency}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-            </section>
-            @endif
-            <!-- map company -->
-            <section class="related-jobs">
-                <div class="related-jobs__title">
-                    <h6>Map</h6>
-
-                    <div class="gmap">
-                        {!!$company->map!!}
-                    </div>
-                </div>
-            </section>
-
-
-
-
         </div>
+
+
+        <!--related jobs other  -->
+
+        @if ($company->jobs->count() > 0)
+        <section class="related-jobs-other">
+            <div class="related-jobs-company row g-2" bis_skin_checked="1">
+                <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
+                    <div class="card-news p-3" bis_skin_checked="1">
+                        <div class="card-news__icon" bis_skin_checked="1">
+                            <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg" alt="Công ty TNHH VBI">
+                        </div>
+                        <div class="card-news__content" bis_skin_checked="1">
+                            <h6 class="card-news__content-title"><a href="http://jobvieclam.com/job/ke-toan-phai-thu-30"
+                                    title="Kế Toán Phải Thu">Kế Toán Phải Thu</a></h6>
+                            <p class="card-news__content-detail">Công ty TNHH VBI</p>
+                            <div class="card-news__content-footer" bis_skin_checked="1">
+                                <div class="card-news__content-footer__location" bis_skin_checked="1">
+                                    <span class="badge rounded-pill pill pill-location"></span>
+                                    <span class="badge rounded-pill pill pill-worktime">Tp. Hà Nội</span>
+                                </div>
+                                <div class="card-news__content-footer__salary" bis_skin_checked="1">
+                                    15000000 VND -
+                                    0 VND
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
+                    <div class="card-news p-3" bis_skin_checked="1">
+                        <div class="card-news__icon" bis_skin_checked="1">
+                            <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg" alt="Công ty TNHH VBI">
+                        </div>
+                        <div class="card-news__content" bis_skin_checked="1">
+                            <h6 class="card-news__content-title"><a
+                                    href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
+                                    title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự - Tuyển Dụng (HR)</a>
+                            </h6>
+                            <p class="card-news__content-detail">Công ty TNHH VBI</p>
+                            <div class="card-news__content-footer" bis_skin_checked="1">
+                                <div class="card-news__content-footer__location" bis_skin_checked="1">
+                                    <span class="badge rounded-pill pill pill-location"></span>
+                                    <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí Minh</span>
+                                </div>
+                                <div class="card-news__content-footer__salary" bis_skin_checked="1">
+                                    3000000 VND -
+                                    VND
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
+                    <div class="card-news p-3" bis_skin_checked="1">
+                        <div class="card-news__icon" bis_skin_checked="1">
+                            <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg" alt="Công ty TNHH VBI">
+                        </div>
+                        <div class="card-news__content" bis_skin_checked="1">
+                            <h6 class="card-news__content-title"><a
+                                    href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
+                                    title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự - Tuyển Dụng (HR)</a>
+                            </h6>
+                            <p class="card-news__content-detail">Công ty TNHH VBI</p>
+                            <div class="card-news__content-footer" bis_skin_checked="1">
+                                <div class="card-news__content-footer__location" bis_skin_checked="1">
+                                    <span class="badge rounded-pill pill pill-location"></span>
+                                    <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí Minh</span>
+                                </div>
+                                <div class="card-news__content-footer__salary" bis_skin_checked="1">
+                                    3000000 VND -
+                                    VND
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
+                    <div class="card-news p-3" bis_skin_checked="1">
+                        <div class="card-news__icon" bis_skin_checked="1">
+                            <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg" alt="Công ty TNHH VBI">
+                        </div>
+                        <div class="card-news__content" bis_skin_checked="1">
+                            <h6 class="card-news__content-title"><a
+                                    href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
+                                    title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự - Tuyển Dụng (HR)</a>
+                            </h6>
+                            <p class="card-news__content-detail">Công ty TNHH VBI</p>
+                            <div class="card-news__content-footer" bis_skin_checked="1">
+                                <div class="card-news__content-footer__location" bis_skin_checked="1">
+                                    <span class="badge rounded-pill pill pill-location"></span>
+                                    <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí Minh</span>
+                                </div>
+                                <div class="card-news__content-footer__salary" bis_skin_checked="1">
+                                    3000000 VND -
+                                    VND
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
+                    <div class="card-news p-3" bis_skin_checked="1">
+                        <div class="card-news__icon" bis_skin_checked="1">
+                            <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg" alt="Công ty TNHH VBI">
+                        </div>
+                        <div class="card-news__content" bis_skin_checked="1">
+                            <h6 class="card-news__content-title"><a
+                                    href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
+                                    title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự - Tuyển Dụng (HR)</a>
+                            </h6>
+                            <p class="card-news__content-detail">Công ty TNHH VBI</p>
+                            <div class="card-news__content-footer" bis_skin_checked="1">
+                                <div class="card-news__content-footer__location" bis_skin_checked="1">
+                                    <span class="badge rounded-pill pill pill-location"></span>
+                                    <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí Minh</span>
+                                </div>
+                                <div class="card-news__content-footer__salary" bis_skin_checked="1">
+                                    3000000 VND -
+                                    VND
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
+                    <div class="card-news p-3" bis_skin_checked="1">
+                        <div class="card-news__icon" bis_skin_checked="1">
+                            <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg" alt="Công ty TNHH VBI">
+                        </div>
+                        <div class="card-news__content" bis_skin_checked="1">
+                            <h6 class="card-news__content-title"><a
+                                    href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
+                                    title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự - Tuyển Dụng (HR)</a>
+                            </h6>
+                            <p class="card-news__content-detail">Công ty TNHH VBI</p>
+                            <div class="card-news__content-footer" bis_skin_checked="1">
+                                <div class="card-news__content-footer__location" bis_skin_checked="1">
+                                    <span class="badge rounded-pill pill pill-location"></span>
+                                    <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí Minh</span>
+                                </div>
+                                <div class="card-news__content-footer__salary" bis_skin_checked="1">
+                                    3000000 VND -
+                                    VND
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
+                    <div class="card-news p-3" bis_skin_checked="1">
+                        <div class="card-news__icon" bis_skin_checked="1">
+                            <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg" alt="Công ty TNHH VBI">
+                        </div>
+                        <div class="card-news__content" bis_skin_checked="1">
+                            <h6 class="card-news__content-title"><a
+                                    href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
+                                    title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự - Tuyển Dụng (HR)</a>
+                            </h6>
+                            <p class="card-news__content-detail">Công ty TNHH VBI</p>
+                            <div class="card-news__content-footer" bis_skin_checked="1">
+                                <div class="card-news__content-footer__location" bis_skin_checked="1">
+                                    <span class="badge rounded-pill pill pill-location"></span>
+                                    <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí Minh</span>
+                                </div>
+                                <div class="card-news__content-footer__salary" bis_skin_checked="1">
+                                    3000000 VND -
+                                    VND
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        @endif
+        <!-- map company -->
+        <section class="related-jobs">
+            <div class="related-jobs__title">
+                <h6>Map</h6>
+
+                <div class="gmap">
+                    {!!$company->map!!}
+                </div>
+            </div>
+        </section>
+
     </div>
 </section>
-
+<!-- JOB DESCRIPTION STICKY -->
 <div class="page-job-detail__floating-header">
     <div class="container box">
         <div class="row">

@@ -17,7 +17,8 @@ $company = $job->getCompany();
                 <div class="form-horizontal">
                     <div class="form-wrap">
                         <div class="form-group form-keyword">
-                            <input type="search" class="keyword form-control" id="search" name="search" placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
+                            <input type="search" class="keyword form-control" id="search" name="search"
+                                placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
                         </div>
                         <div class="form-group form-select-chosen" id="functional_area_dd">
                             <select class="form-control form-select" name="functional_area_id" id="functional_area">
@@ -61,7 +62,8 @@ $company = $job->getCompany();
                 <div class="form-horizontal">
                     <div class="form-wrap">
                         <div class="form-group form-keyword">
-                            <input type="search" class="keyword form-control" id="search" name="search" placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
+                            <input type="search" class="keyword form-control" id="search" name="search"
+                                placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
                         </div>
                         <div class="form-group form-submit">
                             <button class="btn-gradient" type="submit">
@@ -72,7 +74,8 @@ $company = $job->getCompany();
                 </div>
             </div>
             <div class="mobile-filter toollips">
-                <button type="button" class="btn btn-filter" id="#atcFilters-mobile" title="Lọc">
+                <button type="button" class="btn btn-filter" id="#atcFilters-mobile" title="Lọc"
+                    onclick="openFilterJob_mobile()">
                     <i class="far fa-filter"></i> Lọc
                 </button>
             </div>
@@ -81,7 +84,7 @@ $company = $job->getCompany();
 </div>
 
 <!-- SEARCH ADVANDCE STICKY -->
-<!-- <div class="filters-job-wrapper job-detail">
+<div class="filters-job-wrapper job-detail">
     <div class="container">
         <div class="filters-wrapper">
             <form action="{{route('job.list')}}" method="get">
@@ -131,7 +134,8 @@ $company = $job->getCompany();
                     <div class="col-sm-6 col-lg-3">
                         <div class="form-group form-group-custom-multiselect" id="benefit_id_dd">
                             <label>Chọn phúc lợi mong muốn</label>
-                            <select class="form-control form-select shadow-sm multiselect" name="benefit_id" id="benefit" multiple>
+                            <select class="form-control form-select shadow-sm multiselect" name="benefit_id"
+                                id="benefit" multiple>
                                 <option value="">Chọn phòng ban</option>
                                 <option value="Nhân sự">Nhân sự</option>
                                 <option value="Hành chính">Hành chính</option>
@@ -148,18 +152,25 @@ $company = $job->getCompany();
             </form>
         </div>
     </div>
-</div> -->
+</div>
 
 
 <div class="filters-job-wrapper-mobile job-detail">
     <div class="container">
+        <div class="close-filter-box-mobile" onclick="closeFilterJob_mobile()">
+            <div class="close-input-filter-mobile">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </div>
+        </div>
         <div class="filters-wrapper">
             <form action="{{route('job.list')}}" method="get">
                 <div class="row">
 
+
                     <div class="col-sm-6 col-lg-2">
                         <div class="form-group form-keyword">
-                            <input type="search" class="keyword form-control" id="search" name="search" placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
+                            <input type="search" class="keyword form-control" id="search" name="search"
+                                placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
                         </div>
                     </div>
 
@@ -230,7 +241,8 @@ $company = $job->getCompany();
                     <div class="col-sm-6 col-lg-3">
                         <div class="form-group form-group-custom-multiselect" id="benefit_id_dd">
                             <label>Chọn phúc lợi mong muốn</label>
-                            <select class="form-control form-select shadow-sm multiselect" name="benefit_id" id="benefit" multiple>
+                            <select class="form-control form-select shadow-sm multiselect" name="benefit_id"
+                                id="benefit" multiple>
                                 <option value="">Chọn phòng ban</option>
                                 <option value="Nhân sự">Nhân sự</option>
                                 <option value="Hành chính">Hành chính</option>
@@ -248,11 +260,7 @@ $company = $job->getCompany();
                     </div>
 
 
-                    <div class="col-sm-6 col-lg-1 close-filter-box">
-                        <div class="close-input-filter">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </div>
-                    </div>
+
 
                 </div>
             </form>
@@ -323,15 +331,20 @@ $company = $job->getCompany();
                         <!-- {{__('Job is expired')}} -->
                     </span>
                     @elseif(Auth::check() && Auth::user()->isAppliedOnJob($job->id))
-                    <button class="btn btn-primary apply applied" disabled><i class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
+                    <button class="btn btn-primary apply applied" disabled><i class="fa fa-paper-plane iconawesome"
+                            aria-hidden="true"></i>
                         {{__('Already Applied')}}</button>
                     @else
-                    <a href="{{route('apply.job', $job->slug)}}" class="btn btn-primary apply"><i class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
+                    <a href="{{route('apply.job', $job->slug)}}" class="btn btn-primary apply"><i
+                            class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
                         Nộp đơn
                     </a>
                     @endif
                     @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
-                    <a href="{{route('remove.from.favourite', $job->slug)}}" class="btn btn-outline-primary"><i class="fas fa-heart iconoutline"></i> {{__('Favourite Job')}} </a> @else <a href="{{route('add.to.favourite', $job->slug)}}" class="btn btn-outline-primary"><i class="fas fa-heart iconoutline"></i></a>
+                    <a href="{{route('remove.from.favourite', $job->slug)}}" class="btn btn-outline-primary"><i
+                            class="fas fa-heart iconoutline"></i> {{__('Favourite Job')}} </a> @else <a
+                        href="{{route('add.to.favourite', $job->slug)}}" class="btn btn-outline-primary"><i
+                            class="fas fa-heart iconoutline"></i></a>
                     @endif
                     @endif
                 </div>
@@ -341,7 +354,8 @@ $company = $job->getCompany();
     <!--TAB PANE NAV -->
     <ul class="nav nav-tabs nav-tabs-default">
         <li class="nav-item">
-            <button class="nav-link active" id="detail-tab" data-toggle="tab" data-target="#detail" aria-controls="detail">
+            <button class="nav-link active" id="detail-tab" data-toggle="tab" data-target="#detail"
+                aria-controls="detail">
                 {{ __('Job Details') }}
             </button>
         </li>
@@ -351,7 +365,8 @@ $company = $job->getCompany();
             </button>
         </li>
         <li class="nav-item">
-            <button class="nav-link" id="related-jobs-tab" data-toggle="tab" data-target="#related-jobs-pane" aria-controls="related-jobs">
+            <button class="nav-link" id="related-jobs-tab" data-toggle="tab" data-target="#related-jobs-pane"
+                aria-controls="related-jobs">
                 Việc làm khác từ công ty
             </button>
         </li>
@@ -501,19 +516,24 @@ $company = $job->getCompany();
                                 </div>
                                 <div class="__actions">
                                     @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
-                                    <a href="{{route('remove.from.favourite', $job->slug)}}" class="btn btn-outline-primary"><i class="fas fa-heart iconoutline"></i>
+                                    <a href="{{route('remove.from.favourite', $job->slug)}}"
+                                        class="btn btn-outline-primary"><i class="fas fa-heart iconoutline"></i>
                                         {{__("Don't Save")}} </a>
                                     @else
-                                    <a href="{{route('add.to.favourite', $job->slug)}}" class="btn btn-outline-primary"><i class="fas fa-heart iconoutline"></i>
+                                    <a href="{{route('add.to.favourite', $job->slug)}}"
+                                        class="btn btn-outline-primary"><i class="fas fa-heart iconoutline"></i>
                                         {{__('Save')}}</a>
                                     @endif
                                     @if($job->isJobExpired())
-                                    <span class="btn btn-primary jbexpire mb-2"><i class="fa fa-paper-plane iconawesome" aria-hidden="true"></i> {{__('Job is expired')}}</span>
+                                    <span class="btn btn-primary jbexpire mb-2"><i class="fa fa-paper-plane iconawesome"
+                                            aria-hidden="true"></i> {{__('Job is expired')}}</span>
                                     @elseif(Auth::check() && Auth::user()->isAppliedOnJob($job->id))
-                                    <button class="btn btn-primary apply applied" disabled><i class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
+                                    <button class="btn btn-primary apply applied" disabled><i
+                                            class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
                                         {{__('Already Applied')}}</button>
                                     @else
-                                    <a href="{{route('apply.job', $job->slug)}}" class="btn btn-primary apply"><i class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
+                                    <a href="{{route('apply.job', $job->slug)}}" class="btn btn-primary apply"><i
+                                            class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
                                         {{__('Apply Now')}}</a>
                                     @endif
                                 </div>
@@ -569,15 +589,20 @@ $company = $job->getCompany();
                             </div>
                         </div>
                         <div class="job-detail-banner__actions job-detail-banner_info_actions d-flex flex-row gap-16">
-                            <form action="{{ route('seeker.submit-message', ['message' => 'Xin chào!', 'company_id' => $company->id, 'new' => true]) }}" method="post">
+                            <form
+                                action="{{ route('seeker.submit-message', ['message' => 'Xin chào!', 'company_id' => $company->id, 'new' => true]) }}"
+                                method="post">
                                 @csrf
-                                <button type="submit" class="btn btn-primary"><i class="far fa-envelope me-2"></i>{{__('Send message')}}</button>
+                                <button type="submit" class="btn btn-primary"><i
+                                        class="far fa-envelope me-2"></i>{{__('Send message')}}</button>
                             </form>
                             @if(Auth::check() && Auth::user()->isFavouriteCompany($company->slug))
-                            <a href="{{ route('remove.from.favourite.company', ['company_slug' => $company->slug])}}" class="btn btn-outline-primary"><i class="fas fa-heart iconoutline"></i>
+                            <a href="{{ route('remove.from.favourite.company', ['company_slug' => $company->slug])}}"
+                                class="btn btn-outline-primary"><i class="fas fa-heart iconoutline"></i>
                                 {{__('Favourite company')}} </a>
                             @else
-                            <a href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}" class="btn btn-outline-primary"><i class="far fa-heart"></i>
+                            <a href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"
+                                class="btn btn-outline-primary"><i class="far fa-heart"></i>
                                 {{__('Follow company')}}</a>
                             @endif
                         </div>
@@ -585,7 +610,7 @@ $company = $job->getCompany();
                 </div>
             </section>
             <div class="row">
-                <div class="col-xxl-8 col-lg-8 pe-xxl-4">
+                <div class="col-xxl-12 col-lg-12 pe-xxl-4">
                     <!-- company detail -->
                     <section class="job-detail-content company-detail mb-4">
                         <div class="require-card">
@@ -658,8 +683,11 @@ $company = $job->getCompany();
                 <div class="related-jobs-wapper jobs-side-list">
                     <div class="related-jobs-item item-job mb-3">
                         <div class="logo-company">
-                            <a href="http://localhost:8000/company/cong-ty-co-phan-incom-sai-gon-9" title="Công Ty Cổ Phần Incom Sài Gòn" class="pic">
-                                <img src="http://localhost:8000\company_logos/-1692007134-455.png" style="max-width:140px; max-height:140px;" alt="Công Ty Cổ Phần Incom Sài Gòn" title="Công Ty Cổ Phần Incom Sài Gòn">
+                            <a href="http://localhost:8000/company/cong-ty-co-phan-incom-sai-gon-9"
+                                title="Công Ty Cổ Phần Incom Sài Gòn" class="pic">
+                                <img src="http://localhost:8000\company_logos/-1692007134-455.png"
+                                    style="max-width:140px; max-height:140px;" alt="Công Ty Cổ Phần Incom Sài Gòn"
+                                    title="Công Ty Cổ Phần Incom Sài Gòn">
                             </a>
                         </div>
 
@@ -669,15 +697,21 @@ $company = $job->getCompany();
                                 <div class="info-item job-title-box" bis_skin_checked="1">
                                     <div class="job-title" bis_skin_checked="1">
                                         <span>Mới</span>
-                                        <h3 class="job-title-name"><a href="http://localhost:8000/job/nhan-vien-bat-dong-san-40" title="Nhân viên bất động sản">Nhân viên bất động sản</a></h3>
+                                        <h3 class="job-title-name"><a
+                                                href="http://localhost:8000/job/nhan-vien-bat-dong-san-40"
+                                                title="Nhân viên bất động sản">Nhân viên bất động sản</a></h3>
                                     </div>
-                                    <a class="save-job" href="http://localhost:8000/add-to-favourite-job/nhan-vien-bat-dong-san-40"><i class="far fa-heart"></i>
+                                    <a class="save-job"
+                                        href="http://localhost:8000/add-to-favourite-job/nhan-vien-bat-dong-san-40"><i
+                                            class="far fa-heart"></i>
                                     </a>
                                 </div>
                                 <!-- Title  End-->
 
                                 <!-- companyName Start-->
-                                <div class="info-item companyName" bis_skin_checked="1"><a href="http://localhost:8000/company/cong-ty-co-phan-incom-sai-gon-9" title="Công Ty Cổ Phần Incom Sài Gòn">Công Ty Cổ Phần Incom Sài Gòn</a></div>
+                                <div class="info-item companyName" bis_skin_checked="1"><a
+                                        href="http://localhost:8000/company/cong-ty-co-phan-incom-sai-gon-9"
+                                        title="Công Ty Cổ Phần Incom Sài Gòn">Công Ty Cổ Phần Incom Sài Gòn</a></div>
                                 <!-- companyName End-->
                                 <!--rank-salary and place Start-->
                                 <div class="info-item box-meta" bis_skin_checked="1">
@@ -733,8 +767,11 @@ $company = $job->getCompany();
 
                     <div class="related-jobs-item item-job mb-3">
                         <div class="logo-company">
-                            <a href="http://localhost:8000/company/cong-ty-co-phan-incom-sai-gon-9" title="Công Ty Cổ Phần Incom Sài Gòn" class="pic">
-                                <img src="http://localhost:8000\company_logos/-1692007134-455.png" style="max-width:140px; max-height:140px;" alt="Công Ty Cổ Phần Incom Sài Gòn" title="Công Ty Cổ Phần Incom Sài Gòn">
+                            <a href="http://localhost:8000/company/cong-ty-co-phan-incom-sai-gon-9"
+                                title="Công Ty Cổ Phần Incom Sài Gòn" class="pic">
+                                <img src="http://localhost:8000\company_logos/-1692007134-455.png"
+                                    style="max-width:140px; max-height:140px;" alt="Công Ty Cổ Phần Incom Sài Gòn"
+                                    title="Công Ty Cổ Phần Incom Sài Gòn">
                             </a>
                         </div>
 
@@ -744,15 +781,21 @@ $company = $job->getCompany();
                                 <div class="info-item job-title-box" bis_skin_checked="1">
                                     <div class="job-title" bis_skin_checked="1">
                                         <span>Mới</span>
-                                        <h3 class="job-title-name"><a href="http://localhost:8000/job/nhan-vien-bat-dong-san-40" title="Nhân viên bất động sản">Nhân viên bất động sản</a></h3>
+                                        <h3 class="job-title-name"><a
+                                                href="http://localhost:8000/job/nhan-vien-bat-dong-san-40"
+                                                title="Nhân viên bất động sản">Nhân viên bất động sản</a></h3>
                                     </div>
-                                    <a class="save-job" href="http://localhost:8000/add-to-favourite-job/nhan-vien-bat-dong-san-40"><i class="far fa-heart"></i>
+                                    <a class="save-job"
+                                        href="http://localhost:8000/add-to-favourite-job/nhan-vien-bat-dong-san-40"><i
+                                            class="far fa-heart"></i>
                                     </a>
                                 </div>
                                 <!-- Title  End-->
 
                                 <!-- companyName Start-->
-                                <div class="info-item companyName" bis_skin_checked="1"><a href="http://localhost:8000/company/cong-ty-co-phan-incom-sai-gon-9" title="Công Ty Cổ Phần Incom Sài Gòn">Công Ty Cổ Phần Incom Sài Gòn</a></div>
+                                <div class="info-item companyName" bis_skin_checked="1"><a
+                                        href="http://localhost:8000/company/cong-ty-co-phan-incom-sai-gon-9"
+                                        title="Công Ty Cổ Phần Incom Sài Gòn">Công Ty Cổ Phần Incom Sài Gòn</a></div>
                                 <!-- companyName End-->
                                 <!--rank-salary and place Start-->
                                 <div class="info-item box-meta" bis_skin_checked="1">
@@ -818,7 +861,8 @@ $company = $job->getCompany();
         <section class="related-jobs-other">
             <div class="related-jobs__title d-flex justify-content-between align-items-center">
                 <h6>Công việc liên quan</h6>
-                <a class="btn btn-round btn-link btn-sm main-color" href="http://jobvieclam.com/jobs?job_titles%5B%5D=Nh%C3%A2n%20Vi%C3%AAn%20Nh%C3%A2n%20S%E1%BB%B1%20-%20Tuy%E1%BB%83n%20D%E1%BB%A5ng%20%28HR%29&amp;country_ids%5B%5D=&amp;state_ids%5B%5D=&amp;city_ids%5B%5D=48710">
+                <a class="btn btn-round btn-link btn-sm main-color"
+                    href="http://jobvieclam.com/jobs?job_titles%5B%5D=Nh%C3%A2n%20Vi%C3%AAn%20Nh%C3%A2n%20S%E1%BB%B1%20-%20Tuy%E1%BB%83n%20D%E1%BB%A5ng%20%28HR%29&amp;country_ids%5B%5D=&amp;state_ids%5B%5D=&amp;city_ids%5B%5D=48710">
                     Xem tất cả công việc<i class="fas fa-arrow-right ms-2"></i></a>
             </div>
 
@@ -830,7 +874,8 @@ $company = $job->getCompany();
                             <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg" alt="Công ty TNHH VBI">
                         </div>
                         <div class="card-news__content" bis_skin_checked="1">
-                            <h6 class="card-news__content-title"><a href="http://jobvieclam.com/job/ke-toan-phai-thu-30" title="Kế Toán Phải Thu">Kế Toán Phải Thu</a></h6>
+                            <h6 class="card-news__content-title"><a href="http://jobvieclam.com/job/ke-toan-phai-thu-30"
+                                    title="Kế Toán Phải Thu">Kế Toán Phải Thu</a></h6>
                             <p class="card-news__content-detail">Công ty TNHH VBI</p>
                             <div class="card-news__content-footer" bis_skin_checked="1">
                                 <div class="card-news__content-footer__location" bis_skin_checked="1">
@@ -851,7 +896,9 @@ $company = $job->getCompany();
                             <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg" alt="Công ty TNHH VBI">
                         </div>
                         <div class="card-news__content" bis_skin_checked="1">
-                            <h6 class="card-news__content-title"><a href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33" title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự - Tuyển Dụng (HR)</a>
+                            <h6 class="card-news__content-title"><a
+                                    href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
+                                    title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự - Tuyển Dụng (HR)</a>
                             </h6>
                             <p class="card-news__content-detail">Công ty TNHH VBI</p>
                             <div class="card-news__content-footer" bis_skin_checked="1">
@@ -873,7 +920,9 @@ $company = $job->getCompany();
                             <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg" alt="Công ty TNHH VBI">
                         </div>
                         <div class="card-news__content" bis_skin_checked="1">
-                            <h6 class="card-news__content-title"><a href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33" title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự - Tuyển Dụng (HR)</a>
+                            <h6 class="card-news__content-title"><a
+                                    href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
+                                    title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự - Tuyển Dụng (HR)</a>
                             </h6>
                             <p class="card-news__content-detail">Công ty TNHH VBI</p>
                             <div class="card-news__content-footer" bis_skin_checked="1">
@@ -895,7 +944,9 @@ $company = $job->getCompany();
                             <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg" alt="Công ty TNHH VBI">
                         </div>
                         <div class="card-news__content" bis_skin_checked="1">
-                            <h6 class="card-news__content-title"><a href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33" title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự - Tuyển Dụng (HR)</a>
+                            <h6 class="card-news__content-title"><a
+                                    href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
+                                    title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự - Tuyển Dụng (HR)</a>
                             </h6>
                             <p class="card-news__content-detail">Công ty TNHH VBI</p>
                             <div class="card-news__content-footer" bis_skin_checked="1">
@@ -917,7 +968,9 @@ $company = $job->getCompany();
                             <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg" alt="Công ty TNHH VBI">
                         </div>
                         <div class="card-news__content" bis_skin_checked="1">
-                            <h6 class="card-news__content-title"><a href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33" title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự - Tuyển Dụng (HR)</a>
+                            <h6 class="card-news__content-title"><a
+                                    href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
+                                    title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự - Tuyển Dụng (HR)</a>
                             </h6>
                             <p class="card-news__content-detail">Công ty TNHH VBI</p>
                             <div class="card-news__content-footer" bis_skin_checked="1">
@@ -939,7 +992,9 @@ $company = $job->getCompany();
                             <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg" alt="Công ty TNHH VBI">
                         </div>
                         <div class="card-news__content" bis_skin_checked="1">
-                            <h6 class="card-news__content-title"><a href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33" title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự - Tuyển Dụng (HR)</a>
+                            <h6 class="card-news__content-title"><a
+                                    href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
+                                    title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự - Tuyển Dụng (HR)</a>
                             </h6>
                             <p class="card-news__content-detail">Công ty TNHH VBI</p>
                             <div class="card-news__content-footer" bis_skin_checked="1">
@@ -961,7 +1016,9 @@ $company = $job->getCompany();
                             <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg" alt="Công ty TNHH VBI">
                         </div>
                         <div class="card-news__content" bis_skin_checked="1">
-                            <h6 class="card-news__content-title"><a href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33" title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự - Tuyển Dụng (HR)</a>
+                            <h6 class="card-news__content-title"><a
+                                    href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
+                                    title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự - Tuyển Dụng (HR)</a>
                             </h6>
                             <p class="card-news__content-detail">Công ty TNHH VBI</p>
                             <div class="card-news__content-footer" bis_skin_checked="1">
@@ -1023,15 +1080,20 @@ $company = $job->getCompany();
                             <!-- {{__('Job is expired')}} -->
                         </span>
                         @elseif(Auth::check() && Auth::user()->isAppliedOnJob($job->id))
-                        <button class="btn btn-primary apply applied" disabled><i class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
+                        <button class="btn btn-primary apply applied" disabled><i class="fa fa-paper-plane iconawesome"
+                                aria-hidden="true"></i>
                             {{__('Already Applied')}}</button>
                         @else
-                        <a href="{{route('apply.job', $job->slug)}}" class="btn btn-primary apply"><i class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
+                        <a href="{{route('apply.job', $job->slug)}}" class="btn btn-primary apply"><i
+                                class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
                             Nộp đơn
                         </a>
                         @endif
                         @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
-                        <a href="{{route('remove.from.favourite', $job->slug)}}" class="btn btn-outline-primary"><i class="fas fa-heart iconoutline"></i> {{__('Favourite Job')}} </a> @else <a href="{{route('add.to.favourite', $job->slug)}}" class="btn btn-outline-primary"><i class="fas fa-heart iconoutline"></i></a>
+                        <a href="{{route('remove.from.favourite', $job->slug)}}" class="btn btn-outline-primary"><i
+                                class="fas fa-heart iconoutline"></i> {{__('Favourite Job')}} </a> @else <a
+                            href="{{route('add.to.favourite', $job->slug)}}" class="btn btn-outline-primary"><i
+                                class="fas fa-heart iconoutline"></i></a>
                         @endif
                         @endif
                     </div>
@@ -1047,51 +1109,48 @@ $company = $job->getCompany();
 @endsection
 @push('styles')
 <style type="text/css">
-    .view_more {
-        display: none !important;
-    }
+.view_more {
+    display: none !important;
+}
 </style>
 @endpush
 @push('scripts')
 <script>
-    $(document).ready(function($) {
-        $("form").submit(function() {
-            $(this).find(":input").filter(function() {
-                return !this.value;
-            }).attr("disabled", "disabled");
-            return true;
-        });
-        $("form").find(":input").prop("disabled", false);
+$(document).ready(function($) {
+    $("form").submit(function() {
+        $(this).find(":input").filter(function() {
+            return !this.value;
+        }).attr("disabled", "disabled");
+        return true;
+    });
+    $("form").find(":input").prop("disabled", false);
 
-        $(".view_more_ul").each(function() {
-            if ($(this).height() > 100) {
-                $(this).css('height', 100);
-                $(this).css('overflow', 'hidden');
-                //alert($( this ).next());
-                $(this).next().removeClass('view_more');
+    $(".view_more_ul").each(function() {
+        if ($(this).height() > 100) {
+            $(this).css('height', 100);
+            $(this).css('overflow', 'hidden');
+            //alert($( this ).next());
+            $(this).next().removeClass('view_more');
+        }
+    });
+    //  Croll Open  sticky
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > 400) {
+                $('.page-job-detail__floating-header').addClass('is-sticky');
+                $('.job-detail').addClass('is-sticky');
+                $('.filters-job-wrapper').addClass('shadow-sm');
+                $('.filters-job-wrapper-mobile').addClass('shadow-sm');
+            } else {
+                $('.page-job-detail__floating-header').removeClass('is-sticky');
+                $('.job-detail').removeClass('shadow is-sticky');
+                $('.filters-job-wrapper').removeClass('shadow-sm');
+                $('.filters-job-wrapper-mobile').removeClass('shadow-sm');
             }
         });
-
-        $(document).ready(function() {
-            $(window).scroll(function() {
-                var scrollTop = $(window).scrollTop();
-                if (scrollTop > 400) {
-                    $('.page-job-detail__floating-header').addClass('is-sticky');
-                    $('.job-detail').addClass('is-sticky');
-                    $('.filters-job-wrapper').addClass('shadow-sm');
-
-                } else {
-                    $('.page-job-detail__floating-header').removeClass('is-sticky');
-                    $('.job-detail').removeClass('shadow is-sticky');
-                    $('.filters-job-wrapper').removeClass('shadow-sm');
-                }
-            });
-        });
-
-        $('#atcFilters:hidden').on("click", function() {
-            console.log("adas");
-        });
-
     });
+
+});
 </script>
 @endpush

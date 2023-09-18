@@ -589,6 +589,15 @@ buttons.forEach(button => {
     });
 });
 
+function openFilterJob_mobile() {
+    document.querySelector(".filters-job-wrapper-mobile").classList.add("open");
+}
+function closeFilterJob_mobile() {
+    document.querySelector(".filters-job-wrapper-mobile").classList.remove("open");
+}
+
+
+
 
 
 

@@ -2883,9 +2883,10 @@ footer .inner-copyright .copyright {
     align-items: center;
     justify-content: center;
     overflow: auto;
-    display: none;
+    /* display: none; */
     animation: slideDown 1s ease-out;
     padding-top: 10px;
+    display: none;
 }
 
 .filters-job-wrapper-mobile.open {

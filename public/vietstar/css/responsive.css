@@ -459,19 +459,26 @@
     padding: 20px 0;
   }
 
-  .filters-job-wrapper .filters-wrapper {
-    position: relative;
-    top: 40px;
+  .filters-job-wrapper.open {
+    display: block;
   }
 
-
-
-  .close-filter-box {
+  .filters-job-wrapper-mobile .filters-wrapper {
     position: absolute;
-    top: -40px;
-    right: 0;
-    height: 30px;
+    top: 50px;
+    left: 0;
+    padding: 10px 20px;
+  }
 
+  .filters-job-wrapper-mobile .close-filter-box-mobile {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .filters-wrapper .close-input-filter {
@@ -565,6 +572,10 @@
 
   .page-heading-tool.job-detail.mobile .btn-filter {
     margin-right: 0;
+  }
+
+  .page-job-detail__floating-header .box .col-logo a {
+    display: none;
   }
 
 
@@ -693,14 +704,27 @@
   }
 
   .page-heading-tool.job-detail.mobile {
+    display: none !important;
+  }
+
+  .filters-job-wrapper-mobile {
     display: none;
   }
+
+
+
+
+
 
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   .page-heading-tool.job-detail.mobile {
+    display: none;
+  }
+
+  .filters-job-wrapper-mobile {
     display: none;
   }
 }

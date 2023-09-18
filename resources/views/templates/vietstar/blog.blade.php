@@ -17,7 +17,9 @@
                 <div class="col-sm-6 col-md-8 ">
 
                     <div class="figure">
-                        <a href="" class="figure-images"><img src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/09/website-nang-cap-ban-than.jpg" alt=""></a>
+                        <a href="" class="figure-images"><img
+                                src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/09/website-nang-cap-ban-than.jpg"
+                                alt=""></a>
                         <div class="figcaption">
                             <h2 class="figcaption__category-name"><a href="#">THỊ TRƯỜNG LAO ĐỘNG</a></h2>
                             <div class="figcaption__title big"><a href="#">Tìm việc trực tuyến an toàn và cảnh giác
@@ -43,9 +45,11 @@
                 <div class="col-6 col-md-4 ">
                     <div class="row justify-content-center">
                         <div class="col-12">
-                            <div class="p-3  bg-light">
+                            <div class="p-3">
                                 <div class="figure">
-                                    <a href="" class="figure-images"><img src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/09/website-nang-cap-ban-than.jpg" alt=""></a>
+                                    <a href="" class="figure-images"><img
+                                            src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/09/website-nang-cap-ban-than.jpg"
+                                            alt=""></a>
                                     <div class="figcaption">
                                         <h3 class="figcaption__category-name"><a href="#">THỊ TRƯỜNG LAO ĐỘNG</a></h3>
                                         <div class="figcaption__title"><a href="#">Tìm việc trực tuyến an toàn và cảnh
@@ -57,9 +61,11 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="p-3  bg-light">
+                            <div class="p-3">
                                 <div class="figure">
-                                    <a href="" class="figure-images"><img src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/09/website-nang-cap-ban-than.jpg" alt=""></a>
+                                    <a href="" class="figure-images"><img
+                                            src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/09/website-nang-cap-ban-than.jpg"
+                                            alt=""></a>
                                     <div class="figcaption">
                                         <h3 class="figcaption__category-name"><a href="#">THỊ TRƯỜNG LAO ĐỘNG</a></h3>
                                         <div class="figcaption__title"><a href="#">Tìm việc trực tuyến an toàn và cảnh
@@ -79,14 +85,19 @@
         <div class="container">
             <div class="head-box" bis_skin_checked="1">
                 <div class="cb-title" bis_skin_checked="1">
-                    <h2><a href="https://careerbuilder.vn/vi/talentcommunity/bi-quyet-tim-viec" title="Bí quyết tìm việc">Bí quyết tìm việc</a></h2>
+                    <h2><a href="https://careerbuilder.vn/vi/talentcommunity/bi-quyet-tim-viec"
+                            title="Bí quyết tìm việc">Bí quyết tìm việc</a></h2>
                 </div>
-                <div class="view-all" bis_skin_checked="1"><a href="https://careerbuilder.vn/vi/talentcommunity/bi-quyet-tim-viec" title="Bí quyết tìm việc">Xem thêm <em class="mdi mdi-arrow-right"></em></a></div>
+                <div class="view-all" bis_skin_checked="1"><a
+                        href="https://careerbuilder.vn/vi/talentcommunity/bi-quyet-tim-viec"
+                        title="Bí quyết tìm việc">Xem thêm <em class="mdi mdi-arrow-right"></em></a></div>
             </div>
             <div class="row align-items-start ">
                 <div class="col-md-6 col-lg-4 mb-4 ">
                     <div class="figure">
-                        <a href="" class="figure-images"><img src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/07/flex-la-gi.jpg" alt=""></a>
+                        <a href="" class="figure-images"><img
+                                src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/07/flex-la-gi.jpg"
+                                alt=""></a>
                         <div class="figcaption">
                             <h3 class="figcaption__category-name"><a href="#">KỸ NĂNG CÔNG SỞ</a></h3>
                             <div class="figcaption__title"><a href="#">Flex là gì? Làm sao thoát flexing đồng nghiệp hay
@@ -97,7 +108,8 @@
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4 ">
                     <div class="figure">
-                        <a href="" class="figure-images"><img src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/08/do-loi.jpg" alt=""></a>
+                        <a href="" class="figure-images"><img
+                                src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/08/do-loi.jpg" alt=""></a>
                         <div class="figcaption">
                             <h3 class="figcaption__category-name"><a href="#">KỸ NĂNG CÔNG SỞ</a></h3>
                             <div class="figcaption__title"><a href="#">Tìm việc trực tuyến an toàn và cảnh
@@ -109,7 +121,9 @@
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4 ">
                     <div class="figure">
-                        <a href="" class="figure-images"><img src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/08/ket-ban-voi-dong-nghiep.jpg" alt=""></a>
+                        <a href="" class="figure-images"><img
+                                src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/08/ket-ban-voi-dong-nghiep.jpg"
+                                alt=""></a>
                         <div class="figcaption">
                             <h3 class="figcaption__category-name"><a href="#">THỊ TRƯỜNG LAO ĐỘNG</a></h3>
                             <div class="figcaption__title"><a href="#">Những nguyên tắc ngầm khi giao tiếp, kết bạn với
@@ -120,7 +134,9 @@
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4 ">
                     <div class="figure">
-                        <a href="" class="figure-images"><img src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/07/flex-la-gi.jpg" alt=""></a>
+                        <a href="" class="figure-images"><img
+                                src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/07/flex-la-gi.jpg"
+                                alt=""></a>
                         <div class="figcaption">
                             <h3 class="figcaption__category-name"><a href="#">KỸ NĂNG CÔNG SỞ</a></h3>
                             <div class="figcaption__title"><a href="#">Flex là gì? Làm sao thoát flexing đồng nghiệp hay
@@ -131,7 +147,8 @@
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4 ">
                     <div class="figure">
-                        <a href="" class="figure-images"><img src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/08/do-loi.jpg" alt=""></a>
+                        <a href="" class="figure-images"><img
+                                src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/08/do-loi.jpg" alt=""></a>
                         <div class="figcaption">
                             <h3 class="figcaption__category-name"><a href="#">KỸ NĂNG CÔNG SỞ</a></h3>
                             <div class="figcaption__title"><a href="#">Tìm việc trực tuyến an toàn và cảnh
@@ -143,7 +160,9 @@
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4 ">
                     <div class="figure">
-                        <a href="" class="figure-images"><img src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/08/ket-ban-voi-dong-nghiep.jpg" alt=""></a>
+                        <a href="" class="figure-images"><img
+                                src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/08/ket-ban-voi-dong-nghiep.jpg"
+                                alt=""></a>
                         <div class="figcaption">
                             <h3 class="figcaption__category-name"><a href="#">THỊ TRƯỜNG LAO ĐỘNG</a></h3>
                             <div class="figcaption__title"><a href="#">Những nguyên tắc ngầm khi giao tiếp, kết bạn với
@@ -162,137 +181,137 @@
 @endsection
 @push('styles')
 <style>
-    .plus-minus-input {
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-    }
+.plus-minus-input {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
 
-    .plus-minus-input .input-group-field {
-        text-align: center;
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
-        padding: 0rem;
-    }
+.plus-minus-input .input-group-field {
+    text-align: center;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 0rem;
+}
 
-    .plus-minus-input .input-group-field::-webkit-inner-spin-button,
-    .plus-minus-input .input-group-field ::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        appearance: none;
-    }
+.plus-minus-input .input-group-field::-webkit-inner-spin-button,
+.plus-minus-input .input-group-field ::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
 
-    .plus-minus-input .input-group-button .circle {
-        border-radius: 50%;
-        padding: 0.25em 0.8em;
-    }
+.plus-minus-input .input-group-button .circle {
+    border-radius: 50%;
+    padding: 0.25em 0.8em;
+}
 
-    .postimg img {
-        max-width: 100px;
-        max-height: 150px;
-    }
+.postimg img {
+    max-width: 100px;
+    max-height: 150px;
+}
 
-    .list {
-        max-width: 1400px;
-        margin: 20px auto;
-    }
+.list {
+    max-width: 1400px;
+    margin: 20px auto;
+}
 
-    .img-list a {
-        text-decoration: none;
-    }
+.img-list a {
+    text-decoration: none;
+}
 
-    .li-sub p {
-        margin: 0;
-    }
+.li-sub p {
+    margin: 0;
+}
 
+.list li {
+    border-bottom: 1px solid #ccc;
+    display: table;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.inner {
+    display: table-row;
+    overflow: hidden;
+}
+
+.li-img {
+    display: table-cell;
+    vertical-align: middle;
+    width: 30%;
+    padding-right: 1em;
+}
+
+.li-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+}
+
+.li-text {
+    display: table-cell;
+    vertical-align: middle;
+    width: 70%;
+}
+
+.li-head {
+    margin: 10px 0 0 0;
+}
+
+.li-sub {
+    margin: 0;
+}
+
+@media all and (min-width: 45em) {
     .list li {
-        border-bottom: 1px solid #ccc;
-        display: table;
-        border-collapse: collapse;
-        width: 100%;
+        float: left;
+        width: 50%;
+    }
+}
+
+@media all and (min-width: 75em) {
+    .list li {
+        width: 33.33333%;
+    }
+}
+
+/* for flexbox */
+@supports(display: flex) {
+    .list {
+        display: flex;
+        flex-wrap: wrap;
     }
 
-    .inner {
-        display: table-row;
-        overflow: hidden;
+    .li-img,
+    .li-text,
+    .list li {
+        display: block;
+        float: none;
     }
 
     .li-img {
-        display: table-cell;
-        vertical-align: middle;
-        width: 30%;
-        padding-right: 1em;
+        align-self: center;
+        /* to match the middle alignment of the original */
     }
 
-    .li-img img {
-        display: block;
-        width: 100%;
-        height: auto;
+    .inner {
+        display: flex;
+    }
+}
 
+/* for grid */
+@supports(display: grid) {
+    .list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     }
 
-    .li-text {
-        display: table-cell;
-        vertical-align: middle;
-        width: 70%;
+    .list li {
+        width: auto;
+        /* this overrides the media queries */
     }
-
-    .li-head {
-        margin: 10px 0 0 0;
-    }
-
-    .li-sub {
-        margin: 0;
-    }
-
-    @media all and (min-width: 45em) {
-        .list li {
-            float: left;
-            width: 50%;
-        }
-    }
-
-    @media all and (min-width: 75em) {
-        .list li {
-            width: 33.33333%;
-        }
-    }
-
-    /* for flexbox */
-    @supports(display: flex) {
-        .list {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .li-img,
-        .li-text,
-        .list li {
-            display: block;
-            float: none;
-        }
-
-        .li-img {
-            align-self: center;
-            /* to match the middle alignment of the original */
-        }
-
-        .inner {
-            display: flex;
-        }
-    }
-
-    /* for grid */
-    @supports(display: grid) {
-        .list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-        }
-
-        .list li {
-            width: auto;
-            /* this overrides the media queries */
-        }
-    }
+}
 </style>
 @endpush
 @push('scripts')

@@ -49,7 +49,8 @@
                             <h5 class="widget-title">{{__('Search')}}</h5>
                             <div class="search">
                                 <form action="{{route('blog-search')}}" method="GET">
-                                    <input type="text" class="form-control" placeholder="{{__('Search')}}" name="search">
+                                    <input type="text" class="form-control" placeholder="{{__('Search')}}"
+                                        name="search">
                                     <button type="submit" class="btn"><i class="fa fa-search"></i></button>
                                 </form>
                             </div>
@@ -76,30 +77,30 @@
     </div>
     <section class="">
         <div class="container">
-            
+
             <h3 class="section-title aline-left mb-3">{{__('Related post')}}</h3>
             <div class="blogwrapper">
                 <div class="blogList">
                     <div class="row">
                         @if(!empty($data))
-                            @foreach($data as $item)
-                                @php($posts = \App\Blog::where('cate_id', 'like',  $item->id)->where('id','!=',$blog->id)->get())
-                                @foreach($posts as $related_post)
-                                    <div class="col-xl-3 col-lg-4 col-md-4 mb-3">
-                                        <a href="{{route('blog-detail',$related_post->slug)}}" class="bloginner">
-                                            <div class="postimg">{{$related_post->printBlogImage()}}</div>
-                                            <div class="post-header li-text">
-                            
-                                                <h4>
-                                                    <span class="li-head" >{{$related_post->heading}}</span>
-                                                </h4>
-                                                
-                                            </div>
+                        @foreach($data as $item)
+                        @php($posts = \App\Blog::where('cate_id', 'like', $item->id)->where('id','!=',$blog->id)->get())
+                        @foreach($posts as $related_post)
+                        <div class="col-xl-3 col-lg-4 col-md-4 mb-3">
+                            <a href="{{route('blog-detail',$related_post->slug)}}" class="bloginner">
+                                <div class="postimg">{{$related_post->printBlogImage()}}</div>
+                                <div class="post-header li-text">
 
-                                        </a>
-                                    </div>
-                                @endforeach
-                            @endforeach
+                                    <h4>
+                                        <span class="li-head">{{$related_post->heading}}</span>
+                                    </h4>
+
+                                </div>
+
+                            </a>
+                        </div>
+                        @endforeach
+                        @endforeach
                         @endif
                     </div>
                 </div>
@@ -113,41 +114,51 @@
 @endsection
 @push('styles')
 <style>
-    .sidebar .widget .categories li a {
+.sidebar .widget .categories li a {
     font-size: 14px;
 }
-.search .form-control{
+
+.search .form-control {
     width: 100%;
 }
+
 #blog-content {
     max-width: 100%;
     width: 100%;
     margin: 0 auto 40px auto;
 }
-.section-blog-related{
-    
+
+.section-blog-related {
+
     padding: 60px 0;
 }
+
 .plus-minus-input {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
 }
-.blog-detail h1{
+
+.blog-detail h1 {
     font-size: 1.3rem;
 }
-.blog-detail h2{
-font-size: 1.3rem;
+
+.blog-detail h2 {
+    font-size: 1.3rem;
 }
-.blog-detail h3{
-font-size: 1.25rem;
+
+.blog-detail h3 {
+    font-size: 1.25rem;
 }
-.blog-detail h4{
-font-size: 1.2rem;
+
+.blog-detail h4 {
+    font-size: 1.2rem;
 }
-.blog-detail h5{
-font-size: 1.1rem;
+
+.blog-detail h5 {
+    font-size: 1.1rem;
 }
+
 .plus-minus-input .input-group-field {
     text-align: center;
     margin-left: 0.5rem;

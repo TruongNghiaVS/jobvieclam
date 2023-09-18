@@ -27,31 +27,31 @@
                     <div class="blogList">
                         <div class="row">
                             @if(null!==($blogs))
-                                <?php
-                                $count = 1;
-                                ?>
-                                @foreach($blogs as $blog)
-                                    <?php
-                                    $cate_ids = explode(",", $blog->cate_id);
-                                    $data = DB::table('blog_categories')->whereIn('id', $cate_ids)->get();
-                                    $cate_array = array();
-                                    foreach ($data as $cat) {
-                                        $cate_array[] = "<a href='" . url('/blog/category/') . "/" . $cat->slug . "'>$cat->heading</a>";
-                                    }
-                                    ?>
-                                    <div class="col-xl-3 col-lg-4 col-md-4 mb-3">
-                                        <a class="bloginner" href="{{route('blog-detail',$blog->slug)}}">
-                                            <div class="postimg">{{$blog->printBlogImage()}}</div>
+                            <?php
+                            $count = 1;
+                            ?>
+                            @foreach($blogs as $blog)
+                            <?php
+                            $cate_ids = explode(",", $blog->cate_id);
+                            $data = DB::table('blog_categories')->whereIn('id', $cate_ids)->get();
+                            $cate_array = array();
+                            foreach ($data as $cat) {
+                                $cate_array[] = "<a href='" . url('/blog/category/') . "/" . $cat->slug . "'>$cat->heading</a>";
+                            }
+                            ?>
+                            <div class="col-xl-3 col-lg-4 col-md-4 mb-3">
+                                <a class="bloginner" href="{{route('blog-detail',$blog->slug)}}">
+                                    <div class="postimg">{{$blog->printBlogImage()}}</div>
 
-                                            <div class="post-header li-text">
-                                                <h4><span class="li-head" >{{$blog->heading}}</span> </h4>
-                                              
-                                            </div>
+                                    <div class="post-header li-text">
+                                        <h4><span class="li-head">{{$blog->heading}}</span> </h4>
 
-                                        </a>
                                     </div>
-                                    <?php $count++; ?>
-                                @endforeach
+
+                                </a>
+                            </div>
+                            <?php $count++; ?>
+                            @endforeach
                             @endif
 
                         </div>
@@ -62,7 +62,7 @@
                 <div class="pagiWrap">
                     <nav aria-label="Page navigation example">
                         @if(isset($blogs) && count($blogs))
-                            {{ $blogs->appends(request()->query())->links() }} @endif
+                        {{ $blogs->appends(request()->query())->links() }} @endif
                     </nav>
                 </div>
             </div>
@@ -74,8 +74,7 @@
                         <h5 class="widget-title">{{__('Search')}}</h5>
                         <div class="search">
                             <form action="{{route('blog-search')}}" method="GET">
-                                <input type="text" class="form-control" placeholder="{{__('Search')}}"
-                                       name="search">
+                                <input type="text" class="form-control" placeholder="{{__('Search')}}" name="search">
                                 <button type="submit" class="btn"><i class="fa fa-search"></i></button>
                             </form>
                         </div>

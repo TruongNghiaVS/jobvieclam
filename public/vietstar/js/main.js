@@ -580,14 +580,7 @@ function closesearchbox() {
 
 
 
-const buttons = document.querySelectorAll('.sort-item-wrapped__item');
-buttons.forEach(button => {
-    button.addEventListener('click', function () {
-        console.log("sdasd");
-        buttons.forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-    });
-});
+
 
 function openFilterJob_mobile() {
     document.querySelector(".filters-job-wrapper-mobile").classList.add("open");

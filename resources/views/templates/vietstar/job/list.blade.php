@@ -347,6 +347,16 @@
     $(document).on('click', '.swal-button--register', function() {
         window.location.href = "{{route('register')}}";
     })
+
+
+
+    const buttons = document.querySelectorAll('.sort-item-wrapped__item');
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            buttons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
 </script>
 @include('templates.vietstar.includes.country_state_city_js')
 @endpush

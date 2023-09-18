@@ -5,8 +5,9 @@
   bottom: 25px;
   min-width: 45px;
   text-align: center;
-  z-index: 99999;
+  z-index: 18;
 }
+
 .icon-button {
   background-color: #981b1e;
   border-radius: 45px;
@@ -25,6 +26,7 @@
   user-select: none;
   width: 45px;
 }
+
 .icon-button span {
   border-radius: 0;
   display: block;
@@ -39,6 +41,7 @@
   transition: all 0.3s;
   width: 0;
 }
+
 .lanmak-zalo {
   background-image: url('../imgs/zalo-logo.png');
   background-color: #981b1e;
@@ -48,27 +51,33 @@
   width: 45px;
   height: 45px;
 }
+
 .icon-button:hover span {
   width: 15rem;
   height: 45px;
   border-radius: 45px;
   margin: -1.8rem 0 0 -16.8rem;
 }
+
 .lanmak-phone span {
   background-color: #981b1e;
-      font-family: "Barlow", sans-serif;
+  font-family: "Barlow", sans-serif;
 }
+
 .lanmak-facebook span {
   background-color: #981b1e;
-      font-family: "Barlow", sans-serif;
+  font-family: "Barlow", sans-serif;
 }
+
 .lanmak-zalo span {
   background-color: #981b1e;
-      font-family: "Barlow", sans-serif;
+  font-family: "Barlow", sans-serif;
 }
+
 span a {
   display: inline;
 }
+
 .icon-button i {
   background: none;
   color: #ffffff;
@@ -81,9 +90,10 @@ span a {
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-  width: 45px;
+  width: 18px;
   z-index: 10;
 }
+
 .img-thumbnail {
   display: none;
 }
@@ -97,37 +107,39 @@ span a {
     color: #ffffff;
   }
 }
-footer{
-    .socials{
-        .social{
-            &:hover, &:focus{
-                color: var(--bs-primary);
-                i{
-                    color: var(--bs-primary);
-                }
-            }
+
+footer {
+  .socials {
+    .social {
+
+      &:hover,
+      &:focus {
+        color: var(--bs-primary);
+
+        i {
+          color: var(--bs-primary);
         }
+      }
     }
-    .term-link{
-        a{
-            font-style: normal;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 30px;
-            color: #2F80ED;
-            text-decoration: underline;
-            &:hover, &:focus{
-                color: var(--bs-primary);
-                i{
-                    color: var(--bs-primary);
-                }
-            }
+  }
+
+  .term-link {
+    a {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 30px;
+      color: #2F80ED;
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        color: var(--bs-primary);
+
+        i {
+          color: var(--bs-primary);
         }
+      }
     }
+  }
 }
-
-
-
-
-
-

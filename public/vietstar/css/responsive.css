@@ -548,6 +548,26 @@
     margin-bottom: 10px;
     align-items: center;
   }
+
+  .page-heading-tool.job-detail {
+    display: none;
+  }
+
+  .page-heading-tool.job-detail.mobile {
+    display: block;
+  }
+
+
+
+  .page-heading-tool.job-detail.mobile .mobile-filter {
+    justify-content: flex-end;
+  }
+
+  .page-heading-tool.job-detail.mobile .btn-filter {
+    margin-right: 0;
+  }
+
+
 }
 
 
@@ -672,7 +692,15 @@
     width: 50%;
   }
 
+  .page-heading-tool.job-detail.mobile {
+    display: none;
+  }
+
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+  .page-heading-tool.job-detail.mobile {
+    display: none;
+  }
+}

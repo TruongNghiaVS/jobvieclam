@@ -28,6 +28,7 @@ $(document).ready(function () {
         $('.filters-job-wrapper').slideToggle();
     });
 
+
     $('.close-input-filter').on('click', function () {
         $('.filters-job-wrapper').slideToggle();
     });
@@ -380,6 +381,7 @@ function swiperSlider() {
                 el: '.swiper-pagination',
                 clickable: true,
             },
+
         });
     }
 
@@ -498,6 +500,10 @@ function swiperSlider() {
                 el: ".swiper-pagination",
                 clickable: true
             },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
         });
     }
 
@@ -510,7 +516,14 @@ function swiperSlider() {
             },
             loop: true,
             speed: 1000,
-
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
         });
     }
 }
@@ -541,6 +554,9 @@ function opensearchbox() {
     })
 }
 
+// Open search advance
+const search_input = document.querySelector('.search-input');
+search_input.addEventListener('focus', () => opensearchbox())
 // Close advance search func
 function closesearchbox() {
     opensearchbox_btn.style.display = "flex";
@@ -560,14 +576,11 @@ function closesearchbox() {
 //     $('#industry_id').val('').trigger('chosen:updated');
 // })
 
-// Open search advance
-// const search_input = document.querySelector('.search-input');
-// search_input.addEventListener('focus', () => opensearchbox())
+
 
 
 
 const buttons = document.querySelectorAll('.sort-item-wrapped__item');
-console.log(buttons);
 buttons.forEach(button => {
     button.addEventListener('click', function () {
         console.log("sdasd");

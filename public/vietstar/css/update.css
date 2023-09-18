@@ -1322,7 +1322,7 @@ footer .contact-detail p i.far {
     bottom: 25px;
     min-width: 45px;
     text-align: center;
-    z-index: 99999
+    z-index: 18;
 }
 
 .icon-button {
@@ -2860,9 +2860,43 @@ footer .inner-copyright .copyright {
     display: none
 }
 
+.page-heading-tool-mobile.mobile {
+    display: none;
+}
+
 .filters-job-wrapper {
     background-color: #fff;
-    display: none
+    display: none;
+}
+
+
+
+.filters-job-wrapper-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    display: none;
+    animation: slideDown 1s ease-out;
+    padding-top: 10px;
+}
+
+.filters-job-wrapper-mobile.open {
+    display: flex;
+}
+
+
+.filters-job-wrapper-mobile .close-filter-box {
+    position: absolute;
+    top: 10px;
+    right: 0;
 }
 
 .filters-job-wrapper .filters-wrapper {}

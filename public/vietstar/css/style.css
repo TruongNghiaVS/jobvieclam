@@ -4185,6 +4185,13 @@ label.partTime[title="Rotating"] {
 	font-weight: 400;
 }
 
+
+.applyCV-btn {
+	position: absolute;
+	top: 90px;
+	right: 140px;
+}
+
 /*Pagination*/
 
 .pagiWrap .showreslt {

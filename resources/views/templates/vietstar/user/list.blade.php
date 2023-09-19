@@ -6,7 +6,7 @@
 <!-- Inner Page Title start -->
 @include('templates.vietstar.includes.inner_page_title', ['page_title'=>__('Job Seekers')])
 <!-- Inner Page Title end -->
-
+<a class="btn btn-primary applyCV-btn" href="http://jobvieclam.com/login#cvs">Nộp CV</a>
 @include('flash::message')
 
 <!-- <form action="{{route('job.seeker.list')}}" method="get"> -->
@@ -495,7 +495,7 @@
                         </div>
                     </div>
                     <!-- Pagination end -->
-                    <div class=""><br />{!! $siteSetting->listing_page_horizontal_ad !!}</div>
+                    <!-- <div class=""><br />{!! $siteSetting->listing_page_horizontal_ad !!}</div> -->
 
                 </div>
                 <div class="col-lg-3">

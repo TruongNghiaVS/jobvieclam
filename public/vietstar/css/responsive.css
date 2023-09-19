@@ -587,6 +587,18 @@
   .share-detail .__actions {
     display: block;
   }
+
+  a.btn.btn-primary.applyCV-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: unset;
+    z-index: 10;
+  }
+
+  .sidebar {
+    margin-top: 20px;
+  }
 }
 
 

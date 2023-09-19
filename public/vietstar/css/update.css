@@ -2308,9 +2308,9 @@ footer .inner-copyright .copyright {
 }
 
 .useraccountwrap .newuser a {
-    color: var(--sub-text);
-    font-size: 16px;
-    font-weight: 600;
+    color: var(--bs-primary);
+    font-size: 15px;
+    font-weight: 500;
     text-decoration: none;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out

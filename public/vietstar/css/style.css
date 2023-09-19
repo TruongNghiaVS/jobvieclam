@@ -3667,6 +3667,12 @@ label.partTime[title="Rotating"] {
 /************************************************
            == Loginbox css==
 *************************************************/
+.login-form {
+	margin: 20px 0;
+}
+
+
+
 .userloginbox {
 	background: url(../images/login-bg.jpg) no-repeat center;
 	background-attachment: fixed;
@@ -5208,6 +5214,13 @@ ul.skillslist li a:hover {
 	margin-top: 20px;
 }
 
+.formpanel h3 {
+	text-align: center;
+	color: var(--bs-primary);
+}
+
+
+
 .formpanel .formrow {
 	margin-bottom: 15px;
 }
@@ -5221,9 +5234,17 @@ ul.skillslist li a:hover {
 
 .formpanel .form-control {
 	height: auto;
-	border-radius: 0;
 	padding: 10px 13px;
-	border-color: #ddd;
+	width: 100%;
+	outline: none;
+	border: 1px solid #eee;
+	border-radius: 10px;
+	transition: all 0.2s ease;
+}
+
+.formpanel .form-control:focus {
+	box-shadow: unset;
+	border: 1px solid var(--bs-primary);
 }
 
 .formpanel select.form-control {
@@ -5302,7 +5323,6 @@ ul.skillslist li a:hover {
 	background: #fff;
 	padding: 50px;
 	border-radius: 10px;
-	border-bottom: 3px solid #a84040;
 	margin-bottom: 30px;
 }
 
@@ -5324,16 +5344,27 @@ ul.skillslist li a:hover {
 	text-align: center;
 	border-bottom: 1px solid #eee;
 	padding-bottom: 20px;
+	display: flex;
+	justify-content: center;
 }
 
 .socialLogin a {
-	display: inline-block;
-	width: 36px;
-	height: 36px;
+	width: 120px;
+	height: 40px;
 	color: #fff;
 	font-size: 18px;
 	margin: 0 5px;
-	line-height: 36px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 15px;
+	font-weight: 600;
+	border-radius: 10px;
+}
+
+.socialLogin a span {
+	margin-left: 5px;
+	color: white;
 }
 
 .socialLogin a.fb {
@@ -5348,11 +5379,23 @@ ul.skillslist li a:hover {
 	background: #00aced;
 }
 
+.forgot-password-btn {
+	margin: 10px 0;
+	text-align: end;
+	font-size: 15px;
+	font-weight: 600;
+
+}
+
+.forgot-password-btn a {
+	color: var(--bs-primary);
+}
+
 .newuser {
 	margin-top: 30px;
 	text-align: center;
 	color: #666;
-	font-size: 18px;
+	font-size: 16px;
 }
 
 .newuser a {

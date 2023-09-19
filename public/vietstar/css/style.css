@@ -2077,11 +2077,13 @@ h3.seekertxt span {
 .section-jobs-by-industry .swiper-button-next {
 	position: absolute;
 	right: 100px;
+	z-index: 5;
 }
 
 .section-jobs-by-industry .swiper-button-prev {
 	position: absolute;
 	left: 100px;
+	z-index: 5;
 }
 
 

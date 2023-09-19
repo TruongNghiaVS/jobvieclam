@@ -2194,9 +2194,7 @@ h3.seekertxt span {
 	font-weight: 400;
 }
 
-#secondary-blog-content {
-	margin: 40px 0;
-}
+#secondary-blog-content {}
 
 .head-box {
 	-ms-flex-pack: justify;
@@ -3883,7 +3881,6 @@ label.partTime[title="Rotating"] {
 
 .listpgWraper {
 	background: #f0f0f0;
-	padding: 50px 0;
 	min-height: 400px;
 }
 

@@ -1284,9 +1284,7 @@ footer .contact-detail p i.far {
     color: var(--bs-primary)
 }
 
-.listpgWraper {
-    padding-top: 20px
-}
+.listpgWraper {}
 
 .posted-job .job-title {
     position: relative

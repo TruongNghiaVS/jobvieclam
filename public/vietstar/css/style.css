@@ -4090,6 +4090,7 @@ label.partTime[title="Rotating"] {
 .searchList {
 	list-style: none;
 	margin-bottom: 30px;
+	padding-left: 0;
 }
 
 .searchList li {
@@ -4102,7 +4103,7 @@ label.partTime[title="Rotating"] {
 
 .searchList li:hover {
 	box-shadow: 3px 8px 10px rgba(0, 0, 0, 0.1);
-	border-bottom-color: #5e2dfa;
+	border: 1px solid #981b1e;
 }
 
 .searchList li .jobimg {
@@ -4146,16 +4147,16 @@ label.partTime[title="Rotating"] {
 	display: block;
 	border-radius: 40px;
 	width: 100%;
-	color: #5e2dfa;
+	color: var(--fa-primary-color);
 	text-transform: uppercase;
 	font-weight: 700;
 	padding: 10px 15px;
 	text-align: center;
-	border: 1px solid #5e2dfa;
+	border: 1px solid var(--fa-primary-color);
 }
 
 .searchList li .listbtn a:hover {
-	background: #5e2dfa;
+	background: var(--fa-primary-color);
 	color: #fff;
 	text-decoration: none;
 }

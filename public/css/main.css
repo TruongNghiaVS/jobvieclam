@@ -2700,6 +2700,7 @@ label.partTime[title="Rotating"] {
 .searchList {
 	list-style: none;
 	margin-bottom: 30px;
+	padding-left: 0 !important;
 }
 
 .searchList li {

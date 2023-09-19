@@ -1523,9 +1523,9 @@ fieldset:disabled .btn {
 }
 
 .btn-primary:hover {
-	color: #fff;
-	background-color: rgba(var(--bs-primary-rgb), .85);
-	border-color: rgba(var(--bs-primary-rgb), .85);
+	color: #fff !important;
+	background-color: rgba(var(--bs-primary-rgb), .85) !important;
+	border-color: rgba(var(--bs-primary-rgb), .85) !important;
 }
 
 .btn-check:focus+.btn-primary,

@@ -394,8 +394,8 @@
     "Step Forword Now": "Tiếp tục",
     "Stories": "Câu chuyện",
     "Street Address": "Địa chỉ",
-    "Subject": "Chủ đề",
-    "Subject is required": "Chủ đề là bắt buộc",
+    "Subject": "Tiêu đề",
+    "Subject is required": "Tiêu đề là bắt buộc",
     "Submit": "Gửi",
     "Submit Now": "Gửi ngay",
     "Success": "Thành công",
@@ -686,7 +686,6 @@
     "Message is required": "Tin nhắn là bắt buộc.",
     "Short-Listed Candidates": "Ứng viên rút gọn",
     "List of Candidates": "Danh sách ứng viên",
-
     "Short listed": "Danh sách rút gọn",
     "Candidates": "Ứng viên",
     "Hired candidates": "Ứng viên được nhận",
@@ -734,7 +733,7 @@
     "Work from home": "Làm việc từ xa",
     "Filtering": "Lọc",
     "Filter": "Lọc",
-    "Salary Level" : "Mức lương",
+    "Salary Level": "Mức lương",
     "Unlocked Seekers": "Người tìm việc không bị khóa",
     "Post Jobs": "Đăng việc",
     "Interview Schedule": "Lịch phỏng vấn",
@@ -1173,7 +1172,7 @@
     "List of Rejected Candidates": "Ứng viên bị từ chối",
     "Inactive job": "Việc làm tạm dừng",
     "Contact Date": "Ngày liên hệ",
-    "Job search":"Tìm kiếm việc làm",
+    "Job search": "Tìm kiếm việc làm",
     "You have successfully applied for this job": "Bạn đã ứng tuyển thành công cho công việc này",
     "Please check your email to confirm your subscription": "Vui lòng kiểm tra email của bạn để xác nhận đăng ký của bạn",
     "Blog Detail": "Chi tiết bài viết",
@@ -1190,7 +1189,7 @@
     "Ad Image": "Hình ảnh quảng cáo",
     "+ Add Ad": "+ Thêm quảng cáo",
     "Ads Banner": "Banner quảng cáo",
-    "ADS DETAILS" : "CHI TIẾT QUẢNG CÁO",
+    "ADS DETAILS": "CHI TIẾT QUẢNG CÁO",
     "Slider has been updated!": "Slider đã được cập nhật!",
     "Search results": "Kết quả tìm kiếm",
     "Select a language": "Chọn ngôn ngữ",
@@ -1199,5 +1198,3 @@
     "Avatar": "Ảnh đại diện",
     "Select category": "Chọn danh mục"
 }
-
-

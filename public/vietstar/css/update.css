@@ -2327,6 +2327,10 @@ footer .inner-copyright .copyright {
     margin-top: 10px
 }
 
+.contact-wrap {
+    padding: 20px;
+}
+
 .contact-wrap .title span {
     margin-bottom: 10px;
     display: block
@@ -2358,11 +2362,23 @@ footer .inner-copyright .copyright {
 .contact-wrap .contact-now .contact-form textarea {
     color: var(--sub-text);
     font-size: 16px;
-    font-weight: 400
+    font-weight: 400;
+    outline: none;
+    border-radius: 5px;
 }
 
+.contact-wrap .contact-now .contact-form input:focus {
+    box-shadow: unset;
+    border-color: var(--bs-primary) !important;
+    background-color: #fff !important;
+}
+
+
+
+
 .contact-wrap .contact-now .contact-form .btn-submit {
-    border-radius: 0
+    border-radius: 8px;
+    width: 100%;
 }
 
 .contact-wrap .contact-now .contact-form .btn-submit i {
@@ -4141,7 +4157,8 @@ div#industry_id_chosen {
     .navbar .main-menu .navbar-nav {
         -webkit-box-align: center;
         -ms-flex-align: center;
-        align-items: center
+        align-items: center;
+        margin-right: 15px;
     }
 
     .navbar .main-menu .main-menu-static>li {

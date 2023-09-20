@@ -4895,6 +4895,19 @@ ul.skillslist li a:hover {
 	color: red;
 }
 
+
+.save-job.active {
+	background-color: var(--bs-primary);
+}
+
+.save-job.active i {
+	color: white !important;
+}
+
+.save-job.active:hover i {
+	color: var(--bs-primary) !important;
+}
+
 /*Portfolio*/
 
 .userPortfolio li {

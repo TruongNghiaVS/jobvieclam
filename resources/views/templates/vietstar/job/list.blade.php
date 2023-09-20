@@ -132,15 +132,7 @@
 
                                             </div>
 
-                                            <div class="user-actio">
-                                                @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
-                                                <a class="save-job box-meta" href="{{route('remove.from.favourite', $job->slug)}}"><i class="fas fa-heart iconoutline"></i>
-                                                    <span> {{__('Favourite Job')}}</span>
-                                                </a>
-                                                @else
-                                                @endif
 
-                                            </div>
                                         </div>
                                     </div>
 

@@ -32,15 +32,28 @@
                                     <div class="info-item job-title-box" bis_skin_checked="1">
                                         <div class="job-title" bis_skin_checked="1">
                                             <span>Mới</span>
-                                            <h3 class="job-title-name"><a href="http://localhost:8000/job/nhan-vien-bat-dong-san-40" title="Nhân viên bất động sản">Nhân viên bất động sản</a></h3>
+                                            <h3 class="job-title-name"><a
+                                                    href="http://localhost:8000/job/nhan-vien-bat-dong-san-40"
+                                                    title="Nhân viên bất động sản">Nhân viên bất động sản</a></h3>
                                         </div>
-                                        <a class="save-job" href="http://localhost:8000/add-to-favourite-job/nhan-vien-bat-dong-san-40"><i class="far fa-heart"></i>
+                                        @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
+                                        <a class="save-job active"
+                                            href="http://localhost:8000/add-to-favourite-job/nhan-vien-bat-dong-san-40"><i
+                                                class="far fa-heart"></i>
                                         </a>
+                                        @else
+                                        <a class="save-job"
+                                            href="http://localhost:8000/add-to-favourite-job/nhan-vien-bat-dong-san-40"><i
+                                                class="far fa-heart"></i>
+                                        </a>
+                                        @endif
                                     </div>
                                     <!-- Title  End-->
 
                                     <!-- companyName Start-->
-                                    <div class="info-item companyName" bis_skin_checked="1"><a href="http://localhost:8000/company/cong-ty-co-phan-incom-sai-gon-9" title="Công Ty Cổ Phần Incom Sài Gòn">Công Ty Cổ Phần Incom Sài Gòn</a>
+                                    <div class="info-item companyName" bis_skin_checked="1"><a
+                                            href="http://localhost:8000/company/cong-ty-co-phan-incom-sai-gon-9"
+                                            title="Công Ty Cổ Phần Incom Sài Gòn">Công Ty Cổ Phần Incom Sài Gòn</a>
                                     </div>
                                     <!-- companyName End-->
                                     <!--rank-salary and place Start-->
@@ -89,7 +102,9 @@
                                     </div>
 
                                     <div class="user-action" bis_skin_checked="1">
-                                        <a class="btn btn-primary btn-view-details" href="{{route('job.detail', [$job->slug])}}"><span class="iconmoon icon-eye-icon"></span> {{__('View Details')}}</a>
+                                        <a class="btn btn-primary btn-view-details"
+                                            href="{{route('job.detail', [$job->slug])}}"><span
+                                                class="iconmoon icon-eye-icon"></span> {{__('View Details')}}</a>
                                     </div>
                                 </div>
                             </div>

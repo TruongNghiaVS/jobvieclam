@@ -702,10 +702,17 @@ $company = $job->getCompany();
                                                 href="http://localhost:8000/job/nhan-vien-bat-dong-san-40"
                                                 title="Nhân viên bất động sản">Nhân viên bất động sản</a></h3>
                                     </div>
+                                    @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
+                                    <a class="save-job active"
+                                        href="http://localhost:8000/add-to-favourite-job/nhan-vien-bat-dong-san-40"><i
+                                            class="far fa-heart"></i>
+                                    </a>
+                                    @else
                                     <a class="save-job"
                                         href="http://localhost:8000/add-to-favourite-job/nhan-vien-bat-dong-san-40"><i
                                             class="far fa-heart"></i>
                                     </a>
+                                    @endif
                                 </div>
                                 <!-- Title  End-->
 

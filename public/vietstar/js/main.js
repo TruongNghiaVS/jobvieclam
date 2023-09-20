@@ -568,14 +568,14 @@ function closesearchbox() {
 }
 
 // Open reset form search
-// const reset_btn = document.querySelector('.advance-search__reset');
-// reset_btn.addEventListener('click', () => {
-//     document.getElementById("search-form").reset();
-//     $('#city_id').val('').trigger('chosen:updated');
-//     $('#job_type_id').val('').trigger('chosen:updated');
-//     $('#career_level_id').val('').trigger('chosen:updated');
-//     $('#industry_id').val('').trigger('chosen:updated');
-// })
+const reset_btn = document.querySelector('.advance-search__reset');
+reset_btn.addEventListener('click', () => {
+    document.getElementById("search-form").reset();
+    $('#city_id').val('').trigger('chosen:updated');
+    $('#job_type_id').val('').trigger('chosen:updated');
+    $('#career_level_id').val('').trigger('chosen:updated');
+    $('#industry_id').val('').trigger('chosen:updated');
+})
 
 
 

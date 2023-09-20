@@ -502,6 +502,10 @@
     font-size: 13px;
   }
 
+  .jobs-side-list .item-job .jobinfo .caption {
+    display: block;
+  }
+
   .jobs-side-list .item-job .jobinfo .caption .welfare span {
     padding: 5px;
   }

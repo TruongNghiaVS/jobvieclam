@@ -11,59 +11,118 @@
         <div class="row">
             @include('templates.vietstar.includes.user_dashboard_menu')
 
-            <div class="col-md-9">
-                <div class="my-job-applications mb-3 w-100">
-
+            <div class="col-md-9 col-sm-12">
+                <div class="myads">
                     <h3>{{__('Applied Jobs')}}</h3>
-                    <div class="searchList jobs-apply-list">
+                    <div class="searchList jobs-side-list">
                         <!-- job start -->
                         @if(isset($jobs) && count($jobs))
                         @foreach($jobs as $job)
                         @php $company = $job->getCompany(); @endphp
                         @if(null !== $company)
-                        <div class="item-job">
-                            <div class="card-news card-news-applied-jobs gap-16 mb-2">
-                                <div class="card-news__icon">
+                        <div class="item-job mb-3">
+
+                            <div class="logo-company">
+                                <div class="pic">
                                     {{$company->printCompanyImage()}}
                                 </div>
-                                <div class="card-news__content">
-                                    
-                                    <div class="card-news__content-footer card-news__content-footer-applied-jobs">
-                                        <div class="applied-jobs-information">
-                                            <h6 class="card-news__content-title"><a href="{{route('job.detail', [$job->slug])}}"
-                                                title="{{$job->title}}">{{$job->title}}</a></h6>
-                                                <p class="card-news__content-detail mb-2">{{$company->name}}</p>
-                                                <div class="card-news__content-footer__location">
-                                                    <span class="badge rounded-pill pill pill-location">{{$job->getCity('city')}}</span>
-                                                    <span class="badge rounded-pill pill pill-worktime">{{$job->getJobType('job_type')}}</span>
-                                                <!--  <div class="box-meta box-meta-interview mt-2">
-                                                        <i class="iconmoon icon-calendar-icon1"></i>Interview at: 16:30 20/07/2022
-                                                    </div> -->
-                                                </div>
+                            </div>
+                            <div class="jobinfo">
+                                <div class="info" bis_skin_checked="1">
+                                    <!-- Title  Start-->
+                                    <div class="info-item job-title-box" bis_skin_checked="1">
+                                        <div class="job-title" bis_skin_checked="1">
+                                            <span>Mới</span>
+                                            <h3 class="job-title-name"><a href="{{route('job.detail', [$job->slug])}}"
+                                                    title="Nhân viên bất động sản">{{$job->title}}</a></h3>
                                         </div>
-                                        
-                                        <div class="card-news__content-footer__salary">
-                                            <p class="card-news__content-detail mb-2">{{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }}</p>
-                                            <div class="rank-salary">
-                                                {{$job->salary_from.' '.$job->salary_currency}} - {{$job->salary_to.' '.$job->salary_currency}}
-                                            </div>
-                                           <div>
-                                                <a class="btn btn-primary btn-view-details" href="{{route('job.detail', [$job->slug])}}"><span class="iconmoon icon-eye-icon"></span> {{__('View Details')}}</a>
-                                           </div>
-                                           
+                                        <p class="card-news__content-detail mb-2">
+                                            {{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }}
+                                        </p>
+                                    </div>
+                                    <!-- Title  End-->
+
+                                    <!-- companyName Start-->
+                                    <div class="info-item companyName" bis_skin_checked="1"><a
+                                            href="http://localhost:8000/company/cong-ty-co-phan-incom-sai-gon-9"
+                                            title="{{$company->name}}">{{$company->name}}</a>
+                                    </div>
+                                    <!-- companyName End-->
+                                    <!--rank-salary and place Start-->
+                                    <div class="info-item box-meta" bis_skin_checked="1">
+                                        <div class="rank-salary" bis_skin_checked="1">
+                                            <span class="fas fa-money-bill"></span>
+                                            {{$job->salary_from.' '.$job->salary_currency}} -
+                                            {{$job->salary_to.' '.$job->salary_currency}}
                                         </div>
-                                        
+                                        <div class="navbar__link-separator" bis_skin_checked="1"></div>
+                                        <!--meta-city-->
+                                        <div class="meta-city" bis_skin_checked="1">
+                                            <!-- <i class="far fa-map-marker-alt"></i> -->
+                                            {{$job->getCity('city')}}
+                                        </div>
+
+                                        <!--meta-city-->
+
+
+
+                                        <!-- Bán thời gian -->
+                                    </div>
+                                    <!--Rank-salary and place End-->
+
+                                    <!--Day update and place Start-->
+                                    <div class="info-item day-update" bis_skin_checked="1">
+                                        Hôm nay
+                                    </div>
+                                    <div class="info-item Interview" bis_skin_checked="1">
+                                        <i class="iconmoon icon-calendar-icon1"></i>Interview at: 16:30 20/07/2022
+                                    </div>
+                                    <!--Day update and place End-->
+
+                                    <!-- <div class="short-description">M&amp;ocirc; tả c&amp;ocirc;ng việc</div> -->
+                                </div>
+                                <div class="caption" bis_skin_checked="1">
+                                    <div class="welfare" bis_skin_checked="1">
+                                        <div class="box-meta" bis_skin_checked="1">
+                                            <!-- <i class="fas fa-dollar-sign"></i>  -->
+                                            <span>
+                                                <!-- Chế độ thưởng -->
+                                                Automative
+                                            </span>
+
+                                        </div>
+                                        <div class="box-meta" bis_skin_checked="1">
+                                            <!-- <i class="fas fa-graduation-cap"></i> -->
+                                            <span>
+                                                <!-- Đào tạo -->
+                                                Automative Infomation
+                                            </span>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="user-action" bis_skin_checked="1">
+                                        <a class="btn btn-primary btn-view-details"
+                                            href="{{route('job.detail', [$job->slug])}}"><span
+                                                class="iconmoon icon-eye-icon"></span> {{__('View Details')}}</a>
                                     </div>
                                 </div>
                             </div>
-                            
-                            
+
+                            <!-- <p>{{\Illuminate\Support\Str::limit(strip_tags($job->description), 150, '...')}}</p> -->
                         </div>
                         <!-- job end -->
                         @endif
                         @endforeach
                         @endif
                     </div>
+                </div>
+                <!-- Pagination -->
+                <div class="pagiWrap">
+                    <nav aria-label="Page navigation example">
+                        @if(isset($jobs) && count($jobs))
+                        {{ $jobs->appends(request()->query())->links() }} @endif
+                    </nav>
                 </div>
             </div>
         </div>

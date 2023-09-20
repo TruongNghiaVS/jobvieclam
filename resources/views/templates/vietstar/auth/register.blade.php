@@ -54,7 +54,7 @@
                             <div id="candidate" class="formpanel tab-pane {{($c_or_e == 'candidate')? 'active':''}}">
 
                                 <form class="form-horizontal" method="POST" action="{{ route('register') }}">
-                                    <h3>Đăng nhập</h3>
+                                    <h3>Đăng Ký</h3>
                                     {{ csrf_field() }}
 
                                     <input type="hidden" name="candidate_or_employer" value="candidate" />
@@ -163,7 +163,7 @@
                             <div id="employer" class="formpanel tab-pane fade {{($c_or_e == 'employer')? 'active':''}}">
 
                                 <form class="form-horizontal" method="POST" action="{{ route('company.register') }}">
-
+                                    <h3>Đăng Ký</h3>
                                     {{ csrf_field() }}
 
                                     <input type="hidden" name="candidate_or_employer" value="employer" />
@@ -262,8 +262,9 @@
             </div>
         </div>
     </div>
+</div>
 
-    @include('flash::message')
+@include('flash::message')
 
 
 

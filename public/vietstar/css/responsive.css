@@ -609,6 +609,14 @@
            ==Login==
 
     *************************************************/
+  .login-swapper .col-6 {
+    width: 100%;
+  }
+
+  .useraccountwrap .nav-link.active {
+    color: white !important;
+  }
+
   .userccount {
     padding: 20px;
   }
@@ -617,13 +625,40 @@
     padding: 15px 0;
   }
 
+  .navbar-collapse .user-badge {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+
+  .user-badge .dropdown-menu {
+    position: absolute;
+    width: 100%;
+
+  }
+
+  .group-for-mobile {}
+
+  .group-for-mobile .user-badge {
+    display: none;
+  }
+
+  .main-menu {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
 }
 
 
 
 /* Medium devices (landscape tablets, 600px and up) */
 @media only screen and (min-width: 768px) and (max-width: 992px) {
+  .main-menu {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
 
+  .useraccountwrap .nav-link.active {
+    color: white !important;
+  }
 
   .col-sm-6 {
     width: 100%;
@@ -751,13 +786,50 @@
 
 
 
+  /************************************************
 
+           ==Login==
+
+    *************************************************/
+  .login-swapper .col-6 {
+    width: 100% !important;
+  }
+
+  .login-swapper .col-6 {
+    width: 100% !important;
+  }
+
+  .userccount {
+    padding: 20px;
+  }
+
+  .userbtns .nav-tabs>li a {
+    padding: 15px 0;
+  }
+
+  .navbar-collapse .user-badge {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+
+  .user-badge .dropdown-menu {
+    position: absolute;
+    width: 100%;
+
+  }
+
+  .group-for-mobile {}
+
+  .group-for-mobile .user-badge {
+    display: none;
+  }
 
 
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 992px) {
 
 
   .page-heading-tool.job-detail.mobile {

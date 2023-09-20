@@ -6277,6 +6277,10 @@ div#industry_id_chosen {
     color: #ffffff
 }
 
+span.iconmoon.icon-eye-icon {
+    color: #ffff;
+}
+
 .card-news .card-news__content .card-news__content-footer-applied-jobs .rank-salary {
     color: var(--bs-primary);
     font-size: 13px;

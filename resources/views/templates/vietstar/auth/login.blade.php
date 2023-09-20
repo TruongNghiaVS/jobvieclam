@@ -3,24 +3,29 @@
 <!-- Header start -->
 @include('templates.vietstar.includes.header')
 <!-- Header end -->
-
+@include('templates.vietstar.includes.inner_page_title', ['page_title'=>__('Đăng nhập')])
 <div class="login-form">
     <div class="container">
         @include('flash::message')
-        <div class="row g-0">
-            <div class="col-12">
-                <div class="useraccountwrap shadow">
+
+        <div class="row g-0 login-swapper">
+            <div class="col-6">
+                <div class="login-img-swapper">
+                    <div class="login-img-swapper__img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="useraccountwrap">
                     <div class="userccount">
                         <div class="userbtns">
                             <ul class="nav nav-tabs login-nav-tabs">
                                 <?php
                                 $c_or_e = old('candidate_or_employer', 'candidate');
                                 ?>
-                                <li class="nav-item"><a class="nav-link {{($c_or_e == 'candidate')? 'active':''}}"
-                                        data-toggle="tab" href="#candidate" aria-expanded="true">{{__('Candidate')}}</a>
+                                <li class="nav-item"><a class="nav-link {{($c_or_e == 'candidate')? 'active':''}}" data-toggle="tab" href="#candidate" aria-expanded="true">{{__('Candidate')}}</a>
                                 </li>
-                                <li class="nav-item"><a class="nav-link {{($c_or_e == 'employer')? 'active':''}}"
-                                        data-toggle="tab" href="#employer" aria-expanded="false">{{__('Employer')}}</a>
+                                <li class="nav-item"><a class="nav-link {{($c_or_e == 'employer')? 'active':''}}" data-toggle="tab" href="#employer" aria-expanded="false">{{__('Employer')}}</a>
                                 </li>
                             </ul>
                         </div>
@@ -32,9 +37,7 @@
                                     <input type="hidden" name="candidate_or_employer" value="candidate" />
                                     <div class="formpanel">
                                         <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }}">
-                                            <input id="email" type="email" class="form-control" name="email"
-                                                value="{{ old('email') }}" required autofocus
-                                                placeholder="{{__('Email Address')}}">
+                                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="{{__('Email Address')}}">
                                             @if ($errors->has('email'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('email') }}</strong>
@@ -42,8 +45,7 @@
                                             @endif
                                         </div>
                                         <div class="formrow{{ $errors->has('password') ? ' has-error' : '' }}">
-                                            <input id="password" type="password" class="form-control" name="password"
-                                                value="" required placeholder="{{__('Password')}}">
+                                            <input id="password" type="password" class="form-control" name="password" value="" required placeholder="{{__('Password')}}">
                                             @if ($errors->has('password'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('password') }}</strong>
@@ -51,8 +53,7 @@
                                             @endif
                                         </div>
                                         <div class="forgot-password-btn">
-                                            <a
-                                                href="{{ route('company.password.request') }}">{{__('Forgot Your Password')}}?</a>
+                                            <a href="{{ route('company.password.request') }}">{{__('Forgot Your Password')}}?</a>
                                         </div>
                                         <input type="submit" class="btn" value="{{__('Login')}}">
                                     </div>
@@ -69,12 +70,10 @@
                                         <i class="fab fa-facebook-f"></i>
                                         <span>Facebook</span>
                                     </a>
-                                    <a href="{{ url('login/jobseeker/google')}}" class="gp"><i
-                                            class="fab fa-google"></i>
+                                    <a href="{{ url('login/jobseeker/google')}}" class="gp"><i class="fab fa-google"></i>
                                         <span>Google</span>
                                     </a>
-                                    {{--<a href="{{ url('login/jobseeker/twitter')}}" class="tw"><i
-                                        class="fab fa-twitter"></i> <span>Twitter</span></a>--}}
+                                    {{--<a href="{{ url('login/jobseeker/twitter')}}" class="tw"><i class="fab fa-twitter"></i> <span>Twitter</span></a>--}}
                                 </div>
                                 <!-- sign up form -->
                                 <div class="newuser">{{__('New User')}}?
@@ -89,9 +88,7 @@
                                     <input type="hidden" name="candidate_or_employer" value="candidate" />
                                     <div class="formpanel">
                                         <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }}">
-                                            <input id="email" type="email" class="form-control" name="email"
-                                                value="{{ old('email') }}" required autofocus
-                                                placeholder="{{__('Email Address')}}">
+                                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="{{__('Email Address')}}">
                                             @if ($errors->has('email'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('email') }}</strong>
@@ -99,8 +96,7 @@
                                             @endif
                                         </div>
                                         <div class="formrow{{ $errors->has('password') ? ' has-error' : '' }}">
-                                            <input id="password" type="password" class="form-control" name="password"
-                                                value="" required placeholder="{{__('Password')}}">
+                                            <input id="password" type="password" class="form-control" name="password" value="" required placeholder="{{__('Password')}}">
                                             @if ($errors->has('password'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('password') }}</strong>
@@ -108,8 +104,7 @@
                                             @endif
                                         </div>
                                         <div class="forgot-password-btn">
-                                            <a
-                                                href="{{ route('company.password.request') }}">{{__('Forgot Your Password')}}?</a>
+                                            <a href="{{ route('company.password.request') }}">{{__('Forgot Your Password')}}?</a>
                                         </div>
                                         <input type="submit" class="btn" value="{{__('Login')}}">
                                     </div>
@@ -126,12 +121,10 @@
                                         <i class="fab fa-facebook-f"></i>
                                         <span>Facebook</span>
                                     </a>
-                                    <a href="{{ url('login/jobseeker/google')}}" class="gp"><i
-                                            class="fab fa-google"></i>
+                                    <a href="{{ url('login/jobseeker/google')}}" class="gp"><i class="fab fa-google"></i>
                                         <span>Google</span>
                                     </a>
-                                    {{--<a href="{{ url('login/jobseeker/twitter')}}" class="tw"><i
-                                        class="fab fa-twitter"></i> <span>Twitter</span></a>--}}
+                                    {{--<a href="{{ url('login/jobseeker/twitter')}}" class="tw"><i class="fab fa-twitter"></i> <span>Twitter</span></a>--}}
                                 </div>
                                 <!-- sign up form -->
                                 <div class="newuser">{{__('New User')}}?
@@ -144,6 +137,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>

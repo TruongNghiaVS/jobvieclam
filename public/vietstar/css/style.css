@@ -5291,6 +5291,35 @@ ul.skillslist li a:hover {
 	margin-bottom: 10px;
 }
 
+/* login-img-swapper */
+
+.login-swapper {
+	border: 1px solid #ccc;
+	border-radius: 15px;
+	overflow: hidden;
+}
+
+
+.login-img-swapper {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.login-img-swapper__img {
+	background-image: url('https://blog.viecngay.vn/wp-content/uploads/2018/06/guilherme-stecanella-587579-unsplash.jpg');
+	background-color: #cccccc;
+	/* Used if the image is unavailable */
+	height: 100%;
+	width: 100%;
+	/* You must set a specified height */
+	background-position: center;
+	/* Center the image */
+	background-repeat: no-repeat;
+	/* Do not repeat the image */
+	background-size: cover;
+}
+
 /*Google Map*/
 
 .gmap {

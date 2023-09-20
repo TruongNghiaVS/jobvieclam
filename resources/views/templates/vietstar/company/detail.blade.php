@@ -9,7 +9,8 @@
 
 
 <!-- Hero banner -->
-<section class="hero-banner-company-profile" style="background-image: url({!!  asset('/vietstar/imgs/company-cover.jpg') !!});"></section>
+<section class="hero-banner-company-profile"
+    style="background-image: url({!!  asset('/vietstar/imgs/company-cover.jpg') !!});"></section>
 
 
 <!-- Main content -->
@@ -27,7 +28,8 @@
                             </div>
                             <div class="box-content">
                                 <h2 class="company-name">{{ $company->name }}</h2>
-                                <p class="company-position">{{ !empty($company->industry)?$company->industry->industry : 'NA' }}</p>
+                                <p class="company-position">
+                                    {{ !empty($company->industry)?$company->industry->industry : 'NA' }}</p>
                                 <ul class="company-info public">
                                     <li>
                                         <span class="iconmoon icon-recruiter-user"></span>
@@ -38,15 +40,23 @@
                                         {{ $company->location.', '.$company->getLocation() }}
                                     </li>
                                 </ul>
-                                <div class="group-button job-detail-banner__actions job-detail-banner_info_actions d-flex flex-row gap-16">
-                                    <form action="{{ route('seeker.submit-message', ['message' => 'Xin chào!', 'company_id' => $company->id, 'new' => true]) }}" method="post">
+                                <div
+                                    class="group-button job-detail-banner__actions job-detail-banner_info_actions d-flex flex-row gap-16">
+                                    <form
+                                        action="{{ route('seeker.submit-message', ['message' => 'Xin chào!', 'company_id' => $company->id, 'new' => true]) }}"
+                                        method="post">
                                         @csrf
-                                        <button type="submit" class="btn btn-primary"><span class="icon icon-recruiter-email"></span>{{__('Send message')}}</button>
+                                        <button type="submit" class="btn btn-primary"><span
+                                                class="icon icon-recruiter-email"></span>{{__('Send message')}}</button>
                                     </form>
-                                    @if(Auth::check() && Auth::user()->isFavouriteCompany($company->slug)) 
-                                        <a href="{{ route('remove.from.favourite.company', ['company_slug' => $company->slug])}}" class="btn btn-outline-primary"><i class="fas fa-heart iconoutline"></i> {{__('Favourite company')}} </a> 
-                                    @else 
-                                        <a href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}" class="btn btn-outline-primary"><i class="far fa-heart"></i> {{__('Follow company')}}</a> 
+                                    @if(Auth::check() && Auth::user()->isFavouriteCompany($company->slug))
+                                    <a href="{{ route('remove.from.favourite.company', ['company_slug' => $company->slug])}}"
+                                        class="btn btn-outline-primary"><i class="fas fa-heart iconoutline"></i>
+                                        {{__('Favourite company')}} </a>
+                                    @else
+                                    <a href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"
+                                        class="btn btn-outline-primary"><i class="far fa-heart"></i>
+                                        {{__('Follow company')}}</a>
                                     @endif
                                 </div>
                             </div>
@@ -68,24 +78,28 @@
                             </li>
                         </ul>
                         <div class="socials">
-                            <a href="{{ $company->facebook }}" class="social" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
-                            <a href="{{ $company->twitter }}" class="social" target="_blank"><i class="fa-brands fa-square-twitter"></i></a>
-                            <a href="{{ $company->linkedin }}" class="social" target="_blank"><i class="fa-brands fa-linkedin"></i></span></a>
-                            <a href="{{ $company->google_plus }}" class="social" target="_blank"><i class="fa-brands fa-google-plus"></i></a>
+                            <a href="{{ $company->facebook }}" class="social" target="_blank"><i
+                                    class="fa-brands fa-square-facebook"></i></a>
+                            <a href="{{ $company->twitter }}" class="social" target="_blank"><i
+                                    class="fa-brands fa-square-twitter"></i></a>
+                            <a href="{{ $company->linkedin }}" class="social" target="_blank"><i
+                                    class="fa-brands fa-linkedin"></i></span></a>
+                            <a href="{{ $company->google_plus }}" class="social" target="_blank"><i
+                                    class="fa-brands fa-google-plus"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    @php
+        @php
         $jobs = $company->jobs;
         $minSal = count($jobs->pluck('salary_from')->toArray()) > 0 ? min($jobs->pluck('salary_from')->toArray()) : 0;
         $maxSal = count($jobs->pluck('salary_to')->toArray()) > 0 ? max($jobs->pluck('salary_to')->toArray()) : 0;
         $avaragedSal = $maxSal/2 + $minSal/2;
-    @endphp
+        @endphp
         <section class="section-company-profile-detail">
             <div class="row">
-                <div class="col-lg-8 col-md-7">
+                <div class="col-lg-12 col-md-12">
                     <div class="company-size">
                         <div class="row">
                             <div class="col-md-6">
@@ -138,40 +152,47 @@
                     <div class="widget-public-profile widget-job">
                         <h4 class="title">{{__('Job Openings')}}</h4>
                         @if ($company->jobs->count() > 0)
-                            @php( $jobShifts = App\JobShift::all()->pluck('job_shift','id') )
+                        @php( $jobShifts = App\JobShift::all()->pluck('job_shift','id') )
                         <div class="jobs">
                             @foreach ($company->jobs->sortBy('id') as $cjob)
-                                <div class="job">
+                            <div class="job">
                                 <div class="box-logo">
                                     <div class="logo">
                                         {{$company->printCompanyImage(100,100)}}
                                     </div>
                                 </div>
                                 <div class="widget-content">
-                                    <h3 class="job-title"><a href="{{route('job.detail', [$cjob->slug])}}" style="text-decoration: none;" title="{{$cjob->title}}">{{$cjob->title}}</a></h3>
+                                    <h3 class="job-title"><a href="{{route('job.detail', [$cjob->slug])}}"
+                                            style="text-decoration: none;" title="{{$cjob->title}}">{{$cjob->title}}</a>
+                                    </h3>
                                     <p class="job-name">{{ $company->name }}</p>
                                     <div class="group-control">
                                         <div class="tags">
-                                            <span class="tag location">{{ !empty($cjob->location) ? $cjob->location :  $cjob->getCity('city')}}</span>
+                                            <span
+                                                class="tag location">{{ !empty($cjob->location) ? $cjob->location :  $cjob->getCity('city')}}</span>
                                             <span class="tag time">{{ $jobShifts[$cjob->job_shift_id] ?? ''}}</span>
                                         </div>
                                         <div class="salary">
-                                            {{--<span class="iconmoon icon-recruiter-attach_money"></span><span>{{$cjob->salary_from.' '.$cjob->salary_currency}} - {{$cjob->salary_to.' '.$cjob->salary_currency}}</span>--}}
+                                            {{--<span class="iconmoon icon-recruiter-attach_money"></span><span>{{$cjob->salary_from.' '.$cjob->salary_currency}}
+                                            - {{$cjob->salary_to.' '.$cjob->salary_currency}}</span>--}}
                                             @php($from = round($cjob->salary_from/1000000,0))
                                             @php($to = round($cjob->salary_to/1000000,0))
                                             @if($cjob->salary_type == \App\Job::SALARY_TYPE_FROM)
-                                                <span class="fas fa-dollar-sign"></span> {{__('From: ')}} {{$from}} {{__('million')}} ({{$cjob->salary_currency}})
+                                            <span class="fas fa-dollar-sign"></span> {{__('From: ')}} {{$from}}
+                                            {{__('million')}} ({{$cjob->salary_currency}})
                                             @elseif($cjob->salary_type == \App\Job::SALARY_TYPE_TO)
-                                                <span class="fas fa-dollar-sign"></span> {{__('Up To: ')}} {{$to}} {{__('million')}} ({{$cjob->salary_currency}})
+                                            <span class="fas fa-dollar-sign"></span> {{__('Up To: ')}} {{$to}}
+                                            {{__('million')}} ({{$cjob->salary_currency}})
                                             @elseif($cjob->salary_type == \App\Job::SALARY_TYPE_RANGE)
-                                                <span class="fas fa-dollar-sign"></span> {{$from}} - {{$to}} {{__('million')}} ({{$cjob->salary_currency}})
+                                            <span class="fas fa-dollar-sign"></span> {{$from}} - {{$to}}
+                                            {{__('million')}} ({{$cjob->salary_currency}})
                                             @elseif($cjob->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
-                                                <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
+                                            <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
                                             @else
-                                                <span class="fas fa-dollar-sign"></span> {{__('Salary Not provided')}}
+                                            <span class="fas fa-dollar-sign"></span> {{__('Salary Not provided')}}
                                             @endif
-                                        
-                                        
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -189,7 +210,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-5">
+                <div class="col-lg-12 col-md-12">
                     <div class="widget-public-profile widget-map">
                         <h4 class="title">Maps</h4>
                         <div class="map">
@@ -209,17 +230,20 @@
 @endsection
 
 @push('styles')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style type="text/css">
-
 .formrow iframe {
 
     height: 78px;
 
 }
+
 ul.company-info.public {
     padding-bottom: 20px;
 }
+
 .section-company-profile .box-content .company-info {
     margin-bottom: 20px;
 }
@@ -230,7 +254,6 @@ ul.company-info.public {
 @push('scripts')
 
 <script type="text/javascript">
-
 $(document).ready(function() {
 
     $(document).on('click', '#send_company_message', function() {
@@ -412,7 +435,6 @@ if ($("#send-form").length > 0) {
     })
 
 }
-
 </script>
 
 @endpush

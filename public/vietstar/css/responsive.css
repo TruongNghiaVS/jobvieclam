@@ -609,6 +609,41 @@
            ==Login==
 
     *************************************************/
+  .section-company-profile .company-profile {
+    display: block;
+  }
+
+  .section-company-profile .box-content {
+    max-width: unset
+  }
+
+  .group-button {
+    display: block !important;
+  }
+
+  .group-button button {
+    margin-bottom: 10px;
+  }
+
+  .section-company-profile .company-info {
+    margin: 20px 0;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .socials a {
+    font-size: 30px !important;
+  }
+
+  /************************************************
+
+           ==Login==
+
+    *************************************************/
   .login-swapper .col-6 {
     width: 100%;
   }
@@ -636,6 +671,7 @@
     width: 100%;
 
   }
+
 
   .group-for-mobile {}
 
@@ -792,8 +828,6 @@
   .filters-job-wrapper-mobile {
     display: none;
   }
-
-
 
   /************************************************
 

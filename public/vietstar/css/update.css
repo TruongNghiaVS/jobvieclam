@@ -4413,9 +4413,7 @@ div#industry_id_chosen {
 }
 
 @media screen and (max-width: 576px) {
-    .group-for-mobile {
-        top: 25px
-    }
+    .group-for-mobile {}
 }
 
 @media screen and (max-width: 1199px) {

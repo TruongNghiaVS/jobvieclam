@@ -4424,7 +4424,7 @@ div#industry_id_chosen {
     }
 
     .main-menu>.navbar-nav {
-        display: block !important
+        display: block;
     }
 }
 

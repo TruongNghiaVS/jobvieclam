@@ -646,6 +646,15 @@
   .main-menu {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
+
+  .main-menu>.navbar-nav {
+    display: flex !important;
+    flex-direction: column-reverse;
+  }
+
+  .navbar-collapse .user-badge {
+    margin: 10px 0px;
+  }
 }
 
 
@@ -825,7 +834,14 @@
     display: none;
   }
 
+  .main-menu>.navbar-nav {
+    display: flex !important;
+    flex-direction: column-reverse;
+  }
 
+  .navbar-collapse .user-badge {
+    margin: 10px 0px;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */

@@ -4852,6 +4852,7 @@ ul.skillslist li a:hover {
 
 .experienceList {
 	margin-bottom: 0 !important;
+	padding-left: 0;
 }
 
 .experienceList li {

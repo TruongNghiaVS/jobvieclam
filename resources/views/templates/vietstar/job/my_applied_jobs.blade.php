@@ -36,7 +36,8 @@
                                             <h3 class="job-title-name"><a href="{{route('job.detail', [$job->slug])}}"
                                                     title="Nhân viên bất động sản">{{$job->title}}</a></h3>
                                         </div>
-                                        <p class="card-news__content-detail mb-2">
+                                        <p class="card-news__content-detail mb-2 status-apply"
+                                            status="{{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }}">
                                             {{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }}
                                         </p>
                                     </div>
@@ -130,6 +131,26 @@
 </div>
 @include('templates.vietstar.includes.footer')
 @endsection
+@push('scripts')
+<script>
+const apply_status = document.querySelectorAll(".status-apply");
+apply_status.forEach((item) => {
+    // console.log(item.getAttribute('status'));
+    switch (item.getAttribute('status')) {
+        case "CV tiếp nhận":
+            item.classList.add('accept');
+            item.classList.remove('reject');
+            break;
+        case "Từ chối":
+            item.classList.remove('accept');
+            item.classList.add('reject');
+            break;
+        default:
+            break;
+    }
+})
+</script>
+@endpush
 @push('scripts')
 @include('templates.vietstar.includes.immediate_available_btn')
 @endpush

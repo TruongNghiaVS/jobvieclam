@@ -4887,6 +4887,14 @@ ul.skillslist li a:hover {
 	margin-top: 10px;
 }
 
+.status-apply.accept {
+	color: #00b14f;
+}
+
+.status-apply.reject {
+	color: red;
+}
+
 /*Portfolio*/
 
 .userPortfolio li {

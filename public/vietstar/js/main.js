@@ -556,7 +556,8 @@ function opensearchbox() {
 
 // Open search advance
 const search_input = document.querySelector('.search-input');
-search_input.addEventListener('focus', () => opensearchbox())
+search_input.addEventListener('focus', () => opensearchbox());
+
 // Close advance search func
 function closesearchbox() {
     opensearchbox_btn.style.display = "flex";
@@ -588,7 +589,6 @@ function openFilterJob_mobile() {
 function closeFilterJob_mobile() {
     document.querySelector(".filters-job-wrapper-mobile").classList.remove("open");
 }
-
 
 
 

@@ -673,7 +673,23 @@
   }
 
 
-  .group-for-mobile {}
+  .group-for-mobile {
+    top: 0;
+    height: 100%;
+    margin: 0 10px;
+  }
+
+
+  .group-for-mobile a[aria-expanded="true"] {
+    background-color: unset !important;
+  }
+
+
+  .group-for-mobile .dropdown-toggle::after {
+    right: unset;
+    left: 25px;
+
+  }
 
   .group-for-mobile .user-badge {
     display: none;

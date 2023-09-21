@@ -38,7 +38,8 @@
                 </div>
                 <div class="col-md-3">
                     <div class="group-button-cv-template ">
-                        <button type="button" class="btn btn-light" onclick="Download_CV();">{{ __('Download CV') }}</button>
+                        <button type="button" class="btn btn-light"
+                            onclick="Download_CV();">{{ __('Download CV') }}</button>
                         <a class="btn btn-primary" href="{{route('change.template')}}">{{ __('Change Template') }}</a>
                     </div>
                 </div>
@@ -46,10 +47,6 @@
         </div>
 
     </div>
-
-
-
-
 </div>
 <div class="row" style="display:none;">
     <div class="col-template">
@@ -62,9 +59,9 @@
 @endsection
 @push('styles')
 <style type="text/css">
-    .userccount p {
-        text-align: left !important;
-    }
+.userccount p {
+    text-align: left !important;
+}
 </style>
 @endpush
 @push('scripts')
@@ -78,46 +75,46 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 
 <script type="text/javascript">
-    function Download_CV() {
-        var cv = '';
-        $.ajax({
-            type: 'GET',
-            async: false,
-            url: `{{ route('refresh.cv') }}`,
-            data: {
-                _token: '{{ csrf_token() }}',
-                user_id: '{{ $user->id }}'
-            },
-            success: function(data) {
-                cv = data;
-            }
-        });
-        console.log(cv);
-        // Final file name
-        let fileName = "CV-" + '{{ $user->first_name.'
-        '.$user->middle_name.'
-        '.$user->last_name }}' + ".pdf";
+function Download_CV() {
+    var cv = '';
+    $.ajax({
+        type: 'GET',
+        async: false,
+        url: `{{ route('refresh.cv') }}`,
+        data: {
+            _token: '{{ csrf_token() }}',
+            user_id: '{{ $user->id }}'
+        },
+        success: function(data) {
+            cv = data;
+        }
+    });
+    console.log(cv);
+    // Final file name
+    let fileName = "CV-" + '{{ $user->first_name.'
+    '.$user->middle_name.'
+    '.$user->last_name }}' + ".pdf";
 
-        // Assuming "pages" is an array of HTML elements or strings that are separate pages:
-        let pages = [];
-        $(cv).each(function() {
-            pages.push($(this)[0]);
-        });
+    // Assuming "pages" is an array of HTML elements or strings that are separate pages:
+    let pages = [];
+    $(cv).each(function() {
+        pages.push($(this)[0]);
+    });
 
-        let worker = html2pdf().from(pages[0]).set({
-            margin: 10,
-            filename: fileName,
-            html2canvas: {
-                scale: 2
-            },
-            jsPDF: {
-                orientation: 'portrait',
-                unit: 'pt',
-                format: 'a4',
-                compressPDF: true
-            }
-        }).toPdf();
-        worker.save()
-    }
+    let worker = html2pdf().from(pages[0]).set({
+        margin: 10,
+        filename: fileName,
+        html2canvas: {
+            scale: 2
+        },
+        jsPDF: {
+            orientation: 'portrait',
+            unit: 'pt',
+            format: 'a4',
+            compressPDF: true
+        }
+    }).toPdf();
+    worker.save()
+}
 </script>
 @endpush

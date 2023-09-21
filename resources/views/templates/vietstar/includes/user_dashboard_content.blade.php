@@ -1,4 +1,4 @@
-<div id="content">
+<div id="content" class="content">
     <!-- Main -->
     <!-- Bio -->
     <div class="card card-bio mb-4 w-100 shadow-sm">

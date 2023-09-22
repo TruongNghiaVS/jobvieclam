@@ -215,84 +215,84 @@
   }
 } */
 
-@media (min-width:1200px) {
-  .container {
-    max-width: 1140px;
+  @media (min-width:1200px) {
+    .container {
+      max-width: 1140px;
+    }
+
+    .container.nav {
+      max-width: 95%;
+    }
+
+    .content {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+
+    .navbar .navbar-brand {
+      overflow: unset;
+    }
+
+    .navbar .navbar-brand img {
+      height: 32px;
+      width: initial;
+    }
+
+    .related-jobs .related-jobs__jobs {
+      flex-direction: row;
+    }
+
+    .about-us .about-us-bg {
+      background-position-x: -72px;
+      background-position-y: -72px;
+    }
   }
 
-  .container.nav {
-    max-width: 95%;
-  }
+  @media (min-width:1440px) {
+    .container {
+      max-width: 1440px;
+    }
 
-  .content {
-    padding-left: 80px;
-    padding-right: 80px;
-  }
+    .content {
+      padding-left: 135px;
+      padding-right: 135px;
+    }
 
-  .navbar .navbar-brand {
-    overflow: unset;
-  }
+    .navbar .navbar-brand {
+      width: 130px;
+      height: 53px;
+      overflow: hidden;
+    }
 
-  .navbar .navbar-brand img {
-    height: 32px;
-    width: initial;
-  }
+    .navbar .navbar-brand img {
+      width: 130px;
+      height: 53px;
+    }
 
-  .related-jobs .related-jobs__jobs {
-    flex-direction: row;
-  }
+    .header-bar .header-bar-recruiter {
+      right: 250px;
+    }
 
-  .about-us .about-us-bg {
-    background-position-x: -72px;
-    background-position-y: -72px;
-  }
-}
+    .about-us::before {
+      width: 48%;
+    }
 
-@media (min-width:1440px) {
-  .container {
-    max-width: 1440px;
-  }
+    .about-us .content {
+      width: 50%;
+      margin-left: 50%;
+      padding-top: 64px;
+      padding-left: 96px;
+    }
 
-  .content {
-    padding-left: 135px;
-    padding-right: 135px;
-  }
-
-  .navbar .navbar-brand {
-    width: 130px;
-    height: 53px;
-    overflow: hidden;
-  }
-
-  .navbar .navbar-brand img {
-    width: 130px;
-    height: 53px;
-  }
-
-  .header-bar .header-bar-recruiter {
-    right: 250px;
-  }
-
-  .about-us::before {
-    width: 48%;
-  }
-
-  .about-us .content {
-    width: 50%;
-    margin-left: 50%;
-    padding-top: 64px;
-    padding-left: 96px;
-  }
-
-  /* .blogs-slider::after {
+    /* .blogs-slider::after {
     width: 63%;
   } */
 
-  .blogs-slider .__row {
-    flex-direction: row;
-  }
+    .blogs-slider .__row {
+      flex-direction: row;
+    }
 
-  .related-jobs .related-jobs__jobs {
-    flex-direction: column;
+    .related-jobs .related-jobs__jobs {
+      flex-direction: column;
+    }
   }
-}

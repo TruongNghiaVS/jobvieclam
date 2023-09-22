@@ -369,8 +369,24 @@
 /* Extra small devices (phones, 767px and down) */
 @media only screen and (max-width: 767px) {
 
+  #sidebar-main-nav {
+    display: block;
+  }
+
+
+  #sidebar-main-nav {
+    display: block;
+  }
+
   .col-sm-6 {
     width: 100%;
+  }
+
+
+  /* Header Nav */
+  .navbar>.container {
+    justify-content: center;
+    position: relative;
   }
 
   .header-bar {
@@ -715,8 +731,14 @@
   }
 
   button#sidebarCollapse {
-    width: unset
+    width: unset;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 24px;
+    color: black;
   }
+
 }
 
 
@@ -725,6 +747,20 @@
 @media only screen and (min-width: 768px) and (max-width: 992px) {
   .main-menu {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+
+  button#sidebarCollapse {
+    width: unset;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    font-size: 24px;
+    color: black;
+  }
+
+  /* Header Nav */
+  .navbar>.container {
+    justify-content: center
   }
 
   .useraccountwrap .nav-link.active {
@@ -902,6 +938,21 @@
   .navbar-collapse .user-badge {
     margin: 10px 0px;
   }
+
+
+  .sidebar-main-nav.active {
+    -webkit-transform: translateX(-300px);
+    -ms-transform: translateX(-300px);
+    transform: translateX(-300px);
+  }
+
+  .sidebar-user-nav.active {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -913,6 +964,14 @@
   }
 
   .filters-job-wrapper-mobile {
+    display: none;
+  }
+
+  #sidebarCollapse {
+    display: none;
+  }
+
+  #sidebar-main-nav {
     display: none;
   }
 }

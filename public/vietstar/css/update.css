@@ -943,6 +943,14 @@ a {
     cursor: pointer !important
 }
 
+.navbarDropdownMenuLink {
+    background-color: unset !important;
+}
+
+.navbarDropdownMenuLink .dropdown-toggle::after {
+    display: none !important;
+}
+
 .form-calculate .frm-radio input[type="radio"]:checked~label::after {
     opacity: 1;
     -webkit-transition: all 0.3s ease-in-out;
@@ -4196,7 +4204,7 @@ div#industry_id_chosen {
     #main-nav .navbar-toggler {
         position: absolute;
         top: 50%;
-        right: 20px;
+        left: 0px;
         -webkit-transform: translateY(-50%);
         transform: translateY(-50%)
     }
@@ -4372,9 +4380,10 @@ div#industry_id_chosen {
     }
 
     .group-for-mobile {
+
         display: -webkit-box;
         display: -ms-flexbox;
-        display: flex;
+        /* display: flex; */
         position: absolute;
         top: 11px;
         right: 80px;
@@ -4385,7 +4394,8 @@ div#industry_id_chosen {
         justify-content: space-between;
         -webkit-box-align: center;
         -ms-flex-align: center;
-        align-items: center
+        align-items: center;
+        display: none;
     }
 
     .group-for-mobile .user-badge {
@@ -4412,9 +4422,7 @@ div#industry_id_chosen {
     }
 }
 
-@media screen and (max-width: 576px) {
-    .group-for-mobile {}
-}
+
 
 @media screen and (max-width: 1199px) {
     .main-menu .group-button .btn {

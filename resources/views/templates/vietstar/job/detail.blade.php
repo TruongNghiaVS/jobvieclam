@@ -10,7 +10,7 @@ $company = $job->getCompany();
 
 
 <!-- SEARCH STICKY -->
-<!-- <div class="page-heading-tool job-detail ">
+<div class="page-heading-tool job-detail ">
     <div class="container">
         <div class="tool-wrapper">
             <div class="search-job">
@@ -81,38 +81,7 @@ $company = $job->getCompany();
             </div>
         </div>
     </div>
-</div> -->
-
-
-<div class="page-heading-tool job-detail ">
-    <div class="container">
-        <div class="tool-wrapper">
-            <div class="search-job">
-                <div class="form-horizontal">
-                    <div class="form-wrap">
-                        <div class="form-group form-keyword">
-                            <input type="search" class="keyword form-control" id="search" name="search"
-                                placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
-                        </div>
-                        <div class="form-group form-submit">
-                            <button class="btn-gradient" type="submit">
-                                Tìm kiếm
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mobile-filter toollips">
-                <button type="button" class="btn btn-filter" id="atcFilters" title="Lọc">
-                    <i class="far fa-filter"></i> Lọc
-                </button>
-
-            </div>
-        </div>
-    </div>
 </div>
-
-
 
 <!-- SEARCH ADVANDCE STICKY -->
 <div class="filters-job-wrapper job-detail">
@@ -1422,16 +1391,20 @@ $(document).ready(function($) {
             var scrollTop = $(window).scrollTop();
             if (scrollTop > 400) {
                 $('.page-job-detail__floating-header').addClass('is-sticky');
-                $('.job-detail').addClass('is-sticky shadow"');
+                $('.job-detail').addClass('is-sticky');
                 $('.filters-job-wrapper').addClass('shadow-sm');
                 $('.filters-job-wrapper-mobile').addClass('shadow-sm');
             } else {
                 $('.page-job-detail__floating-header').removeClass('is-sticky');
 <<<<<<< HEAD
+<<<<<<< HEAD
                 $('.job-detail').removeClass('is-sticky shadow"');
 =======
                 $('.job-detail').removeClass('shadow is-sticky');
 >>>>>>> c75407b626ee10c22490f93659a4e30bae902233
+=======
+                $('.job-detail').removeClass('is-sticky');
+>>>>>>> parent of 65eec2e (.)
                 $('.filters-job-wrapper').removeClass('shadow-sm');
                 $('.filters-job-wrapper-mobile').removeClass('shadow-sm');
             }

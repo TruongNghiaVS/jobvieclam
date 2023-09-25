@@ -1,4 +1,4 @@
-@media (max-width: 576px) {
+@media (max-width:576px) {
   .show-sm {
     display: none;
   }
@@ -16,7 +16,7 @@
   }
 }
 
-@media (max-width: 710px) {
+@media (max-width:710px) {
   .job-detail-content .share-detail {
     flex-direction: column;
   }
@@ -54,6 +54,7 @@
     background-size: 160%;
   }
 
+
   /* for full calendar */
   .fc-dayGridMonth-view .fc-body .fc-row {
     min-height: 70px !important;
@@ -74,22 +75,28 @@
     white-space: nowrap;
     padding: 0 10px;
   }
+
+
+
 }
 
-@media (max-width: 830px) {
+@media (max-width:830px) {
   .header-bar .header-bar__title {
     width: unset;
   }
+
+
 }
 
-@media (min-width: 576px) and (max-width: 970px) {
+@media (min-width:576px) and (max-width: 970px) {
   .blogs-slider .__row .card-list {
     width: 100%;
     overflow: hidden;
   }
+
 }
 
-@media (min-width: 360px) and (max-width: 992px) {
+@media (min-width:360px) and (max-width: 992px) {
   .container {
     padding: 0 12px;
   }
@@ -105,9 +112,11 @@
     flex-direction: column;
     align-items: center;
   }
+
+
 }
 
-@media (max-width: 992px) {
+@media (max-width:992px) {
   .d-md-none {
     display: block !important;
     height: 54px;
@@ -135,7 +144,7 @@
   }
 }
 
-@media (min-width: 360px) {
+@media (min-width:360px) {
   .navbar .navbar-brand {
     width: fit-content;
     height: fit-content;
@@ -158,7 +167,7 @@
     height: auto;
     min-height: 500px;
     aspect-ratio: 400/225;
-    background-color: rgba(136, 2, 5, 0.6);
+    background-color: rgba(136, 2, 5, .6);
   }
 
   /* .about-us .about-us-bg{
@@ -178,8 +187,10 @@
   }
 
   .partner-item__name {
+
     padding: 17px 23px;
     font-size: 16px;
+
   }
 
   .section-jobs-by-industry .swiper-pagination {
@@ -187,7 +198,7 @@
   }
 }
 
-@media (min-width: 576px) {
+@media (min-width:576px) {
   .container {
     width: 100%;
     max-width: none;
@@ -197,6 +208,8 @@
     padding-left: 8px;
     padding-right: 8px;
   }
+
+
 
   .navbar .navbar-brand {
     width: fit-content;
@@ -219,7 +232,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width:992px) {
   .container {
     max-width: 960px;
   }
@@ -229,6 +242,7 @@
     padding-right: 24px;
   }
 
+
   .about-us,
   .about-us::before {
     aspect-ratio: unset;
@@ -237,7 +251,7 @@
   .about-us::before {
     width: 60%;
     height: inherit;
-    background-color: rgba(136, 2, 5, 0.9);
+    background-color: rgba(136, 2, 5, .9);
   }
 
   .about-us .content {
@@ -262,7 +276,7 @@
   } */
 }
 
-@media (min-width: 1200px) {
+@media (min-width:1200px) {
   .container {
     max-width: 1140px;
   }
@@ -295,7 +309,7 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width:1440px) {
   .container {
     max-width: 1320px;
   }
@@ -345,8 +359,16 @@
   }
 }
 
+
+
+
+
+
+
+
 /* Extra small devices (phones, 767px and down) */
 @media only screen and (max-width: 767px) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -360,6 +382,9 @@
   }
 
 >>>>>>> c75407b626ee10c22490f93659a4e30bae902233
+=======
+
+>>>>>>> parent of 65eec2e (.)
   .col-sm-6 {
     width: 100%;
   }
@@ -394,6 +419,7 @@
   .form-group-search-box.active {
     max-width: unset;
     height: 100%;
+
   }
 
   .header-bar .search-form {
@@ -403,6 +429,7 @@
   .header-bar .search-form .action-search-form {
     position: unset;
     max-width: unset;
+
   }
 
   .advance-search {
@@ -430,7 +457,7 @@
   }
 
   .section-jobs-by-industry .swiper-button-next {
-    right: 0;
+    right: 0
   }
 
   .section-jobs-by-industry .swiper-button-prev {
@@ -460,11 +487,17 @@
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> parent of 65eec2e (.)
   .close-filter-box {
     position: absolute;
     top: -40px;
     right: 0;
     height: 30px;
+<<<<<<< HEAD
 =======
   .filters-job-wrapper-mobile .filters-wrapper {
     position: absolute;
@@ -483,6 +516,9 @@
     justify-content: center;
     align-items: center;
 >>>>>>> c75407b626ee10c22490f93659a4e30bae902233
+=======
+
+>>>>>>> parent of 65eec2e (.)
   }
 
   .filters-wrapper .close-input-filter {
@@ -523,6 +559,8 @@
     padding-left: 15px;
   }
 
+
+
   .job-detail-banner {
     flex-direction: column;
     justify-content: center;
@@ -543,7 +581,7 @@
     white-space: nowrap;
     flex-direction: row;
 
-    flex-wrap: unset;
+    flex-wrap: unset
   }
 
   .page-job-detail__floating-header .box {
@@ -555,12 +593,13 @@
     margin-bottom: 10px;
   }
 
-  .page-job-detail__floating-header .box [class^="col-"] {
+  .page-job-detail__floating-header .box [class^=col-] {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
     align-items: center;
   }
+<<<<<<< HEAD
 <<<<<<< HEAD
   .page-heading-tool .mobile-filter {
     justify-content: flex-end;
@@ -755,10 +794,15 @@
   }
 
 >>>>>>> c75407b626ee10c22490f93659a4e30bae902233
+=======
+>>>>>>> parent of 65eec2e (.)
 }
+
+
 
 /* Medium devices (landscape tablets, 600px and up) */
 @media only screen and (min-width: 768px) and (max-width: 992px) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   .main-menu {
@@ -784,6 +828,10 @@
   }
 
 >>>>>>> c75407b626ee10c22490f93659a4e30bae902233
+=======
+
+
+>>>>>>> parent of 65eec2e (.)
   .col-sm-6 {
     width: 100%;
   }
@@ -849,7 +897,7 @@
   }
 
   .section-jobs-by-industry .swiper-button-next {
-    right: 0;
+    right: 0
   }
 
   .section-jobs-by-industry .swiper-button-prev {
@@ -865,6 +913,7 @@
     padding: 20px 27px;
   }
 
+
   .filters-job-wrapper .filters-wrapper {
     position: relative;
     top: 40px;
@@ -875,6 +924,7 @@
     top: -40px;
     right: 0;
     height: 30px;
+
   }
 
   .job-detail-banner .job-detail-banner__group .btn {
@@ -897,6 +947,7 @@
   .col-md-11.col-xs-12.col-info .col-lg-4s {
     width: 50%;
   }
+<<<<<<< HEAD
 <<<<<<< HEAD
 }
 
@@ -1009,3 +1060,10 @@
   }
 }
 >>>>>>> c75407b626ee10c22490f93659a4e30bae902233
+=======
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
+>>>>>>> parent of 65eec2e (.)

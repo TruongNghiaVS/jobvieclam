@@ -554,6 +554,92 @@ function opensearchbox() {
     })
 }
 
+//  Code bị lỗi chỗ welcome Page
+
+$(document).ready(function ($) {
+    @if (Session:: has('success'))
+toastr.success(`{{ Session::get('success')}}`);
+@endif
+@if (count($errors) > 0)
+    @foreach($errors -> all() as $error)
+toastr.error("{{$error}}");
+@endforeach
+@endif
+$("form").submit(function () {
+    $(this).find(":input").filter(function () {
+        return !this.value;
+    }).attr("disabled", "disabled");
+    return true;
+});
+$("form").find(":input").prop("disabled", false);
+
+$('body').on('keyup', '#search', function () {
+    var search = $(this).val();
+    if (search != '') {
+        $.ajax({
+            url: "{{ route('job.search') }}",
+            type: "POST",
+            data: {
+                search: search,
+                '_token': '{{ csrf_token() }}'
+            },
+            success: function (data) {
+                $("#suggesstion-box").show();
+                $("#suggesstion-box").html(data);
+                $("#search-box").css("background", "#FFF");
+            }
+        });
+    }
+}).on('mouseout', '#search', function () {
+    if ($('#suggesstion-box:hover').length != 0) {
+        $("#suggesstion-box").show();
+    }
+});
+$(window).click(function () {
+    $("#suggesstion-box").hide();
+});
+$('#city_id').chosen({
+    allow_single_deselect: true,
+    width: '100%'
+});
+$('#job_type_id').chosen({
+    allow_single_deselect: true,
+    width: '100%'
+});
+$('#career_level_id').chosen({
+    allow_single_deselect: true,
+    width: '100%'
+});
+$('#degree_level_id').chosen({
+    allow_single_deselect: true,
+    width: '100%'
+});
+$('#industry_id').chosen({
+    allow_single_deselect: true,
+    width: '100%'
+});
+});
+
+$(document).on('click', '#btn-register-now', function () {
+    var email = $('input[name="email"]').val();
+    var url = "{{ route('job-email-alert') . '?email=_email'}}";
+    url = url.replace('_email', email);
+    $.ajax({
+        url: url,
+        type: "GET",
+        dataType: "json",
+        beforeSend: function () { },
+        success: function (data) {
+            console.log(data);
+            if (data.status == 'success') {
+                toastr.success(data.message);
+            } else {
+                toastr.error(data.message);
+            }
+        }
+    });
+});
+
 
 
 

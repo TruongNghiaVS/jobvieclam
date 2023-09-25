@@ -385,7 +385,7 @@
 
   /* Header Nav */
   .navbar>.container {
-    justify-content: center;
+
     position: relative;
   }
 
@@ -734,7 +734,7 @@
     width: unset;
     position: absolute;
     top: 0;
-    left: 0;
+    right: 10px;
     font-size: 24px;
     color: black;
   }
@@ -760,12 +760,24 @@
     height: 30%;
   }
 
+  .group-button .btn {
+    padding: 12px 16px !important;
+    background-color: var(--bs-primary) !important;
+    color: white !important;
+  }
+
+  #navbarDropdownMenuLink {
+    padding: 0 !important;
+  }
+
 }
 
 
 
 /* Medium devices (landscape tablets, 600px and up) */
 @media only screen and (min-width: 768px) and (max-width: 992px) {
+
+
   .main-menu {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
@@ -774,15 +786,13 @@
     width: unset;
     position: absolute;
     top: 15px;
-    left: 0;
+    right: 10px;
     font-size: 24px;
     color: black;
   }
 
   /* Header Nav */
-  .navbar>.container {
-    justify-content: center
-  }
+
 
   .useraccountwrap .nav-link.active {
     color: white !important;
@@ -977,7 +987,26 @@
     bottom: 0 !important;
   }
 
+
+  #sidebar.active .sidebar-header {
+    max-height: 90%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 90%;
+  }
+
+  .group-button .btn {
+    padding: 12px 16px !important;
+    background-color: var(--bs-primary) !important;
+    color: white !important;
+  }
+
+  #navbarDropdownMenuLink {
+    padding: 0 !important;
+  }
+
 }
+
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 992px) {

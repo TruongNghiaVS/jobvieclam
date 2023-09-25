@@ -1,10 +1,12 @@
 <div id="content" class="content">
     <!-- Main -->
     <!-- Bio -->
+
     <div class="card card-bio mb-4 w-100 shadow-sm">
         <div class="row g-0">
             <div class="col-md-2">
-                <img src="{{ auth()->user()->avatar() }}" class="img-bio rounded mx-auto mt-4 d-block" alt="{{auth()->user()->name}}">
+                <img src="{{ auth()->user()->avatar() }}" class="img-bio rounded mx-auto mt-4 d-block"
+                    alt="{{auth()->user()->name}}">
             </div>
             <div class="col-md-10">
                 <div class="card-body card-body-profile-seeker">
@@ -20,9 +22,12 @@
                 </div>
 
                 <div class="card-body contact-bio">
-                    <span class="contact-bio-info me-4 mb-2"><i class="iconmoon icon-recruiter-location"></i>{{Auth::user()->getLocation()}}</span>
-                    <span class="contact-bio-info me-4 mb-2"><i class="iconmoon icon-recruiter-phone-call"></i>{{auth()->user()->phone}}</span>
-                    <span class="contact-bio-info me-4 mb-2"><i class="iconmoon icon-recruiter-email"></i>{{auth()->user()->email}}</span>
+                    <span class="contact-bio-info me-4 mb-2"><i
+                            class="iconmoon icon-recruiter-location"></i>{{Auth::user()->getLocation()}}</span>
+                    <span class="contact-bio-info me-4 mb-2"><i
+                            class="iconmoon icon-recruiter-phone-call"></i>{{auth()->user()->phone}}</span>
+                    <span class="contact-bio-info me-4 mb-2"><i
+                            class="iconmoon icon-recruiter-email"></i>{{auth()->user()->email}}</span>
                 </div>
 
             </div>
@@ -58,14 +63,16 @@
                     <div class="card-body">
                         <div class="related-jobs__title d-flex justify-content-between align-items-center">
                             <h6>{{__('Matched Jobs')}}</h6>
-                            <button class="btn btn-round btn-link btn-sm main-color" onclick="window.location='{{ route('job.list') }}'">{{__('View all')}}</button>
+                            <button class="btn btn-round btn-link btn-sm main-color"
+                                onclick="window.location='{{ route('job.list') }}'">{{__('View all')}}</button>
                         </div>
                         <div class="row related-jobs__jobs px-12px mb-2">
                             @foreach($matchingJobs as $match)
                             <div class="col-12 card-news gap-16">
                                 <div class="card-news__icon">
 
-                                    <img src="{{ asset('company_logos/'.( !empty($match->getCompany()) ? $match->getCompany()->logo : 'no-logo.png')) }}" alt="{{!empty($match->getCompany()) ? $match->getCompany()->name : ''}}">
+                                    <img src="{{ asset('company_logos/'.( !empty($match->getCompany()) ? $match->getCompany()->logo : 'no-logo.png')) }}"
+                                        alt="{{!empty($match->getCompany()) ? $match->getCompany()->name : ''}}">
                                 </div>
                                 <div class="card-news__content">
                                     <h6 class="card-news__content-title">{{ $match->name }}</h6>
@@ -74,8 +81,10 @@
                                     </p>
                                     <div class="card-news__content-footer">
                                         <div class="card-news__content-footer__location">
-                                            <span class="badge rounded-pill pill pill-location">{{!empty($match->getCompany()) ? $match->getCompany()->name : ''}}</span>
-                                            <span class="badge rounded-pill pill pill-worktime">{{$match->getJobType('job_type')}}</span>
+                                            <span
+                                                class="badge rounded-pill pill pill-location">{{!empty($match->getCompany()) ? $match->getCompany()->name : ''}}</span>
+                                            <span
+                                                class="badge rounded-pill pill pill-worktime">{{$match->getJobType('job_type')}}</span>
                                         </div>
                                         <div class="card-news__content-footer__salary">
                                             {{$match->salary_from.' '.$match->salary_currency}} -
@@ -98,7 +107,8 @@
                     <div class="card-body">
                         <div class="related-jobs__title d-flex justify-content-between align-items-center mb-2">
                             <h6>Danh sách theo dõi</h6>
-                            <a href="{{route('my.followings')}}"><button class="btn btn-round btn-linsk btn-sm main-color">Xem tất cả</button></a>
+                            <a href="{{route('my.followings')}}"><button
+                                    class="btn btn-round btn-linsk btn-sm main-color">Xem tất cả</button></a>
                         </div>
                         @if(isset($followers) && null!==($followers))
                         @foreach($followers as $follow)

@@ -35,6 +35,7 @@
         z-index: 1;
         overflow-x: hidden;
         overflow-y: auto;
+        z-index: 30;
     }
 
     /* PROFILE CSS */
@@ -97,7 +98,7 @@
         overflow-y: auto;
         display: flex;
         flex-direction: column;
-
+        z-index: 30;
         max-height: 100vh;
     }
 
@@ -255,7 +256,7 @@
     }
 
     #sidebar ul ul a {
-        padding-left: 70px !important;
+        padding-left: 70px;
     }
 
     #sidebar ul li.active a span {
@@ -359,6 +360,7 @@
 <nav id="sidebar" class="active">
 
     <div class="sidebar-header">
+        @if(Auth::user())
         <div class="profile" bis_skin_checked="1">
             <div class="avatar" bis_skin_checked="1"><a href="#">
                     <img class="lazy-bg" src="{{ auth()->user()->avatar() }}" alt="avatar" style=""></a>
@@ -368,7 +370,19 @@
             </div>
             <div class="back-menu-normal" bis_skin_checked="1"><i class="bi bi-arrow-left"></i></div>
         </div>
+        @else
 
+        <div class="profile" bis_skin_checked="1">
+            <div class="avatar" bis_skin_checked="1"><a href="#">
+                    <img class="lazy-bg" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar" style=""></a>
+            </div>
+            <div class="username" bis_skin_checked="1">
+                <p><a href="#">Welcome to Jobvieclam</a></p>
+            </div>
+            <div class="back-menu-normal" bis_skin_checked="1"><i class="bi bi-arrow-left"></i></div>
+        </div>
+
+        @endif
         <div class="menu">
             <ul class="list-unstyled components sidebar-main-nav" id="sidebar-main-nav">
                 <li class="sidebar-item {{ Request::url() == route('index') ? 'active' : '' }}">
@@ -501,6 +515,8 @@
 
             </ul>
             <!-- user nav -->
+
+            @if(Auth::user())
             <ul class="list-unstyled components sidebar-user-nav" id="sidebar-user-nav">
                 <li class="sidebar-item {{ Request::url() == route('home') ? 'active' : '' }}">
                     <a href="{{ route('home') }}" class="list-group-item list-group-item-action {{ Request::url() == route('home') ? 'active' : '' }}">
@@ -603,34 +619,60 @@
                 </li>
 
             </ul>
+            @endif
         </div>
 
     </div>
 
     <div class="sidebar-bottom">
         <ul class="list-unstyled components sidebar-bottom__item">
+            @if(Auth::user())
             <li class="openmyacount">
                 <div class="d-flex w-100">
                     <span class="side-bar-content">Thông tin tài khoản</span>
                 </div>
-                </a>
+
             </li>
+
+
+            @elseif(!Auth::user() && !Auth::guard('company')->user())
+            <li>
+                <div class="d-flex gap-10 my-2 group-button">
+                    <a class="btn btn-primary login-btn" href="{{route('login')}}" class="nav-link">{{__('Log in')}}</a>
+                    {{--<a class="btn btn-primary" href="{{route('register')}}" class="nav-link
+                    register">{{__('Đăng ký')}}</a> --}}
+                    <a class="btn btn-primary" href="{{route('job.seeker.list')}}" class="nav-link">{{__('Find candidates')}}</a>
+                </div>
+            </li>
+            @endif
+
+            <li>
+                <ul class="navbar-nav navbar-lang ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                            <img src="{{ asset('/vietstar/imgs/flags/') }}/{{config('app.available_locales')[App::getLocale()]['flag-icon']}}.png" alt="vietstar">
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            @foreach (config('app.available_locales') as $lang => $language)
+                            @if ($lang != App::getLocale())
+                            <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span class="flag-icon flag-icon-{{$language['flag-icon']}}"><img src="{{ asset('/vietstar/imgs/flags/') }}/{{$language['flag-icon']}}.png" alt="vietstar"></span> {{$language['display']}}</a>
+                            @endif
+                            @endforeach
+
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+
             <li>
                 <div class="d-flex w-100">
                     <span class="side-bar-content">Dành cho nhà tuyển dụng</span>
                 </div>
-                </a>
-            </li>
-            <li>
-                <div class="d-flex w-100">
-                    <span class="side-bar-content">Đăng xuất</span>
-                </div>
-                </a>
             </li>
         </ul>
     </div>
-
-
 </nav>
 
 @push('scripts')
@@ -664,13 +706,6 @@
             $('.sidebar-user-nav').removeClass('active');
             $('.back-menu-normal').removeClass('active');
         });
-
-
-
-
-
-
-
     });
 </script>
 @endpush

@@ -81,7 +81,8 @@
                 <div class="form-horizontal">
                     <div class="form-wrap">
                         <div class="form-group form-keyword">
-                            <input type="search" class="keyword form-control" id="search" name="search" placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
+                            <input type="search" class="keyword form-control" id="search" name="search"
+                                placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
                         </div>
                         <div class="form-group form-select-chosen" id="functional_area_dd">
                             <select class="form-control form-select" name="functional_area_id" id="functional_area">
@@ -126,7 +127,8 @@
                 <div class="form-horizontal">
                     <div class="form-wrap">
                         <div class="form-group form-keyword">
-                            <input type="search" class="keyword form-control" id="search" name="search" placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
+                            <input type="search" class="keyword form-control" id="search" name="search"
+                                placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
                         </div>
                         <div class="form-group form-submit">
                             <button class="btn-gradient" type="submit">
@@ -137,7 +139,8 @@
                 </div>
             </div>
             <div class="mobile-filter toollips">
-                <button type="button" class="btn btn-filter" id="#atcFilters-mobile" title="Lọc" onclick="openFilterJob_mobile()">
+                <button type="button" class="btn btn-filter" id="#atcFilters-mobile" title="Lọc"
+                    onclick="openFilterJob_mobile()">
                     <i class="far fa-filter"></i> Lọc
                 </button>
             </div>
@@ -199,7 +202,8 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="form-group form-group-custom-multiselect" id="benefit_id_dd">
                             <label>Theo kỹ năng</label>
-                            <select class="form-control form-select shadow-sm multiselect" name="benefit_id" id="benefit" multiple>
+                            <select class="form-control form-select shadow-sm multiselect" name="benefit_id"
+                                id="benefit" multiple>
                                 <option value="">Tất Cả</option>
                                 <option value="Nhân sự"> Word</option>
                                 <option value="Hành chính"> Photoshop</option>
@@ -255,7 +259,8 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="form-group form-group-custom-multiselect" id="benefit_id_dd">
                             <label>Chọn phúc lợi mong muốn</label>
-                            <select class="form-control form-select shadow-sm multiselect" name="benefit_id" id="benefit" multiple>
+                            <select class="form-control form-select shadow-sm multiselect" name="benefit_id"
+                                id="benefit" multiple>
                                 <option value="">Chọn phòng ban</option>
                                 <option value="Nhân sự">Nhân sự</option>
                                 <option value="Hành chính">Hành chính</option>
@@ -284,7 +289,8 @@
                 <div class="row">
                     <div class="col-sm-6 col-lg-2">
                         <div class="form-group form-keyword">
-                            <input type="search" class="keyword form-control" id="search" name="search" placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
+                            <input type="search" class="keyword form-control" id="search" name="search"
+                                placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
                         </div>
                     </div>
 
@@ -355,7 +361,8 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="form-group form-group-custom-multiselect" id="benefit_id_dd">
                             <label>Chọn phúc lợi mong muốn</label>
-                            <select class="form-control form-select shadow-sm multiselect" name="benefit_id" id="benefit" multiple>
+                            <select class="form-control form-select shadow-sm multiselect" name="benefit_id"
+                                id="benefit" multiple>
                                 <option value="">Chọn phòng ban</option>
                                 <option value="Nhân sự">Nhân sự</option>
                                 <option value="Hành chính">Hành chính</option>
@@ -404,7 +411,8 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="form-group form-group-custom-multiselect" id="benefit_id_dd">
                             <label>Chọn phúc lợi mong muốn</label>
-                            <select class="form-control form-select shadow-sm multiselect" name="benefit_id" id="benefit" multiple>
+                            <select class="form-control form-select shadow-sm multiselect" name="benefit_id"
+                                id="benefit" multiple>
                                 <option value="">Chọn phòng ban</option>
                                 <option value="Nhân sự">Nhân sự</option>
                                 <option value="Hành chính">Hành chính</option>
@@ -433,11 +441,9 @@
 
 <div class="listpgWraper Jobpage">
     <div class="container">
-
         <form action="{{route('job.seeker.list')}}" method="get">
             <!-- Search Result and sidebar start -->
             <div class="row">
-
                 <div class="col-lg-9">
                     <!-- Search List -->
                     <ul class="searchList">
@@ -449,14 +455,16 @@
                                 <div class="col-lg-8 col-md-8">
                                     <div class="jobimg">{{$jobSeeker->printUserImage(100, 100)}}</div>
                                     <div class="jobinfo">
-                                        <h3><a href="{{route('user.profile', $jobSeeker->id)}}">{{$jobSeeker->getName()}}</a>
+                                        <h3><a
+                                                href="{{route('user.profile', $jobSeeker->id)}}">{{$jobSeeker->getName()}}</a>
                                         </h3>
                                         <div class="location"> {{$jobSeeker->getLocation()}}</div>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="col-lg-4 col-md-4">
-                                    <div class="listbtn"><a href="{{route('user.profile', $jobSeeker->id)}}">{{__('View Profile')}}</a>
+                                    <div class="listbtn"><a
+                                            href="{{route('user.profile', $jobSeeker->id)}}">{{__('View Profile')}}</a>
                                     </div>
                                 </div>
                             </div>
@@ -503,7 +511,8 @@
                                         <div class="item" bis_skin_checked="1">
                                             <div class="image loadAds" bis_skin_checked="1">
                                                 <a href="#">
-                                                    <img src="https://media.istockphoto.com/id/1312091473/vector/we-are-hiring-banner-with-megaphone-flat-illustration.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=03ytHwFjPHCCIIAxR-hplKCQQNFWgZSMUg2HDJ_xTZQ=" alt="#">
+                                                    <img src="https://media.istockphoto.com/id/1312091473/vector/we-are-hiring-banner-with-megaphone-flat-illustration.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=03ytHwFjPHCCIIAxR-hplKCQQNFWgZSMUg2HDJ_xTZQ="
+                                                        alt="#">
                                                 </a>
                                             </div>
                                         </div>
@@ -512,7 +521,8 @@
                                         <div class="item" bis_skin_checked="1">
                                             <div class="image loadAds" bis_skin_checked="1">
                                                 <a href="#">
-                                                    <img src="https://img.freepik.com/free-vector/man-search-hiring-job-online-from-laptop_1150-52728.jpg" alt="#">
+                                                    <img src="https://img.freepik.com/free-vector/man-search-hiring-job-online-from-laptop_1150-52728.jpg"
+                                                        alt="#">
                                                 </a>
                                             </div>
                                         </div>
@@ -521,7 +531,8 @@
                                         <div class="item" bis_skin_checked="1">
                                             <div class="image loadAds" bis_skin_checked="1">
                                                 <a href="#">
-                                                    <img src="https://media.istockphoto.com/id/1173054931/photo/jobs-text-on-wooden-blocks-over-keyboard.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=1d3E26tHR7Yf7AUuGomDISXZTQ_u8PxizqTvo3bvSTY=" alt="#">
+                                                    <img src="https://media.istockphoto.com/id/1173054931/photo/jobs-text-on-wooden-blocks-over-keyboard.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=1d3E26tHR7Yf7AUuGomDISXZTQ_u8PxizqTvo3bvSTY="
+                                                        alt="#">
                                                 </a>
                                             </div>
                                         </div>
@@ -530,7 +541,8 @@
                                         <div class="item" bis_skin_checked="1">
                                             <div class="image loadAds" bis_skin_checked="1">
                                                 <a href="#">
-                                                    <img src="https://elca.vietnamworks.com/assets/images/page/banner/cover.png?r=1689852315" alt="#">
+                                                    <img src="https://elca.vietnamworks.com/assets/images/page/banner/cover.png?r=1689852315"
+                                                        alt="#">
                                                 </a>
                                             </div>
                                         </div>
@@ -549,48 +561,48 @@
 @endsection
 @push('styles')
 <style type="text/css">
-    .searchList li .jobimg {
-        min-height: 80px;
-    }
+.searchList li .jobimg {
+    min-height: 80px;
+}
 
-    .hide_vm_ul {
-        height: 100px;
-        overflow: hidden;
-    }
+.hide_vm_ul {
+    height: 100px;
+    overflow: hidden;
+}
 
-    .hide_vm {
-        display: none !important;
-    }
+.hide_vm {
+    display: none !important;
+}
 
-    .view_more {
-        cursor: pointer;
-    }
+.view_more {
+    cursor: pointer;
+}
 </style>
 @endpush
 @push('scripts')
 <script>
-    $(document).ready(function($) {
-        $("form").submit(function() {
-            $(this).find(":input").filter(function() {
-                return !this.value;
-            }).attr("disabled", "disabled");
-            return true;
-        });
-        $("form").find(":input").prop("disabled", false);
-
-        $(".view_more_ul").each(function() {
-            if ($(this).height() > 100) {
-                $(this).addClass('hide_vm_ul');
-                $(this).next().removeClass('hide_vm');
-            }
-        });
-        $('.view_more').on('click', function(e) {
-            e.preventDefault();
-            $(this).prev().removeClass('hide_vm_ul');
-            $(this).addClass('hide_vm');
-        });
-
+$(document).ready(function($) {
+    $("form").submit(function() {
+        $(this).find(":input").filter(function() {
+            return !this.value;
+        }).attr("disabled", "disabled");
+        return true;
     });
+    $("form").find(":input").prop("disabled", false);
+
+    $(".view_more_ul").each(function() {
+        if ($(this).height() > 100) {
+            $(this).addClass('hide_vm_ul');
+            $(this).next().removeClass('hide_vm');
+        }
+    });
+    $('.view_more').on('click', function(e) {
+        e.preventDefault();
+        $(this).prev().removeClass('hide_vm_ul');
+        $(this).addClass('hide_vm');
+    });
+
+});
 </script>
 @include('templates.vietstar.includes.country_state_city_js')
 @endpush

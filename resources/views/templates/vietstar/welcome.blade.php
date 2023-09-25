@@ -4,6 +4,11 @@
 @include('templates.vietstar.includes.header')
 @include('templates.vietstar.includes.user_dashboard_menu')
 <!-- Header end -->
+
+
+<!-- Dashboard menu start -->
+@include('templates.vietstar.includes.user_dashboard_menu')
+<!-- Dashboard menu end -->
 <!-- Search start -->
 @include('templates.vietstar.includes.search')
 <!-- Search End -->

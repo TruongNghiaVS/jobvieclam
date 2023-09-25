@@ -369,6 +369,7 @@
 /* Extra small devices (phones, 767px and down) */
 @media only screen and (max-width: 767px) {
 
+<<<<<<< HEAD
 
   #sidebar-main-nav {
     display: block;
@@ -379,6 +380,8 @@
     display: block;
   }
 
+=======
+>>>>>>> parent of 65eec2e (.)
   .col-sm-6 {
     width: 100%;
   }
@@ -482,10 +485,25 @@
 
 
 
+<<<<<<< HEAD
 
 <<<<<<< HEAD
   .close-filter-box {
 =======
+=======
+  .close-filter-box {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    height: 30px;
+
+  }
+
+  .filters-wrapper .close-input-filter {
+    justify-content: end;
+  }
+
+>>>>>>> parent of 65eec2e (.)
   .jobs-side-list .item-job {
     padding: 10px;
   }
@@ -560,6 +578,7 @@
     margin-bottom: 10px;
     align-items: center;
   }
+<<<<<<< HEAD
 
   .page-heading-tool.job-detail {
     display: none;
@@ -724,12 +743,15 @@
     color: black;
   }
 
+=======
+>>>>>>> parent of 65eec2e (.)
 }
 
 
 
 /* Medium devices (landscape tablets, 600px and up) */
 @media only screen and (min-width: 768px) and (max-width: 992px) {
+<<<<<<< HEAD
   .main-menu {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
@@ -751,6 +773,9 @@
   .useraccountwrap .nav-link.active {
     color: white !important;
   }
+=======
+
+>>>>>>> parent of 65eec2e (.)
 
   .col-sm-6 {
     width: 100%;
@@ -846,6 +871,7 @@
     right: 0;
     height: 30px;
 
+<<<<<<< HEAD
     .filters-job-wrapper-mobile .filters-wrapper {
       position: absolute;
       top: 50px;
@@ -1138,6 +1164,8 @@
     }
 
 
+=======
+>>>>>>> parent of 65eec2e (.)
   }
 
 
@@ -1310,6 +1338,7 @@
     width: 100% !important;
   }
 
+<<<<<<< HEAD
   .userccount {
     padding: 20px;
   }
@@ -1395,3 +1424,9 @@
 @media only screen and (min-width: 1200px) {}
 
 >>>>>>>parent of 65eec2e (.)
+=======
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
+>>>>>>> parent of 65eec2e (.)

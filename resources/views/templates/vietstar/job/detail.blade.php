@@ -51,6 +51,7 @@ $company = $job->getCompany();
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     <<<<<<< HEAD </div>
 
         <!-- SEARCH STICKY Mobile-->
@@ -64,6 +65,285 @@ $company = $job->getCompany();
                                 <div class="form-group form-keyword">
                                     <input type="search" class="keyword form-control" id="search" name="search"
                                         placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
+=======
+</div>
+
+<!-- SEARCH ADVANDCE STICKY -->
+<div class="filters-job-wrapper job-detail">
+    <div class="container">
+        <div class="filters-wrapper">
+            <form action="{{route('job.list')}}" method="get">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-2">
+                        <div class="form-group form-select">
+                            <label>Lương</label>
+                            <select class="form-control form-select" name="salary" id="salary">
+                                <option value="">Tất cả</option>
+                                <option value="3">Từ 3.000.000 đ</option>
+                                <option value="5">Từ 5.000.000 đ</option>
+                                <option value="7">Từ 7.000.000 đ</option>
+                                <option value="10">Từ 10.000.000 đ</option>
+                                <option value="15">Từ 15.000.000 đ</option>
+                                <option value="20">Từ 20.000.000 đ</option>
+                                <option value="30">Từ 30.000.000 đ</option>
+                                <option value="40">Từ 40.000.000 đ</option>
+                                <option value="50">Từ 50.000.000 đ</option>
+                                <option value="60">Từ 60.000.000 đ</option>
+                                <option value="70">Từ 70.000.000 đ</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="form-group" id="degree_level_dd">
+                            <label>Cấp bậc</label>
+                            <select class="form-control form-select" id="level" name="level">
+                                <option value="">Tất cả</option>
+                                <option value="sinh-vien-thuc-tap-sinh_1" data-id="1">
+                                    Sinh viên/ Thực tập sinh
+                                </option>
+                                <option value="moi-tot-nghiep_2" data-id="2">
+                                    Mới tốt nghiệp
+                                </option>
+                                <option value="nhan-vien_3" data-id="3">
+                                    Nhân viên
+                                </option>
+                                <option value="truong-nhom-giam-sat_4" data-id="4">
+                                    Trưởng nhóm / Giám sát
+                                </option>
+                                <option value="quan-ly_5" data-id="5">
+                                    Quản lý
+                                </option>
+                                <option value="quan-ly-cap-cao_11" data-id="11">
+                                    Quản lý cấp cao
+                                </option>
+                                <option value="dieu-hanh-cap-cao_12" data-id="12">
+                                    Điều hành cấp cao
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="form-group" id="job_type_dd">
+                            <label>Hình thức việc làm</label>
+                            <select class="form-control form-select" name="job_type" id="job_type">
+                                <option value="">Tất cả</option>
+                                <option data-id="1000" value="nhan-vien-chinh-thuc_1000">
+                                    Nhân viên chính thức
+                                </option>
+                                <option data-id="0100" value="tam-thoi-du-an_0100">
+                                    Tạm thời/Dự án
+                                </option>
+                                <option data-id="0010" value="thoi-vu-nghe-tu-do_0010">
+                                    Thời vụ - Nghề tự do
+                                </option>
+                                <option data-id="0001" value="thuc-tap_0001">
+                                    Thực tập
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="form-group form-group-custom-multiselect" id="benefit_id_dd">
+                            <label>Chọn phúc lợi mong muốn</label>
+                            <select class="form-control form-select shadow-sm multiselect" name="benefit_id"
+                                id="benefit" multiple>
+                                <option value="">Chọn phòng ban</option>
+                                <option value="Nhân sự">Nhân sự</option>
+                                <option value="Hành chính">Hành chính</option>
+                                <option value="Kế toán">Kế toán</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-1 close-filter-box">
+                        <div class="close-input-filter">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<section class="container job-detail">
+    <!-- JOB DESCRIPTION -->
+    <section class="job-detail-title">
+        <div class="job-detail-banner d-flex gap-24">
+            <div class="job-detail-banner__icon">
+                <img src="{{ asset('company_logos/'.$company->logo) }}" alt="{{ $company->name }}">
+            </div>
+            <div class="job-detail-banner__group d-flex flex-fill">
+                <div class="job-detail-banner__detail">
+                    <h3 class="banner__title">{{$job->title}}</h3>
+                    <div class="banner__company">{{$company->name}}</div>
+                    <div class="banner__due-day mb-3">
+                        Địa điểm: {{ !empty($job->location) ? $job->location :  $job->getCity('city')}}
+                    </div>
+                    <div class="banner__due-day mb-3">
+                        $
+                        @php
+                        $salaryType = $job->salary_type;
+
+                        switch ($salaryType) {
+                        case \App\Job::SALARY_TYPE_RANGE:
+                        $html = MiscHelper::formatCurrency($job->salary_from) . ' - ' .
+                        MiscHelper::formatCurrency($job->salary_to) . '(' .
+                        $job->salary_currency . ')';
+                        break;
+                        case \App\Job::SALARY_TYPE_NEGOTIABLE:
+                        $html = __('Negotiable');
+                        break;
+                        case \App\Job::SALARY_TYPE_FROM:
+                        $html = __('From') . ' ' . MiscHelper::formatCurrency($job->salary_from)
+                        . '(' . $job->salary_currency . ')';
+                        break;
+                        case \App\Job::SALARY_TYPE_TO:
+                        $html = __('To') . ' ' . MiscHelper::formatCurrency($job->salary_to) .
+                        '(' . $job->salary_currency . ')';
+                        break;
+                        }
+                        @endphp
+                        @if(!(bool)$job->hide_salary)
+                        <strong>{{$html}}</strong>
+                        @endif
+                    </div>
+                    <div class="banner__due-day">
+                        <i class="far fa-calendar-day"></i>
+                        {{__('Apply Before')}}: <span>{{$job->expiry_date->format('d/m/Y')}}</span>
+                    </div>
+                </div>
+                <div class="">
+                    @if(Auth::guard('company')->check())
+                    @if(Auth::guard('company')->user()->id == $job->company_id )
+                    <a href="{{route('edit.front.job', $job->id)}}" class="btn btn-outline-primary">
+                        {{__('Edit Job')}} </a>
+                    @endif
+                    @else
+                    @if($job->isJobExpired())
+                    <span class="btn btn-primary btn-apply">
+                        <!-- <i class="fa fa-paper-plane iconawesome" aria-hidden="true"></i> -->
+                        Nộp đơn
+                        <!-- {{__('Job is expired')}} -->
+                    </span>
+                    @elseif(Auth::check() && Auth::user()->isAppliedOnJob($job->id))
+                    <button class="btn btn-primary apply applied" disabled><i class="fa fa-paper-plane iconawesome"
+                            aria-hidden="true"></i>
+                        {{__('Already Applied')}}</button>
+                    @else
+                    <a href="{{route('apply.job', $job->slug)}}" class="btn btn-primary apply"><i
+                            class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
+                        Nộp đơn
+                    </a>
+                    @endif
+                    @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
+                    <a href="{{route('remove.from.favourite', $job->slug)}}" class="btn btn-outline-primary"><i
+                            class="fas fa-heart iconoutline"></i> {{__('Favourite Job')}} </a> @else <a
+                        href="{{route('add.to.favourite', $job->slug)}}" class="btn btn-outline-primary"><i
+                            class="fas fa-heart iconoutline"></i></a>
+                    @endif
+                    @endif
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--TAB PANE NAV -->
+    <ul class="nav nav-tabs nav-tabs-default">
+        <li class="nav-item">
+            <button class="nav-link active" id="detail-tab" data-toggle="tab" data-target="#detail"
+                aria-controls="detail">
+                {{ __('Job Details') }}
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile" aria-controls="profile">
+                {{ __('Company Information') }}
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" id="related-jobs-tab" data-toggle="tab" data-target="#related-jobs-pane"
+                aria-controls="related-jobs">
+                Việc làm khác từ công ty
+            </button>
+        </li>
+    </ul>
+    <!--TAB CONTENT -->
+    <div class="tab-content">
+        <div class="tab-pane show active" id="detail" aria-labelledby="detail-tab">
+            @include('flash::message')
+            <!-- Job detail title -->
+            <div class="row">
+                <div class="col-xxl-12 col-xl-12 pe-xxl-4">
+                    <div class="tab-content">
+                        <!-- Job detail -->
+                        <section class="job-detail-content">
+                            <div class="require-card">
+                                <div class="row">
+                                    <div class="col-12 col-md-4">
+                                        <div class="item-require">
+                                            <div class="require-card__item-icon">
+                                                <div class="icon-salary icon-size-30"></div>
+                                            </div>
+                                            <div class="require-card__item-content">
+                                                <p>{{ __('Salary Level') }}</p>
+                                                @php
+                                                $salaryType = $job->salary_type;
+
+                                                switch ($salaryType) {
+                                                case \App\Job::SALARY_TYPE_RANGE:
+                                                $html = MiscHelper::formatCurrency($job->salary_from) . ' - ' .
+                                                MiscHelper::formatCurrency($job->salary_to) . '(' .
+                                                $job->salary_currency . ')';
+                                                break;
+                                                case \App\Job::SALARY_TYPE_NEGOTIABLE:
+                                                $html = __('Negotiable');
+                                                break;
+                                                case \App\Job::SALARY_TYPE_FROM:
+                                                $html = __('From') . ' ' . MiscHelper::formatCurrency($job->salary_from)
+                                                . '(' . $job->salary_currency . ')';
+                                                break;
+                                                case \App\Job::SALARY_TYPE_TO:
+                                                $html = __('To') . ' ' . MiscHelper::formatCurrency($job->salary_to) .
+                                                '(' . $job->salary_currency . ')';
+                                                break;
+                                                }
+                                                @endphp
+                                                @if(!(bool)$job->hide_salary)
+                                                <strong>{{$html}}</strong>
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <div class="item-require">
+                                            <div class="require-card__item-icon">
+                                                <div class="icon-team icon-size-30"></div>
+                                            </div>
+                                            <div class="require-card__item-content">
+                                                <p>{{ __('Number of positions') }}</p>
+                                                <strong>{{ $job->num_of_positions }}</strong>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <div class="item-require">
+                                            <div class="require-card__item-icon">
+                                                <div class="icon-calendar icon-size-30"></div>
+                                            </div>
+                                            <div class="require-card__item-content">
+                                                <p>{{ __('Job Types') }}</p>
+                                                <strong>{{ __($job->getJobType('job_type')) }}</strong>
+                                            </div>
+                                        </div>
+
+                                    </div>
+>>>>>>> parent of 65eec2e (.)
                                 </div>
                                 <div class="form-group form-submit">
                                     <button class="btn-gradient" type="submit">
@@ -1444,6 +1724,7 @@ $company = $job->getCompany();
             });
             $("form").find(":input").prop("disabled", false);
 
+<<<<<<< HEAD
             $(".view_more_ul").each(function() {
                 if ($(this).height() > 100) {
                     $(this).css('height', 100);
@@ -1499,6 +1780,21 @@ $company = $job->getCompany();
                 });
             });
 
+=======
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > 400) {
+                $('.page-job-detail__floating-header').addClass('is-sticky');
+                $('.job-detail').addClass('is-sticky');
+                $('.filters-job-wrapper').addClass('shadow-sm');
+
+            } else {
+                $('.page-job-detail__floating-header').removeClass('is-sticky');
+                $('.job-detail').removeClass('is-sticky');
+                $('.filters-job-wrapper').removeClass('shadow-sm');
+            }
+>>>>>>> parent of 65eec2e (.)
         });
         </script>
         @endpush

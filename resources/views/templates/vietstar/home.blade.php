@@ -4,7 +4,7 @@
 @include('templates.vietstar.includes.header')
 <!-- Header end -->
 <!-- Inner Page Title start -->
-
+<!-- Header end -->
 <!-- Inner Page Title end -->
 <div class="wrapper">
     @include('flash::message')

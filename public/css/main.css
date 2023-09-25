@@ -1189,7 +1189,6 @@ a.wit-btn {
 
 /*messages*/
 .messageWrap {
-	padding: 40px 0px;
 	position: relative;
 }
 
@@ -2492,7 +2491,6 @@ label.partTime[title="Rotating"] {
 
 .listpgWraper {
 	background: #f0f0f0;
-	padding: 50px 0;
 	min-height: 400px;
 }
 
@@ -2701,6 +2699,7 @@ label.partTime[title="Rotating"] {
 .searchList {
 	list-style: none;
 	margin-bottom: 30px;
+	padding-left: 0 !important;
 }
 
 .searchList li {
@@ -3826,6 +3825,7 @@ ul.skillslist li a:hover {
 	border-radius: 0;
 	padding: 10px 13px;
 	border-color: #ddd;
+	width: 100%;
 }
 
 .formpanel select.form-control {
@@ -3904,7 +3904,7 @@ ul.skillslist li a:hover {
 	background: #fff;
 	padding: 50px;
 	border-radius: 10px;
-	border-bottom: 3px solid #17d27c;
+
 	margin-bottom: 30px;
 }
 
@@ -3929,13 +3929,14 @@ ul.skillslist li a:hover {
 }
 
 .socialLogin a {
-	display: inline-block;
-	width: 36px;
-	height: 36px;
+	width: 120px;
+	height: 40px;
 	color: #fff;
 	font-size: 18px;
 	margin: 0 5px;
-	line-height: 36px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .socialLogin a.fb {

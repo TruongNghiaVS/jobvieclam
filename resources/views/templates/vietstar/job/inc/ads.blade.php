@@ -12,8 +12,9 @@ $ads = \App\AdBanner::all();
             <div class="row">
                 <div class="item">
                     <div class="image loadAds">
-                        <a href="http://localhost:8000/">
-                            <img src="https://ads.careerbuilder.vn/www/images/a5b2628391fac3d894caa7e1a29d12fa.jpg" alt="#">
+                        <a href="#">
+                            <img src="https://media.istockphoto.com/id/1312091473/vector/we-are-hiring-banner-with-megaphone-flat-illustration.jpg?s=612x612&w=0&k=20&c=03ytHwFjPHCCIIAxR-hplKCQQNFWgZSMUg2HDJ_xTZQ="
+                                alt="#">
                         </a>
                     </div>
                 </div>
@@ -21,8 +22,9 @@ $ads = \App\AdBanner::all();
             <div class="row">
                 <div class="item">
                     <div class="image loadAds">
-                        <a href="http://localhost:8000/">
-                            <img src="https://ads.careerbuilder.vn/www/images/40322bfe0026051c3092d837b500e854.jpg" alt="#">
+                        <a href="#">
+                            <img src="https://img.freepik.com/free-vector/man-search-hiring-job-online-from-laptop_1150-52728.jpg"
+                                alt="#">
                         </a>
                     </div>
                 </div>
@@ -30,8 +32,9 @@ $ads = \App\AdBanner::all();
             <div class="row">
                 <div class="item">
                     <div class="image loadAds">
-                        <a href="http://localhost:8000/">
-                            <img src="https://ads.careerbuilder.vn/www/images/cd36bdd64ecdebbeeafc6347057ee992.png" alt="#">
+                        <a href="#">
+                            <img src="https://media.istockphoto.com/id/1173054931/photo/jobs-text-on-wooden-blocks-over-keyboard.jpg?s=612x612&w=0&k=20&c=1d3E26tHR7Yf7AUuGomDISXZTQ_u8PxizqTvo3bvSTY="
+                                alt="#">
                         </a>
                     </div>
                 </div>
@@ -39,8 +42,9 @@ $ads = \App\AdBanner::all();
             <div class="row">
                 <div class="item">
                     <div class="image loadAds">
-                        <a href="http://localhost:8000/">
-                            <img src="https://ads.careerbuilder.vn/www/images/b818531cf76fdafbf772e3d95f5f102a.png" alt="#">
+                        <a href="#">
+                            <img src="https://elca.vietnamworks.com/assets/images/page/banner/cover.png?r=1689852315"
+                                alt="#">
                         </a>
                     </div>
                 </div>
@@ -57,20 +61,20 @@ $ads = \App\AdBanner::all();
 @push('styles')
 <link href="{{ asset('/vietstar/css/style.css')}}" rel="stylesheet">
 <style>
-    .gad {}
+.gad {}
 
-    #adbanner,
-    .carousel-inner,
-    .carousel-inner>.carousel-item {
-        width: 100%;
-        height: 100%;
-    }
+#adbanner,
+.carousel-inner,
+.carousel-inner>.carousel-item {
+    width: 100%;
+    height: 100%;
+}
 
-    .carousel-inner>.carousel-item>img,
-    .carousel-inner>.carousel-item>a>img {
-        width: 100%;
-        height: 100%;
-        margin: auto;
-    }
+.carousel-inner>.carousel-item>img,
+.carousel-inner>.carousel-item>a>img {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
 </style>
 @endpush

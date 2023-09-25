@@ -5,9 +5,8 @@
         <a class="navbar-brand" href="{{url('/')}}">
             <img src="{{ asset('/vietstar/imgs/logo-new.svg') }}" alt="vietstar">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button type="button" id="sidebarCollapse" class="btn">
+            <span class="dark-blue-text f"><i class="fas fa-bars fa-1x"></i></span>
         </button>
         <!-- collapse -->
         <div class="collapse navbar-collapse main-menu" id="navbarNavAltMarkup">
@@ -18,7 +17,8 @@
                             href="{{url('/')}}"
                             style="{{ Request::url() == route('index')  ? 'color:#981B1E;' : '' }}">{{__('Home')}}</a>
                     </li>
-                    {{-- <li><a class="nav-link " href="{{ url('/companies')}}">{{__('Công ty')}}</a></li> --}}
+                    {{--
+                        <li><a class="nav-link " href="{{ url('/companies')}}">{{__('Công ty')}}</a></li> --}}
                     <li>
                         <a href="{{ route('job.list') }}"
                             class="nav-link {{ Request::url() == route('job.list') || strpos(Request::url(),'/job/') > 0 ? 'header-active' : 'text-main-color' }}"
@@ -67,9 +67,9 @@
                     </li>
                     <li class="has-child">
                         <a href="{{ route('my.profile') }}" class="nav-link nav-link-parent">{{__('Company')}}</a>
-                        <button type="button" class="btn-show-sub-menu" data-ref="findJob" data-target="false"><span
+                        <button type="button" class="btn-show-sub-menu" data-ref="findJob1" data-target="false"><span
                                 class="iconmoon icon-p-next"></span></button>
-                        <ul class="sub-menu" data-ref="findJob" data-target="false">
+                        <ul class="sub-menu" data-ref="findJob1" data-target="false">
                             <li>
                                 <a class="sub-item" href="{{route('about_us')}}"><span
                                         class="iconmoon icon-recruiter-portfolio"></span>
@@ -93,9 +93,9 @@
                     </li>
                     {{-- <li class="has-child">
                         <a href="{{ route('my.profile') }}" class="nav-link nav-link-parent">{{__('News')}}</a>
-                    <button type="button" class="btn-show-sub-menu" data-ref="findJob" data-target="false"><span
+                    <button type="button" class="btn-show-sub-menu" data-ref="findJob2" data-target="false"><span
                             class="iconmoon icon-p-next"></span></button>
-                    <ul class="sub-menu" data-ref="findJob" data-target="false">
+                    <ul class="sub-menu" data-ref="findJob2" data-target="false">
                         <li>
                             <a class="sub-item" href="{{route('page-category', ['slug' => 'cam_nang'])}}"><span
                                     class="iconmoon icon-recruiter-portfolio"></span>
@@ -128,9 +128,9 @@
                             style="{{ Request::url() == route('blogs')  ? 'color:#981B1E;' : '' }}">{{__('Blog')}}
                         </a>
                         @php($categories = \App\Blog_category::get())
-                        <button type="button" class="btn-show-sub-menu" data-ref="findJob" data-target="false"><span
-                                class="iconmoon icon-p-next"></span></button>
-                        <ul class="sub-menu" data-ref="findJob" data-target="false">
+                        <button type="button" class="btn-show-sub-menu" data-ref="findJob_blog"
+                            data-target="false"><span class="iconmoon icon-p-next"></span></button>
+                        <ul class="sub-menu" data-ref="findJob_blog" data-target="false">
                             @foreach($categories as $category)
                             <li>
                                 <a class="sub-item" href="{{ url('/blog/category/') . "/" . $category->slug }}"><span
@@ -141,10 +141,11 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li><a href="{{ route('contact.us') }}"
+
+                    <!-- <li><a href="{{ route('contact.us') }}"
                             class="nav-link  {{ Request::url() == route('contact.us') ? 'header-active' : 'text-main-color' }}"
                             style="{{ Request::url() == route('contact.us') ? 'color:#981B1E;' : '' }}">{{__('Contact')}}</a>
-                    </li>
+                    </li> -->
 
                     </li>
 

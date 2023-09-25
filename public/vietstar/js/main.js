@@ -28,6 +28,7 @@ $(document).ready(function () {
         $('.filters-job-wrapper').slideToggle();
     });
 
+
     $('.close-input-filter').on('click', function () {
         $('.filters-job-wrapper').slideToggle();
     });
@@ -380,6 +381,7 @@ function swiperSlider() {
                 el: '.swiper-pagination',
                 clickable: true,
             },
+
         });
     }
 
@@ -498,6 +500,10 @@ function swiperSlider() {
                 el: ".swiper-pagination",
                 clickable: true
             },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
         });
     }
 
@@ -510,7 +516,14 @@ function swiperSlider() {
             },
             loop: true,
             speed: 1000,
-
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
         });
     }
 }
@@ -541,6 +554,14 @@ function opensearchbox() {
     })
 }
 
+
+
+
+
+// Open search advance
+const search_input = document.querySelector('.search-input');
+search_input.addEventListener('focus', () => opensearchbox());
+
 // Close advance search func
 function closesearchbox() {
     opensearchbox_btn.style.display = "flex";
@@ -551,30 +572,34 @@ function closesearchbox() {
 }
 
 // Open reset form search
-// const reset_btn = document.querySelector('.advance-search__reset');
-// reset_btn.addEventListener('click', () => {
-//     document.getElementById("search-form").reset();
-//     $('#city_id').val('').trigger('chosen:updated');
-//     $('#job_type_id').val('').trigger('chosen:updated');
-//     $('#career_level_id').val('').trigger('chosen:updated');
-//     $('#industry_id').val('').trigger('chosen:updated');
-// })
-
-// Open search advance
-// const search_input = document.querySelector('.search-input');
-// search_input.addEventListener('focus', () => opensearchbox())
+const reset_btn = document.querySelector('.advance-search__reset');
+reset_btn.addEventListener('click', () => {
+    document.getElementById("search-form").reset();
+    $('#city_id').val('').trigger('chosen:updated');
+    $('#job_type_id').val('').trigger('chosen:updated');
+    $('#career_level_id').val('').trigger('chosen:updated');
+    $('#industry_id').val('').trigger('chosen:updated');
+})
 
 
 
-const buttons = document.querySelectorAll('.sort-item-wrapped__item');
-console.log(buttons);
-buttons.forEach(button => {
-    button.addEventListener('click', function () {
-        console.log("sdasd");
-        buttons.forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-    });
-});
+
+
+
+
+function openFilterJob_mobile() {
+    document.querySelector(".filters-job-wrapper-mobile").classList.add("open");
+}
+function closeFilterJob_mobile() {
+    document.querySelector(".filters-job-wrapper-mobile").classList.remove("open");
+}
+
+
+
+
+
+
+
 
 
 

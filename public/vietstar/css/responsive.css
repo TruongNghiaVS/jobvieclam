@@ -483,7 +483,364 @@
 
 
 
+<<<<<<< HEAD
   .close-filter-box {
+=======
+  .jobs-side-list .item-job {
+    padding: 10px;
+  }
+
+  .jobs-side-list .item-job .jobinfo .info .companyName a {
+    font-size: 14px;
+  }
+
+  .jobs-side-list .item-job .jobinfo .info .box-meta .rank-salary span {
+    display: flex;
+    align-items: center;
+  }
+
+  .jobs-side-list .item-job .jobinfo .info .box-meta .rank-salary {
+    font-size: 13px;
+  }
+
+  .jobs-side-list .item-job .jobinfo .caption {
+    display: block;
+  }
+
+  .jobs-side-list .item-job .jobinfo .caption .welfare span {
+    padding: 5px;
+  }
+
+  .jobs-side-list .item-job .jobinfo .caption .box-meta {
+    margin-right: 0;
+    margin: 5px 0;
+  }
+
+  .jobs-side-list .item-job .jobinfo {
+    padding-left: 15px;
+  }
+
+
+
+  .job-detail-banner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .job-detail-banner .job-detail-banner__detail {
+    margin-bottom: 10px;
+  }
+
+  .job-detail-banner .job-detail-banner__group .btn {
+    margin-bottom: 10px;
+  }
+
+  .nav-tabs-default {
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-direction: row;
+
+    flex-wrap: unset
+  }
+
+  .page-job-detail__floating-header .box {
+    padding-bottom: 0;
+  }
+
+  .page-job-detail__floating-header .box .col-logo {
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .page-job-detail__floating-header .box [class^=col-] {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+
+  .page-heading-tool.job-detail {
+    display: none;
+  }
+
+  .page-heading-tool.job-detail.mobile {
+    display: block;
+  }
+
+
+
+  .page-heading-tool.job-detail.mobile .mobile-filter {
+    justify-content: flex-end;
+  }
+
+  .page-heading-tool.job-detail.mobile .btn-filter {
+    margin-right: 0;
+  }
+
+  .page-job-detail__floating-header .box .col-logo a {
+    display: none;
+  }
+
+
+  .share-detail .__actions .btn:last-child {
+    margin-top: 10px;
+    margin-left: 0 !important;
+  }
+
+  .share-detail .__actions {
+    display: block;
+  }
+
+  a.btn.btn-primary.applyCV-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: unset;
+    z-index: 10;
+  }
+
+  .sidebar {
+    margin-top: 20px;
+  }
+
+  /************************************************
+
+           ==Login==
+
+    *************************************************/
+  .section-company-profile .company-profile {
+    display: block;
+  }
+
+  .section-company-profile .box-content {
+    max-width: unset
+  }
+
+  .group-button {
+    display: block !important;
+  }
+
+  .group-button button {
+    margin-bottom: 10px;
+  }
+
+  .section-company-profile .company-info {
+    margin: 20px 0;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .socials a {
+    font-size: 30px !important;
+  }
+
+  /************************************************
+
+           ==Login==
+
+    *************************************************/
+  .login-swapper .col-6 {
+    width: 100%;
+  }
+
+  .useraccountwrap .nav-link.active {
+    color: white !important;
+  }
+
+  .userccount {
+    padding: 20px;
+  }
+
+  .userbtns .nav-tabs>li a {
+    padding: 15px 0;
+  }
+
+  .navbar-collapse .user-badge {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+
+  .user-badge .dropdown-menu {
+    position: absolute;
+    width: 100%;
+
+  }
+
+
+  .group-for-mobile {
+    top: 0;
+    height: 100%;
+    margin: 0 10px;
+  }
+
+
+  .group-for-mobile a[aria-expanded="true"] {
+    background-color: unset !important;
+  }
+
+
+  .group-for-mobile .dropdown-toggle::after {
+    right: unset;
+    left: 25px;
+
+  }
+
+  .group-for-mobile .user-badge {
+    display: none;
+  }
+
+  .main-menu {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+
+  .main-menu>.navbar-nav {
+    display: flex !important;
+    flex-direction: column-reverse;
+  }
+
+  .navbar-collapse .user-badge {
+    margin: 10px 0px;
+  }
+
+
+  /* User account */
+  .user-account {
+    padding: 16px;
+  }
+
+  button#sidebarCollapse {
+    width: unset;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 24px;
+    color: black;
+  }
+
+}
+
+
+
+/* Medium devices (landscape tablets, 600px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .main-menu {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+
+  button#sidebarCollapse {
+    width: unset;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    font-size: 24px;
+    color: black;
+  }
+
+  /* Header Nav */
+  .navbar>.container {
+    justify-content: center
+  }
+
+  .useraccountwrap .nav-link.active {
+    color: white !important;
+  }
+
+  .col-sm-6 {
+    width: 100%;
+  }
+
+  .header-bar {
+    height: 500px;
+  }
+
+  .header-bar .header-bar-content-search {
+    height: 500px;
+    position: absolute;
+    top: 550px;
+    left: 0;
+    width: 100%;
+    box-shadow: unset !important;
+  }
+
+  .header-bar .search-form {
+    padding: 0;
+  }
+
+  .form-group-search-box {
+    max-height: 220px;
+  }
+
+  .partner {
+    margin-top: 600px;
+  }
+
+  .search-form-box {
+    width: 100%;
+  }
+
+  .search-form-box .col-sm-6 {
+    width: 100%;
+  }
+
+  .header-bar .search-form .action-search-form {
+    max-width: unset;
+    position: unset;
+  }
+
+  .form-group-search-box {
+    margin-bottom: 10px;
+  }
+
+  .advance-search {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .advance-search__box,
+  .advance-search__reset {
+    width: 50%;
+  }
+
+  .form-group-search-box.active {
+    max-height: 250px;
+  }
+
+  .advance-search__box {
+    display: none;
+  }
+
+  .section-jobs-by-industry .swiper-button-next {
+    right: 0
+  }
+
+  .section-jobs-by-industry .swiper-button-prev {
+    left: 0;
+  }
+
+  /************************************************
+
+           ==Job page==
+
+*************************************************/
+  .filters-job-wrapper {
+    padding: 20px 27px;
+  }
+
+
+  .filters-job-wrapper .filters-wrapper {
+    position: relative;
+    top: 40px;
+  }
+
+  .filters-wrapper .close-input-filter {
+>>>>>>> parent of c75407b (sidebar mobile and tablet)
     position: absolute;
     top: -40px;
     right: 0;
@@ -1001,9 +1358,6 @@
     pointer-events: auto;
   }
 
-  #sidebar.active .sidebar-bottom {
-    bottom: 0 !important;
-  }
 
 }
 
@@ -1021,14 +1375,6 @@
 
   #sidebarCollapse {
     display: none;
-  }
-
-  #sidebar {
-    display: none !important;
-  }
-
-  #sidebar.active {
-    display: none !important;
   }
 
   #sidebar-main-nav {

@@ -4,8 +4,10 @@
 @include('templates.vietstar.includes.header')
 <!-- Header end -->
 <!-- Inner Page Title start -->
-<div class="listpgWraper messageWrap wrapper">
-    @include('templates.vietstar.includes.mobile_dashboard_menu')
+@include('templates.vietstar.includes.mobile_dashboard_menu')
+<div class="listpgWraper messageWrap user-wrapper">
+    @include('flash::message')
+    @include('templates.vietstar.includes.default_sidebar_menu')
     <div class="content">
         <div class="myads message-body">
             <h3>{{__('Seeker Messages')}}</h3>

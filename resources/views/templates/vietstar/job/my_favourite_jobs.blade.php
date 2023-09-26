@@ -5,9 +5,10 @@
 <!-- Header end -->
 <!-- Inner Page Title start -->
 <!-- Inner Page Title end -->
-<div class="wrapper listpgWraper">
-
-    @include('templates.vietstar.includes.mobile_dashboard_menu')
+@include('templates.vietstar.includes.mobile_dashboard_menu')
+<div class="user-wrapper listpgWraper">
+    @include('flash::message')
+    @include('templates.vietstar.includes.default_sidebar_menu')
     <div class="content">
 
         <div class="myads">

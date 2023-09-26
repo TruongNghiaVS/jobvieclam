@@ -8,7 +8,7 @@
 <!-- Inner Page Title end -->
 <div class="listpgWraper">
     <div class="container">
-        <div class="row"> @include('templates.vietstar.includes.mobile_dashboard_menu')
+        <div class="row"> @include('templates.vietstar.includes.user_dashboard_menu')
             <div class="col-md-9">
                 <div class="myads">
                     <h3>{{__('My Messages')}}</h3>

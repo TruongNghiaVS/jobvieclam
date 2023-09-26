@@ -6,11 +6,13 @@
 <!-- Inner Page Title start -->
 
 <!-- Inner Page Title end -->
-<div class="wrapper">
+@include('templates.vietstar.includes.mobile_dashboard_menu')
 
+<div class="user-wrapper">
 
+    @include('flash::message')
+    @include('templates.vietstar.includes.default_sidebar_menu')
 
-    @include('templates.vietstar.includes.mobile_dashboard_menu')
     <div class="template-wrapper content">
         <div class="row">
             <div class="col-md-9">

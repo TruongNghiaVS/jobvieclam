@@ -1,366 +1,374 @@
 @push('styles')
 <style type="text/css">
-/* Option 2: Import via CSS */
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
-
-.wrapper {
-    display: flex;
-    width: 100%;
-    align-items: stretch;
-    position: relative;
-    top: 76px;
-    left: 0;
-}
-
-#sidebar {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    min-width: 0px;
-    max-width: 0px;
-    background: #063146;
-    color: #bcc0c8;
-    transition: all 0.3s;
-    overflow: hidden;
-    max-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 76px;
-    left: 0;
-    bottom: 0;
-    z-index: 1;
-    overflow-x: hidden;
-    overflow-y: auto;
-    z-index: 30;
-}
-
-/* PROFILE CSS */
-.profile {
-    position: relative;
-    padding: 20px 10px;
-    border-bottom: 1px solid #ccc;
-}
-
-.profile .avatar {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80px;
-    height: 80px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-}
-
-.profile .avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.profile .username {
-    margin-top: 15px;
-    font-size: 16px;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.profile .username p a {
-    color: #ffffff;
-    font-size: 16px;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-
-.sidebar-btn {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-}
-
-#sidebar.active {
-    min-width: 300px;
-    max-width: 300px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    z-index: 30;
-    max-height: 100vh;
-}
+    /* Option 2: Import via CSS */
+    @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
+    .wrapper {
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+        position: relative;
+        top: 76px;
+        left: 0;
+    }
+
+    #sidebar {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        min-width: 0px;
+        max-width: 0px;
+        background: #063146;
+        color: #bcc0c8;
+        transition: all 0.3s;
+        overflow: hidden;
+        max-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 76px;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        overflow-x: hidden;
+        overflow-y: auto;
+        z-index: 30;
+    }
+
+    /* PROFILE CSS */
+    .profile {
+        position: relative;
+        padding: 20px 10px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .profile .avatar {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    .profile .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .profile .username {
+        margin-top: 15px;
+        font-size: 16px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .profile .username p a {
+        color: #ffffff;
+        font-size: 16px;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+
+    .sidebar-btn {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+    }
+
+    #sidebar.active {
+        min-width: 300px;
+        max-width: 300px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        z-index: 30;
+        max-height: 100vh;
+    }
 
-#sidebar.active .sidebar-btn {
-    justify-content: end;
-}
+    #sidebar.active .sidebar-btn {
+        justify-content: end;
+    }
 
-#sidebar .side-bar-content {
-    display: none;
-}
+    #sidebar .side-bar-content {
+        display: none;
+    }
 
-#sidebar.active .side-bar-content {
-    display: block;
-}
+    #sidebar.active .side-bar-content {
+        display: block;
+    }
 
-#sidebar.active ul.components {
-    width: 100%;
-}
-
-#sidebar.active .sidebar-header {
-    display: flex;
-    flex-direction: column;
-}
-
-#sidebar .sidebar-header {
-    padding: 20px;
-    background: #063146;
-    width: 100%;
-    display: none;
-}
-
-#sidebar ul.components {
-    border-bottom: 1px solid #47748b;
-}
-
-#sidebar ul p {
-    color: #063146;
-    padding: 10px;
-}
-
-#sidebar ul li a {
-    padding: 20px 20px;
-    font-size: 1.1em;
-    display: block;
-    background-color: #063146;
-}
-
-
-
-#sidebar ul li a:hover {
-    color: #7386D5;
-    background: #981b1e;
-}
-
-#sidebar ul li a:hover span {
-    color: white;
-}
-
-
-
-#sidebar ul li a i {
-    font-size: 20px;
-    color: white;
-}
-
-
-
-#sidebar ul li .dropdown-toggle::after {
-    color: #b2bcc6;
-    display: none;
-}
-
-#sidebar.active ul li .dropdown-toggle::after {
-    color: #b2bcc6;
-    display: block;
-    right: 20px;
-}
-
-#sidebar .sidebar-item.active>a {
-    background-color: #981b1e;
-    color: white;
-}
-
-a[data-toggle="collapse"] {
-    position: relative;
-}
-
-.dropdown-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 0px;
-    transform: translateY(-50%);
-}
-
-#sidebar.active .dropdown-toggle::after {
-    display: none;
-}
-
-
-#sidebar ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-    background: #6d7fcc;
-}
-
-.sidebar-bottom ul ul a {
-    background-color: unset !important;
-}
-
-ul.CTAs {
-    padding: 20px;
-}
-
-ul.CTAs a {
-    text-align: center;
-    font-size: 0.9em !important;
-    display: block;
-    border-radius: 5px;
-    margin-bottom: 5px;
-}
-
-.list-group-item.active {
-    border: unset;
-}
-
-.list-group-item {
-    border: unset;
-}
-
-ul.list-unstyled.components li {
-    margin: 10px 0;
-}
-
-a.download {
-    background: #bcc0c8;
-    color: #7386D5;
-}
-
-a.article,
-a.article:hover {
-    background: #6d7fcc !important;
-    color: #bcc0c8 !important;
-}
-
-#sidebar.active ul li a span {
-    color: white;
-}
-
-
-#sidebarCollapse span i {
-    color: #bcc0c8;
-}
-
-#sidebar ul li a span {
-    color: #bcc0c8;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-#sidebar ul ul a {
-    padding-left: 70px;
-}
-
-#sidebar ul li.active a span {
-    color: white;
-}
-
-ul#pageSubmenu li {
-    margin-left: 10px;
-}
-
-ul#pageSubmenu li a span {
-    font-size: 16px !important;
-}
-
-#sidebar .menu {
-    position: relative;
-    width: 100%;
-}
-
-.sidebar-main-nav {
-
-    transform: translateX(0);
-    opacity: 1;
-    pointer-events: auto;
-    transition: 0.4s ease-in-out all;
-}
-
-.sidebar-user-nav {
-    -webkit-transform: translateX(-300px);
-    -ms-transform: translateX(-300px);
-    transform: translateX(-300px);
-    transition: 0.4s ease-out all;
-}
-
-.sidebar-main-nav,
-.sidebar-user-nav {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-}
-
-.sidebar-main-nav.active {
-
-    -webkit-transform: translateX(-300px);
-    -ms-transform: translateX(-300px);
-    transform: translateX(-300px);
-}
-
-.sidebar-user-nav.active {
-    transform: translateX(0);
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.sidebar-bottom {
-    display: none;
-}
-
-#sidebar.active .sidebar-bottom {
-    display: flex;
-    width: 100%;
-    position: absolute;
-    bottom: 20px;
-    justify-content: end;
-    align-items: center;
-    left: 0;
-    right: 0;
-}
-
-.profile .back-menu-normal {
-    position: absolute;
-    top: 0;
-    left: 0px;
-    transition: 0.4s ease-in-out all;
-    display: none;
-}
-
-.profile .back-menu-normal.active {
-    display: block;
-}
-
-.profile .back-menu-normal i {
-    font-size: 25px;
-    color: white;
-    font-weight: 800;
-}
-
-.sidebar-bottom {
-    padding: 20px
-}
-
-.sidebar-bottom ul li span {
-    color: white;
-    font-size: 18px;
-    font-weight: 600;
-
-}
+    #sidebar.active ul.components {
+        width: 100%;
+    }
+
+    #sidebar.active .sidebar-header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #sidebar .sidebar-header {
+        padding: 20px;
+        background: #063146;
+        width: 100%;
+        display: none;
+    }
+
+    #sidebar ul.components {
+        border-bottom: 1px solid #47748b;
+    }
+
+    #sidebar ul p {
+        color: #063146;
+        padding: 10px;
+    }
+
+    #sidebar ul li a {
+        padding: 20px 20px;
+        font-size: 1.1em;
+        display: block;
+        background-color: #063146;
+    }
+
+
+
+    #sidebar ul li a:hover {
+        color: #7386D5;
+        background: #981b1e;
+    }
+
+    #sidebar ul li a:hover span {
+        color: white;
+    }
+
+
+
+    #sidebar ul li a i {
+        font-size: 20px;
+        color: white;
+    }
+
+
+
+    #sidebar ul li .dropdown-toggle::after {
+        color: #b2bcc6;
+        display: none;
+    }
+
+    #sidebar.active ul li .dropdown-toggle::after {
+        color: #b2bcc6;
+        display: block;
+        right: 20px;
+    }
+
+    #sidebar .sidebar-item.active>a {
+        background-color: #981b1e;
+        color: white;
+    }
+
+    a[data-toggle="collapse"] {
+        position: relative;
+    }
+
+    .dropdown-toggle::after {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0px;
+        transform: translateY(-50%);
+    }
+
+    #sidebar.active .dropdown-toggle::after {
+        display: none;
+    }
+
+
+
+    #sidebar ul ul a {
+        font-size: 0.9em !important;
+        padding-left: 70px;
+
+    }
+
+    .sidebar-bottom ul ul a {
+        background-color: unset !important;
+    }
+
+    ul.CTAs {
+        padding: 20px;
+    }
+
+    ul.CTAs a {
+        text-align: center;
+        font-size: 0.9em !important;
+        display: block;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+
+    .list-group-item.active {
+        border: unset;
+    }
+
+    .list-group-item {
+        border: unset;
+    }
+
+    ul.list-unstyled.components li {
+        margin: 10px 0;
+    }
+
+    a.download {
+        background: #bcc0c8;
+        color: #7386D5;
+    }
+
+    a.article,
+    a.article:hover {
+        background: #6d7fcc !important;
+        color: #bcc0c8 !important;
+    }
+
+    #sidebar.active ul li a span {
+        color: white;
+    }
+
+
+    #sidebarCollapse span i {
+        color: #bcc0c8;
+    }
+
+    #sidebar ul li a span {
+        color: #bcc0c8;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    #sidebar ul ul a {
+        padding-left: 70px;
+    }
+
+    #sidebar ul li.active a span {
+        color: white;
+    }
+
+    ul#pageSubmenu li {
+        margin-left: 10px;
+    }
+
+    ul#pageSubmenu li a span {
+        font-size: 16px !important;
+    }
+
+    #sidebar .menu {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .sidebar-main-nav {
+
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+        transition: 0.4s ease-in-out all;
+    }
+
+    .sidebar-user-nav {
+        -webkit-transform: translateX(-300px);
+        -ms-transform: translateX(-300px);
+        transform: translateX(-300px);
+        transition: 0.4s ease-out all;
+    }
+
+    .sidebar-main-nav,
+    .sidebar-user-nav {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    .sidebar-main-nav.active {
+
+        -webkit-transform: translateX(-300px);
+        -ms-transform: translateX(-300px);
+        transform: translateX(-300px);
+    }
+
+    .sidebar-user-nav.active {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .sidebar-bottom {
+        display: none;
+    }
+
+    #sidebar.active .sidebar-bottom {
+        display: flex;
+        width: 100%;
+        position: absolute;
+        bottom: 20px;
+        justify-content: end;
+        align-items: center;
+        left: 0;
+        right: 0;
+    }
+
+    .profile .back-menu-normal {
+        position: absolute;
+        top: 0;
+        left: 0px;
+        transition: 0.4s ease-in-out all;
+        display: none;
+    }
+
+    .profile .back-menu-normal.active {
+        display: block;
+    }
+
+    .profile .back-menu-normal i {
+        font-size: 25px;
+        color: white;
+        font-weight: 800;
+    }
+
+    .sidebar-bottom {
+        padding: 20px
+    }
+
+    .sidebar-bottom ul li span {
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+
+    }
+
+    a#navbarDropdownMenuLink {
+        padding: 0 !important;
+    }
 </style>
 
 @endpush
@@ -381,8 +389,7 @@ ul#pageSubmenu li a span {
 
         <div class="profile" bis_skin_checked="1">
             <div class="avatar" bis_skin_checked="1"><a href="#">
-                    <img class="lazy-bg" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar"
-                        style=""></a>
+                    <img class="lazy-bg" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar" style=""></a>
             </div>
             <div class="username" bis_skin_checked="1">
                 <p><a href="#">Welcome to Jobvieclam</a></p>
@@ -394,18 +401,15 @@ ul#pageSubmenu li a span {
         <div class="menu">
             <ul class="list-unstyled components sidebar-main-nav" id="sidebar-main-nav">
                 <li class="sidebar-item {{ Request::url() == route('index') ? 'active' : '' }}">
-                    <a href="{{url('/')}}"
-                        class="list-group-item list-group-item-action {{ Request::url() == route('index') ? 'active' : '' }}">
+                    <a href="{{url('/')}}" class="list-group-item list-group-item-action {{ Request::url() == route('index') ? 'active' : '' }}">
                         <div class="d-flex w-100">
                             <i class="bi bi-house fs-24px me-2"></i>
                             <span class="side-bar-content"> {{__('Home')}}</span>
                         </div>
                     </a>
                 </li>
-                <li
-                    class="sidebar-item {{ Request::url() == route('job.list') || strpos(Request::url(),'/job/') > 0 ? 'active' : '' }}">
-                    <a href="{{ route('job.list') }}"
-                        class="list-group-item list-group-item-action {{ Request::url() == route('job.list') || strpos(Request::url(),'/job/') > 0 ? 'active' : '' }}">
+                <li class="sidebar-item {{ Request::url() == route('job.list') || strpos(Request::url(),'/job/') > 0 ? 'active' : '' }}">
+                    <a href="{{ route('job.list') }}" class="list-group-item list-group-item-action {{ Request::url() == route('job.list') || strpos(Request::url(),'/job/') > 0 ? 'active' : '' }}">
 
                         <div class="d-flex w-100">
                             <i class="bi bi-card-list fs-24px me-2"></i>
@@ -426,8 +430,7 @@ ul#pageSubmenu li a span {
                         $pointer = Auth::check()==true ? '' : 'style=pointer-events:none;';
                         @endphp
                         <li>
-                            <a class="{{ Request::url() == route('my.job.applications') ? 'active' : '' }}"
-                                href="{{route('change.template')}}" {{$pointer}}>
+                            <a class="{{ Request::url() == route('my.job.applications') ? 'active' : '' }}" href="{{route('change.template')}}" {{$pointer}}>
                                 <div class="d-flex w-100">
 
                                     <span class="side-bar-content"> {{__('CV Templates')}}</span>
@@ -531,8 +534,7 @@ ul#pageSubmenu li a span {
             @if(Auth::user())
             <ul class="list-unstyled components sidebar-user-nav" id="sidebar-user-nav">
                 <li class="sidebar-item {{ Request::url() == route('home') ? 'active' : '' }}">
-                    <a href="{{ route('home') }}"
-                        class="list-group-item list-group-item-action {{ Request::url() == route('home') ? 'active' : '' }}">
+                    <a href="{{ route('home') }}" class="list-group-item list-group-item-action {{ Request::url() == route('home') ? 'active' : '' }}">
                         <div class="d-flex w-100">
                             <span class="icon-dashboard-icon fs-24px me-2"></span>
                             <span class="side-bar-content">{{__('Dashboard')}}</span>
@@ -541,8 +543,7 @@ ul#pageSubmenu li a span {
                 </li>
 
                 <li class="sidebar-item {{ Request::url() == route('my.profile') ? 'active' : '' }}">
-                    <a href="{{ route('my.profile') }}"
-                        class="list-group-item list-group-item-action {{ Request::url() == route('my.profile') ? 'active' : '' }}">
+                    <a href="{{ route('my.profile') }}" class="list-group-item list-group-item-action {{ Request::url() == route('my.profile') ? 'active' : '' }}">
                         <div class="d-flex w-100">
                             <span class="icon-edit-icon fs-24px me-2"></span>
                             <span class="side-bar-content"> {{__('Edit Profile')}}</span>
@@ -552,8 +553,7 @@ ul#pageSubmenu li a span {
                 </li>
 
                 <li class="sidebar-item {{ Request::url() == route('change.template') ? 'active' : '' }}">
-                    <a href="{{ route('change.template') }}"
-                        class="list-group-item list-group-item-action {{ Request::url() == route('change.template') ? 'active' : '' }}">
+                    <a href="{{ route('change.template') }}" class="list-group-item list-group-item-action {{ Request::url() == route('change.template') ? 'active' : '' }}">
                         <div class="d-flex w-100">
                             <span class="icon-edit-icon fs-24px me-2"></span>
                             <span class="side-bar-content"> {{__('Change Template')}}</span>
@@ -562,16 +562,14 @@ ul#pageSubmenu li a span {
                 </li>
 
                 <li class="">
-                    <a href="{{ route('view.public.profile', Auth::user()->id) }}"
-                        class="list-group-item list-group-item-action {{ route('view.public.profile', Auth::user()->id) }}">
+                    <a href="{{ route('view.public.profile', Auth::user()->id) }}" class="list-group-item list-group-item-action {{ route('view.public.profile', Auth::user()->id) }}">
                         <div class="d-flex w-100">
                             <span class="icon-eye-icon fs-24px me-2"></span>
                             <span class="side-bar-content">{{__('View Public Profile')}}</span>
                         </div>
                     </a>
                 </li>
-                <li
-                    class="sidebar-item {{ Request::url() == route('my.job.applications') || Request::url() == route('my.favourite.jobs')  ? 'active' : '' }}">
+                <li class="sidebar-item {{ Request::url() == route('my.job.applications') || Request::url() == route('my.favourite.jobs')  ? 'active' : '' }}">
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <div class="d-flex w-100">
                             <span class="icon-edit-icon fs-24px me-2"></span>
@@ -580,8 +578,7 @@ ul#pageSubmenu li a span {
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li class="{{ Request::url() == route('my.job.applications') ? 'active' : '' }}">
-                            <a href="{{ route('my.job.applications') }}"
-                                class="list-group-item list-group-item-action {{ Request::url() == route('my.job.applications') ? 'active' : '' }}">
+                            <a href="{{ route('my.job.applications') }}" class="list-group-item list-group-item-action {{ Request::url() == route('my.job.applications') ? 'active' : '' }}">
                                 <div class="d-flex w-100">
                                     <span class="icon-doc-check-icon fs-24px me-2"></span>
                                     <span class="side-bar-content"> {{__('My Job Applications')}}</span>
@@ -589,8 +586,7 @@ ul#pageSubmenu li a span {
                             </a>
                         </li>
                         <li class="{{ Request::url() == route('my.favourite.jobs') ? 'active' : '' }}">
-                            <a href="{{ route('my.favourite.jobs') }}"
-                                class="list-group-item list-group-item-action {{ Request::url() == route('my.favourite.jobs') ? 'active' : '' }}">
+                            <a href="{{ route('my.favourite.jobs') }}" class="list-group-item list-group-item-action {{ Request::url() == route('my.favourite.jobs') ? 'active' : '' }}">
                                 <div class="d-flex w-100">
                                     <span class="icon-heart-icon fs-24px me-2"></span>
                                     <span class="side-bar-content">{{__('My Favourite Jobs')}}</spant>
@@ -601,8 +597,7 @@ ul#pageSubmenu li a span {
                 </li>
 
                 <li class="sidebar-item {{ Request::url() == route('my-alerts') ? 'active' : '' }}">
-                    <a href="{{ route('my-alerts') }}"
-                        class="list-group-item list-group-item-action {{ Request::url() == route('my-alerts') ? 'active' : '' }}">
+                    <a href="{{ route('my-alerts') }}" class="list-group-item list-group-item-action {{ Request::url() == route('my-alerts') ? 'active' : '' }}">
                         <div class="d-flex w-100">
                             <span class="icon-bell-icon fs-24px me-2"></span>
                             <span class="side-bar-content"> {{__('My Job Alerts')}}</span>
@@ -611,12 +606,10 @@ ul#pageSubmenu li a span {
                 </li>
 
                 <li class="sidebar-item {{ Request::url() == route('my.messages') ? 'active' : '' }}">
-                    <a href="{{route('my.messages')}}"
-                        class="list-group-item list-group-item-action {{ Request::url() == route('my.messages') ? 'active' : '' }}">
+                    <a href="{{route('my.messages')}}" class="list-group-item list-group-item-action {{ Request::url() == route('my.messages') ? 'active' : '' }}">
                         <div class="d-flex w-100">
                             <span class="icon-message-icon fs-24px me-2 box-message-icon">
-                                <span
-                                    class="badge">{{\App\CompanyMessage::where('seeker_id', Auth::user()->id)->where('status','unviewed')->where('type','reply')->count()}}</span>
+                                <span class="badge">{{\App\CompanyMessage::where('seeker_id', Auth::user()->id)->where('status','unviewed')->where('type','reply')->count()}}</span>
                             </span>
                             <span class="side-bar-content"> {{__('My Messages')}}</span>
 
@@ -624,8 +617,7 @@ ul#pageSubmenu li a span {
                     </a>
                 </li>
                 <li class="{{ Request::url() == route('my.followings') ? 'active' : '' }}">
-                    <a href="{{route('my.followings')}}"
-                        class="list-group-item list-group-item-action {{ Request::url() == route('my.followings') ? 'active' : '' }}">
+                    <a href="{{route('my.followings')}}" class="list-group-item list-group-item-action {{ Request::url() == route('my.followings') ? 'active' : '' }}">
                         <div class="d-flex w-100">
                             <span class="icon-office-building-icon fs-24px me-2"></span>
                             <span class="side-bar-content"> {{__('My Followings')}}</span>
@@ -664,8 +656,7 @@ ul#pageSubmenu li a span {
                     <a class="btn btn-primary login-btn" href="{{route('login')}}" class="nav-link">{{__('Log in')}}</a>
                     {{--<a class="btn btn-primary" href="{{route('register')}}" class="nav-link
                     register">{{__('Đăng ký')}}</a> --}}
-                    <a class="btn btn-primary" href="{{route('job.seeker.list')}}"
-                        class="nav-link">{{__('Find candidates')}}</a>
+                    <a class="btn btn-primary" href="{{route('job.seeker.list')}}" class="nav-link">{{__('Find candidates')}}</a>
                 </div>
             </li>
             @endif
@@ -673,19 +664,14 @@ ul#pageSubmenu li a span {
             <li>
                 <ul class="navbar-nav navbar-lang ml-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-                            <img src="{{ asset('/vietstar/imgs/flags/') }}/{{config('app.available_locales')[App::getLocale()]['flag-icon']}}.png"
-                                alt="vietstar">
+                            <img src="{{ asset('/vietstar/imgs/flags/') }}/{{config('app.available_locales')[App::getLocale()]['flag-icon']}}.png" alt="vietstar">
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             @foreach (config('app.available_locales') as $lang => $language)
                             @if ($lang != App::getLocale())
-                            <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span
-                                    class="flag-icon flag-icon-{{$language['flag-icon']}}"><img
-                                        src="{{ asset('/vietstar/imgs/flags/') }}/{{$language['flag-icon']}}.png"
-                                        alt="vietstar"></span> {{$language['display']}}</a>
+                            <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span class="flag-icon flag-icon-{{$language['flag-icon']}}"><img src="{{ asset('/vietstar/imgs/flags/') }}/{{$language['flag-icon']}}.png" alt="vietstar"></span> {{$language['display']}}</a>
                             @endif
                             @endforeach
 
@@ -706,35 +692,35 @@ ul#pageSubmenu li a span {
 
 @push('scripts')
 <script type="text/javascript">
-$(document).ready(function() {
-    $('#sidebarCollapse').on('click', function() {
-        $('#sidebar').toggleClass('active');
+    $(document).ready(function() {
+        $('#sidebarCollapse').on('click', function() {
+            $('#sidebar').toggleClass('active');
+        });
+
+
+        $('.sidebar-item').click(function() {
+            // Remove 'active' class from all li elements
+            $('.sidebar-item').removeClass('active');
+            // Add 'active' class to the clicked li element
+            $(this).toggleClass('active');
+        });
+
+        $('.openmyacount').click(function() {
+            // Remove 'active' class from all li elements
+            $('.sidebar-main-nav').addClass('active');
+            $('.menu').addClass('active');
+            $('.sidebar-user-nav').addClass('active');
+            $('.back-menu-normal').addClass('active');
+
+        });
+
+        $('.back-menu-normal').click(function() {
+            // Remove 'active' class from all li elements
+            $('.sidebar-main-nav').removeClass('active');
+            $('.menu').removeClass('active');
+            $('.sidebar-user-nav').removeClass('active');
+            $('.back-menu-normal').removeClass('active');
+        });
     });
-
-
-    $('.sidebar-item').click(function() {
-        // Remove 'active' class from all li elements
-        $('.sidebar-item').removeClass('active');
-        // Add 'active' class to the clicked li element
-        $(this).toggleClass('active');
-    });
-
-    $('.openmyacount').click(function() {
-        // Remove 'active' class from all li elements
-        $('.sidebar-main-nav').addClass('active');
-        $('.menu').addClass('active');
-        $('.sidebar-user-nav').addClass('active');
-        $('.back-menu-normal').addClass('active');
-
-    });
-
-    $('.back-menu-normal').click(function() {
-        // Remove 'active' class from all li elements
-        $('.sidebar-main-nav').removeClass('active');
-        $('.menu').removeClass('active');
-        $('.sidebar-user-nav').removeClass('active');
-        $('.back-menu-normal').removeClass('active');
-    });
-});
 </script>
 @endpush

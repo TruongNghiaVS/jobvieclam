@@ -72,7 +72,7 @@
 <!-- </form> -->
 
 <!-- Dashboard menu start -->
-@include('templates.vietstar.includes.user_dashboard_menu')
+
 <!-- Dashboard menu end -->
 
 
@@ -95,16 +95,14 @@
                                 <div class="col-lg-8 col-md-8">
                                     <div class="jobimg">{{$jobSeeker->printUserImage(100, 100)}}</div>
                                     <div class="jobinfo">
-                                        <h3><a
-                                                href="{{route('user.profile', $jobSeeker->id)}}">{{$jobSeeker->getName()}}</a>
+                                        <h3><a href="{{route('user.profile', $jobSeeker->id)}}">{{$jobSeeker->getName()}}</a>
                                         </h3>
                                         <div class="location"> {{$jobSeeker->getLocation()}}</div>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="col-lg-4 col-md-4">
-                                    <div class="listbtn"><a
-                                            href="{{route('user.profile', $jobSeeker->id)}}">{{__('View Profile')}}</a>
+                                    <div class="listbtn"><a href="{{route('user.profile', $jobSeeker->id)}}">{{__('View Profile')}}</a>
                                     </div>
                                 </div>
                             </div>
@@ -151,8 +149,7 @@
                                         <div class="item" bis_skin_checked="1">
                                             <div class="image loadAds" bis_skin_checked="1">
                                                 <a href="#">
-                                                    <img src="https://media.istockphoto.com/id/1312091473/vector/we-are-hiring-banner-with-megaphone-flat-illustration.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=03ytHwFjPHCCIIAxR-hplKCQQNFWgZSMUg2HDJ_xTZQ="
-                                                        alt="#">
+                                                    <img src="https://media.istockphoto.com/id/1312091473/vector/we-are-hiring-banner-with-megaphone-flat-illustration.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=03ytHwFjPHCCIIAxR-hplKCQQNFWgZSMUg2HDJ_xTZQ=" alt="#">
                                                 </a>
                                             </div>
                                         </div>
@@ -161,8 +158,7 @@
                                         <div class="item" bis_skin_checked="1">
                                             <div class="image loadAds" bis_skin_checked="1">
                                                 <a href="#">
-                                                    <img src="https://img.freepik.com/free-vector/man-search-hiring-job-online-from-laptop_1150-52728.jpg"
-                                                        alt="#">
+                                                    <img src="https://img.freepik.com/free-vector/man-search-hiring-job-online-from-laptop_1150-52728.jpg" alt="#">
                                                 </a>
                                             </div>
                                         </div>
@@ -171,8 +167,7 @@
                                         <div class="item" bis_skin_checked="1">
                                             <div class="image loadAds" bis_skin_checked="1">
                                                 <a href="#">
-                                                    <img src="https://media.istockphoto.com/id/1173054931/photo/jobs-text-on-wooden-blocks-over-keyboard.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=1d3E26tHR7Yf7AUuGomDISXZTQ_u8PxizqTvo3bvSTY="
-                                                        alt="#">
+                                                    <img src="https://media.istockphoto.com/id/1173054931/photo/jobs-text-on-wooden-blocks-over-keyboard.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=1d3E26tHR7Yf7AUuGomDISXZTQ_u8PxizqTvo3bvSTY=" alt="#">
                                                 </a>
                                             </div>
                                         </div>
@@ -181,8 +176,7 @@
                                         <div class="item" bis_skin_checked="1">
                                             <div class="image loadAds" bis_skin_checked="1">
                                                 <a href="#">
-                                                    <img src="https://elca.vietnamworks.com/assets/images/page/banner/cover.png?r=1689852315"
-                                                        alt="#">
+                                                    <img src="https://elca.vietnamworks.com/assets/images/page/banner/cover.png?r=1689852315" alt="#">
                                                 </a>
                                             </div>
                                         </div>
@@ -201,47 +195,47 @@
 @endsection
 @push('styles')
 <style type="text/css">
-.searchList li .jobimg {
-    min-height: 80px;
-}
+    .searchList li .jobimg {
+        min-height: 80px;
+    }
 
-.hide_vm_ul {
-    height: 100px;
-    overflow: hidden;
-}
+    .hide_vm_ul {
+        height: 100px;
+        overflow: hidden;
+    }
 
-.hide_vm {
-    display: none !important;
-}
+    .hide_vm {
+        display: none !important;
+    }
 
-.view_more {
-    cursor: pointer;
-}
+    .view_more {
+        cursor: pointer;
+    }
 </style>
 @endpush
 @push('scripts')
 <script>
-$(document).ready(function($) {
-    $("form").submit(function() {
-        $(this).find(":input").filter(function() {
-            return !this.value;
-        }).attr("disabled", "disabled");
-        return true;
-    });
-    $("form").find(":input").prop("disabled", false);
+    $(document).ready(function($) {
+        $("form").submit(function() {
+            $(this).find(":input").filter(function() {
+                return !this.value;
+            }).attr("disabled", "disabled");
+            return true;
+        });
+        $("form").find(":input").prop("disabled", false);
 
-    $(".view_more_ul").each(function() {
-        if ($(this).height() > 100) {
-            $(this).addClass('hide_vm_ul');
-            $(this).next().removeClass('hide_vm');
-        }
+        $(".view_more_ul").each(function() {
+            if ($(this).height() > 100) {
+                $(this).addClass('hide_vm_ul');
+                $(this).next().removeClass('hide_vm');
+            }
+        });
+        $('.view_more').on('click', function(e) {
+            e.preventDefault();
+            $(this).prev().removeClass('hide_vm_ul');
+            $(this).addClass('hide_vm');
+        });
     });
-    $('.view_more').on('click', function(e) {
-        e.preventDefault();
-        $(this).prev().removeClass('hide_vm_ul');
-        $(this).addClass('hide_vm');
-    });
-});
 </script>
 @include('templates.vietstar.includes.country_state_city_js')
 @endpush

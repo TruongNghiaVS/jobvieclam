@@ -989,10 +989,10 @@
 
 
   #sidebar.active .sidebar-header {
-    max-height: 90%;
+    max-height: 85%;
     overflow-x: hidden;
     overflow-y: auto;
-    height: 90%;
+    height: 85%;
   }
 
   .group-button .btn {

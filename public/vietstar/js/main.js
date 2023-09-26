@@ -24,14 +24,7 @@ $(document).ready(function () {
         });
     }
 
-    $('#atcFilters').on('click', function () {
-        $('.filters-job-wrapper').slideToggle();
-    });
 
-
-    $('.close-input-filter').on('click', function () {
-        $('.filters-job-wrapper').slideToggle();
-    });
 
     $('[data-toggle="tooltip"]').tooltip();
     var cvLang = $('select#cv_language').val();

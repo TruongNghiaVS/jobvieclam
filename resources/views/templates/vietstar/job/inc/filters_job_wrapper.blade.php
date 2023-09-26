@@ -122,14 +122,11 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
-                        <div class="form-group form-group-custom-multiselect" id="benefit_id_dd">
-                            <label>Chọn phúc lợi mong muốn</label>
-                            <select class="form-control form-select shadow-sm multiselect" name="benefit_id" id="benefit" multiple>
-                                <option value="">Chọn phòng ban</option>
-                                <option value="Nhân sự">Nhân sự</option>
-                                <option value="Hành chính">Hành chính</option>
-                                <option value="Kế toán">Kế toán</option>
-                            </select>
+                        <div class="form-group" id="benefit_id_dd">
+                            <label>{{__('Select desired benefits')}}</label>
+                            {!! Form::select('benefit_id[]', $benefits, Request::get('benefit_id', null),
+                            ['class'=>'form-control form-select shadow-sm multiselect',
+                            'id'=>'benefit_id','multiple'=>true, "data-placeholder"=>"Month"]) !!}
                         </div>
                     </div>
 
@@ -227,14 +224,11 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
-                        <div class="form-group form-group-custom-multiselect" id="benefit_id_dd">
-                            <label>Chọn phúc lợi mong muốn</label>
-                            <select class="form-control form-select shadow-sm multiselect" name="benefit_id" id="benefit" multiple>
-                                <option value="">Chọn phòng ban</option>
-                                <option value="Nhân sự">Nhân sự</option>
-                                <option value="Hành chính">Hành chính</option>
-                                <option value="Kế toán">Kế toán</option>
-                            </select>
+                        <div class="form-group">
+                            <label for="Benefits">{{ __('Job Benefits') }} <span class="required">*</span></label>
+                            {!! Form::textarea('benefits', null, array('class'=>'form-control', 'id'=>'benefits',
+                            'placeholder'=>__('Job Benefits'))) !!}
+                            {!! APFrmErrHelp::showErrors($errors, 'benefits') !!}
                         </div>
                     </div>
 
@@ -266,6 +260,16 @@
                 placeholder: "{{__('Select desired benefits')}}", // or $(this).prop('title'),
             },
         });
+    });
+
+
+    $('#atcFilters').on('click', function() {
+        $('.filters-job-wrapper').slideToggle();
+    });
+
+
+    $('.close-input-filter').on('click', function() {
+        $('.filters-job-wrapper').slideToggle();
     });
 </script>
 @endpush

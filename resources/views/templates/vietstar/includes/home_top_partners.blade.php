@@ -12,8 +12,8 @@
                 @if(isset($topCompanyIds) && count($topCompanyIds))
                 @foreach($topCompanyIds as $company_id_num_jobs)
                 <?php
-              $company = App\Company::where('id', '=', $company_id_num_jobs->company_id)->active()->first();
-              if (null !== $company) { ?>
+                $company = App\Company::where('id', '=', $company_id_num_jobs->company_id)->active()->first();
+                if (null !== $company) { ?>
                 <div class="swiper-slide">
                     <div class="partner-item__box">
                         <a alt="1 slide" href="{{route('company.detail', $company->slug)}}" title="{{$company->name}}">

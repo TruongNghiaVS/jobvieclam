@@ -9,15 +9,17 @@
 @include('templates.vietstar.includes.user_dashboard_menu')
 <!-- Dashboard menu end -->
 
-
 <!-- Inner Page Title start -->
-@include('templates.vietstar.includes.inner_page_title', ['page_title'=> __('Job Listing') ])
 
-@include('templates.vietstar.job.inc.filters_job_wrapper')
+
+
 
 <!-- Inner Page Title end -->
-<div class="listpgWraper Jobpage">
-    <div class="container">
+<div class="listpgWraper">
+    <form action="{{route('job.list')}}" method="get">
+        @include('templates.vietstar.job.inc.filters_job_wrapper')
+    </form>
+    <div class="container Jobpage">
         <form action="{{route('job.list')}}" method="get">
             <!-- Search Result and sidebar start -->
             <div class="row">

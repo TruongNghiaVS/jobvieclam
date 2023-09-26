@@ -2494,6 +2494,11 @@ label.partTime[title="Rotating"] {
 	min-height: 400px;
 }
 
+.listpgWraper-w {
+	background: white;
+	min-height: 400px;
+}
+
 .pageSearch {
 	padding: 20px 0;
 	background: #fff;

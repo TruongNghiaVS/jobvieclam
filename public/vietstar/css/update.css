@@ -1292,7 +1292,17 @@ footer .contact-detail p i.far {
     color: var(--bs-primary)
 }
 
-.listpgWraper {}
+.listpgWraper {
+    position: relative;
+    top: 76px;
+    left: 0;
+}
+
+.listpgWraper-w {
+    position: relative;
+    top: 76px;
+    left: 0;
+}
 
 .posted-job .job-title {
     position: relative

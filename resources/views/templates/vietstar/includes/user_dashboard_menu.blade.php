@@ -7,6 +7,9 @@
         display: flex;
         width: 100%;
         align-items: stretch;
+        position: relative;
+        top: 76px;
+        left: 0;
     }
 
     #sidebar {

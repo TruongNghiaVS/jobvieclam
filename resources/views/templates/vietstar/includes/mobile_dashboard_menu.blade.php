@@ -691,6 +691,16 @@
 
 @push('scripts')
 <script type="text/javascript">
+    if ($(window).width() > 992) {
+        $('#mobile-sidebar').removeClass("active");
+    }
+    else {
+        $('#mobile-sidebar').addClass("active");
+    }
+
+
+    
+
     $(document).ready(function() {
         $('#mobile-sidebarCollapse').on('click', function() {
             $('#mobile-sidebar').toggleClass('active');

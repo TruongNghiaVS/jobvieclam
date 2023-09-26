@@ -5,7 +5,7 @@
         <a class="navbar-brand" href="{{url('/')}}">
             <img src="{{ asset('/vietstar/imgs/logo-new.svg') }}" alt="vietstar">
         </a>
-        <button type="button" id="sidebarCollapse" class="btn">
+        <button type="button" id="mobile-sidebarCollapse" class="btn">
             <span class="dark-blue-text f"><i class="fas fa-bars fa-1x"></i></span>
         </button>
         <!-- collapse -->

@@ -770,6 +770,14 @@
     padding: 0 !important;
   }
 
+  #mobile-sidebar ul ul a {
+    padding-left: 40px !important;
+  }
+  #mobile-sidebar ul ul a#navbarDropdownMenuLink {
+    padding-left: 0 !important;
+  }
+
+
 }
 
 

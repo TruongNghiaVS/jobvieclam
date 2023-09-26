@@ -6,9 +6,12 @@
 <!-- Inner Page Title start -->
 
 <!-- Inner Page Title end -->
+
+
+@include('templates.vietstar.includes.mobile_dashboard_menu')
 <div class="wrapper">
     @include('flash::message')
-    @include('templates.vietstar.includes.mobile_dashboard_menu')
+    
     @include('templates.vietstar.includes.user_dashboard_content')
 </div>
 @include('templates.vietstar.includes.footer')

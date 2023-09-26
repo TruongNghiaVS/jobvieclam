@@ -6,6 +6,11 @@
 <!-- Inner Page Title start -->
 @include('templates.vietstar.includes.inner_page_title', ['page_title'=>__('Blog')])
 <!-- Inner Page Title end -->
+
+<!-- Dashboard start -->
+@include('templates.vietstar.includes.user_dashboard_menu')
+<!-- Dashboard end -->
+
 @include('templates.vietstar.includes.blog')
 <!-- <header id="joblisting-headerwrap" class="d-none d-sm-block">
     <div class="container-fluid">

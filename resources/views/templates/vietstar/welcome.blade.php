@@ -2,7 +2,6 @@
 @section('content')
 <!-- Header start -->
 @include('templates.vietstar.includes.header')
-@include('templates.vietstar.includes.user_dashboard_menu')
 <!-- Header end -->
 
 

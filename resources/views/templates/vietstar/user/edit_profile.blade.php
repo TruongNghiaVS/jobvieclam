@@ -6,7 +6,7 @@
 <!-- Inner Page Title start -->
 <!-- Inner Page Title end -->
 <div class="wrapper">
-    @include('templates.vietstar.includes.user_dashboard_menu')
+    @include('templates.vietstar.includes.mobile_dashboard_menu')
     <div class="content">
         <div class="user-account">
             <div class="formpanel mt0"> @include('flash::message')

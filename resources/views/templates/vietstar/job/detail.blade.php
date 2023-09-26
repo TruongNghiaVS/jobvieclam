@@ -6,7 +6,7 @@
 
 
 <!-- Dashboard start -->
-@include('templates.vietstar.includes.user_dashboard_menu')
+@include('templates.vietstar.includes.mobile_dashboard_menu')
 <!-- Dashboard end -->
 
 @php

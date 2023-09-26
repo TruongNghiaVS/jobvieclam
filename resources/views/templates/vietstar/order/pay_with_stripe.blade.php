@@ -12,7 +12,7 @@
             @if(Auth::guard('company')->check())
             @include('templates.vietstar.includes.company_dashboard_menu')
             @else
-            @include('templates.vietstar.includes.user_dashboard_menu')
+            @include('templates.vietstar.includes.mobile_dashboard_menu')
             @endif
             <div class="col-md-9">
                 <div class="userccount">

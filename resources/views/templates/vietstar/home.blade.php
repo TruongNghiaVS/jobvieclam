@@ -8,7 +8,7 @@
 <!-- Inner Page Title end -->
 <div class="wrapper">
     @include('flash::message')
-    @include('templates.vietstar.includes.user_dashboard_menu')
+    @include('templates.vietstar.includes.mobile_dashboard_menu')
     @include('templates.vietstar.includes.user_dashboard_content')
 </div>
 @include('templates.vietstar.includes.footer')

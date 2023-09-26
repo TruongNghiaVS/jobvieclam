@@ -6,7 +6,7 @@
 
 
 <!-- Dashboard menu start -->
-@include('templates.vietstar.includes.user_dashboard_menu')
+@include('templates.vietstar.includes.mobile_dashboard_menu')
 <!-- Dashboard menu end -->
 <!-- Search start -->
 @include('templates.vietstar.includes.search')

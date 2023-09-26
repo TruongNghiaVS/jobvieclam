@@ -5,7 +5,7 @@
 <!-- Header end -->
 <!-- Inner Page Title start -->
 <div class="listpgWraper messageWrap wrapper">
-    @include('templates.vietstar.includes.user_dashboard_menu')
+    @include('templates.vietstar.includes.mobile_dashboard_menu')
     <div class="content">
         <div class="myads message-body">
             <h3>{{__('Seeker Messages')}}</h3>

@@ -10,7 +10,7 @@
 
 
 
-    @include('templates.vietstar.includes.user_dashboard_menu')
+    @include('templates.vietstar.includes.mobile_dashboard_menu')
     <div class="template-wrapper content">
         <div class="row">
             <div class="col-md-9">

@@ -12,7 +12,7 @@
         left: 0;
     }
 
-    #sidebar {
+    #mobile-sidebar {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -94,7 +94,7 @@
         left: 20px;
     }
 
-    #sidebar.active {
+    #mobile-sidebar.active {
         min-width: 300px;
         max-width: 300px;
         overflow-x: hidden;
@@ -105,44 +105,44 @@
         max-height: 100vh;
     }
 
-    #sidebar.active .sidebar-btn {
+    #mobile-sidebar.active .sidebar-btn {
         justify-content: end;
     }
 
-    #sidebar .side-bar-content {
+    #mobile-sidebar .side-bar-content {
         display: none;
     }
 
-    #sidebar.active .side-bar-content {
+    #mobile-sidebar.active .side-bar-content {
         display: block;
     }
 
-    #sidebar.active ul.components {
+    #mobile-sidebar.active ul.components {
         width: 100%;
     }
 
-    #sidebar.active .sidebar-header {
+    #mobile-sidebar.active .sidebar-header {
         display: flex;
         flex-direction: column;
     }
 
-    #sidebar .sidebar-header {
+    #mobile-sidebar .sidebar-header {
         padding: 20px;
         background: #063146;
         width: 100%;
         display: none;
     }
 
-    #sidebar ul.components {
+    #mobile-sidebar ul.components {
         border-bottom: 1px solid #47748b;
     }
 
-    #sidebar ul p {
+    #mobile-sidebar ul p {
         color: #063146;
         padding: 10px;
     }
 
-    #sidebar ul li a {
+    #mobile-sidebar ul li a {
         padding: 20px 20px;
         font-size: 1.1em;
         display: block;
@@ -151,36 +151,36 @@
 
 
 
-    #sidebar ul li a:hover {
+    #mobile-sidebar ul li a:hover {
         color: #7386D5;
         background: #981b1e;
     }
 
-    #sidebar ul li a:hover span {
+    #mobile-sidebar ul li a:hover span {
         color: white;
     }
 
 
 
-    #sidebar ul li a i {
+    #mobile-sidebar ul li a i {
         font-size: 20px;
         color: white;
     }
 
 
 
-    #sidebar ul li .dropdown-toggle::after {
+    #mobile-sidebar ul li .dropdown-toggle::after {
         color: #b2bcc6;
         display: none;
     }
 
-    #sidebar.active ul li .dropdown-toggle::after {
+    #mobile-sidebar.active ul li .dropdown-toggle::after {
         color: #b2bcc6;
         display: block;
         right: 20px;
     }
 
-    #sidebar .sidebar-item.active>a {
+    #mobile-sidebar .sidebar-item.active>a {
         background-color: #981b1e;
         color: white;
     }
@@ -197,13 +197,13 @@
         transform: translateY(-50%);
     }
 
-    #sidebar.active .dropdown-toggle::after {
+    #mobile-sidebar.active .dropdown-toggle::after {
         display: none;
     }
 
 
 
-    #sidebar ul ul a {
+    #mobile-sidebar ul ul a {
         font-size: 0.9em !important;
         padding-left: 70px;
 
@@ -248,26 +248,26 @@
         color: #bcc0c8 !important;
     }
 
-    #sidebar.active ul li a span {
+    #mobile-sidebar.active ul li a span {
         color: white;
     }
 
 
-    #sidebarCollapse span i {
+    #mobile-sidebarCollapse span i {
         color: #bcc0c8;
     }
 
-    #sidebar ul li a span {
+    #mobile-sidebar ul li a span {
         color: #bcc0c8;
         font-size: 18px;
         font-weight: 600;
     }
 
-    #sidebar ul ul a {
+    #mobile-sidebar ul ul a {
         padding-left: 70px;
     }
 
-    #sidebar ul li.active a span {
+    #mobile-sidebar ul li.active a span {
         color: white;
     }
 
@@ -279,7 +279,7 @@
         font-size: 16px !important;
     }
 
-    #sidebar .menu {
+    #mobile-sidebar .menu {
         position: relative;
         width: 100%;
         height: 100%;
@@ -326,7 +326,7 @@
         display: none;
     }
 
-    #sidebar.active .sidebar-bottom {
+    #mobile-sidebar.active .sidebar-bottom {
         display: flex;
         width: 100%;
         position: absolute;
@@ -372,8 +372,7 @@
 </style>
 
 @endpush
-<nav id="sidebar" class="active">
-
+<nav id="mobile-sidebar" class="active">
     <div class="sidebar-header">
         @if(Auth::user())
         <div class="profile" bis_skin_checked="1">
@@ -693,8 +692,8 @@
 @push('scripts')
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#sidebarCollapse').on('click', function() {
-            $('#sidebar').toggleClass('active');
+        $('#mobile-sidebarCollapse').on('click', function() {
+            $('#mobile-sidebar').toggleClass('active');
         });
 
 

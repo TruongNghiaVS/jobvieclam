@@ -38,10 +38,10 @@ function TabJob(evt, tabname) {
 
 
 if ($(window).width() > 992) {
-    $('#sidebar').addClass("active");
+    $('#mobile-sidebar').addClass("active");
 }
 else {
-    $('#sidebar').removeClass("active");
+    $('#mobile-sidebar').removeClass("active");
 }
 
 

@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <!-- <div class="col-lg-3 d-flex"> -->
-      <!--   <div class="p-2 me-2" id="collapseSidebar" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar"
+      <!--   <div class="p-2 me-2" id="collapseSidebar" type="button" data-bs-toggle="collapse" data-bs-target="#mobile-sidebar"
             aria-controls="sidebar">
             <i class="far fa-bars"></i>
           </div> -->

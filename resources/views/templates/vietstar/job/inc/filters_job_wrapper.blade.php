@@ -272,15 +272,5 @@
             },
         });
     });
-
-
-    $('#atcFilters').on('click', function() {
-        $('.filters-job-wrapper').slideToggle();
-    });
-
-
-    $('.close-input-filter').on('click', function() {
-        $('.filters-job-wrapper').slideToggle();
-    });
 </script>
 @endpush

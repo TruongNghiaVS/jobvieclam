@@ -192,7 +192,9 @@
                 </ul>
                 <!-- end navbar-lang PC -->
 
-                @if(Auth::check())
+                
+            </div>
+            @if(Auth::check())
                 <!-- user-badge -->
                 <div class="user-badge">
                     <div class="money-base">
@@ -280,8 +282,6 @@
                 </div>
                 <!-- end user-badge -->
                 @endif
-            </div>
-
             @if(!Auth::user() && !Auth::guard('company')->user())
             <div class="d-flex gap-10 my-2 group-button">
                 <a class="btn btn-primary login-btn" href="{{route('login')}}" class="nav-link">{{__('Log in')}}</a>

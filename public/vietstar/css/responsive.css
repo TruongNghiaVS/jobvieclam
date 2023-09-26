@@ -777,7 +777,13 @@
     padding-left: 0 !important;
   }
 
+  #default-sidebar {
+    display: none;
+  }
 
+  #default-sidebar {
+    display: none !important;
+  }
 }
 
 
@@ -1011,6 +1017,10 @@
 
   #navbarDropdownMenuLink {
     padding: 0 !important;
+  }
+
+  #default-sidebar {
+    display: none !important;
   }
 
 }

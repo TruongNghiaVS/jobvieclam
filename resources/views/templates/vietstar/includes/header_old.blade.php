@@ -8,7 +8,6 @@
                 <div class="clearfix"></div>
             </div>
             <div class="col-lg-10 col-md-12 col-12"> 
-
                 <!-- Nav start -->
                 <nav class="navbar navbar-expand-lg navbar-light">
 					

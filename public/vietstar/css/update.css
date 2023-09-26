@@ -1294,13 +1294,13 @@ footer .contact-detail p i.far {
 
 .listpgWraper {
     position: relative;
-    top: 76px;
+    top: 0px;
     left: 0;
 }
 
 .listpgWraper-w {
     position: relative;
-    top: 76px;
+    top: 0;
     left: 0;
 }
 

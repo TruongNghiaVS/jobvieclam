@@ -14,14 +14,13 @@
     </div>
 
 </div>
-
+<hr class="hr-profile">
 <a href="javascript:;" class="prolinkadd" onclick="showProfileActivityModal();"> {{__('Add Activity')}} </a>
 
-<hr class="hr-profile">
 
 <div class="modal" id="add_activity_modal" role="dialog"></div>
 
-<hr class="hr-profile">
+
 @push('styles')
 
 <style type="text/css">

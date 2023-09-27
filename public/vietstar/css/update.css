@@ -5184,7 +5184,7 @@ div#industry_id_chosen {
 .form-user-profile .title-form {
     margin-bottom: 30px;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 22px;
     color: var(--sub-1)
 }
@@ -5195,7 +5195,7 @@ div#industry_id_chosen {
 
 .form-user-profile .formrow label {
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 19px;
     color: var(--sub-text);
     margin-bottom: 8px

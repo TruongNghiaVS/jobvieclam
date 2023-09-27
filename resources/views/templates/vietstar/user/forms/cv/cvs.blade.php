@@ -1,106 +1,116 @@
-<h5 class="title-form" id="cvs" onclick="showCvs();">{{__('Curriculum vitae')}}</h5>
+<div class="user-account">
+    <div class="formpanel mt0">
 
-<div class="row">
+        <h5 class="title-form" id="cvs" onclick="showCvs();">{{__('Curriculum vitae')}}</h5>
 
-    <div class="col-md-12">
+        <div class="row">
 
-        <div class="" id="cvs_div"></div>
+            <div class="col-md-12">
+
+                <div class="" id="cvs_div"></div>
+
+            </div>
+
+        </div>
+
+
+        <hr class="hr-profile">
+        <a href="javascript:;" class="prolinkadd" onclick="showProfileCvModal();"> {{__('Thêm CV')}} </a>
+
+
+
+        <div class="modal" id="add_cv_modal" role="dialog"></div>
 
     </div>
-
 </div>
 
-<a href="javascript:;" class="prolinkadd" onclick="showProfileCvModal();"> {{__('Thêm CV')}} </a>
 
-<hr class="hr-profile">
 
-<div class="modal" id="add_cv_modal" role="dialog"></div>
 
 @push('css')
 
 <style type="text/css">
-
     .datepicker>div {
 
         display: block;
 
     }
-
 </style>
 
 @endpush
 
-@push('scripts') 
+@push('scripts')
 
 <script type="text/javascript">
+    $(document).ready(function() {
 
-    $(document).ready(function(){
-
-    showCvs();
+        showCvs();
 
     });
 
     /**************************************************/
 
-    function showProfileCvModal(){
+    function showProfileCvModal() {
 
-    $("#add_cv_modal").modal();
+        $("#add_cv_modal").modal();
 
-    loadProfileCvForm();
+        loadProfileCvForm();
 
     }
 
-    function loadProfileCvForm(){
+    function loadProfileCvForm() {
 
-    $.ajax({
+        $.ajax({
 
-    type: "POST",
+            type: "POST",
 
             url: "{{ route('get.front.profile.cv.form', $user->id) }}",
 
-            data: {"_token": "{{ csrf_token() }}"},
+            data: {
+                "_token": "{{ csrf_token() }}"
+            },
 
             datatype: 'json',
 
-            success: function (json) {
+            success: function(json) {
 
-            $("#add_cv_modal").html(json.html);
+                $("#add_cv_modal").html(json.html);
 
             }
 
-    });
+        });
 
     }
 
     function submitProfileCvForm() {
 
-    var form = $('#add_edit_profile_cv');
+        var form = $('#add_edit_profile_cv');
 
-    var formData = new FormData();
+        var formData = new FormData();
 
-    formData.append("id", $('#id').val());
+        formData.append("id", $('#id').val());
 
-    formData.append("_token", $('input[name=_token]').val());
+        formData.append("_token", $('input[name=_token]').val());
 
-    formData.append("title", $('#title').val());
+        formData.append("title", $('#title').val());
 
-    formData.append("is_default", $('input[name=is_default]:checked').val());
+        formData.append("is_default", $('input[name=is_default]:checked').val());
 
-    if (document.getElementById("cv_file").value != "") {
+        if (document.getElementById("cv_file").value != "") {
 
-    formData.append("cv_file", $('#cv_file')[0].files[0]);
+            formData.append("cv_file", $('#cv_file')[0].files[0]);
 
-    }
+        }
 
-    //form.attr('method'),
+        //form.attr('method'),
 
-    $.ajax({
+        $.ajax({
 
-    url     : form.attr('action'),
+            url: form.attr('action'),
 
-            type    : 'POST',
+            type: 'POST',
 
-            data    : formData,
+            data: formData,
 
             dataType: 'json',
 
@@ -108,75 +118,78 @@
 
             processData: false,
 
-            success : function (json){
+            success: function(json) {
 
-            $ ("#add_cv_modal").html(json.html);
+                $("#add_cv_modal").html(json.html);
 
-            showCvs();
+                showCvs();
 
             },
 
-            error: function(json){
+            error: function(json) {
 
-            if (json.status === 422) {
+                if (json.status === 422) {
 
-            var resJSON = json.responseJSON;
+                    var resJSON = json.responseJSON;
 
-            $('.help-block').html('');
+                    $('.help-block').html('');
 
-            $.each(resJSON.errors, function (key, value) {
+                    $.each(resJSON.errors, function(key, value) {
 
-            $('.' + key + '-error').html('<strong>' + value + '</strong>');
+                        $('.' + key + '-error').html('<strong>' + value + '</strong>');
 
-            $('#div_' + key).addClass('has-error');
+                        $('#div_' + key).addClass('has-error');
 
-            });
+                    });
 
-            } else {
+                } else {
 
-            // Error
+                    // Error
 
-            // Incorrect credentials
+                    // Incorrect credentials
 
-            // alert('Incorrect credentials. Please try again.')
+                    // alert('Incorrect credentials. Please try again.')
+
+                }
 
             }
 
-            }
-
-    });
+        });
 
     }
 
     /*****************************************/
 
-    function showProfileCvEditModal(cv_id){
+    function showProfileCvEditModal(cv_id) {
 
-    $("#add_cv_modal").modal();
+        $("#add_cv_modal").modal();
 
-    loadProfileCvEditForm(cv_id);
+        loadProfileCvEditForm(cv_id);
 
     }
 
-    function loadProfileCvEditForm(cv_id){
+    function loadProfileCvEditForm(cv_id) {
 
-    $.ajax({
+        $.ajax({
 
-    type: "POST",
+            type: "POST",
 
             url: "{{ route('get.front.profile.cv.edit.form', $user->id) }}",
 
-            data: {"cv_id": cv_id, "_token": "{{ csrf_token() }}"},
+            data: {
+                "cv_id": cv_id,
+                "_token": "{{ csrf_token() }}"
+            },
 
             datatype: 'json',
 
-            success: function (json) {
+            success: function(json) {
 
-            $("#add_cv_modal").html(json.html);
+                $("#add_cv_modal").html(json.html);
 
             }
 
-    });
+        });
 
     }
 
@@ -186,11 +199,19 @@
 
     {
 
-    $.post("{{ route('show.front.profile.cvs', $user->id) }}", {user_id: {{$user->id}}, _method: 'POST', _token: '{{ csrf_token() }}'})
+        $.post("{{ route('show.front.profile.cvs', $user->id) }}", {
+                user_id: {
+                    {
+                        $user -> id
+                    }
+                },
+                _method: 'POST',
+                _token: '{{ csrf_token() }}'
+            })
 
-            .done(function (response) {
+            .done(function(response) {
 
-            $('#cvs_div').html(response);
+                $('#cvs_div').html(response);
 
             });
 
@@ -198,35 +219,37 @@
 
     function delete_profile_cv(id) {
 
-    var msg = "{{__('Are you sure! you want to delete?')}}";
+        var msg = "{{__('Are you sure! you want to delete?')}}";
 
-    if (confirm(msg)) {
+        if (confirm(msg)) {
 
-    $.post("{{ route('delete.front.profile.cv') }}", {id: id, _method: 'DELETE', _token: '{{ csrf_token() }}'})
+            $.post("{{ route('delete.front.profile.cv') }}", {
+                    id: id,
+                    _method: 'DELETE',
+                    _token: '{{ csrf_token() }}'
+                })
 
-            .done(function (response) {
+                .done(function(response) {
 
-            if (response == 'ok')
+                    if (response == 'ok')
 
-            {
+                    {
 
-            $('#cv_' + id).remove();
+                        $('#cv_' + id).remove();
 
-            } else
+                    } else
 
-            {
+                    {
 
-            alert('Request Failed!');
+                        alert('Request Failed!');
 
-            }
+                    }
 
-            });
+                });
+
+        }
 
     }
-
-    }
-
 </script>
 
 @endpush
-

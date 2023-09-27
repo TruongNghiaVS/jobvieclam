@@ -10,13 +10,12 @@
         </div>
     </div>
 </div>
-
-<a href="javascript:;" class="prolinkadd" onclick="showProfileReferencesModal();"> {{__('Add References')}} </a>
 <hr class="hr-profile">
+<a href="javascript:;" class="prolinkadd" onclick="showProfileReferencesModal();"> {{__('Add References')}} </a>
+
 
 <div class="modal" id="add_references_modal" role="dialog"></div>
 
-<hr class="hr-profile">
 
 @push('scripts') 
 

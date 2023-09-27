@@ -5,7 +5,7 @@
     </div>
 </div>
 <a href="javascript:;" class="prolinkadd" onclick="showProfileEducationModal();"> {{__('Add Education')}} </a>
-<hr class="hr-profile">
+
 
 <div class="modal" id="add_education_modal" role="dialog"></div>
 @push('styles')

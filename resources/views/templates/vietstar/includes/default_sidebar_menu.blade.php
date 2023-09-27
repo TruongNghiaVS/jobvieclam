@@ -240,7 +240,7 @@
         display: block;
         position: absolute;
         top: 50%;
-        right: 0px;
+        right: -10px;
         transform: translateY(-50%);
     }
 

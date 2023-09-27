@@ -4,8 +4,9 @@
         <div class="" id="language_div"></div>
     </div>
 </div>
-<a href="javascript:;" class="prolinkadd" onclick="showProfileLanguageModal();"> {{__('Add Language')}} </a>
 <hr class="hr-profile">
+<a href="javascript:;" class="prolinkadd" onclick="showProfileLanguageModal();"> {{__('Add Language')}} </a>
+
 <div class="modal" id="add_language_modal" role="dialog"></div>
 @push('scripts') 
 <script type="text/javascript">

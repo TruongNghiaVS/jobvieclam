@@ -10,35 +10,11 @@
     @include('flash::message')
     @include('templates.vietstar.includes.default_sidebar_menu')
     <div class="content">
-        <div class="user-account">
-            <div class="formpanel mt0"> @include('flash::message')
-                <!-- Personal Information -->
-                @include('templates.vietstar.user.inc.profile')
-            </div>
-        </div>
-        <div class="user-account">
-            <div class="formpanel mt0">
-                <!-- Personal Information -->
-                @include('templates.vietstar.user.inc.summary')
-            </div>
-        </div>
-        <div class="user-account">
-            <div class="formpanel mt0">
-                <!-- Personal Information -->
-                {{--@include('templates.vietstar.user.forms.cv.cvs') --}}
-                <!-- @include('templates.vietstar.user.forms.project.projects') -->
-                @include('templates.vietstar.user.forms.experience.experience')
-                @include('templates.vietstar.user.forms.education.education')
-                @include('templates.vietstar.user.forms.skill.skills')
-                @include('templates.vietstar.user.forms.language.languages')
-                @include('templates.vietstar.user.forms.activity.activity')
-                @include('templates.vietstar.user.forms.references.references')
-            </div>
-            <div class="row">
-                <div class="col-md-9">
+        <div class="row">
+                <div class="col-md-6">
                     <div class="formpanel mt0 load_message"></div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <div class="group-button-cv-template ">
                         <button type="button" class="btn btn-light"
                             onclick="Download_CV();">{{ __('Download CV') }}</button>
@@ -46,8 +22,51 @@
                     </div>
                 </div>
             </div>
+                <!-- Personal Information -->
+        @include('templates.vietstar.user.inc.profile')
+                <!-- Personal Information -->
+        @include('templates.vietstar.user.inc.summary')
+
+
+        <div class="user-account">
+            <div class="formpanel mt0"> 
+                @include('templates.vietstar.user.forms.experience.experience')
+            </div>
         </div>
 
+        <div class="user-account">
+            <div class="formpanel mt0"> 
+                @include('templates.vietstar.user.forms.education.education')
+            </div>
+        </div>
+        <div class="user-account">
+            <div class="formpanel mt0"> 
+            @include('templates.vietstar.user.forms.skill.skills')
+            </div>
+        </div>
+
+        <div class="user-account">
+            <div class="formpanel mt0"> 
+            @include('templates.vietstar.user.forms.language.languages')
+
+            </div>
+        </div>
+        <div class="user-account">
+            <div class="formpanel mt0"> 
+            @include('templates.vietstar.user.forms.activity.activity')
+            </div>
+        </div>
+
+        <div class="user-account">
+            <div class="formpanel mt0"> 
+            @include('templates.vietstar.user.forms.references.references')
+            </div>
+        </div>
+      
+                <!-- Personal Information -->
+                {{--@include('templates.vietstar.user.forms.cv.cvs') --}}
+                <!-- @include('templates.vietstar.user.forms.project.projects') -->
+      
     </div>
 </div>
 <div class="row" style="display:none;">

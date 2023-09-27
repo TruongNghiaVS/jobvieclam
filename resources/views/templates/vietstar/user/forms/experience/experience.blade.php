@@ -1,3 +1,5 @@
+
+
 <h5 class="title-form" onclick="showExperience();">{{__('Experience')}}</h5>
 
 <div class="row">
@@ -10,9 +12,11 @@
 
 </div>
 
-<a href="javascript:;" class="prolinkadd" onclick="showProfileExperienceModal();"> {{__('Add Experience')}} </a>
 
 <hr class="hr-profile">
+<a href="javascript:;" class="prolinkadd" onclick="showProfileExperienceModal();"> {{__('Add Experience')}} </a>
+
+
 
 <div class="modal" id="add_experience_modal" role="dialog"></div>
 

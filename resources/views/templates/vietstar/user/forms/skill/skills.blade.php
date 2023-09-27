@@ -4,8 +4,9 @@
         <div class="" id="skill_div"></div>
     </div>
 </div>
-<a href="javascript:;" class="prolinkadd" onclick="showProfileSkillModal();"> {{__('Add Skill')}} </a>
 <hr class="hr-profile">
+<a href="javascript:;" class="prolinkadd" onclick="showProfileSkillModal();"> {{__('Add Skill')}} </a>
+
 <div class="modal" id="add_skill_modal" role="dialog"></div>
 @push('scripts') 
 <script type="text/javascript">

@@ -1,7 +1,8 @@
 <h5 class="title-form" onclick="showProjects();">{{__('Projects')}}</h5>
         <div class="row" id="projects_div"></div>
-<a href="javascript:;" class="prolinkadd" onclick="showProfileProjectModal();"> {{__('Add project')}} </a>
-<hr class="hr-profile">
+        <hr class="hr-profile">
+        <a href="javascript:;" class="prolinkadd" onclick="showProfileProjectModal();"> {{__('Add project')}} </a>
+
 <div class="modal" id="add_project_modal" role="dialog"></div>
 @push('styles')
 <style type="text/css">

@@ -28,36 +28,36 @@
         @include('templates.vietstar.user.inc.summary')
 
 
-        <div class="user-account">
+        <div class="user-account-section">
             <div class="formpanel mt0"> 
                 @include('templates.vietstar.user.forms.experience.experience')
             </div>
         </div>
 
-        <div class="user-account">
+        <div class="user-account-section">
             <div class="formpanel mt0"> 
                 @include('templates.vietstar.user.forms.education.education')
             </div>
         </div>
-        <div class="user-account">
+        <div class="user-account-section">
             <div class="formpanel mt0"> 
             @include('templates.vietstar.user.forms.skill.skills')
             </div>
         </div>
 
-        <div class="user-account">
+        <div class="user-account-section">
             <div class="formpanel mt0"> 
             @include('templates.vietstar.user.forms.language.languages')
 
             </div>
         </div>
-        <div class="user-account">
+        <div class="user-account-section">
             <div class="formpanel mt0"> 
             @include('templates.vietstar.user.forms.activity.activity')
             </div>
         </div>
 
-        <div class="user-account">
+        <div class="user-account-section">
             <div class="formpanel mt0"> 
             @include('templates.vietstar.user.forms.references.references')
             </div>

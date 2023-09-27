@@ -1,14 +1,14 @@
 {!! Form::model($user, array('method' => 'put', 'route' => array('put.my.profile'), 'class' => 'form form-user-profile',
 'files'=>true)) !!}
 
-<div class="user-account">
+<div class="user-account-section">
     <div class="formpanel mt0"> @include('flash::message')
         <!-- Personal Information -->
         @include('templates.vietstar.user.inc.user_avatar')
     </div>
 </div>
 
-<div class="user-account">
+<div class="user-account-section section">
     <div class="formpanel mt0"> @include('flash::message')
         <!-- Personal Information -->
         @include('templates.vietstar.user.inc.account_infomation')
@@ -16,14 +16,14 @@
 </div>
 
 
-<div class="user-account">
+<div class="user-account-section ">
     <div class="formpanel mt0"> @include('flash::message')
         <!-- Personal Information -->
         @include('templates.vietstar.user.inc.personal_infomation')
     </div>
 </div>
 
-<div class="user-account">
+<div class="user-account-section ">
     <div class="formpanel mt0"> @include('flash::message')
         <!-- Personal Information -->
         @include('templates.vietstar.user.inc.career_infomation')
@@ -33,7 +33,7 @@
 
 
 
-<div class="user-account">
+<div class="user-account-section">
     <div class="formpanel mt0"> @include('flash::message')
         <!-- Personal Information -->
         @include('templates.vietstar.user.inc.career_infomation')

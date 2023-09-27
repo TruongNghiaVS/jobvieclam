@@ -5299,7 +5299,7 @@ div#industry_id_chosen {
     margin-bottom: 12px !important
 }
 
-.user-account {
+.user-account-section {
     background: #ffffff;
     -webkit-box-shadow: 0px 1px 3px rgba(96, 108, 128, 0.1);
     box-shadow: 0px 1px 3px rgba(96, 108, 128, 0.1);
@@ -5656,7 +5656,7 @@ div#industry_id_chosen {
 }
 
 @media screen and (max-width: 767px) {
-    .user-account {
+    .user-account-section {
         padding: 40px 40px
     }
 
@@ -5686,7 +5686,7 @@ div#industry_id_chosen {
 }
 
 @media screen and (max-width: 390px) {
-    .user-account {
+    .user-account-section {
         padding: 40px 16px
     }
 

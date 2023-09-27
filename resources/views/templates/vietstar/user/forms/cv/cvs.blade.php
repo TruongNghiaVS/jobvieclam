@@ -1,4 +1,4 @@
-<div class="user-account">
+<div class="user-account-section">
     <div class="formpanel mt0">
 
         <h5 class="title-form" id="cvs" onclick="showCvs();">{{__('Curriculum vitae')}}</h5>

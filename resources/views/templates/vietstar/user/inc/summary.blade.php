@@ -1,4 +1,4 @@
-<div class="user-account">
+<div class="user-account-section">
     <div class="formpanel mt0">
 
         <div class="row">

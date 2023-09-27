@@ -4107,6 +4107,9 @@ label.partTime[title="Rotating"] {
 	margin-bottom: 10px;
 	border-radius: 5px;
 }
+a.btn-view-details {
+	color: red;
+}
 
 .searchList li:hover {
 	box-shadow: 3px 8px 10px rgba(0, 0, 0, 0.1);

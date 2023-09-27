@@ -97,7 +97,7 @@
                             </div>
 
                             <div class="user-action" bis_skin_checked="1">
-                                <a class="btn-view-details" href="{{route('job.detail', [$job->slug])}}"><span class="iconmoon icon-eye-icon"></span> {{__('View Details')}}</a>
+                                <a class="btn-view-details" href="{{route('job.detail', [$job->slug])}}"></span> {{__('View Details')}}</a>
                             </div>
                         </div>
                     </div>

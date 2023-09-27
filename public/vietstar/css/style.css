@@ -4899,6 +4899,10 @@ ul.skillslist li a:hover {
 	background-color: var(--bs-primary);
 }
 
+
+
+
+
 .save-job.active i {
 	color: white !important;
 }
@@ -4906,6 +4910,21 @@ ul.skillslist li a:hover {
 .save-job.active:hover i {
 	color: var(--bs-primary) !important;
 }
+
+.remove_favouritejob {
+	color: red;
+	transition: 2s linear 1s ;
+	font-size: 16px;
+	font-weight: 400;
+	display: none;
+}
+
+.jobs-side-list .item-job:hover .remove_favouritejob {
+	display: block;
+}
+
+
+
 
 /*Portfolio*/
 

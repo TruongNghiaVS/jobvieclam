@@ -2705,6 +2705,7 @@ label.partTime[title="Rotating"] {
 	list-style: none;
 	margin-bottom: 30px;
 	padding-left: 0 !important;
+	padding: 0  20px ;
 }
 
 .searchList li {
@@ -5446,6 +5447,8 @@ blockquote:after {
 .instoretxt a.history {
 	background: #444;
 }
+
+
 
 .myads h3 {
 	font-size: 24px;

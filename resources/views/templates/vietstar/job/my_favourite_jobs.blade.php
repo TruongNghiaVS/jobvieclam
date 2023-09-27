@@ -37,9 +37,8 @@
                                             title="Nhân viên bất động sản">Nhân viên bất động sản</a></h3>
                                 </div>
                                 @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
-                                <a class="save-job active"
-                                    href="http://localhost:8000/add-to-favourite-job/nhan-vien-bat-dong-san-40"><i
-                                        class="far fa-heart"></i>
+                                <a class="remove_favouritejob"
+                                    href="http://localhost:8000/add-to-favourite-job/nhan-vien-bat-dong-san-40">Xóa
                                 </a>
                                 @else
                                 <a class="save-job"
@@ -54,7 +53,12 @@
                             <div class="info-item companyName" bis_skin_checked="1"><a
                                     href="http://localhost:8000/company/cong-ty-co-phan-incom-sai-gon-9"
                                     title="Công Ty Cổ Phần Incom Sài Gòn">Công Ty Cổ Phần Incom Sài Gòn</a>
+                               <!--Day update and place Start-->
+                               <div class="info-item day-update" bis_skin_checked="1">
+                                Hôm nay
                             </div>
+                            <!--Day update and place End-->
+                                </div>
                             <!-- companyName End-->
                             <!--rank-salary and place Start-->
                             <div class="info-item box-meta" bis_skin_checked="1">
@@ -73,11 +77,7 @@
                             </div>
                             <!--Rank-salary and place End-->
 
-                            <!--Day update and place Start-->
-                            <div class="info-item day-update" bis_skin_checked="1">
-                                Hôm nay
-                            </div>
-                            <!--Day update and place End-->
+                           
 
                             <!-- <div class="short-description">M&amp;ocirc; tả c&amp;ocirc;ng việc</div> -->
                         </div>
@@ -102,7 +102,7 @@
                             </div>
 
                             <div class="user-action" bis_skin_checked="1">
-                                <a class="btn btn-primary btn-view-details"
+                                <a class=""
                                     href="{{route('job.detail', [$job->slug])}}"><span
                                         class="iconmoon icon-eye-icon"></span> {{__('View Details')}}</a>
                             </div>

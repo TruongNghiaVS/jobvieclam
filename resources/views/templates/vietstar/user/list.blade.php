@@ -84,7 +84,7 @@
         <form action="{{route('job.seeker.list')}}" method="get">
             <!-- Search Result and sidebar start -->
             <div class="row">
-                <div class="col-lg-9">
+                <div class="col-lg-8">
                     <!-- Search List -->
                     <ul class="searchList">
                         <!-- job start -->
@@ -134,7 +134,7 @@
                     <!-- <div class=""><br />{!! $siteSetting->listing_page_horizontal_ad !!}</div> -->
 
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-4">
                     <!-- Sponsord By -->
                     <div class="sidebar" bis_skin_checked="1">
                         <div id="adbanner" class="carousel slide" data-ride="carousel" bis_skin_checked="1">

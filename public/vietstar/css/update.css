@@ -2475,10 +2475,9 @@ footer .inner-copyright .copyright {
 }
 
 .jobs-side-list .item-job .jobinfo .box-meta {
-
     position: relative;
-    font-size: 18px;
-    line-height: 18px;
+    font-size: 15px;
+    line-height: 15px;
     color: var(--sub-text);
     text-decoration: none;
     display: flex;
@@ -2539,6 +2538,7 @@ footer .inner-copyright .copyright {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 0;
 }
 
 .jobs-side-list .item-job .jobinfo .info .job-title {
@@ -2601,7 +2601,11 @@ footer .inner-copyright .copyright {
     color: var(--bs-primary)
 }
 
-.jobs-side-list .item-job .jobinfo .info .companyName {}
+.jobs-side-list .item-job .jobinfo .info .companyName {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .jobs-side-list .item-job .jobinfo .info .companyName a {
     font-weight: 500;
@@ -2684,6 +2688,10 @@ footer .inner-copyright .copyright {
     border-radius: 20px;
 }
 
+
+.myads {
+	padding: 0 45px;
+} 
 /* Related Job */
 .related-jobs-item.item-job {
     border: 1px solid #d3d5d9;
@@ -6294,7 +6302,7 @@ div#industry_id_chosen {
 }
 
 span.iconmoon.icon-eye-icon {
-    color: #ffff;
+    color: blue;
 }
 
 .card-news .card-news__content .card-news__content-footer-applied-jobs .rank-salary {

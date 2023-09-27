@@ -9,7 +9,7 @@
 
 
 @include('templates.vietstar.includes.mobile_dashboard_menu')
-<div class="user-wrapper">
+<div class="user-wrapper listpgWraper">
     @include('flash::message')
     @include('templates.vietstar.includes.default_sidebar_menu')
     @include('templates.vietstar.includes.user_dashboard_content')

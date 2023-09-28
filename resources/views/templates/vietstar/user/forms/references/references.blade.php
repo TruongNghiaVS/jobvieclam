@@ -1,4 +1,24 @@
-<h5 class="title-form" onclick="showReferences();">{{__('References')}}</h5>
+
+<div class="section-head">
+        <div class="figure">
+                <div class="figure__image"><img src="https://cdn-icons-png.flaticon.com/512/8291/8291209.png" alt=""></div>
+                <div class="figure__caption">
+                        <h5 class="" onclick="showReferences();">{{__('References')}}</h5>
+                        <div class="status complete" bis_skin_checked="1">
+                                <p>Hoàn thành</p>
+                        </div>
+                </div>
+        </div>
+        <div class="right-action" bis_skin_checked="1">
+                <div class="right-action__tips" bis_skin_checked="1">
+                        <i class="bi bi-lightbulb"></i>
+                        <p>Tips</p>
+                </div>
+                <div class="right-action__link-edit"><a a href="javascript:;"  onclick="showProfileReferencesModal();"><i class="bi bi-pen"></i>Thêm mới</a></div>
+        </div>
+</div>
+
+<div class="section-body"> 
 
 <div class="row">
 
@@ -10,8 +30,14 @@
         </div>
     </div>
 </div>
+
+
+</div>
+
+
+
 <hr class="hr-profile">
-<a href="javascript:;" class="prolinkadd" onclick="showProfileReferencesModal();"> {{__('Add References')}} </a>
+
 
 
 <div class="modal" id="add_references_modal" role="dialog"></div>

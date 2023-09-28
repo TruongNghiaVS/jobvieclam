@@ -1,11 +1,35 @@
-<h5 class="title-form"  onclick="showSkills();">{{__('Skills')}}</h5>
+
+<div class="section-head">
+        <div class="figure">
+                <div class="figure__image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/University_Diploma_or_Certificate_Flat_Icon_Vector.svg/1024px-University_Diploma_or_Certificate_Flat_Icon_Vector.svg.png" alt=""></div>
+                <div class="figure__caption">
+                        <h5 class=""  onclick="showSkills();">{{__('Skills')}}</h5>
+                        <div class="status complete" bis_skin_checked="1">
+                                <p>Hoàn thành</p>
+                        </div>
+                </div>
+        </div>
+        <div class="right-action" bis_skin_checked="1">
+                <div class="right-action__tips" bis_skin_checked="1">
+                        <i class="bi bi-lightbulb"></i>
+                        <p>Tips</p>
+                </div>
+                <div class="right-action__link-edit"><a a href="javascript:;"  onclick="showProfileSkillModal();"><i class="bi bi-pen"></i>Thêm mới</a></div>
+        </div>
+</div>
+
+<div class="section-body"> 
+
 <div class="row">
     <div class="col-md-12">
         <div class="" id="skill_div"></div>
     </div>
 </div>
+
+</div>
+
+
 <hr class="hr-profile">
-<a href="javascript:;" class="prolinkadd" onclick="showProfileSkillModal();"> {{__('Add Skill')}} </a>
 
 <div class="modal" id="add_skill_modal" role="dialog"></div>
 @push('scripts') 

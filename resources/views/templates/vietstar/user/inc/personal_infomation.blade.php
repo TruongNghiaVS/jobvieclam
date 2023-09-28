@@ -14,6 +14,8 @@
             <p>Tips</p>
         </div>
         <div class="right-action__link-edit"><a href=""><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
+        <div class="right-action__link-edit-mobile"><a a href="javascript:;"  onclick=""><i class="bi bi-pen"></i></a></div>
+   
     </div>
 </div>
 

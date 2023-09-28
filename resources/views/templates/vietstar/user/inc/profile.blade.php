@@ -23,15 +23,6 @@
     </div>
 </div>
 
-<div class="user-account-section ">
-    <div class="formpanel mt0"> @include('flash::message')
-        <!-- Personal Information -->
-        @include('templates.vietstar.user.inc.career_infomation')
-    </div>
-</div>
-
-
-
 
 <div class="user-account-section">
     <div class="formpanel mt0"> @include('flash::message')
@@ -40,16 +31,16 @@
     </div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
     <div class="col-md-12">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'is_subscribed') !!}">
-            <?php
+            {{<?php
             $is_checked = 'checked="checked"';
             if (old('is_subscribed', ((isset($user)) ? $user->is_subscribed : 1)) == 0) {
                 $is_checked = '';
             }
             ?>
-            <input type="checkbox" value="1" name="is_subscribed" {{$is_checked}} />
+}}            <input type="checkbox" value="1" name="is_subscribed" {{$is_checked}} />
             {{__('Đăng ký nhận tin tức mới')}}
             {!! APFrmErrHelp::showErrors($errors, 'is_subscribed') !!}
         </div>
@@ -59,7 +50,7 @@
             <button type="submit" class="btn btn-primary btn-save-profile">{{__('Cập nhật và Lưu hồ sơ')}}</button>
         </div>
     </div>
-</div>
+</div> -->
 {!! Form::close() !!}
 <div class="formrow formrow-border-top"></div>
 @push('styles')

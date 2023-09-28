@@ -1,5 +1,91 @@
-<h5 class="title-form">{{__('Career Information')}}</h5>
-<div class="row">
+<div class="section-head">
+    <div class="figure">
+        <div class="figure__image"><img src="https://cdn-icons-png.flaticon.com/512/3862/3862929.png" alt=""></div>
+        <div class="figure__caption">
+            <h5 class="">{{__('Career Information')}}</h5>
+            <div class="status complete" bis_skin_checked="1">
+                <p>Hoàn thành</p>
+            </div>
+        </div>
+    </div>
+    <div class="right-action" bis_skin_checked="1">
+        <div class="right-action__tips" bis_skin_checked="1">
+            <i class="bi bi-lightbulb"></i>
+            <p>Tips</p>
+        </div>
+        <div class="right-action__link-edit"><a href=""><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
+    </div>
+</div>
+
+<div class="section-body">
+ 
+    <div class="table-responsive">
+        <table class="table table-responsive table-user-information">
+            <tbody>
+                <tr>
+                    <td class="text-primary table_title">
+                        <strong>
+                        {{__('Job Experience')}}
+                        </strong>
+                    </td>
+                    <td class="table_value">
+                        1 năm
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="text-primary table_title">
+                        <strong>
+                        {{__('Cấp bậc nghề')}}
+                        </strong>
+                    </td>
+                    <td class="table_value">
+                        Thực tập sinh
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="text-primary table_title">
+                        <strong>
+                        {{__('Lựa chọn Ngành nghề')}}
+                        </strong>
+                    </td>
+                    <td class="table_value">
+                        IT Consolution
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="text-primary table_title">
+                        <strong>
+                        {{__('Bộ phận chức năng')}}
+                        </strong>
+                    </td>
+                    <td class="table_value">
+                       IT
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <td class="text-primary table_title">
+                        <strong>
+                        {{__('Mức lương kỳ vọng')}}
+                        </strong>
+                    </td>
+                    <td class="table_value">
+	                    20,000,000 - 100,000,000 VND
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- <h5 class="title-form">{{__('Career Information')}}</h5> -->
+<!-- <div class="row">
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'job_experience_id') !!}">
             <label for="">{{__('Job Experience')}}</label>
@@ -60,4 +146,4 @@
             {!! APFrmErrHelp::showErrors($errors, 'salary_currency') !!}
         </div>
     </div>
-</div>
+</div> -->

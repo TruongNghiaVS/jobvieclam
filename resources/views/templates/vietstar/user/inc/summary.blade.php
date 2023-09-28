@@ -1,6 +1,5 @@
 <div class="user-account-section">
     <div class="formpanel mt0">
-
         <div class="row">
             <div class="col-md-12">
                 <form class="form form-user-profile" id="add_edit_profile_summary" method="POST" action="{{ route('update.front.profile.summary', [$user->id]) }}">

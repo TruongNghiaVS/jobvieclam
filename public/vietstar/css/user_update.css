@@ -283,6 +283,10 @@
     .right-action__tips {
         margin-left: 20px;
     }
+
+    #mobile-sidebar.active {
+        max-height: calc(100% - 76px);
+    }
     
 }
 

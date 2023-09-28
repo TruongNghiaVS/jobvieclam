@@ -102,7 +102,7 @@
         display: flex;
         flex-direction: column;
         z-index: 30;
-        max-height: 100vh;
+        max-height: calc(100% - 76px);
     }
 
     #mobile-sidebar.active .sidebar-btn {

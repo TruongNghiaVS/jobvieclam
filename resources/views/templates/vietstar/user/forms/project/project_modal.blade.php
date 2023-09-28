@@ -7,7 +7,7 @@
             </div>
             @include('templates.vietstar.user.forms.project.project_form')
             <div class="modal-footer">
-                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileProjectForm();">{{__('Thêm Dự án')}} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileProjectForm();">{{__('Thêm Dự án')}} </button>
             </div>
         </form>
     </div>

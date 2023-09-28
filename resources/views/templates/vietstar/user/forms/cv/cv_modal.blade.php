@@ -18,7 +18,7 @@
 
             <div class="modal-footer">
 
-                <button type="button" class="btn btn-primary" onclick="submitProfileCvForm();">{{__('Add CV')}} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-primary" onclick="submitProfileCvForm();">{{__('Add CV')}} </button>
 
             </div>
 

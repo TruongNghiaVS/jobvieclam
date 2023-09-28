@@ -67,8 +67,6 @@
                     </td>
                 </tr>
 
-
-
                 <tr>
                     <td class="text-primary table_title">
                         <strong>

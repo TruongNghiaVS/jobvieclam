@@ -13,6 +13,7 @@
 .section-head,
 .section-body {
     padding: 0 20px;
+    margin: 10px 0;
 }
 
 .form-user-profile .title-form {
@@ -165,4 +166,88 @@
     background: none;
     outline: none;
     border: none;
+}
+
+
+/* Jobster Candidate */
+.jobster-candidate-timeline {
+    position: relative;
+}
+.jobster-candidate-timeline:before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    width: 2px;
+    top: 5px;
+    bottom: 5px;
+    height: calc(100% - 5px);
+    background-color: #eeeeee;
+}
+
+.jobster-candidate-timeline .jobster-timeline-item {
+    display: table;
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-cricle {
+    border-radius: 50%;
+    border: 12px solid white;
+    z-index: 1;
+    top: 5px;
+    left: 9px;
+    position: absolute;
+}
+.jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-cricle:before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    width: 20px;
+    top: -1px;
+    bottom: 5px;
+    height: 2px;
+    background-color: #eeeeee;
+}
+.jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-cricle > i {
+    font-size: 15px;
+    top: -8px;
+    left: -7px;
+    position: absolute;
+    color: var(--bs-primary);
+}
+
+.jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-info {
+    display: table-cell;
+    vertical-align: top;
+    padding: 5px 0 0 70px;
+}
+.jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-info h6 {
+    color: var(--bs-primary);
+    margin: 5px 0 0px;
+}
+.jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-info span {
+    color: #212529;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.jobster-candidate-timeline span.jobster-timeline-time {
+    color: #646f79 !important;
+}
+
+.jobster-candidate-timeline .jobster-timeline-icon {
+    border: 2px solid #eeeeee;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    line-height: 42px;
+    text-align: center;
+    background: #ffffff;
+    position: relative;
+    margin-bottom: 20px;
+}
+.jobster-candidate-timeline .jobster-timeline-icon i {
+    font-size: 16px;
+    color: #212529;
 }

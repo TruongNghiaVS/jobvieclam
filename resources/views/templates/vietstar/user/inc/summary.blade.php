@@ -1,23 +1,45 @@
-<div class="user-account-section">
-    <div class="formpanel mt0">
-        <div class="row">
-            <div class="col-md-12">
-                <form class="form form-user-profile" id="add_edit_profile_summary" method="POST" action="{{ route('update.front.profile.summary', [$user->id]) }}">
-                    <h5 class="title-form">{{__('Personal Profile')}}</h5>
-                    {{ csrf_field() }}
-                    <div class="form-body">
-                        <div id="success_msg"></div>
-                        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'summary') !!}">
-                            <textarea name="summary" class="form-control" id="summary" placeholder="{{__('Profile Summary')}}">{{ old('summary', $user->getProfileSummary('summary')) }}</textarea>
-                            <span class="help-block summary-error"></span>
-                        </div>
-                        <button type="button" class="btn btn-primary btn-save-profile" onClick="submitProfileSummaryForm();">{{__('Update Summary')}}</button>
-                    </div>
-                </form>
+<div class="section-head">
+    <div class="figure">
+        <div class="figure__image"><img src="https://cdn-icons-png.flaticon.com/512/3862/3862929.png" alt=""></div>
+        <div class="figure__caption">
+            <h5 class="">{{__('Personal Profile')}}</h5>
+            <div class="status complete" bis_skin_checked="1">
+                <p>Hoàn thành</p>
             </div>
         </div>
     </div>
+    <div class="right-action" bis_skin_checked="1">
+        <div class="right-action__tips" bis_skin_checked="1">
+            <i class="bi bi-lightbulb"></i>
+            <p>Tips</p>
+        </div>
+        <div class="right-action__link-edit"><a href=""><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
+    </div>
 </div>
+
+<div class="section-body">
+    <p>{{ old('summary', $user->getProfileSummary('summary')) }}</p>
+    <!-- <div class="row">
+        <div class="col-md-12">
+            <form class="form form-user-profile" id="add_edit_profile_summary" method="POST" action="{{ route('update.front.profile.summary', [$user->id]) }}">
+                {{ csrf_field() }}
+                <div class="form-body">
+                    <div id="success_msg"></div>
+                    <div class="formrow {!! APFrmErrHelp::hasError($errors, 'summary') !!}">
+                        <textarea name="summary" class="form-control" id="summary" placeholder="{{__('Profile Summary')}}">{{ old('summary', $user->getProfileSummary('summary')) }}</textarea>
+                        <span class="help-block summary-error"></span>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-save-profile" onClick="submitProfileSummaryForm();">{{__('Update Summary')}}</button>
+                </div>
+            </form>
+        </div>
+    </div> -->
+</div>
+
+
+
+
+
 
 @push('scripts')
 <script type="text/javascript">

@@ -54,7 +54,7 @@ $queryString = MiscHelper::getLangQueryStr();
                Ẩn </label>
         </div>
         {!! APFrmErrHelp::showErrors($errors, 'is_active') !!} </div>
-    <div class="form-actions"> {!! Form::button(__('Update'). ' <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>', array('class'=>'btn btn-large btn-primary', 'type'=>'submit')) !!} </div>
+    <div class="form-actions"> {!! Form::button(__('Update'). ' ', array('class'=>'btn btn-large btn-primary', 'type'=>'submit')) !!} </div>
 </div>
 @push('scripts') 
 <script type="text/javascript">

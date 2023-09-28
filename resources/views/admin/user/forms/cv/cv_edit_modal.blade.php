@@ -10,7 +10,7 @@
             @include('admin.user.forms.cv.cv_form')
             <div class="modal-footer">
                 <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileCvForm();">Update Cv <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileCvForm();">Update Cv </button>
             </div>
         </form>
     </div>

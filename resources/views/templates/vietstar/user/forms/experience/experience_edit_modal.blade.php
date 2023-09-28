@@ -7,7 +7,7 @@
             </div>
             @include(config('app.THEME_PATH').'.user.forms.experience.experience_form')
             <div class="modal-footer">
-                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileExperienceForm();">{{__('Update Experience')}} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileExperienceForm();">{{__('Update Experience')}} </button>
             </div>
         </form>
     </div>

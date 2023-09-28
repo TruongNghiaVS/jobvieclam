@@ -9,7 +9,7 @@
 
             @include(config('app.THEME_PATH').'.user.forms.education.education_form')
             <div class="modal-footer">
-                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileEducationForm();">{{__('Update Education')}} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileEducationForm();">{{__('Update Education')}} </button>
             </div>
         </form>
     </div>

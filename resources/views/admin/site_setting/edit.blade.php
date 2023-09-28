@@ -58,7 +58,7 @@ $direction = MiscHelper::getLangDirection($lang);
                             <div class="tab-pane fade" id="jobg8_API"> @include('admin.site_setting.forms.jobg8_API_form') </div>
                         </div>
                         <div class="form-actions">
-                            {!! Form::button(__('Update'). ' <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>', array('class'=>'btn btn-large btn-primary', 'type'=>'submit')) !!}
+                            {!! Form::button(__('Update'). ' ', array('class'=>'btn btn-large btn-primary', 'type'=>'submit')) !!}
                         </div>
                         {!! Form::close() !!}
                     </div>

@@ -7,7 +7,7 @@
             </div>
             @include(config('app.THEME_PATH').'.user.forms.activity.activity_form')
             <div class="modal-footer">
-                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileActivityForm();">{{__('Edit Activity')}} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileActivityForm();">{{__('Edit Activity')}} </button>
             </div>
         </form>
     </div>

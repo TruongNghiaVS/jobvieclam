@@ -7,7 +7,7 @@
             <label for="summary" class="bold">Tóm tắt hồ sơ</label>
             <textarea name="summary" class="form-control" id="summary" placeholder="Tóm tắt hồ sơ">{{ old('summary', (isset($user))? $user->getProfileSummary('summary'):'') }}</textarea>
             <span class="help-block summary-error"></span> </div>
-        <button type="button" class="btn btn-large btn-primary" onClick="submitProfileSummaryForm();">Cập nhật <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+        <button type="button" class="btn btn-large btn-primary" onClick="submitProfileSummaryForm();">Cập nhật </button>
     </div>
 </form>
 @push('scripts') 

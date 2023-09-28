@@ -95,7 +95,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="formrow">
-                                            <button type="submit" class="btn">{{__('Pay with Stripe')}} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                                            <button type="submit" class="btn">{{__('Pay with Stripe')}} </button>
                                         </div>
                                     </div>
                                 </div>

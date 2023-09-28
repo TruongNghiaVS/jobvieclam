@@ -35,7 +35,7 @@
                             <div class="tab-pane fade active in" id="Details"> @include('admin.cms_content.forms.form') </div>
                         </div>
                         <div class="form-actions">
-                            {!! Form::button(__('Update'). ' <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>', array('class'=>'btn btn-large btn-primary', 'type'=>'submit')) !!}
+                            {!! Form::button(__('Update'). ' ', array('class'=>'btn btn-large btn-primary', 'type'=>'submit')) !!}
                         </div>
                         {!! Form::close() !!}
                     </div>

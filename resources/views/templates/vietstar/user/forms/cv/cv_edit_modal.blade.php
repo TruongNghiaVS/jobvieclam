@@ -9,7 +9,7 @@
             </div>
             @include('user.forms.cv.cv_form')
             <div class="modal-footer">
-                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileCvForm();">{{__('Update CV')}} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileCvForm();">{{__('Update CV')}} </button>
             </div>
         </form>
     </div>

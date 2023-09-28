@@ -5305,7 +5305,7 @@ div#industry_id_chosen {
     box-shadow: 0px 1px 3px rgba(96, 108, 128, 0.1);
     border-radius: 8px;
     padding: 20px;
-    margin-bottom: 16px
+    margin-bottom: 30px;
 }
 
 #projects_div {
@@ -5713,10 +5713,14 @@ div#industry_id_chosen {
     top: 10px;
     right: 10px;
     padding: 5px;
-    background-color: #f8f8f8;
+    font-size: 30px;
     border-width: 0;
     width: 36px;
-    text-align: center
+    text-align: center;
+    background-color: #fff;
+}
+.modal .close:hover {
+    color: var(--bs-primary);
 }
 
 .modal .modal-body .btn2s {
@@ -6011,7 +6015,7 @@ div#industry_id_chosen {
 }
 
 .group-rank {
-    max-width: 400px;
+    max-width: 100%;
     position: relative
 }
 

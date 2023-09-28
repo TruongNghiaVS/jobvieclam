@@ -7,7 +7,7 @@
             </div>
             @include(config('app.THEME_PATH').'.user.forms.skill.skill_form')
             <div class="modal-footer">
-                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileSkillForm();">{{__('Update Skill')}} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileSkillForm();">{{__('Update Skill')}} </button>
             </div>
         </form>
     </div>

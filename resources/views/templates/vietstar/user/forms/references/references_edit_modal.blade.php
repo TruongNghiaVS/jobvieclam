@@ -7,7 +7,7 @@
             </div>
             @include(config('app.THEME_PATH').'.user.forms.references.references_form')
             <div class="modal-footer">
-                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileReferencesForm();">{{__('Edit References')}} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileReferencesForm();">{{__('Edit References')}} </button>
             </div>
         </form>
     </div>

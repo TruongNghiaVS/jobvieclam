@@ -7,7 +7,7 @@
             </div>
             @include(config('app.THEME_PATH').'.user.forms.language.language_form')
             <div class="modal-footer">
-                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileLanguageForm();">{{__('Update Language')}} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileLanguageForm();">{{__('Update Language')}} </button>
             </div>
         </form>
     </div>

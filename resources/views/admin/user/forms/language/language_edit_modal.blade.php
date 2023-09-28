@@ -8,7 +8,7 @@
             @include('admin.user.forms.language.language_form')
             <div class="modal-footer">
                 <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileLanguageForm();">Update Language <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileLanguageForm();">Update Language </button>
             </div>
         </form>
     </div>

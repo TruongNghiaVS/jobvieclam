@@ -45,6 +45,6 @@
 
         <div class="modal-footer">
             <button type="button" class="btn dark btn-outline" data-dismiss="modal">{{__('Close')}}</button>
-            <button type="submit" class="btn btn-large btn-primary">{{__('Add CV')}} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+            <button type="submit" class="btn btn-large btn-primary">{{__('Add CV')}} </button>
         </div>
 </form>

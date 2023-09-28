@@ -1,0 +1,36 @@
+.user-account-section {
+    padding: 30px;
+}
+.section-head, .section-body  {
+    padding:0  20px ;
+}
+.form-user-profile .title-form {
+    text-align: unset;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+
+.form-user-profile .formrow label span, .form-user-profile .formrow label i{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--sub-text);
+    margin-bottom: 8px;
+}
+
+
+.user__name h4{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--bs-primary);
+
+}
+.user__infomation h5{
+    font-size: 19;
+    font-weight: 500;
+    color: var(--sub-text);
+}
+.user__complete_section{
+
+}

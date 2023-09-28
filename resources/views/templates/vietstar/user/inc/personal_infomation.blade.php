@@ -1,5 +1,136 @@
-<h5 class="title-form">{{__('Personal Information')}}</h5>
-<div class="row">
+<div class="section-head">
+    <div class="figure">
+        <div class="figure__image"><img src="https://icons.veryicon.com/png/o/system/alongthink/ico-user-info.png" alt=""></div>
+        <div class="figure__caption">
+            <h5 class="">{{__('Personal Information')}}</h5>
+            <div class="status complete" bis_skin_checked="1">
+                <p>Hoàn thành</p>
+            </div>
+        </div>
+    </div>
+    <div class="right-action" bis_skin_checked="1">
+        <div class="right-action__tips" bis_skin_checked="1">
+            <i class="bi bi-lightbulb"></i>
+            <p>Tips</p>
+        </div>
+        <div class="right-action__link-edit"><a href=""><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
+    </div>
+</div>
+
+
+<div class="section-body">
+    <!-- <div class="row">
+        <div class="col-md-6">
+            <div class="formrow {!! APFrmErrHelp::hasError($errors, 'email') !!}">
+                <label for="">{{__('Email')}}</label>
+                {!! Form::text('email', null, array('class'=>'form-control', 'id'=>'email', 'placeholder'=>__('Email'))) !!}
+                {!! APFrmErrHelp::showErrors($errors, 'email') !!}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="formrow {!! APFrmErrHelp::hasError($errors, 'password') !!}">
+                <label for="">{{__('Password')}}</label>
+                {!! Form::password('password', array('class'=>'form-control', 'id'=>'password',
+                'placeholder'=>__('Password'))) !!}
+                {!! APFrmErrHelp::showErrors($errors, 'password') !!}
+            </div>
+        </div>
+    </div> -->
+    <div class="table-responsive">
+
+
+
+        <table class="table table-responsive table-user-information">
+            <tbody>
+
+                <tr>
+                    <td class="text-primary table_title">
+                        <strong>
+                            {{__('Last Name')}}
+                        </strong>
+                    </td>
+                    <td class="table_value">
+                        Trần
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-primary table_title">
+                        <strong>
+                            {{__('Midlle Name')}}
+                        </strong>
+                    </td>
+                    <td class="table_value">
+                        Trung
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="text-primary table_title">
+                        <strong>
+                            {{__('First Name')}}
+                        </strong>
+                    </td>
+                    <td class="table_value">
+                        Đức
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class= "text-primary table_title">
+                        <strong>
+                            {{__('Gender')}}
+                        </strong>
+                    </td>
+                    <td class="table_value">
+                       Nam
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class=" text-primary table_title">
+                        <strong>
+                        {{__('Martial Status')}}
+                        </strong>
+                    </td>
+                    <td class="table_value">
+                        Độc thân
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <td class=" text-primary table_title">
+                        <strong>
+                        {{__('Country')}}
+                        </strong>
+                    </td>
+                    <td class="table_value">
+                       Việt Nam
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class=" text-primary table_title">
+                        <strong>
+                        {{__('Date of Birth')}}
+                        </strong>
+                    </td>
+                    <td class="table_value">
+                       20/10/2001
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<!-- <h5 class="title-form"></h5> -->
+<!-- <div class="row">
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'first_name') !!}">
             <label for="">{{__('First Name')}}</label>
@@ -82,13 +213,13 @@
     </div>
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'date_of_birth') !!}">
-            <?php 
-            if(!empty($user->date_of_birth)){
+            <?php
+            if (!empty($user->date_of_birth)) {
                 $d = $user->date_of_birth;
-            }else{
+            } else {
                 $d = date('Y-m-d', strtotime('-16 years'));
             }
-            $dob = old('date_of_birth')?date('Y-m-d',strtotime(old('date_of_birth'))):date('Y-m-d',strtotime($d));
+            $dob = old('date_of_birth') ? date('Y-m-d', strtotime(old('date_of_birth'))) : date('Y-m-d', strtotime($d));
             ?>
             <label for="">{{__('Date of Birth')}}</label>
             {!! Form::date('date_of_birth', $dob, array('class'=>'form-control', 'id'=>'date_of_birth',
@@ -127,4 +258,4 @@
             {!! APFrmErrHelp::showErrors($errors, 'street_address') !!}
         </div>
     </div>
-</div>
+</div> -->

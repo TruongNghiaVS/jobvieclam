@@ -78,11 +78,11 @@
 
 }
 
-.figure__caption .status.complete p {
+.figure__caption .status.error p {
     color: rgb(236, 120, 120);
 }
 
-.figure__caption .status.error p {
+.figure__caption .status.complete p {
     color: #2aba2a;
 }
 
@@ -140,6 +140,28 @@
 }
 
 .password-box input{
+    background: none;
+    outline: none;
+    border: none;
+}
+.table_title {
+    width: 300px;
+}
+
+/* table_value */
+.table_title strong{
+    color: var(--bs-primary);
+}
+.table_title i {
+    margin-right: 5px;
+}
+.table_value input{
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.table_value select{
     background: none;
     outline: none;
     border: none;

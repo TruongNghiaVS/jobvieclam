@@ -3,7 +3,7 @@
         <div class="figure__image" ><img src="https://icons.veryicon.com/png/o/system/alongthink/ico-user-info.png" alt=""></div>
         <div class="figure__caption">
             <h5 class="">{{__('Account Information')}}</h5>
-            <div class="status error" bis_skin_checked="1">
+            <div class="status complete" bis_skin_checked="1">
                 <p>Hoàn thành</p>
             </div>
         </div>
@@ -40,22 +40,23 @@
               <table class="table table-responsive table-user-information">
                 <tbody>
                   <tr>
-                    <td>
+                    <td class="table_title">
                       <strong>
-                        <i class="bi bi-envelope"></i> Email
+                        <i class="bi bi-envelope"></i> {{__('Email')}}
                       </strong>
                     </td>
-                    <td class="text-primary">
-                        {{auth()->user()->email}}
+                    <td class="text-primary table_value">
+                        {!! Form::text('email', null, array('class'=>'', 'id'=>'email', 'placeholder'=>__('Email'))) !!}
+                        {!! APFrmErrHelp::showErrors($errors, 'email') !!}
                     </td>
                   </tr>
                   <tr>
-                     <td>
+                     <td  class="table_title">
                       <strong>
                       <i class="bi bi-lock"></i> Password
                       </strong>
                     </td>
-                    <td class="text-primary password-box">
+                    <td class="text-primary password-box table_value">
                         <input type="password" id="password" value="password">
                         <!-- <i class="toggle-password fa fa-fw fa-eye-slash"></i> -->
                     </td>

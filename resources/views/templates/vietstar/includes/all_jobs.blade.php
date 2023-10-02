@@ -10,7 +10,7 @@
             @foreach($allJobs->chunk($numberOfColumns) as $chunk)
 
             <div class="swiper-slide">
-                <div class="row">
+                <div class="row g-2">
                     @foreach($chunk as $allJob)
                     <?php $company = $allJob->getCompany(); ?>
                     @if(null !== $company)

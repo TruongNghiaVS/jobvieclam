@@ -7,7 +7,7 @@ $numberOfColumns = 9;
         <div class="swiper-wrapper">
             @foreach($featuredJobs->chunk($numberOfColumns) as $chunk)
             <div class="swiper-slide">
-                <div class="row">
+                <div class="row g-2">
                     @foreach($chunk as $featuredJob)
                     <?php $company = $featuredJob->getCompany(); ?>
                     @if(null !== $company)
@@ -58,8 +58,8 @@ $numberOfColumns = 9;
 
 
 
-            <div class="swiper-slide">
-                <div class="row">
+            <!-- <div class="swiper-slide">
+                <div class="row g-2">
                     @foreach($chunk as $featuredJob)
                     <?php $company = $featuredJob->getCompany(); ?>
                     @if(null !== $company)
@@ -107,7 +107,7 @@ $numberOfColumns = 9;
 
             </div>
 
-            @endforeach
+            @endforeach -->
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>

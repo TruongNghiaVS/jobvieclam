@@ -80,7 +80,7 @@
     }
 
     .profile .username p a {
-        color: #ffffff;
+        color: var(--text-main);
         font-size: 16px;
         text-align: center;
         text-transform: uppercase;

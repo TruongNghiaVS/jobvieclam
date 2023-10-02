@@ -5,7 +5,7 @@
         <div class="col">
             <div class="item">
                 <a href="http://localhost:8000/"> 
-                    <img src="https://images.vietnamworks.com/logo/2-1074x360_124146 (1)_124299.png" alt="#">
+                    <img src="https://images.vietnamworks.com/logo/1-1392x326_124299.png" alt="banner">
                 </a>
             </div>
         </div>

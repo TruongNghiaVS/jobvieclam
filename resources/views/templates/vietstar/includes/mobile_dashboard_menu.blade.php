@@ -135,7 +135,7 @@
     }
 
     #mobile-sidebar ul.components {
-        border-bottom: 1px solid #47748b;
+      
     }
 
     #mobile-sidebar ul p {
@@ -241,7 +241,10 @@
     ul.list-unstyled.components li {
         margin: 10px 0;
     }
-
+    .sidebar-main-nav li {
+        border-bottom: 1px solid #47748b;
+    }
+    
     a.download {
         background: #bcc0c8;
         color: #7386D5;

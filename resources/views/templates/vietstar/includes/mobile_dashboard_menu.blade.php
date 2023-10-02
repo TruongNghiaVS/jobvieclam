@@ -157,7 +157,7 @@
         background: #981b1e;
     }
 
-    #mobile-sidebar ul li a:hover span {
+    #mobile-sidebar ul li a:hover i,#mobile-sidebar ul li a:hover .side-bar-content  {
         color: white;
     }
 

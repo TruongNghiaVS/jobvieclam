@@ -22,7 +22,7 @@
         display: -ms-flexbox;
         min-width: 0px;
         max-width: 0px;
-        background: #063146;
+        background: white;
         color: #bcc0c8;
         transition: all 0.3s;
         overflow: hidden;
@@ -115,6 +115,7 @@
 
     #mobile-sidebar.active .side-bar-content {
         display: block;
+        color: var(--text-main);
     }
 
     #mobile-sidebar.active ul.components {
@@ -128,7 +129,7 @@
 
     #mobile-sidebar .sidebar-header {
         padding: 20px;
-        background: #063146;
+        background: white;
         width: 100%;
         display: none;
     }
@@ -146,7 +147,7 @@
         padding: 20px 20px;
         font-size: 1.1em;
         display: block;
-        background-color: #063146;
+        background-color: white;
     }
 
 
@@ -164,7 +165,7 @@
 
     #mobile-sidebar ul li a i {
         font-size: 20px;
-        color: white;
+        color: var(--text-main);
     }
 
 
@@ -184,7 +185,11 @@
         background-color: #981b1e;
         color: white;
     }
-
+    #mobile-sidebar .sidebar-item.active>a i,
+    #mobile-sidebar .sidebar-item.active>a span{
+        background-color: #981b1e;
+        color: white;
+    }
     a[data-toggle="collapse"] {
         position: relative;
     }

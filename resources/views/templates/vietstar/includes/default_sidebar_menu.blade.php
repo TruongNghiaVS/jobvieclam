@@ -20,7 +20,7 @@
         -ms-flex-pack: justify;
         display: -webkit-box;
         display: -ms-flexbox;
-        background: #063146;
+        background: white;
         color: #bcc0c8;
         transition: all 0.3s;
         max-height: 100%;
@@ -60,8 +60,8 @@
 
     
     #default-sidebar.active {
-        min-width: 300px;
-        max-width: 300px;
+        min-width: 330px;
+        max-width: 330px;
         overflow-x: hidden;
         
         display: flex;
@@ -141,7 +141,7 @@
     }
 
     .profile .username p a {
-        color: #ffffff;
+        color: var(--text-main);
         font-size: 16px;
         text-align: center;
         text-transform: uppercase;
@@ -159,12 +159,12 @@
 
     #default-sidebar.active .side-bar-content {
         display: block;
+        color: var(--text-main);
     }
 
     #default-sidebar.active ul.components {
         width: 100%;
-        overflow-y: auto;
-        overflow-x: hidden;
+    
     }
 
     #default-sidebar.active .sidebar-header {
@@ -175,7 +175,7 @@
     }
 
     #default-sidebar .sidebar-header {
-        background: #063146;
+        background: white;
         width: 100%;
         overflow-x: hidden;
     }
@@ -193,13 +193,20 @@
         padding: 20px 20px;
         font-size: 1.1em;
         display: block;
-        background-color: #063146;
+        background-color: white;
+        color: var(--text-main);
+    }
+    #default-sidebar ul li.active a {
+        background-color: var(--bs-primary);
+    }
+    #default-sidebar ul li.active a span {
+        color: white !important;
     }
 
 
 
     #default-sidebar ul li a:hover {
-        color: #7386D5;
+        color: white;
         background: #981b1e;
     }
 
@@ -207,6 +214,12 @@
         color: white;
     }
 
+    #default-sidebar ul li a:hover span {
+        color: white;
+    }
+    #default-sidebar ul li a:hover  .side-bar-content {
+        color: white;
+    }
 
 
     #default-sidebar ul li a i {
@@ -255,7 +268,11 @@
         padding-left: 70px;
 
     }
+   
 
+    #default-sidebar ul ul a span {
+        color: var(--text-main);
+    }
     .sidebar-bottom ul ul a {
         background-color: unset !important;
     }
@@ -282,6 +299,7 @@
 
     ul.list-unstyled.components li {
         margin: 10px 0;
+        border-bottom: #e8ebee 1px solid;
     }
 
     a.download {
@@ -296,9 +314,15 @@
     }
 
     #default-sidebar.active ul li a span {
+        color: var(--text-main);
+    }
+
+    #default-sidebar.active ul li a:hover span {
         color: white;
     }
 
+
+    
 
     #default-sidebarCollapse span i {
         color: #bcc0c8;
@@ -306,17 +330,29 @@
 
     #default-sidebar ul li a span {
         color: #bcc0c8;
-        font-size: 16px;
+        font-size: 17px;
         font-weight: 500;
+        color: var(--text-main);
     }
 
     #default-sidebar ul ul a {
         padding-left: 60px;
     }
-
-    #default-sidebar ul li.active a span {
+  
+    #default-sidebar ul li.active a .side-bar-content  {
         color: white;
     }
+
+    #default-sidebar ul ul.sublist a span,
+    #default-sidebar ul ul.sublist a span.side-bar-content {
+        color: var(--text-main);
+    }
+    #default-sidebar ul ul.sublist a:hover span,
+    #default-sidebar ul ul.sublist a:hover span.side-bar-content
+    {
+        color: white;
+    }
+
 
     ul#pageSubmenu li {
         margin-left: 10px;
@@ -474,7 +510,7 @@
                             <span class="side-bar-content"> Việc làm của tôi</span>
                         </div>
                     </a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <ul class="collapse list-unstyled sublist" id="pageSubmenu">
                         <li class="{{ Request::url() == route('my.job.applications') ? 'active' : '' }}">
                             <a href="{{ route('my.job.applications') }}" class="list-group-item list-group-item-action {{ Request::url() == route('my.job.applications') ? 'active' : '' }}">
                                 <div class="d-flex w-100">

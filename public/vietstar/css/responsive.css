@@ -286,7 +286,8 @@
     max-width: 95%;
   }
 
-  .content {
+  
+  #content {
     padding: 40px 80px;
     width: 100%;
   }

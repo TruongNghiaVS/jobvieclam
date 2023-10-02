@@ -39,6 +39,7 @@
         overflow-x: hidden;
         overflow-y: auto;
         z-index: 30;
+        border: 1px solid #cccc;
     }
 
     /* PROFILE CSS */

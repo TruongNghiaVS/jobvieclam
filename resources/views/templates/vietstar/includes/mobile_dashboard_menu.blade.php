@@ -186,11 +186,18 @@
         background-color: #981b1e;
         color: white;
     }
+    
     #mobile-sidebar .sidebar-item.active>a i,
     #mobile-sidebar .sidebar-item.active>a span{
         background-color: #981b1e;
-        color: white;
+        color: white ;
     }
+
+    #mobile-sidebar ul li.active a span {
+        color: white ;
+    }
+
+    
     a[data-toggle="collapse"] {
         position: relative;
     }
@@ -258,7 +265,7 @@
     }
 
     #mobile-sidebar.active ul li a span {
-        color: white;
+        color: var(--text-main);
     }
 
 
@@ -360,7 +367,7 @@
 
     .profile .back-menu-normal i {
         font-size: 25px;
-        color: white;
+        color: var(--text-main);
         font-weight: 800;
     }
 
@@ -644,7 +651,114 @@
             </ul>
             
             @elseif(Auth::guard('company')->check())
-            <h1>Hello</h1>
+            <ul class="list-unstyled components sidebar-user-nav" id="sidebar-user-nav">
+            <li class="sidebar-item {{ Request::url() == route('company.home') ? 'active' : '' }}">
+                    <a href="{{ route('company.home') }}" class="list-group-item list-group-item-action ">
+                        <div class="d-flex w-100">
+                            <span class="iconmoon icon-dashboard-icon fs-24px me-2"></span>
+                            <span class="side-bar-content">{{__('Dashboard')}}</span>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="sidebar-item {{ Request::url() == route('company.profile') ? 'active' : '' }}">
+                    <a href="{{route('company.profile') }}" class="list-group-item list-group-item-action ">
+                        <div class="d-flex w-100">
+                            <span class="iconmoon icon-edit-icon fs-24px me-2"></span>
+                            <span class="side-bar-content">{{__('Edit profile')}}</span>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="sidebar-item {{ Request::url() == route('company.detail', Auth::guard('company')->user()->slug) ? 'active' : '' }}">
+                    <a href="{{ route('company.detail', Auth::guard('company')->user()->slug) }}" class="list-group-item list-group-item-action ">
+                        <div class="d-flex w-100">
+                            <span class="iconmoon icon-eye-icon fs-24px me-2"></span>
+                            <span class="side-bar-content">{{__('View Public Profile')}}</span>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="sidebar-item {{ Request::url() == route('post.job') ? 'active' : '' }}">
+                    <a href="{{route('post.job')}}" class="list-group-item list-group-item-action {{ Request::url() == route('post.job') ? 'active' : '' }}">
+                        <div class="d-flex w-100">
+                            <span class="icon-eye-icon fs-24px me-2"></span>
+                            <span class="side-bar-content">{{__('Post Jobs')}}</span>
+                        </div>
+                    </a>
+                </li>
+
+
+                <li class="sidebar-item {{ Request::url() == route('posted.jobs') ? 'active' : '' }}">
+                    <a href="{{route('posted.jobs')}}" class="list-group-item list-group-item-action ">
+                        <div class="d-flex w-100">
+                            <span class="iconmoon icon-suitcase-icon fs-24px me-2"></span>
+                            <span class="side-bar-content">{{__('Company\'s Posted Jobs')}}</span>
+                        </div>
+                    </a>
+                </li>
+
+
+
+                <li class="sidebar-item {{ Request::url() == route('company.packages') ? 'active' : '' }}">
+                    <a href="{{ route('company.packages') }}" class="list-group-item list-group-item-action ">
+                        <div class="d-flex w-100">
+                            <span class="iconmoon icon-recruiter-profile fs-24px me-2"></span>
+                            <span class="side-bar-content">{{__('CV Search Packages')}}</span>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="sidebar-item  {{ Request::url() == route('application.manager') ? 'active' : '' }}">
+                    <a href="{{ route('application.manager') }}" class="list-group-item list-group-item-action">
+
+                        <div class="d-flex w-100">
+                        <span class="iconmoon icon-recruiter-profile fs-24px me-2"></span>
+                            <span class="side-bar-content">{{__('CV Management')}}</span>
+                        </div>
+                    </a>
+                </li>
+
+
+                <li class="sidebar-item  {{ Request::url() == route('interview.schedule.calendar', ['company_id'=> Auth::guard('company')->user()->id]) ? 'active' : '' }}">
+                    <a href="{{route('interview.schedule.calendar',['company_id'=> Auth::guard('company')->user()->id])}}" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100">
+                            <span class="iconmoon icon-calendar-icon1 fs-24px me-2"></span>
+                            <span class="side-bar-content">{{__('Interview Schedule')}}</span>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="sidebar-item {{ Request::url() == route('company.messages') ? 'active' : '' }}">
+                <a href="{{ route('company.messages')}}" class="list-group-item list-group-item-action ">
+                        <div class="d-flex w-100">
+                            <span class="iconmoon icon-message-icon fs-24px me-2 box-message-icon">
+                                <span class="badge">{{\App\CompanyMessage::where('company_id', Auth::guard('company')->user()->id)->where('status','unviewed')->where('type','message')->count()}}</span>
+                            </span>
+                            <span class="side-bar-content">{{__('Company Messages')}}</span>
+                        </div>
+                    </a>
+                </li>
+
+
+                <li class="sidebar-item {{ Request::url() == route('company.followers') ? 'active' : '' }}">
+                <a href="{{ route('company.followers') }}" class="list-group-item list-group-item-action ">
+                        <div class="d-flex w-100">
+                        <span class="iconmoon icon-team-icon fs-24px me-2"></span>
+                            <span class="side-bar-content">{{__('Company Followers')}}</span>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="sidebar-item {{ Request::url() == route('company.logout') ? 'active' : '' }}">
+                    <a href="{{ route('company.logout') }}" class="list-group-item list-group-item-action ">
+                        <div class="d-flex w-100">
+                            <span class="iconmoon icon-logout-icon fs-24px me-2"></span>
+                            <span class="side-bar-content">{{__('Logout')}}</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
             @endif
         </div>
 
@@ -652,14 +766,21 @@
 
     <div class="sidebar-bottom">
         <ul class="list-unstyled components sidebar-bottom__item">
-            @if(Auth::user())
+            @if(Auth::user() )
             <li class="openmyacount">
                 <div class="d-flex w-100">
                     <span class="side-bar-content">Thông tin tài khoản</span>
                 </div>
 
             </li>
+            @elseif(Auth::guard('company')->check())
 
+            <li class="openmyacount">
+                <div class="d-flex w-100">
+                    <span class="side-bar-content">Thông tin tài khoản</span>
+                </div>
+
+            </li>
 
             @elseif(!Auth::user() && !Auth::guard('company')->user())
             <li>

@@ -18,6 +18,7 @@
 
             @include('flash::message')
             @include('templates.vietstar.includes.company_dashboard_menu')
+        @include('templates.vietstar.includes.mobile_dashboard_menu')
 
             <div class="content">
 

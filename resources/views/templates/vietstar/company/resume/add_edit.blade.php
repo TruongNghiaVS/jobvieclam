@@ -7,6 +7,7 @@
 <div class="user-wrapper listpgWraper">
     
             @include('templates.vietstar.includes.company_dashboard_menu')
+        @include('templates.vietstar.includes.mobile_dashboard_menu')
     
 </div>
 @include('templates.vietstar.includes.footer')

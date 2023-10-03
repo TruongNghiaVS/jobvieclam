@@ -7,6 +7,7 @@
 <div class="user-wrapper listpgWraper messageWrap">
   
        @include('templates.vietstar.includes.company_dashboard_menu')
+        @include('templates.vietstar.includes.mobile_dashboard_menu')
         <div class="content">
                 <div class="myads message-body">
                     <h3>{{__('Company Messages')}}</h3>

@@ -9,6 +9,7 @@
 <div class="listpgWraper"> 
             @if(Auth::guard('company')->check())
             @include('templates.vietstar.includes.company_dashboard_menu')
+        @include('templates.vietstar.includes.mobile_dashboard_menu')
             @else
             @include('templates.vietstar.includes.mobile_dashboard_menu')
             @endif

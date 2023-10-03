@@ -4,9 +4,11 @@
 <!-- Header end -->
 <!-- Inner Page Title start -->
 <!-- Inner Page Title end -->
+
+
 <?php $company = Auth::guard('company')->user(); ?>
 <div class="user-wrapper listpgWraper">
-    
+
         @include('flash::message')
      
             @include('templates.vietstar.includes.company_dashboard_menu')

@@ -642,6 +642,9 @@
                 </li>
 
             </ul>
+            
+            @elseif(Auth::guard('company')->check())
+            <h1>Hello</h1>
             @endif
         </div>
 

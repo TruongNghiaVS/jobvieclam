@@ -1,7 +1,7 @@
 
 <nav id="default-sidebar" class="active">
     <div class="sidebar-header">
-        @if(Auth::user() )
+        @if(Auth::user())
         <div class="default-sidebar__btn">
             <button type="button" id="default-sidebarCollapse" class="btn">
                 <span class="text-white f"><i class="fas fa-bars fa-1x text-white"></i></span>

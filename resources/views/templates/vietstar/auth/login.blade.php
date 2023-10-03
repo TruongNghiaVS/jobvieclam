@@ -85,7 +85,7 @@
                                 <h3>Đăng nhập</h3>
                                 <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                                     {{ csrf_field() }}
-                                    <input type="hidden" name="candidate_or_employer" value="candidate" />
+                                    <input type="hidden" name="candidate_or_employer" value="employer" />
                                     <div class="formpanel">
                                         <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }}">
                                             <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="{{__('Email Address')}}">

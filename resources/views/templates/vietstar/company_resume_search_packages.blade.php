@@ -3,15 +3,14 @@
 @include('templates.vietstar.includes.header')
 <!-- Header end -->
 <!-- Inner Page Title start -->
-@include('templates.vietstar.includes.inner_page_title', ['page_title'=>__('Cvs Search Packages')])
 <!-- Inner Page Title end -->
 <?php $company = Auth::guard('company')->user(); ?>
-<div class="listpgWraper">
-    <div class="container">
+<div class="user-wrapper listpgWraper">
+    
         @include('flash::message')
-        <div class="row">
+     
             @include('templates.vietstar.includes.company_dashboard_menu')
-            <div class="col-md-9">
+            <div class="content">
                 @if(null!==($success_package) && !empty($success_package))
                     @php
                         $language = \App::getLocale();
@@ -126,8 +125,6 @@
                 <!---end four-paln-->
                 </div>
             </div>
-        </div>
-    </div>
 </div>
 @include('templates.vietstar.includes.footer')
 @endsection

@@ -6,15 +6,13 @@
 <!-- Inner Page Title start --> 
 @include('templates.vietstar.includes.inner_page_title', ['page_title'=>__('Pay with Stripe')]) 
 <!-- Inner Page Title end -->
-<div class="listpgWraper">
-    <div class="container">
-        <div class="row"> 
+<div class="listpgWraper"> 
             @if(Auth::guard('company')->check())
             @include('templates.vietstar.includes.company_dashboard_menu')
             @else
             @include('templates.vietstar.includes.mobile_dashboard_menu')
             @endif
-            <div class="col-md-9">
+            <div class="content">
                 <div class="userccount">
                     <div class="row">
                         <div class="col-md-5">
@@ -106,8 +104,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        
+   
 </div>
 @include('templates.vietstar.includes.footer')
 @endsection

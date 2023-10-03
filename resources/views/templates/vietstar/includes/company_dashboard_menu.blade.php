@@ -2,16 +2,16 @@
     <div class="sidebar-header">
         <div class="default-sidebar__btn">
             <button type="button" id="default-sidebarCollapse" class="btn">
-                <span class="text-white f"><i class="fas fa-bars fa-1x text-white"></i></span>
+                <span class=""><i class="fas fa-bars fa-1x"></i></span>
             </button>
         </div>
 
         <div class="profile" bis_skin_checked="1">
             <div class="avatar" bis_skin_checked="1"><a href="#">
-                    <img class="lazy-bg" src="http://127.0.0.1:8000\user_images/-1663125356-589.png" alt="avatar" style=""></a>
+               
             </div>
             <div class="username" bis_skin_checked="1">
-                <p><a href="#">Trung Đức Trần</a></p>
+                <p><a href="#"></a></p>
             </div>
             <div class="back-menu-normal" bis_skin_checked="1"><i class="bi bi-arrow-left"></i></div>
         </div>

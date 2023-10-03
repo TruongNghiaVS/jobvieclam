@@ -4,13 +4,12 @@
     @include('templates.vietstar.includes.header')
     <!-- Header end -->
     <!-- Inner Page Title start -->
-    @include('templates.vietstar.includes.inner_page_title', ['page_title'=>__('Interview Schedule')])
+  
     <!-- Inner Page Title end -->
-    <div class="listpgWraper">
-        <div class="container">
-            <div class="row">
+    <div class="user-wrapper listpgWraper">
+       
                 @include('templates.vietstar.includes.company_dashboard_menu')
-                <div class="col-md-9">
+                <div class="content">
                     @include('flash::message')
                     <div class="card">
                         <div class="card-body card-body-schedule-interview">
@@ -41,8 +40,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            
+        
     </div>
 
     <!-- Modal -->

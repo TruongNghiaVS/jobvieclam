@@ -4,14 +4,12 @@
     <!-- Header start -->
     @include('templates.vietstar.includes.header')
     <!-- Header end -->
-    <!-- Inner Page Title start -->
-    @include('templates.vietstar.includes.inner_page_title', ['page_title' => __('Company Posted Jobs')])
-    <!-- Inner Page Title end -->
-    <div class="listpgWraper main-content">
-        <div class="container">
-            <div class="row">
+
+    <div class="user-wrapper listpgWraper main-content">
+      
+         
                 @include('templates.vietstar.includes.company_dashboard_menu')
-                <div class="col-md-9">
+                <div class="content">
                     <div class="card mb-2">
                         <div class="card-body">
                             <form action="{{ route('posted.jobs') }}" method="get" class="form-search pt-2">
@@ -178,9 +176,9 @@
                     </div>
                     <!-- Pagination end -->
                 </div>
-            </div>
-        </div>
-    </div>
+            
+        
+    
     </div>
     @include('templates.vietstar.includes.footer')
 @endsection

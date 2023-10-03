@@ -10,30 +10,22 @@
 
 <!-- Inner Page Title start --> 
 
-@include('templates.vietstar.includes.inner_page_title', ['page_title'=>__('Dashboard')]) 
+
 
 <!-- Inner Page Title end -->
 
-<div class="listpgWraper">
+<div class="user-wrapper listpgWraper">
 
-    <div class="container">@include('flash::message')
-
-        <div class="row"> 
-            
+            @include('flash::message')
             @include('templates.vietstar.includes.company_dashboard_menu')
 
-            <div class="col-lg-9">
+            <div class="content">
 
                 @include('templates.vietstar.includes.company_application_manager_filter')
                 
                 @include('templates.vietstar.includes.company_application_manager')
                
             </div>
-
-        </div>
-
-    </div>
-
 </div>
 @include('templates.vietstar.includes.company_application_manager_modal')
 @include('templates.vietstar.includes.footer')

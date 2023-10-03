@@ -4,11 +4,10 @@
 @include('templates.vietstar.includes.header')
 <!-- Header end -->
 <!-- Inner Page Title start -->
-@include('templates.vietstar.includes.inner_page_title', ['page_title'=>__('Company Messages')])
-<div class="listpgWraper messageWrap">
-    <div class="container">
-        <div class="row"> @include('templates.vietstar.includes.company_dashboard_menu')
-            <div class="col-md-9">
+<div class="user-wrapper listpgWraper messageWrap">
+  
+       @include('templates.vietstar.includes.company_dashboard_menu')
+        <div class="content">
                 <div class="myads message-body">
                     <h3>{{__('Company Messages')}}</h3>
                     <div class="row message-body-content">
@@ -50,10 +49,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            </section>
         </div>
-    </div>
+       
 </div>
 @endsection
 @push('scripts')

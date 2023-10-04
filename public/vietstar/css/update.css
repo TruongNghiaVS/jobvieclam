@@ -3900,11 +3900,11 @@ div#industry_id_chosen {
     color: var(--text-main)
 }
 
-.navbar-lang .nav-link.dropdown-toggle img {
+.navbar-lang .nav-link.navbar-lang__link img {
     width: 25px
 }
 
-.navbar-lang .nav-item .dropdown-menu {
+.navbar-lang .nav-item .dropdown__lang_menu {
     padding: 0;
     min-width: 70px;
     position: absolute;
@@ -3912,8 +3912,8 @@ div#industry_id_chosen {
     right: 0
 }
 
-.navbar-lang .nav-item .dropdown-menu .dropdown-item {
-    text-align: right;
+.navbar-lang .nav-item .dropdown__lang_menu .dropdown-item {
+    text-align: center;
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
@@ -3922,24 +3922,24 @@ div#industry_id_chosen {
     padding: 8px 12px
 }
 
-.navbar-lang .nav-item .dropdown-menu .dropdown-item .flag-icon {
+.navbar-lang .nav-item .dropdown__lang_menu .dropdown-item .flag-icon {
     display: inline-block;
     vertical-align: baseline;
     margin-right: 5px;
     width: 16px
 }
 
-.navbar-lang .nav-item .dropdown-menu .dropdown-item .flag-icon img {
+.navbar-lang .nav-item .dropdown__lang_menu .dropdown-item .flag-icon img {
     display: block;
     width: 100%
 }
 
-.navbar-lang .nav-item .dropdown-menu .dropdown-item:hover {
+.navbar-lang .nav-item .dropdown__lang_menu .dropdown-item:hover {
     color: var(--bs-primary)
 }
 
-.navbar-lang .nav-item .dropdown-menu .dropdown-item:active,
-.navbar-lang .nav-item .dropdown-menu .dropdown-item:focus {
+.navbar-lang .nav-item .dropdown__lang_menu .dropdown-item:active,
+.navbar-lang .nav-item .dropdown__lang_menu .dropdown-item:focus {
     background-color: #fff;
     color: #1e2125;
     background-color: #e9ecef

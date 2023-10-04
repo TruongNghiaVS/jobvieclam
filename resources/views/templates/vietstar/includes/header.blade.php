@@ -172,12 +172,12 @@
                 <!-- navbar-lang PC -->
                 <ul class="navbar-nav navbar-lang navbar-lang-pc ml-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        <a class="nav-link navbar-lang__link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <img src="{{ asset('/vietstar/imgs/flags/') }}/{{config('app.available_locales')[App::getLocale()]['flag-icon']}}.png"
                                 alt="vietstar">
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <div class="dropdown__lang_menu" aria-labelledby="navbarDropdownMenuLink">
                             @foreach (config('app.available_locales') as $lang => $language)
                             @if ($lang != App::getLocale())
                             <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span
@@ -395,6 +395,25 @@
 .dropdown_menu.show{
     display: block;
 }
+.navbar-lang .nav-item .dropdown__lang_menu {
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 0.25rem;
+}
+.navbar-lang .nav-item .dropdown__lang_menu.show{
+    display: block;
+}
 </style>
 @endpush
 
@@ -406,6 +425,11 @@
             $('.user-badge__avatar').toggleClass('show');
             $('.dropdown_menu').toggleClass('show');
 
+        });
+        });
+        $(document).ready(function() {
+        $('.navbar-lang__link').click(function() {
+            $('.dropdown__lang_menu').toggleClass('show');
         });
         });
     </script>

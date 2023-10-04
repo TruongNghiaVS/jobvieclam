@@ -684,7 +684,7 @@
     flex-direction: row-reverse;
   }
 
-  .user-badge .dropdown-menu {
+  .user-badge .dropdown_menu {
     position: absolute;
     width: 100%;
 
@@ -965,7 +965,7 @@
     flex-direction: row-reverse;
   }
 
-  .user-badge .dropdown-menu {
+  .user-badge .dropdown_menu {
     position: absolute;
     width: 100%;
 

@@ -202,12 +202,10 @@
                         <h5 class="dolar-sign text-blue-color m-0">0 đ</h5>
                     </div>
                     <div class="user-badge__avatar">
-                        <a class="dropdown userbtn nav-link-dashboard dropdown-toggle" href="#"
-                            id="navbarDropdownMenuLinkCom" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
+                        <a class="dropdown_menu__link" href="#">
                             {{Auth::user()->printUserImage()}}
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown_menu">
                             <li class="nav-item"><a href="{{route('home')}}" class="nav-link"><i
                                         class="jobicon fa fa-tachometer" aria-hidden="true"></i> {{__('Dashboard')}}</a>
                             </li>
@@ -242,9 +240,7 @@
                         <h5 class="dolar-sign text-blue-color m-0">0 đ</h5>
                     </div>
                     <div class="user-badge__avatar">
-                        <a class="dropdown userbtn nav-link-dashboard dropdown-toggle" href="#"
-                            id="navbarDropdownMenuLinkCom" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
+                        <a class="dropdown_menu__link" href="#">
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -258,7 +254,7 @@
                                     fill="#3B4358" />
                             </svg>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown_menu">
                             <li class="nav-item"><a href="{{route('company.home')}}" class="nav-link"><i
                                         class="jobicon fa fa-tachometer" aria-hidden="true"></i> {{__('Dashboard')}}</a>
                             </li>
@@ -379,5 +375,38 @@
     border-color: #981b1e;
 
 }
+
+.dropdown_menu {
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 0.25rem;
+}
+.dropdown_menu.show{
+    display: block;
+}
 </style>
+@endpush
+
+
+@push('scripts')
+    <script type="text/javascript">
+        $(document).ready(function() {
+        $('.user-badge__avatar').click(function() {
+            $('.user-badge__avatar').toggleClass('show');
+            $('.dropdown_menu').toggleClass('show');
+
+        });
+        });
+    </script>
 @endpush

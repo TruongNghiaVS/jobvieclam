@@ -44,7 +44,7 @@
                         ?>
                             <?php if ($count_1 == 7) { ?>
                                 <div class="inpostad">
-                                    <img src="https://images.vietnamworks.com/logo/2-1074x360_124146 (1)_124299.png" alt="">
+                                    <img src="https://png.pngtree.com/thumb_back/fh260/back_pic/00/02/44/5056179b42b174f.jpg" alt="">
                                 </div>
                             <?php } else { ?>
                                 @php
@@ -241,6 +241,9 @@
 @endpush
 @push('scripts')
 <script>
+
+
+
     $('.btn-job-alert').on('click', function() {
         @if(Auth::user())
         $('#show_alert').modal('show');

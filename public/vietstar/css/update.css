@@ -4049,7 +4049,7 @@ div#industry_id_chosen {
     position: relative
 }
 
-.user-badge .dropdown-menu {
+.user-badge .dropdown_menu {
     min-width: 220px;
     left: unset !important;
     right: 0;
@@ -4057,23 +4057,23 @@ div#industry_id_chosen {
     top: calc(100% + 2px)
 }
 
-.user-badge .dropdown-menu .nav-link {
+.user-badge .dropdown_menu .nav-link {
     font-size: 16px;
     padding: 5px 12px 5px 35px;
     position: relative
 }
 
-.user-badge .dropdown-menu .nav-link .jobicon {
+.user-badge .dropdown_menu .nav-link .jobicon {
     position: absolute;
     top: 10px;
     left: 10px
 }
 
-.user-badge .dropdown-menu .nav-link:hover {
+.user-badge .dropdown_menu .nav-link:hover {
     color: var(--bs-primary)
 }
 
-.user-badge .dropdown-menu .nav-link:hover i {
+.user-badge .dropdown_menu .nav-link:hover i {
     color: var(--bs-primary)
 }
 

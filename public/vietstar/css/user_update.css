@@ -302,12 +302,19 @@
     #mobile-sidebar.active .sidebar-bottom {
         bottom: 0 !important;
     }
+    .user-wrapper .content {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
     
 }
 
 
 @media only screen and (min-width: 768px) and (max-width: 992px)  {
-
+    .user-wrapper .content {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 
 

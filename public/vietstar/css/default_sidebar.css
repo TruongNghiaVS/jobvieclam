@@ -303,9 +303,9 @@ ul.CTAs a {
     border: unset;
 }
 
-ul.list-unstyled.components li {
-    margin: 10px 0;
-}
+.sidebar-default-nav li.sidebar-item{
+    border-bottom:1px solid #47748b;
+} 
 
 a.download {
     background: #bcc0c8;
@@ -360,7 +360,7 @@ a.article:hover {
 
 
 ul#pageSubmenu li {
-    margin-left: 10px;
+   
 }
 
 ul#pageSubmenu li a span {

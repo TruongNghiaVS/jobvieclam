@@ -218,7 +218,7 @@
 
     #mobile-sidebar ul ul a {
         font-size: 0.9em !important;
-        padding-left: 70px;
+ 
 
     }
 
@@ -246,9 +246,7 @@
         border: unset;
     }
 
-    ul.list-unstyled.components li {
-        margin: 10px 0;
-    }
+  
     .sidebar-main-nav li,.sidebar-user-nav li {
         border-bottom: 1px solid #47748b;
     }
@@ -280,7 +278,7 @@
     }
 
     #mobile-sidebar ul ul a {
-        padding-left: 70px;
+     
     }
 
     #mobile-sidebar ul li.active a span {
@@ -288,7 +286,7 @@
     }
 
     ul#pageSubmenu li {
-        margin-left: 10px;
+       
     }
 
     ul#pageSubmenu li a span {
@@ -385,6 +383,9 @@
     a#navbarDropdownMenuLink {
         padding: 0 !important;
     }
+    .sub_list li{
+        margin-left: 40px;
+    }
 </style>
 
 @endpush
@@ -440,7 +441,7 @@
                             <span class="side-bar-content"> {{__('Profiles and CVs')}}</span>
                         </div>
                     </a>
-                    <ul class="collapse list-unstyled" data-ref="findJob" data-target="false" id="cv_sub_list">
+                    <ul class="collapse list-unstyled sub_list" data-ref="findJob" data-target="false" id="cv_sub_list">
                         @php
                         $pointer = Auth::check()==true ? '' : 'style=pointer-events:none;';
                         @endphp
@@ -485,7 +486,7 @@
                         </div>
                     </a>
 
-                    <ul class="collapse list-unstyled" data-ref="findJob1" data-target="false" id="company_sub_list">
+                    <ul class="collapse list-unstyled sub_list" data-ref="findJob1" data-target="false" id="company_sub_list">
                         <li>
                             <a class="sub-item" href="{{route('about_us')}}">
                                 <div class="d-flex w-100">
@@ -527,7 +528,7 @@
                     </a>
                     @php($categories = \App\Blog_category::get())
 
-                    <ul class="collapse list-unstyled" data-ref="findJob_blog" data-target="false" id="blog_sub_list">
+                    <ul class="collapse list-unstyled sub_list" data-ref="findJob_blog" data-target="false" id="blog_sub_list">
                         @foreach($categories as $category)
                         <li>
                             <a class="sub-item" href="{{ url('/blog/category/') . "/" . $category->slug }}">
@@ -591,7 +592,7 @@
                             <span class="side-bar-content"> Việc làm của tôi</span>
                         </div>
                     </a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <ul class="collapse list-unstyled sub_list" id="pageSubmenu">
                         <li class="{{ Request::url() == route('my.job.applications') ? 'active' : '' }}">
                             <a href="{{ route('my.job.applications') }}" class="list-group-item list-group-item-action {{ Request::url() == route('my.job.applications') ? 'active' : '' }}">
                                 <div class="d-flex w-100">
@@ -796,11 +797,11 @@
             <li>
                 <ul class="navbar-nav navbar-lang ml-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link navbar-lang__link" href="#" >
 
                             <img src="{{ asset('/vietstar/imgs/flags/') }}/{{config('app.available_locales')[App::getLocale()]['flag-icon']}}.png" alt="vietstar">
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <div class="dropdown__lang_menu">
                             @foreach (config('app.available_locales') as $lang => $language)
                             @if ($lang != App::getLocale())
                             <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span class="flag-icon flag-icon-{{$language['flag-icon']}}"><img src="{{ asset('/vietstar/imgs/flags/') }}/{{$language['flag-icon']}}.png" alt="vietstar"></span> {{$language['display']}}</a>

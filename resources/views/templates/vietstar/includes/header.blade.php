@@ -168,7 +168,6 @@
                     </ul>
                     </li> --}}
                 </ul>
-
                 <!-- navbar-lang PC -->
                 <ul class="navbar-nav navbar-lang navbar-lang-pc ml-auto">
                     <li class="nav-item dropdown">

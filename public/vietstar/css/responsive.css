@@ -773,7 +773,7 @@
   }
 
   #mobile-sidebar ul ul a {
-    padding-left: 40px !important;
+    padding-left: 40px ;
   }
   #mobile-sidebar ul ul a#navbarDropdownMenuLink {
     padding-left: 0 !important;
@@ -785,6 +785,10 @@
 
   #default-sidebar {
     display: none !important;
+  }
+  .dropdown__lang_menu .dropdown-item {
+    padding: 0 !important;
+    width: 200px;
   }
 }
 
@@ -1023,6 +1027,10 @@
 
   #default-sidebar {
     display: none !important;
+  }
+  .dropdown__lang_menu .dropdown-item {
+    padding: 0 !important;
+    width: 200px;
   }
 
 }

@@ -3897,7 +3897,8 @@ div#industry_id_chosen {
     font-weight: 700;
     font-size: 14px;
     line-height: 19px;
-    color: var(--text-main)
+    color: var(--text-main);
+    padding-left: 0 !important;
 }
 
 .navbar-lang .nav-link.navbar-lang__link img {

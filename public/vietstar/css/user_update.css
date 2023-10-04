@@ -272,6 +272,11 @@
  color: var(--bs-primary);
 }
 
+
+.bd_bottom li {
+    border-bottom: #e8ebee 1px solid;
+}
+
 @media only screen and (max-width: 767px) {
     .content {
         padding-left: 8px;
@@ -293,6 +298,9 @@
 
     #mobile-sidebar.active {
         max-height: calc(100% - 76px);
+    }
+    #mobile-sidebar.active .sidebar-bottom {
+        bottom: 0 !important;
     }
     
 }

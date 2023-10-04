@@ -249,7 +249,7 @@
     ul.list-unstyled.components li {
         margin: 10px 0;
     }
-    .sidebar-main-nav li {
+    .sidebar-main-nav li,.sidebar-user-nav li {
         border-bottom: 1px solid #47748b;
     }
     

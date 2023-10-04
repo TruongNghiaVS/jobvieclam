@@ -306,6 +306,9 @@
         padding-left: 8px;
         padding-right: 8px;
     }
+    .table_title {
+        width: 100px;
+    }
     
 }
 

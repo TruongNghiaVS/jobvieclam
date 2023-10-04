@@ -367,8 +367,8 @@
                                         <i class="bi bi-lock"></i> Password
                                     </strong>
                                 </td>
-                                <td class="text-primary password-box table_value">
-                                    <input type="password" id="password" value="password">
+                                <td class="text-primary table_value">
+                                
                                     <!-- <i class="toggle-password fa fa-fw fa-eye-slash"></i> -->
                                 </td>
                             </tr>

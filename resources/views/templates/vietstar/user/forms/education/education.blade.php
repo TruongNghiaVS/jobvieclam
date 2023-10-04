@@ -1,6 +1,6 @@
 
 <div class="section-head">
-        <div class="figure">
+        <div class="section-head__figure">
                 <div class="figure__image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/University_Diploma_or_Certificate_Flat_Icon_Vector.svg/1024px-University_Diploma_or_Certificate_Flat_Icon_Vector.svg.png" alt=""></div>
                 <div class="figure__caption">
                         <h5 class="" onclick="showEducation();">{{__('Education')}}</h5>
@@ -9,7 +9,7 @@
                         </div>
                 </div>
         </div>
-        <div class="right-action" bis_skin_checked="1">
+        <div class="section-head__right-action" bis_skin_checked="1">
                 <div class="right-action__tips" bis_skin_checked="1">
                         <i class="bi bi-lightbulb"></i>
                         <p>Tips</p>

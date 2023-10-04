@@ -1,5 +1,5 @@
 <div class="section-head">
-        <div class="figure">
+        <div class="section-head__figure">
                 <div class="figure__image"><img src="https://cdn-icons-png.flaticon.com/512/3269/3269817.png" alt=""></div>
                 <div class="figure__caption">
                         <h5 class=""  onclick="showLanguages();">{{__('Languages')}}</h5>
@@ -8,7 +8,7 @@
                         </div>
                 </div>
         </div>
-        <div class="right-action" bis_skin_checked="1">
+        <div class="section-head__right-action" bis_skin_checked="1">
                 <div class="right-action__tips" bis_skin_checked="1">
                         <i class="bi bi-lightbulb"></i>
                         <p>Tips</p>

@@ -74,7 +74,7 @@
             <div class="row align-items-start ">
                 <div class="col-md-6 col-lg-4 mb-4 ">
                     <div class="figure">
-                        <a href="" class="figure-images"><img src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/07/flex-la-gi.jpg" alt=""></a>
+                        <a href="" class="figure-images"><img src="https://contenthub-static.grammarly.com/blog/wp-content/uploads/2017/11/how-to-write-a-blog-post.jpeg" alt=""></a>
                         <div class="figcaption">
                             <h3 class="figcaption__category-name"><a href="#">KỸ NĂNG CÔNG SỞ</a></h3>
                             <div class="figcaption__title"><a href="#">Flex là gì? Làm sao thoát flexing đồng nghiệp hay

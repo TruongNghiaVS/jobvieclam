@@ -1,5 +1,5 @@
 <div class="section-head">
-    <div class="figure">
+    <div class="section-head__figure">
         <div class="figure__image" ><img src="https://icons.veryicon.com/png/o/system/alongthink/ico-user-info.png" alt=""></div>
         <div class="figure__caption">
             <h5 class="">{{__('Account Information')}}</h5>
@@ -8,7 +8,7 @@
             </div>
         </div>
     </div>
-    <div class="right-action" bis_skin_checked="1">
+    <div class="section-head__right-action" bis_skin_checked="1">
         <div class="right-action__tips" bis_skin_checked="1">
             <i class="bi bi-lightbulb"></i>
             <p>Tips</p>

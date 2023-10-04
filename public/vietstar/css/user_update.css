@@ -57,7 +57,7 @@
 .user__complete_section {}
 
 
-.figure {
+.section-head__figure {
     display: flex;
     align-items: center;
     height: 100%;
@@ -95,7 +95,7 @@
     color: #2aba2a;
 }
 
-.right-action {
+.section-head__right-action {
     display: flex;
     flex-direction: row;
     align-items: center;

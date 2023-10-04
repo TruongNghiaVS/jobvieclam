@@ -4,6 +4,7 @@
 @include('templates.vietstar.includes.header')
 <!-- Header end -->
 <!-- Inner Page Title start -->
+@include('templates.vietstar.includes.mobile_dashboard_menu')
 @include('templates.vietstar.includes.inner_page_title', ['page_title'=>__('Login')])
 <!-- Inner Page Title end -->
 <div class="shadow">

@@ -3,6 +3,7 @@
 <!-- Header start -->
 @include('templates.vietstar.includes.header')
 <!-- Header end -->
+@include('templates.vietstar.includes.mobile_dashboard_menu')
 @include('templates.vietstar.includes.inner_page_title', ['page_title'=>__('Đăng nhập')])
 <div class="login-form">
     <div class="container">

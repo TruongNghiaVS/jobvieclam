@@ -127,6 +127,7 @@
     border: 2px solid var(--bs-primary);
     border-radius: 25px;
     overflow: hidden;
+    cursor: pointer;
 }
 .right-action__link-edit a {
     width: 100%;

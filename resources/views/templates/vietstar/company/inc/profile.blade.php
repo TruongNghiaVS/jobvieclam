@@ -1,4 +1,91 @@
 <!-- Main content -->
+
+@push('styles')
+<style type="text/css">
+    .datepicker>div {
+        display: block;
+    }
+
+    label.btn.btn-primary {
+        width: 100%;
+    }
+
+    .section-infomation.company-image .cover-photo img {
+        border-radius: 8px;
+    }
+    .password_box {
+        position: relative;
+    }
+
+    span.fa.fa-fw.field-icon.toggle-password.fa-eye {
+        margin-right: 14px;
+        position: absolute;
+        z-index: 2;
+        top: 37%;
+        right: 0;
+    }
+
+    span.fa.fa-fw.field-icon.toggle-password.fa-eye-slash {
+        margin-right: 14px;
+        position: absolute;
+        z-index: 2;
+        top: 37%;
+        right: 0;
+    }
+
+    .important {
+        color: #ff0000 !important;
+        font-weight: normal;
+        margin-left: 0px;
+        padding: 0;
+    }
+
+    select:invalid {
+        height: 0px !important;
+        opacity: 0 !important;
+        position: absolute !important;
+        display: flex !important;
+    }
+
+    select:invalid[multiple] {
+        margin-top: 15px !important;
+    }
+
+    div#industry_id_chosen {
+        width: 100% !important;
+    }
+
+    div#country_id_chosen {
+        width: 100% !important;
+    }
+
+    div#state_id_chosen {
+        width: 100% !important;
+    }
+
+    div#city_id_chosen {
+        width: 100% !important;
+    }
+
+    div#no_of_offices_chosen {
+        width: 100% !important;
+    }
+
+    div#no_of_employees_chosen {
+        width: 100% !important;
+    }
+
+
+    .table_value div {
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+ 
+</style>
+@endpush
 <!-- <section class="main-content my-5">
     <div class="container">
         <div class="row">
@@ -342,8 +429,8 @@
                         <i class="bi bi-lightbulb"></i>
                         <p>Tips</p>
                     </div>
-                    <div class="right-action__link-edit"><a href=""><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
-                    <div class="right-action__link-edit-mobile"><a a href="javascript:;" onclick=""><i class="bi bi-pen"></i></a></div>
+                    <div class="right-action__link-edit"><a data-toggle="modal" data-target="#user_info" href="#"><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
+                    <div class="right-action__link-edit-mobile"><a data-toggle="modal" data-target="#user_info" href="#"><i class="bi bi-pen"></i></a></div>
                 </div>
             </div>
 
@@ -396,8 +483,8 @@
                         <i class="bi bi-lightbulb"></i>
                         <p>Tips</p>
                     </div>
-                    <div class="right-action__link-edit"><a href=""><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
-                    <div class="right-action__link-edit-mobile"><a a href="javascript:;" onclick=""><i class="bi bi-pen"></i></a></div>
+                    <div class="right-action__link-edit"><a id="modalToggle" data-toggle="modal" data-target="#company_info" href="#"><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
+                    <div class="right-action__link-edit-mobile"><a id="modalToggle" data-toggle="modal" data-target="#company_info" href="#"><i class="bi bi-pen"></i></a></div>
                 </div>
             </div>
 
@@ -556,8 +643,8 @@
                         <i class="bi bi-lightbulb"></i>
                         <p>Tips</p>
                     </div>
-                    <div class="right-action__link-edit"><a href=""><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
-                    <div class="right-action__link-edit-mobile"><a a href="javascript:;" onclick=""><i class="bi bi-pen"></i></a></div>
+                    <div class="right-action__link-edit"><a id="modalToggle" data-toggle="modal" data-target="#contact_info" href="#"><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
+                    <div class="right-action__link-edit-mobile"><a id="modalToggle" data-toggle="modal" data-target="#contact_info" href="#"><i class="bi bi-pen"></i></a></div>
                 </div>
             </div>
 
@@ -648,104 +735,27 @@
                         </tbody>
                     </table>
                 </div>
-
-                    <h6>Map</h6>
-                    <div class="gmap">
-                        {!!$company->map!!}
-                    </div>
+                <h6>Map</h6>
+                <div class="gmap">
+                    {!!$company->map!!}
+                </div>
             </div>
         </div>
     </div>
 </form>
 
+@include('templates.vietstar.company.form.resetpassword')
 
-@push('styles')
-<style type="text/css">
-    .datepicker>div {
-        display: block;
-    }
+@include('templates.vietstar.company.form.companyinfo_form')
 
-    label.btn.btn-primary {
-        width: 100%;
-    }
-
-    .section-infomation.company-image .cover-photo img {
-        border-radius: 8px;
-    }
-
-    span.fa.fa-fw.field-icon.toggle-password.fa-eye {
-        float: right;
-        margin-right: 14px;
-        margin-top: -30px;
-        position: relative;
-        z-index: 2;
-    }
-
-    span.fa.fa-fw.field-icon.toggle-password.fa-eye-slash {
-        float: right;
-        margin-right: 14px;
-        margin-top: -30px;
-        position: relative;
-        z-index: 2;
-    }
-
-    .important {
-        color: #ff0000 !important;
-        font-weight: normal;
-        margin-left: 0px;
-        padding: 0;
-    }
-
-    select:invalid {
-        height: 0px !important;
-        opacity: 0 !important;
-        position: absolute !important;
-        display: flex !important;
-    }
-
-    select:invalid[multiple] {
-        margin-top: 15px !important;
-    }
-
-    div#industry_id_chosen {
-        width: 100% !important;
-    }
-
-    div#country_id_chosen {
-        width: 100% !important;
-    }
-
-    div#state_id_chosen {
-        width: 100% !important;
-    }
-
-    div#city_id_chosen {
-        width: 100% !important;
-    }
-
-    div#no_of_offices_chosen {
-        width: 100% !important;
-    }
-
-    div#no_of_employees_chosen {
-        width: 100% !important;
-    }
+@include('templates.vietstar.company.form.contact')
 
 
-    .table_value div {
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        display: -webkit-box;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-</style>
-@endpush
 @push('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
 @include('templates.vietstar.includes.tinyMCEFront')
 <script type="text/javascript">
-
+  
     function readURL(input) {
             console.log("input",input);
             if (input.files && input.files[0]) {

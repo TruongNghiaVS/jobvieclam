@@ -127,6 +127,7 @@
     border: 2px solid var(--bs-primary);
     border-radius: 25px;
     overflow: hidden;
+    cursor: pointer;
 }
 .right-action__link-edit a {
     width: 100%;
@@ -309,6 +310,14 @@
     .table_title {
         width: 100px;
     }
+    .modal-body .nav-tabs {
+        margin-bottom: 20px;
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        /* width: 100%; */
+        flex-wrap: unset;
+    }
     
 }
 
@@ -318,6 +327,7 @@
         padding-left: 10px;
         padding-right: 10px;
     }
+    
 }
 
 

@@ -758,8 +758,8 @@
   }
 
   #mobile-sidebar.active .sidebar-bottom {
-    max-height: 30%;
-    height: 30%;
+    max-height: 20%;
+    height: 20%;
   }
 
   .group-button .btn {

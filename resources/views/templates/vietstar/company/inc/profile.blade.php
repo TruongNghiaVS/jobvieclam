@@ -342,8 +342,8 @@
                         <i class="bi bi-lightbulb"></i>
                         <p>Tips</p>
                     </div>
-                    <div class="right-action__link-edit"><a href=""><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
-                    <div class="right-action__link-edit-mobile"><a a href="javascript:;" onclick=""><i class="bi bi-pen"></i></a></div>
+                    <div class="right-action__link-edit"><a data-toggle="modal" data-target="#myModal"><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
+                    <div class="right-action__link-edit-mobile"><a href="javascript:;" onclick=""><i class="bi bi-pen"></i></a></div>
                 </div>
             </div>
 
@@ -657,6 +657,8 @@
         </div>
     </div>
 </form>
+@include('templates.vietstar.company.form.resetpassword')
+
 
 
 @push('styles')
@@ -672,21 +674,24 @@
     .section-infomation.company-image .cover-photo img {
         border-radius: 8px;
     }
+    .password_box {
+        position: relative;
+    }
 
     span.fa.fa-fw.field-icon.toggle-password.fa-eye {
-        float: right;
         margin-right: 14px;
-        margin-top: -30px;
-        position: relative;
+        position: absolute;
         z-index: 2;
+        top: 37%;
+        right: 0;
     }
 
     span.fa.fa-fw.field-icon.toggle-password.fa-eye-slash {
-        float: right;
         margin-right: 14px;
-        margin-top: -30px;
-        position: relative;
+        position: absolute;
         z-index: 2;
+        top: 37%;
+        right: 0;
     }
 
     .important {
@@ -745,7 +750,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
 @include('templates.vietstar.includes.tinyMCEFront')
 <script type="text/javascript">
-
+  
     function readURL(input) {
             console.log("input",input);
             if (input.files && input.files[0]) {

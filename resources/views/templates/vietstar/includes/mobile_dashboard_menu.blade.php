@@ -248,7 +248,7 @@
 
   
     .sidebar-main-nav li,.sidebar-user-nav li {
-        border-bottom: 1px solid #47748b;
+        border-bottom: .5px solid #cdc9c9;
     }
     
     a.download {

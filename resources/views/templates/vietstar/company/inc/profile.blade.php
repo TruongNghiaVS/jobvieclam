@@ -342,7 +342,7 @@
                         <i class="bi bi-lightbulb"></i>
                         <p>Tips</p>
                     </div>
-                    <div class="right-action__link-edit"><a data-toggle="modal" data-target="#user_info"><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
+                    <div class="right-action__link-edit"><a data-toggle="modal" data-target="#user_info" href="#"><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
                     <div class="right-action__link-edit-mobile"><a href="javascript:;" onclick=""><i class="bi bi-pen"></i></a></div>
                 </div>
             </div>
@@ -396,7 +396,7 @@
                         <i class="bi bi-lightbulb"></i>
                         <p>Tips</p>
                     </div>
-                    <div class="right-action__link-edit"><a href=""><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
+                    <div class="right-action__link-edit"><a id="modalToggle" data-toggle="modal" data-target="#company_info" href="#"><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
                     <div class="right-action__link-edit-mobile"><a a href="javascript:;" onclick=""><i class="bi bi-pen"></i></a></div>
                 </div>
             </div>
@@ -659,7 +659,7 @@
 </form>
 @include('templates.vietstar.company.form.resetpassword')
 
-
+@include('templates.vietstar.company.form.companyinfo_form')
 
 @push('styles')
 <style type="text/css">

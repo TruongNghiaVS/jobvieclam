@@ -17,6 +17,7 @@ use Jrean\UserVerification\Facades\UserVerification as UserVerificationFacade;
 use Jrean\UserVerification\Exceptions\UserNotFoundException;
 use Jrean\UserVerification\Exceptions\UserIsVerifiedException;
 use Jrean\UserVerification\Exceptions\TokenMismatchException;
+use Illuminate\Support\Facades\Log;
 
 class RegisterController extends Controller
 {
@@ -59,8 +60,8 @@ class RegisterController extends Controller
         $user->last_name = $request->input('last_name');
         $user->email = $request->input('email');
         $user->password = bcrypt($request->input('password'));
-        $user->is_active = 0;
-        $user->verified = 0;
+        $user->is_active = 1;
+        $user->verified = 1;
         $user->save();
         /*         * *********************** */
         $user->name = $user->getName();
@@ -70,7 +71,9 @@ class RegisterController extends Controller
         event(new UserRegistered($user));
         $this->guard()->login($user);
         UserVerification::generate($user);
-        UserVerification::send($user, 'User Verification', config('mail.recieve_to.address'), config('mail.recieve_to.name'));
+        // UserVerification::send($user, 'User Verification', config('mail.recieve_to.address'), config('mail.recieve_to.name'));
+        Log::info($user);
+   
         return $this->registered($request, $user) ?: redirect($this->redirectPath());
     }
 

@@ -83,7 +83,7 @@ use RegistersUsers;
         event(new CompanyRegistered($company));
         $this->guard()->login($company);
         UserVerification::generate($company);
-        UserVerification::send($company, 'Company Verification', config('mail.recieve_to.address'), config('mail.recieve_to.name'));
+        // UserVerification::send($company, 'Company Verification', config('mail.recieve_to.address'), config('mail.recieve_to.name'));
         return $this->registered($request, $company) ?: redirect($this->redirectPath());
     }
 

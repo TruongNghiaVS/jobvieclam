@@ -342,7 +342,7 @@
                         <i class="bi bi-lightbulb"></i>
                         <p>Tips</p>
                     </div>
-                    <div class="right-action__link-edit"><a data-toggle="modal" data-target="#myModal"><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
+                    <div class="right-action__link-edit"><a data-toggle="modal" data-target="#user_info"><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
                     <div class="right-action__link-edit-mobile"><a href="javascript:;" onclick=""><i class="bi bi-pen"></i></a></div>
                 </div>
             </div>

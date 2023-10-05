@@ -343,7 +343,7 @@
                         <p>Tips</p>
                     </div>
                     <div class="right-action__link-edit"><a data-toggle="modal" data-target="#user_info" href="#"><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
-                    <div class="right-action__link-edit-mobile"><a href="javascript:;" onclick=""><i class="bi bi-pen"></i></a></div>
+                    <div class="right-action__link-edit-mobile"><a data-toggle="modal" data-target="#user_info" href="#"><i class="bi bi-pen"></i></a></div>
                 </div>
             </div>
 
@@ -397,7 +397,7 @@
                         <p>Tips</p>
                     </div>
                     <div class="right-action__link-edit"><a id="modalToggle" data-toggle="modal" data-target="#company_info" href="#"><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
-                    <div class="right-action__link-edit-mobile"><a a href="javascript:;" onclick=""><i class="bi bi-pen"></i></a></div>
+                    <div class="right-action__link-edit-mobile"><a id="modalToggle" data-toggle="modal" data-target="#company_info" href="#"><i class="bi bi-pen"></i></a></div>
                 </div>
             </div>
 
@@ -557,7 +557,7 @@
                         <p>Tips</p>
                     </div>
                     <div class="right-action__link-edit"><a id="modalToggle" data-toggle="modal" data-target="#contact_info" href="#"><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
-                    <div class="right-action__link-edit-mobile"><a  href="javascript:;" onclick=""><i class="bi bi-pen"></i></a></div>
+                    <div class="right-action__link-edit-mobile"><a id="modalToggle" data-toggle="modal" data-target="#contact_info" href="#"><i class="bi bi-pen"></i></a></div>
                 </div>
             </div>
 
@@ -745,6 +745,14 @@
         display: -webkit-box;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+    .modal-body .nav-tabs {
+        margin-bottom: 20px;
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        /* width: 100%; */
+        flex-wrap: unset;
     }
 </style>
 @endpush

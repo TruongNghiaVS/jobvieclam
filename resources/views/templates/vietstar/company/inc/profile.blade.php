@@ -1,4 +1,91 @@
 <!-- Main content -->
+
+@push('styles')
+<style type="text/css">
+    .datepicker>div {
+        display: block;
+    }
+
+    label.btn.btn-primary {
+        width: 100%;
+    }
+
+    .section-infomation.company-image .cover-photo img {
+        border-radius: 8px;
+    }
+    .password_box {
+        position: relative;
+    }
+
+    span.fa.fa-fw.field-icon.toggle-password.fa-eye {
+        margin-right: 14px;
+        position: absolute;
+        z-index: 2;
+        top: 37%;
+        right: 0;
+    }
+
+    span.fa.fa-fw.field-icon.toggle-password.fa-eye-slash {
+        margin-right: 14px;
+        position: absolute;
+        z-index: 2;
+        top: 37%;
+        right: 0;
+    }
+
+    .important {
+        color: #ff0000 !important;
+        font-weight: normal;
+        margin-left: 0px;
+        padding: 0;
+    }
+
+    select:invalid {
+        height: 0px !important;
+        opacity: 0 !important;
+        position: absolute !important;
+        display: flex !important;
+    }
+
+    select:invalid[multiple] {
+        margin-top: 15px !important;
+    }
+
+    div#industry_id_chosen {
+        width: 100% !important;
+    }
+
+    div#country_id_chosen {
+        width: 100% !important;
+    }
+
+    div#state_id_chosen {
+        width: 100% !important;
+    }
+
+    div#city_id_chosen {
+        width: 100% !important;
+    }
+
+    div#no_of_offices_chosen {
+        width: 100% !important;
+    }
+
+    div#no_of_employees_chosen {
+        width: 100% !important;
+    }
+
+
+    .table_value div {
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+ 
+</style>
+@endpush
 <!-- <section class="main-content my-5">
     <div class="container">
         <div class="row">
@@ -648,114 +735,22 @@
                         </tbody>
                     </table>
                 </div>
-
-                    <h6>Map</h6>
-                    <div class="gmap">
-                        {!!$company->map!!}
-                    </div>
+                <h6>Map</h6>
+                <div class="gmap">
+                    {!!$company->map!!}
+                </div>
             </div>
         </div>
     </div>
 </form>
+
 @include('templates.vietstar.company.form.resetpassword')
 
 @include('templates.vietstar.company.form.companyinfo_form')
 
 @include('templates.vietstar.company.form.contact')
 
-@push('styles')
-<style type="text/css">
-    .datepicker>div {
-        display: block;
-    }
 
-    label.btn.btn-primary {
-        width: 100%;
-    }
-
-    .section-infomation.company-image .cover-photo img {
-        border-radius: 8px;
-    }
-    .password_box {
-        position: relative;
-    }
-
-    span.fa.fa-fw.field-icon.toggle-password.fa-eye {
-        margin-right: 14px;
-        position: absolute;
-        z-index: 2;
-        top: 37%;
-        right: 0;
-    }
-
-    span.fa.fa-fw.field-icon.toggle-password.fa-eye-slash {
-        margin-right: 14px;
-        position: absolute;
-        z-index: 2;
-        top: 37%;
-        right: 0;
-    }
-
-    .important {
-        color: #ff0000 !important;
-        font-weight: normal;
-        margin-left: 0px;
-        padding: 0;
-    }
-
-    select:invalid {
-        height: 0px !important;
-        opacity: 0 !important;
-        position: absolute !important;
-        display: flex !important;
-    }
-
-    select:invalid[multiple] {
-        margin-top: 15px !important;
-    }
-
-    div#industry_id_chosen {
-        width: 100% !important;
-    }
-
-    div#country_id_chosen {
-        width: 100% !important;
-    }
-
-    div#state_id_chosen {
-        width: 100% !important;
-    }
-
-    div#city_id_chosen {
-        width: 100% !important;
-    }
-
-    div#no_of_offices_chosen {
-        width: 100% !important;
-    }
-
-    div#no_of_employees_chosen {
-        width: 100% !important;
-    }
-
-
-    .table_value div {
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        display: -webkit-box;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .modal-body .nav-tabs {
-        margin-bottom: 20px;
-        overflow-x: auto;
-        white-space: nowrap;
-        display: flex;
-        /* width: 100%; */
-        flex-wrap: unset;
-    }
-</style>
-@endpush
 @push('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
 @include('templates.vietstar.includes.tinyMCEFront')

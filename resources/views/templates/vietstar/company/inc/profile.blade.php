@@ -401,7 +401,7 @@
                         <div class="formrow formrow-photo">
                             <div id="thumbnail">
                                 <div class="pic img-avata">
-                                   
+                                    {{$company->printCompanyImage()}}
                                     <input type="file" name="image" id="fileInput" style="display: none;">
 
                                     <a class="uploadImage_btn" href="javascript:void(0);" onclick="$('#fileInput').click()"><i class="bi bi-camera-fill"></i></a>

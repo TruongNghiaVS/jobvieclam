@@ -799,10 +799,10 @@
             @elseif(!Auth::user() && !Auth::guard('company')->user())
             <li>
                 <div class="d-flex gap-10 my-2 group-button">
-                    <a class="btn btn-primary login-btn" href="{{route('login')}}" class="nav-link">{{__('Log in')}}</a>
+                    <a class="btn btn-primary login-btn my-2" href="{{route('login')}}" class="nav-link">{{__('Log in')}}</a>
                     {{--<a class="btn btn-primary" href="{{route('register')}}" class="nav-link
                     register">{{__('Đăng ký')}}</a> --}}
-                    <a class="btn btn-primary" href="{{route('job.seeker.list')}}" class="nav-link">{{__('Find candidates')}}</a>
+                    <a class="btn btn-primary my-2" href="{{route('job.seeker.list')}}" class="nav-link">{{__('Find candidates')}}</a>
                 </div>
             </li>
             @endif

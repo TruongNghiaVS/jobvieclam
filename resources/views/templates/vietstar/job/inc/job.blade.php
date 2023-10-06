@@ -1,4 +1,4 @@
-<h5>{{__('Job Details')}}</h5>
+<h5  class="fs-3  text-primary">{{__('Job Details')}}</h5>
 @if(isset($job))
 {!! Form::model($job, array('method' => 'put', 'route' => array('update.front.job', $job->id), 'class' => 'form')) !!}
 {!! Form::hidden('id', $job->id) !!}
@@ -40,14 +40,14 @@
                                             <label for="WFH">{{__('WFH')}} <span class="required">*</span></label>
                                             <div class="d-flex">
                                                 <div class="form-check m-2">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" name="WFH" id="WFH1" checked>
+                                                    <label class="form-check-label" for="WFH1" >
                                                         Làm từ xa
                                                     </label>
                                                 </div>
                                                 <div class="form-check m-2">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                    <input class="form-check-input" type="radio" name="WFH" id="WFH2" >
+                                                    <label class="form-check-label" for="WFH2">
                                                         Mặc dịnh
                                                     </label>
                                                 </div>    
@@ -137,20 +137,20 @@
                                             <label for="Gender">{{__('Gender')}} <span class="required">*</span></label>
                                             <div class="d-flex"> 
                                                 <div class="form-check m-2">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" name="gender" id="gender1" checked>
+                                                    <label class="form-check-label" for="gender1">
                                                         Nam/ Nữ
                                                     </label>
                                                 </div>
 
                                                 <div class="form-check m-2">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
-                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                    <input class="form-check-input" type="radio" name="gender" id="gender2" >
+                                                    <label class="form-check-label" for="gender2">
                                                         Nam
                                                     </label>
                                                 </div>
                                                 <div class="form-check m-2">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="gender3" >
                                                     <label class="form-check-label" for="flexRadioDefault2">
                                                         Nữ
                                                     </label>

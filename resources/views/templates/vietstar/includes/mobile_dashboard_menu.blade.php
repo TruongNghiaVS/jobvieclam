@@ -404,11 +404,12 @@
         @elseif(Auth::guard('company')->user())
 
         <div class="profile" bis_skin_checked="1">
-            <div class="avatar" bis_skin_checked="1"><a href="#">
-            {{$company->printCompanyImage()}}  
+            <div class="avatar" bis_skin_checked="1">
+			<a href="#">
+           
             </div>
             <div class="username" bis_skin_checked="1">
-                <p><a href="#">{{ isset($company->name) ? $company->name : old('name') }}</a></p>
+                <p><a href="#">ten cong ty</a></p>
             </div>
             <div class="back-menu-normal" bis_skin_checked="1"><i class="bi bi-arrow-left"></i></div>
         </div>

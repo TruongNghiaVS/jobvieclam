@@ -24,13 +24,13 @@
                         <div class="company-profile">
                             <div class="box-logo">
                                 <div class="logo">
-                                    {{$company->printCompanyImage(100, 100)}}
+                                    {{$company->printCompanyImage()}}
                                 </div>
                             </div>
                             <div class="box-content">
                                 <h2 class="company-name">{{ $company->name }}</h2>
                                 <p class="company-position">
-                                    {{ !empty($company->industry)?$company->industry->industry : 'NA' }}</p>
+                                    {{ !empty($company->industry)?$company->industry->industry : '' }}</p>
                                 <ul class="company-info public">
                                     <li>
                                         <span class="iconmoon icon-recruiter-user"></span>
@@ -38,7 +38,7 @@
                                     </li>
                                     <li>
                                         <span class="iconmoon icon-recruiter-location"></span>
-                                        {{ $company->location.', '.$company->getLocation() }}
+                                        {{!empty( $company->location)? $company->getLocation():'' }}
                                     </li>
                                 </ul>
                                 <div
@@ -66,16 +66,22 @@
                     <div class="col-lg-5">
                         <ul class="company-info">
                             <li>
+                                @if($company->phone)
                                 <span class="iconmoon icon-recruiter-phone-call"></span>
                                 {{ $company->phone }}
+                                @endif
                             </li>
                             <li>
+                                @if($company->email)
                                 <span class="iconmoon icon-recruiter-email"></span>
                                 {{ $company->email }}
+                                @endif
                             </li>
                             <li>
+                                @if($company->website)
                                 <span class="iconmoon icon-recruiter-website"></span>
                                 {{ $company->website }}
+                                @endif
                             </li>
                         </ul>
                         <div class="socials">
@@ -159,7 +165,7 @@
                             <div class="job">
                                 <div class="box-logo">
                                     <div class="logo">
-                                        {{$company->printCompanyImage(100,100)}}
+                                        {{$company->printCompanyImage()}}
                                     </div>
                                 </div>
                                 <div class="widget-content">

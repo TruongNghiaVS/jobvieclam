@@ -10,7 +10,7 @@
                     <div class="pic img-avata">
                         <!-- {{ ImgUploader::print_image("user_images/$user->image") }} -->
                         @if(Auth::user())
-                        <img id="avatar" class="avatar" src="{{ auth()->user()->avatar() }}" alt="Avatar">
+                        {{Auth::user()->printUserImage()}}
                         @else 
                         <img id="avatar" class="avatar" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar">
                         @endif

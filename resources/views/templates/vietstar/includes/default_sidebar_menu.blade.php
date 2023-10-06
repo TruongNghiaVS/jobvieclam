@@ -24,7 +24,7 @@
                 {{$company->printCompanyImage()}}  
             </div>
             <div class="username" bis_skin_checked="1">
-                <p><a href="#">{{$company->name}}</a></p>
+                <p><a href="#">{{Auth::guard('company')->user()->name}}</a></p>
             </div>
             <div class="back-menu-normal" bis_skin_checked="1"><i class="bi bi-arrow-left"></i></div>
         </div>

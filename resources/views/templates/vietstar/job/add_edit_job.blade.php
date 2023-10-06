@@ -6,8 +6,8 @@
 
 <div class="user-wrapper listpgWraper">     
             @include('templates.vietstar.includes.company_dashboard_menu')
-        @include('templates.vietstar.includes.mobile_dashboard_menu')
-            <div class="content"> 
+            @include('templates.vietstar.includes.mobile_dashboard_menu')
+            <div class="content addjob"> 
                 <div class="row">
                     <div class="col-md-12">
                         <div class="userccount">

@@ -174,9 +174,9 @@
                 </div>
               </div>
             </div>
-            <button class="btn btn-secondary" id="year">Continue</button>
+            <button class="btn btn-secondary" id="detailContinue">Continue</button>
           </div>
-          <div class="tab-pane fade" id="review" role="tabpanel">
+          <div class="tab-pane fade" id="reviewPanel" role="tabpanel">
             <h4>Review</h4>
             <button class="btn btn-primary btn-block" id="activate">{{__('Submit')}}</button>
           </div>
@@ -218,10 +218,10 @@
       e.preventDefault();
       $('.progress-bar').css('width', '80%');
       $('.progress-bar').html('Step 4 of 5');
-      $('#myTab a[href="#schedulePanel"]').tab('show');
+      $('#myTab a[href="#detail"]').tab('show');
     });
 
-    $('#scheduleContinue').click(function(e) {
+    $('#detailContinue').click(function(e) {
       e.preventDefault();
       $('.progress-bar').css('width', '100%');
       $('.progress-bar').html('Step 5 of 5');

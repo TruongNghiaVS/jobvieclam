@@ -376,7 +376,7 @@
                         <div class="formrow formrow-photo">
                             <div id="thumbnail">
                                 <div class="pic img-avata">
-                                    <img id="avatar" class="avatar" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar">
+                                    {{$company->printCompanyImage()}}
                                 </div>
                             </div>
                         </div>

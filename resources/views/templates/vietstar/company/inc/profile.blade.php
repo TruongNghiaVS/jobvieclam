@@ -13,6 +13,7 @@
     .section-infomation.company-image .cover-photo img {
         border-radius: 8px;
     }
+
     .password_box {
         position: relative;
     }
@@ -83,7 +84,31 @@
         overflow: hidden;
         text-overflow: ellipsis;
     }
- 
+
+    a.uploadImage_btn {
+        position: absolute;
+        bottom: 3px;
+        right: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        margin-bottom: 0;
+        border-radius: 100%;
+        background: #FFFFFF;
+        border: 1px solid #d2d6de;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+        font-weight: normal;
+        transition: all .2s ease-in-out;
+        z-index: 10;
+    }
+
+    a.uploadImage_btn i {
+        color: #6c7eb7;
+        font-size: 20px;
+    }
 </style>
 @endpush
 <!-- <section class="main-content my-5">
@@ -377,24 +402,15 @@
                             <div id="thumbnail">
                                 <div class="pic img-avata">
                                     {{$company->printCompanyImage()}}
+                                    <input type="file" name="image" id="fileInput" style="display: none;">
+
+                                    <a class="uploadImage_btn" href="javascript:void(0);" onclick="$('#fileInput').click()"><i class="bi bi-camera-fill"></i></a>
+                                    {!! APFrmErrHelp::showErrors($errors, 'image') !!}
+                            {!! APFrmErrHelp::showErrors($errors, 'image') !!}
                                 </div>
                             </div>
                         </div>
-                        <div class="formrow">
-                            <label class="">
-                                <input type="file" name="image" id="fileInput" style="display: none;">
-                                <i class="bi bi-upload"></i>
-                                <a href="javascript:void(0);" onclick="$('#fileInput').click()"><span>{{__('Select Profile Image')}}</span></a>
-                            </label>
-                            <label class="">
-                                <i class="bi bi-x"></i>
-                                <a href="javascript:void(0);" onclick="removeAvatar()" id="remove-image"><span>xóa hình ảnh</span></a>
-                            </label>
-                            {!! APFrmErrHelp::showErrors($errors, 'image') !!}
-                            {!! APFrmErrHelp::showErrors($errors, 'image') !!}
-                        </div>
                     </div>
-
                     <div class="col-md-6 col-lg-8">
                         <div class="user__name" bis_skin_checked="1">
                             <h4 id="">Minh</h4>
@@ -441,7 +457,7 @@
                             <tr>
                                 <td class="table_title">
                                     <strong>
-                                    <i class="bi bi-envelope"></i>{{__('Email')}}
+                                        <i class="bi bi-envelope"></i>{{__('Email')}}
                                     </strong>
                                 </td>
                                 <td class="text-primary table_value">
@@ -455,7 +471,7 @@
                                     </strong>
                                 </td>
                                 <td class="text-primary table_value">
-                                
+
                                     <!-- <i class="toggle-password fa fa-fw fa-eye-slash"></i> -->
                                 </td>
                             </tr>
@@ -495,7 +511,7 @@
                             <tr>
                                 <td class="table_title">
                                     <strong>
-                                         {{__('Company Name')}}
+                                        {{__('Company Name')}}
                                     </strong>
                                 </td>
                                 <td class="table_value">
@@ -506,7 +522,7 @@
                             <tr>
                                 <td class="table_title">
                                     <strong>
-                                         {{__('CEO Name')}}
+                                        {{__('CEO Name')}}
                                     </strong>
                                 </td>
                                 <td class="table_value">
@@ -518,7 +534,7 @@
                             <tr>
                                 <td class="table_title">
                                     <strong>
-                                         {{__('Industry')}}
+                                        {{__('Industry')}}
                                     </strong>
                                 </td>
                                 <td class="table_value">
@@ -530,7 +546,7 @@
                             <tr>
                                 <td class="table_title">
                                     <strong>
-                                         {{__('Ownership')}}
+                                        {{__('Ownership')}}
                                     </strong>
                                 </td>
                                 <td class="table_value">
@@ -542,7 +558,7 @@
                             <tr>
                                 <td class="table_title">
                                     <strong>
-                                         {{__('Description')}}
+                                        {{__('Description')}}
                                     </strong>
                                 </td>
                                 <td class="table_value">
@@ -554,7 +570,7 @@
                             <tr>
                                 <td class="table_title">
                                     <strong>
-                                         {{__('Country')}}
+                                        {{__('Country')}}
                                     </strong>
                                 </td>
                                 <td class="table_value">
@@ -565,7 +581,7 @@
                             <tr>
                                 <td class="table_title">
                                     <strong>
-                                         {{__('State')}}
+                                        {{__('State')}}
                                     </strong>
                                 </td>
                                 <td class="table_value">
@@ -649,7 +665,7 @@
             </div>
 
             <div class="section-body">
-            <div class="table-responsive">
+                <div class="table-responsive">
                     <table class="table table-responsive table-user-information">
                         <tbody>
                             <tr>
@@ -660,7 +676,7 @@
                                 </td>
                                 <td class="table_value">
                                     <a href="{{ isset($company->website) ? $company->website : old('website')}}">
-                                    {{ isset($company->website) ? $company->website : old('website')}}
+                                        {{ isset($company->website) ? $company->website : old('website')}}
                                     </a>
                                 </td>
                             </tr>
@@ -668,7 +684,7 @@
                             <tr>
                                 <td class="table_title">
                                     <strong>
-                                    <i class="bi bi-telephone"></i> {{__('Fax')}}
+                                        <i class="bi bi-telephone"></i> {{__('Fax')}}
                                     </strong>
                                 </td>
                                 <td class="table_value">
@@ -679,22 +695,22 @@
                             <tr>
                                 <td class="table_title">
                                     <strong>
-                                    <i class="bi bi-telephone"></i> {{__('Phone number')}}
+                                        <i class="bi bi-telephone"></i> {{__('Phone number')}}
                                     </strong>
                                 </td>
                                 <td class="table_value">
-                                {{ isset($company->phone) ? $company->phone : old('phone')}}
+                                    {{ isset($company->phone) ? $company->phone : old('phone')}}
                                 </td>
                             </tr>
 
                             <tr>
                                 <td class="table_title">
                                     <strong>
-                                    <i class="bi bi-facebook"></i> Facebook
+                                        <i class="bi bi-facebook"></i> Facebook
                                     </strong>
                                 </td>
                                 <td class="table_value">
-                                <a href="{{ isset($company->facebook) ? $company->facebook : old('facebook')}}">{{ isset($company->facebook) ? $company->facebook : old('facebook')}}</a>
+                                    <a href="{{ isset($company->facebook) ? $company->facebook : old('facebook')}}">{{ isset($company->facebook) ? $company->facebook : old('facebook')}}</a>
                                 </td>
                             </tr>
 
@@ -702,11 +718,11 @@
                             <tr>
                                 <td class="table_title">
                                     <strong>
-                                    <i class="bi bi-twitter"></i> Twitter
+                                        <i class="bi bi-twitter"></i> Twitter
                                     </strong>
                                 </td>
                                 <td class="table_value">
-                                <a href="{{ isset($company->twitter) ? $company->twitter : old('twitter')}}">{{ isset($company->twitter) ? $company->twitter : old('twitter')}}</a>
+                                    <a href="{{ isset($company->twitter) ? $company->twitter : old('twitter')}}">{{ isset($company->twitter) ? $company->twitter : old('twitter')}}</a>
                                 </td>
                             </tr>
 
@@ -715,21 +731,21 @@
                             <tr>
                                 <td class="table_title">
                                     <strong>
-                                    <i class="bi bi-linkedin"></i>  LinkedIn
+                                        <i class="bi bi-linkedin"></i> LinkedIn
                                     </strong>
                                 </td>
                                 <td class="table_value">
-                                <a href="{{ isset($company->linkedin) ? $company->linkedin : old('linkedin')}}">{{ isset($company->linkedin) ? $company->linkedin : old('linkedin')}}</a>
+                                    <a href="{{ isset($company->linkedin) ? $company->linkedin : old('linkedin')}}">{{ isset($company->linkedin) ? $company->linkedin : old('linkedin')}}</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="table_title">
                                     <strong>
-                                    <i class="bi bi-google"></i> Google Plus
+                                        <i class="bi bi-google"></i> Google Plus
                                     </strong>
                                 </td>
                                 <td class="table_value">
-                                <a href="{{ isset($company->google_plus) ? $company->google_plus : old('google_plus')}}">{{ isset($company->google_plus) ? $company->google_plus : old('google_plus')}}</a>
+                                    <a href="{{ isset($company->google_plus) ? $company->google_plus : old('google_plus')}}">{{ isset($company->google_plus) ? $company->google_plus : old('google_plus')}}</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -755,21 +771,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
 @include('templates.vietstar.includes.tinyMCEFront')
 <script type="text/javascript">
-  
     function readURL(input) {
-            console.log("input",input);
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('#avatar').attr('src', e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
+        console.log("input", input);
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#avatar').attr('src', e.target.result);
             }
+            reader.readAsDataURL(input.files[0]);
         }
+    }
 
-        $('#fileInput').change(function() {
-            readURL(this);
-        });
+    $('#fileInput').change(function() {
+        readURL(this);
+    });
 
     function removeAvatar() {
         $('#avatar').attr('src', 'https://cdn-icons-png.flaticon.com/512/149/149071.png');
@@ -922,7 +937,5 @@
         }
 
     }
-
-    
 </script>
 @endpush

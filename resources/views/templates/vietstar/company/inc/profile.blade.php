@@ -401,7 +401,7 @@
                         <div class="formrow formrow-photo">
                             <div id="thumbnail">
                                 <div class="pic img-avata">
-                                   
+                                {{$company->printCompanyImage()}}
                                     <input type="file" name="image" id="fileInput" style="display: none;">
 
                                     <a class="uploadImage_btn" href="javascript:void(0);" onclick="$('#fileInput').click()"><i class="bi bi-camera-fill"></i></a>
@@ -413,7 +413,7 @@
                     </div>
                     <div class="col-md-6 col-lg-8">
                         <div class="user__name" bis_skin_checked="1">
-                            <h4 id="">Minh</h4>
+                            <h4 id="">{{ $company->name }}</h4>
                         </div>
 
                         <div class="user__infomation" bis_skin_checked="1">

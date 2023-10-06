@@ -8,7 +8,7 @@
         @if(Auth::guard('company')->user())
         <div class="profile" bis_skin_checked="1">
             <div class="avatar" bis_skin_checked="1"><a href="#">
-              
+                {{Auth::guard('company')->user()->printCompanyImage()}}
             </div>
             <div class="username" bis_skin_checked="1">
                 <p><a href="#"></a></p>

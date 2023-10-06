@@ -26,7 +26,6 @@
                             <div class="title sort-label">Sắp xếp theo</div>
                             <div class="sort-item-wrapped">
                                 <div class="sort-item-wrapped__item active">Mặc định</div>
-                                <div class="sort-item-wrapped__item">Liên quan</div>
                                 <div class="sort-item-wrapped__item">Lương &lpar; cao - thấp &rpar; </div>
                                 <div class="sort-item-wrapped__item">Ngày đăng &lpar; mới nhất &rpar;</div>
                                 <div class="sort-item-wrapped__item">Ngày đăng &lpar; cũ nhất &rpar;</div>

@@ -5229,15 +5229,21 @@ div#industry_id_chosen {
     margin-bottom: 12px !important
 }
 
-.form-user-profile .img-avata {
+.form-user-profile .img-avatar {
     height: 120px;
     width: 120px;
     position: relative;
     border-radius: 50%;
    
 }
+.form-user-profile .img-avatar .img-avatar__wrapper{
+    height: 120px;
+    width: 120px;
+    overflow: hidden;
+    border-radius: 50%;
+}
 
-.form-user-profile .img-avata img {
+.form-user-profile .img-avatar img {
     height: 100%;
     width: 100%;
     -o-object-fit: cover;

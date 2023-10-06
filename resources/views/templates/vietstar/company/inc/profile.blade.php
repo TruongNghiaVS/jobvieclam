@@ -400,8 +400,10 @@
                     <div class="col-md-6 col-lg-4 d-flex flex-column justify-content-center align-items-center">
                         <div class="formrow formrow-photo">
                             <div id="thumbnail">
-                                <div class="pic img-avata">
-                                {{$company->printCompanyImage()}}
+                                <div class="pic img-avatar">
+                                    <div class="img-avatar__wrapper">
+                                        {{$company->printCompanyImage()}}
+                                    </div>
                                     <input type="file" name="image" id="fileInput" style="display: none;">
 
                                     <a class="uploadImage_btn" href="javascript:void(0);" onclick="$('#fileInput').click()"><i class="bi bi-camera-fill"></i></a>
@@ -776,7 +778,7 @@
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
-                $('#avatar').attr('src', e.target.result);
+                $('.img-avatar img').attr('src', e.target.result);
             }
             reader.readAsDataURL(input.files[0]);
         }
@@ -787,7 +789,7 @@
     });
 
     function removeAvatar() {
-        $('#avatar').attr('src', 'https://cdn-icons-png.flaticon.com/512/149/149071.png');
+        $('.pic .img-avatar img').attr('src', 'https://cdn-icons-png.flaticon.com/512/149/149071.png');
         $('#fileInput').val('');
     }
 

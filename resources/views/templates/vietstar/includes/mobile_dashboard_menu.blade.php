@@ -389,7 +389,7 @@
 </style>
 
 @endpush
-<nav id="mobile-sidebar" class="active">
+<nav id="mobile-sidebar">
     <div class="sidebar-header">
         @if(Auth::user())
         <div class="profile" bis_skin_checked="1">

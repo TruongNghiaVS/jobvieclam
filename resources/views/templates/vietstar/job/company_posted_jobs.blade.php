@@ -8,7 +8,7 @@
     <div class="user-wrapper listpgWraper main-content">
       
          
-                @include('templates.vietstar.includes.company_dashboard_menu')
+                 
         @include('templates.vietstar.includes.mobile_dashboard_menu')
                 <div class="content">
                     <div class="card mb-2">

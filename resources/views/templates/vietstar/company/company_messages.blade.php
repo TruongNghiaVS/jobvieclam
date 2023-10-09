@@ -7,7 +7,7 @@
 @include('templates.vietstar.includes.inner_page_title', ['page_title'=>__('Company Messages')]) 
 <!-- Inner Page Title end -->
 <div class="user-wrapper listpgWraper">  
-            @include('templates.vietstar.includes.company_dashboard_menu')
+             
         @include('templates.vietstar.includes.mobile_dashboard_menu')
             <div class="content">
                 <div class="card card-bio">

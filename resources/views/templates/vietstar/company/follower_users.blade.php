@@ -47,7 +47,7 @@
                                                 {{$user->current_salary}} {{$user->salary_currency}} - {{$user->expected_salary}} {{$user->salary_currency}}
                                             </div>
                                            <div>
-                                                <a class="btn btn-primary btn-view-details"  href="{{route('user.profile', $user->id)}}"><span class="iconmoon icon-eye-icon"></span> {{_('View Profile')}}</a>
+                                                <a class="btn-veiw-profile"  href="{{route('user.profile', $user->id)}}">{{_('View Profile')}}</a>
                                            </div>
                                            
                                         </div>

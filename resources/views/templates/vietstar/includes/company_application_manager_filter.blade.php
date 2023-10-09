@@ -1,9 +1,9 @@
 
 <div class="card mb-2">
     <div class="card-body">
-        <form action="{{ route('application.manager') }}" method="get" class="content form-search">
+        <form action="{{ route('application.manager') }}" method="get" class="form-search">
             <div class="row filter-cv" style="margin-bottom: 00px">
-                <div class="col-md-6 col-lg-6">
+                <div class="col-md-10 col-lg-10">
                     <div class="form-group">
                         <input type="text" name="name" placeholder="{{ __('Search name, email, phone number') }}" class="form-control">
                         
@@ -22,8 +22,8 @@
                         </select>
                     </div>
                 </div> --}}
-                 <div class="col-md-6 col-lg-6">
-                    <button type="submit" class="btn btn-primary"><i class="iconmoon  icon-recruiter-search"></i> {{ __('Searches') }}</button>
+                 <div class="col-md-10 col-lg-2">
+                    <button type="submit" class="btn btn-primary"><i class="bi bi-search text-white"></i></button>
                 </div>
             </div>
         </form>

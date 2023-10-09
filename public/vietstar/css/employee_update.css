@@ -1,0 +1,8 @@
+.badge.btn-dot{
+    font-size: 15px;
+}
+.btn-veiw-profile{
+    font-size: 13px !important;
+    color: var(--bs-primary);
+    text-decoration: underline;
+}

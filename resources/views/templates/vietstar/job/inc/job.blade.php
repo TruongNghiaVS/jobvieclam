@@ -40,13 +40,13 @@
                                             <label for="WFH">{{__('WFH')}} <span class="required">*</span></label>
                                             <div class="d-flex">
                                                 <div class="form-check m-2">
-                                                    <input class="form-check-input" type="radio" name="WFH" id="WFH1" checked>
+                                                    <input class="form-check-input" type="radio" name="WFH" id="WFH1" >
                                                     <label class="form-check-label" for="WFH1" >
                                                         Làm từ xa
                                                     </label>
                                                 </div>
                                                 <div class="form-check m-2">
-                                                    <input class="form-check-input" type="radio" name="WFH" id="WFH2" >
+                                                    <input class="form-check-input" type="radio" name="WFH" id="WFH2" checked >
                                                     <label class="form-check-label" for="WFH2">
                                                         Mặc dịnh
                                                     </label>

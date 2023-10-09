@@ -762,11 +762,7 @@
     height: 20%;
   }
 
-  .group-button .btn {
-    padding: 12px 16px !important;
-    background-color: var(--bs-primary) !important;
-    color: white !important;
-  }
+
 
   #navbarDropdownMenuLink {
     padding: 0 !important;
@@ -1015,11 +1011,7 @@
     height: 85%;
   }
 
-  .group-button .btn {
-    padding: 12px 16px !important;
-    background-color: var(--bs-primary) !important;
-    color: white !important;
-  }
+
 
   #navbarDropdownMenuLink {
     padding: 0 !important;

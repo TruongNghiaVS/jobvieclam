@@ -15,6 +15,7 @@
          
         @include('templates.vietstar.includes.mobile_dashboard_menu')
         <div class="container company-content">
+            @include('templates.vietstar.includes.company_dashboard_top')
             @include('templates.vietstar.includes.company_dashboard_stats')
             <?php
 

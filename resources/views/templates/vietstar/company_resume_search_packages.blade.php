@@ -128,6 +128,9 @@
                 <!---end four-paln-->
                 </div>
             </div>
+            
+        @include('templates.vietstar.includes.company_package_msg')
+        @include('templates.vietstar.includes.company_packages_upgrade')
 </div>
 @include('templates.vietstar.includes.footer')
 @endsection

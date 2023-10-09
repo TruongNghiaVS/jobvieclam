@@ -1566,6 +1566,9 @@ fieldset:disabled .btn {
 	color: var(--bs-primary);
 	border-color: var(--bs-primary);
 }
+.btn-outline-primary i{
+	color: var(--bs-primary);
+}
 
 .btn-outline-primary:hover {
 	color: #fff;
@@ -1573,7 +1576,9 @@ fieldset:disabled .btn {
 	border-color: rgba(var(--bs-primary-rgb), .85);
 	--fa-primary-color: #fff;
 }
-
+.btn-outline-primary:hover i{
+	color: #fff;
+}
 .btn-check:focus+.btn-outline-primary,
 .btn-outline-primary:focus {
 	box-shadow: 0 0 0 .25rem rgba(var(--bs-primary-rgb), .5)

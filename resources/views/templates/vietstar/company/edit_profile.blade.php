@@ -6,10 +6,10 @@
 <!-- Inner Page Title start --> 
 
 <!-- Inner Page Title end -->
-<div class="user-wrapper listpgWraper">
+<div class="company-wrapper">
              
             @include('templates.vietstar.includes.mobile_dashboard_menu')
-            <div class="content">
+            <div class="container company-content">
                
                 @include('flash::message') 
                 <!-- Personal Information -->

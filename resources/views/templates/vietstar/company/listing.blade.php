@@ -47,7 +47,7 @@
     </div>
 </form>
 
-<div class="listpgWraper">
+<div class="company-wrapper">
     <div class="container">
         <div class="row compnaieslist">
             <div class="col-lg-9 col-sm-12">

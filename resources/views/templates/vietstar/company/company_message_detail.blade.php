@@ -6,11 +6,11 @@
 <!-- Inner Page Title start --> 
 
 <!-- Inner Page Title end -->
-<div class="user-wrapper listpgWraper">
-    
+<div class="company-wrapper">
+        
          
         @include('templates.vietstar.includes.mobile_dashboard_menu')
-            <div class="content">
+            <div class="container company-content">
                 <div class="myads">
                     <h3>{{__('Company Messages')}}</h3>
                     <div class="panel-group"> 

@@ -7,13 +7,12 @@
 
 
 <?php $company = Auth::guard('company')->user(); ?>
-<div class="user-wrapper listpgWraper">
-
+<div class="company-wrapper">
+            
         @include('flash::message')
-     
-             
+        
         @include('templates.vietstar.includes.mobile_dashboard_menu')
-            <div class="content">
+            <div class="container company-content">
                 @if(null!==($success_package) && !empty($success_package))
                     @php
                         $language = \App::getLocale();

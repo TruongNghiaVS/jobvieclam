@@ -6,10 +6,10 @@
 <!-- Inner Page Title start --> 
 @include('templates.vietstar.includes.inner_page_title', ['page_title'=>__('Company Messages')]) 
 <!-- Inner Page Title end -->
-<div class="user-wrapper listpgWraper">  
+<div class="company-wrapper">  
              
         @include('templates.vietstar.includes.mobile_dashboard_menu')
-            <div class="content">
+            <div class="container company-content">
                 <div class="card card-bio">
                     <h3>{{__('Company Messages')}}</h3>
                     <ul class="searchList">

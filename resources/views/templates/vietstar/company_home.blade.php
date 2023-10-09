@@ -8,13 +8,13 @@
 
 <!-- Header end --> 
 
-
-<div class="user-wrapper listpgWraper">
+@include('templates.vietstar.includes.company_dashboard_menu') 
+<div class="company-wrapper">
 
         @include('flash::message')
          
         @include('templates.vietstar.includes.mobile_dashboard_menu')
-        <div class="content">
+        <div class="container company-content">
             @include('templates.vietstar.includes.company_dashboard_stats')
             <?php
 

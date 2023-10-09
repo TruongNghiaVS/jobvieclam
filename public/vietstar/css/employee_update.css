@@ -1,3 +1,14 @@
+.company-wrapper{
+    position: relative;
+    top: 50px;
+    left: 0;
+    right: 0;
+    background-color: #f0f0f0;
+}
+.company-wrapper .company-content {
+    padding: 30px 0;
+}
+
 .badge.btn-dot{
     font-size: 15px;
 }
@@ -5,4 +16,32 @@
     font-size: 13px !important;
     color: var(--bs-primary);
     text-decoration: underline;
+}
+
+#company-default-nav {
+    background-color: white;
+    border: 1px solid #e6e6e7;
+    position: fixed;
+    top: 76px;
+    left: 0;
+    right: 0;
+    z-index: 90;
+}
+#company-default-nav .nav-item {
+    margin: 0 2px;
+}
+
+#company-default-nav .nav-item a{
+    font-size: 17px;
+    font-weight: 500;
+    transition: all .3s ease-in-out;
+}
+
+#company-default-nav .nav-item:hover {
+    border-bottom: 3px  solid var(--bs-primary); 
+}
+
+#company-default-nav .nav-item.active a {
+    color: var(--bs-primary);
+    border-bottom: 3px  solid var(--bs-primary);
 }

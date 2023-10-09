@@ -4,11 +4,11 @@
 @include('templates.vietstar.includes.header')
 <!-- Header end -->
 <!-- Inner Page Title start -->
-<div class="user-wrapper listpgWraper messageWrap">
+<div class="company-wrapper messageWrap">
   
         
         @include('templates.vietstar.includes.mobile_dashboard_menu')
-        <div class="content">
+        <div class="container company-content">
                 <div class="myads message-body">
                     <h3>{{__('Company Messages')}}</h3>
                     <div class="row message-body-content">

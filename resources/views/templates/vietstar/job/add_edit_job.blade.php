@@ -3,11 +3,11 @@
 <!-- Header start --> 
 @include('templates.vietstar.includes.header') 
 <!-- Header end --> 
-
-<div class="user-wrapper listpgWraper">     
+@include('templates.vietstar.includes.company_dashboard_menu') 
+<div class="company-wrapper">     
              
             @include('templates.vietstar.includes.mobile_dashboard_menu')
-            <div class="content addjob"> 
+            <div class="content container addjob"> 
                 <div class="row">
                     <div class="col-md-12">
                         <div class="userccount">

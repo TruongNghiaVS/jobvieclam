@@ -8,7 +8,7 @@
 @include('templates.vietstar.includes.mobile_dashboard_menu')
 <!-- Dashboard menu end -->
 
-
+@include('templates.vietstar.includes.company_dashboard_menu') 
 <!-- Inner Page Title start -->
 @include('templates.vietstar.includes.inner_page_title', ['page_title'=>__('Tất cả các công ty')])
 

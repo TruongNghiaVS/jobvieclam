@@ -4,7 +4,7 @@
 @include('templates.vietstar.includes.header') 
 <!-- Header end --> 
 <!-- Inner Page Title start --> 
-
+@include('templates.vietstar.includes.company_dashboard_menu') 
 <!-- Inner Page Title end -->
 <div class="company-wrapper">
         

@@ -2,6 +2,7 @@
 @section('content')
 <!-- Header start -->
 @include('templates.vietstar.includes.header')
+@include('templates.vietstar.includes.company_dashboard_menu') 
 <!-- Header end -->
 <!-- Inner Page Title start -->
 <div class="company-wrapper messageWrap">

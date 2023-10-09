@@ -8,7 +8,7 @@
 <!-- Company cover -->
 
 @include('templates.vietstar.includes.mobile_dashboard_menu')
-
+@include('templates.vietstar.includes.company_dashboard_menu') 
 <!-- Hero banner -->
 <section class="hero-banner-company-profile"
     style="background-image: url({!!  asset('/vietstar/imgs/company-cover.jpg') !!});"></section>

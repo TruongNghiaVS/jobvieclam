@@ -10,17 +10,17 @@
 
 <!-- Inner Page Title start --> 
 
+@include('templates.vietstar.includes.company_dashboard_menu') 
 
 
 <!-- Inner Page Title end -->
-
-<div class="user-wrapper listpgWraper">
+<div class="company-wrapper">
 
             @include('flash::message')
              
             @include('templates.vietstar.includes.mobile_dashboard_menu')
 
-            <div class="content">
+            <div class="container company-content">
 
                 @include('templates.vietstar.includes.company_application_manager_filter')
                 

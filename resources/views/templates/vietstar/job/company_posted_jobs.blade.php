@@ -4,13 +4,14 @@
     <!-- Header start -->
     @include('templates.vietstar.includes.header')
     <!-- Header end -->
+    @include('templates.vietstar.includes.company_dashboard_menu') 
 
-    <div class="user-wrapper listpgWraper main-content">
+    <div class="company-wrapper main-content">
       
          
                  
         @include('templates.vietstar.includes.mobile_dashboard_menu')
-                <div class="content">
+                <div class="container company-content">
                     <div class="card mb-2">
                         <div class="card-body">
                             <form action="{{ route('posted.jobs') }}" method="get" class="form-search pt-2">

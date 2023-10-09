@@ -5,6 +5,7 @@
 <!-- Inner Page Title start -->
 <!-- Inner Page Title end -->
 
+@include('templates.vietstar.includes.company_dashboard_menu') 
 
 <?php $company = Auth::guard('company')->user(); ?>
 <div class="company-wrapper">

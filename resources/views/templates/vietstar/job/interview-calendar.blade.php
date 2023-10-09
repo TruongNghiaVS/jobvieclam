@@ -4,13 +4,14 @@
     @include('templates.vietstar.includes.header')
     <!-- Header end -->
     <!-- Inner Page Title start -->
+    @include('templates.vietstar.includes.company_dashboard_menu') 
   
     <!-- Inner Page Title end -->
-    <div class="user-wrapper listpgWraper">
+    <div class="company-wrapper">
        
                  
         @include('templates.vietstar.includes.mobile_dashboard_menu')
-                <div class="content">
+                <div class="container company-content">
                     @include('flash::message')
                     <div class="card">
                         <div class="card-body card-body-schedule-interview">

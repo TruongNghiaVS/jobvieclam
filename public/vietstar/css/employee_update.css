@@ -45,3 +45,37 @@
     color: var(--bs-primary);
     border-bottom: 3px  solid var(--bs-primary);
 }
+
+
+
+@media only screen and (max-width: 767px) {
+    #company-default-nav {
+        display: none;
+    }
+    .company-wrapper {
+        top: 0;
+    }
+    .company-wrapper .company-content {
+        padding: 10px 5px;
+    }
+
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    #company-default-nav {
+        display: none;
+    }
+    .company-wrapper {
+        top: 0;
+    }
+    .company-wrapper .company-content {
+        padding: 20px 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) { 
+    
+}
+  
+  

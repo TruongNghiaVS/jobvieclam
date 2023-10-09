@@ -47,14 +47,14 @@
                 </li>
 
                 <li class="sidebar-item {{ Request::url() == route('company.detail', Auth::guard('company')->user()->slug) ? 'active' : '' }}">
-                    <a href="{{ route('company.detail', Auth::guard('company')->user()->slug) }}" class="list-group-item list-group-item-action ">
+                    <a data-toggle="modal" data-target="#company_profile_modal" class="list-group-item list-group-item-action ">
                         <div class="d-flex w-100">
                             <span class="iconmoon icon-eye-icon fs-24px me-2"></span>
                             <span class="side-bar-content">{{__('View Public Profile')}}</span>
                         </div>
                     </a>
                 </li>
-
+               
                 <li class="sidebar-item {{ Request::url() == route('post.job') ? 'active' : '' }}">
                     <a href="{{route('post.job')}}" class="list-group-item list-group-item-action {{ Request::url() == route('post.job') ? 'active' : '' }}">
                         <div class="d-flex w-100">
@@ -143,6 +143,8 @@
        
     </div>
 </nav>
+@include('templates.vietstar.company.modal.modal_companyProfile')
+
 @push('scripts')
 <script type="text/javascript">
     if ($(window).width() > 992) {

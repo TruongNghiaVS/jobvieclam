@@ -7,18 +7,18 @@
             {!! Form::open(['method' => 'get','route' => 'interview.filter']) !!}
             <div class="group-filter-schedule-interview d-block">    
                 <div class="row">
-                    <div class="col-12 col-md-6 col-lg-6 col-xl-5">
+                    <div class="col-12 col-md-5 col-lg-5 col-xl-5">
                         <div class="form-group form-group-datepicker input-daterange"  style="max-width: 100%; margin-bottom: 10px;">
                             <input type="text" class="daterange form-control " name="date_range"
                                 placeholder="{{ __('Start date-End date') }}" />
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-6 col-xl-5">
+                    <div class="col-12 col-md-5 col-lg-5 col-xl-5">
                         <div class="form-group"  style="max-width: 100%; margin-bottom: 10px;">
                             <input type="text" class="form-control" name="title" placeholder="{{ __('Search by interview title') }}">
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-6 col-xl-2" >
+                    <div class="col-12 col-md-2 col-lg-2 col-xl-2" >
                         <div class="form-group" style="max-width: 100%; margin-bottom: 10px;">
                             <button type="submit" class="btn btn-primary btn-search form-control"><i
                                     class="iconmoon  icon-recruiter-search"></i></button>

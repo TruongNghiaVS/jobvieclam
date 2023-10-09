@@ -53,7 +53,7 @@
                                     </div>
                                 </div>
                             </form>
-                            <div class="row">
+                            <div class="row justify-content-center">
                                 <a href="{{ route('posted.jobs', ['status' => '1']) }}" class="px-auto btn btn-outline-primary {{ Request::get('status') == 1 ? 'type-active' : '' }}">{{ __('Active job') }}</a>
                                 <a href="{{ route('posted.jobs', ['status' => '2']) }}" class="px-auto btn btn-outline-primary {{ Request::get('status') == 2 ? 'type-active' : '' }}">{{ __('Pending job') }}</a>
                                 <a href="{{ route('posted.jobs', ['status' => '3']) }}" class="px-auto btn btn-outline-primary {{ Request::get('status') == 3 ? 'type-active' : '' }}">{{ __('Inactive job') }}</a>
@@ -196,11 +196,9 @@
         background: #981b1d;
         color: white;
     }
-    button.btn.btn-primary {
-        width: 80%;
-    }
+  
     .row.filter-job {
-        margin-bottom: -18px;
+    
     }
 </style>
 @endpush

@@ -54,6 +54,7 @@
         </div>
        
 </div>
+@include('templates.vietstar.includes.footer')
 @endsection
 @push('scripts')
 <script type="text/javascript">

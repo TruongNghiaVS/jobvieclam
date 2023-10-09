@@ -82,6 +82,9 @@
     font-size: 18px;
     color: var(--text-main);
 }
+.custom-control {
+    margin: 0 10px ;
+}
 
 @media only screen and (max-width: 767px) {
     #company-default-nav {
@@ -92,6 +95,23 @@
     }
     .company-wrapper .company-content {
         padding: 10px 5px;
+    }
+    .company-content .widget-dashboard {
+        height: unset;
+    }
+    .filter-job .form-group {
+        margin-bottom:10px;
+    }
+    .filter-job .form-group button.btn.btn-primary {
+        width: 100% !important;
+    }
+    .row.filter-job {
+        margin: 10px 0;
+    }
+
+    a.px-auto.btn.btn-outline-primary{
+        width: 40% !important;
+        margin: 4px;
     }
 
 }
@@ -106,6 +126,12 @@
     }
     .company-wrapper .company-content {
         padding: 20px 10px;
+    }
+    .company-content .widget-dashboard {
+        height: unset;
+    }
+    a.px-auto.btn.btn-outline-primary {
+        width:23% !important;
     }
  
 }

@@ -22,7 +22,7 @@
                         </select>
                     </div>
                 </div> --}}
-                 <div class="col-md-10 col-lg-2">
+                 <div class="col-md-2 col-lg-2">
                     <button type="submit" class="btn btn-primary"><i class="bi bi-search text-white"></i></button>
                 </div>
             </div>
@@ -71,9 +71,7 @@
         background: #981b1d;
         color: white;
     }
-    button.btn.btn-primary {
-        width: 80%;
-    }
+ 
     .row.filter-cv {
         margin-bottom: -18px;
     }

@@ -1294,7 +1294,7 @@ footer .contact-detail p i.far {
 
 .listpgWraper {
     position: relative;
-    top: 0px;
+    top: 76px;
     left: 0;
 }
 
@@ -2734,8 +2734,14 @@ footer .inner-copyright .copyright {
 }
 
 .page-heading-tool {
+
     background-color: #f8f8f8;
-    padding: 20px 0
+    padding: 20px 0;
+    position: fixed;
+    top: 76px;
+    left: 0;
+    right: 0;
+    z-index: 7;
 }
 
 .page-heading-tool .tool-wrapper {

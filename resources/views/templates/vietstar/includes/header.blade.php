@@ -66,30 +66,7 @@
                         </ul>
                     </li>
                     <li class="has-child">
-                        <a href="{{ route('my.profile') }}" class="nav-link nav-link-parent">{{__('Company')}}</a>
-                        <button type="button" class="btn-show-sub-menu" data-ref="findJob1" data-target="false"><span
-                                class="iconmoon icon-p-next"></span></button>
-                        <ul class="sub-menu" data-ref="findJob1" data-target="false">
-                            <li>
-                                <a class="sub-item" href="{{route('about_us')}}"><span
-                                        class="iconmoon icon-recruiter-portfolio"></span>
-                                    {{__('About us')}}
-                                </a>
-                            </li>
-                            <li>
-                                <a class="sub-item" href="{{route('top-companies')}}"><span
-                                        class="iconmoon icon-recruiter-portfolio"></span>
-                                    {{__('Top companies')}}
-                                </a>
-                            </li>
-                            <li>
-                                <a class="sub-item" href="{{route('company.listing')}}"><span
-                                        class="iconmoon icon-recruiter-portfolio"></span>
-                                    {{__('Companies')}}
-                                </a>
-                            </li>
-
-                        </ul>
+                        <a href="{{route('company.listing')}}" class="nav-link">{{__('Company')}}</a>
                     </li>
                     {{-- <li class="has-child">
                         <a href="{{ route('my.profile') }}" class="nav-link nav-link-parent">{{__('News')}}</a>

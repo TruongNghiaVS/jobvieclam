@@ -1,5 +1,8 @@
 
+<?php
+$company = Auth::guard('company')->user();
 
+?>
 <!-- Modal -->
 <div class="modal fade" id="company_profile_modal" tabindex="-1" role="dialog" aria-labelledby="company_profile_modal_Label" aria-hidden="true">
   <div class="modal-dialog modal-company-profile-dialog" role="document">
@@ -89,7 +92,7 @@
                             <a href="{{ $company->google_plus }}" class="social" target="_blank"><i class="bi bi-google"></i></a>
                         </div>
                         <div class="d-flex">
-                           <a class="btn-view-more" href="{{ route('company.detail', Auth::guard('company')->user()->slug) }}" target="_blank" rel="noopener noreferrer">Xem thêm</a>
+                           <a class="btn-view-more" href="{{ route('company.detail', $company->slug) }}" target="_blank" rel="noopener noreferrer">Xem thêm</a>
                         </div>
                     </div>
                 </div>

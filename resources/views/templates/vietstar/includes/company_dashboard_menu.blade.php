@@ -2,18 +2,18 @@
     <div class="collapse navbar-collapse  justify-content-center" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item {{ Request::url() == route('company.home') ? 'active' : '' }}">
-                    <a href="{{ route('company.home') }}" class="nav-link list-group-item-action ">
-                           {{__('Dashboard')}}
-                    </a>
-                </li>
-                <li class="nav-item {{ Request::url() == route('company.profile') ? 'active' : '' }}">
-                    <a href="{{route('company.profile') }}" class="nav-link list-group-item-action ">
-                        <div class="d-flex w-100">
-                            {{__('Edit profile')}}
-                        </div>
-                    </a>
-                </li>
-
+                <a href="{{ route('company.home') }}" class="nav-link list-group-item-action ">
+                    {{__('Dashboard')}}
+                </a>
+            </li>
+            <li class="nav-item {{ Request::url() == route('company.profile') ? 'active' : '' }}">
+                <a href="{{route('company.profile') }}" class="nav-link list-group-item-action ">
+                    <div class="d-flex w-100">
+                        {{__('Edit profile')}}
+                    </div>
+                </a>
+            </li>
+            
                 <li class="nav-item {{ Request::url() == route('company.detail', Auth::guard('company')->user()->slug) ? 'active' : '' }}">
                     <a data-toggle="modal" data-target="#company_profile_modal" class="nav-link list-group-item-action ">
                         <div class="d-flex w-100">
@@ -21,8 +21,9 @@
                             {{__('View Public Profile')}}
                         </div>
                     </a>
+                   
                 </li>
-               
+                
                 <li class="nav-item {{ Request::url() == route('post.job') ? 'active' : '' }}">
                     <a href="{{route('post.job')}}" class="nav-link list-group-item-action {{ Request::url() == route('post.job') ? 'active' : '' }}">
                         <div class="d-flex w-100">
@@ -92,5 +93,5 @@
                 </li>
         </ul>
     </div>  
- 
 </nav>
+@include('templates.vietstar.company.modal.modal_companyProfile')

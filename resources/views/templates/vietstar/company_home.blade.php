@@ -9,6 +9,7 @@
 <!-- Header end --> 
 
 @include('templates.vietstar.includes.company_dashboard_menu') 
+
 <div class="company-wrapper">
 
         @include('flash::message')
@@ -40,7 +41,7 @@
 
             <?php }} ?>
         </div>
-
+    
 </div>
 
 @include('templates.vietstar.includes.footer')

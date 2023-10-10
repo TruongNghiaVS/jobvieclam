@@ -1,3 +1,6 @@
+
+@if(Auth::guard('company')->user())
+
 <nav id="company-default-nav" class="navbar navbar-expand-lg navbar-light">
     <div class="collapse navbar-collapse  justify-content-center" id="navbarNav">
         <ul class="navbar-nav">
@@ -95,3 +98,4 @@
     </div>  
 </nav>
 @include('templates.vietstar.company.modal.modal_companyProfile')
+@endif

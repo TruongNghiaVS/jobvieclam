@@ -13,9 +13,9 @@
             <i class="bi bi-lightbulb"></i>
             <p>Tips</p>
         </div>
-        <div class="right-action__link-edit"><a href=""><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
-        <div class="right-action__link-edit-mobile"><a a href="javascript:;"  onclick=""><i class="bi bi-pen"></i></a></div>
-   
+        <div class="right-action__link-edit"><a data-toggle="modal" data-target="#persionalinfo"><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
+        <div class="right-action__link-edit-mobile"><a data-toggle="modal" data-target="#persionalinfo"><i class="bi bi-pen"></i></a></div>
+
     </div>
 </div>
 
@@ -39,9 +39,6 @@
         </div>
     </div> -->
     <div class="table-responsive">
-
-
-
         <table class="table table-responsive table-user-information">
             <tbody>
 
@@ -78,13 +75,13 @@
                 </tr>
 
                 <tr>
-                    <td class= "text-primary table_title">
+                    <td class="text-primary table_title">
                         <strong>
                             {{__('Gender')}}
                         </strong>
                     </td>
                     <td class="table_value">
-                       Nam
+                        Nam
                     </td>
                 </tr>
 
@@ -92,7 +89,7 @@
                 <tr>
                     <td class=" text-primary table_title">
                         <strong>
-                        {{__('Martial Status')}}
+                            {{__('Martial Status')}}
                         </strong>
                     </td>
                     <td class="table_value">
@@ -105,11 +102,11 @@
                 <tr>
                     <td class=" text-primary table_title">
                         <strong>
-                        {{__('Country')}}
+                            {{__('Country')}}
                         </strong>
                     </td>
                     <td class="table_value">
-                       Việt Nam
+                        Việt Nam
                     </td>
                 </tr>
 
@@ -117,11 +114,11 @@
                 <tr>
                     <td class=" text-primary table_title">
                         <strong>
-                        {{__('Date of Birth')}}
+                            {{__('Date of Birth')}}
                         </strong>
                     </td>
                     <td class="table_value">
-                       20/10/2001
+                        20/10/2001
                     </td>
                 </tr>
             </tbody>
@@ -261,3 +258,100 @@
         </div>
     </div>
 </div> -->
+
+
+<div class="modal fade" id="persionalinfo" tabindex="-1" role="dialog" aria-labelledby="persionalinfoLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="persionalinfoLabel">{{__('Account Information')}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="persionalinfo" class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'first_name') !!}">
+                                <label for="">{{__('First Name')}}</label>
+                                {!! Form::text('first_name', null, array('class'=>'form-control', 'id'=>'first_name',
+                                'placeholder'=>__('First Name'))) !!}
+                                {!! APFrmErrHelp::showErrors($errors, 'first_name') !!}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'middle_name') !!}">
+                                <label for="">{{__('Midlle Name')}}</label>
+                                {!! Form::text('middle_name', null, array('class'=>'form-control', 'id'=>'middle_name',
+                                'placeholder'=>__('Middle Name'))) !!}
+                                {!! APFrmErrHelp::showErrors($errors, 'middle_name') !!}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'last_name') !!}">
+                                <label for="">{{__('Last Name')}}</label>
+                                {!! Form::text('last_name', null, array('class'=>'form-control', 'id'=>'last_name', 'placeholder'=>__('Last
+                                Name'))) !!}
+                                {!! APFrmErrHelp::showErrors($errors, 'last_name') !!}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'gender_id') !!}">
+                                <label for="">{{__('Gender')}}</label>
+                                {!! Form::select('gender_id', [''=>__('Select Gender')]+$genders, null, array('class'=>'form-control
+                                form-select', 'id'=>'gender_id')) !!}
+                                {!! APFrmErrHelp::showErrors($errors, 'gender_id') !!}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'marital_status_id') !!}">
+                                <label for="">{{__('Martial Status')}}</label>
+                                {!! Form::select('marital_status_id', [''=>__('Select Marital Status')]+$maritalStatuses, null,
+                                array('class'=>'form-control form-select', 'id'=>'marital_status_id')) !!}
+                                {!! APFrmErrHelp::showErrors($errors, 'marital_status_id') !!}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'city_id') !!}">
+                                <label for="">{{__('City')}}</label>
+                                <span id="city_dd"> {!! Form::select('city_id', [''=>__('Select City')], null, array('class'=>'form-control
+                                    form-select', 'id'=>'city_id')) !!} </span> {!! APFrmErrHelp::showErrors($errors, 'city_id') !!}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'nationality_id') !!}">
+                                <label for="">{{__('Nationality')}}</label>
+                                {!! Form::select('nationality_id', [''=>__('Select Nationality')]+$nationalities, null,
+                                array('class'=>'form-control form-select chosen', 'id'=>'nationality_id')) !!}
+                                {!! APFrmErrHelp::showErrors($errors, 'nationality_id') !!}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'date_of_birth') !!}">
+                                <?php
+                                if (!empty($user->date_of_birth)) {
+                                    $d = $user->date_of_birth;
+                                } else {
+                                    $d = date('Y-m-d', strtotime('-16 years'));
+                                }
+                                $dob = old('date_of_birth') ? date('Y-m-d', strtotime(old('date_of_birth'))) : date('Y-m-d', strtotime($d));
+                                ?>
+                                <label for="">{{__('Date of Birth')}}</label>
+                                {!! Form::date('date_of_birth', $dob, array('class'=>'form-control', 'id'=>'date_of_birth',
+                                'placeholder'=>__('Date of Birth'), 'autocomplete'=>'off')) !!}
+                                {!! APFrmErrHelp::showErrors($errors, 'date_of_birth') !!}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button id="submitBtn" type="submit" class="btn btn-primary submit-button">Submit</button>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>

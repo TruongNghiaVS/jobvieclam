@@ -5301,9 +5301,9 @@ ul.skillslist li a:hover {
 }
 
 .formpanel select.form-control {
-	padding: 13px 12px;
+	/* padding: 13px 12px;
 	border-radius: 0;
-	line-height: 45px;
+	line-height: 45px; */
 }
 
 .formpanel textarea.form-control {

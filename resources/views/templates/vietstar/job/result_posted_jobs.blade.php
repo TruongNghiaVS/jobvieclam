@@ -4,7 +4,7 @@
     @include('templates.vietstar.includes.header')
     <!-- Header end -->
 
-    <div class="user-wrapper listpgWraper">
+    <div class="user-wrapper">
                  
                 @include('templates.vietstar.includes.mobile_dashboard_menu')
                 <div class="content">

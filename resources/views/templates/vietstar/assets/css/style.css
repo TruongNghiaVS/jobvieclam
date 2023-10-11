@@ -808,6 +808,9 @@ a {
   font-weight: 400;
   line-height: 26px;
 }
+.card-news__content-footer__salary  .btn.btn-primary i{
+  color: white;
+}
 
 .card-news .card-news__content-footer .card-news__content-footer__salary::before,
 .dolar-sign::before {

@@ -15,21 +15,21 @@
                     @include('flash::message')
                     <div class="card">
                         <div class="card-body card-body-schedule-interview">
-                            <div id='top'>
+                            <div id='top' class="card-body-schedule-interview__top d-flex justify-content-between">
+                                <ul class="nav nav-change-schedule tabs nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="list-view-tab" data-toggle="tab" data-target="#list-view" type="button" role="tab" aria-controls="list-view" aria-selected="true">
+                                            <span class="iconmoon icon-list"></span>
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link " id="month-view-tab" data-toggle="tab" data-target="#month-view" type="button" role="tab" aria-controls="month-view" aria-selected="false">
+                                            <span class="iconmoon icon-calendar-icon1"></span>
+                                        </button>
+                                    </li>
+                                </ul>
+                                <button type="button" class="btn btn-primary btn-schedule-interview"  data-toggle="modal" data-target="#modalScheduleInterview">{{ __('Schedule new interview') }}</button>
                             </div>
-                            <ul class="nav nav-change-schedule tabs nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="list-view-tab" data-toggle="tab" data-target="#list-view" type="button" role="tab" aria-controls="list-view" aria-selected="true">
-                                        <span class="iconmoon icon-list"></span>
-                                    </button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link " id="month-view-tab" data-toggle="tab" data-target="#month-view" type="button" role="tab" aria-controls="month-view" aria-selected="false">
-                                        <span class="iconmoon icon-calendar-icon1"></span>
-                                    </button>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-primary btn-schedule-interview"  data-toggle="modal" data-target="#modalScheduleInterview">{{ __('Schedule new interview') }}</button>
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade active" id="list-view" role="tabpanel" aria-labelledby="list-view-tab">
                                     @include('templates.vietstar.job/inc/list_schedule_interview')

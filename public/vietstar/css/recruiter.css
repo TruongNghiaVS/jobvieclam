@@ -305,6 +305,8 @@
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
 .section-company-profile .box-content .company-name {
@@ -322,47 +324,33 @@
     font-size: 20px;
     line-height: 27px;
     color: var(--text-main);
-    margin-bottom: 20px;
 }
 
 .section-company-profile .box-content .company-info {
-    margin-bottom: 36px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
 }
 
-.section-company-profile .company-info {
-    list-style-type: none;
-    padding-left: 0;
-    margin-bottom: 20px;
-}
-
-.section-company-profile .company-info li {
-    position: relative;
-    font-weight: 400;
+.section-company-profile  .company-info__item  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     font-size: 20px;
-    line-height: 27px;
-    color: var(--text-main);
-    padding-left: 32px;
-    margin-bottom: 15px;
+    font-weight: 400;
+}
+.section-company-profile  .company-info__item  i {
+    color: var(--bs-primary);
+    margin: 10px 0;
+    margin-right: 20px;
 }
 
-.section-company-profile .company-info li .iconmoon {
-    font-size: 24px;
-    color: #981b1e;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.section-company-profile .company-info li .iconmoon::before {
-    color: #981b1e;
-}
-
-.section-company-profile .company-info li:last-child {
-    margin-bottom: 0;
+.section-company-profile .socials {
+    margin: 10px 0;
 }
 
 .section-company-profile .socials .social {
-    font-size: 18px;
+    font-size:  20px;
     text-decoration: none;
     margin-right: 20px;
     color: var(--sub-text);
@@ -1089,5 +1077,19 @@
 .pagination-jobs .pagination .page-item .page-link:focus {
     color: #981B1E;
 }
+
+.section-company-profile .box-content .company-info__item {
+    display: flex;
+    flex-direction: row;
+    margin: 8px 0;
+}
+.section-company-profile .box-content .company-info__item span {
+    padding: 0;
+    font-size: 20px;
+}
+
+
+
+
 
 /*# sourceMappingURL=recruiter.css.map */

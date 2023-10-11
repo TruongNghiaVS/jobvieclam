@@ -30,16 +30,12 @@ $company = Auth::guard('company')->user();
                                 <h2 class="company-name">{{ $company->name }}</h2>
                                 <p class="company-position">
                                     {{ !empty($company->industry)?$company->industry->industry : '' }}</p>
-                                <ul class="company-info public">
-                                    <li>
-                                        <span class="iconmoon icon-recruiter-user"></span>
-                                        {{ $company->no_of_employees }}
-                                    </li>
-                                    <li>
-                                        <span class="iconmoon icon-recruiter-location"></span>
-                                        {{!empty( $company->location)? $company->getLocation():'' }}
-                                    </li>
-                                </ul>
+                                    <div class="company-info public">   
+                                <div class="company-info__item" >
+                                            <span class="iconmoon icon-recruiter-user"></span>
+                                            {{ $company->no_of_employees }}
+                                    </div>
+                                </div>
                                 <div
                                     class="group-button job-detail-banner__actions job-detail-banner_info_actions d-flex flex-row gap-16">
                                     <form
@@ -65,26 +61,34 @@ $company = Auth::guard('company')->user();
                         </div>
                     </div>
                     <div class="col-lg-5 d-flex flex-column  justify-content-between align-items-start">
-                        <ul class="company-info">
-                            <li>
+                    <div class="row  company-info">
+                            <div class="company-info__item">
+                                <i class="bi bi-telephone"></i>
                                 @if($company->phone)
-                                <span class="iconmoon icon-recruiter-phone-call"></span>
-                                {{ $company->phone }}
+                                <p>
+                                    {{ $company->phone }}
+                                </p>
                                 @endif
-                            </li>
-                            <li>
+                            </div>
+                            <div class="company-info__item">
+                                <i class="bi bi-envelope"></i>
                                 @if($company->email)
-                                <span class="iconmoon icon-recruiter-email"></span>
-                                {{ $company->email }}
+                                <p>
+                                    {{ $company->email }}
+                                </p>
                                 @endif
-                            </li>
-                            <li>
+                            </div>
+
+                            <div class="company-info__item">
+                                <i class="bi bi-globe"></i>
                                 @if($company->website)
-                                <span class="iconmoon icon-recruiter-website"></span>
-                                {{ $company->website }}
+                                <p>
+                                    {{ $company->website }}
+                                </p>
                                 @endif
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
+
                         <div class="socials">
                             <a href="{{ $company->facebook }}" class="social" target="_blank"><i class="bi bi-facebook"></i></a>
                             <a href="{{ $company->twitter }}" class="social" target="_blank"><i class="bi bi-twitter"></i></a>

@@ -1,6 +1,7 @@
 .user-wrapper .content {
     padding: 40px 80px;
     width: 100%;
+    background-color: #f0f0f0;
 }
 
 .content.addjob {
@@ -315,6 +316,7 @@ i.fas.fa-heart.iconoutline {
 
 .company-list-wrapper {
     top: 0px;
+    background-color: white !important;
 }
 
 .company-list-container {
@@ -359,7 +361,7 @@ i.fas.fa-heart.iconoutline {
 
 .topcompanyhead,
 .bottomcompanycontent {
-    padding: 20px 40px;
+    padding: 10px 25px;
 }
 
 
@@ -501,6 +503,10 @@ i.fas.fa-heart.iconoutline {
     display: none;
 }
 
+.card-news__content-footer__salary  .btn.btn-primary i{
+    color: white;
+}
+
 
 
 @media only screen and (max-width: 767px) {
@@ -574,7 +580,13 @@ i.fas.fa-heart.iconoutline {
       .company-item-wrapper {
         width: 100% !important;
       }
-
+      .card-body-schedule-interview__top {
+        flex-direction: column;
+        }   
+        .body-list-schedule-interview .content-list-schedule-interview .table-schedule-interview thead tr th {
+            padding: 14px 0px;
+        }
+       
 }
 
 
@@ -586,6 +598,7 @@ i.fas.fa-heart.iconoutline {
     .company-item-wrapper {
         width: calc(50% - 18px);
     }
+    
 }
 
 

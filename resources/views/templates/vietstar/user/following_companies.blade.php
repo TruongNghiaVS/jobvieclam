@@ -6,7 +6,7 @@
 <!-- Inner Page Title start -->
 <!-- Inner Page Title end -->
 @include('templates.vietstar.includes.mobile_dashboard_menu')
-<div class="user-wrapper listpgWraper">
+<div class="user-wrapper">
     @include('flash::message')
     @include('templates.vietstar.includes.default_sidebar_menu')
     <div class="content">
@@ -37,7 +37,7 @@
                                 <div class="card-news__content-footer__salary">
 
                                     <div>
-                                        <a class="btn btn-primary btn-view-details" href="{{route('company.detail', $company->slug)}}"><span class="iconmoon icon-eye-icon"></span> {{__('View Details')}}</a>
+                                        <a class="btn btn-primary" href="{{route('company.detail', $company->slug)}}"><i class="bi bi-eye"></i> {{__('View Details')}}</a>
                                     </div>
 
                                 </div>

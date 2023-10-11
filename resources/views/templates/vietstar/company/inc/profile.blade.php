@@ -102,7 +102,7 @@
         cursor: pointer;
         font-weight: normal;
         transition: all .2s ease-in-out;
-        z-index: 10;
+        z-index: 5;
     }
 
     a.uploadImage_btn i {

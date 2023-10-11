@@ -36,9 +36,9 @@
                                             </select>
                                         </div>
                                     </div> --}}
-                                    <div class="col-md-5 col-lg-5">
+                                    <div class="col-md-4 col-lg-4">
                                         <div class="form-group">
-                                            <select name="city_id" class="form-control form-select chosen" name="" id="city_id">
+                                            <select name="city_id" class="form-select" name="" id="city_id">
                                                 <option value="">{{ __('Select cities') }}</option>
                                                 @foreach ($cities as $key => $value)
                                                     <option
@@ -48,7 +48,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-2 col-lg-2 text-center">
+                                    <div class="col-md-3 col-lg-3">
                                         <button type="submit" class="btn btn-primary"><i class="bi bi-search text-white"></i> Tìm kiếm</button>
                                     </div>
                                 </div>

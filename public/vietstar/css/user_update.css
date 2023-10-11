@@ -3,6 +3,9 @@
     width: 100%;
     background-color: #f0f0f0;
 }
+.company-wrapper.company-list-wrapper {
+    top: 50px;
+}
 
 .content.addjob {
     padding: 20px;
@@ -506,6 +509,7 @@ i.fas.fa-heart.iconoutline {
 .card-news__content-footer__salary  .btn.btn-primary i{
     color: white;
 }
+
 
 
 

@@ -4,7 +4,7 @@
 @include('templates.vietstar.includes.header')
 <!-- Header end -->
 <!-- Inner Page Title start -->
-@include('templates.vietstar.includes.inner_page_title', ['page_title'=>__('Blog')])
+
 <!-- Inner Page Title end -->
 
 

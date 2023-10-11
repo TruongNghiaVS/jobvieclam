@@ -2201,6 +2201,11 @@ h3.seekertxt span {
 	font-weight: 400;
 }
 
+.blog-content {
+	padding: 40px 0;
+	background-color: #f0f0f0;
+}
+
 #secondary-blog-content {}
 
 .head-box {

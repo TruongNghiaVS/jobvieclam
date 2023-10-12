@@ -590,6 +590,10 @@ i.fas.fa-heart.iconoutline {
         .body-list-schedule-interview .content-list-schedule-interview .table-schedule-interview thead tr th {
             padding: 14px 0px;
         }
+
+    .card-body-profile-seeker { 
+        padding-right:0
+    }
        
 }
 

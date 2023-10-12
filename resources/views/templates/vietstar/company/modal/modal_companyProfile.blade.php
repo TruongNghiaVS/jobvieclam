@@ -14,7 +14,7 @@ $company = Auth::guard('company')->user();
         </button>
       </div>
       <div class="modal-body">
-      <section class="main-content my-5" id="main-content">
+      <section class="main-content my-1" id="main-content">
     <div class="container">
         <section class="section-company-profile">
             <div class="container-hm">
@@ -95,9 +95,7 @@ $company = Auth::guard('company')->user();
                             <a href="{{ $company->linkedin }}" class="social" target="_blank"><i class="bi bi-linkedin"></i></span></a>
                             <a href="{{ $company->google_plus }}" class="social" target="_blank"><i class="bi bi-google"></i></a>
                         </div>
-                        <div class="d-flex">
-                           <a class="btn-view-more" href="{{ route('company.detail', $company->slug) }}" target="_blank" rel="noopener noreferrer">Xem thêm</a>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -164,6 +162,9 @@ $company = Auth::guard('company')->user();
 
                         <div class="about-company">
                             {!! $company->description !!}
+                            <div class="d-flex justify-content-end">
+                                <a class="btn-view-more" href="{{ route('company.detail', $company->slug) }}" target="_blank" rel="noopener noreferrer">Xem thêm</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -197,6 +198,15 @@ $company = Auth::guard('company')->user();
         outline: none;
         background-color:unset !important;
         transition:unset !important;
+    }
+    .about-company div{
+        overflow: hidden;
+        display: -webkit-box;
+        /* display 2 lines only */
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        width: 100%;
     }
 </style>
 @endpush

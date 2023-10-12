@@ -1,3 +1,32 @@
+@push('styles')
+<style type="text/css">
+    a.uploadImage_btn {
+        position: absolute;
+        bottom: 3px;
+        right: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        margin-bottom: 0;
+        border-radius: 100%;
+        background: #FFFFFF;
+        border: 1px solid #d2d6de;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+        font-weight: normal;
+        transition: all .2s ease-in-out;
+        z-index: 5;
+    }
+
+    a.uploadImage_btn i {
+        color: #6c7eb7;
+        font-size: 20px;
+    }
+</style>
+@endpush
+
 <div class="section-head">
     <h3 class="title-form">JobViecLam Profile</h3>
 </div>
@@ -7,31 +36,23 @@
         <div class="col-md-6 col-lg-4 d-flex flex-column justify-content-center align-items-center">
             <div class="formrow formrow-photo">
                 <div id="thumbnail">
-                    <div class="pic img-avata">
-                        <!-- {{ ImgUploader::print_image("user_images/$user->image") }} -->
-                        @if(Auth::user())
-                        {{Auth::user()->printUserImage()}}
-                        @else 
-                        <img id="avatar" class="avatar" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar">
-                        @endif
+                    <div class="pic img-avatar">
+                        <div class="img-avatar__wrapper">
+                            @if(Auth::user())
+                            {{Auth::user()->printUserImage()}}
+                            @else
+                            <img id="avatar" class="avatar" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar">
+                            @endif
+                        </div>
+                        <input type="file" name="image" id="userfileInput" style="display: none;">
+
+                        <a class="uploadImage_btn" href="javascript:void(0);" onclick="$('#fileInput').click()"><i class="bi bi-camera-fill"></i></a>
+                        {!! APFrmErrHelp::showErrors($errors, 'image') !!}
+                        {!! APFrmErrHelp::showErrors($errors, 'image') !!}
                     </div>
                 </div>
             </div>
-            <div class="formrow">
-                <label class="">
-                <input type="file" name="image" id="fileInput" style="display: none;">
-                    <i class="bi bi-upload"></i>
-                <a href="javascript:void(0);" onclick="$('#fileInput').click()"><span>{{__('Select Profile Image')}}</span></a>
-                </label>
-                <label class=""> 
-                    <i class="bi bi-x"></i>
-                    <a href="javascript:void(0);" onclick="removeAvatar()"  id="remove-image"><span>xóa hình ảnh</span></a>
-                </label>
-                {!! APFrmErrHelp::showErrors($errors, 'image') !!}
-                {!! APFrmErrHelp::showErrors($errors, 'image') !!}
-            </div>
         </div>
-
         <div class="col-md-6 col-lg-8">
             <div class="user__name" bis_skin_checked="1">
                 <h4 id="">{{auth()->user()->name}}</h4>
@@ -48,27 +69,24 @@
     </div>
 </div>
 
+
+
+
 @push('scripts')
 <script type="text/javascript">
-    function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    $('#avatar').attr('src', e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
+      function readURL(input) {
+        console.log("input", input);
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('.img-avatar img').attr('src', e.target.result);
             }
+            reader.readAsDataURL(input.files[0]);
         }
+    }
 
-        $('#fileInput').change(function(){
-            readURL(this);
-        });
-
-        function removeAvatar() {
-            $('#avatar').attr('src', 'https://cdn-icons-png.flaticon.com/512/149/149071.png');
-            $('#fileInput').val('');
-        }
+    $('#userfileInput').change(function() {
+        readURL(this);
+    });
 </script>
 @endpush
-
-

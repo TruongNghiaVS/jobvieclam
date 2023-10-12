@@ -77,7 +77,7 @@
                 </li>
 
                 <li class="sidebar-item">
-                    <a href="{{ route('view.public.profile', Auth::user()->id) }}" class="list-group-item list-group-item-action {{ route('view.public.profile', Auth::user()->id) }}">
+                    <a href="#" class="list-group-item list-group-item-action " data-toggle="modal" data-target="#user_profile_modal">
                         <div class="d-flex w-100">
                             <span class="icon-eye-icon fs-24px me-2"></span>
                             <span class="side-bar-content">{{__('View Public Profile')}}</span>
@@ -158,6 +158,8 @@
        
     </div>
 </nav>
+@include('templates.vietstar.user.templates.modal_userinfo')
+
 
 @push('scripts')
 <script type="text/javascript">

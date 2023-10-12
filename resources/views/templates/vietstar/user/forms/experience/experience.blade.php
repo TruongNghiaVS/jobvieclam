@@ -36,7 +36,9 @@
 
 
 
-<div class="modal" id="add_experience_modal" role="dialog"></div>
+<div class="modal" id="add_experience_modal" role="dialog">
+        
+</div>
 
 @push('styles')
 

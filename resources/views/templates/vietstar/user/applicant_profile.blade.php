@@ -171,7 +171,7 @@ if(null!==($package)){
         </div>
       </div>
     </div>
-  </section>
+</section>
 @include('templates.vietstar.includes.footer')
 @endsection
 @push('styles')

@@ -183,7 +183,7 @@
 }
 
 #default-sidebar ul.components {
-    border-bottom: .5px solid #cdc9c9;
+    /* border-bottom: .5px solid #cdc9c9; */
 }
 
 #default-sidebar ul p {
@@ -326,12 +326,15 @@ a.article:hover {
     color: white;
 }
 
+#default-sidebarCollapse {
 
+}
 
 
 #default-sidebarCollapse span i {
     color: #bcc0c8;
 }
+
 
 #default-sidebar ul li a span {
     color: #bcc0c8;

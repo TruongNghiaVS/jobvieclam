@@ -4,7 +4,7 @@
         @if(Auth::user())
         <div class="default-sidebar__btn">
             <button type="button" id="default-sidebarCollapse" class="btn">
-                <span class="text-white f"><i class="fas fa-bars fa-1x text-white"></i></span>
+                <span class=""><i class="fas fa-bars fa-1x"></i></span>
             </button>
         </div>
 
@@ -76,7 +76,7 @@
                     </a>
                 </li>
 
-                <li class="">
+                <li class="sidebar-item">
                     <a href="{{ route('view.public.profile', Auth::user()->id) }}" class="list-group-item list-group-item-action {{ route('view.public.profile', Auth::user()->id) }}">
                         <div class="d-flex w-100">
                             <span class="icon-eye-icon fs-24px me-2"></span>
@@ -84,7 +84,7 @@
                         </div>
                     </a>
                 </li>
-                <li class="">
+                <li class="sidebar-item">
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <div class="d-flex w-100">
                             <span class="icon-edit-icon fs-24px me-2"></span>
@@ -131,7 +131,7 @@
                         </div>
                     </a>
                 </li>
-                <li class="{{ Request::url() == route('my.followings') ? 'active' : '' }}">
+                <li class="sidebar-item {{ Request::url() == route('my.followings') ? 'active' : '' }}">
                     <a href="{{route('my.followings')}}" class="list-group-item list-group-item-action {{ Request::url() == route('my.followings') ? 'active' : '' }}">
                         <div class="d-flex w-100">
                             <span class="icon-office-building-icon fs-24px me-2"></span>

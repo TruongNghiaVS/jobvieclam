@@ -5248,7 +5248,17 @@ div#industry_id_chosen {
     overflow: hidden;
     border-radius: 50%;
 }
-
+.card-bio .img-avatar__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.card-bio .img-avatar__wrapper img{
+    width: 70%;
+    height: 70%;
+}
 .form-user-profile .img-avatar img {
     height: 100%;
     width: 100%;

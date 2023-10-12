@@ -10,7 +10,11 @@
 
         <div class="profile" bis_skin_checked="1">
             <div class="avatar" bis_skin_checked="1"><a href="#">
-                    <img class="lazy-bg" src="{{ auth()->user()->avatar() }}" alt="avatar" style=""></a>
+                            @if(Auth::user())
+                            {{Auth::user()->printUserImage()}}
+                            @else
+                            <img id="avatar" class="avatar" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar">
+                            @endif
             </div>
             <div class="username" bis_skin_checked="1">
                 <p><a href="#">{{auth()->user()->name}}</a></p>

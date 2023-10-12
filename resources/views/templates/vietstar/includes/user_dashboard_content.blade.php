@@ -4,11 +4,16 @@
 
     <div class="card card-bio mb-4 w-100 shadow-sm">
         <div class="row g-0">
-            <div class="col-md-2">
-                <img src="{{ auth()->user()->avatar() }}" class="img-bio rounded mx-auto mt-4 d-block"
-                    alt="{{auth()->user()->name}}">
+            <div class="col-md-3">
+                    <div class="img-avatar__wrapper">
+                            @if(Auth::user())
+                            {{Auth::user()->printUserImage()}}
+                            @else
+                            <img id="avatar" class="avatar" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar">
+                            @endif
+                    </div>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-9">
                 <div class="card-body card-body-profile-seeker">
                     <h5 class="card-title text-sub-color">{{auth()->user()->name}}</h5>
                     <p class="card-text justify-content-between align-items-center">

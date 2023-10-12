@@ -21,7 +21,7 @@
 
 <div class="section-body">
     <p>{{ old('summary', $user->getProfileSummary('summary')) }}</p>
-    <!-- <div class="row">
+    {{--<div class="row">
         <div class="col-md-12">
             <form class="form form-user-profile" id="add_edit_profile_summary" method="POST" action="{{ route('update.front.profile.summary', [$user->id]) }}">
                 {{ csrf_field() }}
@@ -35,7 +35,7 @@
                 </div>
             </form>
         </div>
-    </div> -->
+    </div> --}}
 </div>
 
 
@@ -62,7 +62,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <button id="submitBtn" type="submit" class="btn btn-primary submit-button" onClick="submitProfileSummaryForm();">{{__('Update Summary')}}</button>
+                                <button id="sumary_submitBtn" type="submit" class="btn btn-primary submit-button" onClick="submitProfileSummaryForm();">{{__('Update Summary')}}</button>
                             </div>
                         </form>
                     </div>

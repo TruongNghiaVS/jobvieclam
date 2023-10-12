@@ -20,14 +20,11 @@
 </div>
 
 <div class="section-body">
+        <div class="jobster-candidate-timeline">
+                <div class="" id="experience_div">
 
-
-<div class="jobster-candidate-timeline">
-        <div class="" id="experience_div">
-
-        </div>         
-</div>
-       
+                </div>         
+        </div>
 
 </div>
 
@@ -36,9 +33,7 @@
 
 
 
-<div class="modal" id="add_experience_modal" role="dialog">
-        
-</div>
+<div class="modal" id="add_experience_modal" role="dialog"></div>
 
 @push('styles')
 
@@ -251,26 +246,16 @@
     function showExperience()
 
     {
-
+        var myElement =document.querySelector('#experience_div')
     $.post("{{ route('show.front.profile.experience', $user->id) }}", {user_id: {{$user->id}}, _method: 'POST', _token: '{{ csrf_token() }}'})
 
             .done(function (response) {
-
+             
+                myElement.innerHTML = response
             $('#experience_div').html(response);
-
             });
 
     }
-
-
-
-
-
-
-
-
-
-
 
     function filterDefaultStatesExperience(state_id, city_id)
 
@@ -305,7 +290,7 @@
     $.post("{{ route('filter.default.cities.dropdown') }}", {state_id: state_id, city_id: city_id, _method: 'POST', _token: '{{ csrf_token() }}'})
 
             .done(function (response) {
-
+                console.log(response);
             $('#default_city_experience_dd').html(response);
 
             });

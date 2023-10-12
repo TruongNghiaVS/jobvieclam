@@ -27,7 +27,7 @@
                         <div id="cPwdInvalid" class="invalid-feedback"></div>
                     </div>
                     <div class="form-group">
-                        <button id="submitBtn" type="submit" class="btn btn-primary submit-button" disabled>Submit</button>
+                        <button id="reset_submitBtn" type="submit" class="btn btn-primary submit-button" disabled>Submit</button>
                     </div>
                 </form>
             </div>
@@ -42,13 +42,13 @@
       // Check if passwords match
       $('#pwdId, #cPwdId').on('keyup', function () {
         if ($('#pwdId').val() != '' && $('#cPwdId').val() != '' && $('#pwdId').val() == $('#cPwdId').val()) {
-          $("#submitBtn").attr("disabled",false);
+          $("#reset_submitBtn").attr("disabled",false);
           $('#cPwdValid').show();
           $('#cPwdInvalid').hide();
           $('#cPwdValid').html('Valid').css('color', 'green');
           $('.pwds').removeClass('is-invalid')
         } else {
-          $("#submitBtn").attr("disabled",true);
+          $("#reset_submitBtn").attr("disabled",true);
           $('#cPwdValid').hide();
           $('#cPwdInvalid').show();
           $('#cPwdInvalid').html('Not Matching').css('color', 'red');
@@ -75,7 +75,7 @@
               input.classList.add('is-invalid');
             }
             var is_valid = $('.form-control').length === $('.form-control.is-valid').length;
-            $("#submitBtn").attr("disabled", !is_valid);
+            $("#reset_submitBtn").attr("disabled", !is_valid);
           });
         });
       });

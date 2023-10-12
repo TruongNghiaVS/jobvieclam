@@ -115,9 +115,9 @@ function Download_CV() {
     });
     console.log(cv);
     // Final file name
-    let fileName = "CV-" + '{{ $user->first_name.'
-    '.$user->middle_name.'
-    '.$user->last_name }}' + ".pdf";
+    let fileName = "CV-" + `{{ $user->first_name.`
+    `.$user->middle_name.`
+    `.$user->last_name }}` + ".pdf";
 
     // Assuming "pages" is an array of HTML elements or strings that are separate pages:
     let pages = [];

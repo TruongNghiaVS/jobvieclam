@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Traits;
-
 use Auth;
 use DB;
 use Input;
@@ -60,32 +58,32 @@ trait ProfileExperienceTrait
                     $date_end = $experience->date_end->format('d M, Y');
 
 
-
+                    $html .='<h1>Hello</h1>';
                     
-                    $html .= '<!--experience Start-->
-                    <div class="jobster-timeline-item" id="experience_' . $experience->id . '">
-                        <div class="act-dropdown dropdown">
-                            <button type="button" class="btn btn-dropdown dropdown-toggle" id="dropdownMenuExperience_' . $experience->id . '" data-toggle="dropdown" aria-expanded="false">
-                                <span class="iconmoon icon-recruiter-dots"></span>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuExperience_' . $experience->id . '">
-                                <a class="dropdown-item" href="javascript:void(0);" onclick="showProfileExperienceEditModal(' . $experience->id . ',' . $experience->state_id . ',' . $experience->city_id . ');">' . __('Edit') . '</a>
-                                <a class="dropdown-item" href="javascript:void(0);" onclick="delete_profile_experience(' . $experience->id . ');">' . __('Delete') . '</a>
-                            </div>
-                        </div>
-                        <div class="jobster-timeline-cricle">
-                                <i class="far fa-circle"></i>
-                        </div>
-                        <div class="jobster-timeline-info">
-                                <div class="dashboard-timeline-info">
-                                        <span class="jobster-timeline-time">'.$experience->date_start->format('d M, Y') . ' - ' . $date_end . '</span>
-                                        <h6 class="mb-2">' . $experience->title . '</h6>
-                                        <span>'.$experience->company.'</span>
-                                        <p class="mt-2">'.$experience->description.'</p>
-                                </div>
-                        </div>
-                </div>
-                <!--experience End-->';
+                //     $html .= '<!--experience Start-->
+                //     <div class="jobster-timeline-item" id="experience_' . $experience->id . '">
+                //         <div class="act-dropdown dropdown">
+                //             <button type="button" class="btn btn-dropdown dropdown-toggle" id="dropdownMenuExperience_' . $experience->id . '" data-toggle="dropdown" aria-expanded="false">
+                //                 <span class="iconmoon icon-recruiter-dots"></span>
+                //             </button>
+                //             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuExperience_' . $experience->id . '">
+                //                 <a class="dropdown-item" href="javascript:void(0);" onclick="showProfileExperienceEditModal(' . $experience->id . ',' . $experience->state_id . ',' . $experience->city_id . ');">' . __('Edit') . '</a>
+                //                 <a class="dropdown-item" href="javascript:void(0);" onclick="delete_profile_experience(' . $experience->id . ');">' . __('Delete') . '</a>
+                //             </div>
+                //         </div>
+                //         <div class="jobster-timeline-cricle">
+                //                 <i class="far fa-circle"></i>
+                //         </div>
+                //         <div class="jobster-timeline-info">
+                //                 <div class="dashboard-timeline-info">
+                //                         <span class="jobster-timeline-time">'.$experience->date_start->format('d M, Y') . ' - ' . $date_end . '</span>
+                //                         <h6 class="mb-2">' . $experience->title . '</h6>
+                //                         <span>'.$experience->company.'</span>
+                //                         <p class="mt-2">'.$experience->description.'</p>
+                //                 </div>
+                //         </div>
+                // </div>
+                // <!--experience End-->';
 
                 //     $html .= '<!--experience Start-->
                 //     <div class="form-card form-card-experience mb-3" id="experience_' . $experience->id . '">

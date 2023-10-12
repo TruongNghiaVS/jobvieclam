@@ -88,13 +88,8 @@
         });
         $('#country_id').on('change', function(e) {
             e.preventDefault();
-            $('#country_id').val({
-                {
-                    $user - > country_id ?? ""
-                }
-            }).trigger('chosen:updated');
-            filterStates(0);
-        });
+            $('#country_id').val({{$user->country_id ?? ""}}).trigger('chosen:updated');
+            filterStates(0);});
         $(document).on('change', '#state_id', function(e) {
             e.preventDefault();
             filterCities(0);

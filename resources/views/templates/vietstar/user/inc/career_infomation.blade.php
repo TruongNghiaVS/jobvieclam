@@ -221,7 +221,7 @@
                         </div>
                     </div>
                         <div class="form-group">
-                            <button id="submitBtn" type="submit" class="btn btn-primary submit-button">Submit</button>
+                            <button id="carrer_submitBtn" type="submit" class="btn btn-primary submit-button">Submit</button>
                         </div>
                     </div>
                 </form>

@@ -22,7 +22,9 @@
 
 <div class="row">
     <div class="col-md-12">
-        <div class="" id="education_div"></div>
+        <div class="" id="education_div">
+                
+        </div>
     </div>
 </div>
 

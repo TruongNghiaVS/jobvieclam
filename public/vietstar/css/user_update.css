@@ -598,7 +598,9 @@ i.fas.fa-heart.iconoutline {
     .card-body-profile-seeker { 
         padding-right:0
     }
-       
+    .modal-dialog.modal_user_dialog {
+        max-width: 98% !important;
+    }
 }
 
 
@@ -610,7 +612,9 @@ i.fas.fa-heart.iconoutline {
     .company-item-wrapper {
         width: calc(50% - 18px);
     }
-    
+    .card-body-profile-seeker {
+        padding-right: 0;
+    }
 }
 
 

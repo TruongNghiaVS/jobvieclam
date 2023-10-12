@@ -9,7 +9,7 @@
                             @if(Auth::user())
                             {{Auth::user()->printUserImage()}}
                             @else
-                            <img id="avatar" class="avatar" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar">
+                            <img id="avatar" class="" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar">
                             @endif
                     </div>
             </div>

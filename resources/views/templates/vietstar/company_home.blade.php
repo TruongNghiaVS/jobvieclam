@@ -18,16 +18,13 @@
         <div class="container company-content">
             @include('templates.vietstar.includes.company_dashboard_top')
             @include('templates.vietstar.includes.company_dashboard_stats')
-            <?php
+           {{--<?php
 
             if((bool)config('company.is_company_package_active')){        
 
             $packages = App\Package::where('package_for', 'like', 'employer')->get();
 
             $package = Auth::guard('company')->user()->getPackage();
-
-
-
             ?>
             <?php if(null !== $package){ ?>
 
@@ -39,7 +36,7 @@
 
             @include('templates.vietstar.includes.company_packages_new')
 
-            <?php }} ?>
+            <?php }} ?>--}}
         </div>
     
 </div>

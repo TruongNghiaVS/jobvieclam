@@ -5256,8 +5256,8 @@ div#industry_id_chosen {
     width: 100%;
 }
 .card-bio .img-avatar__wrapper img{
-    width: 70%;
-    height: 70%;
+    width: 150px;
+    height: 150px;
 }
 .form-user-profile .img-avatar img {
     height: 100%;

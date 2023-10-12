@@ -15,7 +15,7 @@
                             @else
                             <img id="avatar" class="avatar" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar">
                             @endif
-            </div>
+                </div>
             <div class="username" bis_skin_checked="1">
                 <p><a href="#">{{auth()->user()->name}}</a></p>
             </div>
@@ -84,14 +84,14 @@
                         </div>
                     </a>
                 </li>
-                <li class="sidebar-item {{ Request::url() == route('my.job.applications') || Request::url() == route('my.favourite.jobs')  ? 'active' : '' }}">
+                <li class="">
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <div class="d-flex w-100">
                             <span class="icon-edit-icon fs-24px me-2"></span>
                             <span class="side-bar-content"> Việc làm của tôi</span>
                         </div>
                     </a>
-                    <ul class="collapse list-unstyled sublist" id="pageSubmenu">
+                    <ul class="collapse list-unstyled sublist sidebar-item {{ Request::url() == route('my.job.applications') || Request::url() == route('my.favourite.jobs')  ? 'show' : '' }}"  id="pageSubmenu">
                         <li class="{{ Request::url() == route('my.job.applications') ? 'active' : '' }}">
                             <a href="{{ route('my.job.applications') }}" class="list-group-item list-group-item-action {{ Request::url() == route('my.job.applications') ? 'active' : '' }}">
                                 <div class="d-flex w-100">

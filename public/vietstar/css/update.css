@@ -1294,8 +1294,9 @@ footer .contact-detail p i.far {
 
 .listpgWraper {
     position: relative;
-    top: 76px;
+    top: 0;
     left: 0;
+    margin-top: 76px;
 }
 
 .listpgWraper-w {

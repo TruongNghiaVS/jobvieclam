@@ -372,7 +372,7 @@
 @media only screen and (max-width: 767px) {
 
   .listpgWraper.Jobpage {
-    top: 140px;
+    margin-top: 140px;
   }
 
 
@@ -795,6 +795,21 @@
     padding: 0 !important;
     width: 200px;
   }
+  .content .myads{
+    padding: 0;
+  }
+  .template-wrapper .col-tools {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .template-wrapper .col-template {
+    margin-top: 20px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+  }
 
   
 }
@@ -808,7 +823,7 @@
     width: 100%;
   }
   .listpgWraper.Jobpage {
-    top: 140px;
+    margin-top:140px ;
   }
   .page-heading-tool .mobile-filter {
     flex-direction: row;

@@ -493,14 +493,14 @@
 
 
                 <li>
-                    <a href="#company_sub_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <a href="{{route('company.listing')}}">
                         <div class="d-flex w-100">
                             <i class="bi bi-building fs-24px me-2"></i>
                             <span class="side-bar-content">{{__('Company')}}</span>
                         </div>
                     </a>
 
-                    <ul class="collapse list-unstyled sub_list" data-ref="findJob1" data-target="false" id="company_sub_list">
+                    <!-- <ul class="collapse list-unstyled sub_list" data-ref="findJob1" data-target="false" id="company_sub_list">
                         <li>
                             <a class="sub-item" href="{{route('about_us')}}">
                                 <div class="d-flex w-100">
@@ -529,7 +529,7 @@
                             </a>
                         </li>
 
-                    </ul>
+                    </ul> -->
                 </li>
 
 

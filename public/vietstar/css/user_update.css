@@ -4,7 +4,8 @@
     background-color: #f0f0f0;
 }
 .company-wrapper.company-list-wrapper {
-    top: 50px;
+    top: 0;
+    margin-top: 50px;
 }
 
 .content.addjob {
@@ -639,6 +640,13 @@ i.fas.fa-heart.iconoutline {
       .section-company-profile .socials .social {
         margin-right: 40px;
       }
+      li .group-button {
+        width: 100%;
+        flex-direction: column;
+      }
+      li .group-button .btn {
+        width: 100%;
+      }
       
 }
 
@@ -657,6 +665,13 @@ i.fas.fa-heart.iconoutline {
     .section-company-profile .company-profile {
         margin-bottom: 20px;
     }
+    li .group-button {
+        width: 100%;
+        flex-direction: column;
+      }
+      li .group-button .btn {
+        width: 100%;
+      }
 }
 
 

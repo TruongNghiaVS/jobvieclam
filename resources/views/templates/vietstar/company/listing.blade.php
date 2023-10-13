@@ -9,7 +9,6 @@
 <!-- Dashboard menu end -->
 
 
-@include('templates.vietstar.includes.company_dashboard_menu')
 
 <!-- Inner Page Title start -->
 

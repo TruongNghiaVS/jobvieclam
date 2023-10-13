@@ -275,7 +275,7 @@
                         <div class="col-md-6">
                             <div class="form-group {!! APFrmErrHelp::hasError($errors, 'first_name') !!}">
                                 <label for="">{{__('First Name')}}</label>
-                                {!! Form::text('first_name', null, array('class'=>'form-control', 'id'=>'first_name',
+                                {!! Form::text('first_name', null, array('class'=>'form-control cursor-pointer', 'id'=>'first_name',
                                 'placeholder'=>__('First Name'))) !!}
                                 {!! APFrmErrHelp::showErrors($errors, 'first_name') !!}
                             </div>
@@ -324,7 +324,7 @@
                             <div class="form-group {!! APFrmErrHelp::hasError($errors, 'nationality_id') !!}">
                                 <label for="">{{__('Nationality')}}</label>
                                 {!! Form::select('nationality_id', [''=>__('Select Nationality')]+$nationalities, null,
-                                array('class'=>'form-control form-select chosen', 'id'=>'nationality_id')) !!}
+                                array('class'=>'form-control form-select ', 'id'=>'nationality_id')) !!}
                                 {!! APFrmErrHelp::showErrors($errors, 'nationality_id') !!}
                             </div>
                         </div>

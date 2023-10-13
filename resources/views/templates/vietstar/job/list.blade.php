@@ -12,11 +12,11 @@
 <!-- Dashboard menu end -->
 
 <!-- Inner Page Title end -->
-<div class="listpgWraper">
+<div class="listpgWraper Jobpage">
 
     @include('templates.vietstar.job.inc.filters_job_wrapper')
 
-    <div class="container Jobpage">
+    <div class="container">
         <form action="{{route('job.list')}}" method="get">
             <!-- Search Result and sidebar start -->
             <div class="row">

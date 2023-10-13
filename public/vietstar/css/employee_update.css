@@ -111,8 +111,8 @@
     }
 
     a.px-auto.btn.btn-outline-primary{
-        width: 40% !important;
-        margin: 4px;
+        width: 30% !important;
+
     }
 
 }
@@ -133,6 +133,10 @@
     }
     a.px-auto.btn.btn-outline-primary {
         width:23% !important;
+    }
+    .modal-company-profile-dialog {
+        width: 90% !important;
+        max-width:90% !important;
     }
  
 }

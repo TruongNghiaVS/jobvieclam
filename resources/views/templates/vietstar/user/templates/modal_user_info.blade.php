@@ -1,3 +1,4 @@
+@if(Auth::user())
 <div class="modal fade" id="modal_user_info" tabindex="-1" role="dialog" aria-labelledby="modal_user_infoLabel" aria-hidden="true">
     <div class="modal-dialog modal_user_dialog" role="document">
         <div class="modal-content">
@@ -23,6 +24,8 @@
                             <div class="card-body card-body-profile-seeker" bis_skin_checked="1">
                                 <h5 class="card-title text-sub-color">Trung Đức Trần</h5>
                                 <p class="card-text justify-content-between align-items-center">
+
+                                
                                 {{ auth()->user()->getProfileSummary('summary') }}
                                 </p>
 
@@ -47,6 +50,7 @@
         </div>
     </div>
 </div>
+@endif
 @push('styles')
 <style>
     .modal-dialog.modal_user_dialog {

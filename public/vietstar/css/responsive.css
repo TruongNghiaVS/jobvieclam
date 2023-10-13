@@ -371,6 +371,11 @@
 /* Extra small devices (phones, 767px and down) */
 @media only screen and (max-width: 767px) {
 
+  .listpgWraper.Jobpage {
+    top: 140px;
+  }
+
+
   #mobile-sidebar-main-nav {
     display: block;
   }
@@ -488,10 +493,11 @@
     padding: 10px 20px;
   }
 
+
   .filters-job-wrapper-mobile .close-filter-box-mobile {
     position: absolute;
     top: 0px;
-    right: 0;
+    right: 13px;
     height: 40px;
     width: 40px;
     display: flex;
@@ -584,12 +590,20 @@
 
   .page-heading-tool.job-detail.mobile {
     display: block;
+    width: 100%;
+    padding: 20px;
+  }
+  .page-heading-tool.job-detail.mobile input {
+    width: 100%;
   }
 
 
 
   .page-heading-tool.job-detail.mobile .mobile-filter {
-    justify-content: flex-end;
+    justify-content:space-between;
+  }
+  .page-heading-tool.job-detail.mobile .mobile-filter  button{
+    width: 20%;
   }
 
   .page-heading-tool.job-detail.mobile .btn-filter {
@@ -627,9 +641,7 @@
            ==Login==
 
     *************************************************/
-  .section-company-profile .company-profile {
-    display: block;
-  }
+ 
 
   .section-company-profile .box-content {
     max-width: unset
@@ -792,7 +804,16 @@
 /* Medium devices (landscape tablets, 600px and up) */
 @media only screen and (min-width: 768px) and (max-width: 992px) {
 
-
+  .page-heading-tool.job-detail.mobile input {
+    width: 100%;
+  }
+  .listpgWraper.Jobpage {
+    top: 140px;
+  }
+  .page-heading-tool .mobile-filter {
+    flex-direction: row;
+    justify-content: space-between;
+  }
   .main-menu {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
@@ -930,11 +951,17 @@
   }
 
   .page-heading-tool.job-detail.mobile {
-    display: none !important;
+    display: block !important;
+    padding: 20px;
   }
 
   .filters-job-wrapper-mobile {
-    display: none;
+      height: max-content;
+  }
+  .close-filter-box-mobile{
+    padding: 20px;
+    display: flex;
+    justify-content: end;
   }
 
   /************************************************
@@ -1024,7 +1051,9 @@
     width: 200px;
   }
 
-
+  .page-heading-tool.job-detail {
+    display: none;
+  }
 
 }
 
@@ -1035,6 +1064,10 @@
 
   .page-heading-tool.job-detail.mobile {
     display: none;
+  }
+
+  .page-heading-tool .search-job #search{
+    width: 100% !important;
   }
 
   .filters-job-wrapper-mobile {
@@ -1056,6 +1089,7 @@
   #mobile-sidebar-main-nav {
     display: none;
   }
+
 
 
 }

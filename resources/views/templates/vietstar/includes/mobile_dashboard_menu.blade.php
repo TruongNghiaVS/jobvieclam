@@ -148,9 +148,10 @@
         padding: 20px 20px;
         font-size: 1.1em;
         display: block;
+    }
+    #mobile-sidebar ul .sidebar-item   a {
         background-color: white;
     }
-
 
 
     #mobile-sidebar ul li a:hover {
@@ -684,8 +685,8 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item {{ Request::url() == route('company.detail', Auth::guard('company')->user()->slug) ? 'active' : '' }}">
-                    <a href="{{ route('company.detail', Auth::guard('company')->user()->slug) }}" class="list-group-item list-group-item-action ">
+                <li class="sidebar-item {{ Request::url() == route('company.detail', Auth::guard('company')->user()->slug) ? 'active' : '' }}" >
+                    <a href="#" class="list-group-item list-group-item-action " data-toggle="modal" data-target="#company_profile_modal">
                         <div class="d-flex w-100">
                             <span class="iconmoon icon-eye-icon fs-24px me-2"></span>
                             <span class="side-bar-content">{{__('View Public Profile')}}</span>

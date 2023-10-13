@@ -85,7 +85,7 @@
                             </div>
                         </a>
                 </li>
-                <li class="sidebar-item">
+                <li class="">
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <div class="d-flex w-100">
                             <span class="icon-edit-icon fs-24px me-2"></span>

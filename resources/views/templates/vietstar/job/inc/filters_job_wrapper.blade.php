@@ -55,14 +55,10 @@
         <div class="tool-wrapper">
             <div class="search-job">
                 <div class="form-horizontal">
-                    <div class="form-wrap">
-                        <div class="form-group form-keyword">
+                    <div class="row g-0">
+                        <div class="col-12">
                             <input type="search" class="keyword form-control" id="search" name="search" placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
-                        </div>
-                        <div class="form-group form-submit">
-                            <button class="btn-gradient" type="submit">
-                                Tìm kiếm
-                            </button>
+                            
                         </div>
                     </div>
                 </div>
@@ -70,6 +66,9 @@
             <div class="mobile-filter toollips">
                 <button type="button" class="btn btn-filter" id="#atcFilters-mobile" title="Lọc" onclick="openFilterJob_mobile()">
                     <i class="far fa-filter"></i> Lọc
+                </button>
+                <button class="btn btn-primary" type="submit">
+                    <i class="bi bi-search text-white"></i>
                 </button>
             </div>
         </div>

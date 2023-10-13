@@ -13,7 +13,7 @@
             <i class="bi bi-lightbulb"></i>
             <p>Tips</p>
         </div>
-        <div class="right-action__link-edit" ><a data-toggle="modal" data-target="#changepassword"><i class="bi bi-pen"></i>Chỉnh sửa</a></div>
+        <div class="right-action__link-edit" ><a data-toggle="modal" data-target="#changepassword"><i class="bi bi-pen"></i>Đổi mật khẩu</a></div>
         <div class="right-action__link-edit-mobile"><a data-toggle="modal" data-target="#changepassword"><i class="bi bi-pen"></i></a></div>
     </div>
 </div>
@@ -57,8 +57,7 @@
                       <i class="bi bi-lock"></i> Password
                       </strong>
                     </td>
-                    <td class="text-primary password-box table_value">
-                        <input type="password" id="password" value="password">
+                    <td class="text-primary table_value">
                         <!-- <i class="toggle-password fa fa-fw fa-eye-slash"></i> -->
                     </td>
                   </tr>
@@ -81,12 +80,6 @@
             <div class="modal-body">
                 <form id="myFormpassword" class="needs-validation" novalidate>
                     <div class="form-group">
-                        <label for="Company_Name">Email</label>
-                           
-                            {!! Form::text('email', null, array('class'=>'form-control', 'id'=>'Company_Name', 'placeholder'=>__('Email'))) !!}
-                            {!! APFrmErrHelp::showErrors($errors, 'email') !!}  
-                    </div>
-                    <div class="form-group">
                         <label for="password">{{__('Password')}}</label>
                         {!! Form::password('password', array('class'=>'form-control', 'id'=>'pwdId',
                         'placeholder'=>__('Password'))) !!}
@@ -95,7 +88,7 @@
                     </div>
                     <div class="form-group">
                         <label for="cPwdId">{{__('Confirm Password')}}</label>
-                        <input type="password" id="cPwdId" class="form-control pwds"  required>
+                        <input type="password" id="cPwdId" class="form-control pwds" placeholder="{{__('Confirm Password')}}"  required>
                         <div id="cPwdValid" class="valid-feedback">Valid</div>
                         <div id="cPwdInvalid" class="invalid-feedback"></div>
                     </div>

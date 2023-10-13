@@ -5,7 +5,7 @@
 <!-- Header end -->
 <!-- Inner Page Title start -->
 @include('templates.vietstar.includes.mobile_dashboard_menu')
-<div class="listpgWraper messageWrap user-wrapper">
+<div class="messageWrap user-wrapper">
     @include('flash::message')
     @include('templates.vietstar.includes.default_sidebar_menu')
     <div class="content">

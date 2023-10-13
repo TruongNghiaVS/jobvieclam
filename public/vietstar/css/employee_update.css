@@ -111,8 +111,13 @@
     }
 
     a.px-auto.btn.btn-outline-primary{
-        width: 30% !important;
+        width: 40% !important;
+        margin: 5px;
 
+    }
+    .group-button-applycation a.px-auto.btn.btn-outline-primary{
+        margin: 3px;
+        width: 30% !important;
     }
 
 }

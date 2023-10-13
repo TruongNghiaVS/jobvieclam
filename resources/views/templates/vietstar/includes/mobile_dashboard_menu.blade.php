@@ -448,6 +448,8 @@
                     </a>
                 </li>
 
+                @if(Auth::user())
+
                 <li>
                     <a href="#cv_sub_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <div class="d-flex w-100">
@@ -490,7 +492,7 @@
                     </ul>
                 </li>
 
-
+                @endif
 
                 <li>
                     <a href="{{route('company.listing')}}">
@@ -646,7 +648,7 @@
                         </div>
                     </a>
                 </li>
-                <li class="{{ Request::url() == route('my.followings') ? 'active' : '' }}">
+                <li class="sidebar-item {{ Request::url() == route('my.followings') ? 'active' : '' }}">
                     <a href="{{route('my.followings')}}" class="list-group-item list-group-item-action {{ Request::url() == route('my.followings') ? 'active' : '' }}">
                         <div class="d-flex w-100">
                             <span class="icon-office-building-icon fs-24px me-2"></span>

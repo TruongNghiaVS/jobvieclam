@@ -32,7 +32,7 @@
                         <a href="{{ route('vietnam-salary') }}" class="nav-link {{ Request::url() == route('vietnam-salary')  ? 'header-active' : 'text-main-color' }}"
                         style="{{ Request::url() == route('vietnam-salary')  ? 'color:#981B1E;' : '' }}">{{__('Vietnam Salary')}}</a>
                     </li> -->
-
+                    @if(Auth::user())
                     <li class="has-child">
                         <a href="{{ route('my.profile') }}"
                             class="nav-link nav-link-parent">{{__('Profiles and CVs')}}</a>
@@ -65,6 +65,7 @@
 
                         </ul>
                     </li>
+                    @endif
                     <li class="has-child">
                         <a href="{{route('company.listing')}}" class="nav-link">{{__('Company')}}</a>
                     </li>

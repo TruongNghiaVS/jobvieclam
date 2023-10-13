@@ -647,6 +647,10 @@ i.fas.fa-heart.iconoutline {
       li .group-button .btn {
         width: 100%;
       }
+      li .group-button .btn.login-btn {
+        background-color: white;
+        color: var(--bs-primary);
+      }
       
 }
 
@@ -668,10 +672,14 @@ i.fas.fa-heart.iconoutline {
     li .group-button {
         width: 100%;
         flex-direction: column;
-      }
+    }
       li .group-button .btn {
         width: 100%;
-      }
+    }
+    li .group-button .btn.login-btn {
+        background-color: white;
+        color: var(--bs-primary);
+    }
 }
 
 

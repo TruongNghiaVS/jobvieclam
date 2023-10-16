@@ -13,6 +13,15 @@
 .company-wrapper .company-content {
     padding: 60px 0;
 }
+.posted-manager-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+.posted-manager-header a {
+    margin: 0  10px;
+}
 
 .badge.btn-dot{
     font-size: 15px;
@@ -34,22 +43,45 @@
 }
 #company-default-nav .nav-item {
     margin: 0 2px;
+    position: relative;
 }
 
 #company-default-nav .nav-item a{
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 500;
     transition: all .3s ease-in-out;
     cursor: pointer;
+    color: var(--text-main);
 }
 
-#company-default-nav .nav-item:hover {
-    border-bottom: 3px  solid var(--bs-primary); 
+
+#company-default-nav .nav-item::after{
+    content: "";
+    width: 100%;
+    height: 0;
+    background-color: var(--bs-primary);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+} 
+
+
+#company-default-nav .nav-item:hover::after {
+    border-bottom: 3px  solid var(--bs-primary);
+    top: calc(100% - 2px); 
 }
+
+#company-default-nav .nav-item.active  {
+    border-bottom: 3px  solid var(--bs-primary);
+}
+
 
 #company-default-nav .nav-item.active a {
     color: var(--bs-primary);
-    border-bottom: 3px  solid var(--bs-primary);
 }
 
 
@@ -85,6 +117,10 @@
 }
 .custom-control {
     margin: 0 10px ;
+}
+.title-manage {
+    font-size: 35px;
+    font-weight: 700;
 }
 
 @media only screen and (max-width: 767px) {

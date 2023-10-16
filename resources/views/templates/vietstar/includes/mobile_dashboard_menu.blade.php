@@ -731,7 +731,7 @@
 
                         <div class="d-flex w-100">
                         <span class="iconmoon icon-recruiter-profile fs-24px me-2"></span>
-                            <span class="side-bar-content">{{__('CV Management')}}</span>
+                            <span class="side-bar-content">{{__('Candidate Management')}}</span>
                         </div>
                     </a>
                 </li>

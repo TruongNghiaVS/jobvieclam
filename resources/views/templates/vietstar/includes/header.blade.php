@@ -53,7 +53,7 @@
                             <li>
                                 <a class="sub-item" href="{{route('application.manager')}}" {{$pointerCom}}><span
                                         class="iconmoon icon-recruiter-portfolio"></span>
-                                    {{__('CV Management')}}
+                                    {{__('Candidate Management')}}
                                 </a>
                             </li>
                             <li>
@@ -235,11 +235,15 @@
                             <li class="nav-item"><a href="{{route('company.home')}}" class="nav-link"><i
                                         class="jobicon fa fa-tachometer" aria-hidden="true"></i> {{__('Dashboard')}}</a>
                             </li>
-                            <li class="nav-item"><a href="{{ route('company.profile') }}" class="nav-link"><i
-                                        class="jobicon fa fa-user" aria-hidden="true"></i> {{__('Company Profile')}}</a>
+                            <li class="nav-item"><a href="#" data-toggle="modal" data-target="#company_profile_modal" class="nav-link">
+                                <i class="jobicon fa fa-user" aria-hidden="true"></i>  {{__('View Public Profile')}}</a>
                             </li>
-                            <li class="nav-item"><a href="{{ route('post.job') }}" class="nav-link"><i
-                                        class="jobicon fa fa-desktop" aria-hidden="true"></i> {{__('Post Job')}}</a>
+
+                            
+                            <li class="nav-item"><a href="{{ route('company.followers') }}" class="nav-link">
+                                <i class="jobicon bi bi-people-fill"></i>
+                                    {{__('Company Followers')}}
+                            </a>
                             </li>
                             <li class="nav-item"><a href="{{route('company.messages')}}" class="nav-link"><i
                                         class="jobicon fa fa-envelope" aria-hidden="true"></i> {{__('Messages')}}</a>

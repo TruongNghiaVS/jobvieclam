@@ -4074,8 +4074,10 @@ div#industry_id_chosen {
 
 .user-badge .dropdown_menu .nav-link .jobicon {
     position: absolute;
-    top: 10px;
-    left: 10px
+    top:7px;
+    left: 10px;
+    font-size: 17px;
+   
 }
 
 .user-badge .dropdown_menu .nav-link:hover {

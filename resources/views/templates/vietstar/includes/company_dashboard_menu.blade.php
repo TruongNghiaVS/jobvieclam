@@ -56,7 +56,7 @@
                 <li class="nav-item {{ Request::url() == route('company.profile') ? 'active' : '' }}">
                         <a href="{{route('company.profile') }}" class="nav-link list-group-item-action ">
                           
-                                {{__('Edit profile')}}
+                                {{__('Edit Account')}}
                            
                         </a>
                     </li>

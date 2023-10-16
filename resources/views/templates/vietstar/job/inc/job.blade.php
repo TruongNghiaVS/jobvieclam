@@ -25,12 +25,12 @@
                                         </div>
                                     </div>
                                 </div>
-
-
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="expiry_date">{{__('Deadline')}} <span class="required">*</span></label>
-                                        <input type="text" class="form-control" id="expiry_date" name="expiry_date" placeholder="Deadline" value="{{ $edit && isset($job) ? \Carbon\Carbon::parse($job->expiry_date)->format('d-m-Y') : \Carbon\Carbon::parse(old('expiry_date'))->format('d-m-Y') }}">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="expiry_date">{{__('Deadline')}} <span class="required">*</span></label>
+                                            <input type="text" class="form-control" id="expiry_date" name="expiry_date" placeholder="Deadline" value="{{ $edit && isset($job) ? \Carbon\Carbon::parse($job->expiry_date)->format('d-m-Y') : \Carbon\Carbon::parse(old('expiry_date'))->format('d-m-Y') }}">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">

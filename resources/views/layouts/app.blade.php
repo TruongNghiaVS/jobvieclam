@@ -32,6 +32,7 @@ if (!isset($seo)) {
     <link href="{{asset('/')}}vendor/bootstrap-date-time-picker/css/bootstrap-datetimepicker.min.css" rel="stylesheet"
         type="text/css" />
     <link href="{{ asset('/vietstar/css/default_sidebar.css')}}" rel="stylesheet">
+    <link href="{{ asset('/vietstar/css/login.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/update.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/user_update.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/employee_update.css')}}" rel="stylesheet">

@@ -10,56 +10,25 @@
 
 <!-- Inner Page Title start -->
 @include('templates.vietstar.includes.mobile_dashboard_menu')
-@include('templates.vietstar.includes.inner_page_title', ['page_title'=>__('Đăng ký')])
 
 <!-- Inner Page Title end -->
 
 <div class="login-form">
     <div class="container">
-        <div class="row g-0 login-swapper">
-            <div class="col-6">
-                <div class="login-img-swapper">
-                    <div class="login-img-swapper__img">
-                    </div>
-                </div>
-            </div>
+        <div class="row g-0">
 
-            <div class="col-6">
+            <div class="col-12">
                 <div class="useraccountwrap">
-
-                    <div class="userccount">
-
-                        <div class="userbtns">
-
-                            <ul class="nav nav-tabs">
-
-                                <?php
-
-                                $c_or_e = old('candidate_or_employer', 'candidate');
-
-                                ?>
-
-                                <li class="nav-item"><a class="nav-link {{($c_or_e == 'candidate')? 'active':''}}" data-toggle="tab" href="#candidate" aria-expanded="true">{{__('Candidate')}}</a>
-                                </li>
-
-                                <li class="nav-item"><a class="nav-link {{($c_or_e == 'employer')? 'active':''}}" data-toggle="tab" href="#employer" aria-expanded="false">{{__('Employer')}}</a>
-                                </li>
-
-                            </ul>
-
-                        </div>
-
-                        <div class="tab-content">
-
-                            <div id="candidate" class="formpanel tab-pane {{($c_or_e == 'candidate')? 'active':''}}">
+                    <div class="userccount-register shadow">
+                            <div id="candidate" class="formpanel">
 
                                 <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                                     <h3>Đăng Ký</h3>
                                     {{ csrf_field() }}
 
                                     <input type="hidden" name="candidate_or_employer" value="candidate" />
-
-                                    <div class="formrow{{ $errors->has('first_name') ? ' has-error' : '' }}">
+                                <div class="row">
+                                    <div class="formrow col {{ $errors->has('first_name') ? ' has-error' : '' }}">
 
                                         <input type="text" name="first_name" class="form-control" required="required" placeholder="{{__('First Name')}}" value="{{old('first_name')}}">
 
@@ -67,21 +36,22 @@
                                             <strong>{{ $errors->first('first_name') }}</strong> </span> @endif
                                     </div>
 
-                                    <div class="formrow{{ $errors->has('middle_name') ? ' has-error' : '' }}">
+                                    <!-- <div class="formrow col {{ $errors->has('middle_name') ? ' has-error' : '' }}">
 
                                         <input type="text" name="middle_name" class="form-control" placeholder="{{__('Middle Name')}}" value="{{old('middle_name')}}">
 
                                         @if ($errors->has('middle_name')) <span class="help-block">
                                             <strong>{{ $errors->first('middle_name') }}</strong> </span> @endif
-                                    </div>
-
-                                    <div class="formrow{{ $errors->has('last_name') ? ' has-error' : '' }}">
-
+                                    </div> -->
+                                    <div class="formrow col {{ $errors->has('last_name') ? ' has-error' : '' }}">
+    
                                         <input type="text" name="last_name" class="form-control" required="required" placeholder="{{__('Last Name')}}" value="{{old('last_name')}}">
-
+    
                                         @if ($errors->has('last_name')) <span class="help-block">
                                             <strong>{{ $errors->first('last_name') }}</strong> </span> @endif
                                     </div>
+                                </div>
+
 
                                     <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }}">
 
@@ -159,8 +129,7 @@
                                 </form>
 
                             </div>
-
-                            <div id="employer" class="formpanel tab-pane fade {{($c_or_e == 'employer')? 'active':''}}">
+                        {{--    <div id="employer" class="formpanel tab-pane fade">
 
                                 <form class="form-horizontal" method="POST" action="{{ route('company.register') }}">
                                     <h3>Đăng Ký</h3>
@@ -248,9 +217,8 @@
 
                                 </form>
 
-                            </div>
-
-                        </div>
+                            </div>--}}
+                  
 
                         <!-- sign up form -->
 

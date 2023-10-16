@@ -1,5 +1,5 @@
 @include('templates.vietstar.auth.user.modal_login')
-
+@include('templates.vietstar.auth.user.modal_logup')
 <!-- Navigation bar -->
 <nav class="navbar navbar-expand-xl navbar-light bg-light shadow-sm fixed-top" id="main-nav">
     <!-- <div class="container-navbar"> -->
@@ -261,16 +261,19 @@
                 </div>
                 <!-- end user-badge -->
                 @endif
-            @if(!Auth::user() && !Auth::guard('company')->user())
-            <div class="d-flex gap-10 my-2 group-button">
-                <a class="btn btn-primary login-btn" data-toggle="modal" data-target="#user_login_Modal" class="nav-link">{{__('Log in')}}</a>
-                {{--<a class="btn btn-primary" href="{{route('register')}}" class="nav-link
-                register">{{__('Đăng ký')}}</a> --}}
-                <a class="btn btn-primary" href="{{route('job.seeker.list')}}"
+                <div class="d-flex gap-10 my-2 group-button">
+                    @if(!Auth::user() && !Auth::guard('company')->user())
+                    <a class="nav-link login_link btn btn-primary login-btn" data-toggle="modal" data-target="#user_login_Modal" >{{__('Log in')}} / {{__('Đăng ký')}} </a>
+                    {{--<a class="btn btn-primary" href="{{route('register')}}" class="nav-link
+                    register">{{__('Đăng ký')}}</a> --}}
+                    @endif
+
+                    @if(Auth::guard('company')->user())
+                    <a class="btn btn-primary" href="{{route('job.seeker.list')}}"
                     class="nav-link">{{__('Find candidates')}}</a>
+                    @endif
+                </div>
             </div>
-            @endif
-        </div>
         <!-- end collapse -->
 
 

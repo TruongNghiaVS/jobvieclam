@@ -53,11 +53,12 @@
                     </div>
                     <!-- sign up form -->
                     <div class="newuser">{{__('New User')}}?
-                        <a href="{{route('register')}}">{{__('Register Here')}}</a>
+                        <a href="#" data-toggle="modal" data-target="#user_logup_Modal" data-dismiss="modal" aria-label="Close">{{__('Register Here')}}</a>
                     </div>
                     <!-- sign up form end-->
                 </div>
             </div>
+
         </div>
     </div>
 </div>

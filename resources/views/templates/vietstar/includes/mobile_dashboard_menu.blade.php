@@ -802,11 +802,15 @@
             @elseif(!Auth::user() && !Auth::guard('company')->user())
             <li>
                 <div class="d-flex gap-10 my-2 group-button">
-                    <a class="btn btn-primary login-btn" href="{{route('login')}}" class="nav-link">{{__('Log in')}}</a>
+                <a class="nav-link login_link btn btn-primary login-btn" data-toggle="modal" data-target="#user_login_Modal" >{{__('Log in')}} / {{__('Đăng ký')}} </a>
                     {{--<a class="btn btn-primary my-2" href="{{route('register')}}" class="nav-link
                     register">{{__('Đăng ký')}}</a> --}}
+
+                    @if(Auth::guard('company')->user())
                     <a class="btn btn-primary my-2" href="{{route('job.seeker.list')}}" class="nav-link">{{__('Find candidates')}}</a>
+                    @endif
                 </div>
+
             </li>
             @endif
 

@@ -10,13 +10,13 @@
                     <div class="body" bis_skin_checked="1">
                         <ul class="company-account-information">
                             <li>
-                                <p class="number intNumPostNoUse">0</p><a class="title" href="https://careerbuilder.vn/vi/employers/hrcentral/reports/orders_available">Vị trí chưa sử dụng</a>
+                                <p class="number intNumPostNoUse">0</p><a class="title" href="#">Vị trí chưa sử dụng</a>
                             </li>
                             <li>
-                                <p class="number orderNew">0</p><a class="title" href="https://careerbuilder.vn/vi/employers/hrcentral/reports/orders_available">Đơn hàng đang sử dụng</a>
+                                <p class="number orderNew">0</p><a class="title" href="#">Đơn hàng đang sử dụng</a>
                             </li>
                             <li>
-                                <p class="number JskNew">0</p><a class="title" href="https://careerbuilder.vn/vi/employers/hrcentral/manageresume">Ứng viên ứng tuyển</a>
+                                <p class="number JskNew">0</p><a class="title" href="#">Ứng viên ứng tuyển</a>
                             </li>
                         </ul>
                     </div>
@@ -32,13 +32,13 @@
                     <div class="body" bis_skin_checked="1">
                         <ul class="company-account-information">
                             <li>
-                                <p class="number intNumPostNoUse">0</p><a class="title" href="https://careerbuilder.vn/vi/employers/hrcentral/reports/orders_available">Vị trí chưa sử dụng</a>
+                                <p class="number intNumPostNoUse">0</p><a class="title" href="#">Vị trí chưa sử dụng</a>
                             </li>
                             <li>
-                                <p class="number orderNew">0</p><a class="title" href="https://careerbuilder.vn/vi/employers/hrcentral/reports/orders_available">Đơn hàng đang sử dụng</a>
+                                <p class="number orderNew">0</p><a class="title" href="#">Đơn hàng đang sử dụng</a>
                             </li>
                             <li>
-                                <p class="number JskNew">0</p><a class="title" href="https://careerbuilder.vn/vi/employers/hrcentral/manageresume">Ứng viên ứng tuyển</a>
+                                <p class="number JskNew">0</p><a class="title" href="#">Ứng viên ứng tuyển</a>
                             </li>
                         </ul>
                     </div>
@@ -89,13 +89,13 @@
                     <div class="body" bis_skin_checked="1">
                         <ul class="company-account-information">
                             <li>
-                                <p class="number intNumPostNoUse">0</p><a class="title" href="https://careerbuilder.vn/vi/employers/hrcentral/reports/orders_available">Vị trí chưa sử dụng</a>
+                                <p class="number intNumPostNoUse">0</p><a class="title" href="#">Vị trí chưa sử dụng</a>
                             </li>
                             <li>
-                                <p class="number orderNew">0</p><a class="title" href="https://careerbuilder.vn/vi/employers/hrcentral/reports/orders_available">Đơn hàng đang sử dụng</a>
+                                <p class="number orderNew">0</p><a class="title" href="#">Đơn hàng đang sử dụng</a>
                             </li>
                             <li>
-                                <p class="number JskNew">0</p><a class="title" href="https://careerbuilder.vn/vi/employers/hrcentral/manageresume">Ứng viên ứng tuyển</a>
+                                <p class="number JskNew">0</p><a class="title" href="#">Ứng viên ứng tuyển</a>
                             </li>
                         </ul>
                     </div>

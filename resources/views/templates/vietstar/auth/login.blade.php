@@ -4,12 +4,10 @@
 @include('templates.vietstar.includes.header')
 <!-- Header end -->
 @include('templates.vietstar.includes.mobile_dashboard_menu')
-@include('templates.vietstar.includes.inner_page_title', ['page_title'=>__('Đăng nhập')])
-<div class="login-form">
+<div class="login-form shadow">
     <div class="container">
         @include('flash::message')
-
-        <div class="row g-0 login-swapper">
+        <div class="row g-0 login-swapper shadow">
             <div class="col-6">
                 <div class="login-img-swapper">
                     <div class="login-img-swapper__img">
@@ -19,20 +17,11 @@
             <div class="col-6">
                 <div class="useraccountwrap">
                     <div class="userccount">
-                        <div class="userbtns">
-                            <ul class="nav nav-tabs login-nav-tabs">
-                                <?php
-                                $c_or_e = old('candidate_or_employer', 'candidate');
-                                ?>
-                                <li class="nav-item"><a class="nav-link {{($c_or_e == 'candidate')? 'active':''}}" data-toggle="tab" href="#candidate" aria-expanded="true">{{__('Candidate')}}</a>
-                                </li>
-                                <li class="nav-item"><a class="nav-link {{($c_or_e == 'employer')? 'active':''}}" data-toggle="tab" href="#employer" aria-expanded="false">{{__('Employer')}}</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tab-content">
-                            <div id="candidate" class="formpanel tab-pane {{($c_or_e == 'candidate')? 'active':''}}">
-                                <h3>Đăng nhập</h3>
+                        
+                      
+                          {{--  
+                            <div id="candidate" class="formpanel tab-pane">
+                                <h3>{{__('Employers')}} {{__('Employers')}}</h3>
                                 <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="candidate_or_employer" value="candidate" />
@@ -74,16 +63,18 @@
                                     <a href="{{ url('login/jobseeker/google')}}" class="gp"><i class="fab fa-google"></i>
                                         <span>Google</span>
                                     </a>
-                                    {{--<a href="{{ url('login/jobseeker/twitter')}}" class="tw"><i class="fab fa-twitter"></i> <span>Twitter</span></a>--}}
+                                    <!-- <a href="{{ url('login/jobseeker/twitter')}}" class="tw"><i class="fab fa-twitter"></i> <span>Twitter</span></a> -->
                                 </div>
                                 <!-- sign up form -->
                                 <div class="newuser">{{__('New User')}}?
                                     <a href="{{route('register')}}">{{__('Register Here')}}</a>
                                 </div>
                                 <!-- sign up form end-->
-                            </div>
-                            <div id="employer" class="formpanel tab-pane fade {{($c_or_e == 'employer')? 'active':''}}">
-                                <h3>Đăng nhập</h3>
+                            </div> 
+                            --}}
+
+                            <div id="employer" class="formpanel">
+                                <h3>{{__('Employers')}} / {{__('Login')}}</h3>
                                 <form class="form-horizontal" method="POST" action="{{ route('company.login') }}">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="candidate_or_employer" value="employer" />
@@ -133,7 +124,7 @@
                                 </div>
                                 <!-- sign up form end-->
                             </div>
-                        </div>
+                 
                         <!-- login form -->
                     </div>
                 </div>

@@ -15,7 +15,7 @@
 
 <div class="login-form">
     <div class="container">
-        <div class="row g-0">
+        <div class="row g-0 ">
 
             <div class="col-12">
                 <div class="useraccountwrap">
@@ -129,11 +129,11 @@
 
                             </form>
 
-                        </div>
-                        <div id="employer" class="formpanel tab-pane fade">
+                        </div> --}}
+                        <div id="employer" class="formpanel">
 
                             <form class="form-horizontal" method="POST" action="{{ route('company.register') }}">
-                                <h3>Đăng Ký</h3>
+                                <h3>{{__('Employers')}} / {{__('Logup')}}</h3>
                                 {{ csrf_field() }}
 
                                 <input type="hidden" name="candidate_or_employer" value="employer" />
@@ -218,7 +218,7 @@
 
                             </form>
 
-                        </div>--}}
+                        </div>
 
 
                         <!-- sign up form -->

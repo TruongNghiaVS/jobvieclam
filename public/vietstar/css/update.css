@@ -5745,6 +5745,7 @@ div#industry_id_chosen {
     width: 36px;
     text-align: center;
     background-color: #fff;
+    z-index: 2;
 }
 .modal .close:hover {
     color: var(--bs-primary);

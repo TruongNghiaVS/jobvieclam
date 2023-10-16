@@ -5484,6 +5484,7 @@ ul.skillslist li a:hover {
 
 .newuser a {
 	font-weight: 600;
+	color: var(--bs-primary);
 }
 
 .userbtns .nav-tabs {

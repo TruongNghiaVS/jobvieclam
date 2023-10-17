@@ -6,38 +6,38 @@
 
 
 <!-- Dashboard menu start -->
-@include('templates.vietstar.includes.mobile_dashboard_menu')
+@include('templates.employers.includes.mobile_dashboard_menu')
 <!-- Dashboard menu end -->
 <!-- Search start -->
-@include('templates.vietstar.includes.search')
+@include('templates.employers.includes.search')
 <!-- Search End -->
 
 <!-- Top Employers start -->
-@include('templates.vietstar.includes.home_top_partners')
+@include('templates.employers.includes.home_top_partners')
 <!-- Top Employers end -->
 
 <!-- advertising_banner -->
-@include('templates.vietstar.includes.banner')
+@include('templates.employers.includes.banner')
 <!-- advertising_banner -->
 
 <!-- Home job list start -->
-@include('templates.vietstar.includes.home_job_list')
+@include('templates.employers.includes.home_job_list')
 <!-- Home job list end -->
 
 
 <!-- Việc làm theo lĩnh vực -->
-@include('templates.vietstar.includes.home_jobs_by_industry')
+@include('templates.employers.includes.home_jobs_by_industry')
 <!-- Việc làm theo lĩnh vực End -->
 
 
 
 <!-- advertising_banner -->
-@include('templates.vietstar.includes.advertising_banner')
+@include('templates.employers.includes.advertising_banner')
 <!-- advertising_banner -->
 
 
 <!-- Thống kê việc làm theo ngành nghề -->
-@include('templates.vietstar.includes.section-employment-statistics')
+@include('templates.employers.includes.section-employment-statistics')
 <!-- Thống kê việc làm theo ngành nghề -->
 
 
@@ -107,11 +107,11 @@
 
 
 <!-- Testimonials start -->
-@include('templates.vietstar.includes.home_blogs')
+@include('templates.employers.includes.home_blogs')
 <!-- Testimonials End -->
 
 
-@include('templates.vietstar.includes.footer')
+@include('templates.employers.includes.footer')
 @endsection
 @push('styles')
 <link rel="stylesheet" href="{{ asset('/vietstar/css/chosen/chosen.min.css')}}">
@@ -207,5 +207,5 @@ $(document).on('click', '#btn-register-now', function() {
     });
 });
 </script>
-{{-- @include('templates.vietstar.includes.country_state_city_js') --}}
+{{-- @include('templates.employers.includes.country_state_city_js') --}}
 @endpush

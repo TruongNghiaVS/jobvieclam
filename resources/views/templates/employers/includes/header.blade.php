@@ -59,9 +59,9 @@
                         </ul>
                     </li>
                     @endif
-                    <li class="has-child">
+                    {{--<li class="has-child">
                         <a href="{{route('company.listing')}}" class="nav-link">{{__('Company')}}</a>
-                    </li>
+                    </li> --}}
                     {{-- <li class="has-child">
                         <a href="{{ route('my.profile') }}" class="nav-link nav-link-parent">{{__('News')}}</a>
                     <button type="button" class="btn-show-sub-menu" data-ref="findJob2" data-target="false"><span class="iconmoon icon-p-next"></span></button>

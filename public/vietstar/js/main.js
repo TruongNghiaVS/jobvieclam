@@ -586,6 +586,7 @@ reset_btn.addEventListener('click', () => {
 
 
 
+
 function openFilterJob_mobile() {
     document.querySelector(".filters-job-wrapper-mobile").classList.add("open");
 }

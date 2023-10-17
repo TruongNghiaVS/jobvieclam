@@ -22,7 +22,7 @@ if (!isset($seo)) {
     <!-- Custom Style -->
     <link href="{{ asset('/vietstar/css/style.css')}}" rel="stylesheet">
 
-
+    <link href="{{ asset('/vietstar/css/animation.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/fonts/icon-vietstart/style.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/recruiter.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/select2.min.css')}}" rel="stylesheet" />

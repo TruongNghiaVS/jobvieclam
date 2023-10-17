@@ -27,6 +27,11 @@
 @include('templates.employers.includes.introduce')
 <!-- introduce  end-->
 
+
+<!-- our_customer  start-->
+@include('templates.employers.includes.our_customer')
+<!-- our_customer  end-->
+
 @include('templates.employers.includes.footer')
 @endsection
 @push('styles')

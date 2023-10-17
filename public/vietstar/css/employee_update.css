@@ -128,7 +128,8 @@
 }
 .introduce {
     background-color: #b05659;
-    /* padding:35px 70px; */
+    padding:35px 70px;
+    width: 100%;
 }
 .card-head{
     display: flex;
@@ -189,6 +190,26 @@
 }
 .introduce_Swiper .swiper-pagination {
     bottom: -4px;
+}
+.our_customer {
+    padding: 80px 0;
+
+}
+.our_customer .group-company {
+    display: flex;
+    -webkit-display: flex;
+    -khtml-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin: 20px 0;
+}
+.our_customer .group-company img {
+    width: 170px;
+    height: 100px;
 }
 
 

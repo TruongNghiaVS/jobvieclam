@@ -128,7 +128,7 @@
 }
 .introduce {
     background-color: #b05659;
-    padding:35px 70px;
+    /* padding:35px 70px; */
 }
 .card-head{
     display: flex;

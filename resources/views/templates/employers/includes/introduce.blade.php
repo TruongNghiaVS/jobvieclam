@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="col-6 d-flex justify-content-center align-items-center">
-            <h4 class="text-center mb-3 text-uppercase fs-2 text-white">
+            <h4 class="text-center mb-3 text-uppercase fs-2 text-dark">
                 Phiên bản 2023 giúp đăng tuyển nhanh chóng và hiệu quả hơn
             </h4>
         </div>
@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row">
             <div class="col-4">
-                <div class="card p-4">
+                <div class="card p-4" data-aos="zoom-in">
                     <div class="card-head">
                         <i class="bi bi-blockquote-left"></i>
                         <h5>Quản lý đăng tuyển</h5>
@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="col-4">
-                <div class="card p-4">
+                <div class="card p-4" data-aos="zoom-in">
                     <div class="card-head">
                         <i class="bi bi-blockquote-left"></i>
                         <h5>Quản lý ứng viên</h5>
@@ -38,8 +38,8 @@
                 </div>
             </div>
             <div class="col-4">
-                <div class="card p-4">
-                    <div class="card-head">
+                <div class="card p-4" data-aos="zoom-in">
+                    <div class="card-head" >
                         <i class="bi bi-blockquote-left"></i>
                         <h5>Quảng cáo đa nền tảng</h5>
                     </div>
@@ -51,7 +51,7 @@
         </div>
     </div>
 
-    <div class="introduce__slide container">
+    <div class="introduce__slide">
         <div class="row">
             <div class="swiper introduce_Swiper">
                 <div class="swiper-wrapper">

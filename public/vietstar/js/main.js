@@ -512,6 +512,42 @@ function swiperSlider() {
 
 
 
+     if ($('.mySwiper').length) {
+        var allJobsSwiper = new Swiper(".mySwiper", {
+            autoplay: {
+                delay: 5000,
+            },
+        
+            
+            loop: true,
+            speed: 1000,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    }
+
+
+    if ($('.introduce_Swiper').length) {
+        var introduce_Swiper = new Swiper(".introduce_Swiper", {
+            autoplay: {
+                delay: 5000,
+            },
+            loop: true,
+            speed: 1000,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true
+            },
+        });
+    }
+    
+
     if ($('.slider-hero-banner').length) {
         var sliderHeroBanner = new Swiper(".slider-hero-banner", {
             autoplay: {

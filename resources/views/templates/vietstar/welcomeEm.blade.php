@@ -23,6 +23,9 @@
 <!-- Product and service  end-->
 
 
+<!-- introduce  start-->
+@include('templates.employers.includes.introduce')
+<!-- introduce  end-->
 
 @include('templates.employers.includes.footer')
 @endsection

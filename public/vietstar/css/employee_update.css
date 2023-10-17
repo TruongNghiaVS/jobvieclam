@@ -126,6 +126,71 @@
 .section_postnow {
     padding: 40px 0;
 }
+.introduce {
+    background-color: #b05659;
+    padding:35px 70px;
+}
+.card-head{
+    display: flex;
+    padding: 10px 20px;
+    font-size: 40px;
+}
+
+.card-head i {
+    margin-right: 10px;
+    color: var(--bs-primary);
+    font-weight: 500;
+}
+.card-head h5 {
+    font-size: 23px;
+    margin-bottom: 0;
+    /* margin: 10px; */
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: 23px;
+    /* font-weight: 600; */
+    text-overflow: ellipsis;
+    line-height: 40px;
+    /* line-height: 40px;*/
+}
+.card-body {
+    padding-top: 0;
+}
+.card-body .card-text {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+}
+.introduce .card {
+    max-height: 200px;
+    overflow: hidden;
+}
+.introduce__slide  {
+    padding:30px 80px;
+}
+.introduce_Swiper {
+    width: 100%;
+    padding: 10px;
+}
+.introduce_Swiper  .swiper-slide{
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0 10px;
+}
+.introduce_Swiper  .swiper-slide img {
+    width: 100%;
+}
+.introduce_Swiper .swiper-pagination {
+    bottom: -4px;
+}
+
 
 @media only screen and (max-width: 767px) {
     #company-default-nav {

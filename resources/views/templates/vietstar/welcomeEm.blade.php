@@ -14,10 +14,13 @@
 
 
 
-
-<!-- Product and service -->
+<!-- Product and service  start-->
 @include('templates.employers.includes.all_product_service')
-<!-- Animation -->
+<!-- Product and service  end-->
+
+<!-- Product and service  start-->
+@include('templates.employers.includes.post_now')
+<!-- Product and service  end-->
 
 
 

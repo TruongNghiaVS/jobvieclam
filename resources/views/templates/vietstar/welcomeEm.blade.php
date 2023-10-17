@@ -12,31 +12,12 @@
 @include('templates.employers.includes.search')
 <!-- Search End -->
 
-<!-- Thống kê việc làm theo ngành nghề -->
-{{-- @include('templates.employers.includes.section-employment-statistics') --}}
-<!-- Thống kê việc làm theo ngành nghề -->
+
 
 
 <!-- Product and service -->
-{{--@include('templates.vietstar.includes.all_product_service')--}}
+@include('templates.employers.includes.all_product_service')
 <!-- Animation -->
-<!-- <div class="wrapper">
-    
-    <div class="block animatable bounceIn">bounceIn</div>
-    <div class="block animatable bounceInLeft">bounceInLeft</div>
-    <div class="block animatable bounceInRight">bounceInRight</div>
-    
-    <div class="block animatable fadeIn">fadeIn</div>
-    <div class="block animatable fadeInDown">fadeInDown</div>
-    <div class="block animatable fadeInUp">fadeInUp</div>
-    
-    <div class="block animatable moveUp">moveUp</div>
-    
-    <div class="block animatable fadeBgColor">fadeBgColor</div>
-</div> -->
-
-
-
 
 
 

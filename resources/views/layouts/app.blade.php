@@ -19,6 +19,8 @@ if (!isset($seo)) {
 
     <link href="{{ asset('/vietstar/css/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('/vietstar/css/swiper-bundle.min.css')}}" />
+        
+
     <!-- Custom Style -->
     <link href="{{ asset('/vietstar/css/style.css')}}" rel="stylesheet">
 

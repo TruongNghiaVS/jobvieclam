@@ -21,7 +21,7 @@ if (!isset($seo)) {
     <link rel="stylesheet" href="{{ asset('/vietstar/css/swiper-bundle.min.css')}}" />
     <!-- Custom Style -->
     <link href="{{ asset('/vietstar/css/style.css')}}" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="{{ asset('/vietstar/css/animation.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/fonts/icon-vietstart/style.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/recruiter.css')}}" rel="stylesheet">
@@ -51,7 +51,7 @@ if (!isset($seo)) {
     <script src="{{asset('/')}}js/popper.js"></script>
     <script src="{{asset('/')}}js/bootstrap.min.js"></script>
     <script src="{{ asset('/vietstar/js/jquery.multiselect.js')}}" type="text/javascript"></script>
-
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="{{asset('/')}}vendor/bootstrap-date-time-picker/js/bootstrap-datetimepicker.min.js"
         type="text/javascript"></script>
     <!-- Owl carousel -->

@@ -27,7 +27,7 @@ use Artisan;
 use App\CoverLetter;
 use App\Cms;
 
-class IndexController extends Controller
+class EmployerController extends Controller
 {
 
     use CompanyTrait;
@@ -56,7 +56,7 @@ class IndexController extends Controller
     public function index()
     {
        
-
+       
         $params = $this->params(request());
         $topCompanyIds = $this->getCompanyIdsAndNumJobs(4);
         $topFunctionalAreaIds = $this->getFunctionalAreaIdsAndNumJobs(32);
@@ -82,7 +82,7 @@ class IndexController extends Controller
         $industries = DataArrayHelper::langIndustriesArray();
 
         $seo = SEO::where('seo.page_title', 'like', 'front_index_page')->first();
-        return view(config('app.THEME_PATH').'.welcome')
+        return view(config('app.THEME_PATH').'.welcomeEm')
                         ->with('topCompanyIds', $topCompanyIds)
                         ->with('topFunctionalAreaIds', $topFunctionalAreaIds)
                         ->with('topCityIds', $topCityIds)

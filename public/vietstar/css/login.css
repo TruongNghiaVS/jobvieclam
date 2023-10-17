@@ -37,10 +37,7 @@
 	color: var(--bs-primary);
 }
 
-.group-button .nav-link:first-child{
-	text-decoration: underline;
 
-}
 
 .login-form {
 	padding: 50px 0;
@@ -118,9 +115,7 @@
 ,.useraccountwrap h3 {
     margin-bottom: 30px;
 }
-.login_link {
-	color: var(--bs-primary);
-}
+
 
 
 @media only screen and (max-width: 767px) {

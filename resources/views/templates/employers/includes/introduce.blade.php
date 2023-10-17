@@ -51,7 +51,7 @@
         </div>
     </div>
 
-    <div class="introduce__slide">
+    <div class="introduce__slide" data-aos="zoom-in-up">
         <div class="row">
             <div class="swiper introduce_Swiper">
                 <div class="swiper-wrapper">

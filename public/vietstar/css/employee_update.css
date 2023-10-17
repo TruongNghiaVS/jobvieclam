@@ -206,10 +206,15 @@
     align-items: center;
     flex-direction: row;
     margin: 20px 0;
+    flex-wrap: wrap;
 }
 .our_customer .group-company img {
     width: 170px;
     height: 100px;
+}
+
+.trust-by {
+    flex: 20%; 
 }
 
 
@@ -245,6 +250,31 @@
         margin: 3px;
         width: 30% !important;
     }
+    .all-product-service.cb-section {
+        margin-top: 60px !important;
+    }
+    .all-product-service .list-service .item {
+        flex-direction: column;
+    }
+    .all-product-service .list-service .item .image {
+        max-width:100%
+    }
+    .all-product-service .list-service .item .caption {
+        max-width:100%
+    }
+    .introduce {
+        padding: 0;
+    }
+    .introduce__slide {
+        display: none;
+    }
+    .our_customer .group-company {
+       
+        flex-wrap: wrap;
+    }
+    .trust-by {
+        flex: 50%; 
+    }
 
 }
 
@@ -268,6 +298,17 @@
     .modal-company-profile-dialog {
         width: 90% !important;
         max-width:90% !important;
+    }
+    .introduce__slide {
+        display: none;
+    }
+    .our_customer .group-company {
+        justify-content: center
+    }
+    .trust-by {
+        flex: 50%;
+        display: flex;
+        justify-content: center;
     }
  
 }

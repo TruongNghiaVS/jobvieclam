@@ -15,8 +15,6 @@
                 </div>
                 <div class="trust-by" bis_skin_checked="1"><img src="https://employer.vietnamworks.com/v2/img/partner/4.svg" alt="">
                 </div>
-            </div>
-            <div class="group-company aos-init aos-animate" data-aos="fade-in-up" data-aos-delay="300" bis_skin_checked="1">
                 <div class="trust-by" bis_skin_checked="1"><img src="https://employer.vietnamworks.com/v2/img/partner/10.svg" alt=""></div>
                 <div class="trust-by" bis_skin_checked="1"><img src="https://employer.vietnamworks.com/v2/img/partner/7.svg" alt=""></div>
                 <div class="trust-by" bis_skin_checked="1"><img src="https://employer.vietnamworks.com/v2/img/partner/6.svg" alt=""></div>
@@ -24,6 +22,7 @@
                 <div class="trust-by" bis_skin_checked="1"><img src="https://employer.vietnamworks.com/v2/img/partner/8.svg" alt="">
                 </div>
             </div>
+           
         </div>
     </div>
 </section>

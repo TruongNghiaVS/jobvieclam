@@ -1,11 +1,11 @@
 <section class="introduce cb-section">
     <div class="row">
-        <div class="col-4">
+        <div class="col-12 col-md-6 col-lg-4">
             <div class="model_box">
                 <img src="https://ntd.vieclam24h.vn/img/man_university.png" alt="">
             </div>
         </div>
-        <div class="col-6 d-flex justify-content-center align-items-center">
+        <div class="col-12 col-md-6  col-lg-8 d-flex justify-content-center align-items-center">
             <h4 class="text-center mb-3 text-uppercase fs-2 text-dark">
                 Phiên bản 2023 giúp đăng tuyển nhanh chóng và hiệu quả hơn
             </h4>
@@ -15,7 +15,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-4">
+            <div class="col-12 col-md-12 col-lg-4 p-2">
                 <div class="card p-4" data-aos="zoom-in">
                     <div class="card-head">
                         <i class="bi bi-blockquote-left"></i>
@@ -26,7 +26,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-md-12 col-lg-4 p-2">
                 <div class="card p-4" data-aos="zoom-in">
                     <div class="card-head">
                         <i class="bi bi-blockquote-left"></i>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-md-12 col-lg-4 p-2">
                 <div class="card p-4" data-aos="zoom-in">
                     <div class="card-head" >
                         <i class="bi bi-blockquote-left"></i>

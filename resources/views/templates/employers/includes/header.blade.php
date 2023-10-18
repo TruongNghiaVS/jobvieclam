@@ -1,5 +1,5 @@
-@include('templates.vietstar.auth.user.modal_login')
-@include('templates.vietstar.auth.user.modal_logup')
+@include('templates.employers.auth.user.modal_login')
+@include('templates.employers.auth.user.modal_logup')
 <!-- Navigation bar -->
 <nav class="navbar navbar-expand-xl navbar-light bg-light shadow-sm fixed-top" id="main-nav">
     <!-- <div class="container-navbar"> -->
@@ -219,7 +219,7 @@
             @endif
             <div class="d-flex gap-10 my-2 group-button">
                 @if(!Auth::user() && !Auth::guard('company')->user())
-                <a class="nav-link login-link" data-toggle="modal" data-target="#user_login_Modal">{{__('Log in')}} / {{__('Đăng ký')}} </a>
+                <a class="nav-link login-link" data-toggle="modal" data-target="#employer_login_Modal">{{__('Log in')}} / {{__('Đăng ký')}} </a>
                 <a class="btn btn-primary" href="{{route('index')}}" target="_blank">Dành cho {{__('Job Seeker')}}</a>
                 
                 {{--<a class="btn btn-primary" href="{{route('register')}}" class="nav-link

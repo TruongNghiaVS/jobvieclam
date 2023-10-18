@@ -1,16 +1,16 @@
 <!-- Modal -->
-<div class="modal fade" id="user_login_Modal" tabindex="-1" role="dialog" aria-labelledby="user_login_ModalLabel" aria-hidden="true">
+<div class="modal fade" id="employer_login_Modal" tabindex="-1" role="dialog" aria-labelledby="employer_login_ModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
             <div class="modal-body">
-                <div id="candidate" class="formpanel tab-pane ">
-                    <h3>Đăng nhập</h3>
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                <div id="employers" class="formpanel tab-pane ">
+                    <h3>{{__('Employers')}} / {{__('Login')}}</h3>
+                    <form class="form-horizontal" method="POST" action="{{ route('company.login') }}">
                         {{ csrf_field() }}
-                        <input type="hidden" name="candidate_or_employer" value="candidate" />
+                        <input type="hidden" name="candidate_or_employer" value="employer" />
                         <div class="formpanel">
                             <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }}">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="{{__('Email Address')}}">
@@ -53,7 +53,7 @@
                     </div>
                     <!-- sign up form -->
                     <div class="newuser">{{__('New User')}}?
-                        <a href="#" data-toggle="modal" data-target="#user_logup_Modal" data-dismiss="modal" aria-label="Close">{{__('Register Here')}}</a>
+                        <a href="#" data-toggle="modal" data-target="#employer_logup_Modal" data-dismiss="modal" aria-label="Close">{{__('Register Here')}}</a>
                     </div>
                     <!-- sign up form end-->
                 </div>

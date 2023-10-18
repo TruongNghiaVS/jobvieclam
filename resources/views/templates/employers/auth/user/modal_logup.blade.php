@@ -9,7 +9,7 @@
                 <div id="employer" class="formpanel">
 
                     <form class="form-horizontal" method="POST" action="{{ route('company.register') }}">
-                        <h3>{{__('Employers')}} / {{__('Logup')}}</h3>
+                        <h3>{{__('Employers')}} / {{__('Register')}}</h3>
                         {{ csrf_field() }}
 
                         <input type="hidden" name="candidate_or_employer" value="employer" />

@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="col-12 col-md-6  col-lg-8 d-flex justify-content-center align-items-center">
-            <h4 class="text-center mb-3 text-uppercase fs-2 text-dark">
+            <h4 class="text-center mb-3 text-uppercase fs-2 text-primary">
                 Phiên bản 2023 giúp đăng tuyển nhanh chóng và hiệu quả hơn
             </h4>
         </div>

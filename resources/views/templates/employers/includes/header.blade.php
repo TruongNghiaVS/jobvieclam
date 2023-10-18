@@ -219,7 +219,7 @@
             @endif
             <div class="d-flex gap-10 my-2 group-button">
                 @if(!Auth::user() && !Auth::guard('company')->user())
-                <a class="nav-link btn btn-primary login-btn" data-toggle="modal" data-target="#user_login_Modal">{{__('Log in')}} / {{__('Đăng ký')}} </a>
+                <a class="nav-link login-link" data-toggle="modal" data-target="#user_login_Modal">{{__('Log in')}} / {{__('Đăng ký')}} </a>
                 <a class="btn btn-primary" href="{{route('index')}}" target="_blank">Dành cho {{__('Job Seeker')}}</a>
                 
                 {{--<a class="btn btn-primary" href="{{route('register')}}" class="nav-link

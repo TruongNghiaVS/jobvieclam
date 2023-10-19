@@ -90,7 +90,8 @@
                     style="{{ Request::url() == route('cms', $top_menu->page_slug)  ? 'color:#981B1E;' : '' }}">{{ $cmsContent->page_title }}</a>
                     </li>
                     @endforeach --}}
-                    <li class="has-child">
+                    {{-- 
+                        <li class="has-child">
                         <a href="{{ route('blogs') }}" class="nav-link nav-link-parent" {{ Request::url() == route('blogs') ? 'header-active' : 'text-main-color' }}" style="{{ Request::url() == route('blogs')  ? 'color:#981B1E;' : '' }}">{{__('Blog')}}
                         </a>
                         @php($categories = \App\Blog_category::get())
@@ -104,7 +105,8 @@
                             </li>
                             @endforeach
                         </ul>
-                    </li>
+                    </li> 
+                    --}}
 
                     <!-- <li><a href="{{ route('contact.us') }}"
                             class="nav-link  {{ Request::url() == route('contact.us') ? 'header-active' : 'text-main-color' }}"

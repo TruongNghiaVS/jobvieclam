@@ -227,11 +227,6 @@
     align-items: center;
     width: 100%;
 }
-.view-all a {
-    padding: 10px;
-}
-
-
 
 @media only screen and (max-width: 767px) {
     #company-default-nav {

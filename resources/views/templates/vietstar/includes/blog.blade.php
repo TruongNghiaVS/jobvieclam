@@ -69,7 +69,7 @@
                 <div class="cb-title" bis_skin_checked="1">
                     <h2><a href="#" title="Bí quyết tìm việc">Bí quyết tìm việc</a></h2>
                 </div>
-                <div class="view-all" bis_skin_checked="1"><a href="#" title="Bí quyết tìm việc">Xem thêm <em class="mdi mdi-arrow-right"></em></a></div>
+                
             </div>
             <div class="row align-items-start ">
                 <div class="col-md-6 col-lg-4 mb-4 ">
@@ -141,6 +141,7 @@
                     </div>
                 </div>
             </div>
+            <div class="show-more" bis_skin_checked="1"><a href="#" class="btn btn-secondary show-more-btn " title="Bí quyết tìm việc">Xem thêm <em class="mdi mdi-arrow-right"></em></a></div>
         </div>
     </section>
 </div>

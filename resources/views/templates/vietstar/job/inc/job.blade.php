@@ -1,4 +1,4 @@
-<h5  class="fs-3  text-primary">{{__('Job Details')}}</h5>
+<h5 class="fs-3  text-primary">{{__('Job Details')}}</h5>
 @if(isset($job))
 {!! Form::model($job, array('method' => 'put', 'route' => array('update.front.job', $job->id), 'class' => 'form')) !!}
 {!! Form::hidden('id', $job->id) !!}
@@ -33,54 +33,106 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
 
+                                <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="WFH">{{__('WFH')}} <span class="required">*</span></label>
+
                                             <div class="d-flex">
-                                                <div class="form-check m-2">
-                                                    <input class="form-check-input" type="radio" name="WFH" id="WFH1" >
-                                                    <label class="form-check-label" for="WFH1" >
-                                                        Làm từ xa
-                                                    </label>
-                                                </div>
-                                                <div class="form-check m-2">
-                                                    <input class="form-check-input" type="radio" name="WFH" id="WFH2" checked >
+                                                <div class="form-check ">
+                                                    <input class="form-check-input" type="radio" name="WFH" id="WFH2" checked>
                                                     <label class="form-check-label" for="WFH2">
                                                         Mặc dịnh
                                                     </label>
-                                                </div>    
+                                                </div>
+                                                &nbsp;&nbsp;&nbsp;
+                                                <div class="form-check ">
+                                                    <input class="form-check-input" type="radio" name="WFH" id="WFH1">
+                                                    <label class="form-check-label" for="WFH1">
+                                                        Làm từ xa
+                                                    </label>
+                                                </div>
                                             </div>
-    
+
                                         </div>
                                     </div>
                                 </div>
+
+
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="d-block">{{__('Placement of work')}} <span class="required">*</span></label>
+                                            <input class="form-check-input" type="radio" id="same_add_yes" name="pow" checked value={{APP\Job::SAME_COMPANY_ADD_YES}} {{$edit && $job->is_same_company_add == APP\Job::SAME_COMPANY_ADD_YES ? "checked" : ""}}>
+                                            <label class="form-check-label" for="same_add_yes">
+                                                {{__('Same as company address')}}
+                                            </label>
+                                            &nbsp;&nbsp;&nbsp;
+                                            <input class="form-check-input" type="radio" id="same_add_no" name="pow" value={{APP\Job::SAME_COMPANY_ADD_NO}} {{$edit && $job->is_same_company_add == APP\Job::SAME_COMPANY_ADD_NO ? "checked" : "" }}>
+                                            <label class="form-check-label" for="same_add_no">
+                                                {{__('Different address')}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group" id="pow_address" style="display:none;">
+                                            <label for="location">{{__('Address')}} <span class="required">*</span></label>
+                                            <input type="text" class="form-control" id="location" name="location" placeholder="{{__('Location')}}" value="{{ $edit && isset($job) ? $job->location : old('location') }}">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="description">{{ __('Job description') }} <span class="required">*</span></label>
+                                            {!! Form::textarea('description', null, array('class'=>'form-control', 'id'=>'description', 'placeholder'=>__('Job description'))) !!}
+                                            {!! APFrmErrHelp::showErrors($errors, 'description') !!}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="requirements">{{ __('Job requirements') }} <span class="required">*</span></label>
+                                            {!! Form::textarea('requirement', null, array('class'=>'form-control', 'id'=>'requirement', 'placeholder'=>__('Job requirements'))) !!}
+                                            {!! APFrmErrHelp::showErrors($errors, 'description') !!}
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
                                 <div class="row">
                                     <div class="col-md-6" id="salary_dd">
                                         <div class="row">
-                                        <div class="col-md-12" id="salary_type_dd">
-                                            <div class="form-group">
-                                                <label for="salary_type">{{__('Salary Type')}} <span class="required">*</span></label>
-                                                @php($salaryTypes = [''=>__("Select one")] + \App\Job::getSalaryTypes())
-                                                {{ Form::select('salary_type', $salaryTypes , $edit && isset($job) ? $job->salary_type : old('salary_type'), array('class'=>'form-control form-select', 'id'=>'salary_type')) }}
-                                                {!! APFrmErrHelp::showErrors($errors, 'salary_type') !!}
+                                            <div class="col-md-12" id="salary_type_dd">
+                                                <div class="form-group">
+                                                    <label for="salary_type">{{__('Salary Type')}} <span class="required">*</span></label>
+                                                    @php($salaryTypes = [''=>__("Select one")] + \App\Job::getSalaryTypes())
+                                                    {{ Form::select('salary_type', $salaryTypes , $edit && isset($job) ? $job->salary_type : old('salary_type'), array('class'=>'form-control form-select', 'id'=>'salary_type')) }}
+                                                    {!! APFrmErrHelp::showErrors($errors, 'salary_type') !!}
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-12" id="salary_from_dd" style="display:none;">
-                                            <div class="form-group">
-                                                <label for="salary_from">{{__('Salary From')}} <span class="required">*</span></label>
-                                                <input type="text" class="form-control currency-mask" id="salary_from" placeholder="{{__('Salary From')}}" value="{{ $edit ? __($job->salary_from) : old('salary_from') }}">
-                                                {!! APFrmErrHelp::showErrors($errors, 'salary_from') !!}
+                                            <div class="col-md-12" id="salary_from_dd" style="display:none;">
+                                                <div class="form-group">
+                                                    <label for="salary_from">{{__('Salary From')}} <span class="required">*</span></label>
+                                                    <input type="text" class="form-control currency-mask" id="salary_from" placeholder="{{__('Salary From')}}" value="{{ $edit ? __($job->salary_from) : old('salary_from') }}">
+                                                    {!! APFrmErrHelp::showErrors($errors, 'salary_from') !!}
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-12" id="salary_to_dd" style="display:none;">
-                                            <div class="form-group">
-                                                <label for="salary_range">{{__('Salary To')}} <span class="required">*</span></label>
-                                                <input type="text" class="form-control currency-mask" id="salary_to" placeholder="{{__('Salary To')}}" value="{{ $edit ? __($job->salary_to) : old('salary_to') }}">
-                                                {!! APFrmErrHelp::showErrors($errors, 'salary_to') !!}
+                                            <div class="col-md-12" id="salary_to_dd" style="display:none;">
+                                                <div class="form-group">
+                                                    <label for="salary_range">{{__('Salary To')}} <span class="required">*</span></label>
+                                                    <input type="text" class="form-control currency-mask" id="salary_to" placeholder="{{__('Salary To')}}" value="{{ $edit ? __($job->salary_to) : old('salary_to') }}">
+                                                    {!! APFrmErrHelp::showErrors($errors, 'salary_to') !!}
+                                                </div>
                                             </div>
-                                        </div>
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +143,7 @@
                                             <label for="Ownership">{{__('Functional Area')}} <span class="required">*</span></label>
                                             <select required class="form-control form-select chosen" id="functional_area_id" name="functional_area_id">
                                                 <option value="">{{ __('Select one') }}</option>
-    
+
                                                 @if(count($functionalAreas) > 0)
                                                 @foreach($functionalAreas as $key => $value)
                                                 <option {{ isset($job) && $job->functional_area_id == $key ? 'selected' : '' }} value="{{ $key }}">{{ $value }}</option>
@@ -135,7 +187,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="Gender">{{__('Gender')}} <span class="required">*</span></label>
-                                            <div class="d-flex"> 
+                                            <div class="d-flex">
                                                 <div class="form-check m-2">
                                                     <input class="form-check-input" type="radio" name="gender" id="gender1" checked>
                                                     <label class="form-check-label" for="gender1">
@@ -144,18 +196,18 @@
                                                 </div>
 
                                                 <div class="form-check m-2">
-                                                    <input class="form-check-input" type="radio" name="gender" id="gender2" >
+                                                    <input class="form-check-input" type="radio" name="gender" id="gender2">
                                                     <label class="form-check-label" for="gender2">
                                                         Nam
                                                     </label>
                                                 </div>
                                                 <div class="form-check m-2">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="gender3" >
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="gender3">
                                                     <label class="form-check-label" for="flexRadioDefault2">
                                                         Nữ
                                                     </label>
                                                 </div>
-                                            </div>    
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -185,7 +237,7 @@
                                         <div class="form-group">
                                             <label for="num_of_positions">{{__('Number of positions')}} <span class="required">*</span></label>&nbsp;&nbsp;&nbsp;<span class="text-danger" id="num_of_positions_error" class="error danger"></span>
                                             <input type="text" class="form-control" id="num_of_positions" name="num_of_positions" placeholder="{{__('Number of positions')}}" value="{{ $edit && isset($job) ? $job->num_of_positions : old('num_of_positions') }}">
-    
+
                                         </div>
                                     </div>
                                 </div>
@@ -213,59 +265,10 @@
                                         </div>
                                     </div>
                                 </div>
+
+
+                                
                                 <div class="row">
-                                    <div class="col-md-12">
-    
-    
-                                        <div class="form-group">
-                                            <label class="d-block">{{__('Placement of work')}} <span class="required">*</span></label>
-                                            <input class="form-check-input" type="radio" id="same_add_yes" name="pow" value={{APP\Job::SAME_COMPANY_ADD_YES}} {{$edit && $job->is_same_company_add == APP\Job::SAME_COMPANY_ADD_YES ? "checked" : ""}}>
-                                            <label class="form-check-label" for="same_add_yes">
-                                                {{__('Same as company address')}}
-                                            </label>
-                                            &nbsp;&nbsp;&nbsp;
-                                            <input class="form-check-input" type="radio" id="same_add_no" name="pow" value={{APP\Job::SAME_COMPANY_ADD_NO}} {{$edit && $job->is_same_company_add == APP\Job::SAME_COMPANY_ADD_NO ? "checked" : "" }}>
-                                            <label class="form-check-label" for="same_add_no">
-                                                {{__('Different address')}}
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group" id="pow_address" style="display:none;">
-                                            <label for="location">{{__('Address')}} <span class="required">*</span></label>
-                                            <input type="text" class="form-control" id="location" name="location" placeholder="{{__('Location')}}" value="{{ $edit && isset($job) ? $job->location : old('location') }}">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="description">{{ __('Job description') }} <span class="required">*</span></label>
-                                            {!! Form::textarea('description', null, array('class'=>'form-control', 'id'=>'description', 'placeholder'=>__('Job description'))) !!}
-                                            {!! APFrmErrHelp::showErrors($errors, 'description') !!}
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="requirements">{{ __('Job requirements') }} <span class="required">*</span></label>
-                                            {!! Form::textarea('requirement', null, array('class'=>'form-control', 'id'=>'requirement', 'placeholder'=>__('Job requirements'))) !!}
-                                            {!! APFrmErrHelp::showErrors($errors, 'description') !!}
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="row">
-
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="Benefits">{{ __('Job Benefits') }} <span class="required">*</span></label>
@@ -415,5 +418,7 @@
 
     });
 
-</script>
+
+
+</script> 
 @endpush

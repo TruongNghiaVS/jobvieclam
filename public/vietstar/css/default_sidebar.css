@@ -303,7 +303,7 @@ ul.CTAs a {
     border: unset;
 }
 
-.sidebar-default-nav li.sidebar-item{
+.sidebar-default-nav li{
     border-bottom:0.5px solid #cdc9c9;
 } 
 

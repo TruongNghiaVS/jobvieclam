@@ -156,9 +156,7 @@
     line-height: 40px;
     /* line-height: 40px;*/
 }
-.card-body {
-    padding-top: 0;
-}
+
 .card-body .card-text {
     text-align: center;
     font-size: 18px;
@@ -223,6 +221,17 @@
 .login-link:hover {
     text-decoration: underline;
 }
+.view-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.view-all a {
+    padding: 10px;
+}
+
+
 
 @media only screen and (max-width: 767px) {
     #company-default-nav {

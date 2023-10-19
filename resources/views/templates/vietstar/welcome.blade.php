@@ -87,7 +87,7 @@
 </section>
 
 <!-- Product and service -->
-@include('templates.vietstar.includes.all_product_service')
+{{-- @include('templates.vietstar.includes.all_product_service') --}}
 <!-- <section class="for-recruiter main-bg section-for-recruiter section-static">
     <div class="container">
         <div class="inner-content d-flex justify-content-between">

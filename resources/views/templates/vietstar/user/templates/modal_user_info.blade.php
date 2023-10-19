@@ -1,3 +1,4 @@
+
 @if(Auth::user())
 <div class="modal fade" id="modal_user_info" tabindex="-1" role="dialog" aria-labelledby="modal_user_infoLabel" aria-hidden="true">
     <div class="modal-dialog modal_user_dialog" role="document">
@@ -9,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="card card-bio mb-4 w-100 shadow-sm" bis_skin_checked="1">
+                <!-- <div class="card card-bio mb-4 w-100 shadow-sm" bis_skin_checked="1">
                     <div class="row g-0" bis_skin_checked="1">
                         <div class="col-md-3" bis_skin_checked="1">
                             <div class="img-avatar__wrapper" bis_skin_checked="1">
@@ -39,14 +40,14 @@
 
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-
+                @include('templates.vietstar.user.applicant_profile')
             </div>
 
-        <div class="modal-footer">
+        <!-- <div class="modal-footer">
             <a href="{{ route('view.public.profile', Auth::user()->id) }}" class=" {{ route('view.public.profile', Auth::user()->id) }}" target="_blank">Xem thêm</a>
-        </div>
+        </div> -->
         </div>
     </div>
 </div>
@@ -54,7 +55,7 @@
 @push('styles')
 <style>
     .modal-dialog.modal_user_dialog {
-        max-width: 70%;
+        max-width: 90%;
         height: 100vh;
     }
 </style>

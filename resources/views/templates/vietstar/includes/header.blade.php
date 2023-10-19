@@ -217,10 +217,17 @@
             </div>
             <!-- end user-badge -->
             @endif
-            <div class="d-flex gap-10 my-2 group-button">
+            <div class="d-flex  group-button">
                 @if(!Auth::user() && !Auth::guard('company')->user())
                 <a class="nav-link login-link" data-toggle="modal" data-target="#user_login_Modal">{{__('Log in')}} / {{__('Đăng ký')}} </a>
-                <a class="btn btn-primary" href="{{route('employerIndex')}}">Nhà tuyển dụng</a>
+                <a class="btn_for_em" href="{{route('employerIndex')}}">
+                <div  class="btn_for_em__head">
+                    Dành cho
+                </div> 
+                <div  class="btn_for_em__body">
+                    Nhà tuyển dụng
+                </div>    
+                </a>
                 
                 {{--<a class="btn btn-primary" href="{{route('register')}}" class="nav-link
                 register">{{__('Đăng ký')}}</a> --}}

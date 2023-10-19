@@ -117,6 +117,7 @@ p {
 	height: 40px;
 	overflow: hidden;
 	padding: 0;
+	margin:0 1rem;
 }
 
 .navbar .navbar-brand img {
@@ -709,6 +710,48 @@ section.company-job-detail.job-detail-title .job-detail-banner {
 	height: 600px;
 	width: 100%;
 }
+.navbar .group-button {
+	height: 76px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.btn_for_em,.btn_for_user {
+    height: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 40px;
+	
+
+}
+.btn_for_em {
+	background-color: #121139;
+}
+.btn_for_user {
+	background-color:#302d9d;
+}
+.btn_for_em div,
+.btn_for_user div
+{
+	color: white;
+	font-weight: 600;
+}
+.btn_for_em__head,
+.btn_for_user__head
+{
+	font-size: 14px;
+    margin-bottom: 4px;
+	
+}
+
+.btn_for_em__body,
+.btn_for_user__body
+{
+    font-size: 18px;
+}
+
 
 .search-form-box {
 	background-color: white;
@@ -1210,6 +1253,7 @@ section#flash-badge-banner {
 
 .card-news:hover {
 	outline: 0.5px solid #e5a2a3;
+	background-color: rgb(255 249 249 / 70%);
 }
 
 .content-title-box {

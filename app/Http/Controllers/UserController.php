@@ -262,9 +262,7 @@ class UserController extends Controller
             $fileName_cover_image = ImgUploader::UploadImage('user_images', $cover_image, $request->input('name'), 1140, 250, false);
             $user->cover_image = $fileName_cover_image;
         }
-		
-		
-		
+			
         /*         * ************************************** */
         $user->first_name = $request->input('first_name');
         $user->middle_name = $request->input('middle_name');

@@ -108,6 +108,7 @@ use AuthenticatesUsers;
      */
     public function showLoginForm()
     {
+        
         return view(config('app.THEME_PATH').'.auth.login');
     }
 
@@ -124,7 +125,16 @@ use AuthenticatesUsers;
         $request->session()->invalidate();
         return redirect('/login');
     }
+    public function login(Request $request)
 
+    {
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+        dd("#");
+
+    }
     /**
      * Get the failed login response instance.
      *
@@ -133,6 +143,8 @@ use AuthenticatesUsers;
      *
      * @throws \Illuminate\Validation\ValidationException
      */
+
+     
     protected function sendFailedLoginResponse(Request $request)
     {
         $existedUser = User::where('email', $request->get('email'))->first();

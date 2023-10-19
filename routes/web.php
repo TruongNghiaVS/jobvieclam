@@ -69,7 +69,8 @@ Route::get('login/jobseeker/{provider}', 'Auth\LoginController@redirectToProvide
 
 Route::get('login/jobseeker/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
-Route::get('login/employer/{provider}', 'Company\Auth\LoginController@redirectToProvider');
+Route::get('login/employer/{
+  provider}', 'Company\Auth\LoginController@redirectToProvider');
 
 Route::get('login/employer/{provider}/callback', 'Company\Auth\LoginController@handleProviderCallback');
 

@@ -46,9 +46,14 @@ use AuthenticatesUsers;
      *
      * @return \Illuminate\Http\Response
      */
+    // public function showLoginForm()
+    // {
+    //     return view(config('app.THEME_PATH').'.company_auth.login');
+    // }
+
     public function showLoginForm()
     {
-        return view(config('app.THEME_PATH').'.company_auth.login');
+        return view('templates.employers.auth.login');
     }
 
     /**

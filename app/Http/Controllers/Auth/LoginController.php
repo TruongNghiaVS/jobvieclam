@@ -125,16 +125,16 @@ use AuthenticatesUsers;
         $request->session()->invalidate();
         return redirect('/login');
     }
-    public function login(Request $request)
+    // public function login(Request $request)
 
-    {
-        $request->validate([
-            'email' => 'required',
-            'password' => 'required',
-        ]);
-        dd("#");
+    // {
+    //     $request->validate([
+    //         'email' => 'required',
+    //         'password' => 'required',
+    //     ]);
+    //     dd("#");
 
-    }
+    // }
     /**
      * Get the failed login response instance.
      *

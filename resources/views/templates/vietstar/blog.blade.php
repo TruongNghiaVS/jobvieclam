@@ -3,16 +3,11 @@
 <!-- Header start -->
 @include('templates.vietstar.includes.header')
 <!-- Header end -->
-<!-- Inner Page Title start -->
-
-<!-- Inner Page Title end -->
 
 
 <!-- Dashboard start -->
 @include('templates.vietstar.includes.mobile_dashboard_menu')
 <!-- Dashboard end -->
-
-
 
 @include('templates.vietstar.includes.blog')
 

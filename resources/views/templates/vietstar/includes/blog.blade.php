@@ -74,10 +74,10 @@
             <div class="row align-items-start ">
                 <div class="col-md-6 col-lg-4 mb-4 ">
                     <div class="figure">
-                        <a href="" class="figure-images"><img src="https://contenthub-static.grammarly.com/blog/wp-content/uploads/2017/11/how-to-write-a-blog-post.jpeg" alt=""></a>
+                        <a href="http://localhost:8000/blog/cau-chuyn-chn-ngh" class="figure-images"><img src="https://contenthub-static.grammarly.com/blog/wp-content/uploads/2017/11/how-to-write-a-blog-post.jpeg" alt=""></a>
                         <div class="figcaption">
                             <h3 class="figcaption__category-name"><a href="#">KỸ NĂNG CÔNG SỞ</a></h3>
-                            <div class="figcaption__title"><a href="#">Flex là gì? Làm sao thoát flexing đồng nghiệp hay
+                            <div class="figcaption__title"><a href="http://localhost:8000/blog/cau-chuyn-chn-ngh#">Flex là gì? Làm sao thoát flexing đồng nghiệp hay
                                     khoe khoang?</a></div>
 
                         </div>
@@ -141,7 +141,7 @@
                     </div>
                 </div>
             </div>
-            <div class="show-more" bis_skin_checked="1"><a href="#" class="btn btn-secondary show-more-btn " title="Bí quyết tìm việc">Xem thêm <em class="mdi mdi-arrow-right"></em></a></div>
+            <div class="show-more" bis_skin_checked="1"><a href="#" class="btn btn-secondary show-more-btn bg-white " title="Bí quyết tìm việc">Xem thêm <em class="mdi mdi-arrow-right"></em></a></div>
         </div>
     </section>
 </div>

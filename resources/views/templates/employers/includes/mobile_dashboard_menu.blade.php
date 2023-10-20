@@ -431,134 +431,25 @@
         <div class="menu">
             <ul class="list-unstyled components sidebar-main-nav" id="sidebar-main-nav">
                 <li class="sidebar-item {{ Request::url() == route('index') ? 'active' : '' }}">
-                    <a href="{{url('/')}}" class="list-group-item list-group-item-action {{ Request::url() == route('index') ? 'active' : '' }}">
+                    <a href="{{url('/employers')}}" class="list-group-item list-group-item-action {{ Request::url() == route('employerIndex')  ? 'active' : '' }}">
                         <div class="d-flex w-100">
                             <i class="bi bi-house fs-24px me-2"></i>
                             <span class="side-bar-content"> {{__('Home')}}</span>
                         </div>
                     </a>
                 </li>
-                <li class="sidebar-item {{ Request::url() == route('job.list') || strpos(Request::url(),'/job/') > 0 ? 'active' : '' }}">
-                    <a href="{{ route('job.list') }}" class="list-group-item list-group-item-action {{ Request::url() == route('job.list') || strpos(Request::url(),'/job/') > 0 ? 'active' : '' }}">
 
+
+                <li class="sidebar-item {{ Request::url() == route('index') ? 'active' : '' }}">
+                    <a href="{{route('company.home')}}" class="list-group-item list-group-item-action {{ Request::url() == route('company.home') ? 'active' : '' }}">
                         <div class="d-flex w-100">
-                            <i class="bi bi-card-list fs-24px me-2"></i>
-                            <span class="side-bar-content"> {{__('Jobs')}}</span>
+                            <i class="bi bi-archive fs-24px me-2 "></i>
+                            <span class="side-bar-content"> HR Center</span>
                         </div>
                     </a>
                 </li>
 
-                @if(Auth::user())
-
-                <li>
-                    <a href="#cv_sub_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <div class="d-flex w-100">
-                            <i class="bi bi-file-person fs-24px me-2"></i>
-                            <span class="side-bar-content"> {{__('Profiles and CVs')}}</span>
-                        </div>
-                    </a>
-                    <ul class="collapse list-unstyled sub_list" data-ref="findJob" data-target="false" id="cv_sub_list">
-                        @php
-                        $pointer = Auth::check()==true ? '' : 'style=pointer-events:none;';
-                        @endphp
-                        <li>
-                            <a class="{{ Request::url() == route('my.job.applications') ? 'active' : '' }}" href="{{route('change.template')}}" {{$pointer}}>
-                                <div class="d-flex w-100">
-
-                                    <span class="side-bar-content"> {{__('CV Templates')}}</span>
-                                </div>
-                            </a>
-                        </li>
-                        @php
-                        $pointer = Auth::check()==true ? '' : 'style=pointer-events:none;';
-                        @endphp
-                        <li>
-                            <a class="sub-item" href="{{route('application.manager')}}" {{$pointer}}>
-                                <div class="d-flex w-100">
-
-                                    <span class="side-bar-content"> {{__('CV Management')}}</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sub-item" href="{{route('cover-letter')}}" {{$pointer}}>
-                                <div class="d-flex w-100">
-
-                                    <span class="side-bar-content"> {{__('Cover Letter')}}</span>
-                                </div>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-
-                @endif
-
-                <li>
-                    <a href="{{route('company.listing')}}">
-                        <div class="d-flex w-100">
-                            <i class="bi bi-building fs-24px me-2"></i>
-                            <span class="side-bar-content">{{__('Company')}}</span>
-                        </div>
-                    </a>
-
-                    <!-- <ul class="collapse list-unstyled sub_list" data-ref="findJob1" data-target="false" id="company_sub_list">
-                        <li>
-                            <a class="sub-item" href="{{route('about_us')}}">
-                                <div class="d-flex w-100">
-
-                                    <span class="side-bar-content"> {{__('About us')}}
-                                    </span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sub-item" href="{{route('top-companies')}}">
-                                <div class="d-flex w-100">
-
-                                    <span class="side-bar-content"> {{__('Top companies')}}
-                                    </span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sub-item" href="{{route('company.listing')}}">
-                                <div class="d-flex w-100">
-
-                                    <span class="side-bar-content"> {{__('Companies')}}
-                                    </span>
-                                </div>
-                            </a>
-                        </li>
-
-                    </ul> -->
-                </li>
-
-
-                <li class="has-child">
-                    <a href="#blog_sub_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <div class="d-flex w-100">
-                            <i class="bi bi-newspaper fs-24px me-2"></i>
-                            <span class="side-bar-content">{{__('Blog')}}</span>
-                        </div>
-                    </a>
-                    @php($categories = \App\Blog_category::get())
-
-                    <ul class="collapse list-unstyled sub_list" data-ref="findJob_blog" data-target="false" id="blog_sub_list">
-                        @foreach($categories as $category)
-                        <li>
-                            <a class="sub-item" href="{{ url('/blog/category/') . "/" . $category->slug }}">
-
-                                <div class="d-flex w-100">
-
-                                    <span class="side-bar-content">{{$category->heading}}</span>
-                                </div>
-                            </a>
-                        </li>
-                        @endforeach
-                    </ul>
-                </li>
-
+          
 
             </ul>
             <!-- user nav -->
@@ -805,6 +696,9 @@
                 <a class="nav-link login_link btn btn-primary login-btn" data-toggle="modal" data-target="#user_login_Modal" >{{__('Log in')}} / {{__('Đăng ký')}} </a>
                     {{--<a class="btn btn-primary my-2" href="{{route('register')}}" class="nav-link
                     register">{{__('Đăng ký')}}</a> --}}
+                    <a href="{{url('/employers')}}" class="btn btn-primary">Dành cho Nhà tuyển dụng</a>
+
+           
 
                     @if(Auth::guard('company')->user())
                     <a class="btn btn-primary my-2" href="{{route('job.seeker.list')}}" class="nav-link">{{__('Find candidates')}}</a>
@@ -831,13 +725,6 @@
                         </div>
                     </li>
                 </ul>
-            </li>
-
-
-            <li>
-                <div class="d-flex w-100">
-                    <span class="side-bar-content">Dành cho nhà tuyển dụng</span>
-                </div>
             </li>
         </ul>
     </div>

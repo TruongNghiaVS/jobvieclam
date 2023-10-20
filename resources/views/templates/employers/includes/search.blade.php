@@ -18,21 +18,4 @@
             <div class="swiper-pagination"></div>
         </div>
     </div>
-    <div class="container content position-relative header-bar-content-search">
-
-        <form class="search-form row g-3 " action="{{route('job.list')}}" method="get" id="search-form">
-
-            {{--<div>
-              <a class="text-reset fs-14px no-underline main-color" id="advanced-search" data-toggle="collapse" role="button" aria-expanded="true" data-target="#collapseAdvanceSearch">
-                <i class="far fa-search-plus me-0"></i> {{  __('Advanced search') }}
-            </a>
-    </div> --}}
-    <div class="mt-3" id="collapseAdvanceSearch">
-
-        <div class="row">
-          
-        </div>
-    </div>
-    </form>
-    </div>
 </section>

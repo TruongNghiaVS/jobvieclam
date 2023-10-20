@@ -1,8 +1,8 @@
-@extends('templates.vietstar.layouts.app')
 @section('content')
+@extends('templates.employers.layouts.app')
+
+
 @include('templates.employers.includes.header')
-
-
 
 
 
@@ -35,6 +35,7 @@
 
 @include('templates.employers.includes.footer')
 @endsection
+{{-- @include('templates.employers.includes.country_state_city_js') --}}
 @push('styles')
 <link rel="stylesheet" href="{{ asset('/vietstar/css/chosen/chosen.min.css')}}">
 {{-- toastr css --}}
@@ -129,5 +130,5 @@ $(document).on('click', '#btn-register-now', function() {
     });
 });
 </script>
-{{-- @include('templates.employers.includes.country_state_city_js') --}}
+
 @endpush

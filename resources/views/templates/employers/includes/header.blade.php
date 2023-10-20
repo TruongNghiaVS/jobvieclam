@@ -1,6 +1,5 @@
-@include('templates.employers.auth.user.modal_login')
-@include('templates.employers.auth.user.modal_logup')
-@include('templates.vietstar.company.modal.modal_companyProfile')
+
+
 <!-- Navigation bar -->
 <nav class="navbar navbar-expand-xl navbar-light bg-light shadow-sm fixed-top" id="main-nav">
     <!-- <div class="container-navbar"> -->
@@ -312,6 +311,13 @@
         <!-- End Danh cho mobile; có 2 menu mobile và icon user -->
     </div>
 </nav>
+
+@include('templates.employers.auth.user.modal_login')
+@include('templates.employers.auth.user.modal_logup')
+@include('templates.employers.company.modal.modal_companyProfile')
+
+
+
 @push('styles')
 <style>
     .header-active {

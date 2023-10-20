@@ -1,16 +1,21 @@
-@section('content')
 @extends('templates.employers.layouts.app')
-
-
+@section('content')
+@if(Auth::guard('company')->check())
+<!-- Header start -->
 @include('templates.employers.includes.header')
+<!-- Header end -->
+@else
+@include('templates.employers.includes.header')
+@endif
 
 
 
 <!-- Dashboard menu start -->
 @include('templates.employers.includes.mobile_dashboard_menu')
 <!-- Dashboard menu end -->
+
 <!-- Search start -->
-@include('templates.employers.includes.search')
+{{-- @include('templates.employers.includes.search') --}}
 <!-- Search End -->
 
 
@@ -33,9 +38,9 @@
 @include('templates.employers.includes.our_customer')
 <!-- our_customer  end-->
 
+
 @include('templates.employers.includes.footer')
 @endsection
-{{-- @include('templates.employers.includes.country_state_city_js') --}}
 @push('styles')
 <link rel="stylesheet" href="{{ asset('/vietstar/css/chosen/chosen.min.css')}}">
 {{-- toastr css --}}
@@ -130,5 +135,5 @@ $(document).on('click', '#btn-register-now', function() {
     });
 });
 </script>
-
+{{-- @include('templates.vietstar.includes.country_state_city_js') --}}
 @endpush

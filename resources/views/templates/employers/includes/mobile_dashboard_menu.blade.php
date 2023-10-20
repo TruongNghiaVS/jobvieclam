@@ -696,9 +696,7 @@
                 <a class="nav-link login_link btn btn-primary login-btn" data-toggle="modal" data-target="#user_login_Modal" >{{__('Log in')}} / {{__('Đăng ký')}} </a>
                     {{--<a class="btn btn-primary my-2" href="{{route('register')}}" class="nav-link
                     register">{{__('Đăng ký')}}</a> --}}
-                    <a href="{{url('/employers')}}" class="btn btn-primary">Dành cho Nhà tuyển dụng</a>
-
-           
+                    <a href="{{route('index')}}" class="btn btn-primary">Dành cho ứng viên</a>
 
                     @if(Auth::guard('company')->user())
                     <a class="btn btn-primary my-2" href="{{route('job.seeker.list')}}" class="nav-link">{{__('Find candidates')}}</a>

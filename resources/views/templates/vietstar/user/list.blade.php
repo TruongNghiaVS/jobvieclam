@@ -1,7 +1,7 @@
 @extends('templates.vietstar.layouts.app')
 @section('content')
 <!-- Header start -->
-@include('templates.vietstar.includes.header')
+@include('templates.employers.includes.header')
 <!-- Header end -->
 <!-- Inner Page Title start -->
 <!-- Inner Page Title end -->
@@ -238,5 +238,5 @@
         });
     });
 </script>
-@include('templates.vietstar.includes.country_state_city_js')
+@include('templates.employers.includes.country_state_city_js')
 @endpush

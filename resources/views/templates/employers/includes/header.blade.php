@@ -1,10 +1,11 @@
 @include('templates.employers.auth.user.modal_login')
 @include('templates.employers.auth.user.modal_logup')
+@include('templates.vietstar.company.modal.modal_companyProfile')
 <!-- Navigation bar -->
 <nav class="navbar navbar-expand-xl navbar-light bg-light shadow-sm fixed-top" id="main-nav">
     <!-- <div class="container-navbar"> -->
     <div class="container nav">
-        <a class="navbar-brand" href="{{url('/')}}">
+        <a class="navbar-brand" href="{{url('/employers')}}">
             <img src="{{ asset('/vietstar/imgs/logo-new.svg') }}" alt="vietstar">
         </a>
         <button type="button" id="mobile-sidebarCollapse" class="btn">
@@ -17,6 +18,17 @@
                     <li>
                         <a class="nav-link  {{ Request::url() == route('employerIndex') ? 'header-active' : 'text-main-color' }}" href="{{url('/employers')}}" style="{{ Request::url() == route('employerIndex')  ? 'color:#981B1E;' : '' }}">{{__('Home')}}</a>
                     </li>
+
+                    @if(Auth::guard('company')->check())
+                    <li>
+                        <a class="nav-link  {{ Request::url() == route('company.home') ? 'header-active' : 'text-main-color' }}" href="{{route('company.home')}}" style="{{ Request::url() == route('company.home')  ? 'color:#981B1E;' : '' }}">HR Center</a>
+                    </li>
+                    @else
+                    <li>
+                        <a class="nav-link  {{ Request::url() == route('company.login') ? 'header-active' : 'text-main-color' }}" href="{{route('company.login')}}" style="{{ Request::url() == route('company.home')  ? 'color:#981B1E;' : '' }}">HR Center</a>
+                    </li>
+                    @endif
+
                     {{--
                         <li><a class="nav-link " href="{{ url('/companies')}}">{{__('Công ty')}}</a></li> --}}
                     {{--<li>

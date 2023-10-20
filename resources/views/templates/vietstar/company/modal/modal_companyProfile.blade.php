@@ -4,6 +4,8 @@ $company = Auth::guard('company')->user();
 
 ?>
 <!-- Modal -->
+
+@if (Auth::guard('company')->check())
 <div class="modal fade" id="company_profile_modal" tabindex="-1" role="dialog" aria-labelledby="company_profile_modal_Label" aria-hidden="true">
   <div class="modal-dialog modal-company-profile-dialog" role="document">
     <div class="modal-content">
@@ -178,7 +180,7 @@ $company = Auth::guard('company')->user();
     </div>
   </div>
 </div>
-
+@endif
 
 @push('styles')
 <style type="text/css">

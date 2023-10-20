@@ -1215,9 +1215,11 @@ footer {
 
 .filters-job-wrapper {
   background-color: #fff;
-  margin-bottom: 20px;
-  padding: 20px 0;
   display: none;
+  position: fixed;
+  left: 0;
+  top: 155px;
+  right: 0;
 
   .filters-wrapper {
     padding-top: 20px;

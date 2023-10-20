@@ -2915,6 +2915,11 @@ footer .inner-copyright .copyright {
 .filters-job-wrapper {
     background-color: #fff;
     display: none;
+    position: fixed;
+    top: 155px;
+    left: 0;
+    right: 0;
+    z-index: 2;
 }
 
 

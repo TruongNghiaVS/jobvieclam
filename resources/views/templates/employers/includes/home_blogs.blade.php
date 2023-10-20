@@ -3,9 +3,6 @@
     <div class="container">
         <div class="section-title-block">
             <div class="sectionBlock__title">Cẩm nang nghề nghiệp</div>
-            <div class="sectionBlock__link">
-                <a href="#">Xem thêm</a>
-            </div>
         </div> 
         <div class="swiper sectionBlock__swiper">
             <div class="swiper-wrapper">
@@ -113,6 +110,9 @@
                        
                      <!-- End Render data of  Blog here --> 
             </div>
+        </div>
+        <div class="show-more">
+                <a href="#" class="btn btn-secondary show-more-btn bg-white ">Xem thêm</a>
         </div>
     </div>
 </section>

@@ -1,8 +1,9 @@
 @extends('templates.vietstar.layouts.app')
 @section('content')
-<!-- Header start -->
 @include('templates.employers.includes.header')
-<!-- Header end -->
+
+
+
 
 
 <!-- Dashboard menu start -->

@@ -1,8 +1,14 @@
 @extends('templates.vietstar.layouts.app')
 @section('content') 
-<!-- Header start --> 
-@include('templates.vietstar.includes.header') 
-<!-- Header end --> 
+
+    @if(Auth::guard('company')->check())
+    <!-- Header start -->
+    @include('templates.employers.includes.header')
+    <!-- Header end -->
+    @else
+    @include('templates.vietstar.includes.header')
+    @endif
+
 <!-- Inner Page Title start --> 
 @include('templates.vietstar.includes.inner_page_title', ['page_title'=>__('Company Messages')]) 
 <!-- Inner Page Title end -->

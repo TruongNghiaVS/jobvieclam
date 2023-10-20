@@ -1,10 +1,16 @@
 @extends('templates.vietstar.layouts.app')
 @section('content') 
 <!-- Header start --> 
-@include('templates.vietstar.includes.header') 
+    @if(Auth::guard('company')->check())
+    <!-- Header start -->
+    @include('templates.employers.includes.header')
+    <!-- Header end -->
+    @else
+    @include('templates.vietstar.includes.header')
+    @endif
 <!-- Header end --> 
-@include('templates.vietstar.includes.company_dashboard_menu') 
-@include('templates.vietstar.includes.mobile_dashboard_menu')
+@include('templates.employers.includes.company_dashboard_menu') 
+@include('templates.employers.includes.mobile_dashboard_menu')
 <div class="company-wrapper">     
              
             <div class="company-content container addjob"> 
@@ -19,7 +25,7 @@
                 </div>
             </div>
 </div>
-@include('templates.vietstar.includes.footer')
+@include('templates.employers.includes.footer')
 @endsection
 @push('styles')
 <style type="text/css">

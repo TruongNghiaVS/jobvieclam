@@ -1,18 +1,22 @@
 @extends('templates.vietstar.layouts.app') @section('content')
 <!-- Header start -->
+@if(Auth::check())
 @include('templates.vietstar.includes.header')
 <!-- Header end -->
+@else
+@include('templates.employers.includes.header')
+@endif
 <!-- Inner Page Title start -->
 <!-- Inner Page Title end -->
 
-@include('templates.vietstar.includes.company_dashboard_menu') 
+@include('templates.employers.includes.company_dashboard_menu') 
 
 <?php $company = Auth::guard('company')->user(); ?>
 <div class="company-wrapper">
             
         @include('flash::message')
         
-        @include('templates.vietstar.includes.mobile_dashboard_menu')
+        @include('templates.employers.includes.mobile_dashboard_menu')
             <div class="container company-content">
                 @if(null!==($success_package) && !empty($success_package))
                     @php
@@ -131,8 +135,8 @@
 
        
 </div>
-@include('templates.vietstar.includes.footer')
+@include('templates.employers.includes.footer')
 @endsection
 @push('scripts')
-    @include('templates.vietstar.includes.immediate_available_btn')
+    @include('templates.employers.includes.immediate_available_btn')
 @endpush

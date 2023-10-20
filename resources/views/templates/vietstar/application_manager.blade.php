@@ -2,15 +2,18 @@
 
 @section('content') 
 
-<!-- Header start --> 
 
-@include('templates.vietstar.includes.header') 
-
-<!-- Header end --> 
+<!-- Header start -->
+@if(Auth::check())
+@include('templates.vietstar.includes.header')
+<!-- Header end -->
+@else
+@include('templates.employers.includes.header')
+@endif
 
 <!-- Inner Page Title start --> 
 
-@include('templates.vietstar.includes.company_dashboard_menu') 
+@include('templates.employers.includes.company_dashboard_menu') 
 
 
 <!-- Inner Page Title end -->
@@ -18,24 +21,24 @@
 
             @include('flash::message')
              
-            @include('templates.vietstar.includes.mobile_dashboard_menu')
+            @include('templates.employers.includes.mobile_dashboard_menu')
 
             <div class="container company-content">
 
-                @include('templates.vietstar.includes.company_application_manager_filter')
+                @include('templates.employers.includes.company_application_manager_filter')
                 
-                @include('templates.vietstar.includes.company_application_manager')
+                @include('templates.employers.includes.company_application_manager')
                
             </div>
 </div>
-@include('templates.vietstar.includes.company_application_manager_modal')
-@include('templates.vietstar.includes.footer')
+@include('templates.employers.includes.company_application_manager_modal')
+@include('templates.employers.includes.footer')
 
 @endsection
 
 @push('scripts')
 
-@include('templates.vietstar.includes.immediate_available_btn')
+@include('templates.employers.includes.immediate_available_btn')
 
 @endpush
 

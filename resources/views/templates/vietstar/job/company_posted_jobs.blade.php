@@ -1,14 +1,21 @@
 @extends('templates.vietstar.layouts.app')
 @inject('carbon', 'Carbon\Carbon')
 @section('content')
+
+    @if(Auth::guard('company')->check())
     <!-- Header start -->
-    @include('templates.vietstar.includes.header')
+    @include('templates.employers.includes.header')
     <!-- Header end -->
-    @include('templates.vietstar.includes.company_dashboard_menu') 
+    @else
+    @include('templates.vietstar.includes.header')
+    @endif
+
+    
+    @include('templates.employers.includes.company_dashboard_menu') 
 
     <div class="company-wrapper main-content">
       
-        @include('templates.vietstar.includes.mobile_dashboard_menu')
+        @include('templates.employers.includes.mobile_dashboard_menu')
                 <div class="container company-content">
                     <div class="card mb-2">
                         <div class="card-body">
@@ -183,7 +190,7 @@
         
     
     </div>
-    @include('templates.vietstar.includes.footer')
+    @include('templates.employers.includes.footer')
 @endsection
 @push('styles')
 <style type="text/css">

@@ -1,14 +1,19 @@
 @extends('templates.vietstar.layouts.app')
 @section('content')
-<!-- Header start -->
-@include('templates.vietstar.includes.header')
-@include('templates.vietstar.includes.company_dashboard_menu') 
+    @if(Auth::guard('company')->check())
+    <!-- Header start -->
+    @include('templates.employers.includes.header')
+    <!-- Header end -->
+    @else
+    @include('templates.vietstar.includes.header')
+    @endif
+@include('templates.employers.includes.company_dashboard_menu') 
 <!-- Header end -->
 <!-- Inner Page Title start -->
 <div class="company-wrapper messageWrap">
   
         
-        @include('templates.vietstar.includes.mobile_dashboard_menu')
+        @include('templates.employers.includes.mobile_dashboard_menu')
         <div class="container company-content">
                 <div class="myads message-body">
                     <h3>{{__('Company Messages')}}</h3>
@@ -54,7 +59,7 @@
         </div>
        
 </div>
-@include('templates.vietstar.includes.footer')
+@include('templates.employers.includes.footer')
 @endsection
 @push('scripts')
 <script type="text/javascript">

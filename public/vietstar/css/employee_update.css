@@ -285,6 +285,9 @@
     .trust-by {
         flex: 50%; 
     }
+    .login-img-swapper {
+        display: none;
+    }
 
 }
 
@@ -319,6 +322,9 @@
         flex: 50%;
         display: flex;
         justify-content: center;
+    }
+    .login-img-swapper {
+        display: none;
     }
  
 }

@@ -439,7 +439,7 @@
                     </a>
                 </li>
 
-
+                @if(Auth::guard('company')->check())
                 <li class="sidebar-item {{ Request::url() == route('index') ? 'active' : '' }}">
                     <a href="{{route('company.home')}}" class="list-group-item list-group-item-action {{ Request::url() == route('company.home') ? 'active' : '' }}">
                         <div class="d-flex w-100">
@@ -448,6 +448,16 @@
                         </div>
                     </a>
                 </li>
+                @else
+                <li class="sidebar-item {{ Request::url() == route('index') ? 'active' : '' }}">
+                    <a href="{{route('company.login')}}" class="list-group-item list-group-item-action {{ Request::url() == route('company.home') ? 'active' : '' }}">
+                        <div class="d-flex w-100">
+                            <i class="bi bi-archive fs-24px me-2 "></i>
+                            <span class="side-bar-content"> HR Center</span>
+                        </div>
+                    </a>
+                </li>
+                @endif
 
           
 

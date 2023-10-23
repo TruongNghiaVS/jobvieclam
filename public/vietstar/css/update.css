@@ -3898,6 +3898,7 @@ div#industry_id_chosen {
     display: block;
     background-color: #ffffff !important;
     z-index: 10;
+    
 }
 
 .navbar-lang {
@@ -4230,7 +4231,7 @@ div#industry_id_chosen {
 
     .navbar .main-menu .main-menu-static>li:hover::after {
         top: calc(100% - 2px);
-        height: 2px
+        height: 3px
     }
 }
 

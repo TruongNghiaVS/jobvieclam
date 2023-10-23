@@ -1,8 +1,3 @@
-AOS.init({
-    duration: 1000,
-}
-);
-
 
 
 function openCity(evt, cityName) {

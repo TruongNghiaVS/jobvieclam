@@ -4,7 +4,7 @@
             {{ __('Our Customer') }}
         </h4>
         <div class="container-company" bis_skin_checked="1">
-            <div class="group-company aos-init aos-animate" data-aos="fade-in-up" bis_skin_checked="1">
+            <div class="group-company aos-init aos-animate" bis_skin_checked="1">
                 <div class="trust-by" bis_skin_checked="1"><img src="https://employer.vietnamworks.com/v2/img/partner/1.svg" alt="">
                 </div>
                 <div class="trust-by" bis_skin_checked="1"><img src="https://employer.vietnamworks.com/v2/img/partner/2.svg" alt="">

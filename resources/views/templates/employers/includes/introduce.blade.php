@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-4 p-2">
-                <div class="card p-4" data-aos="zoom-in">
+                <div class="card p-4" >
                     <div class="card-head">
                         <i class="bi bi-blockquote-left"></i>
                         <h5>Quản lý đăng tuyển</h5>
@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-12 col-lg-4 p-2">
-                <div class="card p-4" data-aos="zoom-in">
+                <div class="card p-4" >
                     <div class="card-head">
                         <i class="bi bi-blockquote-left"></i>
                         <h5>Quản lý ứng viên</h5>
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-12 col-lg-4 p-2">
-                <div class="card p-4" data-aos="zoom-in">
+                <div class="card p-4" >
                     <div class="card-head" >
                         <i class="bi bi-blockquote-left"></i>
                         <h5>Quảng cáo đa nền tảng</h5>
@@ -51,7 +51,7 @@
         </div>
     </div>
 
-    <div class="introduce__slide" data-aos="zoom-in-up">
+    <div class="introduce__slide" up">
         <div class="row">
             <div class="swiper introduce_Swiper">
                 <div class="swiper-wrapper">

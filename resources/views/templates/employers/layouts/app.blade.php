@@ -19,9 +19,10 @@ if (!isset($seo)) {
 
     <link href="{{ asset('/vietstar/css/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('/vietstar/css/swiper-bundle.min.css')}}" />
+
     <!-- Custom Style -->
     <link href="{{ asset('/vietstar/css/style.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <link href="{{ asset('/vietstar/css/animation.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/fonts/icon-vietstart/style.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/recruiter.css')}}" rel="stylesheet">
@@ -47,7 +48,7 @@ if (!isset($seo)) {
 
 <body class="default-page">
     @yield('content')
-
+  
     <script src="{{asset('/')}}js/popper.js"></script>
     <script src="{{asset('/')}}js/bootstrap.min.js"></script>
     <script src="{{ asset('/vietstar/js/jquery.multiselect.js')}}" type="text/javascript"></script>

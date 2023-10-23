@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-12 mb-0">
                     <div class="row">
-                        <div class="col-md-6 co-item-service" data-aos="fade-right">
+                        <div class="col-md-6 co-item-service" >
                             <div class="item">
                                 <div class="image">
                                     <img class="lazy-new" alt="Đăng tin tìm việc"
@@ -26,7 +26,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 co-item-service"  data-aos="fade-left">
+                        <div class="col-md-6 co-item-service"  >
                             <div class="item">
                                 <div class="image">
                                     <img class="lazy-new" alt="Giới thiệu Ứng Viên"
@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 co-item-service" data-aos="fade-right">
+                        <div class="col-md-6 co-item-service" >
                             <div class="item">
                                 <div class="image">
                                     <img class="lazy-new" alt="Đăng tin tuyển dụng"
@@ -63,7 +63,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 co-item-service" data-aos="fade-left">
+                        <div class="col-md-6 co-item-service" >
                             <div class="item">
                                 <div class="image">
                                     <img class="lazy-new" alt="Cung ứng nhân sự (Headhunt)"
@@ -82,7 +82,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6 co-item-service" data-aos="fade-right">
+                        <div class="col-md-6 co-item-service" >
                             <div class="item">
                                 <div class="image">
                                     <img class="lazy-new" alt="Tìm hồ sơ ứng viên"
@@ -100,7 +100,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 co-item-service" data-aos="fade-left">
+                        <div class="col-md-6 co-item-service" >
                             <div class="item">
                                 <div class="image">
                                     <img class="lazy-new" alt="Targeted Email Marketing"

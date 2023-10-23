@@ -992,7 +992,6 @@ h4.tablinks:hover {
 	display: flex;
 	flex-direction: column;
 	min-height: 184px;
-	width: 250px;
 	padding: 16px;
 	transition: .3s;
 }
@@ -1633,7 +1632,7 @@ fieldset:disabled .btn {
 	--fa-primary-color: #fff;
 }
 .btn-outline-primary:hover i{
-	color: #fff;
+	color: #fff !important;
 }
 .btn-check:focus+.btn-outline-primary,
 .btn-outline-primary:focus {
@@ -4033,6 +4032,9 @@ label.partTime[title="Rotating"] {
 	position: absolute;
 	right: 0;
 	top: 6px;
+}
+.share-detail .__actions  a{
+	padding: 10px 16px;
 }
 
 /*

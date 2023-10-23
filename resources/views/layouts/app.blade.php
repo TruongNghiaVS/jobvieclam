@@ -85,6 +85,7 @@ if (!isset($seo)) {
     <script src="{{ asset('/vietstar/js/jquery.formatCurrency-1.4.0.js')}}" type="text/javascript"></script>
     <script src="{{ asset('/vietstar/js/jquery.formatCurrency.all.js')}}" type="text/javascript"></script>
     <script src="{{ asset('/vietstar/js/main.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('/vietstar/js/animation.js')}}" type="text/javascript"></script>
 
     <script src="{{ asset('/vietstar/js/custom.js')}}" type="text/javascript"></script>
 

@@ -15,7 +15,7 @@
 <!-- Dashboard menu end -->
 
 <!-- Search start -->
-{{-- @include('templates.employers.includes.search') --}}
+@include('templates.employers.includes.search') 
 <!-- Search End -->
 
 

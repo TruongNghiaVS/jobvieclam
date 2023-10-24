@@ -1,7 +1,7 @@
 
 @if(Auth::user())
 <div class="modal fade" id="modal_user_info" tabindex="-1" role="dialog" aria-labelledby="modal_user_infoLabel" aria-hidden="true">
-    <div class="modal-dialog modal_user_dialog" role="document">
+    <div class="modal-dialog modal_user_dialog" role="document" id="modal_user_dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="modal_user_infoLabel">{{__('View Public Profile')}}</h5>

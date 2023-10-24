@@ -52,7 +52,7 @@
 
                     <!-- Pagination end --> 
                 </div>
-				<div class="col-lg-3 col-sm-6 pull-right">
+				
                     <!-- Sponsord By -->
                     <div class="sidebar">
                         <h4 class="widget-title">{{__('Sponsord By')}}</h4>

@@ -469,8 +469,21 @@
   .filters-wrapper .form-group .btn.btn-primary {
     width: 100%;
   }
-
+  .blog-content {
+    padding: 40px  15px;
+  }
+  section.all-product-service.cb-section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   
+  .our_customer,.introduce {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+   #modal_user_dialog {
+    max-width: 98% !important;
+  }
 }
 
 
@@ -516,9 +529,7 @@
     color: white !important;
   }
 
-  .col-sm-6 {
-    width: 100%;
-  }
+  
 
   .header-bar {
     height: 500px;
@@ -739,9 +750,33 @@
   .all-product-service {
     padding: 0 40px;
   }
-
+  .cbox-impressive-numbers__item--wrapper{
+    padding:0 10px;
+  }
+  .section-jobs-by-industry {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .blogs-slider {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .Jobpage__content {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .sidebar {
+    margin-top: 30px;
+  }
+  #secondary-blog-content {
+    padding:  0 10px;
+  }
+  #modal_user_dialog {
+    max-width: 98% !important;
+  }
 
   
+
 
 }
 

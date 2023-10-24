@@ -16,7 +16,7 @@
 
     @include('templates.vietstar.job.inc.filters_job_wrapper')
 
-    <div class="container">
+    <div class="container Jobpage__content">
         <form action="{{route('job.list')}}" method="get">
             <!-- Search Result and sidebar start -->
             <div class="row">
@@ -174,7 +174,7 @@
                     </div>
                     <!-- Pagination end -->
                 </div>
-                <div class="col-lg-3 col-sm-6 pull-right">
+                <div class="col-lg-3 col-sm-12 pull-right">
                     <!-- Sponsord By -->
                     <div class="sidebar">
                         @include('templates.vietstar.job.inc.ads')

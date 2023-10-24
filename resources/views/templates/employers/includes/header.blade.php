@@ -19,12 +19,12 @@
                     </li>
 
                     @if(Auth::guard('company')->check())
-                    <li class="{{ Request::url() == route('company.home') ? 'header-active' : 'text-main-color' }}">
-                        <a class="nav-link  {{ Request::url() == route('company.home') ? 'header-active' : 'text-main-color' }}" href="{{route('company.home')}}" style="{{ Request::url() == route('company.home')  ? 'color:#981B1E;' : '' }}">HR Center</a>
+                    <li class="{{ Request::url() == route('company.home') ? 'active' : 'text-main-color' }}">
+                        <a class="nav-link" href="{{route('company.home')}}" style="{{ Request::url() == route('company.home')  ? 'color:#981B1E;' : '' }}">HR Center</a>
                     </li>
                     @else
-                    <li class="{{ Request::url() == route('company.home') ? 'header-active' : 'text-main-color' }}">
-                        <a class="nav-link  {{ Request::url() == route('company.login') ? 'header-active' : 'text-main-color' }}" href="{{route('company.login')}}" style="{{ Request::url() == route('company.home')  ? 'color:#981B1E;' : '' }}">HR Center</a>
+                    <li class="{{ Request::url() == route('company.home') ? 'active' : 'text-main-color' }}">
+                        <a class="nav-link" href="{{route('company.login')}}" style="{{ Request::url() == route('company.home')  ? 'color:#981B1E;' : '' }}">HR Center</a>
                     </li>
                     @endif
 

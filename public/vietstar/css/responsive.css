@@ -477,14 +477,13 @@
 
 /* Medium devices (landscape tablets, 600px and up) */
 @media only screen and (min-width: 768px) and (max-width: 992px) {
-
-
-
-  
   .content {
     padding-left: 8px;
     padding-right: 8px;
     padding: 8px 0;
+  }
+  footer {
+    padding:0 40px;
   }
 
   .page-heading-tool.job-detail.mobile input {
@@ -737,7 +736,9 @@
   .page-heading-tool.job-detail {
     display: none;
   }
-
+  .all-product-service {
+    padding: 0 40px;
+  }
 
 
   
@@ -792,7 +793,7 @@
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1240px) and (max-width: 1399px)  {
   .container {
     max-width: 1140px;
   }
@@ -842,6 +843,86 @@
   .section-jobs-by-industry .swiper-button-prev {
     left: 200px;
   }
+  .content-wrapper {
+    padding: 0 0px;
+  }
+  .user-account-section {
+    padding: 15px  30px;
+  }
+  .section-head, .section-body {
+    padding: 20px 20px;
+  }
+}
+
+
+@media only screen and (min-width: 1400px) { 
+  .container {
+    max-width: 1140px;
+  }
+  .content {
+    padding-left: 135px;
+    padding-right: 135px;
+  }
+
+  .navbar .navbar-brand {
+    width: 130px;
+    height: 53px;
+    overflow: hidden;
+  }
+
+  .container.nav {
+    max-width: 100%;
+  }
+
+  
+  #content {
+    padding: 40px 80px;
+    width: 100%;
+  }
+
+  .navbar .navbar-brand {
+    overflow: unset;
+  }
+
+  .navbar .navbar-brand img {
+    height: 32px;
+    width: initial;
+  }
+
+  .related-jobs .related-jobs__jobs {
+    flex-direction: row;
+  }
+
+  .about-us .about-us-bg {
+    background-position-x: -72px;
+    background-position-y: -72px;
+  }
+
+  .section-jobs-by-industry .swiper-button-next {
+    right: 200px;
+  }
+
+  .section-jobs-by-industry .swiper-button-prev {
+    left: 200px;
+  }
+  .content-wrapper {
+    padding: 0 80px;
+  }
+  .user-account-section {
+    padding: 15px  30px;
+  }
+  .section-head, .section-body {
+    padding: 0px 0px;
+  }
+  
+  .myads {
+    padding: 0 90px;
+  } 
+  .card-bio {
+    padding: 30px;
+  }
+
+
 }
 
 

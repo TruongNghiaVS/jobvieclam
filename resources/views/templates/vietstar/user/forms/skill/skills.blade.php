@@ -22,7 +22,7 @@
 
 <div class="section-body"> 
 
-<div class="row">
+<div class="row pt-4">
     <div class="col-md-12">
         <div class="" id="skill_div"></div>
     </div>

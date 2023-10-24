@@ -2691,7 +2691,7 @@ footer .inner-copyright .copyright {
 
 
 .myads {
-	padding: 0 45px;
+
 } 
 /* Related Job */
 .related-jobs-item.item-job {
@@ -5179,7 +5179,7 @@ div#industry_id_chosen {
 }
 
 .card-body-profile-seeker {
-    padding-right: 180px;
+    padding-right: 0px;
     position: relative
 }
 

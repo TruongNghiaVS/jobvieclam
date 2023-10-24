@@ -22,15 +22,15 @@ if (!isset($seo)) {
 
     <!-- Custom Style -->
     <link href="{{ asset('/vietstar/css/style.css')}}" rel="stylesheet">
-    <link href="{{ asset('/vietstar/css/animation.css')}}" rel="stylesheet">
-    <link href="{{ asset('/vietstar/fonts/icon-vietstart/style.css')}}" rel="stylesheet">
-    <link href="{{ asset('/vietstar/css/recruiter.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/select2.min.css')}}" rel="stylesheet" />
     <link href="{{ asset('/vietstar/css/jquery.multiselect.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/chosen/chosen.min.css')}}" rel="stylesheet">
     <link href="{{asset('/')}}vendor/bootstrap-date-time-picker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
     <link href="{{ asset('/vietstar/css/default_sidebar.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/login.css')}}" rel="stylesheet">
+    <link href="{{ asset('/vietstar/css/animation.css')}}" rel="stylesheet">
+    <link href="{{ asset('/vietstar/fonts/icon-vietstart/style.css')}}" rel="stylesheet">
+    <link href="{{ asset('/vietstar/css/recruiter.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/update.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/user_update.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/employee_update.css')}}" rel="stylesheet">
@@ -45,7 +45,7 @@ if (!isset($seo)) {
 
 </head>
 
-<body class="default-page">
+<body class="default-page" style="padding-top:76px;">
     @yield('content')
    
 

@@ -19,11 +19,11 @@
                     </li>
 
                     @if(Auth::guard('company')->check())
-                    <li>
+                    <li class="{{ Request::url() == route('company.home') ? 'header-active' : 'text-main-color' }}">
                         <a class="nav-link  {{ Request::url() == route('company.home') ? 'header-active' : 'text-main-color' }}" href="{{route('company.home')}}" style="{{ Request::url() == route('company.home')  ? 'color:#981B1E;' : '' }}">HR Center</a>
                     </li>
                     @else
-                    <li>
+                    <li class="{{ Request::url() == route('company.home') ? 'header-active' : 'text-main-color' }}">
                         <a class="nav-link  {{ Request::url() == route('company.login') ? 'header-active' : 'text-main-color' }}" href="{{route('company.login')}}" style="{{ Request::url() == route('company.home')  ? 'color:#981B1E;' : '' }}">HR Center</a>
                     </li>
                     @endif

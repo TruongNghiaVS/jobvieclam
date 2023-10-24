@@ -1,14 +1,16 @@
 <section class="introduce cb-section">
-    <div class="row">
-        <div class="col-12 col-md-6 col-lg-4 animation fade-left">
-            <div class="model_box">
-                <img src="https://ntd.vieclam24h.vn/img/man_university.png" alt="">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 animation fade-left">
+                <div class="model_box">
+                    <img src="https://ntd.vieclam24h.vn/img/man_university.png" alt="">
+                </div>
             </div>
-        </div>
-        <div class="col-12 col-md-6  col-lg-8 d-flex justify-content-center align-items-center animation fade-right">
-            <h4 class="text-center mb-3 text-uppercase fs-2 text-primary">
-                Phiên bản 2023 giúp đăng tuyển nhanh chóng và hiệu quả hơn
-            </h4>
+            <div class="col-12 col-md-6  col-lg-8 d-flex justify-content-center align-items-center animation fade-right">
+                <h4 class="text-center mb-3 text-uppercase fs-2 text-primary">
+                    Phiên bản 2023 giúp đăng tuyển nhanh chóng và hiệu quả hơn
+                </h4>
+            </div>
         </div>
     </div>
 
@@ -16,7 +18,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-4 p-2  animation fade-bottom ">
-                <div class="card p-4" >
+                <div class="card p-4">
                     <div class="card-head">
                         <i class="bi bi-blockquote-left"></i>
                         <h5>Quản lý đăng tuyển</h5>
@@ -27,7 +29,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-12 col-lg-4 p-2  animation fade-bottom ">
-                <div class="card p-4" >
+                <div class="card p-4">
                     <div class="card-head">
                         <i class="bi bi-blockquote-left"></i>
                         <h5>Quản lý ứng viên</h5>
@@ -38,8 +40,8 @@
                 </div>
             </div>
             <div class="col-12 col-md-12 col-lg-4 p-2  animation fade-bottom ">
-                <div class="card p-4" >
-                    <div class="card-head" >
+                <div class="card p-4">
+                    <div class="card-head">
                         <i class="bi bi-blockquote-left"></i>
                         <h5>Quảng cáo đa nền tảng</h5>
                     </div>
@@ -50,16 +52,17 @@
             </div>
         </div>
     </div>
-
-    <div class="introduce__slide animation fade-top">
-        <div class="row">
-            <div class="swiper introduce_Swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="https://ntd.vieclam24h.vn/_next/image?url=https%3A%2F%2Fstatic-cdn.vieclam24h.vn%2Frecruiter%2F231013062932%2F_next%2Fstatic%2Fmedia%2Fvl24h_job_post.25494deb.png&w=3840&q=75" alt=""></div>
-                    <div class="swiper-slide"><img src="https://ntd.vieclam24h.vn/_next/image?url=https%3A%2F%2Fstatic-cdn.vieclam24h.vn%2Frecruiter%2F231013062932%2F_next%2Fstatic%2Fmedia%2Fvl24h_job_post.25494deb.png&w=3840&q=75" alt=""></div>
-                    <div class="swiper-slide"><img src="https://ntd.vieclam24h.vn/_next/image?url=https%3A%2F%2Fstatic-cdn.vieclam24h.vn%2Frecruiter%2F231013062932%2F_next%2Fstatic%2Fmedia%2Fvl24h_job_post.25494deb.png&w=3840&q=75" alt=""></div>
+    <div class="container">
+        <div class="introduce__slide animation fade-top">
+            <div class="row">
+                <div class="swiper introduce_Swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://ntd.vieclam24h.vn/_next/image?url=https%3A%2F%2Fstatic-cdn.vieclam24h.vn%2Frecruiter%2F231013062932%2F_next%2Fstatic%2Fmedia%2Fvl24h_job_post.25494deb.png&w=3840&q=75" alt=""></div>
+                        <div class="swiper-slide"><img src="https://ntd.vieclam24h.vn/_next/image?url=https%3A%2F%2Fstatic-cdn.vieclam24h.vn%2Frecruiter%2F231013062932%2F_next%2Fstatic%2Fmedia%2Fvl24h_job_post.25494deb.png&w=3840&q=75" alt=""></div>
+                        <div class="swiper-slide"><img src="https://ntd.vieclam24h.vn/_next/image?url=https%3A%2F%2Fstatic-cdn.vieclam24h.vn%2Frecruiter%2F231013062932%2F_next%2Fstatic%2Fmedia%2Fvl24h_job_post.25494deb.png&w=3840&q=75" alt=""></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
                 </div>
-                <div class="swiper-pagination"></div>
             </div>
         </div>
     </div>

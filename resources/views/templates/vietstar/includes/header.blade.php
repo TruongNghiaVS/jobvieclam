@@ -60,7 +60,7 @@
                     </li>
                     @endif
                     <li class="has-child">
-                        <a href="{{route('company.listing')}}" class="nav-link">{{__('Company')}}</a>
+                        <a href="{{route('company.listing')}}" class="nav-link {{ Request::url() == route('company.listing') ? 'header-active' : 'text-main-color' }}" style="{{ Request::url() == route('company.listing')  || strpos(Request::url(),'job') ? 'color:#981B1E;' : '' }}">{{__('Company')}}</a>
                     </li>
                     {{-- <li class="has-child">
                         <a href="{{ route('my.profile') }}" class="nav-link nav-link-parent">{{__('News')}}</a>

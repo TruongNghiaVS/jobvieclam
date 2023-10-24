@@ -46,7 +46,7 @@ if (!isset($seo)) {
 
 </head>
 
-<body class="default-page">
+<body class="default-page" style="padding-top:76px;">
     @yield('content')
   
     <script src="{{asset('/')}}js/popper.js"></script>

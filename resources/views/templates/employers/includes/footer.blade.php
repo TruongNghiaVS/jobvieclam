@@ -126,8 +126,8 @@
         </div>
         </div>
     </section>
-    <div class="container">
-        <div class="inner-copyright">
+    <div class="inner-copyright">
+        <div class="container">
             <div class="footer-widget footer-widget-contact">
                 <h5>CÔNG TY CỔ PHẦN TẬP ĐOÀN VIETSTAR</h5>
                 <ul class="contact-detail">

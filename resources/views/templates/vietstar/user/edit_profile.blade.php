@@ -10,6 +10,9 @@
     @include('flash::message')
     @include('templates.vietstar.includes.default_sidebar_menu')
     <div class="content">
+        <div class="content-wrapper">
+
+        
         <div class="row">
                 <div class="col-md-6">
                     <div class="formpanel mt0 load_message"></div>
@@ -21,7 +24,7 @@
                         <a class="btn btn-primary" href="{{route('change.template')}}">{{ __('Change Template') }}</a>
                     </div>
                 </div>
-            </div>
+        </div>
                 <!-- Personal Information -->
         @include('templates.vietstar.user.inc.profile')
                 <!-- Personal Information -->
@@ -69,7 +72,7 @@
                 <!-- Personal Information -->
                 {{--@include('templates.vietstar.user.forms.cv.cvs') --}}
                 <!-- @include('templates.vietstar.user.forms.project.projects') -->
-      
+        </div>
     </div>
 </div>
 <div class="row" style="display:none;">

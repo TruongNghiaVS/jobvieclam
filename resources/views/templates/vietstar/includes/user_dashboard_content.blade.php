@@ -1,6 +1,7 @@
 <div id="content" class="content">
     <!-- Main -->
     <!-- Bio -->
+<div class="content-wrapper">
 
     <div class="card card-bio mb-4 w-100 shadow-sm">
         <div class="row g-0">
@@ -141,4 +142,5 @@
                 </section>
             </div>
         </div>
+</div>
 </div>

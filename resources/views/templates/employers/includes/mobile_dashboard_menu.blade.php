@@ -579,32 +579,6 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item {{ Request::url() == route('company.profile') ? 'active' : '' }}">
-                    <a href="{{route('company.profile') }}" class="list-group-item list-group-item-action ">
-                        <div class="d-flex w-100">
-                            <span class="iconmoon icon-edit-icon fs-24px me-2"></span>
-                            <span class="side-bar-content">{{__('Edit profile')}}</span>
-                        </div>
-                    </a>
-                </li>
-
-                <li class="sidebar-item {{ Request::url() == route('company.detail', Auth::guard('company')->user()->slug) ? 'active' : '' }}" >
-                    <a href="#" class="list-group-item list-group-item-action " data-toggle="modal" data-target="#company_profile_modal">
-                        <div class="d-flex w-100">
-                            <span class="iconmoon icon-eye-icon fs-24px me-2"></span>
-                            <span class="side-bar-content">{{__('View Public Profile')}}</span>
-                        </div>
-                    </a>
-                </li>
-
-                <li class="sidebar-item {{ Request::url() == route('post.job') ? 'active' : '' }}">
-                    <a href="{{route('post.job')}}" class="list-group-item list-group-item-action {{ Request::url() == route('post.job') ? 'active' : '' }}">
-                        <div class="d-flex w-100">
-                            <span class="icon-eye-icon fs-24px me-2"></span>
-                            <span class="side-bar-content">{{__('Post Jobs')}}</span>
-                        </div>
-                    </a>
-                </li>
 
 
                 <li class="sidebar-item {{ Request::url() == route('posted.jobs') ? 'active' : '' }}">
@@ -612,17 +586,6 @@
                         <div class="d-flex w-100">
                             <span class="iconmoon icon-suitcase-icon fs-24px me-2"></span>
                             <span class="side-bar-content">{{__('Company\'s Posted Jobs')}}</span>
-                        </div>
-                    </a>
-                </li>
-
-
-
-                <li class="sidebar-item {{ Request::url() == route('company.packages') ? 'active' : '' }}">
-                    <a href="{{ route('company.packages') }}" class="list-group-item list-group-item-action ">
-                        <div class="d-flex w-100">
-                            <span class="iconmoon icon-recruiter-profile fs-24px me-2"></span>
-                            <span class="side-bar-content">{{__('CV Search Packages')}}</span>
                         </div>
                     </a>
                 </li>
@@ -637,6 +600,17 @@
                     </a>
                 </li>
 
+                <li class="sidebar-item {{ Request::url() == route('company.packages') ? 'active' : '' }}">
+                    <a href="{{ route('company.packages') }}" class="list-group-item list-group-item-action ">
+                        <div class="d-flex w-100">
+                            <i class="bi bi-search fs-24px me-2"></i>
+                            <span class="side-bar-content">{{__('CV Search Packages')}}</span>
+                        </div>
+                    </a>
+                </li>
+
+               
+
 
                 <li class="sidebar-item  {{ Request::url() == route('interview.schedule.calendar', ['company_id'=> Auth::guard('company')->user()->id]) ? 'active' : '' }}">
                     <a href="{{route('interview.schedule.calendar',['company_id'=> Auth::guard('company')->user()->id])}}" class="list-group-item list-group-item-action">
@@ -646,6 +620,41 @@
                         </div>
                     </a>
                 </li>
+
+
+                <li class="sidebar-item {{ Request::url() == route('company.profile') ? 'active' : '' }}">
+                    <a href="{{route('company.profile') }}" class="list-group-item list-group-item-action ">
+                        <div class="d-flex w-100">
+                            <span class="iconmoon icon-edit-icon fs-24px me-2"></span>
+                            <span class="side-bar-content">{{__('Edit Account')}}</span>
+                        </div>
+                    </a>
+                </li>
+
+
+
+                <li class="sidebar-item {{ Request::url() == route('company.detail', Auth::guard('company')->user()->slug) ? 'active' : '' }}" >
+                    <a href="#" class="list-group-item list-group-item-action " data-toggle="modal" data-target="#company_profile_modal">
+                        <div class="d-flex w-100">
+                            <span class="iconmoon icon-eye-icon fs-24px me-2"></span>
+                            <span class="side-bar-content">{{__('View Public Profile')}}</span>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="sidebar-item {{ Request::url() == route('post.job') ? 'active' : '' }}">
+                    <a href="{{route('post.job')}}" class="list-group-item list-group-item-action {{ Request::url() == route('post.job') ? 'active' : '' }}">
+                        <div class="d-flex w-100">
+                            <i class="bi bi-plus-circle-fill fs-24px me-2"></i>
+                            <span class="side-bar-content">{{__('Post Jobs')}}</span>
+                        </div>
+                    </a>
+                </li>
+
+
+               
+
+               
 
                 <li class="sidebar-item {{ Request::url() == route('company.messages') ? 'active' : '' }}">
                 <a href="{{ route('company.messages')}}" class="list-group-item list-group-item-action ">

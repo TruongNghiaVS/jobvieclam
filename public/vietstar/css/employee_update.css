@@ -233,6 +233,9 @@
 ul.list-unstyled.components.sidebar-bottom__item li{
     margin: 10px  0;
 }
+.media-body {
+    text-align: end;
+}
 
 @media only screen and (max-width: 767px) {
     #company-default-nav {

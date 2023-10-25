@@ -25,7 +25,7 @@
                             </div>
                             <form action="{{ route('posted.jobs') }}" method="get" class="form-search pt-2">
                                 <div class="row filter-job">
-                                    <div class="col-md-5 col-lg-5">
+                                    <div class="col-md-5 col-lg-5 col-sm-12">
                                         <div class="form-group">
                                             <input type="text" name="title" placeholder="{{ __('Research Jobs') }}"
                                                 class="form-control search-title"
@@ -45,7 +45,7 @@
                                             </select>
                                         </div>
                                     </div> --}}
-                                    <div class="col-md-4 col-lg-4">
+                                    <div class="col-md-4 col-lg-4 col-sm-12">
                                         <div class="form-group">
                                             <select name="city_id" class="form-select" name="" id="city_id">
                                                 <option value="">{{ __('Select cities') }}</option>
@@ -57,7 +57,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-lg-3">
+                                    <div class="col-md-3 col-lg-3 col-sm-12">
                                         <button type="submit" class="btn btn-primary"><i class="bi bi-search text-white"></i> Tìm kiếm</button>
                                     </div>
                                 </div>

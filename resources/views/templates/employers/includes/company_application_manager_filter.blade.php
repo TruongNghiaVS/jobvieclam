@@ -3,7 +3,7 @@
     <div class="card-body">
         <form action="{{ route('application.manager') }}" method="get" class="form-search">
             <div class="row filter-cv" style="margin-bottom: 00px">
-                <div class="col-md-10 col-lg-10">
+                <div class="col-9 col-md-10 col-lg-10">
                     <div class="form-group">
                         <input type="text" name="name" placeholder="{{ __('Search name, email, phone number') }}" class="form-control">
                         
@@ -22,7 +22,7 @@
                         </select>
                     </div>
                 </div> --}}
-                 <div class="col-md-2 col-lg-2">
+                 <div class="col-2 col-md-2 col-lg-2">
                     <button type="submit" class="btn btn-primary"><i class="bi bi-search text-white"></i></button>
                 </div>
             </div>

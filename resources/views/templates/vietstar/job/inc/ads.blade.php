@@ -8,42 +8,42 @@ $ads = \App\AdBanner::all();
     <!-- The slideshow -->
     <div class="carousel-inner">
 
-        <div class="col">
-            <div class="row">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-12 ">
                 <div class="item">
                     <div class="image loadAds">
                         <a href="#">
-                            <img src="https://media.istockphoto.com/id/1312091473/vector/we-are-hiring-banner-with-megaphone-flat-illustration.jpg?s=612x612&w=0&k=20&c=03ytHwFjPHCCIIAxR-hplKCQQNFWgZSMUg2HDJ_xTZQ="
+                            <img src="https://ads.careerbuilder.vn/www/images/a5b2628391fac3d894caa7e1a29d12fa.jpg"
                                 alt="#">
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="col-12 col-md-6 col-lg-12">
                 <div class="item">
                     <div class="image loadAds">
                         <a href="#">
-                            <img src="https://img.freepik.com/free-vector/man-search-hiring-job-online-from-laptop_1150-52728.jpg"
+                            <img src="https://ads.careerbuilder.vn/www/images/6804e96cfe23971714beafba912d8782.jpg"
                                 alt="#">
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="col-12 col-md-6 col-lg-12">
                 <div class="item">
                     <div class="image loadAds">
                         <a href="#">
-                            <img src="https://media.istockphoto.com/id/1173054931/photo/jobs-text-on-wooden-blocks-over-keyboard.jpg?s=612x612&w=0&k=20&c=1d3E26tHR7Yf7AUuGomDISXZTQ_u8PxizqTvo3bvSTY="
+                            <img src="https://ads.careerbuilder.vn/www/images/b818531cf76fdafbf772e3d95f5f102a.png"
                                 alt="#">
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="col-12 col-md-6 col-lg-12">
                 <div class="item">
                     <div class="image loadAds">
                         <a href="#">
-                            <img src="https://elca.vietnamworks.com/assets/images/page/banner/cover.png?r=1689852315"
+                            <img src="https://ads.careerbuilder.vn/www/images/cd36bdd64ecdebbeeafc6347057ee992.png"
                                 alt="#">
                         </a>
                     </div>

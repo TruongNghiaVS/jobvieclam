@@ -484,6 +484,21 @@
    #modal_user_dialog {
     max-width: 98% !important;
   }
+  .public-profile-cover {
+    display: none;
+  }
+  .public-profile {
+    margin-top: unset;
+  }
+  .posted-manager-header {
+    flex-direction: column;
+  }
+  .card-edit-profile .card-body {
+    padding: 10px;
+  }
+  .message-inbox .list-wrap {
+    height: 200px;
+  }
 }
 
 
@@ -775,6 +790,12 @@
     max-width: 98% !important;
   }
 
+  .public-profile-cover {
+    display: none;
+  }
+  .public-profile {
+    margin-top: unset;
+  }
   
 
 

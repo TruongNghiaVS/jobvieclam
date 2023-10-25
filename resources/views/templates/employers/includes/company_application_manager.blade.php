@@ -83,7 +83,7 @@
                             <span role="button" class="cv-status cv-status-1 cv-status-default" data-toggle="modal" data-target="#modalReviewApplication">{{ __(\App\JobApply::getListStatus()[$value->status]) }}</span>
                         </td>
                         <td class="text-right pl-0">
-                            <span type="button" role="button" data-toggle="dropdown" class="badge badge-secondary rounded-circle btn-dot d-flex align-items-center justify-content-center"
+                            <span type="button" role="button" data-toggle="dropdown" class=""
                                 aria-expanded="false"><i class="iconmoon icon-recruiter-dots"></i>
                             </span>
                             <div class="dropdown-menu dropdown-menu-right">

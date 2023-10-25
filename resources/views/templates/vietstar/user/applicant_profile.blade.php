@@ -54,7 +54,7 @@ if(null!==($package)){
       </div>
     </div>
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-12 col-lg-8 col-sm-12">
         <div class="summary-card row mx-0">
           <div class="col-md-4 mb-4 d-flex gap-16">
             <div class="summary-card__item-icon">
@@ -131,7 +131,7 @@ if(null!==($package)){
             <div  id="projects_div"></div>
         </div> -->
       </div>
-      <div class="col-md-4">
+      <div class="col-md-12 col-lg-4 col-sm-12">
         <div class="mb-5">
           <h6>{{__('Degree Level')}}</h6>
             @foreach($user->profileEducation as $education)

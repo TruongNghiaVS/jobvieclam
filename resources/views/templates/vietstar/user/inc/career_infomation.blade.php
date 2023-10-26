@@ -164,7 +164,7 @@
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'job_experience_id') !!}">
                             <label for="">{{__('Job Experience')}}</label>
                             {!! Form::select('job_experience_id', [''=>__('Lựa chọn số năm kinh nghiệm')]+$jobExperiences, null,
-                            array('class'=>'form-control form-select chosen', 'id'=>'job_experience_id')) !!}
+                            array('class'=>'form-control form-select', 'id'=>'job_experience_id')) !!}
                             {!! APFrmErrHelp::showErrors($errors, 'job_experience_id') !!}
                         </div>
                     </div>
@@ -180,15 +180,15 @@
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'industry_id') !!}">
                             <label for="">{{__('Lựa chọn Ngành nghề')}}</label>
                             {!! Form::select('industry_id', [''=>__('Lựa chọn Ngành nghề')]+$industries, null,
-                            array('class'=>'form-control form-select chosen', 'id'=>'industry_id')) !!}
+                            array('class'=>'form-control form-select', 'id'=>'industry_id')) !!}
                             {!! APFrmErrHelp::showErrors($errors, 'industry_id') !!}
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'functional_area_id') !!}">
-                            <label for="">{{__('Bộ phận chức năng')}}</label>
-                            {!! Form::select('functional_area_id', [''=>__('Lựa chọn Bộ phận chức năng')]+$functionalAreas, null,
-                            array('class'=>'form-control form-select chosen', 'id'=>'functional_area_id')) !!}
+                            <label for="">{{__('Functional department')}}</label>
+                            {!! Form::select('functional_area_id', [''=>__('Select Functional Department')]+$functionalAreas, null,
+                            array('class'=>'form-control form-select', 'id'=>'functional_area_id')) !!}
                             {!! APFrmErrHelp::showErrors($errors, 'functional_area_id') !!}
                         </div>
                     </div>

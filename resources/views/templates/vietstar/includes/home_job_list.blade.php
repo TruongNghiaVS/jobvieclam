@@ -10,10 +10,12 @@
               <h4 class="tablinks section-title text-center mb-3 " onclick="openCity(event, 'New_Jobs')">
                   {{__('New Jobs')}}
               </h4>
-
-              <h4 class=" tablinks section-title text-center mb-3" onclick="openCity(event, 'New_Jobs')">
+              @if(auth::check()==true)
+              <h4 class="tablinks section-title text-center mb-3" onclick="openCity(event, 'New_Jobs')">
                   {{__('Suggested Jobs')}}
               </h4>
+              @endif
+
           </div>
 
           <div id="Featured_Jobs" class="tabcontent active">
@@ -23,11 +25,10 @@
               @include('templates.vietstar.includes.latest_jobs')
           </div>
 
+          @if(auth::check()==true)
           <div id="New_Jobs" class="tabcontent">
               @include('templates.vietstar.includes.suggested_jobs')
           </div>
-
-          @if(auth::check()==true)
-
           @endif
+
   </section>

@@ -80,7 +80,7 @@
             <div class="modal-body">
                 <form id="myFormpassword" class="needs-validation" novalidate>
                     <div class="form-group">
-                        <label for="password">{{__('Password')}}</label>
+                        <label for="password">{{__('Reset Password')}}</label>
                         {!! Form::password('password', array('class'=>'form-control', 'id'=>'pwdId',
                         'placeholder'=>__('Password'))) !!}
                         {!! APFrmErrHelp::showErrors($errors, 'password') !!}

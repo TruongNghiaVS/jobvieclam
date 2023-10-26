@@ -77,12 +77,12 @@
         
             window.location.href = response.urlRedirect;
             return;
-              
+             
       
         },
         error: function (data, errorThrown) {
             console.log(data.responseJSON);
-          
+            
             
         }
     });

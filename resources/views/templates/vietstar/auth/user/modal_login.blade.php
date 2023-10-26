@@ -8,7 +8,7 @@
             <div class="modal-body">
                 <div id="candidate" class="formpanel tab-pane ">
                     <h3>Đăng nhập</h3>
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                    <form id ="formLogin" class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
                         <input type="hidden" name="candidate_or_employer" value="candidate" />
                         <div class="formpanel">
@@ -31,7 +31,7 @@
                             <div class="forgot-password-btn">
                                 <a href="{{ route('company.password.request') }}">{{__('Forgot Your Password')}}?</a>
                             </div>
-                            <input type="submit" class="btn" value="{{__('Login')}}">
+                            <input type="submit" onclick ="submitform()"  class="btn" value="{{__('Login')}}">
                         </div>
 
                         <div class="text-center ml-1" style="margin: 15px 0;">
@@ -62,3 +62,29 @@
         </div>
     </div>
 </div>
+
+
+<script>
+  $('#formLogin').on('submit', function(e) {
+    e.preventDefault(); 
+    $.ajax({
+        type: "POST",
+        url: '{{ route('login') }}',
+        data: $(this).serialize(),
+        success: function (data) {
+            
+            var response =data.responseJSON;
+        
+            window.location.href = response.urlRedirect;
+            return;
+              
+      
+        },
+        error: function (data, errorThrown) {
+            console.log(data.responseJSON);
+          
+            
+        }
+    });
+});
+</script>

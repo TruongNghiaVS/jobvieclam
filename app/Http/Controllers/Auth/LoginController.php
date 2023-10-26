@@ -9,7 +9,9 @@ use Socialite;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Validation\ValidationException;
-
+use  Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\Hash;
+use \stdClass;
 class LoginController extends Controller
 {
     /*
@@ -123,18 +125,47 @@ use AuthenticatesUsers;
     {
         $this->guard('guest')->logout();
         $request->session()->invalidate();
-        return redirect('/login');
+        return redirect('/');
     }
-    // public function login(Request $request)
+    public function login(Request $request)
 
-    // {
-    //     $request->validate([
-    //         'email' => 'required',
-    //         'password' => 'required',
-    //     ]);
-    //     dd("#");
+    {
+    
+       $passwordInput = bcrypt($request->input('password'));
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+        $email = $request->input("email");
+        $password = $request->input("password");
+        $exitMemeber = User::where('email', $request->get('email'))
+                        
+                            ->first();  
+        $error = array();
 
-    // }
+    
+      
+        if($exitMemeber)
+        {
+            Auth::login($exitMemeber, true);
+            return response()->json([
+                'sucess'=>true,
+                'urlRedirect'=> "/home",
+                "error"=> $error,
+                'message' => 'Đăng nhập thành công'], 200);
+          
+        }
+        else 
+        {
+            $itemError = new stdClass();
+            $itemError->key ="email";
+             $itemError->textError =trans('Email does not exist');
+            array_push($error, $itemError);
+            return response()->json([
+                'sucess'=>false,
+                'error'=> $error ], 401);
+        }
+    }
     /**
      * Get the failed login response instance.
      *

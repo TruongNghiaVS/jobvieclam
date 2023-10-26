@@ -2,7 +2,7 @@
         <div class="section-head__figure">
                 <div class="figure__image"><img src="https://cdn-icons-png.flaticon.com/512/3862/3862929.png" alt=""></div>
                 <div class="figure__caption">
-                        <h5 class="" onclick="showExperience();">{{__('Experience')}}</h5>
+                        <h5 class="" >{{__('Experience')}}</h5>
                         <div class="status complete" bis_skin_checked="1">
                                 <p>Hoàn thành</p>
                         </div>
@@ -21,7 +21,7 @@
 
 <div class="section-body">
         <div class="jobster-candidate-timeline">
-                <div class="" id="experience_div">
+                <div class="" id="jobster-candidate_experience_div">
 
                 </div>         
         </div>
@@ -141,7 +141,7 @@
 
             $ ("#add_experience_modal").html(json.html);
 
-            showExperience();
+            
 
             },
 
@@ -175,6 +175,9 @@
 
     });
 
+
+    showExperiencediv();
+
     }
 
     function delete_profile_experience(id) {
@@ -201,9 +204,11 @@
 
             }
 
-            });
+            })
 
     }
+    showExperiencediv();
+
 
     }
 
@@ -221,7 +226,7 @@
 
     $(document).ready(function(){
 
-    showExperience();
+        showExperiencediv()
 
     initdatepicker();
 
@@ -242,17 +247,16 @@
     });
 
     });
-
-    function showExperience()
+    function showExperiencediv()
 
     {
-        var myElement =document.querySelector('#experience_div')
+        console.log("adasdsda");
+
     $.post("{{ route('show.front.profile.experience', $user->id) }}", {user_id: {{$user->id}}, _method: 'POST', _token: '{{ csrf_token() }}'})
 
             .done(function (response) {
-             
-                myElement.innerHTML = response
-            $('#experience_div').html(response);
+
+            $('#jobster-candidate_experience_div').html(response);
             });
 
     }

@@ -233,6 +233,7 @@ if(null!==($package)){
     {
     $.post("{{ route('show.applicant.profile.experience', $user->id) }}", {user_id: {{$user->id}}, _method: 'POST', _token: '{{ csrf_token() }}'})
             .done(function (response) {
+              
             $('#experience_div').html(response);
             });
     }

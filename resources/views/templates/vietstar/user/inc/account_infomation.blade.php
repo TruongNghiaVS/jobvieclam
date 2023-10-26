@@ -80,7 +80,7 @@
             <div class="modal-body">
                 <form id="myFormpassword" class="needs-validation" novalidate>
                     <div class="form-group">
-                        <label for="password">{{__('Password')}}</label>
+                        <label for="password">{{__('Reset Password')}}</label>
                         {!! Form::password('password', array('class'=>'form-control', 'id'=>'pwdId',
                         'placeholder'=>__('Password'))) !!}
                         {!! APFrmErrHelp::showErrors($errors, 'password') !!}
@@ -125,27 +125,29 @@
       });
       let currForm1 = document.getElementById('myFormpassword');
         // Validate on submit:
-        currForm1.addEventListener('submit', function(event) {
-          if (currForm1.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          currForm1.classList.add('was-validated');
-        }, false);
-        // Validate on input:
-        currForm1.querySelectorAll('.form-control').forEach(input => {
-          input.addEventListener(('input'), () => {
-            if (input.checkValidity()) {
-              input.classList.remove('is-invalid')
-              input.classList.add('is-valid');
-            } else {
-              input.classList.remove('is-valid')
-              input.classList.add('is-invalid');
+        if(currForm1){
+          currForm1.addEventListener('submit', function(event) {
+            if (currForm1.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
             }
-            var is_valid = $('.form-control').length === $('.form-control.is-valid').length;
-            $("#account_submitBtn").attr("disabled", !is_valid);
+            currForm1.classList.add('was-validated');
+          }, false);
+          // Validate on input:
+          currForm1.querySelectorAll('.form-control').forEach(input => {
+            input.addEventListener(('input'), () => {
+              if (input.checkValidity()) {
+                input.classList.remove('is-invalid')
+                input.classList.add('is-valid');
+              } else {
+                input.classList.remove('is-valid')
+                input.classList.add('is-invalid');
+              }
+              var is_valid = $('.form-control').length === $('.form-control.is-valid').length;
+              $("#account_submitBtn").attr("disabled", !is_valid);
+            });
           });
-        });
+        }
       });
 </script>
 @endpush

@@ -140,7 +140,7 @@ if(null!==($package)){
               @php
                 $degree_type = ($education->Industries) ? ' | '.$education->Industries->industry : '';
               @endphp
-              <p class="text-blue-color mb-2">{{$education->date_completion}} | {{$education->institution . $degree_type}}</p>
+              <p class="text-primary mb-2 font-weight-bold">{{$education->date_completion}} | {{$education->institution . $degree_type}}</p>
               <h6 class="my-0">{{$education->degree}}</h6>
               <p>{{$education->school}}</p>
             </div>
@@ -153,7 +153,7 @@ if(null!==($package)){
             <h6>{{__('Skills')}}</h6>
             @foreach($user->profileSkills as $skill)
             <div class="form-card d-flex justify-content-between mb-3">
-              <p class="text-blue-color mb-2">{{ $jobSkills[$skill->job_skill_id] ?? ''}}</p>
+              <p class="text-primary mb-2 font-weight-bold">{{ $jobSkills[$skill->job_skill_id] ?? ''}}</p>
               <p>{{$jobExperiences[$skill->job_experience_id] ?? ''}} {{$skill->job_experience_id}}/5</p>
             </div>
             @endforeach
@@ -164,7 +164,7 @@ if(null!==($package)){
           <h6>{{__('Languages')}}</h6>
             @foreach($user->profileLanguages as $language)
             <div class="form-card d-flex justify-content-between mb-3">
-              <p class="text-blue-color mb-2"> {{$jobLanguages[$language->language_id]?? ''}}</p>
+              <p class="text-primary mb-2 font-weight-bold"> {{$jobLanguages[$language->language_id]?? ''}}</p>
               <p>{{$jobLanguageLevels[$language->language_level_id] ?? ''}}</p>
             </div>
             @endforeach
@@ -233,6 +233,7 @@ if(null!==($package)){
     {
     $.post("{{ route('show.applicant.profile.experience', $user->id) }}", {user_id: {{$user->id}}, _method: 'POST', _token: '{{ csrf_token() }}'})
             .done(function (response) {
+              
             $('#experience_div').html(response);
             });
     }

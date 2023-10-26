@@ -177,7 +177,7 @@
                         </li>
                         <li class="nav-item"><a href="{{ route('my.profile') }}" class="nav-link"><i class="jobicon fa fa-user" aria-hidden="true"></i> {{__('My Profile')}}</a>
                         </li>
-                        <li class="nav-item"><a href="{{ route('view.public.profile', Auth::user()->id) }}" class="nav-link"><i class="jobicon fa fa-eye" aria-hidden="true"></i>
+                        <li class="nav-item"><a href="#" class="nav-link" data-toggle="modal" data-target="#modal_user_info"><i class="jobicon fa fa-eye" aria-hidden="true"></i>
                                 {{__('View Public Profile')}}</a> </li>
                         <li><a href="{{ route('my.job.applications') }}" class="nav-link"><i class="jobicon fa fa-desktop" aria-hidden="true"></i>
                                 {{__('My Job Applications')}}</a> </li>

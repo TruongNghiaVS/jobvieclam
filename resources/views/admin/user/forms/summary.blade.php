@@ -20,7 +20,7 @@
             data: form.serialize(),
             dataType: 'json',
             success: function (json) {
-                $("#success_msg").html('<span class="text text-success">Cập nhật thành công</span>');
+                $("#success_msg").html('<span class="text text-primary">Cập nhật thành công</span>');
             },
             error: function (json) {
                 if (json.status === 422) {

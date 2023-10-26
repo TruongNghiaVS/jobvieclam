@@ -57,8 +57,8 @@ trait ProfileLanguageTrait
 
 
                 $html .= '<tr id="language_' . $language->id . '">
-						<td><span class="text text-success">' . $language->getLanguage('lang') . '</span></td>
-						<td><span class="text text-success">' . $language->getLanguageLevel('language_level') . '</span></td></tr>';
+						<td><span class="text text-primary">' . $language->getLanguage('lang') . '</span></td>
+						<td><span class="text text-primary">' . $language->getLanguageLevel('language_level') . '</span></td></tr>';
             endforeach;
         endif;
 

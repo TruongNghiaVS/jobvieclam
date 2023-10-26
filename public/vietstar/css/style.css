@@ -5057,13 +5057,16 @@ ul.skillslist li a:hover {
 
 .profileskills li .skillbox:hover {
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-	border-color: #28a745;
+	border-color: var(--bs-primary);
 }
 
 .profileskills li .skillbox span {
 	display: block;
 	margin-top: 5px;
 	font-weight: 400;
+}
+.font-weight-bold {
+	font-weight: 600;
 }
 
 

@@ -1,9 +1,9 @@
 
-<div class="section-head">
-        <div class="section-head__figure">
-                <div class="figure__image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/University_Diploma_or_Certificate_Flat_Icon_Vector.svg/1024px-University_Diploma_or_Certificate_Flat_Icon_Vector.svg.png" alt=""></div>
-                <div class="figure__caption">
-                        <h5 class="" onclick="showEducation();">{{__('Education')}}</h5>
+<div class="section-head" bis_skin_checked="1">
+        <div class="section-head__figure" bis_skin_checked="1">
+                <div class="figure__image" bis_skin_checked="1"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/University_Diploma_or_Certificate_Flat_Icon_Vector.svg/1024px-University_Diploma_or_Certificate_Flat_Icon_Vector.svg.png" alt=""></div>
+                <div class="figure__caption" bis_skin_checked="1">
+                        <h5 class="" onclick="">{{__('Education')}}</h5>
                         <div class="status complete" bis_skin_checked="1">
                                 <p>Hoàn thành</p>
                         </div>
@@ -14,15 +14,15 @@
                         <i class="bi bi-lightbulb"></i>
                         <p>Tips</p>
                 </div>
-                <div class="right-action__link-edit"><a a href="javascript:;"  onclick="showProfileEducationModal();"><i class="bi bi-pen"></i>Thêm mới</a></div>
-                <div class="right-action__link-edit-mobile"><a a href="javascript:;"  onclick="showProfileEducationModal();"><i class="bi bi-pen"></i></a></div>
+                <div class="right-action__link-edit" bis_skin_checked="1"><a a="" href="javascript:;" onclick="showProfileEducationModal();"><i class="bi bi-pen"></i>Thêm mới</a></div>
+                <div class="right-action__link-edit-mobile" bis_skin_checked="1"><a a="" href="javascript:;" onclick="showProfileEducationModal();"><i class="bi bi-pen"></i></a></div>
         </div>
 </div>
 <div class="section-body"> 
 
 <div class="row">
     <div class="col-md-12">
-        <div class="" id="education_div">
+        <div class="" id="show_education_div">
                 
         </div>
     </div>
@@ -88,7 +88,7 @@
             dataType: 'json',
             success : function (json){
             $ ("#add_education_modal").html(json.html);
-            showEducation();
+            showEducationDiv();
             },
             error: function(json){
             if (json.status === 422) {
@@ -133,7 +133,7 @@
     });
     }
     $(document).ready(function(){
-    showEducation();
+    showEducationDiv();
     initdatepicker();
     $(document).on('change', '#degree_level_id', function (e) {
     e.preventDefault();
@@ -148,11 +148,12 @@
     filterLangCitiesEducation(0);
     });
     });
-    function showEducation()
+    function showEducationDiv()
     {
     $.post("{{ route('show.front.profile.education', $user->id) }}", {user_id: {{$user->id}}, _method: 'POST', _token: '{{ csrf_token() }}'})
             .done(function (response) {
-            $('#education_div').html(response);
+                console.log(response);
+            $('#show_education_div').html(response);
             });
     }
 //     function filterDegreeTypes(degree_type_id)

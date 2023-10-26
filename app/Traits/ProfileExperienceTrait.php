@@ -56,10 +56,6 @@ trait ProfileExperienceTrait
                     $date_end = 'Currently working';
                 else
                     $date_end = $experience->date_end->format('d M, Y');
-
-
-       
-                    
                     $html .= '<!--experience Start-->
                     <div class="jobster-timeline-item" id="experience_' . $experience->id . '">
                         <div class="act-dropdown dropdown">

@@ -868,20 +868,23 @@
     });
 
     var fileInput = document.getElementById("image");
-    fileInput.addEventListener("change", function(e) {
-        var files = this.files
-        showThumbnail(files)
-    }, false)
-
-    var fileInput_cover_image = document.getElementById("cover_image");
-
-    fileInput_cover_image.addEventListener("change", function(e) {
-
-        var files_cover_image = this.files
-
-        showThumbnail_cover_image(files_cover_image)
-
-    }, false)
+    if (fileInput) {
+        
+        fileInput.addEventListener("change", function(e) {
+            var files = this.files
+            showThumbnail(files)
+        }, false)
+    
+        var fileInput_cover_image = document.getElementById("cover_image");
+    
+        fileInput_cover_image.addEventListener("change", function(e) {
+    
+            var files_cover_image = this.files
+    
+            showThumbnail_cover_image(files_cover_image)
+    
+        }, false)
+    }
 
 
     function showThumbnail(files) {

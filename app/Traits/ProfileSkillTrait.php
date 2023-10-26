@@ -57,7 +57,7 @@ trait ProfileSkillTrait
 
                 $html .= '<li class="col-md-4" id="skill_' . $skill->id . '">
 						<div class="skillbox">' . $skill->getJobSkill('job_skill') . '
-						<span class="text text-success">' . $skill->getJobExperience('job_experience') . '</span></div></li>';
+						<span class="text text-primary">' . $skill->getJobExperience('job_experience') . '</span></div></li>';
             endforeach;
         endif;
 

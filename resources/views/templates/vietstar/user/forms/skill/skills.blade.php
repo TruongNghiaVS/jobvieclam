@@ -1,24 +1,23 @@
-
-<div class="section-head">
-        <div class="figure">
-                <div class="figure__image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/University_Diploma_or_Certificate_Flat_Icon_Vector.svg/1024px-University_Diploma_or_Certificate_Flat_Icon_Vector.svg.png" alt=""></div>
-                <div class="figure__caption">
-                        <h5 class=""  onclick="showSkills();">{{__('Skills')}}</h5>
+<div class="section-head" bis_skin_checked="1">
+        <div class="section-head__figure" bis_skin_checked="1">
+                <div class="figure__image" bis_skin_checked="1"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/University_Diploma_or_Certificate_Flat_Icon_Vector.svg/1024px-University_Diploma_or_Certificate_Flat_Icon_Vector.svg.png" alt=""></div>
+                <div class="figure__caption" bis_skin_checked="1">
+                        <h5 class=""onclick="showSkills();">{{__('Skills')}}</h5>
                         <div class="status complete" bis_skin_checked="1">
                                 <p>Hoàn thành</p>
                         </div>
                 </div>
         </div>
-        <div class="right-action" bis_skin_checked="1">
+        <div class="section-head__right-action" bis_skin_checked="1">
                 <div class="right-action__tips" bis_skin_checked="1">
                         <i class="bi bi-lightbulb"></i>
                         <p>Tips</p>
                 </div>
-                <div class="right-action__link-edit"><a a href="javascript:;"  onclick="showProfileSkillModal();"><i class="bi bi-pen"></i>Thêm mới</a></div>
-                <div class="right-action__link-edit-mobile"><a a href="javascript:;"  onclick="showProfileSkillModal();"><i class="bi bi-pen"></i></a></div>
-        
+                <div class="right-action__link-edit" bis_skin_checked="1"><a a="" href="javascript:;" onclick="showProfileSkillModal();"><i class="bi bi-pen"></i>Thêm mới</a></div>
+                <div class="right-action__link-edit-mobile" bis_skin_checked="1"><a a="" href="javascript:;" onclick="showProfileSkillModal();"><i class="bi bi-pen"></i></a></div>
         </div>
 </div>
+
 
 <div class="section-body"> 
 

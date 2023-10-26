@@ -250,7 +250,7 @@
     function showExperiencediv()
 
     {
-        console.log("adasdsda");
+  
 
     $.post("{{ route('show.front.profile.experience', $user->id) }}", {user_id: {{$user->id}}, _method: 'POST', _token: '{{ csrf_token() }}'})
 

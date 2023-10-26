@@ -81,9 +81,7 @@
       
         },
         error: function (data, errorThrown) {
-            console.log(data.responseJSON);
-            
-            
+            console.log(data.responseJSON);  
         }
     });
 });

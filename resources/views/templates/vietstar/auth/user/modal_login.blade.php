@@ -8,20 +8,25 @@
             <div class="modal-body">
                 <div id="candidate" class="formpanel tab-pane ">
                     <h3>Đăng nhập</h3>
-                    <form id ="formLogin" class="form-horizontal" method="POST" action="{{ route('login') }}">
+                    <form id ="formLogin" class="form-horizontal needs-validation" novalidate >
                         {{ csrf_field() }}
                         <input type="hidden" name="candidate_or_employer" value="candidate" />
                         <div class="formpanel">
                             <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }}">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="{{__('Email Address')}}">
-                                @if ($errors->has('email'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('email') }}</strong>
+                                <div class="invalid-feedback">
+                                {{__('Valid e-mail address is required')}}
+                                </div>
+                                <span class="email-help-block">
+                                   
                                 </span>
-                                @endif
+                           
                             </div>
                             <div class="formrow{{ $errors->has('password') ? ' has-error' : '' }}">
                                 <input id="password" type="password" class="form-control" name="password" value="" required placeholder="{{__('Password')}}">
+                                <div class="invalid-feedback">
+                                {{__('Password is required')}}
+                                </div>
                                 @if ($errors->has('password'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('password') }}</strong>
@@ -64,25 +69,67 @@
 </div>
 
 
+@push('styles')
+<style>
+    .email-help-block {
+        display: none;
+    }
+    .email-help-block.has_error {
+        display: block;
+        margin: 10px;
+        color: red;
+    }
+
+</style>
+@endpush
+
+
+
+
 <script>
-  $('#formLogin').on('submit', function(e) {
+
+    (function () {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+        }, false)
+        })
+    })()
+
+$('#formLogin').on('submit', function(e) {
     e.preventDefault(); 
-    $.ajax({
-        type: "POST",
-        url: '{{ route('login') }}',
-        data: $(this).serialize(),
-        success: function (data) {
-            
-            var response =data.responseJSON;
+
+
+
+$.ajax({
+    type: "POST",
+    url: '{{ route('login') }}',
+    data: $(this).serialize(),
+    success: function (data) {
         
-            window.location.href = response.urlRedirect;
-            return;
-             
-      
-        },
-        error: function (data, errorThrown) {
-            console.log(data.responseJSON);  
+        var response =data.responseJSON;
+     
+        // window.location.href = response.urlRedirect;
+        return;
+    },
+    error: function (data, errorThrown) {
+        console.log(data.responseJSON);
+        if(data.responseJSON.error[0].key ==  'email'){
+            $('.email-help-block').html(`${data.responseJSON.error[0].textError}`)
+            $('.email-help-block').addClass('has_error')
         }
-    });
+    }
+}); 
 });
 </script>

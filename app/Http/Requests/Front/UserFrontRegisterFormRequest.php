@@ -27,13 +27,13 @@ class UserFrontRegisterFormRequest extends Request
     {
 
         return [
-            'first_name' => 'required|max:80',
-            'middle_name' => 'max:80',
-            'last_name' => 'required|max:80',
-            'email' => 'required|unique:users,email|email|max:100',
-            'password' => 'required|confirmed|min:6|max:50',
-            'terms_of_use' => 'required',
-            'g-recaptcha-response' => 'required|captcha',
+            // 'first_name' => 'required|max:80',
+            // 'middle_name' => 'max:80',
+            // 'last_name' => 'required|max:80',
+            // 'email' => 'required|unique:users,email|email|max:100',
+            // 'password' => 'required|confirmed|min:6|max:50',
+            // 'terms_of_use' => 'required',
+            // 'g-recaptcha-response' => 'required|captcha',
         ];
     }
 

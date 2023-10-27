@@ -8,6 +8,7 @@ use Socialite;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use \stdClass;
 
 class LoginController extends Controller
 {
@@ -79,6 +80,44 @@ use AuthenticatesUsers;
     protected function guard()
     {
         return Auth::guard('company');
+    }
+
+    public function login(Request $request)
+
+    {
+        $passwordInput = bcrypt($request->input('password'));
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+        $email = $request->input("email");
+        $password = $request->input("password");
+        $exitMemeber = Company::where('email', $request->get('email'))
+                      ->first();  
+        $error = array();
+
+    
+      
+        if($exitMemeber)
+        {
+            Auth::guard('company')->login($exitMemeber, true);
+            return response()->json([
+                'sucess'=>true,
+                'urlRedirect'=> "/company-home",
+                "error"=> $error,
+                'message' => 'Đăng nhập thành công'], 200);
+          
+        }
+        else 
+        {
+            $itemError = new stdClass();
+            $itemError->key ="email";
+             $itemError->textError =trans('Email does not exist');
+            array_push($error, $itemError);
+            return response()->json([
+                'sucess'=>false,
+                'error'=> $error ], 401);
+        }
     }
 
     /**

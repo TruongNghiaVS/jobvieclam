@@ -8,7 +8,7 @@
             <div class="modal-body">
                 <div id="employer" class="formpanel">
 
-                    <form class="form-horizontal" method="POST" action="{{ route('company.register') }}">
+                    <form id ="fromEmployerRegister" class="form-horizontal" method="POST" action="{{ route('company.register') }}">
                         <h3>{{__('Employers')}} / {{__('Register')}}</h3>
                         {{ csrf_field() }}
 
@@ -96,3 +96,28 @@
         </div>
     </div>
 </div>
+
+<script>
+  $('#fromEmployerRegister').on('submit', function(e) {
+    e.preventDefault(); 
+    $.ajax({
+        type: "POST",
+        url: '{{ route('company.register') }}',
+        data: $(this).serialize(),
+        success: function (data) {
+            
+            var response =data.responseJSON;
+        
+            window.location.href = response.urlRedirect;
+            return;
+             
+      
+        },
+        error: function (data, errorThrown) {
+            console.log(data.responseJSON);
+            
+            
+        }
+    });
+});
+</script>

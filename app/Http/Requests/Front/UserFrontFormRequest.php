@@ -60,16 +60,16 @@ class UserFrontFormRequest extends Request
     public function messages()
     {
         return [
-            'first_name.required' => __('Họ là trường yêu cầu/ First Name is required'),
+            // 'first_name.required' => __('Họ là trường yêu cầu/ First Name is required'),
             //'middle_name.required' => __('Middle Name is required'),
             //'last_name.required' => __('Last Name is required'),
-            'email.required' => __('Email là trường yêu cầu/Email is required'),
-            'email.email' => __('Email phải hợp lệ/ The email must be a valid email address'),
-            'email.unique' => __('Email đã tồn tại/ This Email has already been taken'),
-            'password.required' => __('Mật khẩu là trường yêu cầu/ Password is required'),
-            'password.min' => __('Mật khẩu cần có độ dài tối thiểu 3 ký tự/ The password should be more than 3 characters long'),
+            // 'email.required' => __('Email là trường yêu cầu/Email is required'),
+            // 'email.email' => __('Email phải hợp lệ/ The email must be a valid email address'),
+            // 'email.unique' => __('Email đã tồn tại/ This Email has already been taken'),
+            // 'password.required' => __('Mật khẩu là trường yêu cầu/ Password is required'),
+            // 'password.min' => __('Mật khẩu cần có độ dài tối thiểu 3 ký tự/ The password should be more than 3 characters long'),
             //'father_name.required' => __('Father Name is required'),
-            'date_of_birth.required' => __('Ngày sinh là trường yêu cầu/ Date of birth is required'),
+            // 'date_of_birth.required' => __('Ngày sinh là trường yêu cầu/ Date of birth is required'),
             //'gender_id.required' => __('Please select gender'),
            // 'marital_status_id.required' => __('Please select marital status'),
             'nationality_id.required' => __('Lụa chọn Quốc tịch/ Please select nationality'),

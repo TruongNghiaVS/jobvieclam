@@ -18,6 +18,7 @@ use Jrean\UserVerification\Exceptions\UserNotFoundException;
 use Jrean\UserVerification\Exceptions\UserIsVerifiedException;
 use Jrean\UserVerification\Exceptions\TokenMismatchException;
 use Illuminate\Support\Facades\Log;
+use \stdClass;
 
 class RegisterController extends Controller
 {
@@ -52,9 +53,65 @@ class RegisterController extends Controller
         $this->middleware('guest', ['except' => ['getVerification', 'getVerificationError']]);
     }
 
+
+    // 'first_name' => 'required|max:80',
+    // 'middle_name' => 'max:80',
+    // 'last_name' => 'required|max:80',
+    // 'email' => 'required|unique:users,email|email|max:100',
+    // 'password' => 'required|confirmed|min:6|max:50',
+    // 'terms_of_use' => 'required',
+    // 'g-recaptcha-response' => 'required|captcha',
+
     public function register(UserFrontRegisterFormRequest $request)
     {
         $user = new User();
+        $error = array();
+        if(empty($request->input('first_name')))
+       {
+           $itemError = new stdClass();
+           $itemError->key ="first_name";
+            $itemError->textError ="Yêu cầu nhập họ tên";
+            array_push($error, $itemError);   
+       }
+       if(empty($request->input('middle_name')))
+       {
+           $itemError = new stdClass();
+           $itemError->key ="middle_name";
+            $itemError->textError ="Yêu cầu nhập tên lót";
+            array_push($error, $itemError);   
+       }
+       if(empty($request->input('last_name')))
+       {
+           $itemError = new stdClass();
+           $itemError->key ="last_name";
+            $itemError->textError ="Yêu cầu nhập tên";
+            array_push($error, $itemError);   
+       }
+
+       if(empty($request->input('password')))
+       {
+            $itemError = new stdClass();
+            $itemError->key ="password";
+            $itemError->textError ="Yêu cầu mật khẩu";
+            array_push($error, $itemError);   
+       }
+
+       $exited = User::where('email', $request->input('email'))
+       ->first();  
+       if($exited)
+       {
+           $itemError = new stdClass();
+           $itemError->key ="email";
+            $itemError->textError ="Email này đã được sử dụng trong hệ thống";
+            array_push($error, $itemError);
+           
+       }
+       if(count($error))
+       {
+           return response()->json([
+               'sucess'=>false,
+               'error'=> $error ], 202);
+       }
         $user->first_name = $request->input('first_name');
         $user->middle_name = $request->input('middle_name');
         $user->last_name = $request->input('last_name');

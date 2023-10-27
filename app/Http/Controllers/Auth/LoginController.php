@@ -130,8 +130,17 @@ use AuthenticatesUsers;
     public function login(Request $request)
 
     {
-    
-       $passwordInput = bcrypt($request->input('password'));
+        $passwordInput = bcrypt($request->input('password'));
+       $error = array();
+
+       if(empty($request->input('password')))
+         {
+              $itemError = new stdClass();
+              $itemError->key ="password";
+              $itemError->textError ="Yêu cầu mật khẩu";
+              array_push($error, $itemError);   
+         }
+
         $request->validate([
             'email' => 'required',
             'password' => 'required',
@@ -141,21 +150,9 @@ use AuthenticatesUsers;
         $exitMemeber = User::where('email', $request->get('email'))
                         
                             ->first();  
-        $error = array();
-
-    
       
-        if($exitMemeber)
-        {
-            Auth::login($exitMemeber, true);
-            return response()->json([
-                'sucess'=>true,
-                'urlRedirect'=> "/home",
-                "error"=> $error,
-                'message' => 'Đăng nhập thành công'], 200);
-          
-        }
-        else 
+      
+        if(!$exitMemeber)
         {
             $itemError = new stdClass();
             $itemError->key ="email";
@@ -164,7 +161,23 @@ use AuthenticatesUsers;
             return response()->json([
                 'sucess'=>false,
                 'error'=> $error ], 401);
+          
         }
+
+        if(count($error))
+        {
+            return response()->json([
+                'sucess'=>false,
+                'error'=> $error ], 202);
+        }
+        
+
+        Auth::login($exitMemeber, true);
+        return response()->json([
+            'sucess'=>true,
+            'urlRedirect'=> "/home",
+            "error"=> $error,
+            'message' => 'Đăng nhập thành công'], 200);
     }
     /**
      * Get the failed login response instance.

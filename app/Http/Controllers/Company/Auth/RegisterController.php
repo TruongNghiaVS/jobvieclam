@@ -16,7 +16,7 @@ use Illuminate\Auth\Events\Registered;
 use App\Events\CompanyRegistered;
 use Illuminate\Support\Str;
 use Jrean\UserVerification\Facades\UserVerification as UserVerificationFacade;
-
+use \stdClass;
 class RegisterController extends Controller
 {
     /*
@@ -67,7 +67,42 @@ use RegistersUsers;
 
     public function register(CompanyFrontRegisterFormRequest $request)
     {
+      
         $company = new Company();
+        $error = array();
+         if(!empty($request->input('name')))
+        {
+            $itemError = new stdClass();
+            $itemError->key ="name";
+             $itemError->textError ="Yêu cầu nhập họ tên";
+             array_push($error, $itemError);   
+        }
+
+
+        if(empty($request->input('password')))
+        {
+            $itemError = new stdClass();
+            $itemError->key ="password";
+             $itemError->textError ="Yêu cầu mật khẩu";
+             array_push($error, $itemError);   
+        }
+        
+        $exited = Company::where('email', $request->input('email'))
+        ->first();  
+        if($exited)
+        {
+            $itemError = new stdClass();
+            $itemError->key ="email";
+             $itemError->textError ="Email này đã được sử dụng trong hệ thống";
+             array_push($error, $itemError);
+            
+        }
+        if(count($error))
+        {
+            return response()->json([
+                'sucess'=>false,
+                'error'=> $error ], 202);
+        }
         $company->name = $request->input('name');
         $company->email = $request->input('email');
         $company->password = bcrypt($request->input('password'));

@@ -15,21 +15,16 @@
                             <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }}">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="{{__('Email Address')}}">
                              
-                                <span class="email-help-block">
-                                   
-                                </span>
+                                <div class="invalid-feedback email-error">
+                                    {{__('Email is required')}}
+                                </div>
                            
                             </div>
                             <div class="formrow{{ $errors->has('password') ? ' has-error' : '' }}">
                                 <input id="password" type="password" class="form-control" name="password" value="" required placeholder="{{__('Password')}}">
-                                <div class="invalid-feedback">
+                                <div class="invalid-feedback password-error">
                                 {{__('Password is required')}}
                                 </div>
-                                @if ($errors->has('password'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                                @endif
                             </div>
                             <div class="forgot-password-btn">
                                 <a href="{{ route('company.password.request') }}">{{__('Forgot Your Password')}}?</a>
@@ -69,10 +64,10 @@
 
 @push('styles')
 <style>
-    .email-help-block {
+    .help-block {
         display: none;
     }
-    .email-help-block.has_error {
+    .help-block.has_error {
         display: block;
         margin: 10px;
         color: red;
@@ -105,33 +100,124 @@
         })
     })()
 
-$('#formLogin').on('submit', function(e) {
-    e.preventDefault(); 
+// $('#formLogin').on('submit', function(e) {
+//     e.preventDefault(); 
 
 
 
-$.ajax({
-    type: "POST",
-    url: '{{ route('login') }}',
-    data: $(this).serialize(),
-    success: function (data) {
+//     $.ajax({
+//         type: "POST",
+//         url: '{{ route('login') }}',
+//         data: $(this).serialize(),
+//         success: function (data) {
+            
+            
+//             console.log(data);
+            
+//             setTimeout(function() { 
+//                 alert(data.message)
+//                 window.location.href = data.urlRedirect;
+//             }, 2000);
+//             return window.location.href;
+//         },
+//         error: function (data, errorThrown) {
+//             console.log(data.responseJSON);
+//             if(data.responseJSON.error[0].key ==  'email'){
+//                 $(`.help-block.${data.responseJSON.error[0].key}`).html(`${data.responseJSON.error[0].textError}`)
+//                 $(`.help-block.${data.responseJSON.error[0].key}`).addClass('has_error')
+//             }
+//         }
+//     }); 
+//     });
+
+$(document).ready(function() {
+    $('#formLogin').submit(function(event) {
+        var isValid = true;
+        event.preventDefault()
         
-        
-        console.log(data);
-        
-        setTimeout(function() { 
-            alert(data.message)
-            window.location.href = data.urlRedirect;
-        }, 2000);
-        return window.location.href;
-    },
-    error: function (data, errorThrown) {
-        console.log(data.responseJSON);
-        if(data.responseJSON.error[0].key ==  'email'){
-            $('.email-help-block').html(`${data.responseJSON.error[0].textError}`)
-            $('.email-help-block').addClass('has_error')
+        // Check each input field for emptiness
+        $('#formLogin input').each(function() {
+            if (!$(this).val()) {
+                isValid = false;
+                $(this).addClass('is-invalid');
+              
+            }
+        });
+
+        $("#formLogin").find(":input").prop("disabled", false);
+
+
+        var email = $('#email').val();
+
+        // Simple email validation using a regular expression
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (emailRegex.test(email)) {
+            // Email is valid
+            $('#email').removeClass('is-invalid');
+            $('#email').addClass('is-valid');
+
+           
+        } else {
+            // Email is invalid
+           
+            $('#email').removeClass('is-valid');
+            $('#email').addClass('is-invalid');
+            $('.email-error').text('{{__('The email must be a valid email address')}}')
         }
-    }
-}); 
+
+
+        isValid = this.checkValidity();
+
+
+        if (!isValid) {
+            event.preventDefault(); // Prevent the form from submitting
+        }
+        if (isValid) { 
+            $.ajax({
+            type: "POST",
+            url:  '{{ route('login') }}',
+            data: $(this).serialize(),
+            statusCode: {
+                202 :  function(responseObject, textStatus, jqXHR) {
+                    console.log(responseObject.error);
+        
+                },
+                401: function(responseObject, textStatus, jqXHR) {
+                    // No content found (404)
+                    console.log(responseObject.responseJSON);
+                    responseObject.responseJSON.error.forEach(err => {
+                        $(`#formLogin .invalid-feedback.${err.key}-error`).text(err.textError)
+                        $(`#formLogin .invalid-feedback.${err.key}-error`).addClass('has-error')
+                        $(`#formLogin input[name*='${err.key}']`).addClass('has-error')
+                    })
+                    // This code will be executed if the server returns a 404 response
+                },
+                503: function(responseObject, textStatus, errorThrown) {
+                    // Service Unavailable (503)
+                    console.log(responseObject.error);
+
+                    // This code will be executed if the server returns a 503 response
+                }           
+                }
+                })
+                .done(function(data){
+                    console.log(data);
+                    
+                })
+                .fail(function(jqXHR, textStatus){
+                    
+                })
+                .always(function(jqXHR, textStatus) {
+                
+                });
+                }
+    });
+
+    // Remove validation class on input change
+    $('#formLogin input').on('input', function() {
+        $(this).removeClass('is-invalid');
+    });
 });
+
 </script>

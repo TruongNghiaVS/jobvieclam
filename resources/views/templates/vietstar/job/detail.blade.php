@@ -1140,13 +1140,13 @@ $company = $job->getCompany();
 @push('scripts')
 <script>
 $(document).ready(function($) {
-    $("form").submit(function() {
+    /*$("form").submit(function() {
         $(this).find(":input").filter(function() {
             return !this.value;
         }).attr("disabled", "disabled");
         return true;
     });
-    $("form").find(":input").prop("disabled", false);
+    $("form").find(":input").prop("disabled", false);*/
 
     $(".view_more_ul").each(function() {
         if ($(this).height() > 100) {

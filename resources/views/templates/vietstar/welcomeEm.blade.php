@@ -60,13 +60,13 @@ $(document).ready(function($) {
     toastr.error("{{$error}}");
     @endforeach
     @endif
-    $("form").submit(function() {
+    /*$("form").submit(function() {
         $(this).find(":input").filter(function() {
             return !this.value;
         }).attr("disabled", "disabled");
         return true;
     });
-    $("form").find(":input").prop("disabled", false);
+    $("form").find(":input").prop("disabled", false);*/
 
     $('body').on('keyup', '#search', function() {
         var search = $(this).val();

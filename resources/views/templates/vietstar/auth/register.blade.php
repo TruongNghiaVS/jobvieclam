@@ -37,13 +37,13 @@
                                             <strong>{{ $errors->first('first_name') }}</strong> </span> @endif
                                     </div>
 
-                                    <!-- <div class="formrow col {{ $errors->has('middle_name') ? ' has-error' : '' }}">
+                                    <div class="formrow col {{ $errors->has('middle_name') ? ' has-error' : '' }}">
 
                                         <input type="text" name="middle_name" class="form-control" placeholder="{{__('Middle Name')}}" value="{{old('middle_name')}}">
 
                                         @if ($errors->has('middle_name')) <span class="help-block">
                                             <strong>{{ $errors->first('middle_name') }}</strong> </span> @endif
-                                    </div> -->
+                                    </div>
                                     <div class="formrow col {{ $errors->has('last_name') ? ' has-error' : '' }}">
 
                                         <input type="text" name="last_name" class="form-control" required="required" placeholder="{{__('Last Name')}}" value="{{old('last_name')}}">

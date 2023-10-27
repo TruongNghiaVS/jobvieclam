@@ -64,13 +64,16 @@
 
 @push('styles')
 <style>
-    .help-block {
+    .invalid-feedback {
         display: none;
     }
-    .help-block.has_error {
+    .invalid-feedback.has-error {
         display: block;
         margin: 10px;
         color: red;
+    }
+    .form-control.has-error{
+        border: 1px solid #dc3545 !important;
     }
 
 </style>
@@ -99,37 +102,6 @@
         }, false)
         })
     })()
-
-// $('#formLogin').on('submit', function(e) {
-//     e.preventDefault(); 
-
-
-
-//     $.ajax({
-//         type: "POST",
-//         url: '{{ route('login') }}',
-//         data: $(this).serialize(),
-//         success: function (data) {
-            
-            
-//             console.log(data);
-            
-//             setTimeout(function() { 
-//                 alert(data.message)
-//                 window.location.href = data.urlRedirect;
-//             }, 2000);
-//             return window.location.href;
-//         },
-//         error: function (data, errorThrown) {
-//             console.log(data.responseJSON);
-//             if(data.responseJSON.error[0].key ==  'email'){
-//                 $(`.help-block.${data.responseJSON.error[0].key}`).html(`${data.responseJSON.error[0].textError}`)
-//                 $(`.help-block.${data.responseJSON.error[0].key}`).addClass('has_error')
-//             }
-//         }
-//     }); 
-//     });
-
 $(document).ready(function() {
     $('#formLogin').submit(function(event) {
         var isValid = true;
@@ -202,7 +174,10 @@ $(document).ready(function() {
                 }
                 })
                 .done(function(data){
-                    console.log(data);
+                    // setTimeout(function() { 
+                    //     alert(data.message)
+                    //     window.location.href = data.urlRedirect;
+                    // }, 2000);
                     
                 })
                 .fail(function(jqXHR, textStatus){

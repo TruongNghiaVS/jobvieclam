@@ -243,6 +243,11 @@ $(document).ready(function() {
                 }
                 })
                 .done(function(data){
+                    // console.log(data);
+                    // setTimeout(function() { 
+                    //     alert("Đang")
+                    //     window.location.href = ;
+                    // }, 2000);
                     
                 })
                 .fail(function(jqXHR, textStatus){

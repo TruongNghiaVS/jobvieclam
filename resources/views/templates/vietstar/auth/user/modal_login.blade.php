@@ -14,9 +14,7 @@
                         <div class="formpanel">
                             <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }}">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="{{__('Email Address')}}">
-                                <div class="invalid-feedback">
-                                {{__('Valid e-mail address is required')}}
-                                </div>
+                             
                                 <span class="email-help-block">
                                    
                                 </span>
@@ -118,10 +116,14 @@ $.ajax({
     data: $(this).serialize(),
     success: function (data) {
         
-        var response =data.responseJSON;
-     
-        // window.location.href = response.urlRedirect;
-        return;
+        
+        console.log(data);
+        
+        setTimeout(function() { 
+            alert(data.message)
+            window.location.href = data.urlRedirect;
+        }, 2000);
+        return window.location.href;
     },
     error: function (data, errorThrown) {
         console.log(data.responseJSON);

@@ -52,6 +52,12 @@ class BlogController extends Controller
         $data['categories'] = Blog_category::get();
         return view(config('app.THEME_PATH').'.blog')->with($data);
     }
+    public function getAllCarrier()
+    {
+        $data['blogs'] = Blog::where('cate_id',17)
+        ->where('lang', 'like', \App::getLocale())->paginate(10);
+        return $data;
+    }
     public function details($slug)
     {
         $data['blog'] = Blog::where('slug','like','%'. $slug.'%')->where('lang', 'like', \App::getLocale())->first();

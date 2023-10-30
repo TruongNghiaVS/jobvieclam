@@ -91,10 +91,10 @@ use RegistersUsers;
         ->first();  
         if($exited)
         {
-            $itemError = new stdClass();
-            $itemError->key ="email";
-             $itemError->textError ="Email này đã được sử dụng trong hệ thống";
-             array_push($error, $itemError);
+                $itemError = new stdClass();
+                $itemError->key ="email";
+                $itemError->textError ="Email này đã được sử dụng trong hệ thống";
+                array_push($error, $itemError);
             
         }
         if(count($error))

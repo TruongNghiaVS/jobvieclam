@@ -20,7 +20,7 @@
 
                            
                                 <div class="invalid-feedback name-error">
-                                    {{__('Last Name is required')}}
+                                    {{__('Name is required')}}
                                 </div>
 
                         </div>

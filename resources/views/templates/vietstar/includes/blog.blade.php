@@ -72,7 +72,7 @@
                 
             </div>
             <div class="row align-items-start ">
-                <div class="col-md-6 col-lg-4 mb-4 ">
+                <div class="col-sm-12 col-md-6 col-lg-3  mb-4 ">
                     <div class="figure">
                         <a href="http://localhost:8000/blog/cau-chuyn-chn-ngh" class="figure-images"><img src="https://contenthub-static.grammarly.com/blog/wp-content/uploads/2017/11/how-to-write-a-blog-post.jpeg" alt=""></a>
                         <div class="figcaption">
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4 ">
+                <div class="col-sm-12 col-md-6 col-lg-3  mb-4 ">
                     <div class="figure">
                         <a href="" class="figure-images"><img src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/08/do-loi.jpg" alt=""></a>
                         <div class="figcaption">
@@ -95,7 +95,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4 ">
+                <div class="col-sm-12 col-md-6 col-lg-3  mb-4 ">
                     <div class="figure">
                         <a href="" class="figure-images"><img src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/08/ket-ban-voi-dong-nghiep.jpg" alt=""></a>
                         <div class="figcaption">
@@ -106,7 +106,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4 ">
+                <div class="col-sm-12  col-md-6 col-lg-3  mb-4 ">
                     <div class="figure">
                         <a href="" class="figure-images"><img src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/07/flex-la-gi.jpg" alt=""></a>
                         <div class="figcaption">
@@ -117,7 +117,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4 ">
+                <div class="col-sm-12col-md-6 col-lg-3  mb-4 ">
                     <div class="figure">
                         <a href="" class="figure-images"><img src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/08/do-loi.jpg" alt=""></a>
                         <div class="figcaption">
@@ -129,7 +129,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4 ">
+                <div class=" col-sm-12 col-md-6 col-lg-3  mb-4 ">
                     <div class="figure">
                         <a href="" class="figure-images"><img src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/08/ket-ban-voi-dong-nghiep.jpg" alt=""></a>
                         <div class="figcaption">

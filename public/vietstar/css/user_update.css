@@ -400,7 +400,7 @@ i.fas.fa-heart.iconoutline {
 }
 
 .company-item-wrapper {
-    width: calc(33.3% - 18px);
+    width: calc(24.8% - 18px);
     display: inline-block;
     margin-right: 16px;
     margin-bottom: 16px;
@@ -520,7 +520,15 @@ i.fas.fa-heart.iconoutline {
     margin: 10px 20px;
 }
 
+.topcompanyhead h1 {
+    font-size: 30px;
+}
+.bottomcompanyconten__head h2 {
+    font-size: 27px;
+}
+.company-item-wrapper {
 
+}
 
 
 @media only screen and (max-width: 767px) {

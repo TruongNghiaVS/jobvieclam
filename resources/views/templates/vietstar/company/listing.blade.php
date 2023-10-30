@@ -318,17 +318,17 @@
             <div class="list-company hideContent">
 
                 @foreach($companies as $company)
-                <div class="company-item-wrapper">
+                <div class="company-item-wrapper shadow-sm">
                     <div class="company-item-header">
                         <div class="company-items__background">
                             <img class="background-img" src="https://www.vietnamworks.com/_next/image?url=https%3A%2F%2Fimages02.vietnamworks.com%2Fcompanyprofile%2Fnull%2Fen%2FB%C3%ACa_%C4%91%E1%BA%A7u_trang_-_Coverc.jpg&w=1920&q=75" alt="">
                         </div>
-                        <a class="company-items__logo" href="#">
+                        <a class="company-items__logo shadow" href="#">
                             {{$company->printCompanyImage()}}
                         </a>
-                        <div class="company-items__follower">
+                        <!-- <div class="company-items__follower">
                             <span><i class="bi bi-people-fill"></i> 176 lượt theo dõi</span>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="company-items__desc">

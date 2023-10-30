@@ -61,7 +61,7 @@
 
                         <div class="formrow{{ $errors->has('password') ? ' has-error' : '' }}">
 
-                            <input type="password" name="password" class="form-control" required="required" placeholder="{{__('Password')}}" >
+                            <input id="passwordId" type="password" name="password" class="form-control" required="required" placeholder="{{__('Password')}}" >
 
                     
                             <div class="invalid-feedback password-error">
@@ -72,10 +72,11 @@
 
                         <div class="formrow{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
 
-                            <input type="password" name="password_confirmation" class="form-control" required="required" placeholder="{{__('Password Confirmation')}}" >
+                            <input id="password_confirmationId" type="password" name="password_confirmation" class="form-control" required="required" placeholder="{{__('Password Confirmation')}}" >
 
-                            <span class="help-block password_confirmation">
-                            </span> 
+                            <div class="invalid-feedback password-error">
+                                {{__('Password Incorrect')}}
+                            </div>
                         </div>
 
 
@@ -177,7 +178,17 @@
     })()
 
 $(document).ready(function() {
+   
+ 
+
+
     $('#candidate_formlogup').submit(function(event) {
+
+        var passwordValue = $('#passwordId').val();
+        var confirmPasswordValue = $('#password_confirmationId').val();
+
+        
+
         var isValid = true;
         event.preventDefault()
         // Check each input field for emptiness
@@ -192,6 +203,9 @@ $(document).ready(function() {
         if (!isValid) {
             event.preventDefault(); // Prevent the form from submitting
         }
+
+
+
 
 
         var email = $('#email').val();
@@ -212,6 +226,26 @@ $(document).ready(function() {
             $('#email').addClass('is-invalid');
             $('.email-error').text('{{__('The email must be a valid email address')}}')
         }
+
+        if (passwordValue !== confirmPasswordValue) {
+            event.preventDefault(); // Prevent form submission
+
+            isValid=false
+            // Display error message
+            $('#password_confirmationId').addClass('is-invalid has-error');
+            $('#password_confirmationId').next('.invalid-feedback').show();
+        }
+
+        $('#password_confirmation').on('input', function() {
+        var passwordValue = $('#passwordId').val();
+        var confirmPasswordValue = $(this).val();
+        if (passwordValue == confirmPasswordValue) {
+            isValid=true
+            $(this).removeClass('is-invalid has-error');
+            $(this).next('.invalid-feedback').hide();
+        }
+        });
+
 
         if (isValid) { 
             $.ajax({
@@ -262,6 +296,7 @@ $(document).ready(function() {
     // Remove validation class on input change
     $('#candidate_formlogup input').on('input', function() {
         $(this).removeClass('is-invalid');
+        $(this).removeClass('has-error');
     });
     
     

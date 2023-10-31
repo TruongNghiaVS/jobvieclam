@@ -11,7 +11,7 @@
 @include('templates.vietstar.includes.mobile_dashboard_menu')
 <!-- Dashboard end -->
 
-@include('templates.vietstar.includes.blog')
+@include('templates.vietstar.includes.blog', ['dataDraw' => $data])
 <!-- <header id="joblisting-headerwrap" class="d-none d-sm-block">
     <div class="container-fluid">
         <section id="joblisting-header " role="search">
@@ -39,6 +39,7 @@
                     <?php
                     $cate_ids = explode(",", $blog->cate_id);
                     $data = DB::table('blog_categories')->whereIn('id', $cate_ids)->get();
+                  
                     $cate_array = array();
                     foreach ($data as $cat) {
                         $cate_array[] = "<a href='" . url('/blog/category/') . "/" . $cat->slug . "'>$cat->heading</a>";

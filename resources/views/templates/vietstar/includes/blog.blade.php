@@ -1,3 +1,6 @@
+<!-- @php
+dd($dataDraw);
+@endphp -->
 <div class="blog-content">
     <!-- <section id="blog-content main-log"> -->
     <!-- <div class="container"> -->

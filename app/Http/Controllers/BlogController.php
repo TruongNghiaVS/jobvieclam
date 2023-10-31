@@ -74,10 +74,20 @@ class BlogController extends Controller
     public function categories($slug)
     {
         $category = Blog_category::where('slug', $slug)->first();
+        if(!$category)
+        {
+            dd("not found"); 
+        }
+
+      
         $data['category'] = $category;
-        $data['blogs_categories'] = Blog_category::get();
-        $data['blogs'] = Blog::whereRaw("FIND_IN_SET('$category->id',cate_id)")->where('lang', 'like', \App::getLocale())->orderBy('id', 'DESC')->paginate(10);
-        return view(config('app.THEME_PATH').'.blog_categories_details')->with($data);
+        $data['blogs_categories'] = Blog_category::where("id", $category->id)->get();
+        $data['blogs'] = Blog::whereRaw("FIND_IN_SET('$category->id',cate_id)")
+                        // 
+                        ->orderBy('id', 'DESC')->paginate(10);
+        
+      
+        return view(config('app.THEME_PATH').'.blog_categories_details', compact('data'));
     }
     public function search(Request $request)
     { 

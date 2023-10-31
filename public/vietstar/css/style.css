@@ -1122,7 +1122,9 @@ h4.tablinks:hover {
 	border-radius: 5px;
 	overflow: hidden;
 	transition: 0.5s all;
+	height: 310px;
 }
+
 
 .cardBlock:hover {
 	border: 1px solid #9c1b1e;
@@ -2205,6 +2207,12 @@ h3.seekertxt span {
 	font-weight: 500 !important;
 	text-transform: uppercase !important;
 	margin: 10px;
+	-webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	
 }
 
 

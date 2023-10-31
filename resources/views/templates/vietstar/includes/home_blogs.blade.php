@@ -1,14 +1,21 @@
 <!-- Blogs slider -->
 <section class="blogs-slider section-static">
     <div class="container">
+
         <div class="section-title-block">
             <div class="sectionBlock__title">Cẩm nang nghề nghiệp</div>
-            
-        </div> 
+        </div>
+
+
+                 
         <div class="swiper sectionBlock__swiper">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper row">
+
+
+
+
                 <!-- Start Render data of  Blog here -->
-                            <div class="swiper-slide">
+                <!-- <div class="swiper-slide">
                                 <div class="cardBlock">
                                     <a class="cardBlock_img" href="#">
                                         <img src="https://www.vietnamworks.com//hrinsider//wp-content/uploads/2023/09/Thiet-ke-chua-co-ten-72-300x225.jpg" alt="">
@@ -108,15 +115,65 @@
                                     </div>
                                 </div>
                             </div>
-                       
-                     <!-- End Render data of  Blog here --> 
+                        -->
+                <!-- End Render data of  Blog here -->
             </div>
         </div>
         <div class="show-more">
-                <a href="#" class="btn btn-secondary show-more-btn">Xem thêm</a>
+            <a href="{{ route('blogs') }}" class="btn btn-secondary show-more-btn">Xem thêm</a>
         </div>
     </div>
 </section>
 
 
 
+@push('scripts')
+<script type="text/javascript">
+    $(document).ready(function() {
+        var html = ''
+        var image = '';
+        var slug = '';
+        var cate= []
+
+        $.ajax({
+            url: '{{url('/')}}/blog/get-allcareer', // Replace with your API endpoint
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                // Process the data
+                console.log(data);
+    
+
+                html = data.blogs.data.map((item, id) => {
+                    image = `{{url('/')}}/uploads/blogs/${item.image}`;
+                    slug = `{{url('/')}}/blog/${item.slug}`;
+                    if (item) {
+                        return `
+                                <div class="swiper-slide cardBlock">
+                               
+                                    <div class="figure" bis_skin_checked="1">
+                                        <a href="${slug}" class="figure-images"><img src="${image}" alt=""></a>
+                                        <div class="figcaption" bis_skin_checked="1">
+
+                                            <h3 class="figcaption__category-name"><a href="#"></a></h3>
+                                        
+                                            <div class="figcaption__title" bis_skin_checked="1"><a href="${slug}">${item.heading}</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                    `
+                    }
+
+                })
+
+                $(".sectionBlock__swiper .swiper-wrapper").append(html.join(" "))
+            },
+            error: function(xhr, status, error) {
+                // Handle errors
+                console.error('Error:', error);
+            }
+        });
+    });
+</script>
+@endpush

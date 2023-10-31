@@ -54,8 +54,7 @@ class BlogController extends Controller
     }
     public function getAllCarrier()
     {
-        $data['blogs'] = Blog::where('cate_id',17)
-        ->where('lang', 'like', \App::getLocale())->paginate(10);
+        $data['blogs'] = Blog::where('cate_id',17)->paginate(10);
         return $data;
     }
     public function details($slug)

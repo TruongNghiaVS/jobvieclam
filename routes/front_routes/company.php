@@ -5,6 +5,7 @@ Route::get('unloced-seekers', 'Company\CompanyController@unlocked_users')->name(
 Route::get('unlock/{user}', 'Company\CompanyController@unlock')->name('company.unlock');
 Route::get('company-home', 'Company\CompanyController@index')->name('company.home');
 Route::get('companies', 'Company\CompaniesController@company_listing')->name('company.listing');
+Route::get('companies/getData', 'Company\CompaniesController@loadMoreData')->name('company.getData');
 Route::get('company-profile', 'Company\CompanyController@companyProfile')->name('company.profile');
 Route::put('update-company-profile', 'Company\CompanyController@updateCompanyProfile')->name('update.company.profile');
 Route::get('posted-jobs', 'Company\CompanyController@postedJobs')->name('posted.jobs');

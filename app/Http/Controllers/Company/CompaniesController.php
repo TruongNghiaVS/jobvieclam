@@ -85,10 +85,30 @@ class CompaniesController extends Controller
         }
         $data['industries'] = Industry::all()->pluck('industry', 'industry_id');
         $data['cities'] = City::where('lang', \App::getLocale())->pluck('city', 'city_id');
-        $data['companies'] = $query->orderBy('id', 'desc')->paginate(10);
+        $data['companies'] = $query->orderBy('id', 'desc')->paginate(8);
         return view(config('app.THEME_PATH').'.company.listing')->with($data);
     }
 
+
+    public function loadMoreData(Request $request)
+    {
+    
+            $data = null;
+            if ($request->id > 0) {
+                $data = Company::where('id','<',$request->id)
+                        ->orderBy('id','DESC')
+                        ->limit(8)
+                        ->get();
+            } else {
+                $data = User::limit(8)->orderBy('id', 'DESC')->get();
+            }
+    
+               
+            return $data;
+      
+
+       
+    }
     public function companyProfile()
     {
         $countries = DataArrayHelper::defaultCountriesArray();

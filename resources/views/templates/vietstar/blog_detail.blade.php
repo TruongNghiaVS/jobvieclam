@@ -7,7 +7,7 @@
 
 <!-- Inner Page Title start -->
 <!-- Inner Page Title end -->
-{{-- @if(null!==($blog))
+{{-- @if(null!==($blog)) 
 
 
 <div class="">
@@ -120,6 +120,7 @@
         foreach ($data as $cat) {
             $cate_array[] = "<a href='" . url('/blog/category/') . "/" . $cat->slug . "'>$cat->heading</a>";
         }
+    
         ?>
         <div class="row align-items-start">
             <div class="col-lg-12 m-15px-tb">
@@ -130,7 +131,7 @@
                         <div class="media">
                             
                             <div class="media-body">
-                                <span>Thứ năm, 19/10/2023, 13:40 (GMT+7)</span>
+                                <span class="time">{{$blog->updated_at}}</span>
                             </div>
                         </div>
                     </div>
@@ -138,30 +139,7 @@
                         {{$blog->printBlogImage()}}
                     </div>
                     <div class="article-content" bis_skin_checked="1">
-                        <p>Chúng ta luôn có những cột mốc đánh dấu sự trưởng thành của bản thân. Năm bạn 12 tuổi, bạn băn khoăn làm sao để có thể giành được những con điểm tốt nhất khiến bố mẹ tự hào. Năm bạn 15 tuổi, bạn nhận ra điểm số cũng quan trọng nhưng nó không quan trọng bằng việc bạn hiểu vấn đề đó như thế nào.</p>
-                        <p>Năm bạn 17 tuổi, bạn đang đứng giữa ranh giới của sự chín chắn và chút ngây thơ vì chưa từng được va vấp, không biết nên đi theo định hướng sẵn có, với những nhu cầu của công việc xã hội hay đi theo đam mê của bản thân?</p>
-                        <h4>Liệu bạn có đang suy nghĩ làm cách nào để chọn được công việc tốt nhất?</h4>
-
-                        <p>Một công việc tốt nhất, là điều mà chúng ta luôn nghĩ đến. Nhưng thế nào mới là tốt?&nbsp; Là lợi ích từ công việc đó mang đến cho bạn? Là bạn có thể kiếm được rất nhiều tiền từ công việc bạn chọn, hay là vì nó giúp bạn có thêm được những kinh nghiệm. Vì chúng ta đều rất do dự giữa nhu cầu của xã hội và đam mê của chính bản thân, phân vân giữa năng lực của bản thân với những yêu cầu khắt khe của cuộc sống, của công việc. Vậy chúng ta cần làm gì?</p>
-                        <p>Không có một công việc nào được đánh giá là tốt nhất, nó giống như việc bạn đang so sánh giữa một người với một người vậy. Có phải rằng chẳng ai trong chúng ta là hoàn hảo, cũng giống như công việc, chẳng có cái nào là tốt nhất, chỉ có thể tốt hơn, hoặc ổn định hơn mà thôi. Vì thế khi chọn một công việc cho bản thân, nhất định điều quan trọng bạn phải làm đó là chọn một công việc đủ ổn định về kinh tế và thât phù hợp với năng lực của mình.</p>
-                        <h4>Làm sao để chọn được công việc phù hợp với năng lực?</h4>
-                        <p>Chúng ta đang sống trong thời đại của công nghệ, sống trong những áp lực của xã hội mà nhân tố con người là điều quan trọng nhất. Có ba điều chúng ta cần phải xác định chắc chắn trước khi chọn công việc rằng :</p>
-                        <ul>
-                            <li>Bạn nhận thấy bản thân mình có ưu điểm nhiều nhất về lĩnh vực nào?</li>
-                            <li>Sẽ mất khoảng bao lâu để bạn được đào tạo và tiếp xúc với công việc đó?</li>
-                            <li>Thu nhập từ công việc đó có thể ổn định được cuộc sống của bạn không? Có đáp ứng được những nhu cầu của bản thân bạn không?</li>
-                        </ul>
-                        <p>Khi bạn đang phân vân với những lựa chọn của mình, hãy trả lời ba câu hỏi trên. Có thể điều đó sẽ giúp ích được bạn phần nào trong việc lựa chọn nghề của mình. Chúng ta cần một công việc, nhưng không phải công việc nào cũng có thể phù hợp với bạn, quan trọng là bạn phải biết năng lực của mình đang nằm ở đâu. Giống như câu “cá gặp nước”, có ở đúng trong môi trường phù hợp, chúng ta mới có thể phát huy được hết những khả năng trong con người mình.</p>
-                        <p>Việc xác định năng lực bản thân chính là bước đầu tiên để bạn chọn một công việc phù hợp. Bạn có thể tìm hiểu tất cả các công việc, ngành nghề&nbsp; thông qua các phương tiện truyền thông, thật dễ dàng chỉ với một cú click chuột là chúng ta có thể tiếp cận được với những thứ ta đang muốn biết về chúng. Từ đó bạn sẽ dễ dàng cập nhật thông tin, quan sát, theo dõi khả năng của bản thân để chọn được một công việc phù hợp nhất.</p>
-
-                        <h4>Nên chọn nghề theo định hướng gia đình hay đam mê của bản thân?</h4>
-
-
-                        <p>Hãy gọi đó là một bước ngoặt lớn trong sự trưởng thành của chính bạn. Nếu bạn đang phân vân điều đó, hãy tự hỏi bản thân mình rằng những điều bạn được định hướng sẽ giúp bạn điều gì và việc bạn đang định làm sẽ giúp bạn điều gì.</p>
-                        <p>Mong muốn của các bậc phụ huynh, vì là người đi trước nên tâm lí của họ luôn muốn bạn hướng đến một công việc ổn định, và đi theo hướng đó bạn sẽ có nhiều cơ hội hơn để có được khoản thu nhập tạm gọi là tốt cho bản thân. Tuy nhiên, vì nó nằm trong vòng an toàn nên có lẽ sẽ không giúp bạn thử thách được bản thân.</p>
-                        <p>Đam mê chỉ đúng khi năng lực bạn phù hợp với nó, vì nếu đam mê nhưng không có năng lực chuyên môn, bạn cũng sẽ bị đào thải nhanh chóng. Hãy suy nghĩ về đam mê trong khả năng mà bạn có thể bảo đảm rằng bạn làm được. Nếu như vậy, kết quả sẽ rất tuyệt vời, vì vừa có được công việc mình mong muốn, vừa có được niềm vui.</p>
-                        <p>Chưa nói về thu nhập nhưng có một công việc khiến bạn cảm thấy vui và lúc nào cũng sẵn sàng hết mình vì nó, đó không phải là một tin hiệu tốt sao? Theo định hướng hay đam mê, đó là do quyết định của cá nhân, nhưng nếu có một lựa chọn khiến bạn nên cân nhắc thì đó nên là một công việc đúng với ý thích của bạn và mang lại cho bạn nguồn thu nhập ổn định để gia đình bạn có thể thật yên tâm và tự hào về bạn.</p>
-
+                    {!! $blog->content !!}
                     </div>
                     <!-- <div class="nav tag-cloud">
                         <a href="#">Design</a>
@@ -532,8 +510,12 @@
 
         .article .article-title .media .media-body span {
             display: block;
-            font-size: 14px;
+            font-size: 17px;
         }
+        .article-content {
+            margin:40px 0;
+        }
+      
 
         .article .article-content h1,
         .article .article-content h2,
@@ -548,7 +530,7 @@
 
         .article-content p {
             margin-bottom: 10px;
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 500;
             line-height: 2.0rem;
 

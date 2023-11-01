@@ -91,7 +91,7 @@
                     </li>
                     @endforeach --}}
                     <li class="has-child">
-                        <a href="{{ route('blogs') }}" class="nav-link nav-link-parent" {{ Request::url() == route('blogs') ? 'header-active' : 'text-main-color' }}" style="{{ Request::url() == route('blogs')  ? 'color:#981B1E;' : '' }}">{{__('Blog')}}
+                        <a href="{{ url('/') }}/blog/category/bi-quyet-tim-viec" class="nav-link nav-link-parent" {{ Request::url() == route('blogs') ? 'header-active' : 'text-main-color' }}" style="{{ Request::url() == route('blogs')  ? 'color:#981B1E;' : '' }}">{{__('Blog')}}
                         </a>
                         @php($categories = \App\Blog_category::get())
                         <button type="button" class="btn-show-sub-menu" data-ref="findJob_blog" data-target="false"><span class="iconmoon icon-p-next"></span></button>

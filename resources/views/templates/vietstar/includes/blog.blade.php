@@ -95,11 +95,11 @@ $blogs = $data["blogs"]->items();
                 @foreach($blogs as $blog)
                 <div class="col-sm-12 col-md-6 col-lg-3  mb-4 ">
                     <div class="figure">
-                        <a href="http://localhost:8000/blog/cau-chuyn-chn-ngh" class="figure-images">
+                        <a href="{{url('/')}}/blog/cau-chuyn-chn-ngh" class="figure-images">
                             @if($blog-> image) 
-                            <img src="{{url('/')}}/uploads/blogs/{{ $blog-> image }}" alt="{{ $blog-> heading}}">
+                            <img src="{{url('/')}}/uploads/blogs/{{ $blog-> image }}" alt="{{$blog->heading}}">
                             @else 
-                            <img src="{{ asset('/') }}admin_assets/no-image.png" alt="{{ $blog-> heading}}">
+                            <img src="{{ asset('/') }}/admin_assets/no-image.png" alt="{{ $blog->heading}}">
                             @endif
                         </a>
                         <div class="figcaption">

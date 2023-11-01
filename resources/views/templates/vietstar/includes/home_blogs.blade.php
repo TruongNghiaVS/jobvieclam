@@ -152,7 +152,7 @@
                                 <div class="swiper-slide cardBlock">
                                
                                     <div class="figure" bis_skin_checked="1">
-                                        <a href="${slug}" class="figure-images"><img src="${image}" alt=""></a>
+                                        <a href="${slug}" class="figure-images"><img src="${image}" alt="${item.heading}"></a>
                                         <div class="figcaption" bis_skin_checked="1">
 
                                             <h3 class="figcaption__category-name"><a href="#"></a></h3>

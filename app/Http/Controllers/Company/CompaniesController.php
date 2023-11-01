@@ -100,7 +100,7 @@ class CompaniesController extends Controller
                         ->limit(8)
                         ->get();
             } else {
-                $data = User::limit(8)->orderBy('id', 'DESC')->get();
+                $data = Company::limit(8)->orderBy('id', 'DESC')->get();
             }
     
                

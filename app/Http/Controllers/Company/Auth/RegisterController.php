@@ -70,7 +70,7 @@ use RegistersUsers;
       
         $company = new Company();
         $error = array();
-         if(!empty($request->input('name')))
+         if(empty($request->input('name')))
         {
             $itemError = new stdClass();
             $itemError->key ="name";

@@ -305,10 +305,15 @@
 }
 
 
-.hideContent {
+.list-company.hideContent {
     overflow: hidden;
-    height: 730px;
+    transition: all 2s;
 }
+
+.list-company.hideContent {
+
+}
+
 
 .showContent {
     height: auto;
@@ -409,6 +414,7 @@ i.fas.fa-heart.iconoutline {
     background-color: rgb(255, 255, 255);
     border: 1px solid rgb(238, 238, 238);
     position: relative;
+    transition: all 2s;
 }
 
 .company-item-header {

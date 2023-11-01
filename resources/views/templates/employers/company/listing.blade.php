@@ -182,7 +182,7 @@
 
                 <div class="row">
                     <div class="form-group form-submit">
-                        <button class="btn btn-primary" type="submit">
+                        <button class="btn btn-primary" type="button">
                             Tìm kiếm
                         </button>
                     </div>
@@ -207,7 +207,7 @@
                     <div class="item-job mb-3">
                         <div class="logo-company">
                             <a href="{{route('company.detail',$company->slug)}}" title="{{$company->name}}" class="pic">
-{{$company->printCompanyImage()}}
+                        {{$company->printCompanyImage()}}
 </a>
 </div>
 <div class="jobinfo">
@@ -223,7 +223,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="box-meta">
-                    <i class="far fa-envelope"></i> Email: {{$company->email}}
+                    <i class="far fa-envelope"></i> Email: {{$company->email}}   
                 </div>
             </div>
             <div class="col-md-6">
@@ -318,12 +318,12 @@
             <div class="list-company hideContent">
 
                 @foreach($companies as $company)
-                <div class="company-item-wrapper shadow-sm">
+                <div emId="{{$company->id}}" class="company-item-wrapper shadow-sm">
                     <div class="company-item-header">
                         <div class="company-items__background">
                             <img class="background-img" src="https://www.vietnamworks.com/_next/image?url=https%3A%2F%2Fimages02.vietnamworks.com%2Fcompanyprofile%2Fnull%2Fen%2FB%C3%ACa_%C4%91%E1%BA%A7u_trang_-_Coverc.jpg&w=1920&q=75" alt="">
                         </div>
-                        <a class="company-items__logo  shadow" href="#">
+                        <a class="company-items__logo shadow" href="#">
                             {{$company->printCompanyImage()}}
                         </a>
                         <!-- <div class="company-items__follower">
@@ -335,7 +335,7 @@
                         <div class="company-items__name">
                             <a href="{{route('company.detail',$company->slug)}}" title="{{$company->name}}">
                                 <h3>
-                                    {{$company->name}}
+                                    {{$company->name}} 
                                 </h3>
                             </a>
                         </div>
@@ -367,6 +367,7 @@
 
                 </div>
                 @endforeach
+
             </div>
             @endif
             <div class="show-more">
@@ -387,11 +388,84 @@
 
     $(document).ready(function() {
         $(".show-more-btn").on("click", function() {
-            var $this = $(this); 
-            var $content = $this.parent().prev("div.list-company"); 
-            $content.removeClass("hideContent");
-            $content.addClass("showContent");
-            $this.addClass("hide")
+      
+            var id =   $(".company-item-wrapper:last-child").attr("emId")
+            var html  =  '';
+            $.ajax({
+            url: `{{url('/')}}/companies/getData/?id=${id}`, // Replace with your API endpoint
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                // Process the data
+                console.log(data);
+               html  = data.map(element => {
+                    return `
+                    
+                    <div emId="${element.id}" class="company-item-wrapper shadow-sm">
+                    <div class="company-item-header">
+                        <div class="company-items__background">
+                            <img class="background-img" src="https://www.vietnamworks.com/_next/image?url=https%3A%2F%2Fimages02.vietnamworks.com%2Fcompanyprofile%2Fnull%2Fen%2FB%C3%ACa_%C4%91%E1%BA%A7u_trang_-_Coverc.jpg&w=1920&q=75" alt="">
+                        </div>
+
+                        <a class="company-items__logo shadow" href="#">
+                            <img src="${element.logo ? `{{url('/')}}/company_logos/${element.logo}` : `{{url('/')}}/admin_assets/no-image.png` }" alt="">
+                        </a>
+                      
+                        <!-- <div class="company-items__follower">
+                            <span><i class="bi bi-people-fill"></i> 176 lượt theo dõi</span>
+                        </div> -->
+                    </div>
+
+                    <div class="company-items__desc">
+                        <div class="company-items__name">
+                            <a href="" title="${element.name}">
+                                <h3>
+                                    ${element.name}
+                                </h3>
+                            </a>
+                        </div>
+                        <div class="company-items__category">
+                            <i class="bi bi-folder2"></i>
+                            <span>
+                                Hàng tiêu dùng
+                            </span>
+
+                        </div>
+                        <div class="company-items__category">
+
+                            <i class="bi bi-archive"></i>
+                            <span>
+                                5 Việc làm
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="company-items__bottom">
+                        @if(Auth::check() && Auth::user()->isFavouriteCompany($company->slug))
+                        <a class="btn btn-outline-primary" href="{{ route('remove.from.favourite.company', ['company_slug' => $company->slug]) }}"><i class="fas fa-heart iconoutline"></i> Đã theo dõi</a>
+                        @else
+                        <a class="btn btn-outline-primary" href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"><i class="far fa-heart"></i> Theo dõi</a>
+                        @endif
+                    </div>
+
+                </div>
+                    
+                    `
+               });
+               
+               $(".list-company.hideContent").append(html.join(" "))
+              
+               if($(".company-item-wrapper:last-child").attr("emId") == 1 ){
+                    $(".show-more-btn").addClass("hide")
+               }
+            },
+            error: function(xhr, status, error) {
+                // Handle errors
+                console.error('Error:', error);
+            }
+        });
         });
     });
 
@@ -430,5 +504,7 @@
             });
         });
     });
+
+ 
 </script>
 @endpush

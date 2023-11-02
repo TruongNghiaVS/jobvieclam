@@ -130,7 +130,27 @@
                         </div>
                 @endif
                 <!---end four-paln-->
+                <?php
+
+            if((bool)config('company.is_company_package_active')){        
+
+            $packages = App\Package::where('package_for', 'like', 'employer')->get();
+
+            $package = Auth::guard('company')->user()->getPackage();
+            ?>
+            <?php if(null !== $package){ ?>
+
+            @include('templates.employers.includes.company_package_msg')
+
+            @include('templates.employers.includes.company_packages_upgrade')
+
+            <?php }elseif(null !== $packages){ ?>
+
+            @include('templates.employers.includes.company_packages_new')
+
+            <?php }} ?>
                 </div>
+                
             </div>
 
        

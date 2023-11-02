@@ -236,6 +236,9 @@ ul.list-unstyled.components.sidebar-bottom__item li{
 .media-body {
     text-align: end;
 }
+.paypackages {
+    margin-top: 20px;
+}
 
 @media only screen and (max-width: 767px) {
     #company-default-nav {

@@ -20,7 +20,7 @@
         <div class="container company-content">
             @include('templates.employers.includes.company_dashboard_top')
             @include('templates.employers.includes.company_dashboard_stats')
-           {{--<?php
+           <?php
 
             if((bool)config('company.is_company_package_active')){        
 
@@ -38,7 +38,7 @@
 
             @include('templates.employers.includes.company_packages_new')
 
-            <?php }} ?>--}}
+            <?php }} ?>
         </div>
     
 </div>

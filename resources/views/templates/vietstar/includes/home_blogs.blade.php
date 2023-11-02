@@ -120,7 +120,7 @@
             </div>
         </div>
         <div class="show-more">
-            <a href="{{ url('/') }}/blog/category/bi-quyet-tim-viec" class="btn btn-secondary show-more-btn">Xem thêm</a>
+            <a href="{{ url('/') }}/blog/category/cm-nang-ngh-nghip" class="btn btn-secondary show-more-btn">Xem thêm</a>
         </div>
     </div>
 </section>

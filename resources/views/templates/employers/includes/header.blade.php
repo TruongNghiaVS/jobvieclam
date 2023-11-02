@@ -103,7 +103,7 @@
                     @endforeach --}}
                     {{-- 
                         <li class="has-child">
-                        <a href="{{ url('/') }}/blog/category/bi-quyet-tim-viec" class="nav-link nav-link-parent" {{ Request::url() == route('blogs') ? 'header-active' : 'text-main-color' }}" style="{{ Request::url() == route('blogs')  ? 'color:#981B1E;' : '' }}">{{__('Blog')}}
+                        <a href="#" class="nav-link nav-link-parent" {{ Request::url() == route('blogs') ? 'header-active' : 'text-main-color' }}" style="{{ Request::url() == route('blogs')  ? 'color:#981B1E;' : '' }}">{{__('Blog')}}
                         </a>
                         @php($categories = \App\Blog_category::get())
                         <button type="button" class="btn-show-sub-menu" data-ref="findJob_blog" data-target="false"><span class="iconmoon icon-p-next"></span></button>
@@ -222,7 +222,7 @@
                         </li>
                         <li class="nav-item"><a href="{{route('company.messages')}}" class="nav-link"><i class="jobicon fa fa-envelope" aria-hidden="true"></i> {{__('Messages')}}</a>
                         </li>
-                        <li class="nav-item"><a href="{{ route('company.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form-header1').submit();" class="nav-link"><i class="jobicon fa fa-sign-out" aria-hidden="true"></i>
+                        <li class="nav-item"><a href="{{ route('company.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form-header1').submit(); " class="nav-link"><i class="jobicon fa fa-sign-out" aria-hidden="true"></i>
                                 {{__('Logout')}}</a></li>
                     </ul>
                     <form id="logout-form-header1" action="{{ route('company.logout') }}" method="GET" style="display: none;"> {{ csrf_field() }} </form>

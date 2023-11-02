@@ -169,7 +169,7 @@ $(document).ready(function() {
                 })
                 .done(function(data){
                     setTimeout(function() { 
-                        alert(data.message)
+                        // alert(data.message)
                         window.location.href = data.urlRedirect;
                     }, 2000);
                     

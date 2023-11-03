@@ -170,7 +170,7 @@ $blogs = $data["blogs"]->items();
                     </div>
                 </div> -->
             </div>
-            <div class="show-more" bis_skin_checked="1"><a href="#" class="btn btn-secondary show-more-btn bg-white " title="Bí quyết tìm việc">Xem thêm <em class="mdi mdi-arrow-right"></em></a></div>
+            <!-- <div class="show-more" bis_skin_checked="1"><a href="#" class="btn btn-secondary show-more-btn bg-white " title="Bí quyết tìm việc">Xem thêm <em class="mdi mdi-arrow-right"></em></a></div> -->
         </div>
     </section>
 </div>

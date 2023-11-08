@@ -69,8 +69,7 @@ class JobController extends Controller
     public function jobsBySearch(Request $request)
     {
         $params = $this->params($request);
-
-        /*         * ************************************************** */
+        /**************************************************** */
 
         $seo = Seo::where('seo.page_title', 'like', 'jobs')->first();
         return view(config('app.THEME_PATH').'.job.list')
@@ -160,6 +159,7 @@ class JobController extends Controller
             ->with('jobSkills', $jobSkills);
     }
 
+    
     public function findJobDetails($search = '', $wfh = '', $job_titles = array(), $company_ids = array(),
                                    $industry_ids = array(), $job_skill_ids = array(), $functional_area_ids = array(),
                                    $country_ids = array(), $state_ids = array(), $city_ids = array(), $is_freelance = -1,
@@ -167,7 +167,8 @@ class JobController extends Controller
                                    $gender_ids = array(), $degree_level_ids = array(), $job_experience_ids = array(),
                                    $salary_from = 0, $salary_to = 0, $salary_currency = '', $is_featured = -1,
                                    $orderBy = 'id', $limit = 10, $fe_industries_ids = array()) {
-        $query = Job::where('status', Job::POST_ACTIVE)->select(array_merge($this->fields, ['jobs.salary_currency', 'jobs.salary_type']));
+        $query = Job::where('status', Job::POST_ACTIVE)
+        ->select(array_merge($this->fields, ['jobs.salary_currency', 'jobs.salary_type']));
         if(count($fe_industries_ids) > 0) {
             $query->whereIn('industry_id', $fe_industries_ids);
         }
@@ -473,7 +474,7 @@ class JobController extends Controller
 
     public function params(Request $request)
     {
-
+        
         $search = $request->query('search', '');
         $wfh = $request->query('wfh', '');
         $job_titles = $request->query('job_title', array());

@@ -329,23 +329,29 @@ class OrderController extends Controller
     
     public function orderFreePackage(Request $request, $package_id)
     {
-        $package = Package::findOrFail($package_id);
+            $package = Package::findOrFail($package_id);
+
+         
         /*         * ******************************************* */
             /** it's all right * */
             /** Here Write your database logic like that insert record or value in database if you want * */
             if (Auth::guard('company')->check()) {
+              
                 $company = Auth::guard('company')->user();
                 if($package->package_for=='cv_search'){
+                   
                     $this->addCompanySearchPackage($company, $package,'Paypal');
                 }else{
+                
                     $this->addCompanyPackage($company, $package,'Paypal');
                 }
             }
             if (Auth::check()) {
+             
                 $user = Auth::user();
                 $this->addJobSeekerPackage($user, $package);
             }
-
+          
             flash(__('You have successfully subscribed to selected package'))->success();
             return Redirect::route($this->redirectTo);
     }

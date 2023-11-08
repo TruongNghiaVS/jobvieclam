@@ -43,7 +43,7 @@
                             <div class="card-body">
                                 <div class="paypackages">
                                     <div class="four-plan">
-                                        <h3 class="title text-left">{{__('Upgrade Package')}}</h3>
+                                        <h3 class="title text-left">{{__('InfomationPackage')}}</h3>
                                         <div class="our-packages">
                                             <div class="row">
                                                 @foreach($packages as $package)
@@ -140,7 +140,7 @@
             ?>
             <?php if(null !== $package){ ?>
 
-            @include('templates.employers.includes.company_package_msg')
+           @include('templates.employers.includes.company_package_msg')
 
             @include('templates.employers.includes.company_packages_upgrade')
 

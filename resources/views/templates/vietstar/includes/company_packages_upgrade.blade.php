@@ -5,7 +5,7 @@
 			<!---four-paln-->
 			<div class="four-plan">
 				<h3 class="title text-left">{{__('Upgrade Package')}}</h3>
-				{{--<div class="our-packages">
+				<div class="our-packages">
 					@php
 						$language = \App::getLocale();
                         $currency = \App\Country::where('lang', $language)->first()->currency ?? 'vnd';
@@ -59,28 +59,10 @@
 						</div>
 						@endforeach 
 					</div>
-				</div>--}}
+				</div>
 
 
-				<?php
-
-				if((bool)config('company.is_company_package_active')){        
-
-				$packages = App\Package::where('package_for', 'like', 'employer')->get();
-
-				$package = Auth::guard('company')->user()->getPackage();
-				?>
-				<?php if(null !== $package){ ?>
-
-				@include('templates.vietstar.includes.company_package_msg')
-
-				@include('templates.vietstar.includes.company_packages_upgrade')
-
-				<?php }elseif(null !== $packages){ ?>
-
-				@include('templates.vietstar.includes.company_packages_new')
-
-				<?php }} ?>
+			
 			</div>
 			<!---end four-paln--> 
 		</div>

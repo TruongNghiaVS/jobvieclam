@@ -4,7 +4,7 @@
 		<div class="paypackages"> 
 			<!---four-paln-->
 			<div class="four-plan">
-				<h3 class="title text-left">{{__('Upgrade Package')}}</h3>
+			
 				<div class="our-packages">
 					@php
 						$language = \App::getLocale();

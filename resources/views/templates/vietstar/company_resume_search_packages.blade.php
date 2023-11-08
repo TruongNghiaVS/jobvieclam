@@ -26,16 +26,11 @@
                         $price = $curr == 'vnd' ? number_format($success_package->package_price, 0, ',', '.') : number_format($success_package->package_price, 2, '.', ',');
                         $formatDate = $language == 'vi' ? 'd-m-Y' : 'd M, Y';
                     @endphp
-                    <div class="instoretxt">
-                        <div class="credit">{{__('Your Package is')}}: <strong>{{$success_package->package_title}} - {{$price}} ({{$success_package->currency }})</strong></div>
-                        <div class="credit">
-                            {{__('Package Duration')}} : <strong>{{Auth::guard('company')->user()->package_start_date->format($formatDate)}}</strong> : <strong>{{Auth::guard('company')->user()->package_end_date->format($formatDate)}}</strong>
-                        </div>
-                        <div class="credit">{{__('Availed quota')}} :  <strong>{{Auth::guard('company')->user()->availed_jobs_quota}}</strong> / <strong>{{Auth::guard('company')->user()->jobs_quota}}</strong></div>
-                    </div>
+                 
                 @endif
 
                 <div class="paypackages">
+                    {{--
                     <!---four-paln-->
                     <?php
                     $package = Auth::guard('company')->user()->cvs_getPackage(); ?> @if(null!==($package))
@@ -43,7 +38,7 @@
                             <div class="card-body">
                                 <div class="paypackages">
                                     <div class="four-plan">
-                                        <h3 class="title text-left">{{__('InfomationPackage')}}</h3>
+
                                         <div class="our-packages">
                                             <div class="row">
                                                 @foreach($packages as $package)
@@ -130,7 +125,8 @@
                         </div>
                 @endif
                 <!---end four-paln-->
-                <?php
+                --}}
+                <?php 
 
             if((bool)config('company.is_company_package_active')){        
 
@@ -140,7 +136,7 @@
             ?>
             <?php if(null !== $package){ ?>
 
-           @include('templates.employers.includes.company_package_msg')
+            
 
             @include('templates.employers.includes.company_packages_upgrade')
 

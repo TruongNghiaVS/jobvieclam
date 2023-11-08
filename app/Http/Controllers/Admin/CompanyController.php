@@ -103,7 +103,10 @@ class CompanyController extends Controller
     public function indexCompaniesHistory()
 
     {
-        $packages = Package::where('package_for','employer')->pluck('package_title','id')->toArray();
+        
+        $packages = Package::where('package_for','employer')
+        ->pluck('package_title','id')->toArray();
+        dd($package);
         return view('admin.company.payment_history')->with('packages',$packages);
 
     }

@@ -66,6 +66,7 @@ class CompanyController extends Controller
 
     public function index()
     {
+  
         return view(config('app.THEME_PATH').'.company_home');
     }
 

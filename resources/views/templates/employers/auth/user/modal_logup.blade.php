@@ -308,7 +308,7 @@ $(document).ready(function() {
                     $("#employer_logup_Modal").css("display:none")
                     $("#logup_em_success button").click(function(){
                         $("#logup_em_success").removeClass("show")
-                        window.location.href =  "/home";
+                        window.location.href =  "/company-home";
                     });
                   
                     

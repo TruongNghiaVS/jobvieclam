@@ -117,9 +117,9 @@
  						</div>
                     </div>
 					
-                </div>
-            </div>
         </div>
+    </div>
+</div>
 @push('styles')
 <style>
     .invalid-feedback {
@@ -308,7 +308,7 @@ $(document).ready(function() {
                     $("#employer_logup_Modal").css("display:none")
                     $("#logup_success button").click(function(){
                         $("#logup_success").removeClass("show")
-                        window.location.href =  "/employers";
+                        window.location.href =  "/home";
                     });
                   
                     

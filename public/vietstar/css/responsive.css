@@ -955,11 +955,11 @@
   }
 
   .section-jobs-by-industry .swiper-button-next {
-    right: 400px;
+    right: 100px;
   }
 
   .section-jobs-by-industry .swiper-button-prev {
-    left: 400px;
+    left: 100px;
   }
   .content-wrapper {
     padding: 0 80px;

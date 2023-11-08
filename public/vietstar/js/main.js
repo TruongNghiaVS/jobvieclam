@@ -433,45 +433,45 @@ function swiperSlider() {
 
 
 
-    if ($('.sectionBlock__swiper').length) {
-        var sectionBlock__swiper = new Swiper(".sectionBlock__swiper", {
-            slidesPerView: 4,
-            spaceBetween: 30,
-            freeMode: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            breakpoints: {
-                320: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                    grabCursor: true,
-                },
-                567: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                    grabCursor: false,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                    grabCursor: false,
-                },
-                992: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                    grabCursor: false,
-                },
-                1200: {
-                    slidesPerView: 4,
-                    spaceBetween: 20,
-                    grabCursor: false,
-                },
-            },
+    // if ($('.sectionBlock__swiper').length) {
+    //     var sectionBlock__swiper = new Swiper(".sectionBlock__swiper", {
+    //         slidesPerView: 4,
+    //         spaceBetween: 30,
+    //         freeMode: true,
+    //         pagination: {
+    //             el: ".swiper-pagination",
+    //             clickable: true,
+    //         },
+    //         breakpoints: {
+    //             320: {
+    //                 slidesPerView: 1,
+    //                 spaceBetween: 20,
+    //                 grabCursor: true,
+    //             },
+    //             567: {
+    //                 slidesPerView: 3,
+    //                 spaceBetween: 20,
+    //                 grabCursor: false,
+    //             },
+    //             768: {
+    //                 slidesPerView: 3,
+    //                 spaceBetween: 20,
+    //                 grabCursor: false,
+    //             },
+    //             992: {
+    //                 slidesPerView: 3,
+    //                 spaceBetween: 20,
+    //                 grabCursor: false,
+    //             },
+    //             1200: {
+    //                 slidesPerView: 4,
+    //                 spaceBetween: 20,
+    //                 grabCursor: false,
+    //             },
+    //         },
 
-        });
-    }
+    //     });
+    // }
 
 
     if ($('.test').length) {

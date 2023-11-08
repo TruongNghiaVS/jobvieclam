@@ -8,8 +8,8 @@
 
 
                  
-        <div class="swiper sectionBlock__swiper">
-            <div class="swiper-wrapper row">
+        <div class="blog-home-content">
+            <div class="blog-content__wrapper row px-4">
 
 
 
@@ -148,8 +148,9 @@
                     image = `{{url('/')}}/uploads/blogs/${item.image}`;
                     slug = `{{url('/')}}/blog/${item.slug}`;
                     if (item) {
-                        return `
-                                <div class="swiper-slide cardBlock">
+                        return `  <div class="col-6 col-md-4">
+                               
+                                <div class="cardBlock">
                                
                                     <div class="figure" bis_skin_checked="1">
                                         <a href="${slug}" class="figure-images"><img src="${image}" alt="${item.heading}"></a>
@@ -161,13 +162,14 @@
                                         </div>
                                     </div>
                                 </div>
+                                </div>
                                 
                     `
                     }
 
                 })
 
-                $(".sectionBlock__swiper .swiper-wrapper").append(html.join(" "))
+                $(".blog-home-content .blog-content__wrapper").append(html.join(" "))
             },
             error: function(xhr, status, error) {
                 // Handle errors

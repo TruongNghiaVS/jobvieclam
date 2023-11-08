@@ -2177,8 +2177,7 @@ h3.seekertxt span {
 
 .figure {
 	width: 100%;
-	background: white;
-	border-radius: 10px;
+	background: #ffffff;
 	height: 330px;
 	overflow: hidden;
 }

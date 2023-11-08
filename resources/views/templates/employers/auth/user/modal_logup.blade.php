@@ -102,7 +102,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="logup_success" role="dialog">
+<div class="modal fade" id="logup_em_success" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -131,7 +131,7 @@
     .form-control.has-error{
         border: 1px solid #dc3545 !important;
     }
-    #logup_success.show {
+    #logup_em_success.show {
         display: block;
         height: 100%;
     }
@@ -186,7 +186,7 @@
 	margin-right:5px;
 	color:#fff;
 }
-#logup_success .modal-header{
+#logup_em_success .modal-header{
     border:0px;
 }
 
@@ -304,10 +304,10 @@ $(document).ready(function() {
                 }
                 })
                 .done(function(data){
-                    $("#logup_success").addClass("show")
+                    $("#logup_em_success").addClass("show")
                     $("#employer_logup_Modal").css("display:none")
-                    $("#logup_success button").click(function(){
-                        $("#logup_success").removeClass("show")
+                    $("#logup_em_success button").click(function(){
+                        $("#logup_em_success").removeClass("show")
                         window.location.href =  "/home";
                     });
                   

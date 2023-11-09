@@ -358,10 +358,14 @@
                     </div>
 
                     <div class="company-items__bottom">
+                  
                         @if(Auth::check() && Auth::user()->isFavouriteCompany($company->slug))
-                        <a class="btn btn-outline-primary" href="{{ route('remove.from.favourite.company', ['company_slug' => $company->slug]) }}"><i class="fas fa-heart iconoutline"></i> Đã theo dõi</a>
+                        <a class="btn btn-primary" href="{{ route('remove.from.favourite.company', ['company_slug' => $company->slug]) }}"><i class="fas fa-heart text-white px-1"></i> Đã theo dõi</a>
+                        @elseif(Auth::check() && !Auth::user()->isFavouriteCompany($company->slug))
+                        <a class="btn btn-outline-primary" href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"><i class="fas fa-heart px-1"></i>Theo dõi</a>
+                        
                         @else
-                        <a class="btn btn-outline-primary" href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"><i class="far fa-heart"></i> Theo dõi</a>
+                        <a class="btn btn-outline-primary" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="far fa-heart px-1"></i> Theo dõi</a>
                         @endif
                     </div>
 

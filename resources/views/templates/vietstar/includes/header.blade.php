@@ -106,10 +106,10 @@
                         </ul>
                     </li>
 
-                    <!-- <li><a href="{{ route('contact.us') }}"
+                    <li><a href="{{ route('contact.us') }}"
                             class="nav-link  {{ Request::url() == route('contact.us') ? 'header-active' : 'text-main-color' }}"
                             style="{{ Request::url() == route('contact.us') ? 'color:#981B1E;' : '' }}">{{__('Contact')}}</a>
-                    </li> -->
+                    </li>
 
                     </li>
 

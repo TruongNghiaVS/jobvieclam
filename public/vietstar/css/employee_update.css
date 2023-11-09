@@ -239,6 +239,9 @@ ul.list-unstyled.components.sidebar-bottom__item li{
 .paypackages {
     margin-top: 20px;
 }
+.posted-manager_tb_row {
+    height: 50px;
+}
 
 @media only screen and (max-width: 767px) {
     #company-default-nav {

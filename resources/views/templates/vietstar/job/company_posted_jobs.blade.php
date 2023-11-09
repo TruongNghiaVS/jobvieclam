@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     @include('flash::message')
-                    <div class="row">
+                    <!-- <div class="row">
                         @if (isset($jobs) && count($jobs))
                             @foreach ($jobs as $job)
                                 <div class="col-md-6 col-lg-4">
@@ -166,6 +166,113 @@
                                 </div>
                             @endforeach
                         @endif
+                    </div> -->
+                    <div class="card">
+
+                        <div class="card-body">
+    
+                            <div class="table-responsive">
+                                <table class="table table-applican-manager table-hover mb-0 border-0">
+                                    <thead>
+                                        <tr>
+                                            <th class="font-weight-bold" colspan="2">{{ __('Positions') }}</th>
+                                            <!-- <th class="font-weight-bold"></th> -->
+                                            <th class="font-weight-bold">{{ __('Timeline') }}</th>
+                                            <th class="font-weight-bold">{{ __('Status') }}</th>
+
+                                            <th class="font-weight-bold">{{ __('Location') }}</th>
+                                            <th class="font-weight-bold">{{ __('Salary') }}</th>
+    
+                                            <th class="font-weight-bold">{{ __('List of Candidates') }}</th>
+                                            <th class="font-weight-bold">{{ __('Interview Candidates') }}</th>
+                                            <th class="font-weight-bold">{{ __('List of Hired Candidates') }}</th>
+                                            <th class="font-weight-bold">{{ __('List of Rejected Candidates') }}</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    @if (isset($jobs) && count($jobs))
+                                        @foreach ($jobs as $job)
+                                    
+                                        <tr class="posted-manager_tb_row">
+                                            
+                                            <td  colspan="2">
+                                                <div class="d-flex align-items-center h-100">
+                                                    <div class="fs-18px font-weight-bold text-primary">
+                                                        {{ $job->title }}
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center h-100 fs-18px">
+                                                @if(Carbon\Carbon::parse($job->expiry_date)->format('Y-m-d') > Carbon\Carbon::now()->format('Y-m-d'))
+                                                    {{ __(\App\Job::getListStatusJob()[$job->status]) }}
+                                                @else
+                                                    {{ __('Job is expired') }}
+                                                @endif
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center h-100 fs-18px">
+                                                    Trạng thái
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="tags h-100">
+                                                    <span class="tag location fs-18px">{{ $job->getCity('city') }} </span>
+                                                    <span class="tag time">{{ $job->getJobShift('job_shift') }}</span>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                            <div class="d-flex align-items-center h-100 fs-18px">
+                                                    @php($from = round($job->salary_from/1000000,0))
+                                                    @php($to = round($job->salary_to/1000000,0))
+                                                    @if($job->salary_type == \App\Job::SALARY_TYPE_FROM)
+                                                        <span class="fas fa-dollar-sign mx-2"></span> {{__('From: ')}} {{$from}} {{__('million')}} ({{$job->salary_currency}})
+                                                    @elseif($job->salary_type == \App\Job::SALARY_TYPE_TO)
+                                                        <span class="fas fa-dollar-sign mx-2"></span> {{__('Up To: ')}} {{$to}} {{__('million')}} ({{$job->salary_currency}})
+                                                    @elseif($job->salary_type == \App\Job::SALARY_TYPE_RANGE)
+                                                        <span class="fas fa-dollar-sign mx-2"></span> {{$from}} - {{$to}} {{__('million')}} ({{$job->salary_currency}})
+                                                    @elseif($job->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
+                                                        <span class="fas fa-money-bill mx-2"></span> {{__('Negotiable')}}
+                                                    @else
+                                                        <span class="fas fa-dollar-sign mx-2"></span> {{__('Salary Not provided')}}
+                                                    @endif
+                                            </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center justify-content-center h-100 fs-18px">
+                                                    {{ $job->appliedUsers->count() }}
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center justify-content-center h-100 fs-18px">
+                                                    {{ $job->getStatusInterview()->count() }}
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center justify-content-center h-100 fs-18px">
+                                                    {{ $job->getStatusInterview(3)->count() }}
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center justify-content-center h-100 fs-18px">
+                                                {{ $job->getStatusInterview(4)->count() }}
+                                                </div>
+                                            </td>
+
+                                        
+                                        </tr>
+                                        @endforeach
+                                    @endif
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                     <!-- job end -->
                     <!-- Pagination Start -->

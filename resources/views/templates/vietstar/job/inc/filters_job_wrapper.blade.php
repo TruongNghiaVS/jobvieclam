@@ -3,7 +3,9 @@
 
 </style>
 @endpush
-
+{{--<?php
+dd($salaryFroms)
+?>--}}
 <!-- SEARCH STICKY -->
 <div class="page-heading-tool job-detail ">
     <div class="container">

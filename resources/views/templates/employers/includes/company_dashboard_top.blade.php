@@ -1,7 +1,7 @@
     <!-- Main -->
     <!-- Bio -->
-    <div class="row py-2">
-        <div class="col-sm-6 col-xl-3">
+    <div class="row py-3">
+        <div class="col-sm-6 col-xl-3 px-3">
             <div class="card widget-dashboard mb-3 w-100 shadow-sm">
                 <div class="box-dasboard-top" bis_skin_checked="1">
                     <div class="head" bis_skin_checked="1">
@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
+        <div class="col-sm-6 col-xl-3 px-4">
             <div class="card widget-dashboard mb-3 w-100 shadow-sm">
                 <div class="box-dasboard-top" bis_skin_checked="1">
                     <div class="head" bis_skin_checked="1">
@@ -47,7 +47,7 @@
         </div>
 
 
-        <div class="col-sm-6 col-xl-3">
+        <div class="col-sm-6 col-xl-3 px-4">
             <div class="card widget-dashboard mb-3 w-100 shadow-sm">
                 <div class="box-dasboard-top" bis_skin_checked="1">
                     <div class="head" bis_skin_checked="1">
@@ -80,7 +80,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
+        <div class="col-sm-6 col-xl-3 px-4">
             <div class="card widget-dashboard mb-3 w-100 shadow-sm">
                 <div class="box-dasboard-top" bis_skin_checked="1">
                     <div class="head" bis_skin_checked="1">

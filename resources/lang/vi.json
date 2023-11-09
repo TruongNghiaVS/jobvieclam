@@ -457,7 +457,7 @@
     "Your Valid e-mail address is required": "Địa chỉ Email phải hợp lệ",
     "Upgrade Package": "Nâng cấp gói",
     "Sign Up Success": "Đăng ký thành công",
-    
+    "Sign In Success": "Đăng nhập thành công",
     "InfomationPackage": "Tổng quan gói",
 
     "Our Cvs Search Packages": "Quản lý gói",
@@ -539,7 +539,7 @@
     "Company Public Profile": "Hồ sơ công ty công khai",
     "Salary From": "Lương từ",
     "Salary To": "Lương đến",
-    "CV Search Packages": "Gói tìm CV",
+    "CV Search Packages": "Đơn hàng",
     "Unlocked Users": "Người dùng không bị khóa",
     "CV Management": "Quản lý CV",
     "Company Followers": "Người follow công ty",
@@ -762,7 +762,7 @@
     "Sport Club": "Câu lạc bộ thể thao",
     "Payrise": "Tăng lương",
     "Reward": "Thưởng",
-    "Company's Posted Jobs": "Quản lý việc làm",
+    "Company's Posted Jobs": "Quản lý đăng tuyển",
     "Company Posted Jobs": "Quản lý việc làm",
     "Edit Career Level": "Chỉnh sửa cấp bậc nghề",
     "Career Levels": "Danh sách Cấp bậc nghề",

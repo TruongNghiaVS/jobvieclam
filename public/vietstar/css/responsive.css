@@ -915,6 +915,9 @@
   .container {
     max-width: 1140px;
   }
+  .container.company-content {
+    max-width: 1400px;
+  }
   .content {
     padding-left: 135px;
     padding-right: 135px;

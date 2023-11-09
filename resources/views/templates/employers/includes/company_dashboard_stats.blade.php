@@ -1,7 +1,7 @@
     <!-- Main -->
     <!-- Bio -->
-    <div class="row py-2">
-        <div class="col-md-6">
+    <div class="row py-3">
+        <div class="col-md-6 px-3">
             <div class="card widget-dashboard mb-3 w-100 shadow-sm">
                 <div class="card-body">
                     <div class="widget">
@@ -11,7 +11,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 px-3">
             <div class="card widget-dashboard mb-3 w-100 shadow-sm">
                 <div class="card-body">
                     <div class="widget">

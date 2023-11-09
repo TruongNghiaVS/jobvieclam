@@ -2,7 +2,7 @@
 @if(Auth::guard('company')->user())
 
 <nav id="company-default-nav" class="navbar navbar-expand-lg navbar-light">
-    <div class="container">
+    <div class="container company-content">
         <div class="collapse navbar-collapse  justify-content-between" id="navbarNav">
             <ul class="navbar-nav navbar-nav__head">
                     <li class="nav-item {{ Request::url() == route('company.home') ? 'active' : '' }}">

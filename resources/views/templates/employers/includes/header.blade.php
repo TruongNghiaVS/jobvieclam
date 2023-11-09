@@ -20,7 +20,7 @@
 
                     @if(Auth::guard('company')->check())
                     <li class="{{ Request::url() == route('company.home') ? 'active' : 'text-main-color' }}">
-                        <a class="nav-link" href="{{route('company.home')}}" style="{{ Request::url() == route('company.home')  ? 'color:#981B1E;' : '' }}">HR Center</a>
+                        <a class="nav-link" href="{{route('company.home')}}" style="{{ Request::url() == route('company.home') || Request::url() == route('posted.jobs') ||  Request::url() == route('application.manager') || Request::url() == route('company.packages') || Request::url() == route('interview.schedule.calendar', ['company_id'=> Auth::guard('company')->user()->id]) || Request::url() == route('company.profile') || Request::url() == route('post.job')  ? 'color:#981B1E;' : '' }}">HR Center</a>
                     </li>
                     @else
                     <li class="{{ Request::url() == route('company.home') ? 'active' : 'text-main-color' }}">

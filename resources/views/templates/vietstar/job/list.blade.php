@@ -70,10 +70,13 @@
                                                     <h3 class="job-title-name"><a href="{{route('job.detail', [$job->slug])}}" title="{{$job->title}}">{{$job->title}}</a></h3>
                                                 </div>
                                                 @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
-                                                <a class="save-job active" href="http://localhost:8000/add-to-favourite-job/nhan-vien-bat-dong-san-40"><i class="far fa-heart"></i>
+                                                <a class="save-job active" href="{{route('remove.from.favourite', $job->slug)}}"><i class="far fa-heart"></i>
+                                                </a>
+                                                @elseif(Auth::check() && !Auth::user()->isFavouriteJob($job->slug))
+                                                <a class="save-job" href="{{route('add.to.favourite', $job->slug)}}"><i class="far fa-heart"></i>
                                                 </a>
                                                 @else
-                                                <a class="save-job" href="http://localhost:8000/add-to-favourite-job/nhan-vien-bat-dong-san-40"><i class="far fa-heart"></i>
+                                                <a class="save-job" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="far fa-heart"></i>
                                                 </a>
                                                 @endif
                                                 </a>

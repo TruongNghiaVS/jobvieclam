@@ -7,12 +7,13 @@
 <!-- Inner Page Title end -->
 @include('templates.vietstar.includes.mobile_dashboard_menu')
 <div class="user-wrapper">
-    @include('flash::message')
+    
     @include('templates.vietstar.includes.default_sidebar_menu')
     <div class="content">
 
         <div class="myads">
             <h3>{{__('Favourite Jobs')}}</h3>
+            @include('flash::message')
             <div class="searchList jobs-side-list">
                 <!-- job start -->
                 @if(isset($jobs) && count($jobs))
@@ -38,12 +39,7 @@
                                 </div>
                                 @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
                                 <a class="remove_favouritejob"
-                                    href="http://localhost:8000/add-to-favourite-job/nhan-vien-bat-dong-san-40">Xóa
-                                </a>
-                                @else
-                                <a class="save-job"
-                                    href="http://localhost:8000/add-to-favourite-job/nhan-vien-bat-dong-san-40"><i
-                                        class="far fa-heart"></i>
+                                    href="{{route('remove.from.favourite', $job->slug)}}">{{__('Delete')}}
                                 </a>
                                 @endif
                             </div>

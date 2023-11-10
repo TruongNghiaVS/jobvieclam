@@ -1,12 +1,20 @@
-
 <div class="card mb-2">
     <div class="card-body">
         <form action="{{ route('application.manager') }}" method="get" class="form-search">
             <div class="row filter-cv" style="margin-bottom: 00px">
-                <div class="col-9 col-md-10 col-lg-10">
+                <div class="col-sm-12 col-md-4 col-lg-5">
                     <div class="form-group">
+                        <label for="from_to">Từ Khóa</label>
                         <input type="text" name="name" placeholder="{{ __('Search name, email, phone number') }}" class="form-control">
                         
+                    </div>
+                </div>
+               
+                <div class="col-md-3 col-lg-5 col-sm-12">
+                    <div class="form-group form-group-datepicker input-daterange"  style="max-width: 100%; margin-bottom: 10px;">
+                        <label for="from_to">Từ - đến</label>
+                        <input type="text" class="daterange form-control " name="date_range" id="from_to"
+                                                placeholder="{{ __('Start date-End date') }}" />
                     </div>
                 </div>
                 {{-- <div class="col-md-6 col-lg-4">
@@ -22,7 +30,7 @@
                         </select>
                     </div>
                 </div> --}}
-                 <div class="col-2 col-md-2 col-lg-2">
+                 <div class="col-sm-6  col-md-2 col-lg-2 d-flex">
                     <button type="submit" class="btn btn-primary"><i class="bi bi-search text-white"></i></button>
                 </div>
             </div>

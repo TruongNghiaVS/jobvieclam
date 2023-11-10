@@ -106,7 +106,15 @@
                                     </div>
                                 </div>
 
-
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="Benefits">{{ __('Job Benefits') }} <span class="required">*</span></label>
+                                            {!! Form::textarea('benefits', null, array('class'=>'form-control', 'id'=>'benefits', 'placeholder'=>__('Job Benefits'))) !!}
+                                            {!! APFrmErrHelp::showErrors($errors, 'benefits') !!}
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="row">
                                     <div class="col-md-6" id="salary_dd">
@@ -268,15 +276,7 @@
 
 
                                 
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="Benefits">{{ __('Job Benefits') }} <span class="required">*</span></label>
-                                            {!! Form::textarea('benefits', null, array('class'=>'form-control', 'id'=>'benefits', 'placeholder'=>__('Job Benefits'))) !!}
-                                            {!! APFrmErrHelp::showErrors($errors, 'benefits') !!}
-                                        </div>
-                                    </div>
-                                </div>
+                               
 
                                 <div class="row">
                                     <div class="col-md-12 d-flex justify-content-end">

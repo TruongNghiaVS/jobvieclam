@@ -4,13 +4,13 @@
             <table class="table table-applican-manager table-hover mb-0 border-0">
                 <thead>
                     <tr>
-                        <th class="font-weight-bold" colspan="2">{{ __('Candidate') }}</th>
+                        <th class="font-weight-bold p-2" colspan="2">{{ __('Candidate') }}</th>
                         <!-- <th class="font-weight-bold"></th> -->
-                        <th class="font-weight-bold">{{ __('Recruitment Bulletin') }}</th>
-                        <th class="font-weight-bold">{{ __('Candidate Detail') }}</th>
-                        <th class="font-weight-bold">{{ __('Date Application') }}</th>
+                        <th class="font-weight-bold p-2">{{ __('Recruitment Bulletin') }}</th>
+                        <th class="font-weight-bold p-2">{{ __('Candidate Detail') }}</th>
+                        <th class="font-weight-bold p-2">{{ __('Date Application') }}</th>
 
-                        <th class="font-weight-bold">{{ __('Status') }}</th>
+                        <th class="font-weight-bold p-2">{{ __('Status') }}</th>
                         <th></th>
                     </tr>
                 </thead>

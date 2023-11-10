@@ -52,7 +52,11 @@
                     <a href="{{ route('home') }}" class="list-group-item list-group-item-action {{ Request::url() == route('home') ? 'active' : '' }}">
                         <div class="d-flex w-100">
                             <span class="icon-dashboard-icon fs-24px me-2"></span>
-                            <span class="side-bar-content">{{__('Dashboard')}}</span>
+                            <span class="side-bar-content"><!-- {{__('Dashboard')}} -->
+
+Dashboard
+
+</span>
                         </div>
                     </a>
                 </li>

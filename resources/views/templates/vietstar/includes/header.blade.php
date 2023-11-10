@@ -47,7 +47,11 @@
                             @endphp
                             <li>
                                 <a class="sub-item" href="{{route('application.manager')}}" {{$pointerCom}}><span class="iconmoon icon-recruiter-portfolio"></span>
-                                    {{__('Dashboard')}}
+                                    <!-- <!-- {{__('Dashboard')}} -->
+
+Dashboard
+
+ -->
                                 </a>
                             </li>
                             <li>
@@ -160,7 +164,11 @@
                         {{Auth::user()->printUserImage()}}
                     </a>
                     <ul class="dropdown_menu">
-                        <li class="nav-item"><a href="{{route('home')}}" class="nav-link"><i class="jobicon fa fa-tachometer" aria-hidden="true"></i> {{__('Dashboard')}}</a>
+                        <li class="nav-item"><a href="{{route('home')}}" class="nav-link"><i class="jobicon fa fa-tachometer" aria-hidden="true"></i> <!-- {{__('Dashboard')}} -->
+
+Dashboard
+
+</a>
                         </li>
                         <li class="nav-item"><a href="{{ route('my.profile') }}" class="nav-link"><i class="jobicon fa fa-user" aria-hidden="true"></i> {{__('My Profile')}}</a>
                         </li>
@@ -195,7 +203,11 @@
                         </svg>
                     </a>
                     <ul class="dropdown_menu">
-                        <li class="nav-item"><a href="{{route('company.home')}}" class="nav-link"><i class="jobicon fa fa-tachometer" aria-hidden="true"></i> {{__('Dashboard')}}</a>
+                        <li class="nav-item"><a href="{{route('company.home')}}" class="nav-link"><i class="jobicon fa fa-tachometer" aria-hidden="true"></i> <!-- {{__('Dashboard')}} -->
+
+Dashboard
+
+</a>
                         </li>
                         <li class="nav-item"><a href="#" data-toggle="modal" data-target="#company_profile_modal" class="nav-link">
                                 <i class="jobicon fa fa-user" aria-hidden="true"></i> {{__('View Public Profile')}}</a>

@@ -1,8 +1,3 @@
-@push('styles')
-<style type="text/css">
-
-</style>
-@endpush
 
 <!-- SEARCH STICKY -->
 <div class="page-heading-tool job-detail ">

@@ -6,12 +6,12 @@
     @include('templates.employers.includes.header')
     <!-- Header end -->
     @else
-    @include('templates.vietstar.includes.header')
+    @include('templates.employers.includes.header')
     @endif
 <!-- Header end -->
 
 <!-- Dashboard menu start -->
-@include('templates.vietstar.includes.mobile_dashboard_menu')
+@include('templates.employers.includes.mobile_dashboard_menu')
 <!-- Dashboard menu end -->
 
 
@@ -201,7 +201,7 @@
     </div>
 </div>
 
-@include('templates.vietstar.includes.footer')
+@include('templates.employers.includes.footer')
 @endsection
 
 @push('scripts')

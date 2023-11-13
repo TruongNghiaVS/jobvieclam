@@ -762,16 +762,16 @@
     </div>
 </form>
 
-@include('templates.vietstar.company.form.resetpassword')
+@include('templates.employers.company.form.resetpassword')
 
-@include('templates.vietstar.company.form.companyinfo_form')
+@include('templates.employers.company.form.companyinfo_form')
 
-@include('templates.vietstar.company.form.contact')
+@include('templates.employers.company.form.contact')
 
 
 @push('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
-@include('templates.vietstar.includes.tinyMCEFront')
+@include('templates.employers.includes.tinyMCEFront')
 <script type="text/javascript">
     function readURL(input) {
         console.log("input", input);

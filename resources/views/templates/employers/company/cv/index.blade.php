@@ -4,7 +4,7 @@
 
 <!-- Header start -->
 
-@include('templates.vietstar.includes.header')
+@include('templates.employers.includes.header')
 <!-- Company cover -->
 
 
@@ -23,7 +23,7 @@
 
 
 
-@include('templates.vietstar.includes.footer')
+@include('templates.employers.includes.footer')
 
 @endsection
 

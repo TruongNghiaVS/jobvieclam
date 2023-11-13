@@ -75,5 +75,5 @@ Dashboard
         </div>
     </div>  
 </nav>
-@include('templates.vietstar.company.modal.modal_companyProfile')
+@include('templates.employers.company.modal.modal_companyProfile')
 @endif

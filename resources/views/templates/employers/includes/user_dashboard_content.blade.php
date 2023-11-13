@@ -40,7 +40,7 @@
         </div>
     </div>
     <!-- Statistics -->
-    @include('templates.vietstar.includes.user_dashboard_stats')
+    @include('templates.employers.includes.user_dashboard_stats')
     @if((bool)config('jobseeker.is_jobseeker_package_active'))
     @php
     $packages = App\Package::where('package_for', 'like', 'job_seeker')->get();
@@ -52,12 +52,12 @@
         @endphp
 
         @if(null !== $package)
-        @include('templates.vietstar.includes.user_package_msg')
-        @include('templates.vietstar.includes.user_packages_upgrade')
+        @include('templates.employers.includes.user_package_msg')
+        @include('templates.employers.includes.user_packages_upgrade')
         @else
 
         @if(null !== $packages)
-        @include('templates.vietstar.includes.user_packages_new')
+        @include('templates.employers.includes.user_packages_new')
         @endif
         @endif
         @endif

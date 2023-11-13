@@ -163,7 +163,7 @@ Dashboard
        
     </div>
 </nav>
-@include('templates.vietstar.user.templates.modal_user_info')
+@include('templates.employers.user.templates.modal_user_info')
 @push('scripts')
 <script type="text/javascript">
     if ($(window).width() > 992) {

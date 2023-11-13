@@ -1,14 +1,10 @@
 @extends('templates.vietstar.layouts.app')
 
 @section('content')
-
-    @if(Auth::guard('company')->check())
     <!-- Header start -->
     @include('templates.employers.includes.header')
     <!-- Header end -->
-    @else
-    @include('templates.vietstar.includes.header')
-    @endif
+  
 <!-- Company cover -->
 
 @include('templates.employers.includes.mobile_dashboard_menu')
@@ -231,7 +227,7 @@
 
 
 
-@include('templates.vietstar.includes.footer')
+@include('templates.employers.includes.footer')
 
 @endsection
 

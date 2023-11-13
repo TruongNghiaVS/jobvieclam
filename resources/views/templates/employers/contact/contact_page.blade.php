@@ -3,12 +3,12 @@
 <!-- Header start -->
 
     <!-- Header start -->
-    @include('templates.employers.includes.header')
+{{--@include('templates.employers.includes.header')
     <!-- Header end -->
 
 <!-- Header end -->
 <!-- Inner Page Title start -->
-@include('templates.employers.includes.inner_page_title', ['page_title'=>__('Contact')])
+@include('templates.employers.includes.inner_page_title', ['page_title'=>__('Contact')])--}}
 <!-- Inner Page Title end -->
 <div class="inner-page">
     <!-- About -->

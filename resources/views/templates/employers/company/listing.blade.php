@@ -2,14 +2,13 @@
 @section('content')
 <!-- Header start -->
    
-
-    @include('templates.employers.includes.header')
-    <!-- Header end -->
+@include('templates.vietstar.includes.header')
+<!-- Header end -->
    
 <!-- Header end -->
 
 <!-- Dashboard menu start -->
-@include('templates.employers.includes.mobile_dashboard_menu')
+@include('templates.vietstar.includes.mobile_dashboard_menu')
 <!-- Dashboard menu end -->
 
 
@@ -199,7 +198,7 @@
     </div>
 </div>
 
-@include('templates.employers.includes.footer')
+@include('templates.vietstar.includes.footer')
 @endsection
 
 @push('scripts')

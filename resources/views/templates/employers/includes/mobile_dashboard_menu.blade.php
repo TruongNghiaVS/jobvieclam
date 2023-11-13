@@ -350,6 +350,17 @@
         align-items: center;
         left: 0;
         right: 0;
+        opacity: 1;
+        pointer-events: auto;
+        -webkit-transform: translateX(-300px);
+        -ms-transform: translateX(-300px);
+        transform: translateX(-300px);
+        transition: 0.4s ease-out all;
+        
+    }
+    #mobile-sidebar.active .sidebar-bottom.active {
+      
+        transform: translateX(0);
     }
 
     .profile .back-menu-normal {
@@ -387,23 +398,13 @@
     .sub_list li{
         margin-left: 40px;
     }
+
 </style>
 
 @endpush
 <nav id="mobile-sidebar">
     <div class="sidebar-header">
-        @if(Auth::user())
-        <div class="profile" bis_skin_checked="1">
-            <div class="avatar" bis_skin_checked="1"><a href="#">
-                    <img class="lazy-bg" src="{{ auth()->user()->avatar() }}" alt="avatar" style=""></a>
-            </div>
-            <div class="username" bis_skin_checked="1">
-                <p><a href="#">{{auth()->user()->name}}</a></p>
-            </div>
-            <div class="back-menu-normal" bis_skin_checked="1"><i class="bi bi-arrow-left"></i></div>
-        </div>
-        @elseif(Auth::guard('company')->user())
-
+        @if(Auth::guard('company')->user())
         <div class="profile" bis_skin_checked="1">
             <div class="avatar" bis_skin_checked="1"><a href="#">
                 {{Auth::guard('company')->user()->printCompanyImage()}}      
@@ -464,125 +465,16 @@
             </ul>
             <!-- user nav -->
 
-            @if(Auth::user())
+            @if(Auth::guard('company')->check())
+    
             <ul class="list-unstyled components sidebar-user-nav" id="sidebar-user-nav">
-                <li class="sidebar-item {{ Request::url() == route('home') ? 'active' : '' }}">
-                    <a href="{{ route('home') }}" class="list-group-item list-group-item-action {{ Request::url() == route('home') ? 'active' : '' }}">
-                        <div class="d-flex w-100">
-                            <span class="icon-dashboard-icon fs-24px me-2"></span>
-                            <span class="side-bar-content"><!-- {{__('Dashboard')}} -->
-
-Dashboard
-
-</span>
-                        </div>
-                    </a>
-                </li>
-
-                <li class="sidebar-item {{ Request::url() == route('my.profile') ? 'active' : '' }}">
-                    <a href="{{ route('my.profile') }}" class="list-group-item list-group-item-action {{ Request::url() == route('my.profile') ? 'active' : '' }}">
-                        <div class="d-flex w-100">
-                            <span class="icon-edit-icon fs-24px me-2"></span>
-                            <span class="side-bar-content"> {{__('Edit Profile')}}</span>
-
-                        </div>
-                    </a>
-                </li>
-
-                <li class="sidebar-item {{ Request::url() == route('change.template') ? 'active' : '' }}">
-                    <a href="{{ route('change.template') }}" class="list-group-item list-group-item-action {{ Request::url() == route('change.template') ? 'active' : '' }}">
-                        <div class="d-flex w-100">
-                            <span class="icon-edit-icon fs-24px me-2"></span>
-                            <span class="side-bar-content"> {{__('Change Template')}}</span>
-                        </div>
-                    </a>
-                </li>
-
-                <li class="">
-                    <a href="#" class="list-group-item list-group-item-action {{ route('view.public.profile', Auth::user()->id) }}"  data-toggle="modal" data-target="#modal_user_info">
-                        <div class="d-flex w-100">
-                            <span class="icon-eye-icon fs-24px me-2"></span>
-                            <span class="side-bar-content">{{__('View Public Profile')}}</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="sidebar-item {{ Request::url() == route('my.job.applications') || Request::url() == route('my.favourite.jobs')  ? 'active' : '' }}">
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <div class="d-flex w-100">
-                            <span class="icon-edit-icon fs-24px me-2"></span>
-                            <span class="side-bar-content"> Việc làm của tôi</span>
-                        </div>
-                    </a>
-                    <ul class="collapse list-unstyled sub_list" id="pageSubmenu">
-                        <li class="{{ Request::url() == route('my.job.applications') ? 'active' : '' }}">
-                            <a href="{{ route('my.job.applications') }}" class="list-group-item list-group-item-action {{ Request::url() == route('my.job.applications') ? 'active' : '' }}">
-                                <div class="d-flex w-100">
-                                    <span class="icon-doc-check-icon fs-24px me-2"></span>
-                                    <span class="side-bar-content"> {{__('My Job Applications')}}</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="{{ Request::url() == route('my.favourite.jobs') ? 'active' : '' }}">
-                            <a href="{{ route('my.favourite.jobs') }}" class="list-group-item list-group-item-action {{ Request::url() == route('my.favourite.jobs') ? 'active' : '' }}">
-                                <div class="d-flex w-100">
-                                    <span class="icon-heart-icon fs-24px me-2"></span>
-                                    <span class="side-bar-content">{{__('My Favourite Jobs')}}</spant>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="sidebar-item {{ Request::url() == route('my-alerts') ? 'active' : '' }}">
-                    <a href="{{ route('my-alerts') }}" class="list-group-item list-group-item-action {{ Request::url() == route('my-alerts') ? 'active' : '' }}">
-                        <div class="d-flex w-100">
-                            <span class="icon-bell-icon fs-24px me-2"></span>
-                            <span class="side-bar-content"> {{__('My Job Alerts')}}</span>
-                        </div>
-                    </a>
-                </li>
-
-                <li class="sidebar-item {{ Request::url() == route('my.messages') ? 'active' : '' }}">
-                    <a href="{{route('my.messages')}}" class="list-group-item list-group-item-action {{ Request::url() == route('my.messages') ? 'active' : '' }}">
-                        <div class="d-flex w-100">
-                            <span class="icon-message-icon fs-24px me-2 box-message-icon">
-                                <span class="badge">{{\App\CompanyMessage::where('seeker_id', Auth::user()->id)->where('status','unviewed')->where('type','reply')->count()}}</span>
-                            </span>
-                            <span class="side-bar-content"> {{__('My Messages')}}</span>
-
-                        </div>
-                    </a>
-                </li>
-                <li class="sidebar-item {{ Request::url() == route('my.followings') ? 'active' : '' }}">
-                    <a href="{{route('my.followings')}}" class="list-group-item list-group-item-action {{ Request::url() == route('my.followings') ? 'active' : '' }}">
-                        <div class="d-flex w-100">
-                            <span class="icon-office-building-icon fs-24px me-2"></span>
-                            <span class="side-bar-content"> {{__('My Followings')}}</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="{{ route('site_user.logout') }}" class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100">
-                            <span class="icon-logout-icon fs-24px me-2"></span>
-                            <span class="side-bar-content"> {{__('Logout')}}</span>
-                        </div>
-                    </a>
-                </li>
-
-            </ul>
-            
-            @elseif(Auth::guard('company')->check())
-            <ul class="list-unstyled components sidebar-user-nav" id="sidebar-user-nav">
-            <li class="sidebar-item {{ Request::url() == route('company.home') ? 'active' : '' }}">
+                <li class="sidebar-item {{ Request::url() == route('company.home') ? 'active' : '' }}">
                     <a href="{{ route('company.home') }}" class="list-group-item list-group-item-action ">
                         <div class="d-flex w-100">
                             <span class="iconmoon icon-dashboard-icon fs-24px me-2"></span>
                             <span class="side-bar-content"><!-- {{__('Dashboard')}} -->
-
-Dashboard
-
-</span>
+                                Dashboard
+                            </span>
                         </div>
                     </a>
                 </li>
@@ -699,57 +591,43 @@ Dashboard
 
     </div>
 
-    <div class="sidebar-bottom">
+    <div class="sidebar-bottom active">
         <ul class="list-unstyled components sidebar-bottom__item">
-            @if(Auth::user() && !Auth::guard('company')->check())
-            <li class="openmyacount">
-                <div class="d-flex w-100">
-                    <span class="side-bar-content">Thông tin tài khoản</span>
-                </div>
-                
-                
-            </li>
-            <div class="d-flex gap-10 my-2 group-button">
-                <!-- <a href="{{route('index')}}" class="btn btn-primary">Dành cho ứng viên</a> -->
-                <a href="http://127.0.0.1:8000/" class="btn btn-primary">Dành cho Nhà tuyển dụng</a>
-            </div>
+            @if(Auth::guard('company')->check())
+                <li class="openmyacount">
+                    <div class="d-flex w-100">
+                        <span class="side-bar-content">Thông tin tài khoản</span>
+                    </div>
+                    
+                    
+                </li>
+    
+                <li>
+                    <div class="d-flex gap-10 my-2 group-button">
+                        <a class="nav-link login_link btn btn-primary login-btn" data-toggle="modal" data-target="#user_login_Modal" >{{__('Log in')}} / {{__('Đăng ký')}} </a>
+                    
+                        <!-- <a href="{{url('/employers')}}" class="btn btn-primary">Dành cho Nhà tuyển dụng</a> -->
+                             <a href="http://127.0.0.1:8000/" class="btn btn-primary">Dành cho ứng viên</a>
 
-
-
-            
-            @elseif(Auth::guard('company')->check() && !Auth::user())
-
-            <li class="openmyacount">
-                
-            
-                <div class="d-flex w-100">
-                    <span class="side-bar-content">Thông tin tài khoản</span>
-                </div>
-
-            
-                
-            </li>
-            
-            <div class="d-flex gap-10 my-2 group-button">
-                <!-- <a href="{{route('index')}}" class="btn btn-primary">Dành cho ứng viên</a> -->
-                <a href="http://127.0.0.1:8000/" class="btn btn-primary">Dành cho ứng viên</a>
-                <a class="btn btn-primary my-2" href="{{route('job.seeker.list')}}" class="nav-link">{{__('Find candidates')}}</a>
-            </div>
+                        {{--<a class="btn btn-primary my-2" href="{{route('register')}}" class="nav-link
+                        register">{{__('Đăng ký')}}</a> --}}
+                    </div>
+                </li>
 
 
             @elseif(!Auth::user() && !Auth::guard('company')->user())
-            <li>
-                <div class="d-flex gap-10 my-4 group-button">
-                <a class="nav-link login_link btn btn-primary login-btn" data-toggle="modal" data-target="#employer_login_Modal" >{{__('Log in')}} / {{__('Đăng ký')}} </a>
-                    {{--<a class="btn btn-primary my-2" href="{{route('register')}}" class="nav-link
-                    register">{{__('Đăng ký')}}</a> --}}
-                    <!-- <a href="{{route('index')}}" class="btn btn-primary">Dành cho ứng viên</a> -->
-                    <a href="http://127.0.0.1:8000/" class="btn btn-primary">Dành cho ứng viên</a>
+                <li>
+                    <div class="d-flex gap-10 my-4 group-button">
+                    <a class="nav-link login_link btn btn-primary login-btn" data-toggle="modal" data-target="#employer_login_Modal" >{{__('Log in')}} / {{__('Đăng ký')}} </a>
+                        {{--<a class="btn btn-primary my-2" href="{{route('register')}}" class="nav-link
+                        register">{{__('Đăng ký')}}</a> --}}
+                        <!-- <a href="{{route('index')}}" class="btn btn-primary">Dành cho ứng viên</a> -->
+                        <a href="http://127.0.0.1:8000/" class="btn btn-primary">Dành cho ứng viên</a>
 
-                  
-                </div>
+                        
+                    </div>
 
-            </li>
+                </li>
             @endif
 
             <li>
@@ -799,6 +677,9 @@ Dashboard
             $('.sidebar-user-nav').addClass('active');
             $('.back-menu-normal').addClass('active');
 
+            // remove sidebar item
+            $('.sidebar-bottom').removeClass('active');
+           
         });
 
         $('.back-menu-normal').click(function() {
@@ -807,6 +688,7 @@ Dashboard
             $('.menu').removeClass('active');
             $('.sidebar-user-nav').removeClass('active');
             $('.back-menu-normal').removeClass('active');
+            $('.sidebar-bottom').addClass('active');
         });
     });
 </script>

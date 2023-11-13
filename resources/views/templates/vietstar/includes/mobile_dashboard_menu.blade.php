@@ -668,7 +668,25 @@
                 </div>
 
             </li>
+            
+            <li>
+                <div class="d-flex gap-10 my-2 group-button">
+                   
+                  
+                    <!-- <a href="{{url('/employers')}}" class="btn btn-primary">Dành cho Nhà tuyển dụng</a> -->
+                    <a href="http://127.0.0.1:8001/employers" class="btn btn-primary">Dành cho Nhà tuyển dụng</a>
+
+                 
+                </div>
+            </li>
+           
             @elseif(!Auth::user())
+            <li class="openmyacount">
+                <div class="d-flex w-100">
+                    <span class="side-bar-content">Thông tin tài khoản</span>
+                </div>
+
+            </li>
 
             <li>
                 <div class="d-flex gap-10 my-2 group-button">

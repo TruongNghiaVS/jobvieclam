@@ -1,13 +1,11 @@
 @extends('templates.vietstar.layouts.app')
 @section('content')
 <!-- Header start -->
-    @if(Auth::guard('company')->check())
-    <!-- Header start -->
+   
+
     @include('templates.employers.includes.header')
     <!-- Header end -->
-    @else
-    @include('templates.employers.includes.header')
-    @endif
+   
 <!-- Header end -->
 
 <!-- Dashboard menu start -->

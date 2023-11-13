@@ -8,10 +8,7 @@
                     <li class="nav-item {{ Request::url() == route('company.home') ? 'active' : '' }}">
                         <a href="{{ route('company.home') }}" class="nav-link list-group-item-action ">
                             <!-- {{__('Dashboard')}} -->
-
-Dashboard
-
-
+                            Dashboard
                         </a>
                     </li>
              
@@ -50,6 +47,16 @@ Dashboard
                             
                              
                                 {{__('Interview Schedule')}}
+                          
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item  {{route('job.seeker.list')}} ? 'active' : '' }}">
+                        <a href="{{route('job.seeker.list')}}" class="nav-link list-group-item-action">
+                            
+                             
+                             {{__('Find candidates')}}
                           
                         </a>
                     </li>

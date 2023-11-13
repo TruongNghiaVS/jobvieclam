@@ -47,11 +47,9 @@
                             @endphp
                             <li>
                                 <a class="sub-item" href="{{route('application.manager')}}" {{$pointerCom}}><span class="iconmoon icon-recruiter-portfolio"></span>
-                                    <!-- <!-- {{__('Dashboard')}} -->
+                                    <!--  {{__('Dashboard')}} -->
 
-Dashboard
-
- -->
+                                Dashboard
                                 </a>
                             </li>
                             <li>
@@ -165,10 +163,8 @@ Dashboard
                     </a>
                     <ul class="dropdown_menu">
                         <li class="nav-item"><a href="{{route('home')}}" class="nav-link"><i class="jobicon fa fa-tachometer" aria-hidden="true"></i> <!-- {{__('Dashboard')}} -->
-
-Dashboard
-
-</a>
+                        Dashboard
+                        </a>
                         </li>
                         <li class="nav-item"><a href="{{ route('my.profile') }}" class="nav-link"><i class="jobicon fa fa-user" aria-hidden="true"></i> {{__('My Profile')}}</a>
                         </li>
@@ -186,52 +182,21 @@ Dashboard
             </div>
             <!-- End user-badge  -->
 
-            @elseif(Auth::guard('company')->check())
-            <a href="{{route('post.job')}}" class="btn btn-primary btn-post-a-job">{{__('Post a job')}}</a>
-            <!-- user-badge -->
-            <div class="user-badge">
-                <div class="money-base">
-                    <p><span class="iconmoon icon-money-database"></span> Số dư</p>
-                    <h5 class="dolar-sign text-blue-color m-0">0 đ</h5>
-                </div>
-                <div class="user-badge__avatar">
-                    <a class="dropdown_menu__link" href="#">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48Z" fill="#F2F2F2" />
-                            <path d="M43.2596 38.3031C41.0213 35.3063 38.1148 32.873 34.7712 31.1965C31.4277 29.5199 27.7391 28.6463 23.9987 28.6451C20.2584 28.644 16.5693 29.5152 13.2246 31.1897C9.88 32.8642 6.97202 35.2957 4.73181 38.291C6.96063 41.3015 9.86386 43.7478 13.2087 45.4339C16.5535 47.12 20.2469 47.9988 23.9927 48C27.7384 48.0012 31.4324 47.1246 34.7782 45.4407C38.1241 43.7567 41.0289 41.3122 43.2596 38.3031Z" fill="#3B4358" />
-                            <path d="M23.9999 25.5484C29.1308 25.5484 33.2902 21.3889 33.2902 16.258C33.2902 11.1271 29.1308 6.96773 23.9999 6.96773C18.869 6.96773 14.7096 11.1271 14.7096 16.258C14.7096 21.3889 18.869 25.5484 23.9999 25.5484Z" fill="#3B4358" />
-                        </svg>
-                    </a>
-                    <ul class="dropdown_menu">
-                        <li class="nav-item"><a href="{{route('company.home')}}" class="nav-link"><i class="jobicon fa fa-tachometer" aria-hidden="true"></i> <!-- {{__('Dashboard')}} -->
 
-                        Dashboard
-
-                        </a>
-                        </li>
-                        <li class="nav-item"><a href="#" data-toggle="modal" data-target="#company_profile_modal" class="nav-link">
-                                <i class="jobicon fa fa-user" aria-hidden="true"></i> {{__('View Public Profile')}}</a>
-                        </li>
-
-
-                        <li class="nav-item"><a href="{{ route('company.followers') }}" class="nav-link">
-                                <i class="jobicon bi bi-people-fill"></i>
-                                {{__('Company Followers')}}
-                            </a>
-                        </li>
-                        <li class="nav-item"><a href="{{route('company.messages')}}" class="nav-link"><i class="jobicon fa fa-envelope" aria-hidden="true"></i> {{__('Messages')}}</a>
-                        </li>
-                        <li class="nav-item"><a href="{{ route('company.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form-header1').submit();" class="nav-link"><i class="jobicon fa fa-sign-out" aria-hidden="true"></i>
-                                {{__('Logout')}}</a></li>
-                    </ul>
-                    <form id="logout-form-header1" action="{{ route('company.logout') }}" method="GET" style="display: none;"> {{ csrf_field() }} </form>
-                </div>
-            </div>
-            <!-- end user-badge -->
             @endif
+
+
+
+
+
             <div class="d-flex  group-button">
-                @if(!Auth::user() && !Auth::guard('company')->user())
+                @if(!Auth::check())
                 <a class="nav-link login-link" data-toggle="modal" data-target="#user_login_Modal">{{__('Log in')}} / {{__('Đăng ký')}} </a>
+                @endif
+
+
+
+
                 <!-- <a class="btn_for_em" href="{{route('employerIndex')}}"> -->
                 <a class="btn_for_em" href="http://127.0.0.1:8001/employers">
 
@@ -243,20 +208,17 @@ Dashboard
                 </div>    
                 </a>
                 
-                {{--<a class="btn btn-primary" href="{{route('register')}}" class="nav-link
-                register">{{__('Đăng ký')}}</a> --}}
-                @endif
+          
+             
 
-                @if(Auth::guard('company')->user())
-                <a class="btn btn-primary" href="{{route('job.seeker.list')}}" class="nav-link">{{__('Find candidates')}}</a>
-                @endif
+             
             </div>
         </div>
         <!-- end collapse -->
 
 
         <!-- Danh cho mobile; có 2 menu mobile và icon user -->
-        <div class="group-for-mobile">
+       {{-- <div class="group-for-mobile">
 
             @if(Auth::check())
             <!-- user-badge -->
@@ -309,7 +271,7 @@ Dashboard
             </ul>
             <!-- end navbar-lang-mobile -->
 
-        </div>
+        </div>--}}
         <!-- End Danh cho mobile; có 2 menu mobile và icon user -->
     </div>
 </nav>

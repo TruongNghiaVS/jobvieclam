@@ -701,34 +701,48 @@ Dashboard
 
     <div class="sidebar-bottom">
         <ul class="list-unstyled components sidebar-bottom__item">
-            @if(Auth::user() )
+            @if(Auth::user() && !Auth::guard('company')->check())
             <li class="openmyacount">
                 <div class="d-flex w-100">
                     <span class="side-bar-content">Thông tin tài khoản</span>
                 </div>
-
+                
+                
             </li>
-            @elseif(Auth::guard('company')->check())
+            <div class="d-flex gap-10 my-2 group-button">
+                <!-- <a href="{{route('index')}}" class="btn btn-primary">Dành cho ứng viên</a> -->
+                <a href="http://127.0.0.1:8000/" class="btn btn-primary">Dành cho Nhà tuyển dụng</a>
+            </div>
+            @elseif(Auth::guard('company')->check() && !Auth::user())
 
             <li class="openmyacount">
+                
+            
                 <div class="d-flex w-100">
                     <span class="side-bar-content">Thông tin tài khoản</span>
                 </div>
 
+            
+                
             </li>
+            
+            <div class="d-flex gap-10 my-2 group-button">
+                <!-- <a href="{{route('index')}}" class="btn btn-primary">Dành cho ứng viên</a> -->
+                <a href="http://127.0.0.1:8000/" class="btn btn-primary">Dành cho ứng viên</a>
+                <a class="btn btn-primary my-2" href="{{route('job.seeker.list')}}" class="nav-link">{{__('Find candidates')}}</a>
+            </div>
+
 
             @elseif(!Auth::user() && !Auth::guard('company')->user())
             <li>
-                <div class="d-flex gap-10 my-2 group-button">
+                <div class="d-flex gap-10 my-4 group-button">
                 <a class="nav-link login_link btn btn-primary login-btn" data-toggle="modal" data-target="#employer_login_Modal" >{{__('Log in')}} / {{__('Đăng ký')}} </a>
                     {{--<a class="btn btn-primary my-2" href="{{route('register')}}" class="nav-link
                     register">{{__('Đăng ký')}}</a> --}}
                     <!-- <a href="{{route('index')}}" class="btn btn-primary">Dành cho ứng viên</a> -->
                     <a href="http://127.0.0.1:8000/" class="btn btn-primary">Dành cho ứng viên</a>
 
-                    @if(Auth::guard('company')->user())
-                    <a class="btn btn-primary my-2" href="{{route('job.seeker.list')}}" class="nav-link">{{__('Find candidates')}}</a>
-                    @endif
+                  
                 </div>
 
             </li>

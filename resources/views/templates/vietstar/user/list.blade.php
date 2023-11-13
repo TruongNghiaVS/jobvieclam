@@ -1,8 +1,16 @@
 @extends('templates.vietstar.layouts.app')
 @section('content')
+@if(Auth::guard('company')->check())
 <!-- Header start -->
 @include('templates.employers.includes.header')
 <!-- Header end -->
+@else
+@include('templates.vietstar.includes.header')
+@endif
+
+
+@include('templates.employers.includes.mobile_dashboard_menu')
+
 <!-- Inner Page Title start -->
 <!-- Inner Page Title end -->
 <!-- <a class="btn btn-primary applyCV-btn" href="http://jobvieclam.com/login#cvs">Nộp CV</a> -->
@@ -78,7 +86,7 @@
 
 
 
-<div class="listpgWraper">
+<div class="job-seekers-page listpgWraper">
     @include('templates.vietstar.user.inc.filters_job_wrapper')
     <div class="container Jobpage">
         <form action="{{route('job.seeker.list')}}" method="get">

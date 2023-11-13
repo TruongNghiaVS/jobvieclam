@@ -205,9 +205,9 @@ Dashboard
                     <ul class="dropdown_menu">
                         <li class="nav-item"><a href="{{route('company.home')}}" class="nav-link"><i class="jobicon fa fa-tachometer" aria-hidden="true"></i> <!-- {{__('Dashboard')}} -->
 
-Dashboard
+                        Dashboard
 
-</a>
+                        </a>
                         </li>
                         <li class="nav-item"><a href="#" data-toggle="modal" data-target="#company_profile_modal" class="nav-link">
                                 <i class="jobicon fa fa-user" aria-hidden="true"></i> {{__('View Public Profile')}}</a>

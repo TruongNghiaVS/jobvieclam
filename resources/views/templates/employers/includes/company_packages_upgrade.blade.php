@@ -62,6 +62,7 @@
 				</div>--}}
 
 
+				{{--
 				<?php
 
 				if((bool)config('company.is_company_package_active')){        
@@ -80,7 +81,7 @@
 
 				@include('templates.employers.includes.company_packages_new')
 
-				<?php }} ?>
+				<?php }} ?>--}}
 			</div>
 			<!---end four-paln--> 
 		</div>

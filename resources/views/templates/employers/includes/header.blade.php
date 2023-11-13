@@ -241,7 +241,7 @@ Dashboard
             <div class="d-flex group-button">
                 @if(!Auth::user() && !Auth::guard('company')->user())
                 <a class="nav-link login-link" data-toggle="modal" data-target="#employer_login_Modal">{{__('Log in')}} / {{__('Đăng ký')}} </a>
-                <a class="btn_for_user" href="{{route('index')}}">
+                <a class="btn_for_user" href="http://127.0.0.1:8000">
                 <div  class="btn_for_user__head">
                     Dành cho
                 </div> 

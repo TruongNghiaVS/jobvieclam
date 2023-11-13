@@ -713,6 +713,10 @@ Dashboard
                 <!-- <a href="{{route('index')}}" class="btn btn-primary">Dành cho ứng viên</a> -->
                 <a href="http://127.0.0.1:8000/" class="btn btn-primary">Dành cho Nhà tuyển dụng</a>
             </div>
+
+
+
+            
             @elseif(Auth::guard('company')->check() && !Auth::user())
 
             <li class="openmyacount">

@@ -2,13 +2,7 @@
 
 @section('content') 
 
-<!-- Header start -->
-@if(Auth::check())
 @include('templates.vietstar.includes.header')
-<!-- Header end -->
-@else
-@include('templates.employers.includes.header')
-@endif
 
 @include('templates.employers.includes.company_dashboard_menu')
 

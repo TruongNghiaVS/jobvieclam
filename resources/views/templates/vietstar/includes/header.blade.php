@@ -197,8 +197,8 @@
 
 
 
-                <!-- <a class="btn_for_em" href="{{route('employerIndex')}}"> -->
-                <a class="btn_for_em" href="http://127.0.0.1:8001/employers">
+                <a class="btn_for_em" href="{{route('employerIndex')}}">
+                <!-- <a class="btn_for_em" href="http://127.0.0.1:8001/employers"> -->
 
                 <div  class="btn_for_em__head">
                     Dành cho

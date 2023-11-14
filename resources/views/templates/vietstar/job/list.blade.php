@@ -26,7 +26,7 @@
                         <div class="sort-wrapped">
                             <div class="title sort-label">Sắp xếp theo</div>
                             <div class="sort-item-wrapped bg-white p-3">
-                                <form >
+                                <form>
 
                                 
                                 <!-- <div class="sort-item-wrapped__item active">Mặc định</div>
@@ -265,6 +265,10 @@
     .view_more {
         cursor: pointer;
     }
+    .form-check-label {
+        cursor: pointer;
+    }
+  
 </style>
 @endpush
 @push('scripts')

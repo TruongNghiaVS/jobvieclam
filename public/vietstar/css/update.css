@@ -2418,8 +2418,8 @@ footer .inner-copyright .copyright {
 }
 
 .jobs-side-list .item-job:hover {
-    background: #f6f6f6;
-    outline: 1px solid #d3d5d9;
+    background: #f9dfdf;
+    outline: 1px solid var(--bs-primary);
 }
 
 .navbar__link-separator {
@@ -3073,9 +3073,10 @@ footer .inner-copyright .copyright {
     padding: 20px 0 !important;
 }
 
-.job-sorting-section .sort-wrapped>div {
+.job-sorting-section .sort-wrapped .sort-item-wrapped {
     font-size: 15px;
     margin-right: 0px;
+    border-radius: 10px;
 }
 
 .sort-item-wrapped {

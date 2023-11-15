@@ -4,12 +4,12 @@
 
 <!-- Header start -->
 
-@include('templates.vietstar.includes.header')
+@include('templates.employers.includes.header')
 
 <!-- Header end -->
 
 <!-- Inner Page Title start -->
-@include('templates.vietstar.includes.mobile_dashboard_menu')
+@include('templates.employers.includes.mobile_dashboard_menu')
 
 <!-- Inner Page Title end -->
 
@@ -245,6 +245,6 @@
 
 </div>
 
-@include('templates.vietstar.includes.footer')
+@include('templates.employers.includes.footer')
 
 @endsection

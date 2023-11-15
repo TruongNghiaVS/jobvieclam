@@ -1,11 +1,6 @@
-@extends('templates.vietstar.layouts.app') @section('content')
-<!-- Header start -->
-@if(Auth::check())
-@include('templates.vietstar.includes.header')
-<!-- Header end -->
-@else
+@extends('templates.vietstar.layouts.app') 
+@section('content')
 @include('templates.employers.includes.header')
-@endif
 <!-- Inner Page Title start -->
 <!-- Inner Page Title end -->
 
@@ -136,13 +131,12 @@
             ?>
             <?php if(null !== $package){ ?>
 
-            
-
-            @include('templates.employers.includes.company_packages_upgrade')
+                @include('templates.employers.includes.company_package_msg')
+                @include('templates.employers.includes.company_packages_upgrade')
 
             <?php }elseif(null !== $packages){ ?>
 
-            @include('templates.employers.includes.company_packages_new')
+                @include('templates.employers.includes.company_packages_new')
 
             <?php }} ?>
                 </div>

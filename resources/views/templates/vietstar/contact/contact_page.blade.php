@@ -1,10 +1,12 @@
 @extends('templates.vietstar.layouts.app')
 @section('content')
 <!-- Header start -->
-@include('templates.vietstar.includes.header')
+
+{{--@include('templates.vietstar.includes.header')
+
 <!-- Header end -->
 <!-- Inner Page Title start -->
-@include('templates.vietstar.includes.inner_page_title', ['page_title'=>__('Contact')])
+@include('templates.vietstar.includes.inner_page_title', ['page_title'=>__('Contact')])--}}
 <!-- Inner Page Title end -->
 <div class="inner-page">
     <!-- About -->

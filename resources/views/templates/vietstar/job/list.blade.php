@@ -25,12 +25,37 @@
                     <div class="job-sorting-section">
                         <div class="sort-wrapped">
                             <div class="title sort-label">Sắp xếp theo</div>
-                            <div class="sort-item-wrapped">
-                                <div class="sort-item-wrapped__item active">Mặc định</div>
+                            <div class="sort-item-wrapped bg-white p-3">
+                                <form>
+
+                                
+                                <!-- <div class="sort-item-wrapped__item active">Mặc định</div>
                                 <div class="sort-item-wrapped__item">Lương &lpar; cao - thấp &rpar; </div>
                                 <div class="sort-item-wrapped__item">Ngày đăng &lpar; mới nhất &rpar;</div>
                                 <div class="sort-item-wrapped__item">Ngày đăng &lpar; cũ nhất &rpar;</div>
-                                <div class="sort-item-wrapped__item">Làm việc từ xa</div>
+                                <div class="sort-item-wrapped__item">Làm việc từ xa</div> -->
+                                    <div class="form-check-inline p-1">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="default" value="" checked>
+                                        <label class="form-check-label px-1" for="default">Mặc định</label>
+                                    </div>
+
+                                    <div class="form-check-inline p-1">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label px-1" for="inlineRadio1">Lương &lpar; cao - thấp &rpar;</label>
+                                    </div>
+                                    <div class="form-check-inline p-1">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label px-1" for="inlineRadio2">Ngày đăng &lpar; mới nhất &rpar;</label>
+                                    </div>
+                                    <div class="form-check-inline p-1">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                        <label class="form-check-label px-1" for="inlineRadio3">Ngày đăng &lpar; cũ nhất &rpar;</label>
+                                    </div>
+                                    <div class="form-check-inline p-1">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+                                        <label class="form-check-label px-1" for="inlineRadio4">Làm việc từ xa</label>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -240,6 +265,10 @@
     .view_more {
         cursor: pointer;
     }
+    .form-check-label {
+        cursor: pointer;
+    }
+  
 </style>
 @endpush
 @push('scripts')

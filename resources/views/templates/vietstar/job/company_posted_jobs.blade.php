@@ -27,6 +27,7 @@
                                 <div class="row filter-job">
                                     <div class="col-md-5 col-lg-5 col-sm-12">
                                         <div class="form-group">
+                                            <label for="">Từ khóa</label>
                                             <input type="text" name="title" placeholder="{{ __('Research Jobs') }}"
                                                 class="form-control search-title"
                                                 value="{{ isset($request['title']) ? $request['title'] : '' }}">
@@ -45,7 +46,7 @@
                                             </select>
                                         </div>
                                     </div> --}}
-                                    <div class="col-md-4 col-lg-4 col-sm-12">
+                                    <!-- <div class="col-md-4 col-lg-4 col-sm-12">
                                         <div class="form-group">
                                             <select name="city_id" class="form-select" name="" id="city_id">
                                                 <option value="">{{ __('Select cities') }}</option>
@@ -56,10 +57,45 @@
                                                 @endforeach
                                             </select>
                                         </div>
+                                    </div> -->
+                                    <div class="col-md-3 col-lg-3 col-sm-12">
+                                        <div class="form-group">
+                                            <label for="find_day">Tìm theo ngày</label>
+                                                <select class="form-select" id="find_day">
+                                                    <option>Ngày đăng</option>
+                                                    <option>Ngày hết hạn</option>
+                                                
+                                                </select>
+                                            </div>
                                     </div>
                                     <div class="col-md-3 col-lg-3 col-sm-12">
-                                        <button type="submit" class="btn btn-primary"><i class="bi bi-search text-white"></i> Tìm kiếm</button>
+                                        <div class="form-group form-group-datepicker input-daterange"  style="max-width: 100%; margin-bottom: 10px;">
+                                            <label for="from_to">Từ - đến</label>
+                                            <input type="text" class="daterange form-control " name="date_range" id="from_to"
+                                                placeholder="{{ __('Start date-End date') }}" />
+                                        </div>
                                     </div>
+                                    <div class="col-md-3 col-lg-3 col-sm-12">
+                                        <div class="form-group">
+                                        <label for="city_id">{{ __('City') }}</label>
+                                            <select name="city_id" class="form-select" name="" id="city_id">
+                                                <option value="">{{ __('Select cities') }}</option>
+                                                @foreach ($cities as $key => $value)
+                                                    <option
+                                                        {{ isset($request['city_id']) && $request['city_id'] == $key ? 'selected' : '' }}
+                                                        value="{{ $key }}">{{ $value }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-lg-3 col-sm-12 d-flex">
+                                      
+                                        <button type="submit" class="btn btn-primary"><i class="bi bi-search text-white m-2"></i>{{ __('Search') }}</button>
+                                    </div>
+                                    <div class="col-md-3 col-lg-3 col-sm-12 d-flex">
+                                      
+                                      <button type="button" class="btn btn-primary"><i class="bi bi-download text-white m-2"></i>{{ __('Export file') }}</button>
+                                  </div>
                                 </div>
                             </form>
                             <div class="row justify-content-center">
@@ -175,18 +211,18 @@
                                 <table class="table table-applican-manager table-hover mb-0 border-0">
                                     <thead>
                                         <tr>
-                                            <th class="font-weight-bold" colspan="2">{{ __('Positions') }}</th>
+                                            <th class="font-weight-bold p-2 fx-16px" colspan="2">{{ __('Positions') }}</th>
                                             <!-- <th class="font-weight-bold"></th> -->
-                                            <th class="font-weight-bold">{{ __('Timeline') }}</th>
-                                            <th class="font-weight-bold">{{ __('Status') }}</th>
+                                            <th class="font-weight-bold p-2 fx-16px">{{ __('Timeline') }}</th>
+                                            <th class="font-weight-bold p-2 fx-16px">{{ __('Status') }}</th>
 
-                                            <th class="font-weight-bold">{{ __('Location') }}</th>
-                                            <th class="font-weight-bold">{{ __('Salary') }}</th>
+                                            <th class="font-weight-bold p-2 fx-16px">{{ __('Location') }}</th>
+                                            <th class="font-weight-bold p-2 fx-16px">{{ __('Salary') }}</th>
     
-                                            <th class="font-weight-bold">{{ __('List of Candidates') }}</th>
-                                            <th class="font-weight-bold">{{ __('Interview Candidates') }}</th>
-                                            <th class="font-weight-bold">{{ __('List of Hired Candidates') }}</th>
-                                            <th class="font-weight-bold">{{ __('List of Rejected Candidates') }}</th>
+                                            <th class="font-weight-bold p-2 fx-16px">{{ __('List of Candidates') }}</th>
+                                            <th class="font-weight-bold p-2 fx-16px">{{ __('Interview Candidates') }}</th>
+                                            <th class="font-weight-bold p-2 fx-16px">{{ __('List of Hired Candidates') }}</th>
+                                            <th class="font-weight-bold p-2 fx-16px">{{ __('List of Rejected Candidates') }}</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -302,7 +338,7 @@
 @push('styles')
 <style type="text/css">
     input.form-control.search-title {
-        height: 53px;
+    
     }
     a.px-auto.btn.btn-outline-primary {
         width: 24%;
@@ -315,6 +351,9 @@
   
     .row.filter-job {
     
+    }
+    .fx-16px {
+        font-size: 16px !important;
     }
 </style>
 @endpush

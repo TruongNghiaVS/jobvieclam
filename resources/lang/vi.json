@@ -619,7 +619,7 @@
     "Advanced search": "Tìm kiếm nâng cao",
     "Blog": "Tin tức",
     "Blogs": "Tin tức",
-    "Search": "Tìm kiếm ngay",
+  
     "For Recruiters": "Dành cho nhà tuyển dụng",
     "Featured Jobs": "Việc làm nổi bật",
     "VIP Jobs": "Việc làm VIP",
@@ -1047,6 +1047,8 @@
     "Show all CV": "Hiển thị tất cả CV",
     "Show only unread CV": "CV chưa xem",
     "Select status": "Chọn trạng thái",
+    "Export file": "Xuất file",
+
     "Search name, email, phone number": "Tìm kiếm tên, email, số điện thoại",
     "Research Jobs": "Tìm kiếm bài đăng",
     "Select cities": "Chọn thành phố",

@@ -2,13 +2,7 @@
 
 @section('content') 
 
-<!-- Header start -->
-@if(Auth::check())
-@include('templates.vietstar.includes.header')
-<!-- Header end -->
-@else
 @include('templates.employers.includes.header')
-@endif
 
 @include('templates.employers.includes.company_dashboard_menu')
 
@@ -20,6 +14,7 @@
         <div class="container company-content">
             @include('templates.employers.includes.company_dashboard_top')
             @include('templates.employers.includes.company_dashboard_stats')
+           {{--
            <?php
          
             if((bool)config('company.is_company_package_active')){        
@@ -33,13 +28,14 @@
 
             @include('templates.employers.includes.company_package_msg')
           
-            @include('templates.vietstar.includes.company_packages_upgrade')
+            @include('templates.employers.includes.company_packages_upgrade')
           
             <?php }elseif(null !== $packages){ ?>
 
             @include('templates.employers.includes.company_packages_new')
 
             <?php }} ?>
+            --}}
         </div>
     
 </div>

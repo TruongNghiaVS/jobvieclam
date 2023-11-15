@@ -68,8 +68,6 @@ use AuthenticatesUsers;
         $this->guard('company.guest')->logout();
         $request->session()->invalidate();
         return redirect('/employers');
-
-
     }
 
     /**

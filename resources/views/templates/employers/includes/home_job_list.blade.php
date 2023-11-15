@@ -17,14 +17,14 @@
           </div>
 
           <div id="Featured_Jobs" class="tabcontent active">
-              @include('templates.vietstar.includes.featured_jobs')
+              @include('templates.employers.includes.featured_jobs')
           </div>
           <div id="New_Jobs" class="tabcontent">
-              @include('templates.vietstar.includes.latest_jobs')
+              @include('templates.employers.includes.latest_jobs')
           </div>
 
           <div id="New_Jobs" class="tabcontent">
-              @include('templates.vietstar.includes.suggested_jobs')
+              @include('templates.employers.includes.suggested_jobs')
           </div>
 
           @if(auth::check()==true)

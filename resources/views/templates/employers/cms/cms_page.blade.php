@@ -1,10 +1,10 @@
 @extends('templates.vietstar.layouts.app')
 @section('content')
 <!-- Header start -->
-@include('templates.vietstar.includes.header')
+@include('templates.employers.includes.header')
 <!-- Header end --> 
 <!-- Inner Page Title start -->
-@include('templates.vietstar.includes.inner_page_title', ['page_title'=>$cmsContent->page_title])
+@include('templates.employers.includes.inner_page_title', ['page_title'=>$cmsContent->page_title])
 <!-- Inner Page Title end -->
 <div class="about-wraper">
     <div class="container">
@@ -21,5 +21,5 @@
         </div>
     </div>  
 </div>
-@include('templates.vietstar.includes.footer')
+@include('templates.employers.includes.footer')
 @endsection

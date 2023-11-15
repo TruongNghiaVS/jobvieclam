@@ -62,6 +62,7 @@
 				</div>--}}
 
 
+				{{--
 				<?php
 
 				if((bool)config('company.is_company_package_active')){        
@@ -72,15 +73,15 @@
 				?>
 				<?php if(null !== $package){ ?>
 
-				@include('templates.vietstar.includes.company_package_msg')
+				@include('templates.employers.includes.company_package_msg')
 
-				@include('templates.vietstar.includes.company_packages_upgrade')
+				@include('templates.employers.includes.company_packages_upgrade')
 
 				<?php }elseif(null !== $packages){ ?>
 
-				@include('templates.vietstar.includes.company_packages_new')
+				@include('templates.employers.includes.company_packages_new')
 
-				<?php }} ?>
+				<?php }} ?>--}}
 			</div>
 			<!---end four-paln--> 
 		</div>

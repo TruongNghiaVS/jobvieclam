@@ -303,6 +303,13 @@ ul.list-unstyled.components.sidebar-bottom__item li{
     .login-img-swapper {
         display: none;
     }
+    .group-button {
+        flex-direction: column;
+        justify-content: start;
+    }
+    .job-seekers-page {
+        margin-top: 160px;
+    }
 
 }
 
@@ -340,6 +347,13 @@ ul.list-unstyled.components.sidebar-bottom__item li{
     }
     .login-img-swapper {
         display: none;
+    }
+    .group-button {
+        flex-direction: column;
+        justify-content: start;
+    }
+    .job-seekers-page {
+        margin-top: 160px;
     }
  
 }

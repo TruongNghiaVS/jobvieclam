@@ -7,7 +7,8 @@
             <ul class="navbar-nav navbar-nav__head">
                     <li class="nav-item {{ Request::url() == route('company.home') ? 'active' : '' }}">
                         <a href="{{ route('company.home') }}" class="nav-link list-group-item-action ">
-                            {{__('Dashboard')}}
+                            <!-- {{__('Dashboard')}} -->
+                            Dashboard
                         </a>
                     </li>
              
@@ -49,6 +50,16 @@
                           
                         </a>
                     </li>
+
+
+                    <li class="nav-item  {{route('job.seeker.list')}} ? 'active' : '' }}">
+                        <a href="{{route('job.seeker.list')}}" class="nav-link list-group-item-action">
+                            
+                             
+                             {{__('Find candidates')}}
+                          
+                        </a>
+                    </li>
     
               
             </ul>
@@ -71,5 +82,5 @@
         </div>
     </div>  
 </nav>
-@include('templates.vietstar.company.modal.modal_companyProfile')
+@include('templates.employers.company.modal.modal_companyProfile')
 @endif

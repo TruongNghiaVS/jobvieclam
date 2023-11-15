@@ -161,37 +161,9 @@
 
 
             </div>
-            @if(Auth::check())
+            @if(Auth::guard('company')->check())
             <!-- user-badge -->
-            <div class="user-badge">
-                <div class="money-base">
-                    <p><span class="iconmoon icon-money-database"></span> Số dư</p>
-                    <h5 class="dolar-sign text-blue-color m-0">0 đ</h5>
-                </div>
-                <div class="user-badge__avatar">
-                    <a class="dropdown_menu__link" href="#">
-                        {{Auth::user()->printUserImage()}}
-                    </a>
-                    <ul class="dropdown_menu">
-                        <li class="nav-item"><a href="{{route('home')}}" class="nav-link"><i class="jobicon fa fa-tachometer" aria-hidden="true"></i> {{__('Dashboard')}}</a>
-                        </li>
-                        <li class="nav-item"><a href="{{ route('my.profile') }}" class="nav-link"><i class="jobicon fa fa-user" aria-hidden="true"></i> {{__('My Profile')}}</a>
-                        </li>
-                        <li class="nav-item"><a href="#" class="nav-link" data-toggle="modal" data-target="#modal_user_info"><i class="jobicon fa fa-eye" aria-hidden="true"></i>
-                                {{__('View Public Profile')}}</a> </li>
-                        <li><a href="{{ route('my.job.applications') }}" class="nav-link"><i class="jobicon fa fa-desktop" aria-hidden="true"></i>
-                                {{__('My Job Applications')}}</a> </li>
-                        <li class="nav-item"><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form-header').submit();" class="nav-link"><i class="jobicon fa fa-sign-out" aria-hidden="true"></i>
-                                {{__('Logout')}}</a> </li>
-                        <form id="logout-form-header" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
-                    </ul>
-                </div>
-            </div>
-            <!-- End user-badge  -->
-
-            @elseif(Auth::guard('company')->check())
+            
             <a href="{{route('post.job')}}" class="btn btn-primary btn-post-a-job">{{__('Post a job')}}</a>
             <!-- user-badge -->
             <div class="user-badge">
@@ -208,7 +180,11 @@
                         </svg>
                     </a>
                     <ul class="dropdown_menu">
-                        <li class="nav-item"><a href="{{route('company.home')}}" class="nav-link"><i class="jobicon fa fa-tachometer" aria-hidden="true"></i> {{__('Dashboard')}}</a>
+                        <li class="nav-item"><a href="{{route('company.home')}}" class="nav-link"><i class="jobicon fa fa-tachometer" aria-hidden="true"></i> <!-- {{__('Dashboard')}} -->
+
+                            Dashboard
+
+                        </a>
                         </li>
                         <li class="nav-item"><a href="#" data-toggle="modal" data-target="#company_profile_modal" class="nav-link">
                                 <i class="jobicon fa fa-user" aria-hidden="true"></i> {{__('View Public Profile')}}</a>
@@ -230,10 +206,21 @@
             </div>
             <!-- end user-badge -->
             @endif
-            <div class="d-flex group-button">
-                @if(!Auth::user() && !Auth::guard('company')->user())
+            <div class="d-flex group-button gap-2">
+                {{--@if(Auth::guard('company')->user())
+                <a class="btn btn-primary" href="{{route('job.seeker.list')}}" class="nav-link">{{__('Find candidates')}}</a>
+                @endif--}}
+
+
+
+                @if(!Auth::guard('company')->check())
                 <a class="nav-link login-link" data-toggle="modal" data-target="#employer_login_Modal">{{__('Log in')}} / {{__('Đăng ký')}} </a>
-                <a class="btn_for_user" href="{{route('index')}}">
+                @endif
+
+                
+
+
+                <a class="btn_for_user" href="http://127.0.0.1:8000/">
                 <div  class="btn_for_user__head">
                     Dành cho
                 </div> 
@@ -241,20 +228,14 @@
                     Người tìm việc
                 </div>    
                 </a>
-                {{--<a class="btn btn-primary" href="{{route('register')}}" class="nav-link
-                register">{{__('Đăng ký')}}</a> --}}
-                @endif
-
-                @if(Auth::guard('company')->user())
-                <a class="btn btn-primary" href="{{route('job.seeker.list')}}" class="nav-link">{{__('Find candidates')}}</a>
-                @endif
+            
             </div>
         </div>
         <!-- end collapse -->
 
 
         <!-- Danh cho mobile; có 2 menu mobile và icon user -->
-        <div class="group-for-mobile">
+       {{-- <div class="group-for-mobile">
 
             @if(Auth::check())
             <!-- user-badge -->
@@ -308,6 +289,7 @@
             <!-- end navbar-lang-mobile -->
 
         </div>
+    --}}
         <!-- End Danh cho mobile; có 2 menu mobile và icon user -->
     </div>
 </nav>

@@ -46,7 +46,10 @@ class Job extends Model
     {
         return $this->belongsTo('App\Company', 'company_id', 'id');
     }
-
+    public function city()
+    {
+        return $this->belongsTo('App\City', 'city_id', 'id');
+    }
     public function getCompany($field = '')
     {
         if (null !== $company = $this->company()->first()) {

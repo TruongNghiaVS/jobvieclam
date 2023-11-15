@@ -6,6 +6,7 @@ Route::get('apply/{slug}', 'Job\JobController@applyJob')->name('apply.job');
 #Route::post('apply/{slug}/post', 'Job\JobController@postApplyJob')->name('post.apply.job');
 Route::match(['get', 'post'], 'apply/{slug}/post', 'Job\JobController@postApplyJob')->name('post.apply.job');
 Route::get('jobs', 'Job\JobController@jobsBySearch')->name('job.list');
+Route::get('jobs-v2', 'Job\JobController@searchJobv2')->name('job.jobv2');
 Route::get('latest-jobs', 'Job\JobController@latestJobs')->name('latest-job.list');
 Route::get('add-to-favourite-job/{job_slug}', 'Job\JobController@addToFavouriteJob')->name('add.to.favourite')->middleware('auth');
 Route::get('remove-from-favourite-job/{job_slug}', 'Job\JobController@removeFromFavouriteJob')->name('remove.from.favourite');

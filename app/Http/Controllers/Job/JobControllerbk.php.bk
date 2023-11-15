@@ -60,18 +60,17 @@ class JobController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['jobsBySearch', 'jobDetail','jobDetailPopup', 'latestJobs', 'salaryCalc','searchJobv2']]);
+        $this->middleware('auth', ['except' => ['jobsBySearch', 'jobDetail','jobDetailPopup', 'latestJobs', 'salaryCalc']]);
 
         $this->functionalAreas = DataArrayHelper::langFunctionalAreasArray();
         $this->countries = DataArrayHelper::langCountriesArray();
     }
 
-   
-
     public function jobsBySearch(Request $request)
     {
-        $params = $this->params($request);     
+        $params = $this->params($request);
         /**************************************************** */
+
         $seo = Seo::where('seo.page_title', 'like', 'jobs')->first();
         return view(config('app.THEME_PATH').'.job.list')
                         ->with('functionalAreas', $this->functionalAreas)
@@ -103,6 +102,7 @@ class JobController extends Controller
 
     public function jobDetail(Request $request, $job_slug)
     {
+
         $job = Job::where('slug', 'like', $job_slug)->firstOrFail();
         /*         * ************************************************** */
         $search = '';
@@ -159,117 +159,6 @@ class JobController extends Controller
             ->with('jobSkills', $jobSkills);
     }
 
-    function locdautiengviet($str){
-        if(!$str)
-        {
-            return "";
-        }
-         //chuyển chữ hoa thành chữ thường
-       
-        $unicode = array(
-        'a'=>'á|à|ả|ã|ạ|ă|ắ|ặ|ằ|ẳ|ẵ|â|ấ|ầ|ẩ|ẫ|ậ',
-        'd'=>'đ',
-        'e'=>'é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ',
-        'i'=>'í|ì|ỉ|ĩ|ị',
-        'o'=>'ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ',
-        'u'=>'ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự',
-        'y'=>'ý|ỳ|ỷ|ỹ|ỵ',
-        'A'=>'Á|À|Ả|Ã|Ạ|Ă|Ắ|Ặ|Ằ|Ẳ|Ẵ|Â|Ấ|Ầ|Ẩ|Ẫ|Ậ',
-        'D'=>'Đ',
-        'E'=>'É|È|Ẻ|Ẽ|Ẹ|Ê|Ế|Ề|Ể|Ễ|Ệ',
-        'I'=>'Í|Ì|Ỉ|Ĩ|Ị',
-        'O'=>'Ó|Ò|Ỏ|Õ|Ọ|Ô|Ố|Ồ|Ổ|Ỗ|Ộ|Ơ|Ớ|Ờ|Ở|Ỡ|Ợ',
-        'U'=>'Ú|Ù|Ủ|Ũ|Ụ|Ư|Ứ|Ừ|Ử|Ữ|Ự',
-         'Y'=>'Ý|Ỳ|Ỷ|Ỹ|Ỵ',
-         );
-         foreach($unicode as $nonUnicode=>$uni){
-                $str = preg_replace("/($uni)/i", $nonUnicode, $str);
-         }
-         $str = str_replace(' ','_',$str);
-         $str = strtolower($str);
-        
-         return $str;
-    }
-    public function searchJobv2(Request $request)
-    {
-        $token = $request->input("search");
-        $industry_id = $request->input("industry_id");
-        $locationWork = $request->input("provice");
-        $orderby = $request->input("sort");
-        $wfh = $request->input("wfh");
- 
-        $salary_min = $request->input("salary_min");
-        $salary_max = $request->input("salary_max");
-        $levelSkill = $request->input("levelSkill");
-        $levelDegree = $request->input("levelDegree");
-        $jobtype = $request->input("jobType");
-        $departmentType = $request->input("departmentType");
-        $benefits = $request->input("benefits");
-        $order_by = $request->input("order_by");
-        $city_id =  $request->input("city_id");
-        $query = Job::where('status', Job::POST_ACTIVE);
-        $token = $this->locdautiengviet($token);
-        if (!empty($token)) 
-        {
-            $query =  $query->where("title",'like',"%{$token}%");
-
-        }
-        if ($levelDegree >0 ) 
-        {
-            $query =  $query->where("degree_level_id",$levelDegree);
-        }
-        if ($departmentType >0 ) 
-        {
-            $query =  $query->where("functional_area_id",$departmentType);
-        }
-        
-        if ($city_id >0 ) 
-        {
-            $query =  $query->where("city_id",$city_id);
-        }
-         //functional_area_id
-        if($industry_id>0)
-        {
-            $query =  $query->where("industry_id",$industry_id);
-        }
-        if ($wfh == 1 ) 
-        {
-            $query =  $query->where("wfh",$wfh);
-        }
-
-        
-        if( $salary_min > 0)
-        {
-            $query =  $query->where('salary_from', '>=', $salary_min)->get();
-
-        }
-        if( $salary_max > 0)
-        {
-            $query =  $query->where('salary_to', '<=',  $salary_max)->get();
-        }
-        if ($order_by== "up_top") // last updated
-        {
-            $query =  $query->orderBy('updated_at', 'DESC');
-        }
-        else if($order_by== "new") // last updated
-        {
-            $query =  $query->orderBy('created_at', 'DESC');
-        }
-        else 
-        {
-            $query =  $query->orderBy('created_at', 'DESC');
-        }
-        $query = $query->with('company');
-        $query =$query->with('functionalArea');
-        $query =$query->with('jobType');
-        $query =$query->with('degreeLevel');
-        $query= $query->with('city');
-
-      
-        //created_at
-        return $query->paginate(10);
-    }
-
     
     public function findJobDetails($search = '', $wfh = '', $job_titles = array(), $company_ids = array(),
                                    $industry_ids = array(), $job_skill_ids = array(), $functional_area_ids = array(),
@@ -296,7 +185,9 @@ class JobController extends Controller
             }
             $company_ids = $company_ids_array;
         }
-          if (isset($company_ids[0])) {
+
+         
+        if (isset($company_ids[0])) {
             $query->whereIn('jobs.company_id', $company_ids);
         }   
         $query->where('jobs.is_active', 1);
@@ -373,7 +264,7 @@ class JobController extends Controller
         return $query->paginate($limit);
     }
 
-
+    
 
     /*     * ************************************************** */
 
@@ -581,7 +472,8 @@ class JobController extends Controller
             ->with('jobExperienceIdsArray', $params['jobExperienceIdsArray'])
             ->with('seo', $seo);
     }
-   
+
+
     public function params(Request $request)
     {
         
@@ -610,11 +502,13 @@ class JobController extends Controller
         $is_featured = $request->query('is_featured', 2);
         $order_by = $request->query('order_by', 'id');
         $limit = 15;
+
+    
         $jobs = $this->findJobDetails($search, $wfh, $job_titles, $company_ids, $industry_ids,
-        $job_skill_ids, $functional_area_ids, $country_ids, $state_ids, $city_ids, $is_freelance, $career_level_ids,
-        $job_type_ids, $job_shift_ids, $gender_ids, $degree_level_ids, $job_experience_ids, $salary_from, $salary_to,
-        $salary_currency, $is_featured, $order_by, $limit, $fe_industry_ids);
-        
+            $job_skill_ids, $functional_area_ids, $country_ids, $state_ids, $city_ids, $is_freelance, $career_level_ids,
+            $job_type_ids, $job_shift_ids, $gender_ids, $degree_level_ids, $job_experience_ids, $salary_from, $salary_to,
+            $salary_currency, $is_featured, $order_by, $limit, $fe_industry_ids);
+
         $companyIdsArray = $this->fetchIdsArray($search, $job_titles, $company_ids, $industry_ids, $job_skill_ids, $functional_area_ids, $country_ids, $state_ids, $city_ids, $is_freelance, $career_level_ids, $job_type_ids, $job_shift_ids, $gender_ids, $degree_level_ids, $job_experience_ids, $salary_from, $salary_to, $salary_currency, $is_featured, 'jobs.company_id');
         $jobIdsArray = $this->fetchIdsArray($search, $job_titles, $company_ids, $industry_ids, $job_skill_ids, $functional_area_ids, $country_ids, $state_ids, $city_ids, $is_freelance, $career_level_ids, $job_type_ids, $job_shift_ids, $gender_ids, $degree_level_ids, $job_experience_ids, $salary_from, $salary_to, $salary_currency, $is_featured, 'jobs.id');
         $benefits = \App\Benefit::pluck('name', 'code')->toArray();

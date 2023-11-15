@@ -190,8 +190,6 @@
 
                     <div class="searchList jobs-side-list"> 
 
-                        
-                              
                     </div>
                     <!-- Pagination Start -->
                     <div class="pagiWrap">
@@ -382,7 +380,7 @@
                     const datetime = convertDatetime(element.created_at)
 
                     
-                    const  string = `
+                    let  string = `
                      <div data-job-id="${element.id}"  class="item-job mb-3">
                                     <div class="logo-company">
                                         <a href="{{url('/')}}/company/${element.company.slug}" title="${element.company.name}" class="pic">
@@ -397,10 +395,15 @@
                                                 <div class="job-title">
                                                     <span>Mới</span>
                                                     <h3 class="job-title-name"><a href="{{url('/')}}/job/${element.slug}" title="">${element.title}</a></h3>
-                                                </div>
-                                               
-                                                </a>
-                                            </div>
+                                                </div>`;
+                                                
+                                                if(1==1)
+                                                {
+                                                    string +=  `<a class="save-job" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="far fa-heart"></i>
+                                                </a>`;
+                                                }
+
+                                        string +=  `</div>
                                             <!-- Title  End-->
 
                                             <!-- companyName Start-->

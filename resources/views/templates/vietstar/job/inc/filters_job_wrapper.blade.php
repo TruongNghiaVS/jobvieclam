@@ -25,7 +25,7 @@ dd($funclAreas)
                         </div>
                         <div class="form-group form-submit">
                             <button class="btn-gradient  filter_submit" type="button">
-                                Tìm kiếm
+                            {{__('Search')}} 
                             </button>
                         </div>
 
@@ -34,7 +34,7 @@ dd($funclAreas)
             </div>
             <div class="mobile-filter toollips">
                 <button type="button" class="btn btn-filter" id="atcFilters" title="Lọc">
-                    <i class="far fa-filter"></i> Lọc
+                    <i class="far fa-filter"></i>  {{__('Filter')}}
                 </button>
             </div>
         </div>
@@ -82,14 +82,14 @@ dd($funclAreas)
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="form-group" id="degree_level_dd">
-                            <label>Cấp bậc</label>
+                            <label>{{__('Career Level')}}</label>
                             {!! Form::select('degree_level_id', ['' => __('Select Degree Level')] + $degreeLevels, Request::get('degree_level_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'degree_level_id')) !!}
                         </div>
                     </div>
 
                     <div class="col-sm-6 col-lg-3">
                         <div class="form-group" id="job_type_dd">
-                            <label>Theo ngành</label>
+                            <label>{{__('By Industry')}}</label>
                             {!! Form::select('job_type_id', ['' => __('Select Job Type')] + $jobTypes, Request::get('job_type_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'job_type_id')) !!}
                         </div>
                     </div>
@@ -149,7 +149,7 @@ dd($funclAreas)
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="form-group" id="degree_level_dd">
-                            <label>Cấp bậc</label>
+                            <label>{{__('Career Level')}}</label>
                         
                             {!! Form::select('degree_level_id', ['' => __('Select Degree Level')] + $degreeLevels, Request::get('degree_level_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'degree_level_id')) !!}
                         </div>
@@ -157,7 +157,7 @@ dd($funclAreas)
 
                     <div class="col-sm-6 col-lg-3">
                         <div class="form-group" id="job_type_dd">
-                            <label>Hình thức việc làm</label>
+                            <label>{{__('Form of Employment')}}</label>
                             {!! Form::select('job_type_id', ['' => __('Select Job Type')] + $jobTypes, Request::get('job_type_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'job_type_id')) !!}
 
                         </div>
@@ -173,7 +173,7 @@ dd($funclAreas)
                 <div class="row">
                     <div class="form-group form-submit">
                         <button class="btn btn-primary filter_submit" type="button">
-                            Tìm kiếm
+                            {{__('Search')}} 
                         </button>
                     </div>
                 </div>

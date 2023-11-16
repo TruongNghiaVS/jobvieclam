@@ -222,6 +222,7 @@ $(document).ready(function() {
         if (!isValid) {
             event.preventDefault(); // Prevent the form from submitting
         }
+      
         if (isValid) { 
             $.ajax({
             type: "POST",

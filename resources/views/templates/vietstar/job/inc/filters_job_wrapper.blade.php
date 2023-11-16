@@ -18,13 +18,13 @@ dd($funclAreas)
                             <input type="search" class="keyword form-control" id="search" name="search" placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
                         </div>
                         <div class="form-group form-select-chosen" id="functional_area_dd">
-                        {!! Form::select('functional_area_id[]', ['' => __('Select functional area')]+$funclAreas, Request::get('functional_area_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'functional_area_id')) !!}
+                        {!! Form::select('functional_area_id', ['' => __('Select functional area')]+$funclAreas, Request::get('functional_area_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'functional_area_id')) !!}
                         </div>
                         <div class="form-group form-select-chosen" id="city_dd2">
-                        {!! Form::select('city_id[]', ['' => __('Select City')]+$cities, Request::get('city_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'city_id')) !!}
+                        {!! Form::select('city_id', ['' => __('Select City')]+$cities, Request::get('city_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'city_id')) !!}
                         </div>
                         <div class="form-group form-submit">
-                            <button class="btn-gradient" type="submit">
+                            <button class="btn-gradient  filter_submit" type="button">
                                 Tìm kiếm
                             </button>
                         </div>
@@ -51,7 +51,6 @@ dd($funclAreas)
                     <div class="row g-0">
                         <div class="col-12">
                             <input type="search" class="keyword form-control" id="search" name="search" placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
-                            
                         </div>
                     </div>
                 </div>
@@ -77,21 +76,21 @@ dd($funclAreas)
                     <div class="col-sm-6 col-lg-2">
                         <div class="form-group form-select">
                             <label>{{__('Salary Level')}}</label>
-                            {!! Form::select('salary_from[]',['' => __('Salary Level')]+$salaryFroms, Request::get('salary_from', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'salary_from')) !!}
+                            {!! Form::select('salary_from',['' => __('Salary Level')] + $salaryFroms, Request::get('salary_from', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'salary_from')) !!}
                     
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="form-group" id="degree_level_dd">
                             <label>Cấp bậc</label>
-                            {!! Form::select('degree_level_id[]', ['' => __('Select Degree Level')] + $degreeLevels, Request::get('degree_level_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'degree_level_id')) !!}
+                            {!! Form::select('degree_level_id', ['' => __('Select Degree Level')] + $degreeLevels, Request::get('degree_level_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'degree_level_id')) !!}
                         </div>
                     </div>
 
                     <div class="col-sm-6 col-lg-3">
                         <div class="form-group" id="job_type_dd">
                             <label>Theo ngành</label>
-                            {!! Form::select('job_type_id[]', ['' => __('Select Job Type')] + $jobTypes, Request::get('job_type_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'job_type_id')) !!}
+                            {!! Form::select('job_type_id', ['' => __('Select Job Type')] + $jobTypes, Request::get('job_type_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'job_type_id')) !!}
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
@@ -133,33 +132,33 @@ dd($funclAreas)
 
                     <div class="col-sm-6 col-lg-2">
                         <div class="form-group form-select-chosen" id="functional_area_dd">
-                        {!! Form::select('functional_area_id[]', ['' => __('Select functional area')]+$funclAreas, Request::get('functional_area_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'functional_area_id')) !!}
+                        {!! Form::select('functional_area_id', ['' => __('Select functional area')]+$funclAreas, Request::get('functional_area_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'functional_area_id')) !!}
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-2">
                         <div class="form-group form-select-chosen" id="city_dd2">
-                        {!! Form::select('city_id[]', ['' => __('Select City')]+$cities, Request::get('city_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'city_id')) !!}
+                        {!! Form::select('city_id', ['' => __('Select City')]+$cities, Request::get('city_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'city_id')) !!}
                         </div>
                     </div>
 
                     <div class="col-sm-6 col-lg-2">
                         <div class="form-group form-select-chosen">
                             <label>{{__('Salary')}}</label>
-                            {!! Form::select('salary_from[]',['' => __('Salary Level')]+$salaryFroms, Request::get('salary_from', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'salary_from')) !!}
+                            {!! Form::select('salary_from',['' => __('Salary Level')]+$salaryFroms, Request::get('salary_from', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'salary_from')) !!}
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="form-group" id="degree_level_dd">
                             <label>Cấp bậc</label>
                         
-                            {!! Form::select('degree_level_id[]', ['' => __('Select Degree Level')] + $degreeLevels, Request::get('degree_level_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'degree_level_id')) !!}
+                            {!! Form::select('degree_level_id', ['' => __('Select Degree Level')] + $degreeLevels, Request::get('degree_level_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'degree_level_id')) !!}
                         </div>
                     </div>
 
                     <div class="col-sm-6 col-lg-3">
                         <div class="form-group" id="job_type_dd">
                             <label>Hình thức việc làm</label>
-                            {!! Form::select('job_type_id[]', ['' => __('Select Job Type')] + $jobTypes, Request::get('job_type_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'job_type_id')) !!}
+                            {!! Form::select('job_type_id', ['' => __('Select Job Type')] + $jobTypes, Request::get('job_type_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'job_type_id')) !!}
 
                         </div>
                     </div>
@@ -173,7 +172,7 @@ dd($funclAreas)
 
                 <div class="row">
                     <div class="form-group form-submit">
-                        <button class="btn btn-primary filter_submit" type="submit">
+                        <button class="btn btn-primary filter_submit" type="button">
                             Tìm kiếm
                         </button>
                     </div>

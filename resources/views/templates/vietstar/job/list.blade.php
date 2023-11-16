@@ -1,4 +1,3 @@
-
 @extends('templates.vietstar.layouts.app')
 @section('content')
 <!-- Header start -->
@@ -18,7 +17,7 @@
     @include('templates.vietstar.job.inc.filters_job_wrapper')
 
     <div class="container Jobpage__content">
-        <form action="{{route('job.list')}}" method="get">
+        <form id="" action="{{route('job.list')}}" method="get">
             <!-- Search Result and sidebar start -->
             <div class="row">
                 <div class="col-lg-9 col-sm-12">
@@ -28,8 +27,8 @@
                             <div class="sort-item-wrapped bg-white p-3">
                                 <form>
 
-                                
-                                <!-- <div class="sort-item-wrapped__item active">Mặc định</div>
+
+                                    <!-- <div class="sort-item-wrapped__item active">Mặc định</div>
                                 <div class="sort-item-wrapped__item">Lương &lpar; cao - thấp &rpar; </div>
                                 <div class="sort-item-wrapped__item">Ngày đăng &lpar; mới nhất &rpar;</div>
                                 <div class="sort-item-wrapped__item">Ngày đăng &lpar; cũ nhất &rpar;</div>
@@ -61,7 +60,7 @@
                     </div>
                     @include('flash::message')
                     <!-- Search List -->
-                  {{--  <div class="searchList jobs-side-list">
+                    {{-- <div class="searchList jobs-side-list">
                         <!-- job start -->
                         @if(isset($jobs) && count($jobs)) <?php $count_1 = 1; ?> @foreach($jobs as $job) @php $company =
                         $job->getCompany(); @endphp
@@ -80,144 +79,144 @@
                                 $attrs = "";
                                 foreach ($props as $prop) {
                                 $attrs .= !empty($job->{$prop}) ? "data-{$prop}-id={$job->{$prop}} " : '';
-                                }
-                                
-                                @endphp
-                                <div data-job-id="{{$job->id}}" {{$attrs}} class="item-job mb-3">
-                                    <div class="logo-company">
-                                        <a href="{{route('company.detail', $company->slug)}}" title="{{$company->name}}" class="pic">{{$company->printCompanyImage(140, 140)}}</a>
+                    }
+
+                    @endphp
+                    <div data-job-id="{{$job->id}}" {{$attrs}} class="item-job mb-3">
+                        <div class="logo-company">
+                            <a href="{{route('company.detail', $company->slug)}}" title="{{$company->name}}" class="pic">{{$company->printCompanyImage(140, 140)}}</a>
+                        </div>
+                        <div class="jobinfo">
+                            <div class="info">
+                                <!-- Title  Start-->
+                                <div class="info-item job-title-box">
+                                    <div class="job-title">
+                                        <span>Mới</span>
+                                        <h3 class="job-title-name"><a href="{{route('job.detail', [$job->slug])}}" title="{{$job->title}}">{{$job->title}}</a></h3>
                                     </div>
-                                    <div class="jobinfo">
-                                        <div class="info">
-                                            <!-- Title  Start-->
-                                            <div class="info-item job-title-box">
-                                                <div class="job-title">
-                                                    <span>Mới</span>
-                                                    <h3 class="job-title-name"><a href="{{route('job.detail', [$job->slug])}}" title="{{$job->title}}">{{$job->title}}</a></h3>
-                                                </div>
-                                                @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
-                                                <a class="save-job active" href="{{route('remove.from.favourite', $job->slug)}}"><i class="far fa-heart"></i>
-                                                </a>
-                                                @elseif(Auth::check() && !Auth::user()->isFavouriteJob($job->slug))
-                                                <a class="save-job" href="{{route('add.to.favourite', $job->slug)}}"><i class="far fa-heart"></i>
-                                                </a>
-                                                @else
-                                                <a class="save-job" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="far fa-heart"></i>
-                                                </a>
-                                                @endif
-                                                </a>
-                                            </div>
-                                            <!-- Title  End-->
+                                    @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
+                                    <a class="save-job active" href="{{route('remove.from.favourite', $job->slug)}}"><i class="far fa-heart"></i>
+                                    </a>
+                                    @elseif(Auth::check() && !Auth::user()->isFavouriteJob($job->slug))
+                                    <a class="save-job" href="{{route('add.to.favourite', $job->slug)}}"><i class="far fa-heart"></i>
+                                    </a>
+                                    @else
+                                    <a class="save-job" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="far fa-heart"></i>
+                                    </a>
+                                    @endif
+                                    </a>
+                                </div>
+                                <!-- Title  End-->
 
-                                            <!-- companyName Start-->
-                                            <div class="info-item companyName"><a href="{{route('company.detail', $company->slug)}}" title="{{$company->name}}">{{$company->name}}</a></div>
-                                            <!-- companyName End-->
-                                            <!--rank-salary and place Start-->
-                                            <div class="info-item box-meta">
-                                                <div class="rank-salary">
-                                                    @php($from = round($job->salary_from/1000000,0))
-                                                    @php($to = round($job->salary_to/1000000,0))
-                                                    @if($job->salary_type == \App\Job::SALARY_TYPE_FROM)
-                                                    <span class="fas fa-dollar-sign"></span> {{__('From: ')}} {{$from}}
-                                                    {{__('million')}} ({{$job->salary_currency}})
-                                                    @elseif($job->salary_type == \App\Job::SALARY_TYPE_TO)
-                                                    <span class="fas fa-dollar-sign"></span> {{__('Up To: ')}} {{$to}}
-                                                    {{__('million')}} ({{$job->salary_currency}})
-                                                    @elseif($job->salary_type == \App\Job::SALARY_TYPE_RANGE)
-                                                    <span class="fas fa-dollar-sign"></span> {{$from}} - {{$to}}
-                                                    {{__('million')}} ({{$job->salary_currency}})
-                                                    @elseif($job->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
-                                                    <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
-                                                    @else
-                                                    <span class="fas fa-dollar-sign"></span> {{__('Salary Not provided')}}
-                                                    @endif
-                                                </div>
-                                                <div class="navbar__link-separator" bis_skin_checked="1"></div>
-                                                <!--meta-city-->
-                                                <div class="meta-city">
-                                                    <!-- <i class="far fa-map-marker-alt"></i> -->
-                                                    {{$job->getCity('city')}}
-                                                </div>
-
-
-                                                <!-- {{$job->getJobType('job_type')}} -->
-                                            </div>
-                                            <!--Rank-salary and place End-->
-
-                                            <!--Day update and place Start-->
-                                            <div class="info-item day-update">
-                                                Hôm nay
-                                            </div>
-                                            <!--Day update and place End-->
-
-                                            <!-- <div class="short-description">{{\Illuminate\Support\Str::limit(strip_tags($job->description), 150, '...')}}</div> -->
-                                        </div>
-
-                                        <div class="caption">
-                                            <div class="welfare">
-                                                <div class="box-meta">
-                                                    <!-- <i class="fas fa-dollar-sign"></i>  -->
-                                                    <span>
-                                                        <!-- {{__('Rewards')}} -->
-                                                        Automative
-                                                    </span>
-
-                                                </div>
-                                                <div class="box-meta">
-                                                    <!-- <i class="fas fa-graduation-cap"></i> -->
-                                                    <span>
-                                                        <!-- {{__('Training')}} -->
-                                                        Automative Infomation
-                                                    </span>
-                                                </div>
-
-                                            </div>
-
-
-                                        </div>
+                                <!-- companyName Start-->
+                                <div class="info-item companyName"><a href="{{route('company.detail', $company->slug)}}" title="{{$company->name}}">{{$company->name}}</a></div>
+                                <!-- companyName End-->
+                                <!--rank-salary and place Start-->
+                                <div class="info-item box-meta">
+                                    <div class="rank-salary">
+                                        @php($from = round($job->salary_from/1000000,0))
+                                        @php($to = round($job->salary_to/1000000,0))
+                                        @if($job->salary_type == \App\Job::SALARY_TYPE_FROM)
+                                        <span class="fas fa-dollar-sign"></span> {{__('From: ')}} {{$from}}
+                                        {{__('million')}} ({{$job->salary_currency}})
+                                        @elseif($job->salary_type == \App\Job::SALARY_TYPE_TO)
+                                        <span class="fas fa-dollar-sign"></span> {{__('Up To: ')}} {{$to}}
+                                        {{__('million')}} ({{$job->salary_currency}})
+                                        @elseif($job->salary_type == \App\Job::SALARY_TYPE_RANGE)
+                                        <span class="fas fa-dollar-sign"></span> {{$from}} - {{$to}}
+                                        {{__('million')}} ({{$job->salary_currency}})
+                                        @elseif($job->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
+                                        <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
+                                        @else
+                                        <span class="fas fa-dollar-sign"></span> {{__('Salary Not provided')}}
+                                        @endif
+                                    </div>
+                                    <div class="navbar__link-separator" bis_skin_checked="1"></div>
+                                    <!--meta-city-->
+                                    <div class="meta-city">
+                                        <!-- <i class="far fa-map-marker-alt"></i> -->
+                                        {{$job->getCity('city')}}
                                     </div>
 
 
+                                    <!-- {{$job->getJobType('job_type')}} -->
                                 </div>
-                            <?php } ?>
-                            <?php $count_1++; ?>
-                        <?php } ?>
-                        <!-- job end -->
-                        @endforeach @endif
-                        <!-- job end -->
-                    </div>
-                    --}}
+                                <!--Rank-salary and place End-->
 
-                    <div class="searchList jobs-side-list"> 
-
-                    </div>
-                    <!-- Pagination Start -->
-                    <div class="pagiWrap">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <div class="showreslt">
-                                    {{__('Showing Pages')}} : {{ $jobs->firstItem() }} - {{ $jobs->lastItem() }}
-                                    {{__('Total')}} {{ $jobs->total() }}
+                                <!--Day update and place Start-->
+                                <div class="info-item day-update">
+                                    Hôm nay
                                 </div>
+                                <!--Day update and place End-->
+
+                                <!-- <div class="short-description">{{\Illuminate\Support\Str::limit(strip_tags($job->description), 150, '...')}}</div> -->
                             </div>
-                            <div class="col-md-7 text-right">
-                                @if(isset($jobs) && count($jobs))
-                                {{ $jobs->appends(request()->query())->links() }}
-                                @endif
+
+                            <div class="caption">
+                                <div class="welfare">
+                                    <div class="box-meta">
+                                        <!-- <i class="fas fa-dollar-sign"></i>  -->
+                                        <span>
+                                            <!-- {{__('Rewards')}} -->
+                                            Automative
+                                        </span>
+
+                                    </div>
+                                    <div class="box-meta">
+                                        <!-- <i class="fas fa-graduation-cap"></i> -->
+                                        <span>
+                                            <!-- {{__('Training')}} -->
+                                            Automative Infomation
+                                        </span>
+                                    </div>
+
+                                </div>
+
+
                             </div>
                         </div>
+
+
                     </div>
-                    <!-- Pagination end -->
+                <?php } ?>
+                <?php $count_1++; ?>
+            <?php } ?>
+            <!-- job end -->
+            @endforeach @endif
+            <!-- job end -->
                 </div>
-                <div class="col-lg-3 col-sm-12 pull-right">
-                    <!-- Sponsord By -->
-                    <div class="sidebar">
-                        @include('templates.vietstar.job.inc.ads')
+                --}}
+
+                <div class="searchList jobs-side-list">
+
+                </div>
+                <!-- Pagination Start -->
+                <div class="pagiWrap">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="showreslt">
+                                {{__('Showing Pages')}} : {{ $jobs->firstItem() }} - {{ $jobs->lastItem() }}
+                                {{__('Total')}} {{ $jobs->total() }}
+                            </div>
+                        </div>
+                        <div class="col-md-7 text-right">
+                            @if(isset($jobs) && count($jobs))
+                            {{ $jobs->appends(request()->query())->links() }}
+                            @endif
+                        </div>
                     </div>
+                </div>
+                <!-- Pagination end -->
+            </div>
+            <div class="col-lg-3 col-sm-12 pull-right">
+                <!-- Sponsord By -->
+                <div class="sidebar">
+                    @include('templates.vietstar.job.inc.ads')
                 </div>
             </div>
-
     </div>
+
+</div>
 </div>
 <div class="modal fade" id="show_alert" role="dialog">
     <div class="modal-dialog">
@@ -233,7 +232,7 @@
                 <div class="modal-header">
                     <h4 class="modal-title">Job Alert</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    
+
                 </div>
                 <div class="modal-body">
                     <h3>Get the latest <strong>{{ ucfirst(Request::get('search')) }}</strong> jobs
@@ -272,39 +271,33 @@
     .view_more {
         cursor: pointer;
     }
+
     .form-check-label {
         cursor: pointer;
     }
-  
 </style>
 @endpush
 @push('scripts')
 <script>
-    
-    function  checksalary(salary_from , salary_to){
-
- 
-
-
-        if(salary_from && salary_to){
+    function checksalary(salary_from, salary_to) {
+        if (salary_from && salary_to) {
             return `${salary_from.toLocaleString('it-IT', {style : 'currency', currency : 'VND'})} - ${salary_to.toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}`
-        }
-        else if (salary_from && !salary_to){
+        } else if (salary_from && !salary_to) {
             return `{{__('From: ')}} ${salary_from.toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}`
-        }
-        else if (!salary_from && salary_to){
+        } else if (!salary_from && salary_to) {
             return `{{__('Up To: ')}} ${salary_to.toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}`
-        }
-        else 
-            return  `{{__('Negotiable')}}`
-        
+        } else
+            return `{{__('Negotiable')}}`
+
     }
 
-    function convertDatetime(created_at){
-    
+
+
+    function convertDatetime(created_at) {
+
 
         const date = new Date(created_at);
-    
+
         // Get day, month, and year components
         const day = date.getUTCDate();
         const month = date.getUTCMonth() + 1; // Months are zero-based
@@ -315,10 +308,9 @@
         var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
         var yyyy = today.getFullYear();
 
-        today =dd + '/' + mm + '/' + yyyy;
-      
-        console.log(today);
-        console.log(created_at_formattedDate);
+        today = dd + '/' + mm + '/' + yyyy;
+
+
 
 
         // Parse date strings to get Date objects
@@ -334,127 +326,306 @@
         // Convert the time difference to days
         const daysDifference = timeDifference / (1000 * 60 * 60 * 24);
 
-        if(Math.round(daysDifference) > 10){
-            return  created_at_formattedDate;
-        }
-        else {
+        if (Math.round(daysDifference) > 10) {
+            return created_at_formattedDate;
+        } else {
             return daysDifference;
         }
-       
+
 
     }
 
-
-    $.ajax({
-        type: "GET",
-        url: "{{url('/')}}/jobs-v2?page=1",
-        data: {},
-        success: function (data) {
-            
-            if(data.data){
-                let img_url = ``
-                var html = []
-                data.data.forEach((element,id) => {
-                  
-                    let url = element.company.cover_logo;
-                    let salary_from =  element.salary_from;
-                    let salary_to = element.salary_to;
-                    let string_salary = ''
-                    if (url) {
-                        img_url = `{{url('/')}}/company_logos/${url}`
-                    }
-                    else {
-                        img_url = `{{url('/')}}/admin_assets/no-image.png`
-                    }
-                    
-                    // insert ads
-                    if(id == 5) {
-                        html.push(`   <div class="inpostad">
-                                    <img src="https://png.pngtree.com/thumb_back/fh260/back_pic/00/02/44/5056179b42b174f.jpg" alt="">
-                                </div>`)
-                    }  
+    // $(document).ready(function() {
 
 
-                    string_salary  = checksalary(salary_from,salary_to)
 
-                    const datetime = convertDatetime(element.created_at)
+    //         $.ajax({
+    //             type: "GET",
+    //             url: "{{url('/')}}/jobs-v2?page=1",
+    //             data: filters,
+    //             success: function (data) {
+    //                 // $(".searchList.jobs-side-list").children("div").remove();
 
-                    
-                    let  string = `
-                     <div data-job-id="${element.id}"  class="item-job mb-3">
-                                    <div class="logo-company">
-                                        <a href="{{url('/')}}/company/${element.company.slug}" title="${element.company.name}" class="pic">
-                                    
-                                                <img src="${img_url}" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="jobinfo">
-                                        <div class="info">
-                                            <!-- Title  Start-->
-                                            <div class="info-item job-title-box">
-                                                <div class="job-title">
-                                                    <span>Mới</span>
-                                                    <h3 class="job-title-name"><a href="{{url('/')}}/job/${element.slug}" title="">${element.title}</a></h3>
-                                                </div>`;
-                                                
-                                                if(1==1)
-                                                {
-                                                    string +=  `<a class="save-job" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="far fa-heart"></i>
-                                                </a>`;
-                                                }
+    //                 if(data.data){
 
-                                        string +=  `</div>
-                                            <!-- Title  End-->
+    //                 let img_url = ``
+    //                 let  string  = ''
+    //                 data.data.forEach((element,id) => {
 
-                                            <!-- companyName Start-->
-                                            <div class="info-item companyName"><a href="{{url('/')}}/company/${element.company.slug}" title="${element.company.name}">${element.company.name}</a></div>
-                                            <!-- companyName End-->
-                                            <!--rank-salary and place Start-->
-                                            <div class="info-item box-meta">
-                                                <div class="rank-salary">
-                                                    ${string_salary}
-                                                </div>
-                                                <div class="navbar__link-separator" bis_skin_checked="1"></div>
-                                                <!--meta-city-->
-                                                <div class="meta-city">
-                                                    <!-- <i class="far fa-map-marker-alt"></i> -->
-                                                    ${element.city.city}
-                                                </div>
-                                            </div>
-                                            <!--Rank-salary and place End-->
+    //                     let url = element.company.cover_logo;
+    //                     let salary_from =  element.salary_from;
+    //                     let salary_to = element.salary_to;
+    //                     let string_salary = ''
+    //                     if (url) {
+    //                         img_url = `{{url('/')}}/company_logos/${url}`
+    //                     }
+    //                     else {
+    //                         img_url = `{{url('/')}}/admin_assets/no-image.png`
+    //                     }
 
-                                            <!--Day update and place Start-->
-                                            <div class="info-item day-update">
-                                                {{__('Update')}}: ${datetime}
-                                            </div>
-                                            <!--Day update and place End-->
-                                        </div>
+    //                     // insert ads
+    //                     if(id == 5) {
+    //                         html.push(`   <div class="inpostad">
+    //                                     <img src="https://png.pngtree.com/thumb_back/fh260/back_pic/00/02/44/5056179b42b174f.jpg" alt="">
+    //                                 </div>`)
+    //                     }  
 
-                                        <div class="caption">
-                                            <div class="welfare">
-                                                <div class="box-meta">
-                                                    <!-- <i class="fas fa-dollar-sign"></i>  -->
-                                                    <span>
-                                                        <!-- {{__('Rewards')}} -->
-                                                        ${element.functional_area.functional_area}
-                                                    </span>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-            
-                    `
-                    html.push(string)
-                });
 
+    //                     string_salary  = checksalary(salary_from,salary_to)
+
+    //                     const datetime = convertDatetime(element.created_at)
+
+
+    //                     let  string = `
+    //                      <div data-job-id="${element.id}"  class="item-job mb-3">
+    //                                     <div class="logo-company">
+    //                                         <a href="{{url('/')}}/company/${element.company.slug}" title="${element.company.name}" class="pic">
+
+    //                                                 <img src="${img_url}" alt="">
+    //                                         </a>
+    //                                     </div>
+    //                                     <div class="jobinfo">
+    //                                         <div class="info">
+    //                                             <!-- Title  Start-->
+    //                                             <div class="info-item job-title-box">
+    //                                                 <div class="job-title">
+    //                                                     <span>Mới</span>
+    //                                                     <h3 class="job-title-name"><a href="{{url('/')}}/job/${element.slug}" title="">${element.title}</a></h3>
+    //                                                 </div>`;
+
+    //                                                 if(1==1)
+    //                                                 {
+    //                                                     string +=  `<a class="save-job" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="far fa-heart"></i>
+    //                                                 </a>`;
+    //                                                 }
+
+    //                                         string +=  `</div>
+    //                                             <!-- Title  End-->
+
+    //                                             <!-- companyName Start-->
+    //                                             <div class="info-item companyName"><a href="{{url('/')}}/company/${element.company.slug}" title="${element.company.name}">${element.company.name}</a></div>
+    //                                             <!-- companyName End-->
+    //                                             <!--rank-salary and place Start-->
+    //                                             <div class="info-item box-meta">
+    //                                                 <div class="rank-salary">
+    //                                                     ${string_salary}
+    //                                                 </div>
+    //                                                 <div class="navbar__link-separator" bis_skin_checked="1"></div>
+    //                                                 <!--meta-city-->
+    //                                                 <div class="meta-city">
+    //                                                     <!-- <i class="far fa-map-marker-alt"></i> -->
+    //                                                     ${element.city.city}
+    //                                                 </div>
+    //                                             </div>
+    //                                             <!--Rank-salary and place End-->
+
+    //                                             <!--Day update and place Start-->
+    //                                             <div class="info-item day-update">
+    //                                                 {{__('Update')}}: ${datetime}
+    //                                             </div>
+    //                                             <!--Day update and place End-->
+    //                                         </div>
+
+    //                                         <div class="caption">
+    //                                             <div class="welfare">
+    //                                                 <div class="box-meta">
+    //                                                     <!-- <i class="fas fa-dollar-sign"></i>  -->
+    //                                                     <span>
+    //                                                         <!-- {{__('Rewards')}} -->
+    //                                                         ${element.functional_area.functional_area}
+    //                                                     </span>
+    //                                                 </div>
+
+    //                                             </div>
+    //                                         </div>
+    //                                     </div>
+    //                                 </div>
+
+    //                     `
+    //                     console.log(1);
+
+    //                     html.push(string)
+
+    //                 });
+
+
+    //                 // $(".searchList.jobs-side-list").append(html.join(" "));
+    //             }
+
+    //             console.log(datafromapi);
+    //         },
+    //         error: function(xhr, status, error) {
+    //                 console.error('Error:', error);
+    //         }
+    //     });
+
+
+
+
+
+
+
+    // })
+
+    $(document).ready(function() {
+        // Load all jobs when the page loads
+          loadJobs();
+
+        // Category filter change event
+        $('.filter_submit').on('click', function() {
+            loadJobs();
+        });
+    });
+
+
+
+    const loadJobs =  () =>  {
+        // Get filter values
+
+        var searchQuery = $('#job_filter').serialize();
+        console.log(searchQuery);
+        // Make an AJAX request
+       $.ajax({
+            url: '{{url('/')}}/jobs-v2?page=1',
+            type: 'GET',
+            data: searchQuery,
+            success: function(data) {
+                // Display data in HTML
+                renderJobList(data.data);
+            },
+            error: function(error) {
+                console.error(error);
+            }
+        });
+    }
+
+    const  renderJobList = async (data) => {
+        console.log(data);
+        
+        // Assuming data is an array of job objects
+        var jobListing = $('.searchList.jobs-side-list');
+        jobListing.empty(); // Clear previous data
+
+        if (data.length === 0) {
+            jobListing.append('<p>No jobs found.</p>');
+        } else {
+    
+            // Loop through the data and append to the jobListing container
+            data.forEach(function(element, id) {
+                // var jobItem = $('<div class="job-item"></div>');
+                // jobItem.append('<h3>' + job.title + '</h3>');
+                // jobItem.append('<p>' + job.description + '</p>');
+                
+                let url = element.company?.cover_logo;
+                let salary_from = element.salary_from;
+                let salary_to = element.salary_to;
+                let string_salary = ''
+                if (url) {
+                    img_url = `{{url('/')}}/company_logos/${url}`
+                } else {
+                    img_url = `{{url('/')}}/admin_assets/no-image.png`
+                }
+
+                // insert ads
+                // if(id == 5) {
+                //     html.push(`   <div class="inpostad">
+                //     <img src="https://png.pngtree.com/thumb_back/fh260/back_pic/00/02/44/5056179b42b174f.jpg" alt="">
+                //     </div>`)
+                // }  
 
                
-                $(".searchList.jobs-side-list").append(html.join(""))
-            }
+                string_salary = checksalary(salary_from, salary_to)
+
+                const datetime = convertDatetime(element.created_at)
+                var jobItem = $(`<div data-job-id="${element.id}"  class="item-job mb-3"></div>`);
+
+                jobItem.append(` <div class="logo-company">
+                                <a href="{{url('/')}}/company/${element.company?.slug}" title="${element.company?.name}" class="pic">
+                                        
+                                <img src="${img_url}" alt="">
+                                </a>
+                </div>`);
+
+             
+
+                if (id == 5 ) {
+                    jobListing.append(`<div class="inpostad">
+                    <img src="https://png.pngtree.com/thumb_back/fh260/back_pic/00/02/44/5056179b42b174f.jpg" alt="">
+                    </div>
+`
+                )
+                }
+
+
+                jobItem.append(` <div class="jobinfo">
+                                            <div class="info">
+                                                <!-- Title  Start-->
+                                                <div class="info-item job-title-box">
+                                                    <div class="job-title">
+                                                        <span>Mới</span>
+                                                        <h3 class="job-title-name"><a href="{{url('/')}}/job/${element?.slug}" title="">${element.title}</a></h3>
+                                                    </div>
+
+                                                
+                                                 
+                                                       <a class="save-job" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="far fa-heart"></i>
+                                                    </a>
+                                               
+
+                                                </div>
+                                                <!-- Title  End-->
+
+                                                <!-- companyName Start-->
+                                                <div class="info-item companyName"><a href="{{url('/')}}/company/${element.company?.slug}" title="${element.company?.name}">${element.company?.name}</a></div>
+                                                <!-- companyName End-->
+                                                <!--rank-salary and place Start-->
+                                                <div class="info-item box-meta">
+                                                    <div class="rank-salary">
+                                                        ${string_salary}
+                                                    </div>
+                                                    <div class="navbar__link-separator" bis_skin_checked="1"></div>
+                                                    <!--meta-city-->
+                                                    <div class="meta-city">
+                                                        <!-- <i class="far fa-map-marker-alt"></i> -->
+                                                        ${element.city.city}
+                                                    </div>
+                                                </div>
+                                                <!--Rank-salary and place End-->
+
+                                                <!--Day update and place Start-->
+                                                <div class="info-item day-update">
+                                                    {{__('Update')}}: ${datetime}
+                                                </div>
+                                                <!--Day update and place End-->
+                                            </div>
+
+                                            <div class="caption">
+                                                <div class="welfare">
+                                                    <div class="box-meta">
+                                                        <!-- <i class="fas fa-dollar-sign"></i>  -->
+                                                        <span>
+                                                            <!-- {{__('Rewards')}} -->
+                                                            ${element.functional_area.functional_area}
+                                                        </span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>`);
+
+                                     
+
+
+
+                // Add more job details as needed
+                jobListing.append(jobItem);
+            });
         }
-    });
+    }
+
+
+
+
 
 
 
@@ -526,44 +697,44 @@
          */
     });
 
-    if ($("#submit_alert").length > 0) {
-        $("#submit_alert").validate({
-            rules: {
-                email: {
-                    required: true,
-                    maxlength: 5000,
-                    email: true
-                }
-            },
-            messages: {
-                email: {
-                    required: "Email is required",
-                }
-            },
-            submitHandler: function(form) {
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-                $.ajax({
-                    url: "{{route('subscribe.alert')}}",
-                    type: "GET",
-                    data: $('#submit_alert').serialize(),
-                    success: function(response) {
-                        $("#submit_alert").trigger("reset");
-                        $('#show_alert').modal('hide');
-                        swal({
-                            title: "Success",
-                            text: response["msg"],
-                            icon: "success",
-                            button: "OK",
-                        });
-                    }
-                });
-            }
-        })
-    }
+    // if ($("#submit_alert").length > 0) {
+    //     $("#submit_alert").validate({
+    //         rules: {
+    //             email: {
+    //                 required: true,
+    //                 maxlength: 5000,
+    //                 email: true
+    //             }
+    //         },
+    //         messages: {
+    //             email: {
+    //                 required: "Email is required",
+    //             }
+    //         },
+    //         submitHandler: function(form) {
+    //             $.ajaxSetup({
+    //                 headers: {
+    //                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    //                 }
+    //             });
+    //             $.ajax({
+    //                 url: "{{route('subscribe.alert')}}",
+    //                 type: "GET",
+    //                 data: $('#submit_alert').serialize(),
+    //                 success: function(response) {
+    //                     $("#submit_alert").trigger("reset");
+    //                     $('#show_alert').modal('hide');
+    //                     swal({
+    //                         title: "Success",
+    //                         text: response["msg"],
+    //                         icon: "success",
+    //                         button: "OK",
+    //                     });
+    //                 }
+    //             });
+    //         }
+    //     })
+    // }
     $(document).on('click', '.swal-button--Login', function() {
         window.location.href = "{{route('login')}}";
     })

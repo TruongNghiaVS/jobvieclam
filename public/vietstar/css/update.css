@@ -2935,7 +2935,7 @@ footer .inner-copyright .copyright {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: auto;
+  
     /* display: none; */
     animation: slideDown 1s ease-out;
     padding: 20px;

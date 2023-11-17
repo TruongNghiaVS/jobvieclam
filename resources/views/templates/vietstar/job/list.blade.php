@@ -483,7 +483,7 @@
         // Get filter values
 
         var searchQuery = $('#job_filter').serialize();
-        console.log(searchQuery);
+       
         // Make an AJAX request
        $.ajax({
             url: '{{url('/')}}/jobs-v2?page=1',
@@ -500,7 +500,7 @@
     }
 
     const  renderJobList = async (data) => {
-        console.log(data);
+       
         
         // Assuming data is an array of job objects
         var jobListing = $('.searchList.jobs-side-list');

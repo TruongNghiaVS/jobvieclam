@@ -483,14 +483,16 @@
         // Get filter values
 
         var searchQuery = $('#job_filter').serialize();
-        console.log(searchQuery);
+       
         // Make an AJAX request
        $.ajax({
-            url: '{{url('/')}}/jobs-v2?page=1',
+            url: '{{url('/')}}/jobs-v2?page=1&search=ke toan',
             type: 'GET',
-            data: searchQuery,
+            data: {
+                search : "kế toán"
+            },
             success: function(data) {
-                // Display data in HTML
+              
                 renderJobList(data.data);
             },
             error: function(error) {
@@ -500,7 +502,7 @@
     }
 
     const  renderJobList = async (data) => {
-        console.log(data);
+        
         
         // Assuming data is an array of job objects
         var jobListing = $('.searchList.jobs-side-list');

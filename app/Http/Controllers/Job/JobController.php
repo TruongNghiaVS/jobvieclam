@@ -193,6 +193,8 @@ class JobController extends Controller
     public function searchJobv2(Request $request)
     {
         $token = $request->input("search");
+
+      
         $industry_id = $request->input("industry_id");
         $locationWork = $request->input("provice");
         $orderby = $request->input("sort");
@@ -254,6 +256,10 @@ class JobController extends Controller
         else if($order_by== "new") // last updated
         {
             $query =  $query->orderBy('created_at', 'DESC');
+        }
+        else if($order_by== "older") // last updated
+        {
+            $query =  $query->orderBy('created_at', 'ASC');
         }
         else 
         {

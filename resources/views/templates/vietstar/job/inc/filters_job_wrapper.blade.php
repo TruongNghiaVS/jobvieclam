@@ -155,32 +155,6 @@ dd($salaryFroms)
     </div>
 </div>
 
-<!-- SEARCH STICKY Mobile-->
-
-<div class="page-heading-tool job-detail mobile">
-    <div class="container">
-        <div class="tool-wrapper">
-            <div class="search-job">
-                <div class="form-horizontal">
-                    <div class="row g-0">
-                        <div class="col-12">
-                            <input type="search" class="keyword form-control" id="search" name="search" placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mobile-filter toollips">
-                <button type="button" class="btn btn-filter" id="#atcFilters-mobile" title="Lọc" onclick="openFilterJob_mobile()">
-                    <i class="far fa-filter"></i> {{__('Filter')}}
-                </button>
-                <button class="btn btn-primary" type="submit">
-                    <i class="bi bi-search text-white"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- SEARCH ADVANDCE STICKY -->
 <div class="filters-job-wrapper job-detail">
     <div class="container">
@@ -255,6 +229,35 @@ dd($salaryFroms)
         </div>
     </div>
 </div>
+{!! Form::close() !!}
+
+{!! Form::open(['method' => 'get','route' => 'job.list', 'id' => 'job_filter']) !!}
+<!-- SEARCH STICKY Mobile-->
+
+<div class="page-heading-tool job-detail mobile">
+    <div class="container">
+        <div class="tool-wrapper">
+            <div class="search-job">
+                <div class="form-horizontal">
+                    <div class="row g-0">
+                        <div class="col-12">
+                            <input type="search" class="keyword form-control" id="search" name="search" placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-filter toollips">
+                <button type="button" class="btn btn-filter" id="#atcFilters-mobile" title="Lọc" onclick="openFilterJob_mobile()">
+                    <i class="far fa-filter"></i> {{__('Filter')}}
+                </button>
+                <button class="btn btn-primary" type="submit">
+                    <i class="bi bi-search text-white"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 <div class="filters-job-wrapper-mobile job-detail">

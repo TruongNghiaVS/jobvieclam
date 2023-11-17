@@ -502,7 +502,11 @@
     }
 
     const  renderJobList = async (data) => {
+<<<<<<< HEAD
         
+=======
+       
+>>>>>>> search_15/11
         
         // Assuming data is an array of job objects
         var jobListing = $('.searchList.jobs-side-list');

@@ -66,7 +66,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label=""><span>×</span></button>
+                     
                      </div>
 					
                     <div class="modal-body">
@@ -255,10 +255,12 @@ $(document).ready(function() {
                     $("#login_success").addClass("show")
                     $("#user_login_Modal").css("display:none")
                     $("#user_login_Modal").removeClass("show")
-                    $("#login_success button").click(function(){
+                    setTimeout(()=> {
                         $("#login_success").removeClass("show")
                         window.location.href =  "/home";
-                    });
+                    },2000)
+                    
+                
                     
                 })
                 .fail(function(jqXHR, textStatus){

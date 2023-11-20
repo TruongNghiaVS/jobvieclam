@@ -286,9 +286,10 @@
     .pagination {
         margin-top: 10px;
     }
-    .pagination .page-item {
-        margin: 0 5px;
-        cursor: pointer;
+   
+    .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
     }
 </style>
 @endpush
@@ -357,40 +358,75 @@
         const itemsPerPage = 10;
         const totalItems = 30;
         const totalPages = Math.ceil(totalItems / itemsPerPage);
-        $('.pagination').append(`<li class="page-item " ><a class="page-link" href="#">Previous</a></li>`)
+        var currentPage = 1;
+
+        $('.pagination').append(`<button class="btn btn-outline  btn-sm" id="prevBtn" ><a class="page-link" href="#"><<</a></li>`)
         for (let i = 1; i <= totalPages; i++) {
-            $('.pagination').append(`<li class="page-item" data-page="${i}"><a class="page-link" href="#" data-page="${i}">${i}</a></li>`);
+            $('.pagination').append(`<li class="page-item btn btn-outline btn-sm" data-page="${i}"><a class="page-link" href="#" data-page="${i}">${i}</a></li>`);
         }
-        $('.pagination').append(`<li class="page-item "><a class="page-link" href="#">Next</a></li>`)
+        $('.pagination').append(`<button class="btn btn-outline  btn-sm"  id="nextBtn"><a class="page-link" href="#">>></a></button>`)
 
 
-
-        showPage(1); // Show the first page by default
-        loadJobs(1)
+      
+        showPage(currentPage); // Show the first page by default
+        loadJobs(currentPage)
         // Handle pagination click
         $('.pagination .page-item').on('click', function(e) {
             e.preventDefault();
             const page = $(this).attr('data-page');
-           
+            console.log(page);
+            currentPage = page;
             showPage(page);
+            updateButtonStates()
+        });
+
+
+        $('#prevBtn').on('click', function() {
+         
+            if (currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+                updateButtonStates();
+            }
+           
+        });
+
+        // Handle "Next" button click
+        $('#nextBtn').on('click', function() {
+           
+            if (currentPage < totalPages) {
+                currentPage++;
+                showPage(currentPage);
+                updateButtonStates();
+            }
         });
 
         function showPage(page) {
             
             loadJobs(page)
+            updateButtonStates()
             // Hide all items
             $('.page-item').removeClass('active');
             // Calculate range of items to show for the selected page
-      
+  
             // Show the selected items
             $(`.pagination .page-item[data-page=${page}]`).addClass('active');
+        }
+
+        function updateButtonStates() {
+            console.log("updateButtonStates");
+            // Enable or disable "Previous" button based on currentPage
+            $('#prevBtn').prop('disabled', currentPage == 1);
+
+            // Enable or disable "Next" button based on currentPage
+            $('#nextBtn').prop('disabled', currentPage == totalPages);
         }
 
 
         // Category filter change event
         $('.filter_submit').on('click', function() {
-            showPage(1)
-            loadJobs(1);
+            showPage(currentPage)
+            loadJobs(currentPage);
         });
     });
 

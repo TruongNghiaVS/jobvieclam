@@ -233,6 +233,10 @@
     "Candidate profile is not updated": "Hồ sơ ứng viên không được cập nhật",
     "You need to update the CV file from the template": "Bạn cần cập nhật Template từ mẫu",
     "Location": "Địa điểm",
+    "Apply": "Nộp đơn",
+    "Expired": "Hết hạn",
+
+    "Don't Save":"Không lưu",
     "Location required": "Địa điểm là bắt buộc",
     "Login": "Đăng nhập",
     "Logout": "Đăng xuất",

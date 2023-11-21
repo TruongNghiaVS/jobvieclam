@@ -186,9 +186,11 @@
             <!-- job end -->
                 </div>
                 --}}
-
+                <div id="loadingMessage" class="text-center"><div class="spinner-border text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div></div>
                 <div class="searchList jobs-side-list">
-
+                    
                 </div>
                 <!-- Pagination Start -->
                 <div class="pagiWrap">
@@ -203,10 +205,10 @@
                         <nav class="text-center">
                                 
     
-                        <ul class="pagination">
-                          
-                        </ul>
-                        </nav>
+                            </nav>
+                            <ul class="pagination" id="job_pagination">
+                            
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -310,7 +312,7 @@
 
     }
 
-
+    
 
     function convertDatetime(created_at) {
 
@@ -353,141 +355,37 @@
 
 
     }
+   
     $(document).ready(function() {
-        // Load all jobs when the page loads
+        // Simulated API endpoint (replace with your actual API endpoint)
+        const apiEndpoint = '{{url('/')}}/jobs-v2';
         const itemsPerPage = 10;
-        const totalItems = 30;
-        const totalPages = Math.ceil(totalItems / itemsPerPage);
         var currentPage = 1;
 
-        $('.pagination').append(`<button class="btn btn-outline  btn-sm" id="prevBtn" ><a class="page-link" href="#"><<</a></li>`)
-        for (let i = 1; i <= totalPages; i++) {
-            $('.pagination').append(`<li class="page-item btn btn-outline btn-sm" data-page="${i}"><a class="page-link" href="#" data-page="${i}">${i}</a></li>`);
-        }
-        $('.pagination').append(`<button class="btn btn-outline  btn-sm"  id="nextBtn"><a class="page-link" href="#">>></a></button>`)
 
-
-      
-        showPage(currentPage); // Show the first page by default
-        loadJobs(currentPage)
-        // Handle pagination click
-        $('.pagination .page-item').on('click', function(e) {
-            e.preventDefault();
-            const page = $(this).attr('data-page');
-            console.log(page);
-            currentPage = page;
-            showPage(page);
-            updateButtonStates()
-        });
-
-
-        $('#prevBtn').on('click', function() {
-         
-            if (currentPage > 1) {
-                currentPage--;
-                showPage(currentPage);
-                updateButtonStates();
-            }
-           
-        });
-
-        // Handle "Next" button click
-        $('#nextBtn').on('click', function() {
-           
-            if (currentPage < totalPages) {
-                currentPage++;
-                showPage(currentPage);
-                updateButtonStates();
-            }
-        });
-
-        function showPage(page) {
-            
-            loadJobs(page)
-            updateButtonStates()
-            // Hide all items
-            $('.page-item').removeClass('active');
-            // Calculate range of items to show for the selected page
-  
-            // Show the selected items
-            $(`.pagination .page-item[data-page=${page}]`).addClass('active');
-        }
-
-        function updateButtonStates() {
-            console.log("updateButtonStates");
-            // Enable or disable "Previous" button based on currentPage
-            $('#prevBtn').prop('disabled', currentPage == 1);
-
-            // Enable or disable "Next" button based on currentPage
-            $('#nextBtn').prop('disabled', currentPage == totalPages);
-        }
-
-
-        // Category filter change event
         $('.filter_submit').on('click', function() {
-            showPage(currentPage)
-            loadJobs(currentPage);
+            fetchData();
         });
-    });
+
+        // Function to show loading message
+        function showLoading() {
+        $('#loadingMessage').show();
+        }
+            // Function to hide loading message
+        function hideLoading() {
+            $('#loadingMessage').hide();
+        }
 
 
+        // Function to render data
+        function renderData(data) {
+            // Assuming data is an array of job objects
+            var jobListing = $('.searchList.jobs-side-list');
+            jobListing.empty(); // Clear previous data
 
-    const loadJobs =  (page) =>  {
-        // Get filter values
-
-        var searchQuery = $('#job_filter').serializeArray();
-    
-        let mergedObject = searchQuery.reduce((result, currentObject) => {
-
-            let key = currentObject.name;
-            let value =  currentObject.value;
-          
-            result[key] = value;
-            return result;
-        }, {});
-       let mergedObject_convert = {
-                city_id: mergedObject.city_id ? parseInt(mergedObject.city_id, 10):"",
-                degree_level_id:mergedObject.degree_level_id ?  parseInt(mergedObject.degree_level_id, 10) :"",
-                departmentType:mergedObject.functional_area_id ? parseInt(mergedObject.functional_area_id, 10):"",
-                job_type_id:mergedObject.job_type_id ?  parseInt(mergedObject.job_type_id, 10): "",
-                salary_max:mergedObject.salary_max ? parseInt(mergedObject.salary_max, 10):"",
-                salary_min: mergedObject.salary_min ? parseInt(mergedObject.salary_min, 10): "",
-                search: mergedObject.search
-       }
-      
-        // Make an AJAX request
-       $.ajax({
-            url: `{{url('/')}}/jobs-v2?page=${page ? page: 1}`,
-            type: 'GET',
-            data: {
-                city_id:mergedObject_convert.city_id,
-                departmentType:mergedObject_convert.departmentType,
-                salary_min:mergedObject_convert.salary_min,
-                salary_max:mergedObject_convert.salary_max,
-                search:mergedObject.search,
-                job_type_id:mergedObject.job_type_id,
-                levelDegree:mergedObject.degree_level_id
-
-            },
-            success: function(data) {
-                console.log(data.data);
-                renderJobList(data.data);
-            },
-            error: function(error) {
-                console.error(error);
-            }
-        });
-    }
-
-    const  renderJobList = async (data) => {        
-       
-        // Assuming data is an array of job objects
-        var jobListing = $('.searchList.jobs-side-list');
-        jobListing.empty(); // Clear previous data
-
-        if (data.length === 0) {
-            jobListing.append('<p>No jobs found.</p>');
-        } else {
+            if (data.length === 0) {
+                jobListing.append('<p>No jobs found.</p>');
+            } else {
     
             // Loop through the data and append to the jobListing container
             data.forEach(function(element, id) {
@@ -534,74 +432,185 @@
 `
                 )
                 }
-
-
                 jobItem.append(` <div class="jobinfo">
-                                            <div class="info">
-                                                <!-- Title  Start-->
-                                                <div class="info-item job-title-box">
-                                                    <div class="job-title">
-                                                        <span>Mới</span>
-                                                        <h3 class="job-title-name"><a href="{{url('/')}}/job/${element?.slug}" title="">${element.title}</a></h3>
-                                                    </div>
+                                                <div class="info">
+                                                    <!-- Title  Start-->
+                                                    <div class="info-item job-title-box">
+                                                        <div class="job-title">
+                                                            <span>Mới</span>
+                                                            <h3 class="job-title-name"><a href="{{url('/')}}/job/${element?.slug}" title="">${element.title}</a></h3>
+                                                        </div>
 
+                                                    
+                                                    
+                                                        <a class="save-job" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="far fa-heart"></i>
+                                                        </a>
                                                 
-                                                 
-                                                       <a class="save-job" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="far fa-heart"></i>
-                                                    </a>
-                                               
 
-                                                </div>
-                                                <!-- Title  End-->
-
-                                                <!-- companyName Start-->
-                                                <div class="info-item companyName"><a href="{{url('/')}}/company/${element.company?.slug}" title="${element.company?.name}">${element.company?.name}</a></div>
-                                                <!-- companyName End-->
-                                                <!--rank-salary and place Start-->
-                                                <div class="info-item box-meta">
-                                                    <div class="rank-salary">
-                                                        ${string_salary}
                                                     </div>
-                                                    <div class="navbar__link-separator" bis_skin_checked="1"></div>
-                                                    <!--meta-city-->
-                                                    <div class="meta-city">
-                                                        <!-- <i class="far fa-map-marker-alt"></i> -->
-                                                        ${element.city.city}
+                                                    <!-- Title  End-->
+
+                                                    <!-- companyName Start-->
+                                                    <div class="info-item companyName"><a href="{{url('/')}}/company/${element.company?.slug}" title="${element.company?.name}">${element.company?.name}</a></div>
+                                                    <!-- companyName End-->
+                                                    <!--rank-salary and place Start-->
+                                                    <div class="info-item box-meta">
+                                                        <div class="rank-salary">
+                                                            ${string_salary}
+                                                        </div>
+                                                        <div class="navbar__link-separator" bis_skin_checked="1"></div>
+                                                        <!--meta-city-->
+                                                        <div class="meta-city">
+                                                            <!-- <i class="far fa-map-marker-alt"></i> -->
+                                                            ${element.city.city}
+                                                        </div>
+                                                    </div>
+                                                    <!--Rank-salary and place End-->
+
+                                                    <!--Day update and place Start-->
+                                                    <div class="info-item day-update">
+                                                        {{__('Update')}}: ${datetime}
+                                                    </div>
+                                                    <!--Day update and place End-->
+                                                </div>
+
+                                                <div class="caption">
+                                                    <div class="welfare">
+                                                        <div class="box-meta">
+                                                            <!-- <i class="fas fa-dollar-sign"></i>  -->
+                                                            <span>
+                                                                <!-- {{__('Rewards')}} -->
+                                                                ${element.functional_area.functional_area}
+                                                            </span>
+                                                        </div>
+
                                                     </div>
                                                 </div>
-                                                <!--Rank-salary and place End-->
+                    </div>`);
+                    // Add more job details as needed
+                    jobListing.append(jobItem);
+                });
+            }
+        }
 
-                                                <!--Day update and place Start-->
-                                                <div class="info-item day-update">
-                                                    {{__('Update')}}: ${datetime}
-                                                </div>
-                                                <!--Day update and place End-->
-                                            </div>
+        // Function to handle AJAX call
+        function fetchData(page) {
+            console.log();
+            var searchQuery = $('#job_filter').serializeArray();
+    
+            let mergedObject = searchQuery.reduce((result, currentObject) => {
+    
+                let key = currentObject.name;
+                let value =  currentObject.value;
+              
+                result[key] = value;
+                return result;
+            }, {});
+           let mergedObject_convert = {
+                    city_id: mergedObject.city_id ? parseInt(mergedObject.city_id, 10):"",
+                    degree_level_id:mergedObject.degree_level_id ?  parseInt(mergedObject.degree_level_id, 10) :"",
+                    departmentType:mergedObject.functional_area_id ? parseInt(mergedObject.functional_area_id, 10):"",
+                    job_type_id:mergedObject.job_type_id ?  parseInt(mergedObject.job_type_id, 10): "",
+                    salary_max:mergedObject.salary_max ? parseInt(mergedObject.salary_max, 10):"",
+                    salary_min: mergedObject.salary_min ? parseInt(mergedObject.salary_min, 10): "",
+                    search: mergedObject.search
+           }
 
-                                            <div class="caption">
-                                                <div class="welfare">
-                                                    <div class="box-meta">
-                                                        <!-- <i class="fas fa-dollar-sign"></i>  -->
-                                                        <span>
-                                                            <!-- {{__('Rewards')}} -->
-                                                            ${element.functional_area.functional_area}
-                                                        </span>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>`);
-
-                                     
-
-
-
-                // Add more job details as needed
-                jobListing.append(jobItem);
+            $.ajax({
+                url: apiEndpoint,
+                type: 'GET',
+                dataType: 'json',
+                data: { page: page ? page : 1,
+                   
+                    city_id:mergedObject_convert.city_id,
+                    departmentType:mergedObject_convert.departmentType,
+                    salary_min:mergedObject_convert.salary_min,
+                    salary_max:mergedObject_convert.salary_max,
+                    search:mergedObject.search,
+                    job_type_id:mergedObject.job_type_id,
+                    levelDegree:mergedObject.degree_level_id
+                 },
+                beforeSend: showLoading,
+                complete: hideLoading,
+                success: function(data, textStatus, xhr) {
+                    console.log(data.data);
+                    // Render the data
+                    // console.log(data.last_page);
+                    // console.log(xhr);
+                    if(data.data){
+                        renderData(data.data);
+                    }
+                    
+                    // Update pagination
+                    const totalPages = Math.ceil(30 / itemsPerPage);
+                 
+                    updatePagination(totalPages);
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error);
+                }
             });
         }
-    }
+        // Function to update pagination
+        function updatePagination(totalPages) {
+            var paginationElement = $('#job_pagination');
+            // Clear existing pagination
+            $('#job_pagination').empty();
+            
+            // Generate pagination links
+            $('#job_pagination').append(`<button class="btn btn-outline btn-sm" id="prevBtn" ><a class="page-link" href="#"><<</a></li>`)
+            for (let i = 1; i <= totalPages; i++) {
+                $('#job_pagination').append(`<li class="page-item btn btn-outline btn-sm" data-page="${i}"><a class="page-link" href="#" data-page="${i}">${i}</a></li>`);
+            }
+            $('#job_pagination').append(`<button class="btn btn-outline  btn-sm"  id="nextBtn"><a class="page-link" href="#">>></a></button>`)
+            
+       
 
+            // Add click event handler to pagination links
+            paginationElement.find('.page-item').on('click', function(event) {
+                event.preventDefault();
+                const page = $(this).data('page');
+                currentPage = page
+                fetchData(page);
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+            });
+            $('.page-item').find('.page-item').removeClass('active');
+          
+            $(`.page-item[data-page=${currentPage}]`).addClass('active');
+
+
+            $('#prevBtn').prop('disabled', currentPage == 1);
+         // Enable or disable "Next" button based on currentPage
+            $('#nextBtn').prop('disabled', currentPage == totalPages);
+
+            $('#prevBtn').on('click', function() {
+                     if (currentPage > 1) {
+                         currentPage--;
+                         fetchData(currentPage);
+                         updateButtonStates();
+                     }
+                     $('html, body').animate({ scrollTop: 0 }, 'slow');
+                    
+                 });
+         
+                 // Handle "Next" button click
+            $('#nextBtn').on('click', function() {
+                    
+                     if (currentPage < totalPages) {
+                         currentPage++;
+                         fetchData(currentPage);
+                         updateButtonStates();
+                     }
+                     $('html, body').animate({ scrollTop: 0 }, 'slow');
+                });
+           
+        }
+   
+       
+        // Trigger the data fetching when the page loads
+        fetchData(currentPage);
+      
+    });
 
 
 

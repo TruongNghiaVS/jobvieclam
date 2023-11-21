@@ -156,10 +156,7 @@ class JobController extends Controller
         return view(config('app.THEME_PATH').'.job.detail')
                         ->with('job', $job)
                         ->with('jobOfCompany', $jobOfCompany)
-<<<<<<< HEAD
                         // ->with('relatedJobs', $relatedJobs)
-=======
->>>>>>> jobCompany_21/11
                         ->with('job_skill_ids', $job_skill_ids)
                         ->with('jobSkills', $jobSkills)
                         ->with('seo', $seo);

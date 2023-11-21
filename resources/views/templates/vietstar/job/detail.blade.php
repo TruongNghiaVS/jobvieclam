@@ -29,7 +29,7 @@ $company = $job->getCompany();
                         <h3 class="banner__title">{{$job->title}}</h3>
                         <div class="banner__company">{{$company->name}}</div>
                         <div class="banner__due-day mb-3">
-                            Địa điểm: {{ !empty($job->location) ? $job->location :  $job->getCity('city')}}
+                        {{__('Location')}} {{ !empty($job->location) ? $job->location :  $job->getCity('city')}}
                         </div>
                         <div class="banner__due-day mb-3">
                             $
@@ -65,18 +65,10 @@ $company = $job->getCompany();
                         </div>
                     </div>
                     <div class="">
-                        @if(Auth::guard('company')->check())
-                        @if(Auth::guard('company')->user()->id == $job->company_id )
-                        <a href="{{route('edit.front.job', $job->id)}}" class="btn btn-outline-primary">
-                            {{__('Edit Job')}} </a>
-                        @endif
-                        @else
                         @if($job->isJobExpired())
-                        <span class="btn btn-primary btn-apply">
-                            <!-- <i class="fa fa-paper-plane iconawesome" aria-hidden="true"></i> -->
-                            Nộp đơn
-                            <!-- {{__('Job is expired')}} -->
-                        </span>
+                        <span class="btn btn-primary jbexpire "><i
+                                                class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
+                                            {{__('Job is expired')}}</span>
                         @elseif(Auth::check() && Auth::user()->isAppliedOnJob($job->id))
                         <button class="btn btn-primary apply applied" disabled><i class="fa fa-paper-plane iconawesome"
                                 aria-hidden="true"></i>
@@ -84,15 +76,15 @@ $company = $job->getCompany();
                         @else
                         <a href="{{route('apply.job', $job->slug)}}" class="btn btn-primary apply"><i
                                 class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
-                            Nộp đơn
+                            {{__('Apply')}}
                         </a>
                         @endif
                         @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
-                        <a href="{{route('remove.from.favourite', $job->slug)}}" class="btn btn-outline-primary"><i
-                                class="fas fa-heart iconoutline"></i> {{__('Favourite Job')}} </a> @else <a
+                        <a href="{{route('remove.from.favourite', $job->slug)}}" class="btn btn-outline-primary">
+                            <i class="fas fa-heart iconoutline"></i> {{__('Favourite Job')}} </a> @else <a
                             href="{{route('add.to.favourite', $job->slug)}}" class="btn btn-outline-primary"><i
                                 class="fas fa-heart iconoutline"></i></a>
-                        @endif
+                      
                         @endif
                     </div>
                 </div>
@@ -433,7 +425,105 @@ $company = $job->getCompany();
 
                 <section class="related-jobs">
                     <div class="related-jobs-wapper jobs-side-list">
-                        <div class="related-jobs-item item-job mb-3">
+                  
+
+                            @foreach ($jobOfCompany as $jobitem)
+                            <div class="related-jobs-item item-job mb-3">
+                            <div class="logo-company">
+                                <a href="#"
+                                    title="Công Ty Cổ Phần Incom Sài Gòn" class="pic">
+                                    <img src="{{ asset('company_logos/'.$company->logo) }}"
+                                        style="max-width:140px; max-height:140px;" alt="Công Ty Cổ Phần Incom Sài Gòn"
+                                        title="Công Ty Cổ Phần Incom Sài Gòn">
+                                </a>
+                            </div>
+
+                            <div class="jobinfo">
+                                <div class="info" bis_skin_checked="1">
+                                    <!-- Title  Start-->
+                                    <div class="info-item job-title-box" bis_skin_checked="1">
+                                        <div class="job-title" bis_skin_checked="1">
+                                            <span>Mới</span>
+                                            <h3 class="job-title-name"><a
+                                                    href="{{url('/')}}/job/{{ $jobitem->slug }}"
+                                                    title="{{ $jobitem->title }}">{{ $jobitem->title }}</a></h3>
+                                        </div>
+                                        @if(Auth::check() && Auth::user()->isFavouriteJob($jobitem->slug))
+                                        <a class="save-job active"
+                                            href="{{url('/')}}/add-to-favourite-job/{{ $jobitem->slug }}"><i
+                                                class="far fa-heart"></i>
+                                        </a>
+                                        @else
+                                        <a class="save-job"
+                                            href="{{url('/')}}/add-to-favourite-job/{{ $jobitem->slug }}"><i
+                                                class="far fa-heart"></i>
+                                        </a>
+                                        @endif
+                                    </div>
+                                    <!-- Title  End-->
+
+                                    <!-- companyName Start-->
+                                    <div class="info-item companyName" bis_skin_checked="1"><a
+                                            href="{{url('/')}}/job/{{ $jobitem->slug }}"
+                                            title="{{ $company->name }}n">{{ $company->name }}</a>
+                                    </div>
+                                    <!-- companyName End-->
+                                    <!--rank-salary and place Start-->
+                                    <div class="info-item box-meta" bis_skin_checked="1">
+                                        <div class="rank-salary" bis_skin_checked="1">
+                                            <span class="fas fa-money-bill"></span> Thương lượng
+                                        </div>
+                                        <div class="navbar__link-separator" bis_skin_checked="1"></div>
+                                        <!--meta-city-->
+                                        <div class="meta-city" bis_skin_checked="1">
+                                            <!-- <i class="far fa-map-marker-alt"></i> -->
+                                           {{ !empty($job->location) ? $job->location :  $job->getCity('city')}}
+                                        </div>
+
+
+                                        <!-- Bán thời gian -->
+                                    </div>
+                                    <!--Rank-salary and place End-->
+
+                                    <!--Day update and place Start-->
+                                    <div class="info-item day-update" bis_skin_checked="1">
+                                        Ứng tuyển trước: 29/08/2023      
+                                    </div>
+                                    <!--Day update and place End-->
+
+                                    <!-- <div class="short-description">M&amp;ocirc; tả c&amp;ocirc;ng việc</div> -->
+                                </div>
+                                <div class="caption" bis_skin_checked="1">
+                                    <div class="welfare" bis_skin_checked="1">
+                                        <div class="box-meta" bis_skin_checked="1">
+                                            <!-- <i class="fas fa-dollar-sign"></i>  -->
+                                            <span>
+                                                <!-- Chế độ thưởng -->
+                                                Automative
+                                            </span>
+
+                                        </div>
+                                        <div class="box-meta" bis_skin_checked="1">
+                                            <!-- <i class="fas fa-graduation-cap"></i> -->
+                                            <span>
+                                                <!-- Đào tạo -->
+                                                Automative Infomation
+                                            </span>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="user-actio" bis_skin_checked="1">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                            @endforeach
+
+
+                        {{--<div class="related-jobs-item item-job mb-3">
                             <div class="logo-company">
                                 <a href="http://localhost:8000/company/cong-ty-co-phan-incom-sai-gon-9"
                                     title="Công Ty Cổ Phần Incom Sài Gòn" class="pic">
@@ -608,7 +698,7 @@ $company = $job->getCompany();
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>--}}
                     </div>
 
 
@@ -1086,18 +1176,11 @@ $company = $job->getCompany();
                             <div class="banner__company">{{$company->name}}</div>
                         </div>
                         <div class="col-lg-4 btn-group-floating">
-                            @if(Auth::guard('company')->check())
-                            @if(Auth::guard('company')->user()->id == $job->company_id )
-                            <a href="{{route('edit.front.job', $job->id)}}" class="btn btn-outline-primary">
-                                {{__('Edit Job')}} </a>
-                            @endif
-                            @else
+                           
                             @if($job->isJobExpired())
-                            <span class="btn btn-primary btn-apply">
-                                <!-- <i class="fa fa-paper-plane iconawesome" aria-hidden="true"></i> -->
-                                Nộp đơn
-                                <!-- {{__('Job is expired')}} -->
-                            </span>
+                            <span class="btn btn-primary jbexpire "><i
+                                                class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
+                                            {{__('Job is expired')}}</span>
                             @elseif(Auth::check() && Auth::user()->isAppliedOnJob($job->id))
                             <button class="btn btn-primary apply applied" disabled><i
                                     class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
@@ -1105,7 +1188,7 @@ $company = $job->getCompany();
                             @else
                             <a href="{{route('apply.job', $job->slug)}}" class="btn btn-primary apply"><i
                                     class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
-                                Nộp đơn
+                                {{__('Apply')}}
                             </a>
                             @endif
                             @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
@@ -1113,7 +1196,6 @@ $company = $job->getCompany();
                                     class="fas fa-heart iconoutline"></i> {{__('Favourite Job')}} </a> @else <a
                                 href="{{route('add.to.favourite', $job->slug)}}" class="btn btn-outline-primary"><i
                                     class="fas fa-heart iconoutline"></i></a>
-                            @endif
                             @endif
                         </div>
                     </div>

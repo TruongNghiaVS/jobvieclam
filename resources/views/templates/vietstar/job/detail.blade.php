@@ -475,9 +475,14 @@ $company = $job->getCompany();
                                         </div>
                                         <div class="navbar__link-separator" bis_skin_checked="1"></div>
                                         <!--meta-city-->
+                                        <?php
+                                        echo "Hello World!";
+                                        ?>
+                                        
                                         <div class="meta-city" bis_skin_checked="1">
+                                            {{$jobitem->location}}
                                             <!-- <i class="far fa-map-marker-alt"></i> -->
-                                           {{ !empty($job->location) ? $job->location :  $job->getCity('city')}}
+                                           {{ !empty($jobitem->location) ? $jobitem->location :  "ho co"}}
                                         </div>
 
 
@@ -487,7 +492,7 @@ $company = $job->getCompany();
 
                                     <!--Day update and place Start-->
                                     <div class="info-item day-update" bis_skin_checked="1">
-                                        Ứng tuyển trước: 29/08/2023      
+                                        {{__('Update')}}: {{$jobitem->created_at->format('d/m/Y')}}  
                                     </div>
                                     <!--Day update and place End-->
 
@@ -707,7 +712,9 @@ $company = $job->getCompany();
 
 
             <!--related jobs other  -->
-
+            {{--<?php
+                    dd($relatedJobs)
+            ?>--}}
             @if ($company->jobs->count() > 0)
             <section class="related-jobs-other">
                 <div class="related-jobs__title d-flex justify-content-between align-items-center">
@@ -723,17 +730,24 @@ $company = $job->getCompany();
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="row g-2">
+                                @foreach ($relatedJobs as $relatedJob)
                                     <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
                                         <div class="card-news p-3" bis_skin_checked="1">
+                                            @if($relatedJob->logo)
                                             <div class="card-news__icon" bis_skin_checked="1">
-                                                <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg"
-                                                    alt="Công ty TNHH VBI">
+                                                <img src="{{url('/')}}/company_logos/{{$relatedJob->logo}}"
+                                                    alt="{{$relatedJob->title}}">
                                             </div>
+                                            @else 
+                                            <div class="card-news__icon" bis_skin_checked="1">
+                                                <img src="{{url('/')}}/company_logos/no-logo.png"
+                                                    alt="{{$relatedJob->title}}">
+                                            </div>
+                                            @endif
                                             <div class="card-news__content" bis_skin_checked="1">
                                                 <h6 class="card-news__content-title"><a
-                                                        href="http://jobvieclam.com/job/ke-toan-phai-thu-30"
-                                                        title="Kế Toán Phải Thu">Kế
-                                                        Toán Phải Thu</a></h6>
+                                                        href="{{url('/')}}/job/{{$relatedJob->slug}}"
+                                                        title="{{$relatedJob->title}}">{{$relatedJob->title}}</a></h6>
                                                 <p class="card-news__content-detail">Công ty TNHH VBI</p>
                                                 <div class="card-news__content-footer" bis_skin_checked="1">
                                                     <div class="card-news__content-footer__location"
@@ -750,7 +764,8 @@ $company = $job->getCompany();
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
+                                @endforeach
+                                    <!-- <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
                                         <div class="card-news p-3" bis_skin_checked="1">
                                             <div class="card-news__icon" bis_skin_checked="1">
                                                 <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg"
@@ -926,7 +941,7 @@ $company = $job->getCompany();
 
 
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <div class="swiper-slide">

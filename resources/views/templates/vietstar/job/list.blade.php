@@ -558,7 +558,7 @@
             $('#job_pagination').empty();
             
             // Generate pagination links
-            $('#job_pagination').append(`<button class="btn btn-outline  btn-sm" id="prevBtn" ><a class="page-link" href="#"><<</a></li>`)
+            $('#job_pagination').append(`<button class="btn btn-outline btn-sm" id="prevBtn" ><a class="page-link" href="#"><<</a></li>`)
             for (let i = 1; i <= totalPages; i++) {
                 $('#job_pagination').append(`<li class="page-item btn btn-outline btn-sm" data-page="${i}"><a class="page-link" href="#" data-page="${i}">${i}</a></li>`);
             }
@@ -572,6 +572,7 @@
                 const page = $(this).data('page');
                 currentPage = page
                 fetchData(page);
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
             });
             $('.page-item').find('.page-item').removeClass('active');
           
@@ -588,6 +589,7 @@
                          fetchData(currentPage);
                          updateButtonStates();
                      }
+                     $('html, body').animate({ scrollTop: 0 }, 'slow');
                     
                  });
          
@@ -599,7 +601,8 @@
                          fetchData(currentPage);
                          updateButtonStates();
                      }
-                 });
+                     $('html, body').animate({ scrollTop: 0 }, 'slow');
+                });
            
         }
    

@@ -326,6 +326,7 @@
                     //     alert(data.message)
                     //     window.location.href = data.urlRedirect;
                     // }, 2000);
+                    window.location.href =  "/home";
                     
                 })
                 .fail(function(jqXHR, textStatus){
@@ -414,6 +415,7 @@
                     //     alert("Đang")
                     //     window.location.href = ;
                     // }, 2000);
+                    window.location.href =  "/home";
                     
                 })
                 .fail(function(jqXHR, textStatus){

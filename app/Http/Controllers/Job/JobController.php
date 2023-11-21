@@ -151,12 +151,21 @@ class JobController extends Controller
                             $jobOfCompany =$jobOfCompany->with('degreeLevel');
                             $jobOfCompany= $jobOfCompany->with('city');
                             $jobOfCompany=  $jobOfCompany->get();
-        
-       
-        return view(config('app.THEME_PATH').'.job.detail')
+            $relatedJobs = Job::where('is_active', 1)
+            ->where("functional_area_id",$job->functional_area_id)
+            ->where("industry_id",$job->industry_id)
+            ->where('id', '!=', $job->id);
+            $relatedJobs = $job->with('company');
+            $relatedJobs =$job->with('functionalArea');
+            $relatedJobs =$job->with('jobType');
+            $relatedJobs =$job->with('degreeLevel');
+            $relatedJobs= $job->with('city');
+            $relatedJobs = $job->paginate(10);
+    
+            return view(config('app.THEME_PATH').'.job.detail')
                         ->with('job', $job)
                         ->with('jobOfCompany', $jobOfCompany)
-                        // ->with('relatedJobs', $relatedJobs)
+                        ->with('relatedJobs', $relatedJobs)
                         ->with('job_skill_ids', $job_skill_ids)
                         ->with('jobSkills', $jobSkills)
                         ->with('seo', $seo);

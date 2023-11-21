@@ -1,7 +1,7 @@
 @push('styles')
 <style type="text/css">
 .select-menu {
-  max-width: 330px;
+  max-width: 100%;
 
 }
 .select-menu .select-btn {
@@ -17,7 +17,7 @@
 }
 .select-menu .options {
   position: absolute;
-  width: 330px;
+  width: 360px;
   overflow-y: auto;
   max-height: 295px;
   padding: 10px;
@@ -43,6 +43,10 @@
 }
 .select-menu .options .option:hover {
   background: #f2f2f2;
+  color: var(--bs-primary);
+}
+.select-menu .options .option:hover .option-text {
+    color: var(--bs-primary);
 }
 .select-menu .options .option i {
   font-size: 25px;
@@ -79,7 +83,7 @@
     margin-bottom: 10px;
 
 }
-.box-field  input {
+.box-field input {
     background-color: #fff!important;
     border: 1px solid #e9eaec!important;
     border-radius: 6px;
@@ -145,32 +149,6 @@ dd($salaryFroms)
             <div class="mobile-filter toollips">
                 <button type="button" class="btn btn-filter" id="atcFilters" title="Lọc">
                     <i class="far fa-filter"></i>  {{__('Filter')}}
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- SEARCH STICKY Mobile-->
-
-<div class="page-heading-tool job-detail mobile">
-    <div class="container">
-        <div class="tool-wrapper">
-            <div class="search-job">
-                <div class="form-horizontal">
-                    <div class="row g-0">
-                        <div class="col-12">
-                            <input type="search" class="keyword form-control" id="search" name="search" placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mobile-filter toollips">
-                <button type="button" class="btn btn-filter" id="#atcFilters-mobile" title="Lọc" onclick="openFilterJob_mobile()">
-                    <i class="far fa-filter"></i> {{__('Filter')}}
-                </button>
-                <button class="btn btn-primary" type="submit">
-                    <i class="bi bi-search text-white"></i>
                 </button>
             </div>
         </div>
@@ -251,6 +229,35 @@ dd($salaryFroms)
         </div>
     </div>
 </div>
+{!! Form::close() !!}
+
+{!! Form::open(['method' => 'get','route' => 'job.list', 'id' => 'job_filter']) !!}
+<!-- SEARCH STICKY Mobile-->
+
+<div class="page-heading-tool job-detail mobile">
+    <div class="container">
+        <div class="tool-wrapper">
+            <div class="search-job">
+                <div class="form-horizontal">
+                    <div class="row g-0">
+                        <div class="col-12">
+                            <input type="search" class="keyword form-control" id="search" name="search" placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-filter toollips">
+                <button type="button" class="btn btn-filter" id="#atcFilters-mobile" title="Lọc" onclick="openFilterJob_mobile()">
+                    <i class="far fa-filter"></i> {{__('Filter')}}
+                </button>
+                <button class="btn btn-primary" type="submit">
+                    <i class="bi bi-search text-white"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 <div class="filters-job-wrapper-mobile job-detail">
@@ -281,11 +288,48 @@ dd($salaryFroms)
                         </div>
                     </div>
 
-                    <div class="col-sm-6 col-lg-2">
+                    <!-- <div class="col-sm-6 col-lg-2">
                         <div class="form-group form-select-chosen">
                             <label>{{__('Salary')}}</label>
                             {!! Form::select('salary_from',['' => __('Salary Level')]+$salaryFroms, Request::get('salary_from', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'salary_from')) !!}
                         </div>
+                    </div> -->
+                    <div class="form-group col-sm-6 col-lg-2">
+                        
+                            <label>{{__('Salary Level')}}</label>
+       
+
+                            <div class="select-menu">
+                                <div class="select-btn">
+                                    <span class="sBtn-text">{{__('Salary Level')}}</span>
+                                    <i class="bx bx-chevron-down"></i>
+                                </div>
+
+                                <ul class="options">
+                                    <form id="custom-salary-form">
+                                        <li class="custom-salary-option">
+                                            <div class="">
+                                                <div class="box-field">
+                                                    <input type="number" name="salary_min" id="salary_min" placeholder="Từ" max="9999" data-gtm-form-interact-field-id="0">
+                                                    <span>-</span>
+                                                    <input type="number" name="salary_max"  id="salary_max" placeholder="Đến" max="9999" data-gtm-form-interact-field-id="1">
+                                                    <span>triệu</span>
+                                                </div>
+                                                <button type="button" class="btn btn-primary w-100 btn-custom-salary" disabled>Áp dụng</button>
+                                            </div>
+                                        </li>
+                                    </form>
+
+                                    @foreach ($salaryFroms as $key => $salaryFrom) 
+                                        <li class="option">
+                                            <span class="option-text" key="{{$key}}">{{$salaryFrom}}</span>
+                                        </li>
+                                    @endforeach
+                                    
+                                </ul>
+                        
+                    
+                            </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="form-group" id="degree_level_dd">
@@ -326,7 +370,19 @@ dd($salaryFroms)
 {!! Form::close() !!}
 @push('scripts')
 <script type="text/javascript">
-$(document).ready(function() { 
+
+    $(document).ready(function() {
+        $('.select-menu').on('click', '.select-btn', function() {
+            $(this).parents('.select-menu').toggleClass('active');
+        });
+
+        $('.select-menu').on('click', '.option', function() {
+            var selectedOption = $(this).find('.option-text').text();
+            $('.select-menu .sBtn-text').text(selectedOption);
+            $('.select-menu').removeClass('active');
+        });
+    });
+
     $(document).ready(function() {
         // Attach input event listeners
         $('#salary_min, #salary_max').on('input', function() {
@@ -335,20 +391,25 @@ $(document).ready(function() {
     });
 
     function checkInputs() {
-      
+        
         // Get the values of the inputs
-        var input1Value = $('#salary_min').val();
-        var input2Value = $('#salary_max').val();
+        var input1Value = $('.select-menu.active #salary_min').val();
+        var input2Value = $('.select-menu.active #salary_max').val();
         // Enable the button if both inputs have values, otherwise disable it
-        if (input1Value && input2Value) {
-         
+        console.log(input1Value,input2Value);
+        
+
+        if (input1Value && input2Value && input1Value != input2Value  && input1Value > 0 && input2Value > 0 && input2Value > input1Value) {
             $('.btn-custom-salary').prop('disabled', false);
-        } else {
+        }
+        else {
             $('.btn-custom-salary').prop('disabled', true);
         }
+
+     
     }
 
-    })
+
 
 
     $(document).ready(function() {
@@ -389,23 +450,26 @@ $(document).ready(function() {
             
     });
 
-    const optionMenu = document.querySelector(".select-menu"),
-    selectBtn = optionMenu.querySelector(".select-btn"),
-    options = optionMenu.querySelectorAll(".option"),
-    sBtn_text = optionMenu.querySelector(".sBtn-text");
+    // const optionMenu = document.querySelector(".select-menu"),
+    // selectBtn = optionMenu.querySelector(".select-btn"),
+    // options = optionMenu.querySelectorAll(".option"),
+    // sBtn_text = optionMenu.querySelector(".sBtn-text");
 
-    selectBtn.addEventListener("click", () =>
-    optionMenu.classList.toggle("active")
-    );
+    // selectBtn.addEventListener("click", () =>
+    //     optionMenu.classList.toggle("active")
+    // );
 
-    options.forEach((option) => {
-    option.addEventListener("click", () => {
-        let selectedOption = option.querySelector(".option-text").innerText;
-        sBtn_text.innerText = selectedOption;
+    // options.forEach((option) => {
+    // option.addEventListener("click", () => {
+    //     let selectedOption = option.querySelector(".option-text").innerText;
+    //     sBtn_text.innerText = selectedOption;
 
-        optionMenu.classList.remove("active");
-    });
-    });
+    //     optionMenu.classList.remove("active");
+    // });
+    // });
+  
+
+
 
     
     

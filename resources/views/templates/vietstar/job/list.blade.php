@@ -10,7 +10,7 @@
 <!-- Dashboard menu start -->
 @include('templates.vietstar.includes.mobile_dashboard_menu')
 <!-- Dashboard menu end -->
-
+<?php $jobcount = 30 ?>
 <!-- Inner Page Title end -->
 <div class="listpgWraper Jobpage">
 
@@ -193,16 +193,20 @@
                 <!-- Pagination Start -->
                 <div class="pagiWrap">
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-md-4">
                             <div class="showreslt">
-                                {{__('Showing Pages')}} : {{ $jobs->firstItem() }} - {{ $jobs->lastItem() }}
-                                {{__('Total')}} {{ $jobs->total() }}
+                                {{$jobs->total()}} 
                             </div>
                         </div>
-                        <div class="col-md-7 text-right">
-                            @if(isset($jobs) && count($jobs))
-                            {{ $jobs->appends(request()->query())->links() }}
-                            @endif
+                        <div class="col-md-8 text-right">
+                       
+                        <nav class="text-center">
+                                
+    
+                        <ul class="pagination">
+                          
+                        </ul>
+                        </nav>
                         </div>
                     </div>
                 </div>
@@ -251,6 +255,7 @@
         </div>
     </div>
 </div>
+
 @include('templates.vietstar.includes.footer')
 @endsection
 @push('styles')
@@ -275,10 +280,24 @@
     .form-check-label {
         cursor: pointer;
     }
+    .page-item.active {
+        display: block;
+    }
+    .pagination {
+        margin-top: 10px;
+    }
+   
+    .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+    }
 </style>
 @endpush
 @push('scripts')
 <script>
+    
+   
+   
     function checksalary(salary_from, salary_to) {
         if (salary_from && salary_to) {
             return `${salary_from.toLocaleString('it-IT', {style : 'currency', currency : 'VND'})} - ${salary_to.toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}`
@@ -334,165 +353,124 @@
 
 
     }
-
-    // $(document).ready(function() {
-
-
-
-    //         $.ajax({
-    //             type: "GET",
-    //             url: "{{url('/')}}/jobs-v2?page=1",
-    //             data: filters,
-    //             success: function (data) {
-    //                 // $(".searchList.jobs-side-list").children("div").remove();
-
-    //                 if(data.data){
-
-    //                 let img_url = ``
-    //                 let  string  = ''
-    //                 data.data.forEach((element,id) => {
-
-    //                     let url = element.company.cover_logo;
-    //                     let salary_from =  element.salary_from;
-    //                     let salary_to = element.salary_to;
-    //                     let string_salary = ''
-    //                     if (url) {
-    //                         img_url = `{{url('/')}}/company_logos/${url}`
-    //                     }
-    //                     else {
-    //                         img_url = `{{url('/')}}/admin_assets/no-image.png`
-    //                     }
-
-    //                     // insert ads
-    //                     if(id == 5) {
-    //                         html.push(`   <div class="inpostad">
-    //                                     <img src="https://png.pngtree.com/thumb_back/fh260/back_pic/00/02/44/5056179b42b174f.jpg" alt="">
-    //                                 </div>`)
-    //                     }  
-
-
-    //                     string_salary  = checksalary(salary_from,salary_to)
-
-    //                     const datetime = convertDatetime(element.created_at)
-
-
-    //                     let  string = `
-    //                      <div data-job-id="${element.id}"  class="item-job mb-3">
-    //                                     <div class="logo-company">
-    //                                         <a href="{{url('/')}}/company/${element.company.slug}" title="${element.company.name}" class="pic">
-
-    //                                                 <img src="${img_url}" alt="">
-    //                                         </a>
-    //                                     </div>
-    //                                     <div class="jobinfo">
-    //                                         <div class="info">
-    //                                             <!-- Title  Start-->
-    //                                             <div class="info-item job-title-box">
-    //                                                 <div class="job-title">
-    //                                                     <span>Mới</span>
-    //                                                     <h3 class="job-title-name"><a href="{{url('/')}}/job/${element.slug}" title="">${element.title}</a></h3>
-    //                                                 </div>`;
-
-    //                                                 if(1==1)
-    //                                                 {
-    //                                                     string +=  `<a class="save-job" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="far fa-heart"></i>
-    //                                                 </a>`;
-    //                                                 }
-
-    //                                         string +=  `</div>
-    //                                             <!-- Title  End-->
-
-    //                                             <!-- companyName Start-->
-    //                                             <div class="info-item companyName"><a href="{{url('/')}}/company/${element.company.slug}" title="${element.company.name}">${element.company.name}</a></div>
-    //                                             <!-- companyName End-->
-    //                                             <!--rank-salary and place Start-->
-    //                                             <div class="info-item box-meta">
-    //                                                 <div class="rank-salary">
-    //                                                     ${string_salary}
-    //                                                 </div>
-    //                                                 <div class="navbar__link-separator" bis_skin_checked="1"></div>
-    //                                                 <!--meta-city-->
-    //                                                 <div class="meta-city">
-    //                                                     <!-- <i class="far fa-map-marker-alt"></i> -->
-    //                                                     ${element.city.city}
-    //                                                 </div>
-    //                                             </div>
-    //                                             <!--Rank-salary and place End-->
-
-    //                                             <!--Day update and place Start-->
-    //                                             <div class="info-item day-update">
-    //                                                 {{__('Update')}}: ${datetime}
-    //                                             </div>
-    //                                             <!--Day update and place End-->
-    //                                         </div>
-
-    //                                         <div class="caption">
-    //                                             <div class="welfare">
-    //                                                 <div class="box-meta">
-    //                                                     <!-- <i class="fas fa-dollar-sign"></i>  -->
-    //                                                     <span>
-    //                                                         <!-- {{__('Rewards')}} -->
-    //                                                         ${element.functional_area.functional_area}
-    //                                                     </span>
-    //                                                 </div>
-
-    //                                             </div>
-    //                                         </div>
-    //                                     </div>
-    //                                 </div>
-
-    //                     `
-    //                     console.log(1);
-
-    //                     html.push(string)
-
-    //                 });
-
-
-    //                 // $(".searchList.jobs-side-list").append(html.join(" "));
-    //             }
-
-    //             console.log(datafromapi);
-    //         },
-    //         error: function(xhr, status, error) {
-    //                 console.error('Error:', error);
-    //         }
-    //     });
-
-
-
-
-
-
-
-    // })
-
     $(document).ready(function() {
         // Load all jobs when the page loads
-          loadJobs();
+        const itemsPerPage = 10;
+        const totalItems = 30;
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        var currentPage = 1;
+
+        $('.pagination').append(`<button class="btn btn-outline  btn-sm" id="prevBtn" ><a class="page-link" href="#"><<</a></li>`)
+        for (let i = 1; i <= totalPages; i++) {
+            $('.pagination').append(`<li class="page-item btn btn-outline btn-sm" data-page="${i}"><a class="page-link" href="#" data-page="${i}">${i}</a></li>`);
+        }
+        $('.pagination').append(`<button class="btn btn-outline  btn-sm"  id="nextBtn"><a class="page-link" href="#">>></a></button>`)
+
+
+      
+        showPage(currentPage); // Show the first page by default
+        loadJobs(currentPage)
+        // Handle pagination click
+        $('.pagination .page-item').on('click', function(e) {
+            e.preventDefault();
+            const page = $(this).attr('data-page');
+            console.log(page);
+            currentPage = page;
+            showPage(page);
+            updateButtonStates()
+        });
+
+
+        $('#prevBtn').on('click', function() {
+         
+            if (currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+                updateButtonStates();
+            }
+           
+        });
+
+        // Handle "Next" button click
+        $('#nextBtn').on('click', function() {
+           
+            if (currentPage < totalPages) {
+                currentPage++;
+                showPage(currentPage);
+                updateButtonStates();
+            }
+        });
+
+        function showPage(page) {
+            
+            loadJobs(page)
+            updateButtonStates()
+            // Hide all items
+            $('.page-item').removeClass('active');
+            // Calculate range of items to show for the selected page
+  
+            // Show the selected items
+            $(`.pagination .page-item[data-page=${page}]`).addClass('active');
+        }
+
+        function updateButtonStates() {
+            console.log("updateButtonStates");
+            // Enable or disable "Previous" button based on currentPage
+            $('#prevBtn').prop('disabled', currentPage == 1);
+
+            // Enable or disable "Next" button based on currentPage
+            $('#nextBtn').prop('disabled', currentPage == totalPages);
+        }
+
 
         // Category filter change event
         $('.filter_submit').on('click', function() {
-            loadJobs();
+            showPage(currentPage)
+            loadJobs(currentPage);
         });
     });
 
 
 
-    const loadJobs =  () =>  {
+    const loadJobs =  (page) =>  {
         // Get filter values
 
-        var searchQuery = $('#job_filter').serialize();
-       
+        var searchQuery = $('#job_filter').serializeArray();
+    
+        let mergedObject = searchQuery.reduce((result, currentObject) => {
+
+            let key = currentObject.name;
+            let value =  currentObject.value;
+          
+            result[key] = value;
+            return result;
+        }, {});
+       let mergedObject_convert = {
+                city_id: mergedObject.city_id ? parseInt(mergedObject.city_id, 10):"",
+                degree_level_id:mergedObject.degree_level_id ?  parseInt(mergedObject.degree_level_id, 10) :"",
+                departmentType:mergedObject.functional_area_id ? parseInt(mergedObject.functional_area_id, 10):"",
+                job_type_id:mergedObject.job_type_id ?  parseInt(mergedObject.job_type_id, 10): "",
+                salary_max:mergedObject.salary_max ? parseInt(mergedObject.salary_max, 10):"",
+                salary_min: mergedObject.salary_min ? parseInt(mergedObject.salary_min, 10): "",
+                search: mergedObject.search
+       }
+      
         // Make an AJAX request
        $.ajax({
-            url: '{{url('/')}}/jobs-v2?page=1&search=ke toan',
+            url: `{{url('/')}}/jobs-v2?page=${page ? page: 1}`,
             type: 'GET',
             data: {
-                search : "kế toán"
+                city_id:mergedObject_convert.city_id,
+                departmentType:mergedObject_convert.departmentType,
+                salary_min:mergedObject_convert.salary_min,
+                salary_max:mergedObject_convert.salary_max,
+                search:mergedObject.search,
+                job_type_id:mergedObject.job_type_id,
+                levelDegree:mergedObject.degree_level_id
+
             },
             success: function(data) {
-              
+                console.log(data.data);
                 renderJobList(data.data);
             },
             error: function(error) {
@@ -501,9 +479,8 @@
         });
     }
 
-    const  renderJobList = async (data) => {
-        
-        
+    const  renderJobList = async (data) => {        
+       
         // Assuming data is an array of job objects
         var jobListing = $('.searchList.jobs-side-list');
         jobListing.empty(); // Clear previous data

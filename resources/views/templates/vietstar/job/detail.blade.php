@@ -428,6 +428,13 @@ $company = $job->getCompany();
                   
 
                             @foreach ($jobOfCompany as $jobitem)
+                            @php
+                                   
+                                    $functionarea = $jobitem->functionalArea;
+                                    $city = $jobitem->city->city;
+                                    $from = round($jobitem->salary_from/1000000,0);
+                                    $to = round($jobitem->salary_to/1000000,0)
+                            @endphp
                             <div class="related-jobs-item item-job mb-3">
                             <div class="logo-company">
                                 <a href="#"
@@ -471,18 +478,31 @@ $company = $job->getCompany();
                                     <!--rank-salary and place Start-->
                                     <div class="info-item box-meta" bis_skin_checked="1">
                                         <div class="rank-salary" bis_skin_checked="1">
-                                            <span class="fas fa-money-bill"></span> Thương lượng
+                                            <span class="fas fa-money-bill"></span> 
+                                                   
+                                                    @if($jobitem->salary_type == \App\Job::SALARY_TYPE_FROM)
+                                                    <span class="fas fa-dollar-sign"></span> {{__('From: ')}} {{$from}}
+                                                    {{__('million')}} ({{$jobitem->salary_currency}})
+                                                    @elseif($jobitem->salary_type == \App\Job::SALARY_TYPE_TO)
+                                                    <span class="fas fa-dollar-sign"></span> {{__('Up To: ')}} {{$to}}
+                                                    {{__('million')}} ({{$jobitem->salary_currency}})
+                                                    @elseif($jobitem->salary_type == \App\Job::SALARY_TYPE_RANGE)
+                                                    <span class="fas fa-dollar-sign"></span> {{$from}} - {{$to}}
+                                                    {{__('million')}} ({{$jobitem->salary_currency}})
+                                                    @elseif($jobitem->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
+                                                    <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
+                                                    @else
+                                                    <span class="fas fa-dollar-sign"></span> {{__('Salary Not provided')}}
+                                                    @endif
+
                                         </div>
                                         <div class="navbar__link-separator" bis_skin_checked="1"></div>
                                         <!--meta-city-->
-                                        <?php
-                                        echo "Hello World!";
-                                        ?>
+                                   
                                         
                                         <div class="meta-city" bis_skin_checked="1">
-                                            {{$jobitem->location}}
-                                            <!-- <i class="far fa-map-marker-alt"></i> -->
-                                           {{ !empty($jobitem->location) ? $jobitem->location :  "ho co"}}
+                                            {{$city}}
+                                       
                                         </div>
 
 
@@ -500,21 +520,16 @@ $company = $job->getCompany();
                                 </div>
                                 <div class="caption" bis_skin_checked="1">
                                     <div class="welfare" bis_skin_checked="1">
+                                        
                                         <div class="box-meta" bis_skin_checked="1">
                                             <!-- <i class="fas fa-dollar-sign"></i>  -->
                                             <span>
                                                 <!-- Chế độ thưởng -->
-                                                Automative
+                                                {{$functionarea->functional_area }}
                                             </span>
 
                                         </div>
-                                        <div class="box-meta" bis_skin_checked="1">
-                                            <!-- <i class="fas fa-graduation-cap"></i> -->
-                                            <span>
-                                                <!-- Đào tạo -->
-                                                Automative Infomation
-                                            </span>
-                                        </div>
+                                        
 
                                     </div>
 
@@ -724,18 +739,25 @@ $company = $job->getCompany();
                         Xem tất cả công việc<i class="fas fa-arrow-right ms-2"></i></a>
                 </div>
                 <!-- related jobs Slider -->
-
+               
                 <div class="related-jobs-company  row g-2" bis_skin_checked="1">
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="row g-2">
                                 @foreach ($relatedJobs as $relatedJob)
+                                @php
+                                    $relatedJob_name = $relatedJob->company->name;
+                                    $relatedJob_logo = $relatedJob->company->logo;
+                                    $relatedJob_city = $relatedJob->city->city;
+                                    $relatedJob_from = round($relatedJob->salary_from/1000000,0);
+                                    $relatedJob_to = round($relatedJob->salary_to/1000000,0)
+                                @endphp
                                     <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
                                         <div class="card-news p-3" bis_skin_checked="1">
-                                            @if($relatedJob->logo)
+                                            @if($relatedJob_logo)
                                             <div class="card-news__icon" bis_skin_checked="1">
-                                                <img src="{{url('/')}}/company_logos/{{$relatedJob->logo}}"
+                                                <img src="{{url('/')}}/company_logos/{{$relatedJob_logo}}"
                                                     alt="{{$relatedJob->title}}">
                                             </div>
                                             @else 
@@ -748,17 +770,28 @@ $company = $job->getCompany();
                                                 <h6 class="card-news__content-title"><a
                                                         href="{{url('/')}}/job/{{$relatedJob->slug}}"
                                                         title="{{$relatedJob->title}}">{{$relatedJob->title}}</a></h6>
-                                                <p class="card-news__content-detail">Công ty TNHH VBI</p>
+                                                <p class="card-news__content-detail">{{$relatedJob_name}}</p>
                                                 <div class="card-news__content-footer" bis_skin_checked="1">
                                                     <div class="card-news__content-footer__location"
                                                         bis_skin_checked="1">
-                                                        <span class="badge rounded-pill pill pill-location"></span>
-                                                        <span class="badge rounded-pill pill pill-worktime">Tp. Hà
-                                                            Nội</span>
+                                                        <span class="badge rounded-pill pill pill-location">{{$relatedJob_city}}</span>
+                                                        <span class="badge rounded-pill pill pill-worktime"></span>
                                                     </div>
                                                     <div class="card-news__content-footer__salary" bis_skin_checked="1">
-                                                        15000000 VND -
-                                                        0 VND
+                                                        @if($relatedJob->salary_type == \App\Job::SALARY_TYPE_FROM)
+                                                        <span class="fas fa-dollar-sign"></span> {{__('From: ')}} {{$relatedJob_from}}
+                                                        {{__('million')}} ({{$relatedJob->salary_currency}})
+                                                        @elseif($relatedJob->salary_type == \App\Job::SALARY_TYPE_TO)
+                                                        <span class="fas fa-dollar-sign"></span> {{__('Up To: ')}} {{$relatedJob_to}}
+                                                        {{__('million')}} ({{$relatedJob->salary_currency}})
+                                                        @elseif($relatedJob->salary_type == \App\Job::SALARY_TYPE_RANGE)
+                                                        <span class="fas fa-dollar-sign"></span> {{$relatedJob_from}} - {{$relatedJob_to}}
+                                                        {{__('million')}} ({{$relatedJob->salary_currency}})
+                                                        @elseif($relatedJob->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
+                                                        <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
+                                                        @else
+                                                        <span class="fas fa-dollar-sign"></span> {{__('Salary Not provided')}}
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -946,92 +979,60 @@ $company = $job->getCompany();
                             </div>
                             <div class="swiper-slide">
                                 <div class="row g-2">
+                                @foreach ($relatedJobs as $relatedJob)
+                                @php
+                                    $relatedJob_name = $relatedJob->company->name;
+                                    $relatedJob_logo = $relatedJob->company->logo;
+                                    $relatedJob_city = $relatedJob->city->city;
+                                    $relatedJob_from = round($relatedJob->salary_from/1000000,0);
+                                    $relatedJob_to = round($relatedJob->salary_to/1000000,0)
+                                @endphp
                                     <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
                                         <div class="card-news p-3" bis_skin_checked="1">
+                                            @if($relatedJob_logo)
                                             <div class="card-news__icon" bis_skin_checked="1">
-                                                <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg"
-                                                    alt="Công ty TNHH VBI">
+                                                <img src="{{url('/')}}/company_logos/{{$relatedJob_logo}}"
+                                                    alt="{{$relatedJob->title}}">
                                             </div>
+                                            @else 
+                                            <div class="card-news__icon" bis_skin_checked="1">
+                                                <img src="{{url('/')}}/company_logos/no-logo.png"
+                                                    alt="{{$relatedJob->title}}">
+                                            </div>
+                                            @endif
                                             <div class="card-news__content" bis_skin_checked="1">
                                                 <h6 class="card-news__content-title"><a
-                                                        href="http://jobvieclam.com/job/ke-toan-phai-thu-30"
-                                                        title="Kế Toán Phải Thu">Kế
-                                                        Toán Phải Thu</a></h6>
-                                                <p class="card-news__content-detail">Công ty TNHH VBI</p>
+                                                        href="{{url('/')}}/job/{{$relatedJob->slug}}"
+                                                        title="{{$relatedJob->title}}">{{$relatedJob->title}}</a></h6>
+                                                <p class="card-news__content-detail">{{$relatedJob_name}}</p>
                                                 <div class="card-news__content-footer" bis_skin_checked="1">
                                                     <div class="card-news__content-footer__location"
                                                         bis_skin_checked="1">
-                                                        <span class="badge rounded-pill pill pill-location"></span>
-                                                        <span class="badge rounded-pill pill pill-worktime">Tp. Hà
-                                                            Nội</span>
+                                                        <span class="badge rounded-pill pill pill-location">{{$relatedJob_city}}</span>
+                                                        <span class="badge rounded-pill pill pill-worktime"></span>
                                                     </div>
                                                     <div class="card-news__content-footer__salary" bis_skin_checked="1">
-                                                        15000000 VND -
-                                                        0 VND
+                                                        @if($relatedJob->salary_type == \App\Job::SALARY_TYPE_FROM)
+                                                        <span class="fas fa-dollar-sign"></span> {{__('From: ')}} {{$relatedJob_from}}
+                                                        {{__('million')}} ({{$relatedJob->salary_currency}})
+                                                        @elseif($relatedJob->salary_type == \App\Job::SALARY_TYPE_TO)
+                                                        <span class="fas fa-dollar-sign"></span> {{__('Up To: ')}} {{$relatedJob_to}}
+                                                        {{__('million')}} ({{$relatedJob->salary_currency}})
+                                                        @elseif($relatedJob->salary_type == \App\Job::SALARY_TYPE_RANGE)
+                                                        <span class="fas fa-dollar-sign"></span> {{$relatedJob_from}} - {{$relatedJob_to}}
+                                                        {{__('million')}} ({{$relatedJob->salary_currency}})
+                                                        @elseif($relatedJob->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
+                                                        <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
+                                                        @else
+                                                        <span class="fas fa-dollar-sign"></span> {{__('Salary Not provided')}}
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
-                                        <div class="card-news p-3" bis_skin_checked="1">
-                                            <div class="card-news__icon" bis_skin_checked="1">
-                                                <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg"
-                                                    alt="Công ty TNHH VBI">
-                                            </div>
-                                            <div class="card-news__content" bis_skin_checked="1">
-                                                <h6 class="card-news__content-title"><a
-                                                        href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
-                                                        title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự -
-                                                        Tuyển Dụng
-                                                        (HR)</a>
-                                                </h6>
-                                                <p class="card-news__content-detail">Công ty TNHH VBI</p>
-                                                <div class="card-news__content-footer" bis_skin_checked="1">
-                                                    <div class="card-news__content-footer__location"
-                                                        bis_skin_checked="1">
-                                                        <span class="badge rounded-pill pill pill-location"></span>
-                                                        <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí
-                                                            Minh</span>
-                                                    </div>
-                                                    <div class="card-news__content-footer__salary" bis_skin_checked="1">
-                                                        3000000 VND -
-                                                        VND
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
-                                        <div class="card-news p-3" bis_skin_checked="1">
-                                            <div class="card-news__icon" bis_skin_checked="1">
-                                                <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg"
-                                                    alt="Công ty TNHH VBI">
-                                            </div>
-                                            <div class="card-news__content" bis_skin_checked="1">
-                                                <h6 class="card-news__content-title"><a
-                                                        href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
-                                                        title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự -
-                                                        Tuyển Dụng
-                                                        (HR)</a>
-                                                </h6>
-                                                <p class="card-news__content-detail">Công ty TNHH VBI</p>
-                                                <div class="card-news__content-footer" bis_skin_checked="1">
-                                                    <div class="card-news__content-footer__location"
-                                                        bis_skin_checked="1">
-                                                        <span class="badge rounded-pill pill pill-location"></span>
-                                                        <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí
-                                                            Minh</span>
-                                                    </div>
-                                                    <div class="card-news__content-footer__salary" bis_skin_checked="1">
-                                                        3000000 VND -
-                                                        VND
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
+                                @endforeach
+                                    <!-- <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
                                         <div class="card-news p-3" bis_skin_checked="1">
                                             <div class="card-news__icon" bis_skin_checked="1">
                                                 <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg"
@@ -1147,6 +1148,67 @@ $company = $job->getCompany();
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
+                                        <div class="card-news p-3" bis_skin_checked="1">
+                                            <div class="card-news__icon" bis_skin_checked="1">
+                                                <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg"
+                                                    alt="Công ty TNHH VBI">
+                                            </div>
+                                            <div class="card-news__content" bis_skin_checked="1">
+                                                <h6 class="card-news__content-title"><a
+                                                        href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
+                                                        title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự -
+                                                        Tuyển Dụng
+                                                        (HR)</a>
+                                                </h6>
+                                                <p class="card-news__content-detail">Công ty TNHH VBI</p>
+                                                <div class="card-news__content-footer" bis_skin_checked="1">
+                                                    <div class="card-news__content-footer__location"
+                                                        bis_skin_checked="1">
+                                                        <span class="badge rounded-pill pill pill-location"></span>
+                                                        <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí
+                                                            Minh</span>
+                                                    </div>
+                                                    <div class="card-news__content-footer__salary" bis_skin_checked="1">
+                                                        3000000 VND -
+                                                        VND
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
+                                        <div class="card-news p-3" bis_skin_checked="1">
+                                            <div class="card-news__icon" bis_skin_checked="1">
+                                                <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg"
+                                                    alt="Công ty TNHH VBI">
+                                            </div>
+                                            <div class="card-news__content" bis_skin_checked="1">
+                                                <h6 class="card-news__content-title"><a
+                                                        href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
+                                                        title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự -
+                                                        Tuyển Dụng
+                                                        (HR)</a>
+                                                </h6>
+                                                <p class="card-news__content-detail">Công ty TNHH VBI</p>
+                                                <div class="card-news__content-footer" bis_skin_checked="1">
+                                                    <div class="card-news__content-footer__location"
+                                                        bis_skin_checked="1">
+                                                        <span class="badge rounded-pill pill pill-location"></span>
+                                                        <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí
+                                                            Minh</span>
+                                                    </div>
+                                                    <div class="card-news__content-footer__salary" bis_skin_checked="1">
+                                                        3000000 VND -
+                                                        VND
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>

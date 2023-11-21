@@ -141,28 +141,28 @@ class JobController extends Controller
                     'seo_other' => ''
         );
 
-        $jobOfCompany = Job::where('is_active', 1)
+         $jobOfCompany = Job::where('is_active', 1)
                             ->where('company_id',$job->company_id)
                             ->where('id', '!=', $job->id)
                             ->orderby('created_at', 'desc');
-                            $jobOfCompany = $jobOfCompany->with('company');
-                            $qujobOfCompanyery =$jobOfCompany->with('functionalArea');
-                            $jobOfCompany =$jobOfCompany->with('jobType');
-                            $jobOfCompany =$jobOfCompany->with('degreeLevel');
-                            $jobOfCompany= $jobOfCompany->with('city');
-                            $jobOfCompany=  $jobOfCompany->get();
-            $relatedJobs = Job::where('is_active', 1)
-            ->where("functional_area_id",$job->functional_area_id)
-            ->where("industry_id",$job->industry_id)
-            ->where('id', '!=', $job->id);
-            $relatedJobs = $job->with('company');
-            $relatedJobs =$job->with('functionalArea');
-            $relatedJobs =$job->with('jobType');
-            $relatedJobs =$job->with('degreeLevel');
-            $relatedJobs= $job->with('city');
-            $relatedJobs = $job->paginate(10);
-    
-            return view(config('app.THEME_PATH').'.job.detail')
+        $jobOfCompany = $jobOfCompany->with('company');
+        $qujobOfCompanyery =$jobOfCompany->with('functionalArea');
+        $jobOfCompany =$jobOfCompany->with('jobType');
+        $jobOfCompany =$jobOfCompany->with('degreeLevel');
+        $jobOfCompany= $jobOfCompany->with('city');
+        $jobOfCompany=  $jobOfCompany->get();
+
+        $relatedJobs = Job::where('is_active', 1)
+        ->where("functional_area_id",$job->functional_area_id)
+        ->where("industry_id",$job->industry_id)
+        ->where('id', '!=', $job->id)->orderby('created_at', 'desc');
+        $relatedJobs = $relatedJobs->with('company');
+        $relatedJobs =$relatedJobs->with('functionalArea');
+        $relatedJobs =$relatedJobs->with('jobType');
+        $relatedJobs =$relatedJobs->with('degreeLevel');
+        $relatedJobs= $relatedJobs->with('city');
+        $relatedJobs = $relatedJobs->paginate(9);
+         return view(config('app.THEME_PATH').'.job.detail')
                         ->with('job', $job)
                         ->with('jobOfCompany', $jobOfCompany)
                         ->with('relatedJobs', $relatedJobs)

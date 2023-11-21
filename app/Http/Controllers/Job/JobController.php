@@ -144,10 +144,15 @@ class JobController extends Controller
         $jobOfCompany = Job::where('is_active', 1)
                             ->where('company_id',$job->company_id)
                             ->where('id', '!=', $job->id)
-                            ->orderby('created_at', 'desc')
-                            ->get();
+                            ->orderby('created_at', 'desc');
+                            $jobOfCompany = $jobOfCompany->with('company');
+                            $qujobOfCompanyery =$jobOfCompany->with('functionalArea');
+                            $jobOfCompany =$jobOfCompany->with('jobType');
+                            $jobOfCompany =$jobOfCompany->with('degreeLevel');
+                            $jobOfCompany= $jobOfCompany->with('city');
+                            $jobOfCompany=  $jobOfCompany->get();
         
-        
+       
         return view(config('app.THEME_PATH').'.job.detail')
                         ->with('job', $job)
                         ->with('jobOfCompany', $jobOfCompany)

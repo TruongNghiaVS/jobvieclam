@@ -11,6 +11,7 @@
 
 @php
 $company = $job->getCompany();
+
 @endphp
 <!-- Company cover -->
 

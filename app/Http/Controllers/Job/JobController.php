@@ -129,7 +129,7 @@ class JobController extends Controller
         $limit = 5;
         $jobSkills = DataArrayHelper::defaultJobSkillsArray();
 
-        $relatedJobs = $this->findJobDetails($search, $job_titles, $company_ids, $industry_ids, $job_skill_ids, $functional_area_ids, $country_ids, $state_ids, $city_ids, $is_freelance, $career_level_ids, $job_type_ids, $job_shift_ids, $gender_ids, $degree_level_ids, $job_experience_ids, $salary_from, $salary_to, $salary_currency, $is_featured, $order_by, $limit);
+        // $relatedJobs = $this->findJobDetails($search, $job_titles, $company_ids, $industry_ids, $job_skill_ids, $functional_area_ids, $country_ids, $state_ids, $city_ids, $is_freelance, $career_level_ids, $job_type_ids, $job_shift_ids, $gender_ids, $degree_level_ids, $job_experience_ids, $salary_from, $salary_to, $salary_currency, $is_featured, $order_by, $limit);
         /*         * ***************************************** */
 
         $seoArray = $this->getSEO((array) $job->functional_area_id, (array) $job->country_id, (array) $job->state_id, (array) $job->city_id, (array) $job->career_level_id, (array) $job->job_type_id, (array) $job->job_shift_id, (array) $job->gender_id, (array) $job->degree_level_id, (array) $job->job_experience_id);
@@ -140,14 +140,52 @@ class JobController extends Controller
                     'seo_keywords' => $seoArray['keywords'],
                     'seo_other' => ''
         );
+
+        $jobOfCompany = Job::where('is_active', 1)
+                            ->where('company_id',$job->company_id)
+                            ->where('id', '!=', $job->id)
+                            ->orderby('created_at', 'desc')
+                            ->get();
+        
+        
         return view(config('app.THEME_PATH').'.job.detail')
                         ->with('job', $job)
+                        ->with('jobOfCompany', $jobOfCompany)
                         ->with('relatedJobs', $relatedJobs)
                         ->with('job_skill_ids', $job_skill_ids)
                         ->with('jobSkills', $jobSkills)
                         ->with('seo', $seo);
     }
+    public function jobRelation(Request $request, $job_slug)
+    {
+        $jobSlug = $request->input("job_slug");
+        $job = Job::where('slug', 'like', $job_slug)->firstOrFail();
+        if($job)
+        {
+            $jobRelation = Job::where('is_active', 1)
+                        ->where("functional_area_id",$job->functional_area_id)
+                        ->where("industry_id",$jobRelation->industry_id)
+                        ->where('id', '!=', $jobRelation->id);
+            $jobRelation = $jobRelation->with('company');
+            $jobRelation =$jobRelation->with('functionalArea');
+            $jobRelation =$jobRelation->with('jobType');
+            $jobRelation =$jobRelation->with('degreeLevel');
+            $jobRelation= $jobRelation->with('city');
+             //created_at
+            return $query->paginate(10);
+           
+       
 
+        }
+        else 
+        {
+            return null;
+        }
+       
+    
+     }
+
+       
     public function jobDetailPopup(Request $request, $job_slug)
     {
         $job = Job::where('slug', 'like', $job_slug)->firstOrFail();

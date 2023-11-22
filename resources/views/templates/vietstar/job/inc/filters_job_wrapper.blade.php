@@ -187,15 +187,20 @@ dd($salaryFroms)
                                         </li>
                                     </form>
 
-                                    @foreach ($salaryFroms as $key => $salaryFrom) 
+                                  
                                         <li class="option">
-                                            <span class="option-text" key="{{$key}}">{{$salaryFrom}}</span>
+                                            <span class="option-text" key="" salary_max="10" salary_min="1" >Dưới 10 triệu</span>
                                         </li>
-                                    @endforeach
-                                    
+                                        <li class="option">
+                                            <span class="option-text" key="" salary_max="15" salary_min="10">10 - 15 triệu</span>
+                                        </li>
+                                        <li class="option">
+                                            <span class="option-text" key="" salary_max="20" salary_min="15">15 - 30 triệu</span>
+                                        </li>
+                                        <li class="option">
+                                            <span class="option-text" key=""  salary_min="30" >Trên 30 triệu</span>
+                                        </li>
                                 </ul>
-                        
-                    
                             </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
@@ -372,14 +377,22 @@ dd($salaryFroms)
 <script type="text/javascript">
 
     $(document).ready(function() {
+        var salary_max,saralymin;
         $('.select-menu').on('click', '.select-btn', function() {
             $(this).parents('.select-menu').toggleClass('active');
         });
 
         $('.select-menu').on('click', '.option', function() {
             var selectedOption = $(this).find('.option-text').text();
+            salary_max = $(this).find('.option-text').attr("salary_max");
+            salary_min = $(this).find('.option-text').attr("salary_min");
+        
+            $(' #salary_max').val(salary_max)
+            $(' #salary_min').val(salary_min)
+
             $('.select-menu .sBtn-text').text(selectedOption);
             $('.select-menu').removeClass('active');
+            $('.btn-custom-salary').prop('disabled', false);
         });
     });
 
@@ -399,7 +412,8 @@ dd($salaryFroms)
         console.log(input1Value,input2Value);
         
 
-        if (input1Value && input2Value && input1Value != input2Value  && input1Value > 0 && input2Value > 0 && input2Value > input1Value) {
+        if ((input1Value && input2Value) && (input1Value != input2Value)  && (input1Value > 0 && input2Value > 0) && (input2Value > input1Value)) {
+           
             $('.btn-custom-salary').prop('disabled', false);
         }
         else {

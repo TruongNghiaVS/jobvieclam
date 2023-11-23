@@ -43,17 +43,30 @@
 <section class="section-register-new-jobs"
     style="background-image: url({{ asset('/vietstar/imgs') }}/banner-register-new-jobs.jpg);">
     <div class="container">@include('flash::message')
-        {{--<form action="{{ route('contact-job') }}" method="post">--}}
-        @csrf
+        <form id="form-group-mail"  class="form-horizontal needs-validation" novalidate>
+     
         <h3 class="title white">
             Đăng ký theo dõi để cập nhật về cơ hội việc làm mới và phù hợp nhất
-
         </h3>
-        <div class="form-group-mail">
-            <input type="email" name="email" class="form-control" placeholder="Nhập địa chỉ email của bạn">
-            <button type="submit" class="btn btn-register-now" id="btn-register-now">Đăng ký ngay</button>
+        <div class="d-flex justify-content-center  align-items-start">
+
+            <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }} w-50">
+                    <input id="email" type="email" class="form-control w-100" name="email" value="{{ old('email') }}" required autofocus placeholder="{{__('Email Address')}}">
+                    <div class="invalid-feedback email-error">
+                            {{__('Email is required')}}
+                    </div>  
+                             
+                
+            </div>
+            <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <button type="submit" class="btn btn-primary" id="btn-register-now">Đăng ký ngay</button>
+                    <div class="invalid-feedback email-error">
+                        
+                    </div>            
+            </div>
+           
         </div>
-        {{--</form>--}}
+        </form>
     </div>
 </section>
 <!-- ./Đăng ký nhận việc làm mới và phù hợp -->
@@ -121,6 +134,80 @@
 {{-- toastr js --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
 <script>
+
+(function () {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+        }, false)
+        })
+    })()
+$(document).ready(function() {
+    $('#form-group-mail').submit(function(event) {
+        var isValid = true;
+        event.preventDefault()
+        
+        // Check each input field for emptiness
+        $('#form-group-mail input').each(function() {
+            if (!$(this).val()) {
+                isValid = false;
+                $(this).addClass('is-invalid');
+              
+            }
+        });
+
+        $("#form-group-mail").find(":input").prop("disabled", false);
+
+
+        var email = $('#email').val();
+
+        // Simple email validation using a regular expression
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (emailRegex.test(email)) {
+            // Email is valid
+            $('#email').removeClass('is-invalid');
+            $('#email').addClass('is-valid');
+
+           
+        } else {
+            // Email is invalid
+           
+            $('#email').removeClass('is-valid');
+            $('#email').addClass('is-invalid');
+            $('.email-error').text('{{__('The email must be a valid email address')}}')
+        }
+
+
+        isValid = this.checkValidity();
+
+
+        if (!isValid) {
+            event.preventDefault(); // Prevent the form from submitting
+        }
+     
+
+        // Remove validation class on input change
+        $('#form-group-mail input').on('input', function() {
+            $(this).removeClass('is-invalid');
+        });
+});
+});
+
+
+
+
 $(document).ready(function($) {
     @if(Session::has('success'))
     toastr.success(`{{ Session::get('success')}}`);
@@ -186,7 +273,7 @@ $(document).ready(function($) {
 });
 
 $(document).on('click', '#btn-register-now', function() {
-    var email = $('input[name="email"]').val();
+    var email = $('#form-group-mail input[name="email"]').val();
     var url = "{{ route('job-email-alert') . '?email=_email'}}";
     url = url.replace('_email', email);
     $.ajax({

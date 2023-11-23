@@ -17,7 +17,7 @@
     @include('templates.vietstar.job.inc.filters_job_wrapper')
 
     <div class="container Jobpage__content">
-        <form id="" action="{{route('job.list')}}" method="get">
+   
             <!-- Search Result and sidebar start -->
             <div class="row">
                 <div class="col-lg-9 col-sm-12">
@@ -25,36 +25,34 @@
                         <div class="sort-wrapped">
                             <div class="title sort-label">Sắp xếp theo</div>
                             <div class="sort-item-wrapped bg-white p-3">
-                                <form>
-
-
-                                    <!-- <div class="sort-item-wrapped__item active">Mặc định</div>
-                                <div class="sort-item-wrapped__item">Lương &lpar; cao - thấp &rpar; </div>
-                                <div class="sort-item-wrapped__item">Ngày đăng &lpar; mới nhất &rpar;</div>
-                                <div class="sort-item-wrapped__item">Ngày đăng &lpar; cũ nhất &rpar;</div>
-                                <div class="sort-item-wrapped__item">Làm việc từ xa</div> -->
+                                <form id="sort_form_by">
                                     <div class="form-check-inline p-1">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="default" value="" checked>
+                                        <input class="form-check-input" type="radio" name="sort_by" id="default" value="" checked>
                                         <label class="form-check-label px-1" for="default">Mặc định</label>
                                     </div>
 
+                                    
                                     <div class="form-check-inline p-1">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                        <label class="form-check-label px-1" for="inlineRadio1">Lương &lpar; cao - thấp &rpar;</label>
+                                        <input class="form-check-input" type="radio" name="sort_by" id="new_created" value="new">
+                                        <label class="form-check-label px-1" for="new_created">{{__('Date Posted')}}  &lpar;  {{__('latest')}} &rpar;</label>
                                     </div>
                                     <div class="form-check-inline p-1">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                        <label class="form-check-label px-1" for="inlineRadio2">Ngày đăng &lpar; mới nhất &rpar;</label>
-                                    </div>
-                                    <div class="form-check-inline p-1">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                                        <label class="form-check-label px-1" for="inlineRadio3">Ngày đăng &lpar; cũ nhất &rpar;</label>
-                                    </div>
-                                    <div class="form-check-inline p-1">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
-                                        <label class="form-check-label px-1" for="inlineRadio4">Làm việc từ xa</label>
+                                        <input class="form-check-input" type="radio" name="sort_by" id="old_created" value="older">
+                                        <label class="form-check-label px-1" for="old_created">{{__('Date Posted')}} &lpar; {{__('oldest')}}  &rpar;</label>
                                     </div>
                                 </form>
+                                <form id="remote_form">
+                                    <div class="form-check-inline p-1 d-flex align-items-center">
+
+                                        <label class="switch">
+                                            <input type="checkbox" id="wfh">
+                                            <span class="slider"></span>
+                                        </label>
+                                        <label class="form-check-label px-1" for="wfh">{{__('Work from home')}}</label>
+                                    
+                                    </div>
+                                </form>
+
                             </div>
                         </div>
                     </div>
@@ -293,6 +291,59 @@
             opacity: 0.5;
             cursor: not-allowed;
     }
+    .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            border-radius: 17px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            border-radius: 17px;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            border-radius: 50%;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
 </style>
 @endpush
 @push('scripts')
@@ -311,6 +362,8 @@
             return `{{__('Negotiable')}}`
 
     }
+
+    
 
     
 
@@ -357,6 +410,23 @@
     }
    
     $(document).ready(function() {
+        var checkedValue='';
+        console.log($('#sort_form_by  input[type="radio"]'));
+        $('#sort_form_by').prop('checked', true);
+
+        // Handle radio button change event
+        $('#sort_form_by input[type="radio"]').change(function() {
+            // Get the value of the checked radio button
+            checkedValue = $('#sort_form_by input[type="radio"]:checked').val();
+            fetchData(currentPage,checkedValue)
+        });
+
+        $('#remote_form input').change(function() {
+            // Get the state of the switch (on or off)
+            var switchState = $(this).is(':checked');
+            fetchData(currentPage,checkedValue,switchState)
+        });
+        
         // Simulated API endpoint (replace with your actual API endpoint)
         const apiEndpoint = '{{url('/')}}/jobs-v2';
         const itemsPerPage = 10;
@@ -492,11 +562,13 @@
                 });
             }
         }
-
+       
         // Function to handle AJAX call
-        function fetchData(page) {
-            console.log();
+        function fetchData(page,sort_by,wfh) {
+      
             var searchQuery = $('#job_filter').serializeArray();
+         
+      
     
             let mergedObject = searchQuery.reduce((result, currentObject) => {
     
@@ -506,6 +578,7 @@
                 result[key] = value;
                 return result;
             }, {});
+
            let mergedObject_convert = {
                     city_id: mergedObject.city_id ? parseInt(mergedObject.city_id, 10):"",
                     degree_level_id:mergedObject.degree_level_id ?  parseInt(mergedObject.degree_level_id, 10) :"",
@@ -513,7 +586,8 @@
                     job_type_id:mergedObject.job_type_id ?  parseInt(mergedObject.job_type_id, 10): "",
                     salary_max:mergedObject.salary_max ? parseInt(mergedObject.salary_max, 10):"",
                     salary_min: mergedObject.salary_min ? parseInt(mergedObject.salary_min, 10): "",
-                    search: mergedObject.search
+                    search: mergedObject.search,
+                    
            }
 
             $.ajax({
@@ -528,7 +602,9 @@
                     salary_max:mergedObject_convert.salary_max,
                     search:mergedObject.search,
                     job_type_id:mergedObject.job_type_id,
-                    levelDegree:mergedObject.degree_level_id
+                    levelDegree:mergedObject.degree_level_id,
+                    order_by:sort_by,
+                    wfh:wfh ? 1 : 0 ,
                  },
                 beforeSend: showLoading,
                 complete: hideLoading,

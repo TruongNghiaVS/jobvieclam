@@ -187,9 +187,6 @@ class JobController extends Controller
             $jobRelation= $jobRelation->with('city');
              //created_at
             return $query->paginate(10);
-           
-       
-
         }
         else 
         {

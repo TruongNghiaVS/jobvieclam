@@ -14,9 +14,8 @@ return [
       |            "sparkpost", "log", "array"
       |
      */
-    'driver' => env('MAIL_DRIVER', 'smtp'),
-    'default' => env('
-    ', 'smtp'),
+    'driver' => env('MAIL_DRIVER', 'mailgun'),
+    'default' => env('MAIL_MAILER', 'smtp'),
     /*
       |--------------------------------------------------------------------------
       | SMTP Host Address
@@ -103,11 +102,4 @@ return [
             resource_path('views/vendor/mail'),
         ],
     ],
-    'stream' => [
-      'ssl'=> [
-         'verify_peer'=>false,
-         'verify_peer_name'=>false,
-         'allow_self_signed'=>true,
-      ],
- ],
 ];

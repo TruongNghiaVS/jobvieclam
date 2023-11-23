@@ -29,7 +29,7 @@ class CompanyRegisteredMailable extends Mailable
      */
     public function build()
     {
-        return $this->to(config('mail.recieve_to.address'), config('mail.recieve_to.name'))
+        return $this->to('nghiai06@gmail.com', "demo")
                         ->subject('Employer/Company "' . $this->company->name . '" has been registered on "' . config('app.name'))
                         ->view(config('app.THEME_PATH').'.emails.company_registered_message')
                         ->with(

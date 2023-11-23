@@ -15,6 +15,8 @@ use App\Http\Requests\Front\CompanyFrontRegisterFormRequest;
 use Illuminate\Auth\Events\Registered;
 use App\Events\CompanyRegistered;
 use Illuminate\Support\Str;
+use Mail;
+use Carbon\Carbon;
 use Jrean\UserVerification\Facades\UserVerification as UserVerificationFacade;
 use \stdClass;
 class RegisterController extends Controller
@@ -52,7 +54,7 @@ use RegistersUsers;
      */
     public function __construct()
     {
-        $this->middleware('company.guest', ['except' => ['getVerification', 'getVerificationError']]);
+        $this->middleware('company.guest', ['except' => ['getVerification','testmail', 'getVerificationError']]);
     }
 
     /**
@@ -122,7 +124,7 @@ use RegistersUsers;
         return $this->registered($request, $company) ?: redirect($this->redirectPath());
     }
 
-
+  
 
     public function getVerification(Request $request, $token)
     {

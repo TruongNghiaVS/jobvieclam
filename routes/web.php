@@ -26,9 +26,12 @@ $real_path = realpath(__DIR__) . DIRECTORY_SEPARATOR . 'front_routes' . DIRECTOR
 
 /* * ******** IndexController ************ */
 
+
+
 Route::get('/', 'IndexController@index')->name('index');
 
 Route::get('/employers', 'EmployerController@index')->name('employerIndex');
+Route::get('/employers/active', 'EmployerController@Active')->name('employerActive');
 Route::get('/about-us', 'IndexController@aboutUs')->name('about_us');
 Route::get('/check-time', 'IndexController@checkTime')->name('check-time');
 Route::post('set-locale', 'IndexController@setLocale')->name('set.locale');
@@ -134,12 +137,11 @@ include_once($real_path . 'company_auth.php');
 
 include_once($real_path . 'admin_auth.php');
 
-
-
-
+Route::post('contact/CreateRequest', 'ContactController@ContactRequest')->name('contact-request');
+Route::post('contact/Addadvice', 'ContactController@AdviceRequest')->name('contact-advice');
+Route::post('contact/addEmailNotification', 'ContactController@NoficationEmail')->name('contact-email');
 
 Route::get('blog', 'BlogController@index')->name('blogs');
-
 Route::get('blog/search', 'BlogController@search')->name('blog-search');
 Route::get('blog/get-allcareer', 'BlogController@getAllCarrier')->name('blog-getAllCarrier');
 Route::get('blog/{slug}', 'BlogController@details')->name('blog-detail');

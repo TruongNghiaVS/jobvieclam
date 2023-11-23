@@ -1,6 +1,7 @@
 <?php
 
 Route::prefix('recruiter')->name('company.')->group(function () {
+    Route::get('/testmail', 'Company\Auth\RegisterController@testmail')->name('22');
     Route::get('/', 'Company\Auth\LoginController@showLoginForm');
     Route::get('/login', 'Company\Auth\LoginController@showLoginForm')->name('login');
     Route::post('/login', 'Company\Auth\LoginController@login');
@@ -8,6 +9,7 @@ Route::prefix('recruiter')->name('company.')->group(function () {
 
 
     // Registration Routes...
+    
     Route::get('/register', 'Company\Auth\RegisterController@showRegistrationForm')->name('register');
     Route::post('/register', 'Company\Auth\RegisterController@register');
     Route::get('/password/reset', 'Company\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');

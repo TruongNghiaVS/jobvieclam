@@ -121,6 +121,35 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="contact_success" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary d-flex justify-content-center">
+                        <h5 class="m-0 text-white">{{__('Alert')}}</h5>
+                     </div>
+					
+                    <div class="modal-body">
+                     
+                        <div class="thank-you-pop">
+							<img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
+                            <p class="text-center">
+                                Cảm ơn bạn đã liên hệ với chúng tôi.
+                            </p>
+                            <p class="text-center">
+                                Chúng tôi sẽ trả lời thắc mắc của bạn sau 02 ngày làm việc
+                            </p>
+                            <p class="text-center">
+                                Nếu không nhận được phải hồi vui lòng liên hệ 
+                            </p>
+                            <p class="text-center">
+                                Cảm ơn bạn đã chọn Jobvieclam
+                            </p>
+ 						</div>
+                    </div>
+        </div>
+    </div>
+</div>
 @include('templates.vietstar.includes.footer')
 @endsection
 
@@ -208,7 +237,7 @@ $(document).ready(function() {
 
     var textarea = $('#message_txt');
     var invalidFeedback = textarea.next('.message_txt-error');
-    console.log(textarea);
+   
     var text = textarea.val();
 
     if (text.trim() !== '') {
@@ -221,7 +250,64 @@ $(document).ready(function() {
         invalidFeedback.show();
     }
 
+    if (isValid) { 
+            var name = $('#contactform #name').val();
+            var email = $('#contactform #email').val();
+            var phone = $('#contactform #phoneId').val();
+            var token =  $('#contactform #token').val();
+            var subject =  $('#contactform #subject').val();
+            var text =  $('#contactform #message_txt').val();
+            
+            $.ajax({
+            type: "POST",
+            url:  `{{ route('contact-request') }}`,
+            datatype:"JSON",
+            data: {
+                phone:phone,
+                title:subject,
+                message:text,
+                email:email,
+                fullName:name
+            },
+            statusCode: {
+                202 :  function(responseObject, textStatus, jqXHR) {
+                    console.log(responseObject.error);
+        
+                },
+                401: function(responseObject, textStatus, jqXHR) {
+                    // No content found (404)
+                    console.log(responseObject.responseJSON);
+                    
+                    // This code will be executed if the server returns a 404 response
+                },
+                503: function(responseObject, textStatus, errorThrown) {
+                    // Service Unavailable (503)
+                    console.log(responseObject.error);
 
+                    // This code will be executed if the server returns a 503 response
+                }           
+                }
+                })
+                .done(function(data){
+                    $('#contact_success').modal('show');
+                    $('#contactform')[0].reset();
+
+                    $('#contactform input').removeClass('is-valid');
+                    $('#contactform input').removeClass('has-error');
+                    
+                
+                    setTimeout(()=>{
+                        $('#contact_success').modal('hide');
+                    },3000)
+                })
+                .fail(function(jqXHR, textStatus){
+                    
+                })
+                .always(function(jqXHR, textStatus) {
+                
+                });
+           
+    }
       
     // Remove validation class on input change
     

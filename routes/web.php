@@ -137,9 +137,9 @@ include_once($real_path . 'company_auth.php');
 
 include_once($real_path . 'admin_auth.php');
 
-Route::post('contact/CreateRequest', 'ContactController@ContactRequest')->name('contact-request');
-Route::post('contact/Addadvice', 'ContactController@AdviceRequest')->name('contact-advice');
-Route::post('contact/addEmailNotification', 'ContactController@NoficationEmail')->name('contact-email');
+Route::post('contact/CreateRequest', 'Contact\ContactController@ContactRequest')->name('contact-request');
+Route::post('contact/Addadvice', 'Contact\ContactController@AdviceRequest')->name('contact-advice');
+Route::post('contact/addEmailNotification', 'Contact\ContactController@NoficationEmail')->name('contact-email');
 
 Route::get('blog', 'BlogController@index')->name('blogs');
 Route::get('blog/search', 'BlogController@search')->name('blog-search');

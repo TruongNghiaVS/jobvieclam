@@ -14,7 +14,7 @@
         "doctrine/dbal": "^3.4",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1",
+        "guzzlehttp/guzzle": "^7.5",
         "intervention/image": "^2.5",
         "jrean/laravel-user-verification": "dev-master",
         "laracasts/flash": "^3.1",

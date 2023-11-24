@@ -674,7 +674,7 @@
                    
                   
                     <!-- <a href="{{url('/employers')}}" class="btn btn-primary">Dành cho Nhà tuyển dụng</a> -->
-                    <a href="http://42.115.94.180:9999/" class="btn btn-primary">Dành cho Nhà tuyển dụng</a>
+                    <a href="http://tuyendung.jobvieclam.com:9999" class="btn btn-primary">Dành cho Nhà tuyển dụng</a>
 
                  
                 </div>

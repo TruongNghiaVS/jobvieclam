@@ -122,6 +122,33 @@
 <!-- Testimonials End -->
 
 
+<div class="modal fade" id="contact_email_success" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary d-flex justify-content-center">
+                        <h5 class="m-0 text-white">{{__('Alert')}}</h5>
+                     </div>
+					
+                    <div class="modal-body">
+                     
+                        <div class="thank-you-pop">
+							<img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
+                            <p class="text-center">
+                                Cảm ơn bạn đã liên hệ với chúng tôi.
+                            </p>
+                            <p class="text-center">
+                               Hệ thống đã nghi nhận mail của bạn.
+                            </p>
+ 						</div>
+                         <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-primary btn-lg btn-block" data-dismiss="modal">{{__('Close')}}</button>
+                        </div>
+                    </div>
+        </div>
+    </div>
+</div>
+
+
 @include('templates.vietstar.includes.footer')
 @endsection
 @push('styles')
@@ -196,6 +223,62 @@ $(document).ready(function() {
         if (!isValid) {
             event.preventDefault(); // Prevent the form from submitting
         }
+
+        if (isValid) { 
+
+            var email = $('#form-group-mail #email').val();
+     
+            
+            $.ajax({
+            type: "POST",
+            url:  `{{ route('contact-email') }}`,
+            datatype:"JSON",
+            data: {
+                email:email,
+            },
+            statusCode: {
+                202 :  function(responseObject, textStatus, jqXHR) {
+                    console.log(responseObject.error);
+        
+                },
+                401: function(responseObject, textStatus, jqXHR) {
+                    // No content found (404)
+                    console.log(responseObject.responseJSON);
+                    
+                    // This code will be executed if the server returns a 404 response
+                },
+                503: function(responseObject, textStatus, errorThrown) {
+                    // Service Unavailable (503)
+                    console.log(responseObject.error);
+
+                    // This code will be executed if the server returns a 503 response
+                }           
+                }
+                })
+                .done(function(data){
+                    $("#contact_email_success").modal("show")
+                    
+                    $('#form-group-mail')[0].reset();
+                    $('#form-group-mail').removeClass("was-validated")
+                   
+                    
+
+
+                    setTimeout(()=>{
+                        $("#contact_email_success").modal("hide")
+
+                    },3000)
+                    
+                })
+                .fail(function(jqXHR, textStatus){
+                    
+                })
+                .always(function(jqXHR, textStatus) {
+                
+                });
+           
+    }
+    
      
 
         // Remove validation class on input change
@@ -272,25 +355,7 @@ $(document).ready(function($) {
     });
 });
 
-$(document).on('click', '#btn-register-now', function() {
-    var email = $('#form-group-mail input[name="email"]').val();
-    var url = "{{ route('job-email-alert') . '?email=_email'}}";
-    url = url.replace('_email', email);
-    $.ajax({
-        url: url,
-        type: "GET",
-        dataType: "json",
-        beforeSend: function() {},
-        success: function(data) {
-            console.log(data);
-            if (data.status == 'success') {
-                toastr.success(data.message);
-            } else {
-                toastr.error(data.message);
-            }
-        }
-    });
-});
+
 </script>
 {{-- @include('templates.vietstar.includes.country_state_city_js') --}}
 @endpush

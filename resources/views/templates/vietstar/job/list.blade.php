@@ -295,7 +295,7 @@
             position: relative;
             display: inline-block;
             width: 60px;
-            height: 34px;
+            height: 30px;
             border-radius: 17px;
         }
 
@@ -323,8 +323,8 @@
             content: "";
             height: 26px;
             width: 26px;
-            left: 4px;
-            bottom: 4px;
+            left: 3px;
+            bottom: 3px;
             background-color: white;
             border-radius: 50%;
             -webkit-transition: .4s;

@@ -201,10 +201,10 @@
                 <!-- <a class="btn_for_em" href="http://42.115.94.180:9999/"> -->
 
                 <div  class="btn_for_em__head">
-                    Dành cho
+                {{__('For')}}
                 </div> 
                 <div  class="btn_for_em__body">
-                    Nhà tuyển dụng
+                    {{__('Employer')}}
                 </div>    
                 </a>
                 

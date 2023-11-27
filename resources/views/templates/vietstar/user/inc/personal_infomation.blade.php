@@ -49,7 +49,7 @@
                         </strong>
                     </td>
                     <td class="table_value">
-                        Trần
+                      {{$user->first_name}}
                     </td>
                 </tr>
                 <tr>
@@ -59,7 +59,7 @@
                         </strong>
                     </td>
                     <td class="table_value">
-                        Trung
+                    {{$user->middle_name}}
                     </td>
                 </tr>
 
@@ -70,7 +70,7 @@
                         </strong>
                     </td>
                     <td class="table_value">
-                        Đức
+                    {{$user->last_name}}
                     </td>
                 </tr>
 
@@ -81,7 +81,7 @@
                         </strong>
                     </td>
                     <td class="table_value">
-                        Nam
+                         {{$user->gender_id == 15 ? "Nam": "Nữ" }}
                     </td>
                 </tr>
 
@@ -93,7 +93,7 @@
                         </strong>
                     </td>
                     <td class="table_value">
-                        Độc thân
+                         {{$user->marital_status_id == 21 ? "Độc thân": "Gia đình" }}
                     </td>
                 </tr>
 
@@ -118,7 +118,7 @@
                         </strong>
                     </td>
                     <td class="table_value">
-                        20/10/2001
+                       {{$user->date_of_birth}}
                     </td>
                 </tr>
             </tbody>
@@ -274,7 +274,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group {!! APFrmErrHelp::hasError($errors, 'first_name') !!}">
-                                <label for="">{{__('First Name')}}</label>
+                                <label for="">{{__('Last Name')}}</label>
                                 {!! Form::text('first_name', null, array('class'=>'form-control cursor-pointer', 'id'=>'first_name',
                                 'placeholder'=>__('First Name'))) !!}
                                 {!! APFrmErrHelp::showErrors($errors, 'first_name') !!}
@@ -290,7 +290,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group {!! APFrmErrHelp::hasError($errors, 'last_name') !!}">
-                                <label for="">{{__('Last Name')}}</label>
+                                <label for="">{{__('First Name')}}</label>
                                 {!! Form::text('last_name', null, array('class'=>'form-control', 'id'=>'last_name', 'placeholder'=>__('Last
                                 Name'))) !!}
                                 {!! APFrmErrHelp::showErrors($errors, 'last_name') !!}
@@ -412,9 +412,12 @@
 
         if (isValid) { 
             $.ajax({
-            type: "PUST",
-            url:  `{{ route('put.my.profile') }}`,
-            data: formObject,
+            type: "PUT",
+            url:  `{{ route('put.my.profilev2') }}`,
+            data: {
+                "_token": "{{ csrf_token() }}",
+                ...formObject
+            },
             statusCode: {
                 202 :  function(responseObject, textStatus, jqXHR) {
                     console.log(responseObject.error);
@@ -435,12 +438,13 @@
                 }
                 })
                 .done(function(data){
-                    // setTimeout(function() { 
-                    //     alert(data.message)
-                    //     window.location.href = data.urlRedirect;
-                    // }, 2000);
-                    // window.location.href =  "/home";
-                    console.log(data);
+                    // // setTimeout(function() { 
+                    // //     alert(data.message)
+                    // //     window.location.href = data.urlRedirect;
+                    // // }, 2000);
+                    //  window.location.href =  "/home";
+                    //  location.reload();
+                   
                     
                 })
                 .fail(function(jqXHR, textStatus){

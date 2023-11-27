@@ -46,9 +46,9 @@ class User extends Authenticatable
         if (null !== $this->profileSummary->first()) {
             $profileSummary = $this->profileSummary->first();
             if ($field != '') {
-                return $profileSummary->$field;
+                return  html_entity_decode($profileSummary->$field);
             } else {
-                return $profileSummary;
+                return   $profileSummary;
             }
         } else {
             return '';

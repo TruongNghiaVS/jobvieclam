@@ -79,6 +79,7 @@ class UserController extends Controller
     public function viewPublicProfile($id)
     {
 
+
         $user = User::findOrFail($id);
         $profileCv = $user->getDefaultCv();
 
@@ -111,6 +112,19 @@ class UserController extends Controller
             'font_size' => 12,
             'lang' => 'vi',
         ]);
+       
+        if(is_null($user->current_salary) || empty($user->current_salary))
+        {
+            $user->current_salary =0;
+
+        }
+        if(is_null($user->expected_salary) || empty($user->expected_salary))
+        {
+            $user->expected_salary =0;
+
+        }
+
+        // dd($user);
         return view(config('app.THEME_PATH').'.user.edit_profile')
                         ->with('genders', $genders)
                         ->with('maritalStatuses', $maritalStatuses)
@@ -247,7 +261,10 @@ class UserController extends Controller
 
     public function updateMyProfile(UserFrontFormRequest $request)
     {
+        
+      
         $user = User::findOrFail(Auth::user()->id);
+     
         /*         * **************************************** */
         if ($request->hasFile('image')) {
             $is_deleted = $this->deleteUserImage($user->id);
@@ -322,7 +339,108 @@ class UserController extends Controller
         flash(__('You have updated your profile successfully'))->success();
         return \Redirect::route('my.profile');
     }
+    public function updateMyProfilev2(UserFrontFormRequest $request)
+    {
+        
+      
+        $user = User::findOrFail(Auth::user()->id);
+     
+        /*         * **************************************** */
+        if ($request->hasFile('image')) {
+            $is_deleted = $this->deleteUserImage($user->id);
+            $image = $request->file('image');
+            $fileName = ImgUploader::UploadImage('user_images', $image, $request->input('name'), 300, 300, false);
+            $user->image = $fileName;
+        }
+		
+		if ($request->hasFile('cover_image')) {
+			$is_deleted = $this->deleteUserCoverImage($user->id);
+            $cover_image = $request->file('cover_image');
+            $fileName_cover_image = ImgUploader::UploadImage('user_images', $cover_image, $request->input('name'), 1140, 250, false);
+            $user->cover_image = $fileName_cover_image;
+        }
+			
+        /*         * ************************************** */
+        $user->first_name = $request->input('first_name');
+        $user->middle_name = $request->input('middle_name');
+        $user->last_name = $request->input('last_name');
+        /*         * *********************** */
+        $user->name = $user->getName();
+        /*         * *********************** */
+        $user->email = $request->input('email');
+        if (!empty($request->input('password'))) {
+            $user->password = Hash::make($request->input('password'));
+        }
+        $user->father_name = $request->input('father_name');
+        $user->date_of_birth = $request->input('date_of_birth');
+        $user->gender_id = $request->input('gender_id');
+        $user->marital_status_id = $request->input('marital_status_id');
+        $user->nationality_id = $request->input('nationality_id');
+        $user->national_id_card_number = $request->input('national_id_card_number');
+        $user->country_id = $request->input('country_id');
+        $user->state_id = $request->input('state_id');
+        $user->city_id = $request->input('city_id');
+        $user->phone = $request->input('phone');
+        $user->mobile_num = $request->input('mobile_num');
+        $user->job_experience_id = $request->input('job_experience_id');
+        $user->career_level_id = $request->input('career_level_id');
+        $user->industry_id = $request->input('industry_id');
+        $user->functional_area_id = $request->input('functional_area_id');
+        $user->current_salary = str_replace(",","",$request->input('current_salary'));
+        $user->expected_salary = str_replace(",","",$request->input('expected_salary'));
+        $user->salary_currency = $request->input('salary_currency');
+        $user->video_link = $request->video_link;
+        $user->street_address = $request->input('street_address');
+		$user->is_subscribed = $request->input('is_subscribed', 0);
 
+        $user->save();
+
+        $this->updateUserFullTextSearch($user);
+
+        
+		/*************************/
+		// Subscription::where('email', 'like', $user->email)->delete();
+		// if((bool)$user->is_subscribed)
+		// {			
+		// 	$subscription = new Subscription();
+		// 	$subscription->email = $user->email;
+		// 	$subscription->name = $user->name;
+		// 	$subscription->save();
+			
+		// 	/*************************/
+		// 	Newsletter::subscribeOrUpdate($subscription->email, ['FNAME'=>$subscription->name]);
+		// 	/*************************/
+		// }
+		// else
+		// {
+		// 	/*************************/
+		// 	Newsletter::unsubscribe($user->email);
+		// 	/*************************/
+		// }
+      
+        flash(__('You have updated your profile successfully'))->success();
+   
+        return \Redirect::route('my.profile');
+    }
+
+    public function updateMyProfilev3(UserFrontFormRequest $request)
+    {
+         $user = User::findOrFail(Auth::user()->id);
+        $user->job_experience_id = $request->input('job_experience_id');
+        $user->career_level_id = $request->input('career_level_id');
+        $user->industry_id = $request->input('industry_id');
+        $user->functional_area_id = $request->input('functional_area_id');
+        $user->current_salary = str_replace(",","",$request->input('current_salary'));
+        $user->expected_salary = str_replace(",","",$request->input('expected_salary'));
+        $user->salary_currency = $request->input('salary_currency');
+         $user->save();
+     
+        // $this->updateUserFullTextSearch($user);
+    
+        flash(__('You have updated your profile successfully'))->success();
+   
+        return \Redirect::route('my.profile');
+    }
     public function addToFavouriteCompany(Request $request, $company_slug)
     {
         $data['company_slug'] = $company_slug;

@@ -3,6 +3,8 @@
 /* * ******** UserController ************ */
 Route::get('my-profile', 'UserController@myProfile')->name('my.profile');
 Route::put('my-profile', 'UserController@updateMyProfile')->name('put.my.profile');
+Route::put('update_profilev3', 'UserController@updateMyProfilev3')->name('put.my.profilev3');
+Route::put('update_profilev2', 'UserController@updateMyProfilev2')->name('put.my.profilev2');
 Route::get('view-public-profile/{id}', 'UserController@viewPublicProfile')->name('view.public.profile');
 Route::post('update-front-profile-summary/{id}', 'UserController@updateProfileSummary')->name('update.front.profile.summary');
 Route::post('update-immediate-available-status', 'UserController@updateImmediateAvailableStatus')->name('update.immediate.available.status');

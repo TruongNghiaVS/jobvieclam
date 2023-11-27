@@ -21,7 +21,7 @@
 
 <div class="section-body">
     <div id="success_msg"></div>
-    <div>{{ old('summary', $user->getProfileSummary('summary')) }}</div>
+    <div>{{ old('summary',  $user->getProfileSummary('summary')) }}</div>
     {{--<div class="row">
         <div class="col-md-12">
             <form class="form form-user-profile" id="add_edit_profile_summary" method="POST" action="{{ route('update.front.profile.summary', [$user->id]) }}">

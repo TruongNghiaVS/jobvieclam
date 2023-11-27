@@ -172,7 +172,7 @@
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'career_level_id') !!}">
                             <label for="">{{__('Cấp bậc nghề')}}</label>
                             {!! Form::select('career_level_id', [''=>__('Lựa chọn Cấp bậc Nghề')]+$careerLevels, null,
-                            array('class'=>'form-control form-select', 'id'=>'career_level_id','name'=>'career_level')) !!}
+                            array('class'=>'form-control form-select', 'id'=>'career_level_id','name'=>'career_level_id')) !!}
                             {!! APFrmErrHelp::showErrors($errors, 'career_level_id') !!}
                         </div>
                     </div>
@@ -180,7 +180,7 @@
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'industry_id') !!}">
                             <label for="">{{__('Lựa chọn Ngành nghề')}}</label>
                             {!! Form::select('industry_id', [''=>__('Lựa chọn Ngành nghề')]+$industries, null,
-                            array('class'=>'form-control form-select', 'id'=>'industry_id' ,'name'=>'industry_level')) !!}
+                            array('class'=>'form-control form-select', 'id'=>'industry_id' ,'name'=>'industry_id')) !!}
                             {!! APFrmErrHelp::showErrors($errors, 'industry_id') !!}
                         </div>
                     </div>
@@ -188,7 +188,7 @@
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'functional_area_id') !!}">
                             <label for="">{{__('Functional department')}}</label>
                             {!! Form::select('functional_area_id', [''=>__('Select Functional Department')]+$functionalAreas, null,
-                            array('class'=>'form-control form-select', 'id'=>'functional_area_id'  ,'name'=>'functional_area')) !!}
+                            array('class'=>'form-control form-select', 'id'=>'functional_area_id'  ,'name'=>'functional_area_id')) !!}
                             {!! APFrmErrHelp::showErrors($errors, 'functional_area_id') !!}
                         </div>
                     </div>
@@ -287,46 +287,49 @@
         }
 
 
-        // if (isValid) { 
-        //     $.ajax({
-        //     type: "PUST",
-        //     url:  `{{ route('put.my.profile') }}`,
-        //     data: formObject,
-        //     statusCode: {
-        //         202 :  function(responseObject, textStatus, jqXHR) {
-        //             console.log(responseObject.error);
+        if (isValid) { 
+            $.ajax({
+            type: "PUT",
+            url:  `{{ route('put.my.profilev3') }}`,
+            data: {
+                "_token": "{{ csrf_token() }}",
+                ...formObject
+            },
+            statusCode: {
+                202 :  function(responseObject, textStatus, jqXHR) {
+                    console.log(responseObject.error);
         
-        //         },
-        //         401: function(responseObject, textStatus, jqXHR) {
-        //             // No content found (404)
-        //             console.log(responseObject.responseJSON);
+                },
+                401: function(responseObject, textStatus, jqXHR) {
+                    // No content found (404)
+                    console.log(responseObject.responseJSON);
                     
-        //             // This code will be executed if the server returns a 404 response
-        //         },
-        //         503: function(responseObject, textStatus, errorThrown) {
-        //             // Service Unavailable (503)
-        //             console.log(responseObject.error);
+                    // This code will be executed if the server returns a 404 response
+                },
+                503: function(responseObject, textStatus, errorThrown) {
+                    // Service Unavailable (503)
+                    console.log(responseObject.error);
 
-        //             // This code will be executed if the server returns a 503 response
-        //         }           
-        //         }
-        //         })
-        //         .done(function(data){
-        //             // setTimeout(function() { 
-        //             //     alert(data.message)
-        //             //     window.location.href = data.urlRedirect;
-        //             // }, 2000);
-        //             // window.location.href =  "/home";
-        //             console.log(data);
+                    // This code will be executed if the server returns a 503 response
+                }           
+                }
+                })
+                .done(function(data){
+                    // setTimeout(function() { 
+                    //     alert(data.message)
+                    //     window.location.href = data.urlRedirect;
+                    // }, 2000);
+                    // window.location.href =  "/home";
+                    console.log(data);
                     
-        //         })
-        //         .fail(function(jqXHR, textStatus){
+                })
+                .fail(function(jqXHR, textStatus){
                     
-        //         })
-        //         .always(function(jqXHR, textStatus) {
+                })
+                .always(function(jqXHR, textStatus) {
                 
-        //         });
-        //         }
+                });
+                }
     });
       
     });

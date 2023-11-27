@@ -17,7 +17,13 @@ if(null!==($package)){
 
 
 <?php 
- $user = Auth::user()
+ if(isset( $user)){
+
+ }
+ else 
+ {
+  $user = Auth::user();
+ }
 ?>
 
 <!-- Public profile cover -->

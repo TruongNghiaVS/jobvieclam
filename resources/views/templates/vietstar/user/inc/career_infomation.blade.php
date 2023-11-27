@@ -1,3 +1,10 @@
+<?php
+    $job_experience = $user->job_experience_id ? $user->job_experience_id : 2;
+    $careerlevel = $user->career_level_id ? $user->career_level_id : 23;
+    $industry = $user->industry_id ? $user->industry_id : 233;
+    $functional_area = $user->functional_area_id ? $user->functional_area_id : 588;
+    // dd($user);
+?>
 <div class="section-head">
     <div class="section-head__figure">
         <div class="figure__image"><img src="https://cdn-icons-png.flaticon.com/512/3862/3862929.png" alt=""></div>
@@ -31,7 +38,14 @@
                         </strong>
                     </td>
                     <td class="table_value">
-                        1 năm
+                         
+                        @if($job_experience)
+                            @foreach ($jobExperiences as $key =>$jobExperience)
+                                @if( $key == $job_experience )
+                                {{ $jobExperience }}
+                                @endif
+                            @endforeach
+                        @endif
                     </td>
                 </tr>
 
@@ -42,7 +56,13 @@
                         </strong>
                     </td>
                     <td class="table_value">
-                        Thực tập sinh
+                        @if($careerlevel)
+                            @foreach ($careerLevels as $key =>$careerLevel)
+                                @if( $key == $careerlevel )
+                                {{ $careerLevel }}
+                                @endif
+                            @endforeach
+                        @endif
                     </td>
                 </tr>
 
@@ -54,18 +74,33 @@
                         </strong>
                     </td>
                     <td class="table_value">
-                        IT Consolution
+                        @if($industry)
+                            @foreach ($industries as $key =>$industrie)
+                                @if( $key == $industry )
+                                {{ $industrie }}
+                                @endif
+                            @endforeach
+                        @endif
+                    
                     </td>
                 </tr>
 
                 <tr>
                     <td class="text-primary table_title">
                         <strong>
+
                         {{__('Bộ phận chức năng')}}
                         </strong>
                     </td>
                     <td class="table_value">
-                       IT
+                        @if($functional_area)
+                            @foreach ($functionalAreas as $key =>$functionalArea)
+                                @if( $key == $functional_area )
+                                {{ $functionalArea }}
+                                @endif
+                            @endforeach
+                        @endif
+                   
                     </td>
                 </tr>
 
@@ -76,6 +111,7 @@
                         </strong>
                     </td>
                     <td class="table_value">
+                                       
 	                    20,000,000 - 100,000,000 VND
                     </td>
                 </tr>
@@ -321,7 +357,7 @@
                     // }, 2000);
                     // window.location.href =  "/home";
                     $("#careerinformation").modal('hide');
-                   location.reload();`    
+                   location.reload();
                     
                 })
                 .fail(function(jqXHR, textStatus){

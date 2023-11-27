@@ -94,9 +94,11 @@ class UserController extends Controller
     {
         $genders = DataArrayHelper::langGendersArray();
         $maritalStatuses = DataArrayHelper::langMaritalStatusesArray();
+     
         $nationalities = DataArrayHelper::langNationalitiesArray();
         $countries = DataArrayHelper::langCountriesArray();
         $jobExperiences = DataArrayHelper::langJobExperiencesArray();
+       
         $careerLevels = DataArrayHelper::langCareerLevelsArray();
         $industries = DataArrayHelper::langIndustriesArray();
         $functionalAreas = DataArrayHelper::langFunctionalAreasArray();
@@ -123,8 +125,10 @@ class UserController extends Controller
             $user->expected_salary =0;
 
         }
+      
+ 
+       
 
-        // dd($user);
         return view(config('app.THEME_PATH').'.user.edit_profile')
                         ->with('genders', $genders)
                         ->with('maritalStatuses', $maritalStatuses)
@@ -367,31 +371,23 @@ class UserController extends Controller
         /*         * *********************** */
         $user->name = $user->getName();
         /*         * *********************** */
-        $user->email = $request->input('email');
-        if (!empty($request->input('password'))) {
-            $user->password = Hash::make($request->input('password'));
-        }
-        $user->father_name = $request->input('father_name');
+        // $user->email = $request->input('email');
+        // if (!empty($request->input('password'))) {
+        //     $user->password = Hash::make($request->input('password'));
+        // }
+ 
         $user->date_of_birth = $request->input('date_of_birth');
         $user->gender_id = $request->input('gender_id');
         $user->marital_status_id = $request->input('marital_status_id');
         $user->nationality_id = $request->input('nationality_id');
-        $user->national_id_card_number = $request->input('national_id_card_number');
+
         $user->country_id = $request->input('country_id');
-        $user->state_id = $request->input('state_id');
+        // $user->state_id = $request->input('state_id');
         $user->city_id = $request->input('city_id');
-        $user->phone = $request->input('phone');
-        $user->mobile_num = $request->input('mobile_num');
-        $user->job_experience_id = $request->input('job_experience_id');
-        $user->career_level_id = $request->input('career_level_id');
-        $user->industry_id = $request->input('industry_id');
-        $user->functional_area_id = $request->input('functional_area_id');
-        $user->current_salary = str_replace(",","",$request->input('current_salary'));
-        $user->expected_salary = str_replace(",","",$request->input('expected_salary'));
-        $user->salary_currency = $request->input('salary_currency');
-        $user->video_link = $request->video_link;
-        $user->street_address = $request->input('street_address');
-		$user->is_subscribed = $request->input('is_subscribed', 0);
+        // $user->phone = $request->input('phone');
+        // $user->mobile_num = $request->input('mobile_num');
+        
+		// $user->is_subscribed = $request->input('is_subscribed', 0);
 
         $user->save();
 

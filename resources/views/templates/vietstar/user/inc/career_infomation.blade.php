@@ -320,7 +320,8 @@
                     //     window.location.href = data.urlRedirect;
                     // }, 2000);
                     // window.location.href =  "/home";
-                    console.log(data);
+                    $("#careerinformation").modal('hide');
+                   location.reload();`    
                     
                 })
                 .fail(function(jqXHR, textStatus){

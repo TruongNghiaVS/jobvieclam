@@ -20,7 +20,8 @@
 </div>
 
 <div class="section-body">
-    <p>{{ old('summary', $user->getProfileSummary('summary')) }}</p>
+    <div id="success_msg"></div>
+    <div>{{ old('summary', $user->getProfileSummary('summary')) }}</div>
     {{--<div class="row">
         <div class="col-md-12">
             <form class="form form-user-profile" id="add_edit_profile_summary" method="POST" action="{{ route('update.front.profile.summary', [$user->id]) }}">
@@ -55,7 +56,7 @@
                         <form class="form form-user-profile" id="add_edit_profile_summary" method="POST" action="{{ route('update.front.profile.summary', [$user->id]) }}">
                             {{ csrf_field() }}
                             <div class="form-body">
-                                <div id="success_msg"></div>
+                                
                                 <div class="form-group {!! APFrmErrHelp::hasError($errors, 'summary') !!}">
                                     <textarea name="summary" class="form-control" id="summary" placeholder="{{__('Profile Summary')}}">{{ old('summary', $user->getProfileSummary('summary')) }}</textarea>
                                     <span class="help-block summary-error"></span>
@@ -80,29 +81,47 @@
 <script type="text/javascript">
     function submitProfileSummaryForm() {
         var form = $('#add_edit_profile_summary');
+
         $.ajax({
             url: form.attr('action'),
             type: form.attr('method'),
             data: form.serialize(),
             dataType: 'json',
-            success: function(json) {
-                $("#success_msg").html("<span class='text text-primary'>{{__('Cập nhật thành công')}}</span>");
-            },
-            error: function(json) {
-                if (json.status === 422) {
-                    var resJSON = json.responseJSON;
-                    $('.help-block').html('');
-                    $.each(resJSON.errors, function(key, value) {
-                        $('.' + key + '-error').html('<strong>' + value + '</strong>');
-                        $('#div_' + key).addClass('has-error');
-                    });
-                } else {
-                    // Error
-                    // Incorrect credentials
-                    // alert('Incorrect credentials. Please try again.')
+            statusCode: {
+                202 :  function(responseObject, textStatus, jqXHR) {
+                    console.log(responseObject.error);
+        
+                },
+                401: function(responseObject, textStatus, jqXHR) {
+                    // No content found (404)
+                    console.log(responseObject.responseJSON);
+
+                    // This code will be executed if the server returns a 404 response
+                },
+                503: function(responseObject, textStatus, errorThrown) {
+                    // Service Unavailable (503)
+                    console.log(responseObject.error);
+
+                    // This code will be executed if the server returns a 503 response
+                }           
                 }
-            }
-        });
-    }
+                })
+                .done(function(data){
+                    console.log(data);
+                    // $("#success_msg").html("<span class='text text-primary'>{{__('Cập nhật thành công')}}</span>");
+              
+                    
+                 
+                })
+                .fail(function(jqXHR, textStatus){
+                    
+                })
+                .always(function(jqXHR, textStatus) {
+                
+                })
+        }
+
+            
+          
 </script>
 @endpush

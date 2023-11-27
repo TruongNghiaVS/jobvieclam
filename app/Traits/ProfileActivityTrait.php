@@ -61,7 +61,7 @@ trait ProfileActivityTrait
                             <div class="title">
                                 <h4>'.$activity->company.'</h4>
                                 <div class="sub-title">
-                                    <p>'.$activity->role.'</p>
+                                    <p class="text-primary">'.$activity->role.'</p>
                                 </div>
                                 <div class="date">
                                     <p>'.Carbon::parse($activity->date_start)->format('d M, Y').' - '.$date_end.'</p>

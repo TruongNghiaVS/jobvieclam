@@ -158,13 +158,13 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="careerinformation" class="needs-validation" novalidate>
+                <form id="careerinformation_form" class="needs-validation" novalidate>
                     <div class="row">
                     <div class="col-md-12">
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'job_experience_id') !!}">
                             <label for="">{{__('Job Experience')}}</label>
                             {!! Form::select('job_experience_id', [''=>__('Lựa chọn số năm kinh nghiệm')]+$jobExperiences, null,
-                            array('class'=>'form-control form-select', 'id'=>'job_experience_id')) !!}
+                            array('class'=>'form-control form-select', 'id'=>'job_experience_id','name'=>'job_experience')) !!}
                             {!! APFrmErrHelp::showErrors($errors, 'job_experience_id') !!}
                         </div>
                     </div>
@@ -172,7 +172,7 @@
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'career_level_id') !!}">
                             <label for="">{{__('Cấp bậc nghề')}}</label>
                             {!! Form::select('career_level_id', [''=>__('Lựa chọn Cấp bậc Nghề')]+$careerLevels, null,
-                            array('class'=>'form-control form-select', 'id'=>'career_level_id')) !!}
+                            array('class'=>'form-control form-select', 'id'=>'career_level_id','name'=>'career_level')) !!}
                             {!! APFrmErrHelp::showErrors($errors, 'career_level_id') !!}
                         </div>
                     </div>
@@ -180,7 +180,7 @@
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'industry_id') !!}">
                             <label for="">{{__('Lựa chọn Ngành nghề')}}</label>
                             {!! Form::select('industry_id', [''=>__('Lựa chọn Ngành nghề')]+$industries, null,
-                            array('class'=>'form-control form-select', 'id'=>'industry_id')) !!}
+                            array('class'=>'form-control form-select', 'id'=>'industry_id' ,'name'=>'industry_level')) !!}
                             {!! APFrmErrHelp::showErrors($errors, 'industry_id') !!}
                         </div>
                     </div>
@@ -188,7 +188,7 @@
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'functional_area_id') !!}">
                             <label for="">{{__('Functional department')}}</label>
                             {!! Form::select('functional_area_id', [''=>__('Select Functional Department')]+$functionalAreas, null,
-                            array('class'=>'form-control form-select', 'id'=>'functional_area_id')) !!}
+                            array('class'=>'form-control form-select', 'id'=>'functional_area_id'  ,'name'=>'functional_area')) !!}
                             {!! APFrmErrHelp::showErrors($errors, 'functional_area_id') !!}
                         </div>
                     </div>
@@ -196,7 +196,7 @@
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'current_salary') !!}">
                             <label for="">{{__('Mức lương hiện tại')}}</label>
                             {!! Form::text('current_salary', null, array('class'=>'form-control', 'id'=>'current_salary',
-                            'placeholder'=>__('Mức lương hiện tại'))) !!}
+                            'placeholder'=>__('Mức lương hiện tại')  ,'name'=>'current_salary')) !!}
                             {!! APFrmErrHelp::showErrors($errors, 'current_salary') !!}
                         </div>
                     </div>
@@ -231,4 +231,108 @@
         </div>
     </div>
 </div>
+
+
+@push('scripts')
+<script type="text/javascript">
+    (function () {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+        }, false)
+        })
+    })()
+
+
+    $(document).ready(function(){
+        $('#careerinformation_form').submit(function(event) {
+        var isValid = true;
+        event.preventDefault()
+        
+        // Check each input field for emptiness
+        $('#careerinformation_form input').each(function() {
+            if (!$(this).val()) {
+                isValid = false;
+                $(this).addClass('is-invalid');
+              
+            }
+        });
+        var formArray2 = $('#careerinformation_form').serializeArray();
+       
+
+
+
+        // Convert the array to an object
+        var formObject = {};
+        $.each(formArray2, function (i, field) {
+            formObject[field.name] = field.value;
+        });
+
+        // Log the resulting object to the console
+        console.log(formObject);
+
+        if (!isValid) {
+            event.preventDefault(); // Prevent the form from submitting
+        }
+
+
+        // if (isValid) { 
+        //     $.ajax({
+        //     type: "PUST",
+        //     url:  `{{ route('put.my.profile') }}`,
+        //     data: formObject,
+        //     statusCode: {
+        //         202 :  function(responseObject, textStatus, jqXHR) {
+        //             console.log(responseObject.error);
+        
+        //         },
+        //         401: function(responseObject, textStatus, jqXHR) {
+        //             // No content found (404)
+        //             console.log(responseObject.responseJSON);
+                    
+        //             // This code will be executed if the server returns a 404 response
+        //         },
+        //         503: function(responseObject, textStatus, errorThrown) {
+        //             // Service Unavailable (503)
+        //             console.log(responseObject.error);
+
+        //             // This code will be executed if the server returns a 503 response
+        //         }           
+        //         }
+        //         })
+        //         .done(function(data){
+        //             // setTimeout(function() { 
+        //             //     alert(data.message)
+        //             //     window.location.href = data.urlRedirect;
+        //             // }, 2000);
+        //             // window.location.href =  "/home";
+        //             console.log(data);
+                    
+        //         })
+        //         .fail(function(jqXHR, textStatus){
+                    
+        //         })
+        //         .always(function(jqXHR, textStatus) {
+                
+        //         });
+        //         }
+    });
+      
+    });
+</script>
+@endpush
+
+
+
 

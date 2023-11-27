@@ -51,7 +51,7 @@
         <div class="d-flex justify-content-center  align-items-start">
 
             <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }} w-50">
-                    <input id="email" type="email" class="form-control w-100" name="email" value="{{ old('email') }}" required autofocus placeholder="{{__('Email Address')}}">
+                    <input id="email" type="email" class="form-control w-100" name="email" value="{{ old('email') }}" required placeholder="{{__('Email Address')}}">
                     <div class="invalid-feedback email-error">
                             {{__('Email is required')}}
                     </div>  

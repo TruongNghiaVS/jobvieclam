@@ -107,6 +107,12 @@
 .figure__caption .status.complete p {
     color: #2aba2a;
 }
+.section-body table tr{
+    
+}
+.borderless td, .borderless th {
+    border: none;
+}
 
 .section-head__right-action {
     display: flex;
@@ -177,7 +183,7 @@
 
 
 .table_title strong {
-    color: var(--bs-primary);
+    
 }
 
 .table_title i {

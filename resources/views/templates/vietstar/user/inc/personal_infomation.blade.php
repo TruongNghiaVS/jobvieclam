@@ -39,7 +39,7 @@
         </div>
     </div> -->
     <div class="table-responsive">
-        <table class="table table-responsive table-user-information">
+        <table class="table table-responsive table-user-information borderless ">
             <tbody>
 
                 <tr>
@@ -270,7 +270,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="persionalinfo" class="needs-validation" novalidate>
+                <form id="persionalinfo_form" class="needs-validation" novalidate>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group {!! APFrmErrHelp::hasError($errors, 'first_name') !!}">
@@ -316,8 +316,7 @@
                         <div class="col-md-6">
                             <div class="form-group {!! APFrmErrHelp::hasError($errors, 'city_id') !!}">
                                 <label for="">{{__('City')}}</label>
-                                <span id="city_dd"> {!! Form::select('city_id', [''=>__('Select City')], null, array('class'=>'form-control
-                                    form-select', 'id'=>'city_id')) !!} </span> {!! APFrmErrHelp::showErrors($errors, 'city_id') !!}
+                                <select class="form-control form-select shadow-sm" id="city_id" name="city_id"><option value="" selected="selected">Chọn địa điểm</option><option value="3">Port Blair</option><option value="48666">Lào Cai</option><option value="48667">Yên Bái</option><option value="48668">Lai Châu</option><option value="48669">Điện Biên</option><option value="48670">Sơn La</option><option value="48671">Hòa Bình</option><option value="48672">Hà Giang</option><option value="48673">Tuyên Quang</option><option value="48674">Phú Thọ</option><option value="48675">Thái Nguyên</option><option value="48676">Bắc Kạn</option><option value="48677">Cao Bằng</option><option value="48678">Lạng Sơn</option><option value="48679">Bắc Giang</option><option value="48680">Quảng Ninh</option><option value="48681">Tp. Hà Nội</option><option value="48682">Tp. Hải Phòng</option><option value="48683">Vĩnh Phúc</option><option value="48684">Bắc Ninh</option><option value="48685">Hưng Yên</option><option value="48686">Hải Dương</option><option value="48687">Thái Bình</option><option value="48688">Nam Định</option><option value="48689">Ninh Bình</option><option value="48690">Hà Nam</option><option value="48691">Thanh Hóa</option><option value="48692">Nghệ An</option><option value="48693">Hà Tĩnh</option><option value="48694">Quảng Bình</option><option value="48695">Quảng Trị</option><option value="48696">Thừa Thiên Huế</option><option value="48697">Tp. Đà Nẵng</option><option value="48698">Quảng Nam</option><option value="48699">Quảng Ngãi</option><option value="48700">Bình Định</option><option value="48701">Phú Yên</option><option value="48702">Khánh Hòa</option><option value="48703">Ninh Thuận</option><option value="48704">Bình Thuận</option><option value="48705">Kon Tum</option><option value="48706">Gia Lai</option><option value="48707">Đắk Lắk</option><option value="48708">Đắk Nông</option><option value="48709">Lâm Đồng</option><option value="48710">TP. Hồ Chí Minh</option><option value="48711">Đồng Nai</option><option value="48712">Bà Rịa-Vũng Tàu</option><option value="48713">Bình Dương</option><option value="48714">Bình Phước</option><option value="48715">Tây Ninh</option><option value="48716">Tp. Cần Thơ</option><option value="48717">Long An</option><option value="48718">Tiền Giang</option><option value="48719">Bến Tre</option><option value="48720">Vĩnh Long</option><option value="48721">Trà Vinh</option><option value="48722">Đồng Tháp</option><option value="48723">An Giang</option><option value="48724">Kiên Giang</option><option value="48725">Hậu Giang</option><option value="48726">Sóc Trăng</option><option value="48727">Bạc Liêu</option><option value="48728">Cà Mau</option></select>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -355,3 +354,108 @@
         </div>
     </div>
 </div>
+
+
+@push('scripts')
+<script type="text/javascript">
+    (function () {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+        }, false)
+        })
+    })()
+
+
+    $(document).ready(function(){
+        $('#persionalinfo_form').submit(function(event) {
+        var isValid = true;
+        event.preventDefault()
+        
+        // Check each input field for emptiness
+        $('#persionalinfo_form input').each(function() {
+            if (!$(this).val()) {
+                isValid = false;
+                $(this).addClass('is-invalid');
+              
+            }
+        });
+
+
+
+        var formArray = $('#persionalinfo_form').serializeArray();
+
+        // Convert the array to an object
+        var formObject = {};
+        $.each(formArray, function (i, field) {
+            formObject[field.name] = field.value;
+        });
+
+        // Log the resulting object to the console
+        console.log(formObject);
+
+        if (!isValid) {
+            event.preventDefault(); // Prevent the form from submitting
+        }
+
+
+        if (isValid) { 
+            $.ajax({
+            type: "PUST",
+            url:  `{{ route('put.my.profile') }}`,
+            data: formObject,
+            statusCode: {
+                202 :  function(responseObject, textStatus, jqXHR) {
+                    console.log(responseObject.error);
+        
+                },
+                401: function(responseObject, textStatus, jqXHR) {
+                    // No content found (404)
+                    console.log(responseObject.responseJSON);
+                    
+                    // This code will be executed if the server returns a 404 response
+                },
+                503: function(responseObject, textStatus, errorThrown) {
+                    // Service Unavailable (503)
+                    console.log(responseObject.error);
+
+                    // This code will be executed if the server returns a 503 response
+                }           
+                }
+                })
+                .done(function(data){
+                    // setTimeout(function() { 
+                    //     alert(data.message)
+                    //     window.location.href = data.urlRedirect;
+                    // }, 2000);
+                    // window.location.href =  "/home";
+                    console.log(data);
+                    
+                })
+                .fail(function(jqXHR, textStatus){
+                    
+                })
+                .always(function(jqXHR, textStatus) {
+                
+                });
+                }
+    });
+      
+    });
+</script>
+@endpush
+
+
+
+

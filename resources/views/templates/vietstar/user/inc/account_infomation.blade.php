@@ -38,7 +38,7 @@
         </div>
     </div> -->
     <div class="table-responsive">
-              <table class="table table-responsive table-user-information">
+              <table class="table table-responsive table-user-information borderless ">
                 <tbody>
                   <tr>
                     <td class="table_title">
@@ -62,7 +62,7 @@
                     </td>
                   </tr>
                 </tbody>
-              </table>
+            </table>
     </div>
 </div>
 
@@ -93,7 +93,7 @@
                         <div id="cPwdInvalid" class="invalid-feedback"></div>
                     </div>
                     <div class="form-group">
-                        <button id="account_submitBtn" type="submit" class="btn btn-primary submit-button" disabled>Submit</button>
+                        <button id="account_submitBtn" type="button" class="btn btn-primary submit-button" disabled>Submit</button>
                     </div>
                 </form>
             </div>
@@ -103,7 +103,7 @@
 
 
 
-@push('scripts')
+
 @push('scripts')
 <script type="text/javascript">
     $(document).ready(function(){
@@ -123,33 +123,14 @@
           $('.pwds').addClass('is-invalid')
           }
       });
-      let currForm1 = document.getElementById('myFormpassword');
-        // Validate on submit:
-        if(currForm1){
-          currForm1.addEventListener('submit', function(event) {
-            if (currForm1.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            currForm1.classList.add('was-validated');
-          }, false);
-          // Validate on input:
-          currForm1.querySelectorAll('.form-control').forEach(input => {
-            input.addEventListener(('input'), () => {
-              if (input.checkValidity()) {
-                input.classList.remove('is-invalid')
-                input.classList.add('is-valid');
-              } else {
-                input.classList.remove('is-valid')
-                input.classList.add('is-invalid');
-              }
-              var is_valid = $('.form-control').length === $('.form-control.is-valid').length;
-              $("#account_submitBtn").attr("disabled", !is_valid);
-            });
-          });
-        }
-      });
+
+    $('#account_submitBtn').on('click',()=>{
+      // console.log(
+      //   $('#pwdId').val()
+      // );
+  
+    })
+    });
 </script>
 @endpush
 
-@endpush

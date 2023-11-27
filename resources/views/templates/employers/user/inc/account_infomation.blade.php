@@ -38,7 +38,7 @@
         </div>
     </div> -->
     <div class="table-responsive">
-              <table class="table table-responsive table-user-information">
+              <table class="table table-responsive table-user-information borderless  table-borderless" >
                 <tbody>
                   <tr>
                     <td class="table_title">

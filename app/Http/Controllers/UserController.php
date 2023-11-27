@@ -346,19 +346,19 @@ class UserController extends Controller
         $user = User::findOrFail(Auth::user()->id);
      
         /*         * **************************************** */
-        if ($request->hasFile('image')) {
-            $is_deleted = $this->deleteUserImage($user->id);
-            $image = $request->file('image');
-            $fileName = ImgUploader::UploadImage('user_images', $image, $request->input('name'), 300, 300, false);
-            $user->image = $fileName;
-        }
+        // if ($request->hasFile('image')) {
+        //     $is_deleted = $this->deleteUserImage($user->id);
+        //     $image = $request->file('image');
+        //     $fileName = ImgUploader::UploadImage('user_images', $image, $request->input('name'), 300, 300, false);
+        //     $user->image = $fileName;
+        // }
 		
-		if ($request->hasFile('cover_image')) {
-			$is_deleted = $this->deleteUserCoverImage($user->id);
-            $cover_image = $request->file('cover_image');
-            $fileName_cover_image = ImgUploader::UploadImage('user_images', $cover_image, $request->input('name'), 1140, 250, false);
-            $user->cover_image = $fileName_cover_image;
-        }
+		// if ($request->hasFile('cover_image')) {
+		// 	$is_deleted = $this->deleteUserCoverImage($user->id);
+        //     $cover_image = $request->file('cover_image');
+        //     $fileName_cover_image = ImgUploader::UploadImage('user_images', $cover_image, $request->input('name'), 1140, 250, false);
+        //     $user->cover_image = $fileName_cover_image;
+        // }
 			
         /*         * ************************************** */
         $user->first_name = $request->input('first_name');

@@ -444,8 +444,9 @@
                     // // }, 2000);
                     //  window.location.href =  "/home";
                     //  location.reload();
-                   
-                    
+                   $("#persionalinfo").modal('hide');
+                   location.reload();`                                                           
+                       
                 })
                 .fail(function(jqXHR, textStatus){
                     

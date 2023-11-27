@@ -412,7 +412,7 @@
 
         if (isValid) { 
             $.ajax({
-            type: "PUST",
+            type: "PUT",
             url:  `{{ route('put.my.profile') }}`,
             data: formObject,
             statusCode: {

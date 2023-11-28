@@ -344,7 +344,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <button id="personal_submitBtn" type="submit" class="btn btn-primary submit-button">Submit</button>
+                            <button id="personal_submitBtn" type="submit" class="btn btn-primary submit-button">{{__(('Update'))}}</button>
                         </div>
                     </div>
                 </form>

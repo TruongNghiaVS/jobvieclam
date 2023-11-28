@@ -93,7 +93,7 @@
                         <div id="cPwdInvalid" class="invalid-feedback"></div>
                     </div>
                     <div class="form-group">
-                        <button id="account_submitBtn" type="submit" class="btn btn-primary submit-button" disabled>Submit</button>
+                        <button id="account_submitBtn" type="submit" class="btn btn-primary submit-button" disabled>{{__(('Update'))}}</button>
                     </div>
                 </form>
             </div>

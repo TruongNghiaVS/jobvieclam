@@ -87,7 +87,7 @@
         {!! APFrmErrHelp::showErrors($errors, 'country_id') !!} </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'state_id') !!}"> {!! Form::label('state_id', 'Vùng miền', ['class' => 'bold']) !!}
         <span id="default_state_dd">                    
-            {!! Form::select('state_id', ['' => 'Chọn vùng miền'], null, array('class'=>'form-control', 'id'=>'state_id')) !!}
+            {!! Form::select('state_id', ['' => 'Select state'], null, array('class'=>'form-control', 'id'=>'state_id')) !!}
         </span>
         {!! APFrmErrHelp::showErrors($errors, 'state_id') !!} </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'city_id') !!}"> {!! Form::label('city_id', 'Tỉnh/Thành', ['class' => 'bold']) !!}

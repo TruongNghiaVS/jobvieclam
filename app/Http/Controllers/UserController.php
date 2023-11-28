@@ -421,7 +421,7 @@ class UserController extends Controller
 
     public function updateMyProfilev3(UserFrontFormRequest $request)
     {
-         $user = User::findOrFail(Auth::user()->id);
+        $user = User::findOrFail(Auth::user()->id);
         $user->job_experience_id = $request->input('job_experience_id');
         $user->career_level_id = $request->input('career_level_id');
         $user->industry_id = $request->input('industry_id');

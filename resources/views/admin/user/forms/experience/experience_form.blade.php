@@ -21,7 +21,7 @@
         <div class="form-group" id="div_state_id">
             <label for="state_id" class="bold">State</label>
             <span id="default_state_experience_dd">
-                {!! Form::select('state_id', [''=>'Chọn vùng miền'], null, array('class'=>'form-control', 'id'=>'experience_state_id')) !!}
+                {!! Form::select('state_id', [''=>'Select state'], null, array('class'=>'form-control', 'id'=>'experience_state_id')) !!}
             </span>
             <span class="help-block state_id-error"></span> </div>
 

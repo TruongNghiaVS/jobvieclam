@@ -52,7 +52,7 @@
                 <tr>
                     <td class="text-primary table_title">
                         <strong>
-                        {{__('Cấp bậc nghề')}}
+                        {{__('Career Level')}}
                         </strong>
                     </td>
                     <td class="table_value">
@@ -257,7 +257,8 @@
                         </div>
                     </div>
                         <div class="form-group">
-                            <button id="carrer_submitBtn" type="submit" class="btn btn-primary submit-button">Submit</button>
+                           
+                            <button id="carrer_submitBtn" type="submit" class="btn btn-primary submit-button">{{__(('Update'))}}</button>
                         </div>
                     </div>
                 </form>

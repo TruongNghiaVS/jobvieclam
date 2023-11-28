@@ -33,7 +33,7 @@
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'state_id') !!}" id="state_id_div">
         {!! Form::label('state_id', 'Vùng miền', ['class' => 'bold']) !!}
         <span id="default_state_dd">
-            {!! Form::select('state_id', ['' => 'Chọn vùng miền'], null, array('class'=>'form-control', 'id'=>'state_id')) !!}
+            {!! Form::select('state_id', ['' => 'Select state'], null, array('class'=>'form-control', 'id'=>'state_id')) !!}
         </span>
         {!! APFrmErrHelp::showErrors($errors, 'state_id') !!}                                       
     </div>

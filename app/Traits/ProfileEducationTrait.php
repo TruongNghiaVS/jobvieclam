@@ -69,7 +69,7 @@ trait ProfileEducationTrait
                                     <a class="dropdown-item" href="javascript:void(0);" onclick="showProfileEducationEditModal(' . $education->id . ',' . $education->state_id . ',' . $education->city_id . ',' . $education->degree_type_id . ');">' . __('Edit') . '</a>
                                     <a class="dropdown-item" href="javascript:void(0);" onclick="delete_profile_education(' . $education->id . ');">' . __('Delete') . '</a>
                                 </div>
-                            
+                        
                             </div>
                             <div class="panel panel-info" id="education_' . $education->id . '">
                                 <div class="panel-heading"><h4>' . $education->getDegreeLevel('degree_level') . $degree_type . '</h4></div>

@@ -1,4 +1,4 @@
-<div class="modal-dialog"> 
+<div class="modal-dialog test"> 
     <!-- Modal content-->
     <div class="modal-content">
         <div class="modal-body">

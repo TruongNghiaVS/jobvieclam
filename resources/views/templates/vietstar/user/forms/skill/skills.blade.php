@@ -47,6 +47,7 @@
             data: {"_token": "{{ csrf_token() }}"},
             datatype: 'json',
             success: function (json) {
+                console.log(json);
             $("#add_skill_modal").html(json.html);
             }
     });
@@ -62,6 +63,7 @@
             data: {"skill_id": skill_id, "_token": "{{ csrf_token() }}"},
             datatype: 'json',
             success: function (json) {
+                console.log(json);
             $("#add_skill_modal").html(json.html);
             }
     });
@@ -74,7 +76,9 @@
             data    : form.serialize(),
             dataType: 'json',
             success : function (json){
-            $ ("#add_skill_modal").html(json.html);
+                //     $ ("#add_skill_modal").html(json.html);
+                $ ("#add_skill_modal").modal("hide");
+
             showSkills();
             },
             error: function(json){
@@ -115,6 +119,7 @@
     {
     $.post("{{ route('show.front.profile.skills', $user->id) }}", {user_id: {{$user->id}}, _method: 'POST', _token: '{{ csrf_token() }}'})
             .done(function (response) {
+                console.log(response);
             $('#skill_div').html(response);
             });
     }

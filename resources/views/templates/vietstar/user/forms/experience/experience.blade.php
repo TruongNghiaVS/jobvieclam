@@ -139,8 +139,8 @@
 
             success : function (json){
 
-            $ ("#add_experience_modal").html(json.html);
-
+        //     $ ("#add_experience_modal").html(json.html);
+            $ ("#add_experience_modal").modal("hide");
             
 
             },
@@ -273,7 +273,7 @@
 
             .done(function (response) {
 
-        //     $('#default_state_experience_dd').html(response);
+            $('#default_state_experience_dd').html(response);
 
             filterDefaultCitiesExperience(city_id);
 

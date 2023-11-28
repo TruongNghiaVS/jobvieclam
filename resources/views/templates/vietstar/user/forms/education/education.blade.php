@@ -87,7 +87,10 @@
             data    : form.serialize(),
             dataType: 'json',
             success : function (json){
-            $ ("#add_education_modal").html(json.html);
+        //     $ ("#add_education_modal").html(json.html);
+
+            $ ("#add_education_modal").modal("hide");
+            
             showEducationDiv();
             },
             error: function(json){

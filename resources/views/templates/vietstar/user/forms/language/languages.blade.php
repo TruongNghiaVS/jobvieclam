@@ -77,7 +77,9 @@
             data    : form.serialize(),
             dataType: 'json',
             success : function (json){
-            $ ("#add_language_modal").html(json.html);
+            // $ ("#add_language_modal").html(json.html);
+            $ ("#add_language_modal").modal("hide");
+
             showLanguages();
             },
             error: function(json){

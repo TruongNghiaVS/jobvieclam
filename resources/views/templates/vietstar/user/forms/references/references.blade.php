@@ -179,7 +179,9 @@
 
                 success : function (json){
 
-                    $ ("#add_references_modal").html(json.html);
+                    // $ ("#add_references_modal").html(json.html);
+                    $ ("#add_references_modal").modal("hide");
+
 
                     showReferences();
 

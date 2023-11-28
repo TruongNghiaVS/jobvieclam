@@ -27,6 +27,7 @@
   <div class="col-6">
       <div class="formrow" id="div_state_id">
         <span id="default_state_experience_dd">
+            
             {!! Form::select('state_id', [''=>__('Select State')], null, array('class'=>'form-control form-select', 'id'=>'experience_state_id')) !!}
         </span>
         <span class="help-block state_id-error"></span> 

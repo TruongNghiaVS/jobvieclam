@@ -142,7 +142,8 @@
 
             success : function (json){
 
-            $ ("#add_activity_modal").html(json.html);
+        //     $ ("#add_activity_modal").html(json.html);
+            $ ("#add_activity_modal").modal("hide");
 
             showActivity();
 

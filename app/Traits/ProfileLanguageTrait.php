@@ -57,8 +57,28 @@ trait ProfileLanguageTrait
 
 
                 $html .= '<tr id="language_' . $language->id . '">
-						<td><span class="text text-primary">' . $language->getLanguage('lang') . '</span></td>
-						<td><span class="text text-primary">' . $language->getLanguageLevel('language_level') . '</span></td></tr>';
+                            <td><span class="text text-primary">' . $language->getLanguage('lang') . '</span></td>
+
+
+                            <td>
+                            
+                           <div class="row">
+						<div class="col-8 col-md-8">
+                            <div class="con-skill">
+                                <span>' . $language->getLanguageLevel('language_level') . '</span> 
+                            </div>
+                        </div>
+						<div class="col-4 col-md-4">
+                            <div class="con-action d-flex justify-content-end">
+                                <a href="javascript:;" onclick="showProfileLanguageEditModal(' . $language->id . ');" class="btn-action"><span class="iconmoon icon-edit-icon"></span></a>&nbsp;&nbsp;<a href="javascript:;" onclick="delete_profile_language(' . $language->id . ');" class="btn-action"><span class="iconmoon icon-trash"></span></a>
+                            </div>
+                        </div>
+                            
+                        
+                            
+                            </td>
+                        
+                        </tr>';
             endforeach;
         endif;
 

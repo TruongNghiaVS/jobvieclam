@@ -30,6 +30,7 @@ trait ProfileSkillTrait
 
                 $html .= '<div class="item " id="skill_' . $skill->id . '">
                     <div class="row">
+                    
 						<div class="col-8 col-md-8">
                             <div class="con-skill">
                                 <span>' . $skill->getJobSkill('job_skill') . '</span><span><strong>' . $skill['job_experience_id'] .'</strong>/5</span> 
@@ -37,7 +38,7 @@ trait ProfileSkillTrait
                         </div>
 						<div class="col-4 col-md-4">
                             <div class="con-action">
-                                <a href="javascript:;" onclick="showProfileSkillEditModal(' . $skill->id . ');" class="btn-action"><span class="iconmoon icon-edit-icon"></span></a>&nbsp;&nbsp;<a href="javascript:;" onclick="delete_profile_skill(' . $skill->id . ');" class="btn-action"><span class="iconmoon icon-trash"></span></a>
+                                <a href="javascript:;" onclick="showProfileSkillEditModal(' . $skill->id . ');" class="btn-action"><span class="iconmoon icon-edit-icon"></span></a>&nbsp;&nbsp;<a href="javascript:;" onclick="delete_profile_skill('. $skill->id .');" class="btn-action"><span class="iconmoon icon-trash"></span></a>
                             </div>
                         </div>
                         </div>
@@ -56,8 +57,24 @@ trait ProfileSkillTrait
             foreach ($user->profileSkills as $skill):
 
                 $html .= '<li class="col-md-4" id="skill_' . $skill->id . '">
-						<div class="skillbox">' . $skill->getJobSkill('job_skill') . '
-						<span class="text text-primary">' . $skill->getJobExperience('job_experience') . '</span></div></li>';
+						<div class="skillbox">
+						<div class="row">
+                            <div class="col-8 col-md-8">
+                                <div class="con-skill">
+                                    <span class="text-primary">' . $skill->getJobSkill('job_skill') . '</span><span><strong>' . $skill['job_experience_id'] .'</strong>/5</span> 
+                                </div>
+                            </div>
+                            <div class="col-4 col-md-4">
+                                <div class="d-flex justify-content-center ">
+                                    <a href="javascript:;" onclick="showProfileSkillEditModal(' . $skill->id . ');" class="btn-action  px-1"><span class="iconmoon icon-edit-icon"></span></a>&nbsp;&nbsp;
+                                    <a href="javascript:;" onclick="delete_profile_skill('. $skill->id .');" class="btn-action px-1"><span class="iconmoon icon-trash"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        </li>
+                        ';
+             
             endforeach;
         endif;
 

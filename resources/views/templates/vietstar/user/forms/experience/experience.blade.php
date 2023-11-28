@@ -294,7 +294,7 @@
     $.post("{{ route('filter.default.cities.dropdown') }}", {state_id: state_id, city_id: city_id, _method: 'POST', _token: '{{ csrf_token() }}'})
 
             .done(function (response) {
-                console.log(response);
+                // console.log(response);
             $('#default_city_experience_dd').html(response);
 
             });

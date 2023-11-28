@@ -119,7 +119,7 @@
     {
     $.post("{{ route('show.front.profile.skills', $user->id) }}", {user_id: {{$user->id}}, _method: 'POST', _token: '{{ csrf_token() }}'})
             .done(function (response) {
-                console.log(response);
+                // console.log(response);
             $('#skill_div').html(response);
             });
     }

@@ -136,8 +136,9 @@
                         },
                     
                         success: function (response) {
-                            // Handle success response
-                            // location.reload();
+                            if(response){
+                                location.reload();
+                            }
                         },
                         error: function (xhr, status, error) {
                             // Handle error

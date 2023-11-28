@@ -155,7 +155,7 @@
     {
     $.post("{{ route('show.front.profile.education', $user->id) }}", {user_id: {{$user->id}}, _method: 'POST', _token: '{{ csrf_token() }}'})
             .done(function (response) {
-                console.log(response);
+                // console.log(response);
             $('#show_education_div').html(response);
             });
     }

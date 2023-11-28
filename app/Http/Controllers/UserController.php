@@ -264,6 +264,8 @@ class UserController extends Controller
         }
     }
 
+
+
     public function updateMyProfile(UserFrontFormRequest $request)
     {
         
@@ -344,6 +346,24 @@ class UserController extends Controller
         flash(__('You have updated your profile successfully'))->success();
         return \Redirect::route('my.profile');
     }
+    public function updatePassword(Request $request)
+    {
+        
+      
+        $user = User::findOrFail(Auth::user()->id);
+     
+        /*         * **************************************** */
+        
+        if (!empty($request->input('password'))) {
+            $user->password = Hash::make($request->input('password'));
+        }
+        
+		
+      
+        return $request->input('password');
+    }
+
+
     public function updateAvatar(UserFrontFormRequest $request)
     {
         

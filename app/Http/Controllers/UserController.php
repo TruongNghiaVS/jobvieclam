@@ -49,6 +49,7 @@ use App\Traits\ProfileLanguageTrait;
 use App\Traits\Skills;
 use App\Http\Requests\Front\UserFrontFormRequest;
 use App\Helpers\DataArrayHelper;
+use Laracasts\Flash\Flash;
 
 class UserController extends Controller
 {
@@ -342,6 +343,38 @@ class UserController extends Controller
 		
         flash(__('You have updated your profile successfully'))->success();
         return \Redirect::route('my.profile');
+    }
+    public function updateAvatar(UserFrontFormRequest $request)
+    {
+        
+      
+        $user = User::findOrFail(Auth::user()->id);
+        echo($request->hasFile('image'));
+        /*         * **************************************** */
+        if ($request->hasFile('image')) {
+       
+            $is_deleted = $this->deleteUserImage($user->id);
+            $image = $request->file('image');
+
+       
+            $fileName = ImgUploader::UploadImage('user_images', $image, $request->input('name'), 300, 300, false);
+            $user->image = $fileName;
+        }
+		
+		if ($request->hasFile('cover_image')) {
+			$is_deleted = $this->deleteUserCoverImage($user->id);
+            $cover_image = $request->file('cover_image');
+            $fileName_cover_image = ImgUploader::UploadImage('user_images', $cover_image, $request->input('name'), 1140, 250, false);
+            $user->cover_image = $fileName_cover_image;
+        }
+        flash("Cập nhật thành công")->success();
+        $user->update();
+        return true;
+
+   
+		/*************************/
+		
+     
     }
     public function updateMyProfilev2(UserFrontFormRequest $request)
     {

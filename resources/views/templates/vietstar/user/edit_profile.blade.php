@@ -7,7 +7,7 @@
 <!-- Inner Page Title end -->
 @include('templates.vietstar.includes.mobile_dashboard_menu')
 <div class="user-wrapper">
-    @include('flash::message')
+  
     @include('templates.vietstar.includes.default_sidebar_menu')
     <div class="content">
         <div class="content-wrapper">

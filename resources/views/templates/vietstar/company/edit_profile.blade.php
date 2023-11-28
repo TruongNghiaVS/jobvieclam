@@ -15,7 +15,7 @@
             @include('templates.employers.includes.mobile_dashboard_menu')
             <div class="container company-content">
                
-                @include('flash::message') 
+         
                 <!-- Personal Information -->
                 @include(config('app.THEME_PATH').'.company.inc.profile')
             </div>

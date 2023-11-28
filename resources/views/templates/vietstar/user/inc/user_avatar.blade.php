@@ -38,18 +38,25 @@
                 <div id="thumbnail">
                     <div class="pic img-avatar">
                         <div class="img-avatar__wrapper">
+                           
+                            @include('flash::message')
                             @if(Auth::user())
                             {{Auth::user()->printUserImage()}}
                             @else
                             <img id="avatar" class="avatar" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar">
                             @endif
+
+                            
                         </div>
                         <input type="file" name="image" id="userfileInput" style="display: none;">
 
                         <a class="uploadImage_btn" href="javascript:void(0);" onclick="$('#userfileInput').click()"><i class="bi bi-camera-fill"></i></a>
                         {!! APFrmErrHelp::showErrors($errors, 'image') !!}
                         {!! APFrmErrHelp::showErrors($errors, 'image') !!}
+
+                      
                     </div>
+                   
                 </div>
             </div>
         </div>
@@ -63,7 +70,7 @@
             </div>
 
             <div class="user__complete_section" bis_skin_checked="1">
-
+                
             </div>
         </div>
     </div>
@@ -75,13 +82,46 @@
 @push('scripts')
 <script type="text/javascript">
       function readURL(input) {
-        console.log("input", input);
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
                 $('.img-avatar img').attr('src', e.target.result);
             }
             reader.readAsDataURL(input.files[0]);
+            var formData = new FormData();
+            var avatarFile = $('#userfileInput')[0].files[0];
+            
+           
+            if (avatarFile) {
+                    formData.append('image', avatarFile);
+                 
+                    // Simulating an AJAX POST request
+                    console.log(formData);
+                        $.ajaxSetup({
+                        headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        }
+                        });
+                    $.ajax({
+                        url: `{{ route('put.my.updateAvatar') }}`,
+                        type: 'POST',
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                     
+                        success: function (response) {
+                            // Handle success response
+                            console.log('Avatar uploaded successfully:', response);
+                        },
+                        error: function (xhr, status, error) {
+                            // Handle error
+                            console.error('Error uploading avatar:', error);
+                        }
+                    });
+                } else {
+                    alert('Please select an image before uploading.');
+                }
+
         }
     }
 

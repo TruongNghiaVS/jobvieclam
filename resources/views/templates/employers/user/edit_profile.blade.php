@@ -7,7 +7,7 @@
 <!-- Inner Page Title end -->
 @include('templates.employers.includes.mobile_dashboard_menu')
 <div class="user-wrapper">
-    @include('flash::message')
+  
     @include('templates.employers.includes.default_sidebar_menu')
     <div class="content">
         <div class="content-wrapper">

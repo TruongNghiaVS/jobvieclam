@@ -2,6 +2,7 @@
 
 /* * ******** UserController ************ */
 Route::get('my-profile', 'UserController@myProfile')->name('my.profile');
+Route::post('update-avatar', 'UserController@updateAvatar')->name('put.my.updateAvatar');
 Route::put('my-profile', 'UserController@updateMyProfile')->name('put.my.profile');
 Route::put('update_profilev3', 'UserController@updateMyProfilev3')->name('put.my.profilev3');
 Route::put('update_profilev2', 'UserController@updateMyProfilev2')->name('put.my.profilev2');

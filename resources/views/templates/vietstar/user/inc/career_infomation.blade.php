@@ -114,8 +114,10 @@
                         </strong>
                     </td>
                     <td class="table_value">
-                        {{ $current_salary }} - {{ $expected_salary }} {{__('million')}}  {{$salary_currency}} 
-                    </td>
+                        @if($current_salary || $expected_salary )
+                            {{ $current_salary }} - {{ $expected_salary }} {{__('million')}}  {{$salary_currency}}
+                        @endif    
+                </td>
                 </tr>
             </tbody>
         </table>

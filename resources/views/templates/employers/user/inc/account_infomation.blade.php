@@ -119,7 +119,7 @@
           $("#account_submitBtn").attr("disabled",true);
           $('#cPwdValid').hide();
           $('#cPwdInvalid').show();
-          $('#cPwdInvalid').html('Not Matching').css('color', 'red');
+          $('#cPwdInvalid').html('{{__('Not Matching')}}').css('color', 'red');
           $('.pwds').addClass('is-invalid')
           }
       });

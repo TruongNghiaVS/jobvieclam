@@ -203,6 +203,17 @@ class UserController extends Controller
                         ->with('packages', $packages);
     }
 
+    public function updatePassword(Request $request)
+    {
+        
+      
+        $user = User::findOrFail(Auth::user()->id);
+       
+        if (!empty($request->input('password'))) {
+            $user->password = Hash::make($request->input('password'));
+        }
+        return $user->update();;
+    }
     public function updateUser($id, UserFormRequest $request)
     {
         $user = User::findOrFail($id);

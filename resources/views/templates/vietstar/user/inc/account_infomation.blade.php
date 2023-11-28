@@ -113,21 +113,40 @@
           $("#account_submitBtn").attr("disabled",false);
           $('#cPwdValid').show();
           $('#cPwdInvalid').hide();
-          $('#cPwdValid').html('Valid').css('color', 'green');
+          $('#cPwdValid').html('').css('color', 'green');
           $('.pwds').removeClass('is-invalid')
         } else {
           $("#account_submitBtn").attr("disabled",true);
           $('#cPwdValid').hide();
           $('#cPwdInvalid').show();
-          $('#cPwdInvalid').html('Not Matching').css('color', 'red');
+          $('#cPwdInvalid').html(`{{__('Not Matching')}}`).css('color', 'red');
           $('.pwds').addClass('is-invalid')
           }
       });
 
-    $('#account_submitBtn').on('click',()=>{
-      // console.log(
-      //   $('#pwdId').val()
-      // );
+     $('#account_submitBtn').on('click',()=>{
+                if ($('#pwdId').val()) {
+                    // Simulating an AJAX POST request
+                    $.ajax({
+                        url:  `{{ route('changePasswordUser') }}`,
+                        type: 'post',
+                        data:  {
+                            _token: '{{ csrf_token() }}',
+                            password:$('#pwdId').val(),
+                        },
+                    
+                        success: function (response) {
+                            // Handle success response
+                            // location.reload();
+                        },
+                        error: function (xhr, status, error) {
+                            // Handle error
+                            console.error('Error uploading avatar:', error);
+                        }
+                    });
+                } else {
+                    alert('Please select an image before uploading.');
+                }
   
     })
     });

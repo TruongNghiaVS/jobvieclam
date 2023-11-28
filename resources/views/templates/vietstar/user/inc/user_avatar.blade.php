@@ -111,7 +111,7 @@
                      
                         success: function (response) {
                             // Handle success response
-                            console.log('Avatar uploaded successfully:', response);
+                            location.reload();
                         },
                         error: function (xhr, status, error) {
                             // Handle error

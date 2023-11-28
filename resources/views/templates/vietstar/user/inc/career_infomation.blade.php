@@ -1,9 +1,12 @@
 <?php
-    $job_experience = $user->job_experience_id ? $user->job_experience_id : 2;
-    $careerlevel = $user->career_level_id ? $user->career_level_id : 23;
-    $industry = $user->industry_id ? $user->industry_id : 233;
-    $functional_area = $user->functional_area_id ? $user->functional_area_id : 588;
-    // dd($user);
+    $job_experience = $user->job_experience_id ? $user->job_experience_id : "";
+    $careerlevel = $user->career_level_id ? $user->career_level_id : "";
+    $industry = $user->industry_id ? $user->industry_id : "";
+    $functional_area = $user->functional_area_id ? $user->functional_area_id : "";
+    $current_salary =  $user->current_salary ? $user->current_salary :"";
+    $expected_salary =  $user->expected_salary ? $user->expected_salary :"";
+    $salary_currency =  $user->salary_currency ? $user->salary_currency :"";
+
 ?>
 <div class="section-head">
     <div class="section-head__figure">
@@ -70,7 +73,7 @@
                 <tr>
                     <td class="text-primary table_title">
                         <strong>
-                        {{__('Lựa chọn Ngành nghề')}}
+                        {{__('Select Industry')}}
                         </strong>
                     </td>
                     <td class="table_value">
@@ -89,7 +92,7 @@
                     <td class="text-primary table_title">
                         <strong>
 
-                        {{__('Bộ phận chức năng')}}
+                        {{__('Functional department')}}
                         </strong>
                     </td>
                     <td class="table_value">
@@ -107,12 +110,11 @@
                 <tr>
                     <td class="text-primary table_title">
                         <strong>
-                        {{__('Mức lương kỳ vọng')}}
+                        {{__('Expected salary')}}
                         </strong>
                     </td>
                     <td class="table_value">
-                                       
-	                    20,000,000 - 100,000,000 VND
+                        {{ $current_salary }} - {{ $expected_salary }} {{__('million')}}  {{$salary_currency}} 
                     </td>
                 </tr>
             </tbody>
@@ -200,7 +202,7 @@
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'job_experience_id') !!}">
                             <label for="">{{__('Job Experience')}}</label>
                             {!! Form::select('job_experience_id', [''=>__('Lựa chọn số năm kinh nghiệm')]+$jobExperiences, null,
-                            array('class'=>'form-control form-select', 'id'=>'job_experience_id','name'=>'job_experience')) !!}
+                            array('class'=>'form-control form-select', 'id'=>'job_experience_id','name'=>'job_experience_id')) !!}
                             {!! APFrmErrHelp::showErrors($errors, 'job_experience_id') !!}
                         </div>
                     </div>
@@ -330,6 +332,7 @@
             url:  `{{ route('put.my.profilev3') }}`,
             data: {
                 "_token": "{{ csrf_token() }}",
+
                 ...formObject
             },
             statusCode: {
@@ -358,7 +361,7 @@
                     // }, 2000);
                     // window.location.href =  "/home";
                     $("#careerinformation").modal('hide');
-                   location.reload();
+                    location.reload();
                     
                 })
                 .fail(function(jqXHR, textStatus){

@@ -24,7 +24,7 @@
         <div class="formrow" id="div_date_start">
             <input class="form-control datepicker" id="date_start" placeholder="{{__('Ngày bắt đầu Dự án')}}" name="date_start" type="text" autocomplete="off" value="{{(isset($profileProject)? $profileProject->date_start:'')}}">
             <span class="help-block date_start-error"></span> </div>
-        <div class="formrow" id="div_date_end">
+        <div class="formrow " id="div_date_end">
             <input class="form-control datepicker" autocomplete="off" id="date_end" placeholder="{{__('Ngày kết thúc Dự án')}}" name="date_end" type="text" value="{{(isset($profileProject)? $profileProject->date_end:'')}}">
             <span class="help-block date_end-error"></span> </div>  
 

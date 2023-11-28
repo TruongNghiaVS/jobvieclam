@@ -61,7 +61,7 @@
                 <tr>
                     <td class="text-primary table_title">
                         <strong>
-                        {{__('Bộ phận chức năng')}}
+                        {{__('Functional department')}}
                         </strong>
                     </td>
                     <td class="table_value">
@@ -72,11 +72,11 @@
                 <tr>
                     <td class="text-primary table_title">
                         <strong>
-                        {{__('Mức lương kỳ vọng')}}
+                        {{__('Expected salary')}}
                         </strong>
                     </td>
                     <td class="table_value">
-	                    20,000,000 - 100,000,000 VND
+	                     
                     </td>
                 </tr>
             </tbody>

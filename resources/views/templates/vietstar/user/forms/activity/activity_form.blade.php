@@ -12,9 +12,9 @@
             <input class="form-control datepicker"  autocomplete="off" id="date_start" placeholder="{{__('Start Date')}}" name="date_start" type="text" value="{{(isset($profileActivity->date_start)? $profileActivity->date_start->format('Y-m-d'):'')}}">
             <span class="help-block date_start-error"></span> </div>
 
-        <div class="formrow" id="div_date_end">
+        <div class="formrow " id="div_date_end">
             <input class="form-control datepicker" autocomplete="off" id="date_end" placeholder="{{__('End Date')}}" {{ (isset($profileActivity) && ($profileActivity->date_end == null)) ? 'disabled' : '' }} name="date_end" type="text" value="{{ (isset($profileActivity->date_end)? $profileActivity->date_end->format('Y-m-d'):'')}}">
-            <input type="checkbox" class="is_currently_working" value="1" name="is_currently_working" {{ (isset($profileActivity) && ($profileActivity->date_end == null))  ? 'checked' : '' }} id="is_currently_working" >{{__('Currently working')}}
+            <input type="checkbox" class="is_currently_working my-3" value="1" name="is_currently_working" {{ (isset($profileActivity) && ($profileActivity->date_end == null))  ? 'checked' : '' }} id="is_currently_working" >{{__('Currently working')}}
             <span class="help-block date_end-error"></span> </div>
             
         <div class="formrow" id="div_description">

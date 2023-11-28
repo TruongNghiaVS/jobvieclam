@@ -20,6 +20,7 @@
 </div>
 
 
+
 <div class="section-body">
     <!-- <div class="row">
         <div class="col-md-6">
@@ -81,7 +82,15 @@
                         </strong>
                     </td>
                     <td class="table_value">
-                         {{$user->gender_id == 15 ? "Nam": "Nữ" }}
+                       
+                        @if($user->gender_id)
+                            @foreach ($genders as $key => $gender)
+                                @if( $key == $user->gender_id )
+                                {{ $gender }}
+                                @endif
+                            @endforeach
+                        @endif
+                         <!-- {{$user->gender_id == 15 ? "Nam": "Nữ" }} -->
                     </td>
                 </tr>
 
@@ -93,7 +102,15 @@
                         </strong>
                     </td>
                     <td class="table_value">
-                         {{$user->marital_status_id == 21 ? "Độc thân": "Gia đình" }}
+
+                        @if($user->marital_status_id)
+                            @foreach ($maritalStatuses as $key => $maritalStatuse)
+                                @if( $key == $user->marital_status_id )
+                                {{$maritalStatuse }}
+                                @endif
+                            @endforeach
+                        @endif
+                         <!-- {{$user->marital_status_id == 21 ? "Độc thân": "Gia đình" }} -->
                     </td>
                 </tr>
 
@@ -106,7 +123,14 @@
                         </strong>
                     </td>
                     <td class="table_value">
-                        Việt Nam
+                        @if($user->nationality_id)
+                            @foreach ($nationalities as $key => $nationalitie)
+                                @if( $key == $user->nationality_id )
+                                {{$nationalitie }}
+                                @endif
+                            @endforeach
+                        @endif
+                        
                     </td>
                 </tr>
 
@@ -344,6 +368,7 @@
                             </div>
                         </div>
                         <div class="form-group">
+          
                             <button id="personal_submitBtn" type="submit" class="btn btn-primary submit-button">{{__(('Update'))}}</button>
                         </div>
                     </div>
@@ -354,6 +379,7 @@
         </div>
     </div>
 </div>
+
 
 
 @push('scripts')
@@ -411,6 +437,7 @@
 
 
         if (isValid) { 
+           
             $.ajax({
             type: "PUT",
             url:  `{{ route('put.my.profilev2') }}`,
@@ -444,8 +471,9 @@
                     // // }, 2000);
                     //  window.location.href =  "/home";
                     //  location.reload();
-                   $("#persionalinfo").modal('hide');
-                   location.reload();`                                                           
+                    $("#persionalinfo").modal('hide');
+                    location.reload();
+                   
                        
                 })
                 .fail(function(jqXHR, textStatus){

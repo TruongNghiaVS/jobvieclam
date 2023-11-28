@@ -128,6 +128,8 @@
                                         @else
                                         <span class="fas fa-dollar-sign"></span> {{__('Salary Not provided')}}
                                         @endif
+                                
+
                                     </div>
                                     <div class="navbar__link-separator" bis_skin_checked="1"></div>
                                     <!--meta-city-->

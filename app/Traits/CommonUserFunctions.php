@@ -95,6 +95,7 @@ trait CommonUserFunctions
 
     private function updateUserFullTextSearch($user)
     {
+        return;
         $str = '';
         $str .= $user->getName();
         $str .= ' ' . $user->getCountry('country');

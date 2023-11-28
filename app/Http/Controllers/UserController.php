@@ -391,7 +391,8 @@ class UserController extends Controller
 
         $user->save();
 
-        $this->updateUserFullTextSearch($user);
+
+         $this->updateUserFullTextSearch($user);
 
         
 		/*************************/
@@ -414,9 +415,17 @@ class UserController extends Controller
 		// 	/*************************/
 		// }
       
-        flash(__('You have updated your profile successfully'))->success();
-   
-        return \Redirect::route('my.profile');
+      
+    
+        if($request->ajax()){
+            
+        }
+        else 
+        {
+            flash(__('You have updated your profile successfully'))->success();
+            return \Redirect::route('my.profile');
+        }
+       
     }
 
     public function updateMyProfilev3(UserFrontFormRequest $request)
@@ -433,9 +442,14 @@ class UserController extends Controller
      
         // $this->updateUserFullTextSearch($user);
     
-        flash(__('You have updated your profile successfully'))->success();
-   
-        return \Redirect::route('my.profile');
+        if($request->ajax()){
+            
+        }
+        else 
+        {
+            flash(__('You have updated your profile successfully'))->success();
+            return \Redirect::route('my.profile');
+        }
     }
     public function addToFavouriteCompany(Request $request, $company_slug)
     {

@@ -273,7 +273,7 @@
 
             .done(function (response) {
 
-            $('#default_state_experience_dd').html(response);
+        //     $('#default_state_experience_dd').html(response);
 
             filterDefaultCitiesExperience(city_id);
 

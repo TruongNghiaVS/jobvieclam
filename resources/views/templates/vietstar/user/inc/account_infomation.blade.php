@@ -51,16 +51,7 @@
                         {!! APFrmErrHelp::showErrors($errors, 'email') !!}
                     </td>
                   </tr>
-                  <tr>
-                     <td  class="table_title">
-                      <strong>
-                      <i class="bi bi-lock"></i> Password
-                      </strong>
-                    </td>
-                    <td class="text-primary table_value">
-                        <!-- <i class="toggle-password fa fa-fw fa-eye-slash"></i> -->
-                    </td>
-                  </tr>
+                 
                 </tbody>
             </table>
     </div>

@@ -3996,25 +3996,11 @@ div#industry_id_chosen {
     margin-right: 2px
 }
 
-.user-badge .user-badge__avatar {
-    border-radius: 50%;
-    width: 42px !important;
-    height: 42px !important
-}
 
-.user-badge .user-badge__avatar svg {
-    width: 42px !important;
-    height: 42px !important
-}
 
-.user-badge .user-badge__avatar img {
-    -o-object-fit: cover;
-    object-fit: cover;
-    -o-object-position: center center;
-    object-position: center center;
-    width: 42px !important;
-    height: 42px !important
-}
+
+
+
 
 .navbar-nav-dashboard {
     padding: 4px 12px 0 12px
@@ -4059,7 +4045,7 @@ div#industry_id_chosen {
 }
 
 .user-badge {
-    background: #f8f8fa;
+    background: white;
     border-radius: 6px;
     padding: 4px 8px;
     position: relative
@@ -4069,8 +4055,8 @@ div#industry_id_chosen {
     min-width: 220px;
     left: unset !important;
     right: 0;
-    background-color: #f8f9fa;
-    top: calc(100% + 2px)
+    background-color:white;
+    top: calc(100% + 20px)
 }
 
 .user-badge .dropdown_menu .nav-link {

@@ -24,13 +24,16 @@ $company = $job->getCompany();
                 <div class="job-detail-banner__icon">
                     <img src="{{ asset('company_logos/'.$company->logo) }}" alt="{{ $company->name }}">
                 </div>
+             
                 <div class="job-detail-banner__group d-flex flex-fill">
                     <div class="job-detail-banner__detail">
                         <h3 class="banner__title">{{$job->title}}</h3>
                         <div class="banner__company">{{$company->name}}</div>
+                   
                         <div class="banner__due-day mb-3">
                         {{__('Location')}} {{ !empty($job->location) ? $job->location :  $job->getCity('city')}}
                         </div>
+                       
                         <div class="banner__due-day mb-3">
                             $
                             @php
@@ -64,6 +67,7 @@ $company = $job->getCompany();
                             {{__('Apply Before')}}: <span>{{$job->expiry_date->format('d/m/Y')}}</span>
                         </div>
                     </div>
+                  
                     <div class="">
                         @if($job->isJobExpired())
                         <span class="btn btn-primary jbexpire "><i
@@ -90,6 +94,8 @@ $company = $job->getCompany();
                 </div>
             </div>
         </section>
+
+      
         <!--TAB PANE NAV -->
         <ul class="nav nav-tabs nav-tabs-default">
             <li class="nav-item">
@@ -287,6 +293,7 @@ $company = $job->getCompany();
 
                 </div>
             </div>
+          
             <div class="tab-pane" id="profile" aria-labelledby="profile-tab">
                 <!-- Company detail title -->
                 <section class="company-job-detail job-detail-title">
@@ -726,11 +733,8 @@ $company = $job->getCompany();
             </div>
 
 
-            <!--related jobs other  -->
-            {{--<?php
-                    dd($relatedJobs)
-            ?>--}}
-            @if ($company->jobs->count() > 0)
+     
+            @if (1==2)
             <section class="related-jobs-other">
                 <div class="related-jobs__title d-flex justify-content-between align-items-center">
                     <h4>Công việc liên quan</h4>
@@ -753,6 +757,8 @@ $company = $job->getCompany();
                                     $relatedJob_from = round($relatedJob->salary_from/1000000,0);
                                     $relatedJob_to = round($relatedJob->salary_to/1000000,0)
                                 @endphp
+                             
+                            
                                     <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
                                         <div class="card-news p-3" bis_skin_checked="1">
                                             @if($relatedJob_logo)
@@ -798,183 +804,7 @@ $company = $job->getCompany();
                                         </div>
                                     </div>
                                 @endforeach
-                                    <!-- <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
-                                        <div class="card-news p-3" bis_skin_checked="1">
-                                            <div class="card-news__icon" bis_skin_checked="1">
-                                                <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg"
-                                                    alt="Công ty TNHH VBI">
-                                            </div>
-                                            <div class="card-news__content" bis_skin_checked="1">
-                                                <h6 class="card-news__content-title"><a
-                                                        href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
-                                                        title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự -
-                                                        Tuyển Dụng
-                                                        (HR)</a>
-                                                </h6>
-                                                <p class="card-news__content-detail">Công ty TNHH VBI</p>
-                                                <div class="card-news__content-footer" bis_skin_checked="1">
-                                                    <div class="card-news__content-footer__location"
-                                                        bis_skin_checked="1">
-                                                        <span class="badge rounded-pill pill pill-location"></span>
-                                                        <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí
-                                                            Minh</span>
-                                                    </div>
-                                                    <div class="card-news__content-footer__salary" bis_skin_checked="1">
-                                                        3000000 VND -
-                                                        VND
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
-                                        <div class="card-news p-3" bis_skin_checked="1">
-                                            <div class="card-news__icon" bis_skin_checked="1">
-                                                <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg"
-                                                    alt="Công ty TNHH VBI">
-                                            </div>
-                                            <div class="card-news__content" bis_skin_checked="1">
-                                                <h6 class="card-news__content-title"><a
-                                                        href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
-                                                        title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự -
-                                                        Tuyển Dụng
-                                                        (HR)</a>
-                                                </h6>
-                                                <p class="card-news__content-detail">Công ty TNHH VBI</p>
-                                                <div class="card-news__content-footer" bis_skin_checked="1">
-                                                    <div class="card-news__content-footer__location"
-                                                        bis_skin_checked="1">
-                                                        <span class="badge rounded-pill pill pill-location"></span>
-                                                        <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí
-                                                            Minh</span>
-                                                    </div>
-                                                    <div class="card-news__content-footer__salary" bis_skin_checked="1">
-                                                        3000000 VND -
-                                                        VND
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
-                                        <div class="card-news p-3" bis_skin_checked="1">
-                                            <div class="card-news__icon" bis_skin_checked="1">
-                                                <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg"
-                                                    alt="Công ty TNHH VBI">
-                                            </div>
-                                            <div class="card-news__content" bis_skin_checked="1">
-                                                <h6 class="card-news__content-title"><a
-                                                        href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
-                                                        title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự -
-                                                        Tuyển Dụng
-                                                        (HR)</a>
-                                                </h6>
-                                                <p class="card-news__content-detail">Công ty TNHH VBI</p>
-                                                <div class="card-news__content-footer" bis_skin_checked="1">
-                                                    <div class="card-news__content-footer__location"
-                                                        bis_skin_checked="1">
-                                                        <span class="badge rounded-pill pill pill-location"></span>
-                                                        <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí
-                                                            Minh</span>
-                                                    </div>
-                                                    <div class="card-news__content-footer__salary" bis_skin_checked="1">
-                                                        3000000 VND -
-                                                        VND
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
-                                        <div class="card-news p-3" bis_skin_checked="1">
-                                            <div class="card-news__icon" bis_skin_checked="1">
-                                                <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg"
-                                                    alt="Công ty TNHH VBI">
-                                            </div>
-                                            <div class="card-news__content" bis_skin_checked="1">
-                                                <h6 class="card-news__content-title"><a
-                                                        href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
-                                                        title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự -
-                                                        Tuyển Dụng
-                                                        (HR)</a>
-                                                </h6>
-                                                <p class="card-news__content-detail">Công ty TNHH VBI</p>
-                                                <div class="card-news__content-footer" bis_skin_checked="1">
-                                                    <div class="card-news__content-footer__location"
-                                                        bis_skin_checked="1">
-                                                        <span class="badge rounded-pill pill pill-location"></span>
-                                                        <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí
-                                                            Minh</span>
-                                                    </div>
-                                                    <div class="card-news__content-footer__salary" bis_skin_checked="1">
-                                                        3000000 VND -
-                                                        VND
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
-                                        <div class="card-news p-3" bis_skin_checked="1">
-                                            <div class="card-news__icon" bis_skin_checked="1">
-                                                <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg"
-                                                    alt="Công ty TNHH VBI">
-                                            </div>
-                                            <div class="card-news__content" bis_skin_checked="1">
-                                                <h6 class="card-news__content-title"><a
-                                                        href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
-                                                        title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự -
-                                                        Tuyển Dụng
-                                                        (HR)</a>
-                                                </h6>
-                                                <p class="card-news__content-detail">Công ty TNHH VBI</p>
-                                                <div class="card-news__content-footer" bis_skin_checked="1">
-                                                    <div class="card-news__content-footer__location"
-                                                        bis_skin_checked="1">
-                                                        <span class="badge rounded-pill pill pill-location"></span>
-                                                        <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí
-                                                            Minh</span>
-                                                    </div>
-                                                    <div class="card-news__content-footer__salary" bis_skin_checked="1">
-                                                        3000000 VND -
-                                                        VND
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
-                                        <div class="card-news p-3" bis_skin_checked="1">
-                                            <div class="card-news__icon" bis_skin_checked="1">
-                                                <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg"
-                                                    alt="Công ty TNHH VBI">
-                                            </div>
-                                            <div class="card-news__content" bis_skin_checked="1">
-                                                <h6 class="card-news__content-title"><a
-                                                        href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
-                                                        title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự -
-                                                        Tuyển Dụng
-                                                        (HR)</a>
-                                                </h6>
-                                                <p class="card-news__content-detail">Công ty TNHH VBI</p>
-                                                <div class="card-news__content-footer" bis_skin_checked="1">
-                                                    <div class="card-news__content-footer__location"
-                                                        bis_skin_checked="1">
-                                                        <span class="badge rounded-pill pill pill-location"></span>
-                                                        <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí
-                                                            Minh</span>
-                                                    </div>
-                                                    <div class="card-news__content-footer__salary" bis_skin_checked="1">
-                                                        3000000 VND -
-                                                        VND
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-
-                                        </div>
-                                    </div> -->
+                                   
                                 </div>
                             </div>
                             <div class="swiper-slide">
@@ -1032,183 +862,7 @@ $company = $job->getCompany();
                                         </div>
                                     </div>
                                 @endforeach
-                                    <!-- <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
-                                        <div class="card-news p-3" bis_skin_checked="1">
-                                            <div class="card-news__icon" bis_skin_checked="1">
-                                                <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg"
-                                                    alt="Công ty TNHH VBI">
-                                            </div>
-                                            <div class="card-news__content" bis_skin_checked="1">
-                                                <h6 class="card-news__content-title"><a
-                                                        href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
-                                                        title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự -
-                                                        Tuyển Dụng
-                                                        (HR)</a>
-                                                </h6>
-                                                <p class="card-news__content-detail">Công ty TNHH VBI</p>
-                                                <div class="card-news__content-footer" bis_skin_checked="1">
-                                                    <div class="card-news__content-footer__location"
-                                                        bis_skin_checked="1">
-                                                        <span class="badge rounded-pill pill pill-location"></span>
-                                                        <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí
-                                                            Minh</span>
-                                                    </div>
-                                                    <div class="card-news__content-footer__salary" bis_skin_checked="1">
-                                                        3000000 VND -
-                                                        VND
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
-                                        <div class="card-news p-3" bis_skin_checked="1">
-                                            <div class="card-news__icon" bis_skin_checked="1">
-                                                <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg"
-                                                    alt="Công ty TNHH VBI">
-                                            </div>
-                                            <div class="card-news__content" bis_skin_checked="1">
-                                                <h6 class="card-news__content-title"><a
-                                                        href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
-                                                        title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự -
-                                                        Tuyển Dụng
-                                                        (HR)</a>
-                                                </h6>
-                                                <p class="card-news__content-detail">Công ty TNHH VBI</p>
-                                                <div class="card-news__content-footer" bis_skin_checked="1">
-                                                    <div class="card-news__content-footer__location"
-                                                        bis_skin_checked="1">
-                                                        <span class="badge rounded-pill pill pill-location"></span>
-                                                        <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí
-                                                            Minh</span>
-                                                    </div>
-                                                    <div class="card-news__content-footer__salary" bis_skin_checked="1">
-                                                        3000000 VND -
-                                                        VND
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
-                                        <div class="card-news p-3" bis_skin_checked="1">
-                                            <div class="card-news__icon" bis_skin_checked="1">
-                                                <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg"
-                                                    alt="Công ty TNHH VBI">
-                                            </div>
-                                            <div class="card-news__content" bis_skin_checked="1">
-                                                <h6 class="card-news__content-title"><a
-                                                        href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
-                                                        title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự -
-                                                        Tuyển Dụng
-                                                        (HR)</a>
-                                                </h6>
-                                                <p class="card-news__content-detail">Công ty TNHH VBI</p>
-                                                <div class="card-news__content-footer" bis_skin_checked="1">
-                                                    <div class="card-news__content-footer__location"
-                                                        bis_skin_checked="1">
-                                                        <span class="badge rounded-pill pill pill-location"></span>
-                                                        <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí
-                                                            Minh</span>
-                                                    </div>
-                                                    <div class="card-news__content-footer__salary" bis_skin_checked="1">
-                                                        3000000 VND -
-                                                        VND
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
-                                        <div class="card-news p-3" bis_skin_checked="1">
-                                            <div class="card-news__icon" bis_skin_checked="1">
-                                                <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg"
-                                                    alt="Công ty TNHH VBI">
-                                            </div>
-                                            <div class="card-news__content" bis_skin_checked="1">
-                                                <h6 class="card-news__content-title"><a
-                                                        href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
-                                                        title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự -
-                                                        Tuyển Dụng
-                                                        (HR)</a>
-                                                </h6>
-                                                <p class="card-news__content-detail">Công ty TNHH VBI</p>
-                                                <div class="card-news__content-footer" bis_skin_checked="1">
-                                                    <div class="card-news__content-footer__location"
-                                                        bis_skin_checked="1">
-                                                        <span class="badge rounded-pill pill pill-location"></span>
-                                                        <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí
-                                                            Minh</span>
-                                                    </div>
-                                                    <div class="card-news__content-footer__salary" bis_skin_checked="1">
-                                                        3000000 VND -
-                                                        VND
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
-                                        <div class="card-news p-3" bis_skin_checked="1">
-                                            <div class="card-news__icon" bis_skin_checked="1">
-                                                <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg"
-                                                    alt="Công ty TNHH VBI">
-                                            </div>
-                                            <div class="card-news__content" bis_skin_checked="1">
-                                                <h6 class="card-news__content-title"><a
-                                                        href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
-                                                        title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự -
-                                                        Tuyển Dụng
-                                                        (HR)</a>
-                                                </h6>
-                                                <p class="card-news__content-detail">Công ty TNHH VBI</p>
-                                                <div class="card-news__content-footer" bis_skin_checked="1">
-                                                    <div class="card-news__content-footer__location"
-                                                        bis_skin_checked="1">
-                                                        <span class="badge rounded-pill pill pill-location"></span>
-                                                        <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí
-                                                            Minh</span>
-                                                    </div>
-                                                    <div class="card-news__content-footer__salary" bis_skin_checked="1">
-                                                        3000000 VND -
-                                                        VND
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4 mb-3" bis_skin_checked="1">
-                                        <div class="card-news p-3" bis_skin_checked="1">
-                                            <div class="card-news__icon" bis_skin_checked="1">
-                                                <img src="http://jobvieclam.com/company_logos/-1672127797-895.jpg"
-                                                    alt="Công ty TNHH VBI">
-                                            </div>
-                                            <div class="card-news__content" bis_skin_checked="1">
-                                                <h6 class="card-news__content-title"><a
-                                                        href="http://jobvieclam.com/job/nhan-vien-nhan-su-tuyen-dung-hr-33"
-                                                        title="Nhân Viên Nhân Sự - Tuyển Dụng (HR)">Nhân Viên Nhân Sự -
-                                                        Tuyển Dụng
-                                                        (HR)</a>
-                                                </h6>
-                                                <p class="card-news__content-detail">Công ty TNHH VBI</p>
-                                                <div class="card-news__content-footer" bis_skin_checked="1">
-                                                    <div class="card-news__content-footer__location"
-                                                        bis_skin_checked="1">
-                                                        <span class="badge rounded-pill pill pill-location"></span>
-                                                        <span class="badge rounded-pill pill pill-worktime">TP. Hồ Chí
-                                                            Minh</span>
-                                                    </div>
-                                                    <div class="card-news__content-footer__salary" bis_skin_checked="1">
-                                                        3000000 VND -
-                                                        VND
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-
-                                        </div>
-                                    </div> -->
+                                   
                                 </div>
                             </div>
                         </div>

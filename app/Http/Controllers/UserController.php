@@ -73,17 +73,15 @@ class UserController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth', ['only' => ['myProfile', 'updateMyProfile', 'viewPublicProfile']]);
+        
         $this->middleware('auth', ['except' => ['showApplicantProfileEducation', 'showApplicantProfileProjects', 'showApplicantProfileExperience', 'showApplicantProfileSkills', 'showApplicantProfileLanguages']]);
     }
 
     public function viewPublicProfile($id)
     {
-
-
         $user = User::findOrFail($id);
         $profileCv = $user->getDefaultCv();
-
+        
         return view(config('app.THEME_PATH').'.user.applicant_profile')
                         ->with('user', $user)
                         ->with('profileCv', $profileCv)
@@ -348,19 +346,23 @@ class UserController extends Controller
     }
     public function updatePassword(Request $request)
     {
-        
+         
       
         $user = User::findOrFail(Auth::user()->id);
-     
-        /*         * **************************************** */
+         /*         * **************************************** */
         
         if (!empty($request->input('password'))) {
+
             $user->password = Hash::make($request->input('password'));
         }
         
+        $user->save();
 		
-      
-        return $request->input('password');
+        return response()->json([
+            'sucess'=>true,
+           
+            'message' => 'Đổi mật khẩu thành công'], 200);
+       
     }
 
 

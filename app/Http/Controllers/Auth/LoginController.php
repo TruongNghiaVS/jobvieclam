@@ -130,8 +130,10 @@ use AuthenticatesUsers;
     public function login(Request $request)
 
     {
-        $passwordInput = bcrypt($request->input('password'));
-       $error = array();
+        $passwordInput = Hash::make($request->input('password'));
+        $error = array();
+
+
 
        if(empty($request->input('password')))
          {
@@ -148,15 +150,28 @@ use AuthenticatesUsers;
         $email = $request->input("email");
         $password = $request->input("password");
         $exitMemeber = User::where('email', $request->get('email'))
-                        
-                            ->first();  
-      
+                             ->first();  
+       
+        
       
         if(!$exitMemeber)
         {
             $itemError = new stdClass();
             $itemError->key ="email";
              $itemError->textError =trans('Email does not exist');
+            array_push($error, $itemError);
+            return response()->json([
+                'sucess'=>false,
+                'error'=> $error ], 401);
+            
+          
+        }
+        $loginSuccess = Hash::check($request->input('password'), $exitMemeber->password);
+        if(!$loginSuccess)
+        {
+            $itemError = new stdClass();
+            $itemError->key ="password";
+            $itemError->textError = "Mật khẩu không chính xác";
             array_push($error, $itemError);
             return response()->json([
                 'sucess'=>false,
@@ -168,7 +183,7 @@ use AuthenticatesUsers;
         {
             return response()->json([
                 'sucess'=>false,
-                'error'=> $error ], 202);
+                'error'=> $error ], 401);
         }
         
 

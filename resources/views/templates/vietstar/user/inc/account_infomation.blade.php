@@ -20,23 +20,7 @@
 
 
 <div class="section-body">
-    <!-- <div class="row">
-        <div class="col-md-6">
-            <div class="formrow {!! APFrmErrHelp::hasError($errors, 'email') !!}">
-                <label for="">{{__('Email')}}</label>
-                {!! Form::text('email', null, array('class'=>'form-control', 'id'=>'email', 'placeholder'=>__('Email'))) !!}
-                {!! APFrmErrHelp::showErrors($errors, 'email') !!}
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="formrow {!! APFrmErrHelp::hasError($errors, 'password') !!}">
-                <label for="">{{__('Password')}}</label>
-                {!! Form::password('password', array('class'=>'form-control', 'id'=>'password',
-                'placeholder'=>__('Password'))) !!}
-                {!! APFrmErrHelp::showErrors($errors, 'password') !!}
-            </div>
-        </div>
-    </div> -->
+ 
     <div class="table-responsive">
               <table class="table table-responsive table-user-information borderless ">
                 <tbody>
@@ -58,7 +42,7 @@
                       </strong>
                     </td>
                     <td class="text-primary table_value">
-                        <!-- <i class="toggle-password fa fa-fw fa-eye-slash"></i> -->
+                      
                     </td>
                   </tr>
                 </tbody>
@@ -81,8 +65,7 @@
                 <form id="myFormpassword" class="needs-validation" novalidate>
                     <div class="form-group">
                         <label for="password">{{__('Reset Password')}}</label>
-                        {!! Form::password('password', array('class'=>'form-control', 'id'=>'pwdId',
-                        'placeholder'=>__('Password'))) !!}
+                        {!! Form::password('password', array('class'=>'form-control', 'id'=>'pwdId')) !!}
                         {!! APFrmErrHelp::showErrors($errors, 'password') !!}
                         <div class="invalid-feedback">{{__('Password is required')}}</div>
                     </div>
@@ -134,7 +117,6 @@
                             _token: '{{ csrf_token() }}',
                             password:$('#pwdId').val(),
                         },
-                    
                         success: function (response) {
                             if(response){
                                 location.reload();
@@ -142,11 +124,11 @@
                         },
                         error: function (xhr, status, error) {
                             // Handle error
-                            console.error('Error uploading avatar:', error);
+                            
                         }
                     });
                 } else {
-                    alert('Please select an image before uploading.');
+                
                 }
   
     })

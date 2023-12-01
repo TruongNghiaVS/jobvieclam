@@ -58,161 +58,152 @@
                     </div>
                     @include('flash::message')
                     <!-- Search List -->
-                    {{-- <div class="searchList jobs-side-list">
-                        <!-- job start -->
-                        @if(isset($jobs) && count($jobs)) <?php $count_1 = 1; ?> @foreach($jobs as $job) @php $company =
-                        $job->getCompany(); @endphp
-                        <?php if (isset($company)) {
-                        ?>
-                            <?php if ($count_1 == 7) { ?>
-                                <div class="inpostad">
-                                    <img src="https://png.pngtree.com/thumb_back/fh260/back_pic/00/02/44/5056179b42b174f.jpg" alt="">
-                                </div>
-                            <?php } else { ?>
-                                @php
-                                $props = ["title", "job_type", "job_experience_id", "state_id", "city_id", "job_type_id",
-                                "salary_currency", "salary_from", "salary_to",
-                                "company_id", "department_id", "skill_id", "industry_id", "gender_id", "degree_level_id",
-                                "career_level_id", "job_shift_id", "job_type_id" ];
-                                $attrs = "";
-                                foreach ($props as $prop) {
-                                $attrs .= !empty($job->{$prop}) ? "data-{$prop}-id={$job->{$prop}} " : '';
-                    }
+                   
+                <div id="loadingMessage" style="display:none" class="text-center"><div class="spinner-border text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+               </div>
+              
+                <div class="searchList jobs-side-list">
 
-                    @endphp
-                    <div data-job-id="{{$job->id}}" {{$attrs}} class="item-job mb-3">
-                        <div class="logo-company">
-                            <a href="{{route('company.detail', $company->slug)}}" title="{{$company->name}}" class="pic">{{$company->printCompanyImage(140, 140)}}</a>
-                        </div>
-                        <div class="jobinfo">
+                @php
+                   function checksalary( $from, $to)
+                   {
+                        return "Thương lượng"; 
+                   }
+                @endphp
+                           
+                @foreach ( $jobList as  $jobitem)
+                   
+                    @php
+                         $companyItem = $jobitem->company;
+
+                         $cover_logo = "/admin_assets/no-image.png";
+                         $slugCompany = "javascript:void(0)";
+                         $companyName =  "Công ty vô danh";
+                         
+
+
+                         if($companyItem)
+                         {
+                                $cover_logo = $jobitem->company->cover_logo;
+                                $slugCompany = "/company/".$companyItem->slug;
+                                if($cover_logo =="" || $cover_logo == null)
+                                {
+
+                                $cover_logo = "/admin_assets/no-image.png";
+                                }
+                                else 
+                                {
+                                $cover_logo = "/company_logos/".$cover_logo;
+                                }
+                                $companyName = $jobitem->company->name;
+                         }
+                         
+                         
+                        
+
+                         $salaryText  = checksalary($jobitem->salary_from, $jobitem->salary_to);
+                         $datetime =   Carbon\Carbon::parse($jobitem->created_at);
+                         $timeCurrent = Carbon\Carbon::now();
+                         $numberDate = $timeCurrent->diffInDays($datetime);
+                         $datetimeText ="";
+                         if($numberDate < 1)
+                         {
+                            $datetimeText = "Hôm nay";
+                         }
+                         else if($numberDate < 2){
+                            $datetimeText = "Hôm qua";
+                         }
+                         else 
+                         {
+                            $datetimeText =  $datetime->format('d-m-Y');
+                         }
+                   @endphp
+                 
+                   <div data-job-id="{{$jobitem->id}}" class="item-job mb-3">
+                            <div class="logo-company">
+                            <a href="{{$slugCompany}}" title="{{$companyName}}" class="pic">
+                            <img src="{{ $cover_logo}}" alt="">
+                            </a>
+                            </div>
+                            <div class="jobinfo">
                             <div class="info">
-                                <!-- Title  Start-->
-                                <div class="info-item job-title-box">
-                                    <div class="job-title">
-                                        <span>Mới</span>
-                                        <h3 class="job-title-name"><a href="{{route('job.detail', [$job->slug])}}" title="{{$job->title}}">{{$job->title}}</a></h3>
-                                    </div>
-                                    @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
-                                    <a class="save-job active" href="{{route('remove.from.favourite', $job->slug)}}"><i class="far fa-heart"></i>
+                            <!-- Title  Start-->
+                            <div class="info-item job-title-box">
+                            <div class="job-title">
+                            <span>Mới</span>
+                             <h3 class="job-title-name"><a href="/job/{{$jobitem->slug}}" title="">{{$jobitem->title}}</a></h3>
+                            </div>
+
+                                   @if(Auth::check() && Auth::user()->isFavouriteJob($jobitem->slug))
+                                    <a class="save-job active" href="{{route('remove.from.favourite', $jobitem->slug)}}"><i class="far fa-heart"></i>
                                     </a>
-                                    @elseif(Auth::check() && !Auth::user()->isFavouriteJob($job->slug))
-                                    <a class="save-job" href="{{route('add.to.favourite', $job->slug)}}"><i class="far fa-heart"></i>
+                                    @elseif(Auth::check() && !Auth::user()->isFavouriteJob($jobitem->slug))
+                                    <a class="save-job" href="{{route('add.to.favourite', $jobitem->slug)}}"><i class="far fa-heart"></i>
                                     </a>
                                     @else
                                     <a class="save-job" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="far fa-heart"></i>
                                     </a>
                                     @endif
-                                    </a>
-                                </div>
-                                <!-- Title  End-->
-
-                                <!-- companyName Start-->
-                                <div class="info-item companyName"><a href="{{route('company.detail', $company->slug)}}" title="{{$company->name}}">{{$company->name}}</a></div>
-                                <!-- companyName End-->
-                                <!--rank-salary and place Start-->
-                                <div class="info-item box-meta">
-                                    <div class="rank-salary">
-                                        @php($from = round($job->salary_from/1000000,0))
-                                        @php($to = round($job->salary_to/1000000,0))
-                                        @if($job->salary_type == \App\Job::SALARY_TYPE_FROM)
-                                        <span class="fas fa-dollar-sign"></span> {{__('From: ')}} {{$from}}
-                                        {{__('million')}} ({{$job->salary_currency}})
-                                        @elseif($job->salary_type == \App\Job::SALARY_TYPE_TO)
-                                        <span class="fas fa-dollar-sign"></span> {{__('Up To: ')}} {{$to}}
-                                        {{__('million')}} ({{$job->salary_currency}})
-                                        @elseif($job->salary_type == \App\Job::SALARY_TYPE_RANGE)
-                                        <span class="fas fa-dollar-sign"></span> {{$from}} - {{$to}}
-                                        {{__('million')}} ({{$job->salary_currency}})
-                                        @elseif($job->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
-                                        <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
-                                        @else
-                                        <span class="fas fa-dollar-sign"></span> {{__('Salary Not provided')}}
-                                        @endif
-                                
-
-                                    </div>
-                                    <div class="navbar__link-separator" bis_skin_checked="1"></div>
-                                    <!--meta-city-->
-                                    <div class="meta-city">
-                                        <!-- <i class="far fa-map-marker-alt"></i> -->
-                                        {{$job->getCity('city')}}
-                                    </div>
-
-
-                                    <!-- {{$job->getJobType('job_type')}} -->
-                                </div>
-                                <!--Rank-salary and place End-->
-
-                                <!--Day update and place Start-->
-                                <div class="info-item day-update">
-                                    Hôm nay
-                                </div>
-                                <!--Day update and place End-->
-
-                                <!-- <div class="short-description">{{\Illuminate\Support\Str::limit(strip_tags($job->description), 150, '...')}}</div> -->
                             </div>
-
+                            <!-- Title  End-->
+                            <!-- companyName Start-->
+                            <div class="info-item companyName"><a href="{{$slugCompany}}" title="{{$companyName}}">{{$companyName}}</a></div>
+                            <!-- companyName End-->
+                            <!--rank-salary and place Start-->
+                            <div class="info-item box-meta">
+                            <div class="rank-salary">
+                                {{$salaryText}}
+                            </div>
+                           
+                            <!--meta-city-->
+                            @isset($jobitem->city)
+                                <div class="navbar__link-separator" bis_skin_checked="1"></div>
+                                <div class="meta-city">
+                                <!-- <i class="far fa-map-marker-alt"></i> -->
+                                    {{ $jobitem->city->city }}
+                                </div>
+                            @endisset
+                           </div>
+                            <!--Rank-salary and place End-->
+                            <!--Day update and place Start-->
+                            <div class="info-item day-update">
+                            Cập nhật: {{ $datetimeText }}
+                            </div>
+                            <!--Day update and place End-->
+                            </div>
                             <div class="caption">
-                                <div class="welfare">
-                                    <div class="box-meta">
-                                        <!-- <i class="fas fa-dollar-sign"></i>  -->
-                                        <span>
-                                            <!-- {{__('Rewards')}} -->
-                                            Automative
-                                        </span>
-
-                                    </div>
-                                    <div class="box-meta">
-                                        <!-- <i class="fas fa-graduation-cap"></i> -->
-                                        <span>
-                                            <!-- {{__('Training')}} -->
-                                            Automative Infomation
-                                        </span>
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-                        </div>
-
-
-                    </div>
-                <?php } ?>
-                <?php $count_1++; ?>
-            <?php } ?>
-            <!-- job end -->
-            @endforeach @endif
-            <!-- job end -->
-                </div>
-                --}}
-                <div id="loadingMessage" class="text-center"><div class="spinner-border text-primary" role="status">
-                    <span class="sr-only">Loading...</span>
-                </div></div>
-                <div class="searchList jobs-side-list">
-                    
-                </div>
-                <!-- Pagination Start -->
-                <div class="pagiWrap">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="showreslt">
-                                {{$jobs->total()}} 
-                            </div>
-                        </div>
-                        <div class="col-md-8 text-right">
-                       
-                        <nav class="text-center">
-                                
-    
-                            </nav>
-                            <ul class="pagination" id="job_pagination">
+                            <div class="welfare">
                             
-                            </ul>
-                        </div>
-                    </div>
+                            <!-- <i class="fas fa-dollar-sign"></i>  -->
+                           
+                            @isset($jobitem->industry)
+                            <div class="box-meta">
+                            <span>
+                                     {{$jobitem->industry->industry}}
+                            </span>
+                            </div>
+                            @endisset
+                           
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                        @if($loop->index ==5)
+                       
+                            <div class="inpostad">
+                            <img src="https://png.pngtree.com/thumb_back/fh260/back_pic/00/02/44/5056179b42b174f.jpg" alt="">
+                            </div>
+                       
+                        @endif
+              
+                            @endforeach
+
                 </div>
-                <!-- Pagination end -->
+
+                {{ $jobList->links() }}
+                
             </div>
             <div class="col-lg-3 col-sm-12 pull-right">
                 <!-- Sponsord By -->
@@ -412,6 +403,7 @@
     }
    
     $(document).ready(function() {
+        return;
         var checkedValue='';
         console.log($('#sort_form_by  input[type="radio"]'));
         $('#sort_form_by').prop('checked', true);
@@ -435,13 +427,10 @@
         var currentPage = 1;
 
 
-        $('.filter_submit').on('click', function() {
-            fetchData();
-        });
-
+       
         // Function to show loading message
         function showLoading() {
-        $('#loadingMessage').show();
+            $('#loadingMessage').show();
         }
             // Function to hide loading message
         function hideLoading() {
@@ -451,6 +440,7 @@
 
         // Function to render data
         function renderData(data) {
+            return;
             // Assuming data is an array of job objects
             var jobListing = $('.searchList.jobs-side-list');
             jobListing.empty(); // Clear previous data
@@ -474,13 +464,6 @@
                 } else {
                     img_url = `{{url('/')}}/admin_assets/no-image.png`
                 }
-
-                // insert ads
-                // if(id == 5) {
-                //     html.push(`   <div class="inpostad">
-                //     <img src="https://png.pngtree.com/thumb_back/fh260/back_pic/00/02/44/5056179b42b174f.jpg" alt="">
-                //     </div>`)
-                // }  
 
                
                 string_salary = checksalary(salary_from, salary_to)
@@ -567,6 +550,7 @@
        
         // Function to handle AJAX call
         function fetchData(page,sort_by,wfh) {
+            return;
       
             var searchQuery = $('#job_filter').serializeArray();
          
@@ -608,10 +592,10 @@
                     order_by:sort_by,
                     wfh:wfh ? 1 : 0 ,
                  },
-                beforeSend: showLoading,
+                // beforeSend: showLoading,
                 complete: hideLoading,
                 success: function(data, textStatus, xhr) {
-                    console.log(data.data);
+                   
                     // Render the data
                     // console.log(data.last_page);
                     // console.log(xhr);
@@ -685,9 +669,7 @@
         }
    
        
-        // Trigger the data fetching when the page loads
-        fetchData(currentPage);
-      
+    
     });
 
 
@@ -735,72 +717,10 @@
         });
 
 
-        //filter on fly
-        /*
-         $("#job_title, #job_type, #job_experience_id, #state_id, #city_id, #job_type_id, #salary_currency," +
-             "#company_id, #department_id, #skill_id, #industry_id, #gender_id, #degree_level_id," +
-             "#career_level_id, #job_shift_id, #job_type_id").change(function () {
-                 var params = localStorage.getItem('params') ? JSON.parse(localStorage.getItem('params')) : {};
-                 var key = $(this).attr('id');
-                 var prop = $(this).attr('id');
-                 if(key == 'job_title') key = 'title';
-
-                 if(key=='title') params[key] = $("#" + prop + " :selected").map((_,e) => e.text).get();
-                 else params[key]= $("#" + prop + " :selected").map((_,e) => e.value).get();
-                 localStorage.setItem('params', JSON.stringify(params));
-                 $.ajax({
-                     url: "",
-                     type: "post",
-                     data: {'data': params,'_token':""},
-                     beforeSend: function () {
-                         console.log(params);
-                     },
-                     success: function (data) {
-                        //
-                     }
-                 });
-         });
-         */
+       
     });
 
-    // if ($("#submit_alert").length > 0) {
-    //     $("#submit_alert").validate({
-    //         rules: {
-    //             email: {
-    //                 required: true,
-    //                 maxlength: 5000,
-    //                 email: true
-    //             }
-    //         },
-    //         messages: {
-    //             email: {
-    //                 required: "Email is required",
-    //             }
-    //         },
-    //         submitHandler: function(form) {
-    //             $.ajaxSetup({
-    //                 headers: {
-    //                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    //                 }
-    //             });
-    //             $.ajax({
-    //                 url: "{{route('subscribe.alert')}}",
-    //                 type: "GET",
-    //                 data: $('#submit_alert').serialize(),
-    //                 success: function(response) {
-    //                     $("#submit_alert").trigger("reset");
-    //                     $('#show_alert').modal('hide');
-    //                     swal({
-    //                         title: "Success",
-    //                         text: response["msg"],
-    //                         icon: "success",
-    //                         button: "OK",
-    //                     });
-    //                 }
-    //             });
-    //         }
-    //     })
-    // }
+   
     $(document).on('click', '.swal-button--Login', function() {
         window.location.href = "{{route('login')}}";
     })
@@ -817,6 +737,10 @@
             this.classList.add('active');
         });
     });
+    // $('.filter_submit').on('click', function() {
+    //         fetchData();
+    //     });
+
 </script>
 @include('templates.vietstar.includes.country_state_city_js')
 @endpush

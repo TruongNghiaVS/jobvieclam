@@ -70,34 +70,32 @@ class JobController extends Controller
 
     public function jobsBySearch(Request $request)
     {
-        $params = $this->params($request);     
+        // dd( $this->searchJobv2($request));
+         
+        $jobList = $this->searchJobv3($request);
+      
+        
+        $params = $this->params2($request); 
+     
+
         /**************************************************** */
+     
         $seo = Seo::where('seo.page_title', 'like', 'jobs')->first();
+
         return view(config('app.THEME_PATH').'.job.list')
                         ->with('functionalAreas', $this->functionalAreas)
                         ->with('countries', $this->countries)
                         ->with('currencies', array_unique($params['currencies']))
-                        ->with('jobs', $params['jobs'])
-                        ->with('jobTitlesArray', $params['jobTitlesArray'])
-                        ->with('skillIdsArray', $params['skillIdsArray'])
-                        ->with('countryIdsArray', $params['countryIdsArray'])
-                        ->with('stateIdsArray', $params['stateIdsArray'])
-                        ->with('cityIdsArray', $params['cityIdsArray'])
-                        ->with('companyIdsArray', $params['companyIdsArray'])
-                        ->with('industryIdsArray', $params['industryIdsArray'])
-                        ->with('functionalAreaIdsArray', $params['functionalAreaIdsArray'])
-                        ->with('careerLevelIdsArray', $params['careerLevelIdsArray'])
-                        ->with('jobTypeIdsArray', $params['jobTypeIdsArray'])
-                        ->with('jobShiftIdsArray', $params['jobShiftIdsArray'])
-                        ->with('genderIdsArray', $params['genderIdsArray'])
-                        ->with('degreeLevelIdsArray', $params['degreeLevelIdsArray'])
-                        ->with('jobExperienceIdsArray', $params['jobExperienceIdsArray'])
-                        ->with('cities', $params['cities'])
+                  
+                        ->with('jobList',$jobList)
+                         ->with('cities', $params['cities'])
                         ->with('funclAreas', $params['funclAreas'])
                         ->with('salaryFroms', $params['salaryFroms'])
                         ->with('degreeLevels', $params['degreeLevels'])
                         ->with('jobTypes', $params['jobTypes'])
                         ->with('benefits', $params['benefits'])
+                        ->with('requestParam', $request)
+                        ->with('Industrys',$params['Industrys'])
                         ->with('seo', $seo);
     }
 
@@ -242,8 +240,8 @@ class JobController extends Controller
     public function searchJobv2(Request $request)
     {
         $token = $request->input("search");
-
-      
+        
+       
         $industry_id = $request->input("industry_id");
         $locationWork = $request->input("provice");
         $orderby = $request->input("sort");
@@ -325,7 +323,105 @@ class JobController extends Controller
         return $query->paginate(10);
     }
 
+    public function searchJobv3(Request $request)
+    {
+        $token = $request->input("search");
     
+       
+        $industry_id = $request->input("industry_id");
+        if ($request->has("fe_industry_id")){
+            $industry_id =  $request->input("fe_industry_id");
+        }
+    
+        $locationWork = $request->input("provice");
+        $orderby = $request->input("sort");
+        $wfh = $request->input("wfh");
+ 
+        $salary_min = $request->input("salary_min");
+        $salary_max = $request->input("salary_max");
+        $levelSkill = $request->input("levelSkill");
+        $levelDegree = $request->input("degree_level_id");
+        $jobtype = $request->input("job_type_id");
+        $departmentType = $request->input("functional_area_id");
+        $benefits = $request->input("benefits");
+        $order_by = $request->input("order_by");
+        $city_id =  $request->input("city_id");
+      
+        
+        $query = Job::where('status', Job::POST_ACTIVE);
+        $token = $this->locdautiengviet($token);
+        if (!empty($token)) 
+        {
+            $query =  $query->where("title",'like',"%{$token}%");
+
+        }
+        if ($levelDegree >0 ) 
+        {
+            $query =  $query->where("degree_level_id",$levelDegree);
+        }
+        if ($departmentType >0 ) 
+        {
+            $query =  $query->where("functional_area_id",$departmentType);
+        }
+      
+        
+        if ($city_id >0 ) 
+        {
+            $query =  $query->where("city_id",$city_id);
+        }
+         //functional_area_id
+        if($industry_id>0)
+        {
+            $query =  $query->where("industry_id",$industry_id);
+        }
+        if ($wfh == 1 ) 
+        {
+            $query =  $query->where("wfh",$wfh);
+        }
+
+       
+        if( $salary_min > 0)
+        {
+            $query =  $query->where('salary_from', '>=', $salary_min);
+
+        }
+        
+        if( $salary_max > 0)
+        {
+            $query =  $query->where('salary_to', '<=',  $salary_max);
+        }
+        $order_by = 'new';
+
+    
+        if ($order_by== "up_top") // last updated
+        {
+            $query =  $query->orderBy('updated_at', 'DESC');
+        }
+        else if($order_by== "new") // last updated
+        {
+            $query =  $query->orderBy('created_at', 'DESC');
+        }
+        else if($order_by== "older") // last updated
+        {
+            $query =  $query->orderBy('created_at', 'ASC');
+        }
+        else 
+        {
+            $query =  $query->orderBy('created_at', 'DESC');
+        }
+
+      
+        $query = $query->with('company');
+        $query =$query->with('functionalArea');
+        $query =$query->with('jobType');
+        $query =$query->with('degreeLevel');
+        $query= $query->with('city');
+
+      
+        //created_at
+        return $query->paginate(10);
+    }
+
     public function findJobDetails($search = '', $wfh = '', $job_titles = array(), $company_ids = array(),
                                    $industry_ids = array(), $job_skill_ids = array(), $functional_area_ids = array(),
                                    $country_ids = array(), $state_ids = array(), $city_ids = array(), $is_freelance = -1,
@@ -675,7 +771,7 @@ class JobController extends Controller
         $benefits = \App\Benefit::pluck('name', 'code')->toArray();
         $benefits = array_map(function($v){return __($v);}, $benefits);
         return [
-            'jobs' => $jobs,
+           'jobs' => $jobs,
             /*         * ************************************************** */
     
             'jobTitlesArray' => $this->fetchIdsArray($search, $job_titles, $company_ids, $industry_ids, $job_skill_ids, $functional_area_ids, $country_ids, $state_ids, $city_ids, $is_freelance, $career_level_ids, $job_type_ids, $job_shift_ids, $gender_ids, $degree_level_ids, $job_experience_ids, $salary_from, $salary_to, $salary_currency, $is_featured, 'jobs.title'),
@@ -745,6 +841,57 @@ class JobController extends Controller
     
             'currencies' => DataArrayHelper::currenciesArray(),
             'cities' => \App\City::where('lang', \App::getLocale())->active()->pluck('city', 'id')->toArray(),
+            'funclAreas' => \App\FunctionalArea::where('lang', \App::getLocale())->active()->pluck('functional_area', 'id')->toArray(),
+            'salaryFroms' => DataArrayHelper::langSalaryFromArray(),
+            'degreeLevels' => \App\DegreeLevel::where('lang', \App::getLocale())->active()->pluck('degree_level', 'id')->toArray(),
+            'jobTypes' => \App\JobType::where('lang', \App::getLocale())->active()->pluck('job_type', 'id')->toArray(),
+            'benefits' => $benefits,
+        ];
+
+    }
+
+
+    public function params2(Request $request)
+    {
+        
+        $search = $request->query('search', '');
+        $wfh = $request->query('wfh', '');
+        $job_titles = $request->query('job_title', array());
+        $company_ids = $request->query('company_id', array());
+        $industry_ids = $request->query('industry_id', array());
+        $fe_industry_ids = $request->query('fe_industry_id', array());
+        $fe_industry_ids = is_array($fe_industry_ids) ? $fe_industry_ids : (array)$fe_industry_ids;
+        $job_skill_ids = $request->query('job_skill_id',  '');
+        $functional_area_ids = $request->query('functional_area_id', '');
+        $country_ids = $request->query('country_id',  '');
+        $state_ids = $request->query('state_id', '');
+        $city_ids = $request->query('city_id', '');
+        $is_freelance = $request->query('is_freelance', '');
+        $career_level_ids = $request->query('career_level_id', '');
+        $job_type_ids = $request->query('job_type_id', '');
+        $job_shift_ids = $request->query('job_shift_id', '');
+        $gender_ids = $request->query('gender_id', '');
+        $degree_level_ids = $request->query('degree_level_id', '');
+        $job_experience_ids = $request->query('job_experience_id', '');
+        $salary_from = $request->query('salary_from', '');
+        $salary_to = $request->query('salary_to', '');
+        $salary_currency = $request->query('salary_currency', '');
+        $is_featured = $request->query('is_featured', 2);
+        $order_by = $request->query('order_by', 'id');
+        $limit = 15;
+      
+   
+      
+        $benefits = \App\Benefit::pluck('name', 'code')->toArray();
+
+        $benefits = array_map(function($v){return __($v);}, $benefits);
+
+        return [
+        
+            
+            'currencies' => DataArrayHelper::currenciesArray(),
+            'cities' => \App\City::where('lang', \App::getLocale())->active()->pluck('city', 'id')->toArray(),
+            'Industrys'=>\App\Industry::where('lang', \App::getLocale())->active()->pluck('industry', 'id')->toArray(),
             'funclAreas' => \App\FunctionalArea::where('lang', \App::getLocale())->active()->pluck('functional_area', 'id')->toArray(),
             'salaryFroms' => DataArrayHelper::langSalaryFromArray(),
             'degreeLevels' => \App\DegreeLevel::where('lang', \App::getLocale())->active()->pluck('degree_level', 'id')->toArray(),

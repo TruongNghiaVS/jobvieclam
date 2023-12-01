@@ -2,9 +2,11 @@
 @section('content')
 <!-- Header start -->
 @include('templates.vietstar.includes.header')
-
 <!-- Header end -->
-<div class="reset-password-section cb-section">
+<!-- Header end -->
+<section class="reset-password-section cb-section">
+    
+    @include('templates.vietstar.includes.mobile_dashboard_menu')
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -22,8 +24,10 @@
                             <h3>Chúng tôi sẽ gửi email hướng dẫn bạn tạo mật khẩu mới</h3>
                         </div>
                     </div>
+
+
                     <div class="main-form" bis_skin_checked="1">
-                        <form class="form-horizontal" method="POST" action="">
+                        <form class="form-horizontal" method="POST" >
                             <div class="form-group d-flex" bis_skin_checked="1">
                                 <div class="form-info" bis_skin_checked="1">
                                     <span>Email</span>
@@ -38,26 +42,15 @@
                                 <div class="form-info" bis_skin_checked="1">
                                     <span>Mã xác nhận</span>
                                 </div>
-                                <div class="form-input short" bis_skin_checked="1">
-                                    <input type="text" name="security_code" maxlength="4" placeholder=" Vui lòng nhập thông tin" id="security_code" onkeyup="this.setAttribute('value', this.value);" value="" autocomplete="off" class="form-control">
-
-
-                                    <span class="form-error error_security_code">
+                                <div class="form-input" bis_skin_checked="1">
+                                    <input type="text" name="email" id="email" class="form-control" placeholder=" Vui lòng nhập thông tin" onkeyup="this.setAttribute('value', this.value);" value="" onfocus="javascript:if(this.value=='Email/Tên đăng nhập') this.value='';">
+                                    <span class="form-error error_email">
                                     </span>
-
-
                                 </div>
-                                <div class="box-captcha d-flex" bis_skin_checked="1">
-                                    <div class="capcha" id="captchaim" bis_skin_checked="1">
-                                        <img width="150" height="50" alt="captcha" src="https://images.careerbuilder.vn/rws/captcha/1d1dda169fd806b6219ae9ff29e9f941.png" class="img_code"><input type="hidden" name="key_captcha" id="key_captcha" value="1d1dda169fd806b6219ae9ff29e9f941">
-                                    </div>
 
-                                    <div class="reCapcha" style="font-size: 24px;" bis_skin_checked="1">
-                                        <a onclick="refeshImgCaptcha('captchaim');" href="javascript:void(0);">
-                                            <em class="fa fa-repeat"></em></a>
-                                    </div>
-                                </div>
+                            
                             </div>
+                            
                             <div class="user-action" bis_skin_checked="1">
                                 <div class="btn-area" bis_skin_checked="1">
                                     <button type="submit" class="btn btn-primary" value="Gửi">Gửi</button>
@@ -69,13 +62,14 @@
                                     <p>Email: <a href="#" target="_blank">support@jobvieclam.com</a></p>
                                 </div>
                             </div>
-                       </form>
+                            
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 @include('templates.vietstar.includes.footer')
 @endsection
 @push('styles')
@@ -83,6 +77,7 @@
     .reset-password-section.cb-section {
         padding: 60px 0;
     }
+
     .reset-password-section.cb-section .container {
         max-width: 1440px;
     }
@@ -144,13 +139,13 @@
         flex: 0 0 200px;
         max-width: 200px;
     }
+
     .user-action {
         text-align: right;
     }
-  
-    .user-action > * {
+
+    .user-action>* {
         margin-bottom: 20px;
     }
-
 </style>
 @endpush

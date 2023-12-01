@@ -2,7 +2,6 @@
 @section('content')
 <!-- Header start -->
 @include('templates.vietstar.includes.header')
-
 <!-- Header end -->
 <div class="reset-password-section cb-section">
     <div class="container">
@@ -40,12 +39,8 @@
                                 </div>
                                 <div class="form-input short" bis_skin_checked="1">
                                     <input type="text" name="security_code" maxlength="4" placeholder=" Vui lòng nhập thông tin" id="security_code" onkeyup="this.setAttribute('value', this.value);" value="" autocomplete="off" class="form-control">
-
-
                                     <span class="form-error error_security_code">
                                     </span>
-
-
                                 </div>
                                 <div class="box-captcha d-flex" bis_skin_checked="1">
                                     <div class="capcha" id="captchaim" bis_skin_checked="1">

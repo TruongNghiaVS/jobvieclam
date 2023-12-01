@@ -38,6 +38,10 @@
     height: 400px;
     width: 100%;
   }
+  .box-info-signup {
+      margin-left: 0 !important;
+      margin-top: 20px !important;
+  }
 
   .header-bar .header-bar-content-search {
     position: absolute;

@@ -9,12 +9,12 @@
     @include('templates.vietstar.includes.mobile_dashboard_menu')
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6  col-sm-12">
                 <div class="box-img">
                     <img src="https://images.careerbuilder.vn/content/images/Banner/pic-laptop.png" alt="">
                 </div>
             </div>
-            <div class="col-lg-6" bis_skin_checked="1">
+            <div class="col-lg-6 col-md-6  col-sm-12" bis_skin_checked="1">
                 <div class="box-info-signup forgot-password" bis_skin_checked="1">
                     <div class="title" bis_skin_checked="1">
                         <h2 class="text-primary">Quên Mật Khẩu</h2>
@@ -149,3 +149,5 @@
     }
 </style>
 @endpush
+
+

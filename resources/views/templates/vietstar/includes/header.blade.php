@@ -130,6 +130,13 @@
                     </ul>
                     </li> --}}
                 </ul>
+                
+
+
+            </div>
+            @if(Auth::check())
+            <!-- user-badge -->
+            <div class="user-badge">
                 <!-- navbar-lang PC -->
                 <ul class="navbar-nav navbar-lang navbar-lang-pc ml-auto">
                     <li class="nav-item dropdown">
@@ -147,37 +154,34 @@
                     </li>
                 </ul>
                 <!-- end navbar-lang PC -->
+            
+                <div class="user-badge__btn">
 
-
-            </div>
-            @if(Auth::check())
-            <!-- user-badge -->
-            <div class="user-badge">
-                <div class="money-base">
-                    <p><span class="iconmoon icon-money-database"></span> Số dư</p>
-                    <h5 class="dolar-sign text-blue-color m-0">0 đ</h5>
-                </div>
-                <div class="user-badge__avatar">
-                    <a class="dropdown_menu__link" href="#">
-                        {{Auth::user()->printUserImage()}}
+                    <a class="dropdown_menu__link" href="{{route('home')}}">
+                        <span >
+                        <i class="bi bi-person-circle fs-18px"></i>
+                            {{Auth::user()->name}}
+                        </span>
                     </a>
-                    <ul class="dropdown_menu">
-                        <li class="nav-item"><a href="{{route('home')}}" class="nav-link"><i class="jobicon fa fa-tachometer" aria-hidden="true"></i> <!-- {{__('Dashboard')}} -->
-                        Dashboard
-                        </a>
-                        </li>
-                        <li class="nav-item"><a href="{{ route('my.profile') }}" class="nav-link"><i class="jobicon fa fa-user" aria-hidden="true"></i> {{__('My Profile')}}</a>
-                        </li>
-                        <li class="nav-item"><a href="#" class="nav-link" data-toggle="modal" data-target="#modal_user_info"><i class="jobicon fa fa-eye" aria-hidden="true"></i>
-                                {{__('View Public Profile')}}</a> </li>
-                        <li><a href="{{ route('my.job.applications') }}" class="nav-link"><i class="jobicon fa fa-desktop" aria-hidden="true"></i>
-                                {{__('My Job Applications')}}</a> </li>
-                        <li class="nav-item"><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form-header').submit();" class="nav-link"><i class="jobicon fa fa-sign-out" aria-hidden="true"></i>
-                                {{__('Logout')}}</a> </li>
-                        <form id="logout-form-header" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
-                    </ul>
+                    <div class="user_menu ">
+                        <ul class="">
+                            <li class="nav-item"><a href="{{route('home')}}" class="nav-link"><i class="jobicon fa fa-tachometer mx-1" aria-hidden="true"></i> <!-- {{__('Dashboard')}} -->
+                                Dashboard
+                            </a>
+                            </li>
+                            <li class="nav-item"><a href="{{ route('my.profile') }}" class="nav-link"><i class="jobicon fa fa-user mx-1" aria-hidden="true"></i> {{__('My Profile')}}</a>
+                            </li>
+                            <li class="nav-item"><a href="#" class="nav-link" data-toggle="modal" data-target="#modal_user_info"><i class="jobicon fa fa-eye mx-1" aria-hidden="true"></i>
+                                    {{__('View Public Profile')}}</a> </li>
+                            <li><a href="{{ route('my.job.applications') }}" class="nav-link"><i class="jobicon fa fa-desktop mx-1" aria-hidden="true"></i>
+                                    {{__('My Job Applications')}}</a> </li>
+                            <li class="nav-item"><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form-header').submit();" class="nav-link"><i class="jobicon fa fa-sign-out mx-1" aria-hidden="true"></i>
+                                    {{__('Logout')}}</a> </li>
+                            <form id="logout-form-header" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <!-- End user-badge  -->
@@ -215,64 +219,6 @@
             </div>
         </div>
         <!-- end collapse -->
-
-
-        <!-- Danh cho mobile; có 2 menu mobile và icon user -->
-       {{-- <div class="group-for-mobile">
-
-            @if(Auth::check())
-            <!-- user-badge -->
-            <div class="user-badge">
-                <div class="money-base">
-                    <h5 class="dolar-sign text-blue-color m-0">0 đ</h5>
-                </div>
-                <div class="user-badge__avatar">
-                    <a class="dropdown userbtn nav-link-dashboard dropdown-toggle" href="{{route('home')}}">
-                        {{Auth::user()->printUserImage()}}
-                    </a>
-                </div>
-            </div>
-            <!-- End user-badge  -->
-
-            @elseif(Auth::guard('company')->check())
-            <!-- user-badge -->
-            <div class="user-badge">
-                <div class="money-base">
-                    <h5 class="dolar-sign text-blue-color m-0">0 đ</h5>
-                </div>
-                <div class="user-badge__avatar">
-                    <a class="dropdown userbtn nav-link-dashboard dropdown-toggle" href="{{route('company.home')}}">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48Z" fill="#F2F2F2" />
-                            <path d="M43.2596 38.3031C41.0213 35.3063 38.1148 32.873 34.7712 31.1965C31.4277 29.5199 27.7391 28.6463 23.9987 28.6451C20.2584 28.644 16.5693 29.5152 13.2246 31.1897C9.88 32.8642 6.97202 35.2957 4.73181 38.291C6.96063 41.3015 9.86386 43.7478 13.2087 45.4339C16.5535 47.12 20.2469 47.9988 23.9927 48C27.7384 48.0012 31.4324 47.1246 34.7782 45.4407C38.1241 43.7567 41.0289 41.3122 43.2596 38.3031Z" fill="#3B4358" />
-                            <path d="M23.9999 25.5484C29.1308 25.5484 33.2902 21.3889 33.2902 16.258C33.2902 11.1271 29.1308 6.96773 23.9999 6.96773C18.869 6.96773 14.7096 11.1271 14.7096 16.258C14.7096 21.3889 18.869 25.5484 23.9999 25.5484Z" fill="#3B4358" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <!-- end user-badge -->
-            @endif
-
-            <!-- navbar-lang-mobile -->
-            <ul class="navbar-nav navbar-lang navbar-lang-mobile ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="{{ asset('/vietstar/imgs/flags/') }}/{{config('app.available_locales')[App::getLocale()]['flag-icon']}}.png" alt="vietstar">
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        @foreach (config('app.available_locales') as $lang => $language)
-                        @if ($lang != App::getLocale())
-                        <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span class="flag-icon flag-icon-{{$language['flag-icon']}}"><img src="{{ asset('/vietstar/imgs/flags/') }}/{{$language['flag-icon']}}.png" alt="vietstar"></span> {{$language['display']}}</a>
-                        @endif
-                        @endforeach
-
-                    </div>
-                </li>
-            </ul>
-            <!-- end navbar-lang-mobile -->
-
-        </div>--}}
-        <!-- End Danh cho mobile; có 2 menu mobile và icon user -->
     </div>
 </nav>
 @push('styles')
@@ -332,19 +278,62 @@
     .navbar-lang .nav-item .dropdown__lang_menu.show {
         display: block;
     }
+    .dropdown_menu__link  span{
+        color: var(--bs-primary);
+        font-weight: 500;
+    }
+    .user-badge__btn {
+        position: relative;
+        border-left: 1px solid #e8e8e8;
+        padding: 3px 11px;
+    }
+   .user_menu{
+        display: none;
+        z-index: 5;
+        position: absolute;
+        top: calc(100% - 1px);
+        right: 0;
+        width: 100%;
+        min-width: 240px;
+        padding-top: 26px;
+   }
+   .user-badge__btn:hover .user_menu{
+     display: block;
+   }
+   
+   .user_menu ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 0;
+        background: #fff;
+        box-shadow: 0 2px 14px rgba(46, 46, 46, 0.5);
+   }
+   .user_menu ul .nav-link {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--sub-text);
+        padding: 12px 14px;
+
+   }
+   .user_menu .nav-link:hover ,.user_menu .nav-link:hover i {
+        color: var(--bs-primary);
+        background: #E9E9E9;
+   }
+
+
 </style>
 @endpush
 
 
 @push('scripts')
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('.user-badge__avatar').click(function() {
-            $('.user-badge__avatar').toggleClass('show');
-            $('.dropdown_menu').toggleClass('show');
+    // $(document).ready(function() {
+    //     $('.user-badge__btn').click(function() {
+    //         $('.user-badge__btn').toggleClass('show');
+    //         $('.user_menu').toggleClass('show');
 
-        });
-    });
+    //     });
+    // });
     $(document).ready(function() {
         $('.navbar-lang__link').click(function() {
             $('.dropdown__lang_menu').toggleClass('show');

@@ -138,20 +138,12 @@ p {
   margin-left: 12px;
   margin-right: 12px;
   border-radius: 6px;
-  background-color: var(--slider-bg);
+
 }
 
-.user-badge__avatar {
-  width: 48px;
-  height: 48px;
-  overflow: hidden;
-}
 
-.user-badge__avatar img {
-  width: 100%;
-  height: inherit;
-  object-fit: cover;
-}
+
+
 
 .text-main-color {
   color: var(--bs-body-color) !important;

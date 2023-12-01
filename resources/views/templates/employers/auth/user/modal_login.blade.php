@@ -25,7 +25,7 @@
                                 </div>
                             </div>
                             <div class="forgot-password-btn">
-                                <a href="{{ route('company.password.request') }}">{{__('Forgot Your Password')}}?</a>
+                                <a href="{{ route('password.request') }}">{{__('Forgot Your Password')}}?</a>
                             </div>
                             <input type="submit" class="btn" value="{{__('Login')}}">
                         </div>

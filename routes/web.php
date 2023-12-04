@@ -29,6 +29,7 @@ $real_path = realpath(__DIR__) . DIRECTORY_SEPARATOR . 'front_routes' . DIRECTOR
 
 
 Route::get('/', 'IndexController@index')->name('index');
+Route::get('/member/forgotpassword', 'Auth\ResetPasswordController@ResetPasswordMember')->name('member.forgotpassword');
 
 Route::get('/employers', 'EmployerController@index')->name('employerIndex');
 Route::get('/employers/active', 'EmployerController@Active')->name('employerActive');

@@ -4,9 +4,12 @@
 @include('templates.vietstar.includes.header')
 <!-- Header end -->
 <!-- Inner Page Title start -->
-@include('templates.vietstar.includes.inner_page_title', ['page_title'=>__('Online Application')])
+
 <!-- Inner Page Title end -->
-<div class="listpgWraper">
+<section class="apply-application-section cb-section">
+    <div class="cb-title cb-title-center" bis_skin_checked="1">
+        <h2>{{__(('Submit application'))}}</h2>
+    </div>
     <div class="container">
         @if ($errors->has('cv_id')) <span class="help-block"> <strong>{{ $errors->first('cv_id') }}</strong> </span> @endif
         @include('flash::message')
@@ -104,7 +107,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="custom-control custom-checkbox">
+                                <div class="custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="chksendletter">
                                     <label class="custom-control-label" for="chksendletter">{{__('Use introduction letter')}}</label>
 
@@ -126,15 +129,18 @@
                                     </ul>
                                 </div>
                             @endif
-
-                            <button class="btn btn-primary pl-3 pr-3" type="submit">{{__("Apply")}}</button>
+                            <div class="d-grid gap-2 w-40">
+                              
+                                <button class="btn btn-primary " type="submit">{{__("Apply")}}</button>
+                              
+                            </div>
                         </div>
                     {!! Form::close() !!}
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 @include('templates.vietstar.user.inc.modal_tempate_letter_content')
 
 @include('templates.vietstar.includes.footer')

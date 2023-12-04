@@ -4084,6 +4084,10 @@ div#industry_id_chosen {
 .group-for-mobile {
     display: none
 }
+.apply-application-section.cb-section {
+    padding: 60px 0;
+}
+  
 
 @media screen and (min-width: 1200px) {
     .main-menu .has-child {

@@ -25,11 +25,13 @@
 $real_path = realpath(__DIR__) . DIRECTORY_SEPARATOR . 'front_routes' . DIRECTORY_SEPARATOR;
 
 /* * ******** IndexController ************ */
-
+Route::get('/member/forgotpassword', 'Auth\ResetPasswordController@ResetPasswordMember')->name('member.forgotpassword');
+Route::post('/member/changePassword', 'Auth\ResetPasswordController@ChangePassword')->name('member.ChangePassword');
+Route::post('/member/requestResetPassword', 'Auth\ForgotPasswordController@RequestResetPassword');
 
 
 Route::get('/', 'IndexController@index')->name('index');
-Route::get('/member/forgotpassword', 'Auth\ResetPasswordController@ResetPasswordMember')->name('member.forgotpassword');
+
 
 Route::get('/employers', 'EmployerController@index')->name('employerIndex');
 Route::get('/employers/active', 'EmployerController@Active')->name('employerActive');

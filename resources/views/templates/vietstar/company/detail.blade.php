@@ -2,99 +2,110 @@
 
 @section('content')
 
-    @if(Auth::guard('company')->check())
-    <!-- Header start -->
-    @include('templates.employers.includes.header')
-    <!-- Header end -->
-    @else
-    @include('templates.vietstar.includes.header')
-    @endif
+
+@include('templates.vietstar.includes.header')
+
 <!-- Company cover -->
 
 @include('templates.employers.includes.mobile_dashboard_menu')
 @include('templates.employers.includes.company_dashboard_menu')
 
-<!-- Hero banner -->
-<section class="hero-banner-company-profile" style="background-image: url({!!  asset('/vietstar/imgs/company-cover.jpg') !!});"></section>
 
 
 <!-- Main content -->
-<section class="main-content my-5" id="main-content">
+<section class="company-wrapper main-content my-5" id="main-content">
+    <!-- Hero banner -->
+    <section class="hero-banner-company-profile" style="background-image: url({!!  asset('/vietstar/imgs/company-cover.jpg') !!});"></section>
+
+
     <div class="container">
         <section class="section-company-profile">
             <div class="container-hm">
                 <div class="row">
-                    <div class="col-lg-7">
-                        <div class="company-profile">
-                            <div class="box-logo">
+                    <div class="col-lg-9  col-md-9 col-sm-12">
+
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-12">
                                 <div class="logo">
-                                    {{$company->printCompanyImage()}}
+                                    {{ $company->locale_get_display_region }}
+                                    <img src="{{url('/')}}/company_logos/{{$company->logo}}" alt="{{ $company->name }}">
                                 </div>
+
                             </div>
-                            <div class="box-content">
-                                <h2 class="company-name">{{ $company->name }}</h2>
-                                <p class="company-position">
-                                    {{ !empty($company->industry)?$company->industry->industry : '' }}
-                                </p>
-                                <div class="company-info public">
-                                    <div class="company-info__item">
-                                        <span class="iconmoon icon-recruiter-user"></span>
-                                        {{ $company->no_of_employees }}
-                                    </div>
-                                </div>
-                                <div class="group-button job-detail-banner__actions job-detail-banner_info_actions d-flex flex-row gap-16">
-                                    <form action="{{ route('seeker.submit-message', ['message' => 'Xin chào!', 'company_id' => $company->id, 'new' => true]) }}" method="post">
-                                        @csrf
-                                        <button type="submit" class="btn btn-primary"><span class="icon icon-recruiter-email"></span>{{__('Send message')}}</button>
-                                    </form>
-                                    @if(Auth::check() && Auth::user()->isFavouriteCompany($company->slug))
-                                    <a href="{{ route('remove.from.favourite.company', ['company_slug' => $company->slug])}}" class="btn btn-outline-primary"><i class="fas fa-heart iconoutline"></i>
-                                        {{__('Favourite company')}} </a>
-                                    @else
-                                    <a href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}" class="btn btn-outline-primary"><i class="far fa-heart"></i>
-                                        {{__('Follow company')}}</a>
+                            <div class="col-lg-9 col-md-9 col-sm-12">
+                                <div class="box-content">
+                                    <h2 class="company-name">{{ $company->name }}</h2>
+                                    @if($company->industry){
+                                    <p class="company-position">
+                                        {{ !empty($company->industry)?$company->industry->industry : '' }}
+                                    </p>
+                                    }
                                     @endif
+                                    <div class="company-info public">
+                                        <div class="d-flex flex-column">
+                                            <strong class="p-0"> {{__('Location')}} </strong>
+                                            <p>
+
+                                                {{ $company->location }}
+                                            </p>
+                                        </div>
+                                        <hr class="m-1">
+
+                                        <strong class="p-0"> {{__('Company Information')}} </strong>
+
+                                        @if($company->no_of_employees)
+                                        <div class="company-info__item">
+                                            <i class="bi bi-people-fill"></i>
+                                            {{__('Company size')}}: {{ $company->no_of_employees }}
+                                        </div>
+                                        @endif
+                                        @if($company->no_of_employees)
+                                        <div class="company-info__item">
+                                            <i class="bi bi-list"></i>
+                                            {{__('Field of operations')}}: {{ $company->no_of_employees }}
+                                        </div>
+                                        @endif
+                                        @if($company->website)
+                                        <div class="company-info__item">
+                                            <i class="bi bi-link"></i>
+                                            {{__('Website')}}: {{ $company->website }}
+                                        </div>
+                                        @endif
+                                        <div class="socials">
+                                            <a href="{{ $company->facebook }}" class="social" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+                                            <a href="{{ $company->twitter }}" class="social" target="_blank"><i class="fa-brands fa-square-twitter"></i></a>
+                                            <a href="{{ $company->linkedin }}" class="social" target="_blank"><i class="fa-brands fa-linkedin"></i></span></a>
+                                            <a href="{{ $company->google_plus }}" class="social" target="_blank"><i class="fa-brands fa-google-plus"></i></a>
+                                        </div>
+
+
+                                    </div>
+
                                 </div>
                             </div>
+
+
+
+
                         </div>
                     </div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-3 col-md-3 col-md-12 d-flex flex-column justify-content-start align-items-center">
 
-                        <div class="row  company-info">
-                            <div class="company-info__item">
-                                <i class="bi bi-telephone"></i>
-                                @if($company->phone)
-                                <p>
-                                    {{ $company->phone }}
-                                </p>
-                                @endif
-                            </div>
-                            <div class="company-info__item">
-                                <i class="bi bi-envelope"></i>
-                                @if($company->email)
-                                <p>
-                                    {{ $company->email }}
-                                </p>
-                                @endif
-                            </div>
-
-                            <div class="company-info__item">
-                                <i class="bi bi-globe"></i>
-                                @if($company->website)
-                                <p>
-                                    {{ $company->website }}
-                                </p>
-                                @endif
-                            </div>
+                        <div class="group-button job-detail-banner__actions job-detail-banner_info_actions d-flex flex-row gap-16">
+                            {{--<form action="{{ route('seeker.submit-message', ['message' => 'Xin chào!', 'company_id' => $company->id, 'new' => true]) }}" method="post">
+                            @csrf
+                            <button type="submit" class="btn btn-primary"><span class="icon icon-recruiter-email"></span>{{__('Send message')}}</button>
+                            </form>--}}
+                            @if(Auth::check() && Auth::user()->isFavouriteCompany($company->slug))
+                            <a href="{{ route('remove.from.favourite.company', ['company_slug' => $company->slug])}}" class="btn btn-outline-primary"><i class="fas fa-heart iconoutline"></i>
+                                {{__('Favourite company')}} </a>
+                            @else
+                            <a href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}" class="btn btn-outline-primary"><i class="far fa-heart"></i>
+                                {{__('Follow company')}}</a>
+                            @endif
                         </div>
 
-                        
-                        <div class="socials">
-                            <a href="{{ $company->facebook }}" class="social" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
-                            <a href="{{ $company->twitter }}" class="social" target="_blank"><i class="fa-brands fa-square-twitter"></i></a>
-                            <a href="{{ $company->linkedin }}" class="social" target="_blank"><i class="fa-brands fa-linkedin"></i></span></a>
-                            <a href="{{ $company->google_plus }}" class="social" target="_blank"><i class="fa-brands fa-google-plus"></i></a>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -108,7 +119,7 @@
         <section class="section-company-profile-detail">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
-                    <div class="company-size">
+                    <!-- <div class="company-size">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="item-size">
@@ -155,34 +166,69 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="widget-public-profile widget-job">
                         <h4 class="title">{{__('Job Openings')}}</h4>
                         @if ($company->jobs->count() > 0)
                         @php( $jobShifts = App\JobShift::all()->pluck('job_shift','id') )
-                        <div class="jobs">
-                            @foreach ($company->jobs->sortBy('id') as $cjob)
-                            <div class="job">
-                                <div class="box-logo">
-                                    <div class="logo">
-                                        {{$company->printCompanyImage()}}
-                                    </div>
+
+                        <div class="searchList jobs-side-list" bis_skin_checked="1">
+                        
+                        @foreach ($company->jobs->sortBy('id') as $cjob)
+                        
+                        <div data-job-id="44" class="item-job mb-3" bis_skin_checked="1">
+                                <div class="logo-company" bis_skin_checked="1">
+                                    <a href="{{$company->name}}" title="CTYA" class="pic">
+                                        <img src="{{url('/')}}/company_logos/{{$company->logo}}" alt="{{$company->name}}">
+                                    </a>
                                 </div>
-                                <div class="widget-content">
-                                    <h3 class="job-title"><a href="{{route('job.detail', [$cjob->slug])}}" style="text-decoration: none;" title="{{$cjob->title}}">{{$cjob->title}}</a>
-                                    </h3>
-                                    <p class="job-name">{{ $company->name }}</p>
-                                    <div class="group-control">
-                                        <div class="tags">
-                                            <span class="tag location">{{ !empty($cjob->location) ? $cjob->location :  $cjob->getCity('city')}}</span>
-                                            <span class="tag time">{{ $jobShifts[$cjob->job_shift_id] ?? ''}}</span>
+                                <div class="jobinfo" bis_skin_checked="1">
+                                    <div class="info" bis_skin_checked="1">
+                                        <!-- Title  Start-->
+                                        <div class="info-item job-title-box" bis_skin_checked="1">
+                                            <div class="job-title" bis_skin_checked="1">
+                                                <span>Mới</span>
+                                                <h3 class="job-title-name"><a href="/job/ke-toan-44" title="{{$cjob->title}}">{{$cjob->title}}</a></h3>
+                                            </div>
+
+                                            @if(Auth::check() && Auth::user()->isFavouriteJob($cjob->slug))
+                                                <a class="save-job active" href="{{route('remove.from.favourite', $cjob->slug)}}"><i class="far fa-heart"></i>
+                                                </a>
+                                                @elseif(Auth::check() && !Auth::user()->isFavouriteJob($cjob->slug))
+                                                <a class="save-job" href="{{route('add.to.favourite', $cjob->slug)}}"><i class="far fa-heart"></i>
+                                                </a>
+                                                @else
+                                                <a class="save-job" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="far fa-heart"></i>
+                                                </a>
+                                            @endif
                                         </div>
-                                        <div class="salary">
-                                            {{--<span class="iconmoon icon-recruiter-attach_money"></span><span>{{$cjob->salary_from.' '.$cjob->salary_currency}}
-                                            - {{$cjob->salary_to.' '.$cjob->salary_currency}}</span>--}}
+                                        <!-- Title  End-->
+                                        <!-- companyName Start-->
+                                        <div class="info-item companyName" bis_skin_checked="1"><a href="/company/ctya-134" title="CTYA">{{$company->name}}</a></div>
+                                        <!-- companyName End-->
+                                        <!--rank-salary and place Start-->
+                                        <div class="info-item box-meta" bis_skin_checked="1">
+                                            <div class="rank-salary" bis_skin_checked="1">
                                             @php($from = round($cjob->salary_from/1000000,0))
                                             @php($to = round($cjob->salary_to/1000000,0))
+                                            <?php
+                                                $datetime =   Carbon\Carbon::parse($cjob->created_at);
+                                                $timeCurrent = Carbon\Carbon::now();
+                                                $numberDate = $timeCurrent->diffInDays($datetime);
+                                                $datetimeText ="";
+                                                if($numberDate < 1)
+                                                {
+                                                   $datetimeText = "Hôm nay";
+                                                }
+                                                else if($numberDate < 2){
+                                                   $datetimeText = "Hôm qua";
+                                                }
+                                                else 
+                                                {
+                                                   $datetimeText =  $datetime->format('d-m-Y');
+                                                }
+                                            ?>
                                             @if($cjob->salary_type == \App\Job::SALARY_TYPE_FROM)
                                             <span class="fas fa-dollar-sign"></span> {{__('From: ')}} {{$from}}
                                             {{__('million')}} ({{$cjob->salary_currency}})
@@ -197,34 +243,57 @@
                                             @else
                                             <span class="fas fa-dollar-sign"></span> {{__('Salary Not provided')}}
                                             @endif
+                                            </div>
 
+                                            <!--meta-city-->
+                                            <div class="navbar__link-separator" bis_skin_checked="1"></div>
+                                            <div class="meta-city" bis_skin_checked="1">
+                                                <!-- <i class="far fa-map-marker-alt"></i> -->
+                                                @isset($cjob->city)
+                                                    {{ $cjob->city->city }}
+                                                @endisset
+                                            </div>
+                                        </div>
+                                        <!--Rank-salary and place End-->
+                                        <!--Day update and place Start-->
+                                        <div class="info-item day-update" bis_skin_checked="1">
+                                            Cập nhật: {{$datetimeText}}
+                                        </div>
+                                        <!--Day update and place End-->
+                                    </div>
+                                    <div class="caption" bis_skin_checked="1">
+                                        <div class="welfare" bis_skin_checked="1">
+
+                                            <!-- <i class="fas fa-dollar-sign"></i>  -->
+                                          
+                                            @isset($cjob->industry)                       
+                                            <div class="box-meta" bis_skin_checked="1">
+                                                <span>
+                                                    {{$cjob->industry->industry}}                                          
+                                                </span>
+                                                </div>
+                                            @endisset
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            @endforeach
+                        @endforeach
                         </div>
+
                         @endif
-                    </div>
 
-                    <div class="widget-public-profile widget-about">
-                        <h4 class="title">{{__('About Company')}}</h4>
 
-                        <div class="about-company">
-                            {!! $company->description !!}
+                        <div class="widget-public-profile widget-about">
+                            <h4 class="title">{{__('About Company')}}</h4>
+
+                            <div class="about-company">
+                                {!! $company->description !!}
+                            </div>
                         </div>
                     </div>
+                    
                 </div>
-                <div class="col-lg-12 col-md-12">
-                    <div class="widget-public-profile widget-map">
-                        <h4 class="title">Maps</h4>
-                        <div class="map">
-                            {!!$company->map!!}
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
     </div>
 </section>
@@ -248,7 +317,7 @@
         padding-bottom: 20px;
     }
 
-    .section-company-profile .box-content .company-info {}
+    .section-company-profile .box-content {}
 </style>
 
 @endpush

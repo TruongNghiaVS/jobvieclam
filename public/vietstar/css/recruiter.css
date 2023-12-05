@@ -273,7 +273,7 @@
 .section-company-profile {
     background: #f4f5f8;
     padding: 30px;
-    margin-bottom: 40px;
+    margin: 40px 0;
 }
 
 .section-company-profile .company-profile {
@@ -299,10 +299,10 @@
 
 .section-company-profile .box-content {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 calc(100% - 150px);
-    flex: 0 0 calc(100% - 150px);
-    max-width: calc(100% - 150px);
     width: 100%;
+    -ms-flex: 0 0 calc(100% - 120px);
+    flex: 0 0 calc(100% - 120px);
+    max-width: calc(100% - 120px);
     padding-left: 15px;
     padding-right: 15px;
     display: flex;
@@ -313,7 +313,7 @@
     font-style: normal;
     font-weight: 600;
     font-size: 28px;
-    line-height: 38px;
+    line-height: 28px;
     color: var(--sub-1);
     margin-bottom: 4px;
 }
@@ -329,7 +329,6 @@
 .section-company-profile .box-content .company-info {
     display: flex;
     flex-direction: column;
-    margin: 10px 0;
 }
 
 .section-company-profile  .company-info__item  {
@@ -341,8 +340,8 @@
 }
 .section-company-profile  .company-info__item  i {
     color: var(--bs-primary);
-    margin: 10px 0;
-    margin-right: 20px;
+    margin: 5px 0;
+    margin-right: 5px;
 }
 
 .section-company-profile .socials {
@@ -431,10 +430,16 @@
 
 .widget-public-profile h4.title {
     font-weight: 700;
-    font-size: 16px;
+    font-size: 19px;
     line-height: 22px;
     color: var(--sub-1);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom:1px solid #847777;
+    text-transform: uppercase;
+}
+.widget-public-profile .about-company {
+    
 }
 
 .widget-public-profile .jobs .job {
@@ -1081,7 +1086,7 @@
 .section-company-profile .box-content .company-info__item {
     display: flex;
     flex-direction: row;
-    margin: 8px 0;
+;
 }
 .section-company-profile .box-content .company-info__item span {
     padding: 0;

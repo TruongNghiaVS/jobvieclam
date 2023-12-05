@@ -22,7 +22,8 @@ class VerifyCsrfToken extends Middleware
         'contact/CreateRequest',
         'contact/Addadvice',
         'contact/addEmailNotification',
-        'member/requestResetPassword'
+        'member/requestResetPassword',
+        'member/changePassword'
     ];
 
 }

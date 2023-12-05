@@ -28,7 +28,9 @@ class UserRegisterdListener implements ShouldQueue
      * @return void
      */
     public function handle(UserRegistered $event)
-    {
+    {     
+
+         
         // Mail::send(new UserRegisteredMailable($event->user));
     }
 

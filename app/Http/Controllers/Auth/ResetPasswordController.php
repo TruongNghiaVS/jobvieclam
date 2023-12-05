@@ -88,13 +88,13 @@ class ResetPasswordController extends Controller
                 'error'=> $error ], 400);
         }
 
-         $resetPassword = ResetPassword::where("code",$code)->where("type","1")
+         $resetPassword = ResetPassword::where("code",$code)->where("type","2")
                                       ->where("status","1")
                                       ->orderby("created_at","desc")
                                       ->first();
         if($resetPassword)
         {  
-                $companyNeedChange = Company::where("id", $resetPassword->userId)->first();
+                $companyNeedChange = User::where("id", $resetPassword->userId)->first();
                 $password =  Hash::make($request->input('password'));
                 $companyNeedChange->password = $password;
                 $companyNeedChange->save();

@@ -7,6 +7,11 @@ use App\Events\UserRegistered;
 use App\Mail\UserRegisteredMailable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use App\CodeActive;
+use App\User;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Http;
+
 
 class UserRegisterdListener implements ShouldQueue
 {
@@ -29,9 +34,20 @@ class UserRegisterdListener implements ShouldQueue
      */
     public function handle(UserRegistered $event)
     {     
+        $data = $event->user;
+        
+        if($data)
+        {
 
-         
-        // Mail::send(new UserRegisteredMailable($event->user));
+        }
+        else 
+        {
+            return;
+        }
+        $response = Http::post('http://localhost:8082/sendMailRegisterUV', [
+                'emailTo' => $data->email,
+                'fullName' =>  $data->name
+        ]);
     }
 
 }

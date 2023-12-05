@@ -5155,7 +5155,12 @@ div#industry_id_chosen {
     margin-right: 5px
 }
 
-.section-company-profile .company-profile .box-logo .logo img {
+.section-company-profile  .logo {
+    width: 100%;
+    max-height:  150px;
+}
+
+.section-company-profile  .logo img {
     width: 100%;
     height: auto;
     display: block

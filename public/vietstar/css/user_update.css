@@ -544,6 +544,9 @@ i.fas.fa-heart.iconoutline {
 
 
 @media only screen and (max-width: 767px) {
+    section#main-content.company-wrapper{
+        margin-top: 0 !important;
+    }
     .content {
         padding-left: 8px;
         padding-right: 8px;
@@ -653,7 +656,7 @@ i.fas.fa-heart.iconoutline {
       }
       .section-company-profile .box-content .company-info__item {
         align-items: center;
-        justify-content: center;
+        justify-content: start;
       }
       .section-company-profile .socials {
         margin: 10px 0;
@@ -661,6 +664,15 @@ i.fas.fa-heart.iconoutline {
         display: flex;
         align-items: center;
         justify-content: center;
+      }
+      .section-company-profile .logo {
+        max-height: unset;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+      }
+      .section-company-profile .logo img{
+        width: 50%;
       }
       .section-company-profile .socials .social {
         margin-right: 40px;

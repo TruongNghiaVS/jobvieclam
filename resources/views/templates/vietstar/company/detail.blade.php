@@ -169,6 +169,15 @@
                         </div>
                     </div> -->
 
+
+                    <div class="widget-public-profile widget-about">
+                            <h4 class="title">{{__('About Company')}}</h4>
+
+                            <div class="about-company">
+                                {!! $company->description !!}
+                            </div>
+                        </div>
+
                     <div class="widget-public-profile widget-job">
                         <h4 class="title">{{__('Job Openings')}}</h4>
                         @if ($company->jobs->count() > 0)
@@ -285,13 +294,7 @@
                         @endif
 
 
-                        <div class="widget-public-profile widget-about">
-                            <h4 class="title">{{__('About Company')}}</h4>
-
-                            <div class="about-company">
-                                {!! $company->description !!}
-                            </div>
-                        </div>
+                        
                     </div>
                     
                 </div>

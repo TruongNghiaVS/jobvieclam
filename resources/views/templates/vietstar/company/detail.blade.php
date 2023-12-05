@@ -7,13 +7,14 @@
 
 <!-- Company cover -->
 
-@include('templates.employers.includes.mobile_dashboard_menu')
-@include('templates.employers.includes.company_dashboard_menu')
+@include('templates.vietstar.includes.mobile_dashboard_menu')
+
+
 
 
 
 <!-- Main content -->
-<section class="company-wrapper main-content my-5" id="main-content">
+<section class="company-wrapper main-content" id="main-content">
     <!-- Hero banner -->
     <section class="hero-banner-company-profile" style="background-image: url({!!  asset('/vietstar/imgs/company-cover.jpg') !!});"></section>
 

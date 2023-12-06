@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="main-form"  bis_skin_checked="1">
-                        <form class="form-horizontal"  id="resetPasswordForm_company">
+                        <form class="form-horizontal"  id="resetPasswordForm">
                             <div class="form-group d-flex" bis_skin_checked="1">
                                 <div class="form-info" bis_skin_checked="1">
                                     <span>Email</span>
@@ -151,8 +151,8 @@
 <script type="text/javascript">
 $('#resetPasswordBtn_company').on('click', function () {
         // Get values from the form
-        var email = $('#resetPasswordForm_company #email').val();
-        var verificationCode = $('#resetPasswordForm_company #verificationCode').val();
+        var email = $('#resetPasswordForm #email').val();
+        var verificationCode = $('#resetPasswordForm #verificationCode').val();
 
         // Validate form fields
         $('.invalid-feedback').hide();

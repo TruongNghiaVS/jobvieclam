@@ -53,7 +53,7 @@ class ResetPasswordController extends Controller
         if($resetPassword)
         { 
              $userData = User::where("id", $resetPassword->userId)->first();
-             return view('auth.passwords.memberResetPassword', compact("userData"));
+             return view('auth.passwords.memberResetPassword', compact("resetPassword"));
         }
 
        

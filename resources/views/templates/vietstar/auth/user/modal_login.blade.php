@@ -259,8 +259,11 @@ $(document).ready(function() {
                     //     $("#login_success").removeClass("show")
                     //     window.location.href =  "/home";
                     // },2000)
+
+                    if (data.sucess == true ) { 
+                        window.location.href =  "/home";
+                    }
                     
-                    window.location.href =  "/home";
                     
                 })
                 .fail(function(jqXHR, textStatus){

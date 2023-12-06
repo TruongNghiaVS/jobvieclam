@@ -416,7 +416,7 @@
                     //     window.location.href = ;
                     // }, 2000);
 
-                    if (data.sucess == true && !data.error) {
+                    if (data.sucess == true ) {
                         window.location.href =  "/home";
                     }
                     

@@ -359,7 +359,7 @@ $(document).ready(function() {
                     // $("#logup_success button").click(function(){
                     //     $("#logup_success").removeClass("show")
                     // });
-                    if (data.sucess == true && !data.error) { 
+                    if (data.sucess == true ) { 
                         $("#user_logup_Modal").css("display:none");
                         $("#user_logup_Modal").removeClass("show")
                         window.location.href =  "/home";

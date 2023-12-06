@@ -260,7 +260,7 @@ $(document).ready(function() {
                     //     window.location.href =  "/home";
                     // },2000)
 
-                    if (data.sucess == true && !data.error) { 
+                    if (data.sucess == true ) { 
                         window.location.href =  "/home";
                     }
                     

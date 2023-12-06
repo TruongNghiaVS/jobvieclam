@@ -355,12 +355,15 @@ $(document).ready(function() {
                 })
                 .done(function(data){
                     // $("#logup_success").addClass("show")
-                    $("#user_logup_Modal").css("display:none")
-                    $("#user_logup_Modal").removeClass("show")
+                
                     // $("#logup_success button").click(function(){
                     //     $("#logup_success").removeClass("show")
                     // });
-                    window.location.href =  "/home";
+                    if (data.sucess == true && !data.error) { 
+                        $("#user_logup_Modal").css("display:none");
+                        $("#user_logup_Modal").removeClass("show")
+                        window.location.href =  "/home";
+                    }
                     
                 })
                 .fail(function(jqXHR, textStatus){

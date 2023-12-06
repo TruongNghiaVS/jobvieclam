@@ -415,7 +415,10 @@
                     //     alert("Đang")
                     //     window.location.href = ;
                     // }, 2000);
-                    window.location.href =  "/home";
+
+                    if (data.sucess == true && !data.error) {
+                        window.location.href =  "/home";
+                    }
                     
                 })
                 .fail(function(jqXHR, textStatus){

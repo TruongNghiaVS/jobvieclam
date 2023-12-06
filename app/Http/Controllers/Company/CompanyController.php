@@ -184,6 +184,7 @@ class CompanyController extends Controller
      */
     public function company_listing(Request $request)
       {
+      
         $params = $request->all();
         $query = Company::query();
         if(!empty($params['search'])) {

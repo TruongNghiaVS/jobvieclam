@@ -4,6 +4,7 @@ Route::get('company-packages', 'Company\CompanyController@resumeSearchPackages')
 Route::get('unloced-seekers', 'Company\CompanyController@unlocked_users')->name('company.unloced-users');
 Route::get('unlock/{user}', 'Company\CompanyController@unlock')->name('company.unlock');
 Route::get('company-home', 'Company\CompanyController@index')->name('company.home');
+Route::get('companies/search', 'Company\CompaniesController@company_listing')->name('company.listing');
 Route::get('companies', 'Company\CompaniesController@company_listing')->name('company.listing');
 Route::get('    ', 'Company\CompaniesController@loadMoreData')->name('company.getData');
 Route::get('company-profile', 'Company\CompanyController@companyProfile')->name('company.profile');

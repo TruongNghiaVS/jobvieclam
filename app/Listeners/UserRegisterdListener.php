@@ -33,7 +33,7 @@ class UserRegisterdListener implements ShouldQueue
      * @return void
      */
     public function handle(UserRegistered $event)
-    {     
+{     
         $data = $event->user;
         
         if($data)

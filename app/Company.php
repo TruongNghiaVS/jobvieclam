@@ -70,7 +70,10 @@ class Company extends Authenticatable
 
     ];
 
-
+    public function CompanyOverview()
+    {
+        return $this->hasOne(App\Models\CompanyOverview::class, 'companyId', 'id');
+    }
 
     public function sendPasswordResetNotification($token)
 

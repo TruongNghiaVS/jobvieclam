@@ -122,7 +122,7 @@
             <div class="bottomcompanyconten__head">
                 <h2>Công ty nổi bật<!-- --> <span>(<!-- -->525<!-- -->)</span></h2>
 
-                <div class="filter-company">
+                <!-- <div class="filter-company">
                     <div class="form-group form-select-chosen" id="functional_area_dd">
                         <select class="form-control form-select" name="functional_area_id" id="functional_area">
                             <option value="">Chọn phòng ban</option>
@@ -131,7 +131,7 @@
                             <option value="Kế toán">Kế toán</option>
                         </select>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             @if($companies)
@@ -160,20 +160,13 @@
                             </a>
                         </div>
                         <div class="company-items__category">
-                            <i class="bi bi-folder2"></i>
+                           
                             <span>
-                                Hàng tiêu dùng
+                                {{$companies->description}}
                             </span>
 
                         </div>
-                        <div class="company-items__category">
-
-                            <i class="bi bi-archive"></i>
-                            <span>
-                                5 Việc làm
-                            </span>
-
-                        </div>
+                        
 
                     </div>
 

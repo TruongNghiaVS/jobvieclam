@@ -64,6 +64,11 @@ class CompaniesController extends Controller
 
     public function company_listing(Request $request)
     {
+        if($request->has("keyword"))
+        {
+            return $this->company_search($request);
+        }
+
         $params = $request->all();
 
         $query = Company::query();
@@ -89,6 +94,31 @@ class CompaniesController extends Controller
         return view(config('app.THEME_PATH').'.company.listing')->with($data);
     }
 
+    public function company_search(Request $request)
+    { 
+        $params = $request->all();
+        $keyword = $request->input("keyword");
+
+        $query = Company::query();
+        if(!empty($keyword)) {
+            $query->where(function($q) use($keyword) {
+                $q->where('name', 'like', '%'.$keyword.'%')
+                ->orWhere('email', 'like', '%'.$keyword.'%')
+                ->orWhere('ceo', 'like', '%'.$keyword.'%')
+                ->orWhere('description', 'like', '%'.$keyword.'%')
+                ->orWhere('location', 'like', '%'.$keyword.'%')
+                ->orWhere('website', 'like', '%'.$keyword.'%');
+            });
+        }
+       
+        // $data['industries'] = Industry::all()->pluck('industry', 'industry_id');
+        // $data['cities'] = City::where('lang', \App::getLocale())->pluck('city', 'city_id');
+        $data['companies'] = $query->orderBy('id', 'desc')->paginate(10);
+       
+     
+        return view(config('app.THEME_PATH').'.company.search')->with($data)->with( "keyword", $keyword );
+
+    }
 
     public function loadMoreData(Request $request)
     {

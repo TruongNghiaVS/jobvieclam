@@ -278,6 +278,9 @@ $(document).ready(function() {
     // Remove validation class on input change
     $('#formLogin input').on('input', function() {
         $(this).removeClass('is-invalid');
+        $(this).removeClass('has-error');
+        $(".invalid-feedback").removeClass('has-error');
+        $("#formLogin").removeClass("was-validated")
     });
 });
 

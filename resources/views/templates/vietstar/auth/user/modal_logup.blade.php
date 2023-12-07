@@ -337,7 +337,7 @@ $(document).ready(function() {
                         $(`#candidate_formlogup .invalid-feedback.${err.key}-error`).text(err.textError)
                         $(`#candidate_formlogup .invalid-feedback.${err.key}-error`).addClass('has-error')
                         $(`#candidate_formlogup input[name*='${err.key}']`).addClass('has-error')
-                        
+                    
                         // $(`#candidate_formlogup .invalid-feedback.${err.key}-error`).append(err.textError)
                      
                     }) 
@@ -379,6 +379,8 @@ $(document).ready(function() {
     $('#candidate_formlogup input').on('input', function() {
         $(this).removeClass('is-invalid');
         $(this).removeClass('has-error');
+        $(".invalid-feedback").removeClass('has-error');
+        $("#candidate_formlogup").removeClass("was-validated")
     });
     
     

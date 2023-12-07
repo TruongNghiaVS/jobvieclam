@@ -90,7 +90,6 @@ class Company extends Authenticatable
     {
 
         $logo = (string)$this->logo;
-
         $logo = (!empty($logo)) ? $logo : '/admin_assets/no-image.png';
         return \ImgUploader::print_image("company_logos/$logo", $width, $height, '/admin_assets/no-image.png', $this->name);
 

@@ -143,7 +143,8 @@ include_once($real_path . 'admin_auth.php');
 Route::post('contact/CreateRequest', 'Contact\ContactController@ContactRequest')->name('contact-request');
 Route::post('contact/Addadvice', 'Contact\ContactController@AdviceRequest')->name('contact-advice');
 Route::post('contact/addEmailNotification', 'Contact\ContactController@NoficationEmail')->name('contact-email');
-
+Route::get('/member/login', 'Auth\ComonController@loginPage')->name('memberlogin');
+Route::get('/member/register', 'Auth\ComonController@resisterPage')->name('memberRegister');
 Route::get('blog', 'BlogController@index')->name('blogs');
 Route::get('blog/search', 'BlogController@search')->name('blog-search');
 Route::get('blog/get-allcareer', 'BlogController@getAllCarrier')->name('blog-getAllCarrier');

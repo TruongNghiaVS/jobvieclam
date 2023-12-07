@@ -48,18 +48,18 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $data['blogs'] = Blog::orderBy('id', 'DESC')->where('lang', 'like', \App::getLocale())->paginate(10);
+        $data['blogs'] = Blog::orderBy('id', 'DESC')->where("typePost",0)->where('lang', 'like', \App::getLocale())->paginate(10);
         $data['categories'] = Blog_category::get();
         return view(config('app.THEME_PATH').'.blog')->with($data);
     }
     public function getAllCarrier()
     {
-        $data['blogs'] = Blog::where('cate_id',17)->paginate(10);
+        $data['blogs'] = Blog::where('cate_id',17)->where("typePost",0)->paginate(10);
         return $data;
     }
     public function details($slug)
     {
-        $data['blog'] = Blog::where('slug','like','%'. $slug.'%')->where('lang', 'like', \App::getLocale())->first();
+        $data['blog'] = Blog::where('slug','like','%'. $slug.'%')->where("typePost",0)->where('lang', 'like', \App::getLocale())->first();
         $data['blog_categories'] = Blog_category::get();
 		$data['categories'] = Blog_category::get();
          $data['seo'] = (object) array(
@@ -72,7 +72,7 @@ class BlogController extends Controller
     }
     public function categories($slug)
     {
-        $category = Blog_category::where('slug', $slug)->first();
+        $category = Blog_category::where('slug', $slug)->where("typePost",0)->first();
         if(!$category)
         {
             dd("not found"); 
@@ -80,7 +80,7 @@ class BlogController extends Controller
 
       
         $data['category'] = $category;
-        $data['blogs_categories'] = Blog_category::where("id", $category->id)->get();
+        $data['blogs_categories'] = Blog_category::where("id", $category->id)->where("typePost",0)->get();
         $data['blogs'] = Blog::whereRaw("FIND_IN_SET('$category->id',cate_id)")
                         ->where('lang', 'like', \App::getLocale())->orderBy('id', 'DESC')->paginate(10);
         
@@ -90,7 +90,7 @@ class BlogController extends Controller
     public function search(Request $request)
     { 
         $data['serach_result'] = $request->get('search');
-        $data['blogs'] =Blog::where('heading', 'like', $request->get('search'))
+        $data['blogs'] =Blog::where('heading', 'like', $request->get('search'))->where("typePost",0)
                 ->orWhere('content', 'like','%' . $request->get('search') . '%')->where('lang', 'like', \App::getLocale())
                 ->paginate(1);
         $data['categories'] = Blog_category::get();

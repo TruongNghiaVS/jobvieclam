@@ -2568,6 +2568,11 @@ footer .inner-copyright .copyright {
     line-height: 1.3;
 
     color: var(--text-main);
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+
 }
 
 .jobs-side-list .item-job .jobinfo .info .job-title-name a:hover {

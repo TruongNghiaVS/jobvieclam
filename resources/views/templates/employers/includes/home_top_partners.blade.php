@@ -19,6 +19,7 @@
                         <a alt="1 slide" href="{{route('company.detail', $company->slug)}}" title="{{$company->name}}">
                             <img src="{{ asset('company_logos/'.$company->logo)}}" class="partner-item__img"
                                 alt="1 slide">
+                         
                         </a>
                         <h3 class="partner-item__name">Công ty cổ phần tập đoàn Vietstar</h3>
                     </div>

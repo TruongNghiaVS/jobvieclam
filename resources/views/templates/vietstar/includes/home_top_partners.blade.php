@@ -15,10 +15,17 @@
                 if (null !== $company) { ?>
                     <div class="swiper-slide">
                         <div class="partner-item__box">
+                            @if($company->logo)
                             <a alt="1 slide" href="{{route('company.detail', $company->slug)}}" title="{{$company->name}}">
                                 <img src="{{ asset('company_logos/'.$company->logo)}}" class="partner-item__img" alt="1 slide">
                             </a>
-                            <h3 class="partner-item__name">Công ty cổ phần tập đoàn Vietstar</h3>
+                            @else
+
+                            <a alt="1 slide" href="{{route('company.detail', $company->slug)}}" title="{{$company->name}}">
+                                <img src="{{ asset('/') }}admin_assets/no-image.png" class="partner-item__img" alt="1 slide">
+                            </a>
+                            @endif
+                            <h3 class="partner-item__name">{{$company->name}}</h3>
                         </div>
                     </div>
                 <?php } ?>

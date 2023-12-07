@@ -483,6 +483,15 @@ i.fas.fa-heart.iconoutline {
     margin-top: 10px;
 }
 
+
+.company-items__shortDes{
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+}
+
+
 .company-items__name h3 {
 
     -webkit-line-clamp: 1;

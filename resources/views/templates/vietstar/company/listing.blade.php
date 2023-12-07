@@ -47,8 +47,8 @@
 
             @if($companies)
             <div class="list-company hideContent">
-
                 @foreach($companies as $company)
+
                 <div emId="{{$company->id}}" class="company-item-wrapper shadow-sm">
                     <div class="company-item-header">
                         <div class="company-items__background">
@@ -71,6 +71,7 @@
                             </a>
                         </div>
                         <div class ="company-items__shortDes">
+                        " Công ty CP Giáo dục và Đào tạo IMAP Việt Nam với hệ thống các thương hiệu Anh ngữ Ms Hoa (Tiền thân Ms Hoa TOEIC) Ms Hoa Giao tiếp, IELTS Fighter, Aland English, IMAP Pro, Ms Hoa Junio, Globalway, IMAP Tech đang từng ngày lớn mạnh với hệ thống hơn 100 cơ sở tại Hà Nội, TP HCM, Đà Nẵng, Nghệ An, Bắc Ninh, Bình Dương, Đồng Nai và..."
                            {{$company->description}}
                         </div>
                         

@@ -5,12 +5,12 @@ Route::get('unloced-seekers', 'Company\CompanyController@unlocked_users')->name(
 Route::get('unlock/{user}', 'Company\CompanyController@unlock')->name('company.unlock');
 Route::get('company-home', 'Company\CompanyController@index')->name('company.home');
 Route::get('companies/search', 'Company\CompaniesController@company_listing')->name('company.listing');
-Route::get('companies', 'Company\CompaniesController@company_listing')->name('company.listing');
+Route::get('cong-ty', 'Company\CompaniesController@company_listing')->name('company.listing');
 Route::get('    ', 'Company\CompaniesController@loadMoreData')->name('company.getData');
 Route::get('company-profile', 'Company\CompanyController@companyProfile')->name('company.profile');
 Route::put('update-company-profile', 'Company\CompanyController@updateCompanyProfile')->name('update.company.profile');
 Route::get('posted-jobs', 'Company\CompanyController@postedJobs')->name('posted.jobs');
-Route::get('company/{slug}', 'Company\CompanyController@companyDetail')->name('company.detail');
+Route::get('cong-ty/{slug}', 'Company\CompanyController@companyDetail')->name('company.detail');
 Route::post('contact-company-message-send', 'Company\CompanyController@sendContactForm')->name('contact.company.message.send');
 Route::post('contact-applicant-message-send', 'Company\CompanyController@sendApplicantContactForm')->name('contact.applicant.message.send');
 Route::get('list-applied-users/{job_id}', 'Company\CompanyController@listAppliedUsers')->name('list.applied.users');

@@ -1,11 +1,11 @@
 <?php
 
-Route::get('job/{slug}', 'Job\JobController@jobDetail')->name('job.detail');
+Route::get('viec-lam/{slug}', 'Job\JobController@jobDetail')->name('job.detail');
 Route::get('job-popup/{slug}', 'Job\JobController@jobDetailPopup')->name('job.detail.popup');
 Route::get('apply/{slug}', 'Job\JobController@applyJob')->name('apply.job');
 #Route::post('apply/{slug}/post', 'Job\JobController@postApplyJob')->name('post.apply.job');
 Route::match(['get', 'post'], 'apply/{slug}/post', 'Job\JobController@postApplyJob')->name('post.apply.job');
-Route::get('jobs', 'Job\JobController@jobsBySearch')->name('job.list');
+Route::get('viec-lam', 'Job\JobController@jobsBySearch')->name('job.list');
 Route::get('jobs-relation', 'Job\JobController@jobRelation')->name('job.jobRelation');
 Route::get('jobs-v2', 'Job\JobController@searchJobv2')->name('job.jobv2');
 Route::get('latest-jobs', 'Job\JobController@latestJobs')->name('latest-job.list');

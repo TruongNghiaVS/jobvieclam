@@ -16,7 +16,7 @@
 <!-- Main content -->
 <section class="company-wrapper main-content" id="main-content">
     <!-- Hero banner -->
-    <section class="hero-banner-company-profile" style="background-image: url({!!  asset('/vietstar/imgs/company-cover.jpg') !!});"></section>
+    <section class="hero-banner-company-profile" style="background-image: url({!!asset('/vietstar/imgs/company-cover.jpg') !!});"></section>
 
 
     <div class="container">

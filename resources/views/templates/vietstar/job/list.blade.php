@@ -78,24 +78,24 @@
                     @php
                          $companyItem = $jobitem->company;
 
-                         $cover_logo = "/admin_assets/no-image.png";
+                         $logo = "/admin_assets/no-image.png";
                          $slugCompany = "javascript:void(0)";
                          $companyName =  "Công ty vô danh";
                          
-
+                            
 
                          if($companyItem)
                          {
-                                $cover_logo = $jobitem->company->cover_logo;
+                                $logo = $jobitem->company->logo;
                                 $slugCompany = "/company/".$companyItem->slug;
-                                if($cover_logo =="" || $cover_logo == null)
+                                if($logo =="" || $logo == null)
                                 {
 
-                                $cover_logo = "/admin_assets/no-image.png";
+                                $logo = "/admin_assets/no-image.png";
                                 }
                                 else 
                                 {
-                                $cover_logo = "/company_logos/".$cover_logo;
+                                $logo = "/company_logos/".$logo;
                                 }
                                 $companyName = $jobitem->company->name;
                          }
@@ -124,7 +124,7 @@
                    <div data-job-id="{{$jobitem->id}}" class="item-job mb-3">
                             <div class="logo-company">
                             <a href="{{$slugCompany}}" title="{{$companyName}}" class="pic">
-                            <img src="{{ $cover_logo}}" alt="">
+                            <img src="http://localhost:8000{{$logo}}" alt="">
                             </a>
                             </div>
                             <div class="jobinfo">

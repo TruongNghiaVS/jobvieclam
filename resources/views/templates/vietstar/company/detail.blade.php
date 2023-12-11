@@ -36,11 +36,11 @@
                             <div class="col-lg-9 col-md-9 col-sm-12">
                                 <div class="box-content">
                                     <h2 class="company-name">{{ $company->name }}</h2>
-                                    @if($company->industry){
+                                    @if($company->industry)
                                     <p class="company-position">
                                         {{ !empty($company->industry)?$company->industry->industry : '' }}
                                     </p>
-                                    }
+                                    
                                     @endif
                                     <div class="company-info public">
                                         <div class="d-flex flex-column">

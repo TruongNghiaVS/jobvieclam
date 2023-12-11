@@ -133,7 +133,7 @@
                             <div class="info-item job-title-box">
                             <div class="job-title">
                             <span>Mới</span>
-                             <h3 class="job-title-name"><a href="/job/{{$jobitem->slug}}" title="">{{$jobitem->title}}</a></h3>
+                             <h3 class="job-title-name"><a href="/viec-lam/{{$jobitem->slug}}" title="">{{$jobitem->title}}</a></h3>
                             </div>
 
                                    @if(Auth::check() && Auth::user()->isFavouriteJob($jobitem->slug))
@@ -493,7 +493,7 @@
                                                     <div class="info-item job-title-box">
                                                         <div class="job-title">
                                                             <span>Mới</span>
-                                                            <h3 class="job-title-name"><a href="{{url('/')}}/job/${element?.slug}" title="">${element.title}</a></h3>
+                                                            <h3 class="job-title-name"><a href="{{url('/')}}/viec-lam/${element?.slug}" title="">${element.title}</a></h3>
                                                         </div>
 
                                                     

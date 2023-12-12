@@ -504,6 +504,21 @@
     height: 200px;
   }
 
+  .about-us-section .about_us_content {
+    padding: 10px !important;
+  }
+  .about-us-section .about_us_img {
+    justify-content:center !important;
+    margin-bottom: 20px;
+
+  }
+  .about-us-section .about_us_img img {
+    width: 100% !important;
+  }
+  .about_us_content .content_title {
+    padding-left: 10px !important;
+  }
+
 }
 
 
@@ -801,6 +816,17 @@
   .public-profile {
     margin-top: unset;
   }
+  .about-us-section .about_us_img {
+    justify-content:center !important;
+    margin-bottom: 20px;
+
+  }
+  .about-us-section .about_us_img img {
+    width: 100% !important;
+  }
+  .about_us_content .content_title {
+    padding-left: 0px;
+  }
   
 
 
@@ -846,6 +872,7 @@
   #mobile-sidebar-main-nav {
     display: none;
   }
+  
 
 
 
@@ -921,6 +948,7 @@
   .container {
     max-width: 1400px;
   }
+
   .container.company-content {
     max-width: 1400px;
   }

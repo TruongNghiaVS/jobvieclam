@@ -44,7 +44,7 @@ class ArticleController extends Controller
 
     public function GetArticle($slug)
     {
-
+        return view("templates.vietstar.article.post");
         $item = ArticlePage::where("slug", $slug)->firstOrFail();
         if($item)
         {

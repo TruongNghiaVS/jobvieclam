@@ -420,11 +420,13 @@ a {
 
 .job-detail-banner .job-detail-banner__detail {
 	flex-grow: 1;
+	max-width: 80%;
 }
 
 .job-detail-banner .job-detail-banner__detail .banner__title {
 	line-height: 38px;
 	margin-bottom: 16px;
+	
 }
 
 .job-detail-banner .job-detail-banner__detail .banner__company {

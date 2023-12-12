@@ -429,6 +429,10 @@ a {
 .job-detail-banner .job-detail-banner__detail .banner__title {
   line-height: 38px;
   margin-bottom: 16px;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
 }
 
 .job-detail-banner .job-detail-banner__detail .banner__company {

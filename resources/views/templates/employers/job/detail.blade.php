@@ -274,7 +274,7 @@ $company = $job->getCompany();
                                             {{__('Save')}}</a>
                                         @endif
                                         @if($job->isJobExpired())
-                                        <span class="btn btn-primary jbexpire mb-2"><i
+                                        <span class="btn btn-primary jbexpire "><i
                                                 class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
                                             {{__('Job is expired')}}</span>
                                         @elseif(Auth::check() && Auth::user()->isAppliedOnJob($job->id))

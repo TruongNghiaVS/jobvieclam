@@ -527,7 +527,8 @@ $company = $job->getCompany();
                                 </div>
                                 <div class="caption" bis_skin_checked="1">
                                     <div class="welfare" bis_skin_checked="1">
-                                        
+                                    @if($functionarea)
+
                                         <div class="box-meta" bis_skin_checked="1">
                                             <!-- <i class="fas fa-dollar-sign"></i>  -->
                                             <span>
@@ -536,6 +537,7 @@ $company = $job->getCompany();
                                             </span>
 
                                         </div>
+                                        @endif
                                         
 
                                     </div>

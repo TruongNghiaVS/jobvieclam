@@ -25,6 +25,6 @@ class Modifyblog extends Migration
      */
     public function down()
     {
-        //
+       
     }
 }

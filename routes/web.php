@@ -203,6 +203,7 @@ Route::get('/clear-cache', function () {
 
 #Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\
 Route::get('lang/{lang}', 'LanguageController@switchLang')->name('lang.switch');
+Route::get('/{slug}', 'ArticleController@GetArticle')->name('article.getArticle');
 Route::get('job-email-alert', 'JobAlertController@Register')->name('job-email-alert');
 Route::get('job-email-alert/{token}/confirm', 'JobAlertController@verify')->name('job-email-alert-confirm');
 

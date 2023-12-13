@@ -1,48 +1,41 @@
-{!! APFrmErrHelp::showErrorsNotice($errors) !!}
-<div class="form-body">	
-    <div class="form-group {!! APFrmErrHelp::hasError($errors, 'page_slug') !!}">
-        {!! Form::label('page_slug', 'Page Slug', ['class' => 'bold']) !!}                    
-        {!! Form::text('page_slug', null, array('class'=>'form-control', 'id'=>'page_slug', 'placeholder'=>'Page Slug')) !!}
-        {!! APFrmErrHelp::showErrors($errors, 'page_slug') !!}                                       
-    </div>    
-    <div class="form-group {!! APFrmErrHelp::hasError($errors, 'show_in_top_menu') !!}">
-        {!! Form::label('show_in_top_menu', 'Hiển thị tại Menu trên cùng', ['class' => 'bold']) !!}
-        <div class="radio-list">
-            <?php
-            $radio_1 = 'checked="checked"';
-            $radio_2 = '';
-            if (old('show_in_top_menu', ((isset($cms)) ? $cms->show_in_top_menu : 1)) == 0) {
-                $radio_1 = '';
-                $radio_2 = 'checked="checked"';
-            }
-            ?>
-            <label class="radio-inline">
-                <input id="show_in_top_menu" name="show_in_top_menu" type="radio" value="1" {{$radio_1}}>
-                Yes </label>
-            <label class="radio-inline">
-                <input id="not_show_in_top_menu" name="show_in_top_menu" type="radio" value="0" {{$radio_2}}>
-                No </label>
-        </div>
-        {!! APFrmErrHelp::showErrors($errors, 'show_in_top_menu') !!}
+<div class="form-body">
+<div class="form-group">
+                <label for="linkDesktop">Link Desktop</label>
+                <input type="file" name="linkDesktop" class="form-control" id="linkDesktop" accept="image/*" required>
+                <img id="desktopPreview" src="#" alt="Desktop Image" style="display: none; max-width: 100%;">
+                <div class="error" id="linkDesktopError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="linkMobile">Link Mobile</label>
+                <input type="file" name="linkMobile" class="form-control" id="linkMobile" accept="image/*" required>
+                <img id="mobilePreview" src="#" alt="Mobile Image" style="display: none; max-width: 100%;">
+                <div class="error" id="linkMobileError"></div>
+            </div>
+
+    <div class="form-group">
+        <label for="position">Vị Trí</label>
+        <select class="form-control" name="position" id="position" required>
+            <option value="">Select Position</option>
+            <option value="1">Vị trí thứ nhất</option>
+            <option value="2">Vị trí thứ hai</option>
+            <!-- Add other options -->
+        </select>
+        <div class="error" id="positionError"></div>
     </div>
-    <div class="form-group {!! APFrmErrHelp::hasError($errors, 'show_in_footer_menu') !!}">
-        {!! Form::label('show_in_footer_menu', 'Hiển thị tại Menu chân trang', ['class' => 'bold']) !!}
-        <div class="radio-list">
-            <?php
-            $radio_1 = 'checked="checked"';
-            $radio_2 = '';
-            if (old('show_in_footer_menu', ((isset($cms)) ? $cms->show_in_footer_menu : 1)) == 0) {
-                $radio_1 = '';
-                $radio_2 = 'checked="checked"';
-            }
-            ?>
-            <label class="radio-inline">
-                <input id="show_in_footer_menu" name="show_in_footer_menu" type="radio" value="1" {{$radio_1}}>
-                Yes </label>
-            <label class="radio-inline">
-                <input id="not_show_in_footer_menu" name="show_in_footer_menu" type="radio" value="0" {{$radio_2}}>
-                No </label>
-        </div>
-        {!! APFrmErrHelp::showErrors($errors, 'show_in_footer_menu') !!}
+
+    <div class="form-group">
+        <label for="status">Trạng Thái</label>
+        <select class="form-control" name="status" id="status" required>
+            <option value="">Select Status</option>
+            <option value="1">Hoạt động</option>
+            <option value="0">Không hoạt động</option>
+            <!-- Add other options -->
+        </select>
+        <div class="error" id="statusError"></div>
     </div>
+</div>
+
+<div class="form-actions">
+    <button class="btn btn-large btn-primary" type="submit">Cập nhật</button>
 </div>

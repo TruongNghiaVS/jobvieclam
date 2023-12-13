@@ -48,6 +48,7 @@
         @include('admin/shared/side_bars/slider')
         @include('admin/shared/side_bars/contact_job')
         @include('admin/shared/side_bars/contact')
+        @include('admin/shared/side_bars/ads_banner')
 		
 		
 		@if(APAuthHelp::check(['SUP_ADM']))
@@ -56,6 +57,7 @@
             <h3 class="uppercase">Tài khoản</h3>
         </li>
         @include('admin/shared/side_bars/package')
+       
 
 		
 		
@@ -66,7 +68,6 @@
         @include('admin/shared/side_bars/country')
         @include('admin/shared/side_bars/country_detail')
         @include('admin/shared/side_bars/cover_letter')
-        @include('admin/shared/side_bars/ads_banner')
         @include('admin/shared/side_bars/state')
         @include('admin/shared/side_bars/city')
         @include('admin/shared/side_bars/language_level')

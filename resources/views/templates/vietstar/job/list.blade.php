@@ -87,7 +87,7 @@
                          if($companyItem)
                          {
                                 $logo = $jobitem->company->logo;
-                                $slugCompany = "/company/".$companyItem->slug;
+                                $slugCompany = "/cong-ty/".$companyItem->slug;
                                 if($logo =="" || $logo == null)
                                 {
 

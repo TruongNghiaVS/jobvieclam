@@ -32,9 +32,9 @@
                                         <li>
                                             <a href="{{ route('job.list') }}">{{__('Latest jobs')}}</a>
                                         </li>
-                                        <li>
+                                        <!-- <li>
                                             <a href="{{ route('my.profile') }}">{{__('Create CV')}}</a>
-                                        </li>
+                                        </li> -->
                                         <li>
                                             <a href="#">{{__('Introduce candidate')}}</a>
                                         </li>
@@ -49,11 +49,12 @@
                                 <div class="footer-widget">
                                     <h4 class="widget-title">{{__('About Us')}}</h4>
                                     <ul class="list-unstyled footer-links">
-                                        <li><a href="#">{{__('About Us')}}</a></li>
-                                        <li><a href="#">Ban lãnh đạo</a></li>
-
-                                        <li><a href="#">Văn hóa</a></li>
-
+                                        <li><a href="{{ route('contact.us') }}">{{__('Contact')}}</a></li>
+                                        <li>
+                                            <a href="{{route('about_us')}}">
+                                                {{__('About us')}}
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -65,12 +66,7 @@
                                         <li><a href="#">{{__('Job search policy')}}</a></li>
                                         <li><a href="">{{__('Privacy Policy')}}</a></li>
                                         <li><a href="">{{__('Agreement of use')}}</a></li>
-                                        <li><a href="{{ route('contact.us') }}">{{__('Contact')}}</a></li>
-                                        <li>
-                                            <a href="{{route('about_us')}}">
-                                                {{__('About us')}}
-                                            </a>
-                                        </li>
+                                        
 
                                     </ul>
                                 </div>

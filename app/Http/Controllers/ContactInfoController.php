@@ -82,4 +82,10 @@ class ContactInfoController extends Controller
     {
         //
     }
+
+    public function getAll()
+    {
+        
+         return ContactInfo::all();
+    }
 }

@@ -27,6 +27,12 @@ class MailNotificationController extends Controller
         //
     }
 
+    public function getAll()
+    {
+        
+         return MailNotification::all();
+    }
+
     /**
      * Store a newly created resource in storage.
      *

@@ -82,4 +82,10 @@ class AdviseController extends Controller
     {
         //
     }
+
+    public function getAll()
+    {
+        
+         return Advise::all();
+    }
 }

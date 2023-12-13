@@ -208,9 +208,11 @@ Route::get('job-email-alert', 'JobAlertController@Register')->name('job-email-al
 Route::get('job-email-alert/{token}/confirm', 'JobAlertController@verify')->name('job-email-alert-confirm');
 
 
-Route::post('/AdvertisementBanner/createOrUpdate', 'AdvertisementBannerController@createOrUpdate')->name('admin.advertisementBanner.createOrUpdate');
+   Route::post('/AdvertisementBanner/createOrUpdate', 'AdvertisementBannerController@createOrUpdate')->name('admin.advertisementBanner.createOrUpdate');
     Route::post('/AdvertisementBanner/getAll', 'AdvertisementBannerController@getAll')->name('admin.advertisementBanner.getAll');
     Route::post('/AdvertisementBanner/delete', 'AdvertisementBannerController@delete')->name('admin.advertisementBanner.delete');
+  
+  
     Route::post('/AdvertisementBannerJob/createOrUpdate', 'AdvertisementBannerJobController@create')->name('admin.advertisementBannerJob.create');
     Route::get('/AdvertisementBannerJob/getAll', 'AdvertisementBannerJobController@getAll')->name('admin.advertisementBannerJob.getAll');
     Route::post('/AdvertisementBannerJob/delete', 'AdvertisementBannerJobController@delete')->name('admin.advertisementBannerJob.delete');
@@ -219,4 +221,6 @@ Route::post('/AdvertisementBanner/createOrUpdate', 'AdvertisementBannerControlle
     Route::get('/article/getAll', 'ArticleController@getAll')->name('admin.article.getAll');
     Route::post('/article/delete', 'ArticleController@delete')->name('admin.article.delete');
 
-
+    Route::get('/advise/getAll', 'AdviseController@getAll')->name('admin.advise.getAll');
+    Route::get('/mailNotification/getAll', 'MailNotificationController@getAll')->name('admin.mailNotification.getAll');
+    Route::get('/contactinfo/getAll', 'ContactInfoController@getAll')->name('admin.contactinfo.getAll');

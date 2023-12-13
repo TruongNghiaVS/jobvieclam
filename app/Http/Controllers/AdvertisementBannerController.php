@@ -11,7 +11,8 @@ class AdvertisementBannerController extends Controller
 {
    
         public function createOrUpdate(Request $request)
-        {
+        {       
+            
               
                 $possition = $request->input("postion");
                 $linkDesktop = $request->input("linkDesktop");

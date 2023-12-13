@@ -26,16 +26,13 @@
                         <div class="caption font-red-sunglo"> <i class="icon-settings font-red-sunglo"></i> <span class="caption-subject bold uppercase">Mẫu banner quảng cáo theo vị trí</span> </div>
                     </div>
                     <div class="portlet-body form">          
-                       
-                        {!! Form::open(array('method' => 'post', 'route' => 'create.bannerPostion', 'class' => 'form', 'files'=>true)) !!}
-                        <div class="tab-content">              
-                            <div class="tab-pane fade active in" id="Details"> @include('admin.bannerAd.forms.form') </div>
+                        <form id="bannerCreateForm" >
+                                       
+                               @include('admin.bannerAd.forms.form')
+                                
                             
-                        </div>
-                        <div class="form-actions">
-                            {!! Form::button(__('Update'). ' ', array('class'=>'btn btn-large btn-primary', 'type'=>'submit')) !!}
-                        </div>
-                        {!! Form::close() !!}
+                          
+                        </form>
                     </div>
                 </div>
             </div>
@@ -44,3 +41,113 @@
     <!-- END CONTENT BODY --> 
 </div>
 @endsection
+
+
+
+
+
+
+
+@push('scripts')
+<script type="text/javascript">
+    
+     $(document).ready(function () {
+        // Handle file input change to preview images
+        $('#linkDesktop, #linkMobile').change(function () {
+            readURL(this);
+        });
+
+        // Handle form submission
+        $('#advertisementForm').submit(function (event) {
+            event.preventDefault();
+            // Your form submission logic here
+            console.log('Form submitted!');
+        });
+
+        // Function to preview images
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    var targetId = $(input).attr('id') === 'linkDesktop' ? 'desktopPreview' : 'mobilePreview';
+                    $('#' + targetId)
+                        .attr('src', e.target.result)
+                        .css('display', 'block');
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+       
+        document.getElementById('bannerCreateForm').addEventListener('submit', function (event) {
+            // Reset previous error messages
+            resetErrors();
+
+            if (this.checkValidity()) {
+                event.preventDefault(); // Prevent form submission if validation fails
+
+                // Form is valid, make Ajax call
+                var formData = {
+                    linkDesktop: `${document.getElementById('linkDesktop').value}`,
+                    linkMobile: `${document.getElementById('linkMobile').value}`,
+                    position: `${document.getElementById('position').value}`,
+                    status: `${document.getElementById('status').value}`
+                };
+                console.log(formData);
+              
+                // Ajax call
+                $.ajax({
+                    url: `{{ route('admin.advertisementBanner.createOrUpdate' )}}`,
+                    type: 'POST',
+                    data: formData,
+                    success: function (response) {
+                        // Handle success
+                        console.log(response);
+                    },
+                    error: function (xhr, status, error) {
+                        // Handle error
+                        console.error('Error:', error);
+                    }
+                });
+            } else {
+                // Form is invalid, display error messages
+                displayErrors();
+            }
+        });
+
+        function displayErrors() {
+            // Display error messages based on validation constraints
+            var linkDesktop = document.getElementById('linkDesktop');
+            if (linkDesktop.validity.valueMissing) {
+                document.getElementById('linkDesktopError').textContent = 'Please enter a link for desktop.';
+            }
+
+            var linkMobile = document.getElementById('linkMobile');
+            if (linkMobile.validity.valueMissing) {
+                document.getElementById('linkMobileError').textContent = 'Please enter a link for mobile.';
+            }
+
+            var position = document.getElementById('position');
+            if (position.validity.valueMissing) {
+                document.getElementById('positionError').textContent = 'Please select a position.';
+            }
+
+            var status = document.getElementById('status');
+            if (status.validity.valueMissing) {
+                document.getElementById('statusError').textContent = 'Please select a status.';
+            }
+        }
+
+        function resetErrors() {
+            // Reset all error messages
+            var errors = document.querySelectorAll('.error');
+            errors.forEach(function (error) {
+                error.textContent = '';
+            });
+        }
+    });
+
+</script>
+@endpush

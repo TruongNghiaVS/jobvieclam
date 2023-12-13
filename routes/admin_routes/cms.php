@@ -2,6 +2,8 @@
 
 /* * ******  CMS Field Start ********** */
 Route::get('list-cms', array_merge(['uses' => 'Admin\CmsController@indexCms'], $all_users))->name('list.cms');
+Route::get('banner-quang-cao', array_merge(['uses' => 'Admin\BannerAdController@indexCms'], $all_users))->name('bannerAd.cms');
+Route::get('banner-quang-cao/{id}/{industry_id?}', array_merge(['uses' => 'Admin\BannerAdController@editCms'], $all_users))->name('edit.bannerAd');
 Route::get('create-cms', array_merge(['uses' => 'Admin\CmsController@createCms'], $all_users))->name('create.cms');
 Route::post('store-cms', array_merge(['uses' => 'Admin\CmsController@storeCms'], $all_users))->name('store.cms');
 Route::get('edit-cms/{id}/{industry_id?}', array_merge(['uses' => 'Admin\CmsController@editCms'], $all_users))->name('edit.cms');

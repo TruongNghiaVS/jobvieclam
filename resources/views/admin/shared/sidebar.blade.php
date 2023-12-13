@@ -32,9 +32,14 @@
         @include('admin/shared/side_bars/company')
         @include('admin/shared/side_bars/site_user')
         <li class="heading">
+            <h3 class="uppercase">Banner Quảng cáo</h3>
+        </li>
+        @include('admin/shared/side_bars/bannerAd')
+        <li class="heading">
             <h3 class="uppercase">CMS</h3>
         </li>
         @include('admin/shared/side_bars/cms')
+        
         @include('admin/shared/side_bars/blogs')
         @include('admin/shared/side_bars/seo')
         @include('admin/shared/side_bars/faq')

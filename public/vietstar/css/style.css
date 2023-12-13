@@ -1118,7 +1118,7 @@ h4.tablinks:hover {
 	border-radius: 5px;
 	overflow: hidden;
 	transition: 0.5s all;
-	height: 310px;
+	padding-bottom: 20px;
 }
 
 

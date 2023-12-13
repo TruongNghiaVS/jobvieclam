@@ -1,48 +1,26 @@
 {!! APFrmErrHelp::showErrorsNotice($errors) !!}
 <div class="form-body">	
-    <div class="form-group {!! APFrmErrHelp::hasError($errors, 'page_slug') !!}">
-        {!! Form::label('page_slug', 'Page Slug', ['class' => 'bold']) !!}                    
-        {!! Form::text('page_slug', null, array('class'=>'form-control', 'id'=>'page_slug', 'placeholder'=>'Page Slug')) !!}
-        {!! APFrmErrHelp::showErrors($errors, 'page_slug') !!}                                       
-    </div>    
-    <div class="form-group {!! APFrmErrHelp::hasError($errors, 'show_in_top_menu') !!}">
-        {!! Form::label('show_in_top_menu', 'Hiển thị tại Menu trên cùng', ['class' => 'bold']) !!}
-        <div class="radio-list">
-            <?php
-            $radio_1 = 'checked="checked"';
-            $radio_2 = '';
-            if (old('show_in_top_menu', ((isset($cms)) ? $cms->show_in_top_menu : 1)) == 0) {
-                $radio_1 = '';
-                $radio_2 = 'checked="checked"';
-            }
-            ?>
-            <label class="radio-inline">
-                <input id="show_in_top_menu" name="show_in_top_menu" type="radio" value="1" {{$radio_1}}>
-                Yes </label>
-            <label class="radio-inline">
-                <input id="not_show_in_top_menu" name="show_in_top_menu" type="radio" value="0" {{$radio_2}}>
-                No </label>
-        </div>
-        {!! APFrmErrHelp::showErrors($errors, 'show_in_top_menu') !!}
+    <div class="form-group">
+        <label for="imglabel">Label</label>
+        <input class="form-control" name="label" type="text" id="imglabel" placeholder="label" aria-label="default input example">
     </div>
-    <div class="form-group {!! APFrmErrHelp::hasError($errors, 'show_in_footer_menu') !!}">
-        {!! Form::label('show_in_footer_menu', 'Hiển thị tại Menu chân trang', ['class' => 'bold']) !!}
-        <div class="radio-list">
-            <?php
-            $radio_1 = 'checked="checked"';
-            $radio_2 = '';
-            if (old('show_in_footer_menu', ((isset($cms)) ? $cms->show_in_footer_menu : 1)) == 0) {
-                $radio_1 = '';
-                $radio_2 = 'checked="checked"';
-            }
-            ?>
-            <label class="radio-inline">
-                <input id="show_in_footer_menu" name="show_in_footer_menu" type="radio" value="1" {{$radio_1}}>
-                Yes </label>
-            <label class="radio-inline">
-                <input id="not_show_in_footer_menu" name="show_in_footer_menu" type="radio" value="0" {{$radio_2}}>
-                No </label>
-        </div>
-        {!! APFrmErrHelp::showErrors($errors, 'show_in_footer_menu') !!}
+    <div class="form-group">
+    <label for="linkDesktop">Link Desktop</label>
+    <input type="file"  name="linkDesktop" class="form-control-file" id="linkDesktop" require>
+    </div>
+
+    <div class="form-group">
+        <label for="linkMobile">Link Mobile</label>
+        <input type="file"  name="linkMobile" class="form-control-file" id="linkMobile" require>
+    </div>
+
+    <div class="form-group">
+    <label for="linkMobile">Vị Trí</label>
+        <select class="form-control form-control-lg">
+            <option value="1">Vị trí thứ nhất</option>
+            <option></option>
+            <option></option>
+            <option></option>
+        </select>
     </div>
 </div>

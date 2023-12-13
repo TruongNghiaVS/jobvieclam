@@ -23,7 +23,11 @@ class VerifyCsrfToken extends Middleware
         'contact/Addadvice',
         'contact/addEmailNotification',
         'member/requestResetPassword',
-        'member/changePassword'
+        'member/changePassword',
+        'AdvertisementBanner/createOrUpdate',
+        'AdvertisementBanner/getAll',
+        'AdvertisementBannerJob/createOrUpdate',
+        'AdvertisementBannerJob/getAll'
     ];
 
 }

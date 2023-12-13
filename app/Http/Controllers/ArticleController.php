@@ -17,26 +17,32 @@ class ArticleController extends Controller
             $linkDesktop = $request->input("description");
             $linkMobile = $request->input("imageShare");
             $status = $request->input("content");
+            $meta_keywords = $request->input("meta_keywords");
+            $meta_descriptions = $request->input("meta_descriptions");
             $slug = $request->input("slug");
             $item = ArticlePage::where("slug", $slug)
-                    ->firstOrFail();
+                    ->first();
             if($item)
             {
-                $tiem->title = $title;
-                $tiem->description = $description;
-                $tiem->imageShare = $imageShare;
-                $tiem->content = $content;
+                $item->title = $title;
+                $item->description = $description;
+                $item->meta_keywords = $meta_keywords;
+                $item->meta_descriptions = $meta_descriptions;
+                $item->imageShare = $imageShare;
+                $item->content = $content;
                 $item->save();
             }
             else 
             {
-                $item = new ArticlePage();
-                $tiem->title = $title;
-                $tiem->description = $description;
-                $tiem->imageShare = $imageShare;
-                $tiem->content = $content;
-                $item->slug = Str::slug($title);
-                $item->save();
+                $itemInsert = new ArticlePage();
+                $itemInsert->title = $title;
+                $itemInsert->description = $description;
+                $itemInsert->imageShare = $imageShare;
+                $itemInsert->content = $content;
+                $itemInsert->meta_keywords = $meta_keywords;
+                $itemInsert->meta_descriptions = $meta_descriptions;
+                $itemInsert->slug = Str::slug($title);
+                $itemInsert->save();
 
             }
             return true;
@@ -44,8 +50,8 @@ class ArticleController extends Controller
 
     public function GetArticle($slug)
     {
-        return view("templates.vietstar.article.post");
-        $item = ArticlePage::where("slug", $slug)->firstOrFail();
+       
+        $item = ArticlePage::where("slug", $slug)->first();
         if($item)
         {
             return view("templates.vietstar.article.post", compact($item));

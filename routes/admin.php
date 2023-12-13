@@ -105,7 +105,7 @@ Route::group(['namespace' => 'Admin'], function () {
 
 
     Route::get('/delete-widget-page/{widget_page}', 'WidgetPagesController@destroy')->name('admin.widget_pages.delete');
-
+    
     /*Widget data routes End*/
 
 

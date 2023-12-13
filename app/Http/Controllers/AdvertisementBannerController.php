@@ -1,49 +1,50 @@
 <?php
-
 namespace App\Http\Controllers;
+
+
 
 use App\Models\AdvertisementBanner;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class AdvertisementBannerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-        public function create(Request $request)
+   
+        public function createOrUpdate(Request $request)
         {
+              
                 $possition = $request->input("postion");
                 $linkDesktop = $request->input("linkDesktop");
                 $linkMobile = $request->input("linkMobile");
                 $status = $request->input("status");
-                $item = AdvertisementBanner::where("postion", $possition)->firstOrFail();
+               
+                $item = AdvertisementBanner::where("postion", $possition)->first();
+         
                 if($item)
                 {
-                    $tiem->linkDesktop = $linkDesktop;
-                    $tiem->linkMobile = $linkMobile;
-                    $tiem->possition = $possition;
-                    $tiem->status = $status;
+                    
+                   
+                    $item->linkDesktop = $linkDesktop;
+                
+                    $item->linkMobile = $linkMobile;
+                    $item->postion = $possition;
+                    $item->status = $status;
+            
                     $item->save();
                 }
                 else 
                 {
-                    $item = new AdvertisementBanner();
-                    $tiem->linkDesktop = $linkDesktop;
-                    $tiem->linkMobile = $linkMobile;
-                    $tiem->possition = $possition;
-                    $tiem->status = "1";
-                    $item->save();
+                    $itemInsert = new AdvertisementBanner();
+                
+                    $itemInsert->linkDesktop = $linkDesktop;
+                    $itemInsert->linkMobile = $linkMobile;
+                    $itemInsert->postion = $possition;
+                    $itemInsert->status = "1";
+                   
+                    $itemInsert->save();
 
                 }
-                return $item;
+                return true;
         }
 
      public function getAll(Request $request)
@@ -52,10 +53,19 @@ class AdvertisementBannerController extends Controller
             $query = AdvertisementBanner::where("status","1");
             if($possition != "")
             {
-                $query = AdvertisementBanner::where("possition",$possition);
+                $query = $query->where("postion",$possition);
             }
             return $query->get();
         }
+
+
+        public function delete(Request $request)
+        {
+           $id = $request->input("id");
+           $query = AdvertisementBanner::where("id",$id);
+           $query->delete();
+           return true;
+       }
 
     
 }

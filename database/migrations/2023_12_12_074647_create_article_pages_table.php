@@ -19,6 +19,8 @@ class CreateArticlePagesTable extends Migration
             $table->string('slug')->nullable();
             $table->string('description')->nullable();
             $table->string('imageShare')->nullable();
+            $table->string('meta_keywords')->nullable();
+            $table->string('meta_descriptions')->nullable();
             $table->text('content')->nullable();
             $table->timestamps();
         });

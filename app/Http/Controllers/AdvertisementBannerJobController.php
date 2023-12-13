@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
+
 use App\Models\AdvertisementBannerJob;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class AdvertisementBannerJobController extends Controller
 {
@@ -20,28 +23,30 @@ class AdvertisementBannerJobController extends Controller
      */
         public function create(Request $request)
         {
-                $possition = $request->input("priorities");
+                $priorities = $request->input("priorities");
                 $linkDesktop = $request->input("linkDesktop");
                 $linkMobile = $request->input("linkMobile");
                 $status = $request->input("status");
-                $id =  $request->input("status");
-                $item = AdvertisementBannerJob::where("postion", $possition)->firstOrFail();
+                $id =  $request->input("idRequest");
+               
+                $item = AdvertisementBannerJob::where("id", $id)->first();
+              
                 if($item)
                 {
-                    $tiem->linkDesktop = $linkDesktop;
-                    $tiem->linkMobile = $linkMobile;
-                    $tiem->possition = $possition;
-                    $tiem->status = $status;
+                    $item->linkDesktop = $linkDesktop;
+                    $item->linkMobile = $linkMobile;
+                    $item->priorities = $priorities;
+                    $item->status = $status;
                     $item->save();
                 }
                 else 
                 {
-                    $item = new AdvertisementBannerJob();
-                    $tiem->linkDesktop = $linkDesktop;
-                    $tiem->linkMobile = $linkMobile;
-                    $tiem->possition = $possition;
-                    $tiem->status = "1";
-                    $item->save();
+                    $itemInsert = new AdvertisementBannerJob();
+                    $itemInsert->linkDesktop = $linkDesktop;
+                    $itemInsert->linkMobile = $linkMobile;
+                    $itemInsert->priorities = $priorities;
+                    $itemInsert->status = "1";
+                    $itemInsert->save();
 
                 }
                 return true;
@@ -57,6 +62,14 @@ class AdvertisementBannerJobController extends Controller
             }
             return $query->get();
         }
+
+        public function delete(Request $request)
+        {
+           $id = $request->input("id");
+           $query = AdvertisementBannerJob::where("id",$id);
+           $query->delete();
+           return true;
+       }
 
     
 }

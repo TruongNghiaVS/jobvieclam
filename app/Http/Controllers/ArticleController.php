@@ -71,4 +71,11 @@ class ArticleController extends Controller
         }
 
     }
+    public function delete(Request $request)
+        {
+           $id = $request->input("id");
+           $query = ArticlePage::where("id",$id);
+           $query->delete();
+           return true;
+       }
 }

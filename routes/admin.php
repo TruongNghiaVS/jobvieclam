@@ -61,6 +61,14 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::get('/blog/edit-blog/{blog}', 'BlogsController@get_blog')->name('edit-blog');
 
 
+    Route::get('/article-page', 'ArticlePageController@index')->name('article-page');
+    Route::get('/article-page/add-new-blog', 'ArticlePageController@show_form')->name('add-new-article-page');
+    Route::post('/article-page/create', 'ArticlePageController@create');
+    Route::post('/article-page/update', 'ArticlePageController@update');
+    Route::delete('/article-page/{blog}', 'ArticlePageController@destroy');
+    Route::get('/article-page/remove_blog_feature_image/{blog}', 'ArticlePageController@remove_blog_feature_image');
+    Route::get('/article-page/get_blog_by_id/{blog}', 'ArticlePageController@get_blog_by_id');
+    Route::get('/article-page/edit-blog/{blog}', 'ArticlePageController@get_blog')->name('edit-article-page');
 
     /*Widget Page routes Start*/
 

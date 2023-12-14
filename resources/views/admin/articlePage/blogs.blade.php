@@ -72,31 +72,58 @@
 
                                         <th>Tiêu đề</th>
                                         <th>Nội dung</th>
+                                        <th>Mô tả</th>
+                                        <th>Meta keyword</th>
+                                        <th>Meta descriptions</th>
 
+ 
+                                        <th>Ngày tạo</th>
                                         <th>Cập nhật lần cuối</th>
                                         <th>{{__('Action')}}</th>
                                     </tr>
                                     {{ csrf_field() }}
                                 </thead>
                                 <tbody>
+                              
                                     @foreach($user as $blog)
+
+                                    
                                     <tr class="item{{$blog->id}}">
 
-                                        <td>{{$blog->heading}}</td>
+                                        <td>{{$blog->title}}</td>
                                         <td>
                                             {!!
                                             \Illuminate\Support\Str::words($blog->content, 5,'..') !!}
+                                        </td>
+
+                                        <td>
+                                            {!!
+                                            \Illuminate\Support\Str::words($blog->description, 5,'..') !!}
+                                        </td>
+
+                                         <td>
+                                            {!!
+                                            \Illuminate\Support\Str::words($blog->meta_keywords, 5,'..') !!}
+                                        </td>
+
+                                        <td>
+                                            {!!
+                                            \Illuminate\Support\Str::words($blog->meta_descriptions, 5,'..') !!}
+                                        </td>
+
+
+                                        <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $blog->created_at)->diffForHumans() }}
                                         </td>
 
                                         <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $blog->updated_at)->diffForHumans() }}
                                         </td>
                                         <td>
                                             <a id="popup" class="edit-modal btn btn-success"
-                                                href="{{route('edit-blog',$blog->id)}}"><span
+                                                href="{{route('',$blog->id)}}"><span
                                                     class="fa fa-pencil"></span>
                                                 Sửa</a>
                                             <button id="popup" class="delete-modal btn btn-danger"
-                                                onClick="delete_blog({{$blog->id}});"><span class="fa fa-trash"></span>
+                                                onClick="delete_blog_article({{$blog->id}});"><span class="fa fa-trash"></span>
                                                 Xóa</button>
                                         </td>
                                     </tr>

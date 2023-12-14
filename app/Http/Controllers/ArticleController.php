@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\ArticlePage;
+use Illuminate\Support\Str;
 
 class ArticleController extends Controller
 {
@@ -22,6 +23,8 @@ class ArticleController extends Controller
             $slug = $request->input("slug");
             $item = ArticlePage::where("slug", $slug)
                     ->first();
+
+           
             if($item)
             {
                 $item->title = $title;
@@ -45,7 +48,7 @@ class ArticleController extends Controller
                 $itemInsert->save();
 
             }
-            return true;
+            return redirect('/admin/article-page');
     }
     public function getBYid(Request $request)
     {

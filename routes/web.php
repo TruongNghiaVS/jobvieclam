@@ -217,8 +217,12 @@ Route::get('job-email-alert/{token}/confirm', 'JobAlertController@verify')->name
     Route::get('/AdvertisementBannerJob/getAll', 'AdvertisementBannerJobController@getAll')->name('admin.advertisementBannerJob.getAll');
     Route::post('/AdvertisementBannerJob/delete', 'AdvertisementBannerJobController@delete')->name('admin.advertisementBannerJob.delete');
 
+<<<<<<< HEAD
     Route::post('/article/createOrUpdate', 'ArticleController@create')->name('admin.article.create');
     Route::get('/article/getBYid', 'ArticleController@getBYid')->name('admin.article.getBYid');
+=======
+    Route::post('/article/createOrUpdate', 'ArticleController@createOrUpdate')->name('admin.article.create');
+>>>>>>> 14/12_blog_rule
     Route::get('/article/getAll', 'ArticleController@getAll')->name('admin.article.getAll');
     Route::post('/article/delete', 'ArticleController@delete')->name('admin.article.delete');
 

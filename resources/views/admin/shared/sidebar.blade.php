@@ -35,10 +35,10 @@
             <h3 class="uppercase">Banner Quảng cáo</h3>
         </li>
         @include('admin/shared/side_bars/bannerAd')
+        @include('admin/shared/side_bars/banner')
         <li class="heading">
             <h3 class="uppercase">CMS</h3>
         </li>
-        @include('admin/shared/side_bars/cms')
         
         @include('admin/shared/side_bars/blogs')
         @include('admin/shared/side_bars/seo')
@@ -48,7 +48,7 @@
         @include('admin/shared/side_bars/slider')
         @include('admin/shared/side_bars/contact_job')
         @include('admin/shared/side_bars/contact')
-        @include('admin/shared/side_bars/ads_banner')
+     
 		
 		
 		@if(APAuthHelp::check(['SUP_ADM']))

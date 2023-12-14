@@ -96,6 +96,7 @@
             ajax: {
                 url: '{!! route('fetch.data.cms') !!}',
                 data: function (d) {
+                    console.log(d);
                     d.id = $('#id').val();
                     d.page_slug = $('#page_slug').val();
                 }
@@ -107,6 +108,7 @@
             ]
         });
         $('#cms-search-form').on('submit', function (e) {
+            
             oTable.draw();
             e.preventDefault();
         });

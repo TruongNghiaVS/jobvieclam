@@ -253,14 +253,15 @@ $(document).ready(function() {
                 })
                 .done(function(data){
                     // $("#login_success").addClass("show")
-                    $("#user_login_Modal").css("display:none")
-                    $("#user_login_Modal").removeClass("show")
+                   
                     // setTimeout(()=> {
                     //     $("#login_success").removeClass("show")
                     //     window.location.href =  "/home";
                     // },2000)
 
                     if (data.sucess == true ) { 
+                        $("#user_login_Modal").css("display:none")
+                        $("#user_login_Modal").removeClass("show")
                         window.location.href =  "/home";
                     }
                     

@@ -53,18 +53,12 @@
                                             <div class="col-lg-12">
                                                 <div class="">
                                                     <form method="POST" files="true"
-                                                          action="{{ asset('admin/blog/create')}}"
+                                                          action="{{ route('admin.article.create')}}"
                                                           enctype="multipart/form-data">
                                                         {{csrf_field()}}
                                                         <div class="row">
                                                             <div class="col-lg-9">
-                                                                <div
-                                                                        class="form-group {{ $errors->has('lang') ? 'has-error' : '' }}">
-                                                                    <label class="control-label" for="lang">Lựa chọn ngôn ngữ</label>
-                                                                    {!! Form::select('lang', ['' => __('Select')]+$languages, $lang, array('class'=>'form-control', 'id'=>'lang', 'onchange'=>'setLang(this.value)')) !!}
-                                                                    <span
-                                                                            class="text-danger">{{ $errors->first('lang') }}</span>
-                                                                </div>
+                                                               
                                                                 <div
                                                                         class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
                                                                     <label class="control-label" for="title">Tiêu
@@ -99,14 +93,7 @@
                                                                 <div class="blogboxint">
                                                                     <h3>SEO</h3>
                                                                     <div id="div_show_seo_fields">
-                                                                        <div class="form-group">
-                                                                            <label class="control-label" for="title">Tiêu
-                                                                                đề Meta</label>
-                                                                            <input type="text" class="form-control"
-                                                                                   name="meta_title" id="meta_title"
-                                                                                   autofocus
-                                                                                   value="{{ old('meta_title') }}">
-                                                                        </div>
+                                                                       
                                                                         <div class="form-group">
                                                                             <label class="control-label" for="title">Từ
                                                                                 khóa Meta</label>
@@ -135,34 +122,7 @@
                                                                     <!--<input type="submit" value="Close" class="btn btn-warning"
                                                                         data-dismiss="modal">-->
                                                                 </div>
-                                                                <div class="blogboxint">
-                                                                    {{csrf_field()}}
-                                                                    @if($categories!='')
-                                                                        <div class="form-group">
-                                                                            <label class="control-label" for="title">Chọn Danh mục</label>
-                                                                            <ul class="optionlist">
-                                                                                @foreach($categories as $cate)
-                                                                                    <li>
-                                                                                        <input type="checkbox"
-                                                                                               name="cate_id[]"
-                                                                                               id="cate_id"
-                                                                                               value="<?php echo $cate->id; ?>">
-                                                                                        <label for="webdesigner"></label>
-                                                                                        {!!$cate->heading!!}</li>
-                                                                                @endforeach
-                                                                            </ul>
-                                                                        </div>
-                                                                    @endif
-                                                                </div>
-                                                                <div class="blogboxint">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label"
-                                                                               for="Upload Image">Ảnh đại diện</label>
-                                                                        <input type="file" class="form-control"
-                                                                               name="image"
-                                                                               id="image" autofocus>
-                                                                    </div>
-                                                                </div>
+                                                               
                                                             </div>
                                                         </div>
                                                     </form>

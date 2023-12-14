@@ -208,8 +208,8 @@ Route::get('job-email-alert', 'JobAlertController@Register')->name('job-email-al
 Route::get('job-email-alert/{token}/confirm', 'JobAlertController@verify')->name('job-email-alert-confirm');
 
 
-   Route::post('/AdvertisementBanner/createOrUpdate', 'AdvertisementBannerController@createOrUpdate')->name('admin.advertisementBanner.createOrUpdate');
-    Route::post('/AdvertisementBanner/getAll', 'AdvertisementBannerController@getAll')->name('admin.advertisementBanner.getAll');
+    Route::post('/AdvertisementBanner/createOrUpdate', 'AdvertisementBannerController@createOrUpdate')->name('admin.advertisementBanner.createOrUpdate');
+    Route::get('/AdvertisementBanner/getAll', 'AdvertisementBannerController@getAll')->name('admin.advertisementBanner.getAll');
     Route::post('/AdvertisementBanner/delete', 'AdvertisementBannerController@delete')->name('admin.advertisementBanner.delete');
   
   

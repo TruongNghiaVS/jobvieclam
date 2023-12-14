@@ -4,8 +4,15 @@
 Route::get('list-cms', array_merge(['uses' => 'Admin\CmsController@indexCms'], $all_users))->name('list.cms');
 Route::get('banner-quang-cao', array_merge(['uses' => 'Admin\BannerAdController@indexCms'], $all_users))->name('bannerAd.cms');
 Route::get('banner-quang-cao/{id}/{industry_id?}', array_merge(['uses' => 'Admin\BannerAdController@editCms'], $all_users))->name('edit.bannerAd');
-Route::get('create-cms', array_merge(['uses' => 'Admin\CmsController@createCms'], $all_users))->name('create.cms');
 Route::get('them-moi-banner-theo-vi-tri', array_merge(['uses' => 'Admin\BannerAdController@createCms'], $all_users))->name('create.bannerPostion');
+
+
+Route::get('banner-quang-cao-viec-lam', array_merge(['uses' => 'Admin\AdJobBannerController@index'], $all_users))->name('bannerJobAd.cms');
+Route::get('banner-quang-cao-viec-lam/{id}/{industry_id?}', array_merge(['uses' => 'Admin\AdJobBannerController@edit'], $all_users))->name('edit.bannerjobAd');
+Route::get('them-moi-banner-quang-cao-viec-lam', array_merge(['uses' => 'Admin\AdJobBannerController@create'], $all_users))->name('create.bannerjob');
+
+
+Route::get('create-cms', array_merge(['uses' => 'Admin\CmsController@createCms'], $all_users))->name('create.cms');
 Route::post('store-cms', array_merge(['uses' => 'Admin\CmsController@storeCms'], $all_users))->name('store.cms');
 Route::get('edit-cms/{id}/{industry_id?}', array_merge(['uses' => 'Admin\CmsController@editCms'], $all_users))->name('edit.cms');
 Route::put('update-cms/{id}', array_merge(['uses' => 'Admin\CmsController@updateCms'], $all_users))->name('update.cms');

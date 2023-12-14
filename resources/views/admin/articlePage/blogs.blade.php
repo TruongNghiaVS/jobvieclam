@@ -55,10 +55,16 @@
 
 
                     </section>
-
+                   
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-primary"><a class="text-white" href="{{ route('add-new-article-page') }}">
+                            Thêm bài viết
+                        </a>
+                    </button>
+                    </div>
 
                     <section class="content">
-
+                        
                         <div class="panel-body">
                             <table class="table" id="blogTable">
                                 <thead>

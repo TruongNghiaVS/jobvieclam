@@ -8,8 +8,8 @@
         <div class="page-bar">
             <ul class="page-breadcrumb">
                 <li> <li> <a href="{{ route('admin.home') }}">{{__('Home')}}</a> <i class="fa fa-circle"></i> </li>
-                <li> <a href="{{ route('bannerAd.cms') }}">BANNER THEO VỊ TRÍ</a> <i class="fa fa-circle"></i> </li>
-                <li> <span>Thêm BANNER</span> </li>
+                <li> <a href="{{ route('bannerJobAd.cms') }}">BANNER Việc Làm</a> <i class="fa fa-circle"></i> </li>
+                <li> <span>Thêm BANNER Việc Làm</span> </li>
             </ul>
         </div>
         <!-- END PAGE BAR --> 
@@ -23,15 +23,13 @@
             <div class="col-md-12">
                 <div class="portlet light bordered">
                     <div class="portlet-title">
-                        <div class="caption font-red-sunglo"> <i class="icon-settings font-red-sunglo"></i> <span class="caption-subject bold uppercase">Mẫu banner quảng cáo theo vị trí</span> </div>
+                        <div class="caption font-red-sunglo"> <i class="icon-settings font-red-sunglo"></i> <span class="caption-subject bold uppercase">Mẫu banner quảng cáo theo việc làm</span> </div>
                     </div>
                     <div class="portlet-body form">          
-                        <form id="bannerCreateForm" >
+                        <form id="bannerJobCreateForm" >
                                        
-                               @include('admin.bannerAd.forms.form')
-                                
-                            
-                          
+                               @include('admin.ads_banner-job.forms.form')
+
                         </form>
                     </div>
                 </div>
@@ -58,7 +56,7 @@
         });
 
         // Handle form submission
-        $('#advertisementForm').submit(function (event) {
+        $('#bannerJobCreateForm').submit(function (event) {
             event.preventDefault();
             // Your form submission logic here
             console.log('Form submitted!');
@@ -81,7 +79,7 @@
         }
 
        
-        document.getElementById('bannerCreateForm').addEventListener('submit', function (event) {
+        document.getElementById('bannerJobCreateForm').addEventListener('submit', function (event) {
             // Reset previous error messages
             resetErrors();
 
@@ -92,25 +90,25 @@
                 var formData = {
                     linkDesktop: `${document.getElementById('linkDesktop').value}`,
                     linkMobile: `${document.getElementById('linkMobile').value}`,
-                    position: `${document.getElementById('position').value}`,
+                    priorities: `${document.getElementById('priorities').value}`,
                     status: `${document.getElementById('status').value}`
                 };
-                console.log(formData);
+        
               
                 // Ajax call
                 $.ajax({
-                    url: `{{ route('admin.advertisementBanner.createOrUpdate' )}}`,
+                    url: `{{ route('admin.advertisementBannerJob.create')}}`,
                     type: 'POST',
                     data: formData,
                     success: function (response) {
-                        // Handle success
-                        if(response){
-                            window.location.href =  "/admin/banner-quang-cao";
-                        }
-                        
+                       if(response){
+                            window.location.href =  "/admin/banner-quang-cao-viec-lam";
+                       }
+
                     },
                     error: function (xhr, status, error) {
                         // Handle error
+                        console.error('Error:', error);
                     }
                 });
             } else {
@@ -131,9 +129,9 @@
                 document.getElementById('linkMobileError').textContent = 'Please enter a link for mobile.';
             }
 
-            var position = document.getElementById('position');
-            if (position.validity.valueMissing) {
-                document.getElementById('positionError').textContent = 'Please select a position.';
+            var priorities = document.getElementById('priorities');
+            if (priorities.validity.valueMissing) {
+                document.getElementById('prioritiesError').textContent = 'Please select a priorities.';
             }
 
             var status = document.getElementById('status');

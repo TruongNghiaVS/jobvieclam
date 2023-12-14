@@ -48,7 +48,7 @@
         @include('admin/shared/side_bars/slider')
         @include('admin/shared/side_bars/contact_job')
         @include('admin/shared/side_bars/contact')
-        @include('admin/shared/side_bars/ads_banner')
+     
 		
 		
 		@if(APAuthHelp::check(['SUP_ADM']))

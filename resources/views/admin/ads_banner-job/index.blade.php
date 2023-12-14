@@ -16,12 +16,12 @@
             <ul class="page-breadcrumb">
                 <li>
                 <li> <a href="{{ route('admin.home') }}">{{__('Home')}}</a> <i class="fa fa-circle"></i> </li>
-                <li> <span>BANNER THEO VỊ TRÍ</span> </li>
+                <li> <span>BANNER Việc Làm</span> </li>
             </ul>
         </div>
         <!-- END PAGE BAR -->
         <!-- BEGIN PAGE TITLE-->
-        <h3 class="page-title">Quản lý Banner <small>Banner</small> </h3>
+        <h3 class="page-title">Quản lý Banner <small>BANNER Việc Làm</small> </h3>
         <!-- END PAGE TITLE-->
         <!-- END PAGE HEADER-->
         <div class="row">
@@ -29,17 +29,17 @@
                 <!-- Begin: life time stats -->
                 <div class="portlet light portlet-fit portlet-datatable bordered">
                     <div class="portlet-title">
-                        <div class="caption"> <i class="icon-settings font-dark"></i> <span class="caption-subject font-dark sbold uppercase">Banner</span> </div>
-                        <div class="actions"> <a href="{{ route('create.bannerPostion') }}" class="btn btn-xs btn-succes"><i class="glyphicon glyphicon-plus"></i> Thêmm mới</a> </div>
+                        <div class="caption"> <i class="icon-settings font-dark"></i> <span class="caption-subject font-dark sbold uppercase">Banner Job</span> </div>
+                        <div class="actions"> <a href="{{ route('create.bannerjob') }}" class="btn btn-xs btn-succes"><i class="glyphicon glyphicon-plus"></i> Thêmm mới</a> </div>
                     </div>
                     <div class="portlet-body">
                         <div class="table-container">
                             <form method="post" role="form" id="banner-search-form">
-                                <table class="table table-striped table-bordered table-hover" id="banner_datatable_ajax">
+                                <table class="table table-striped table-bordered table-hover" id="bannerjob_datatable_ajax">
                                     <thead>
                                         <tr role="row" class="filter">
                                             <td><input type="text" class="form-control" name="id" id="id" autocomplete="off"></td>
-                                            <td><input type="text" class="form-control" name="postion" id="postion" autocomplete="off"></td>
+                                            <td><input type="text" class="form-control" name="priorities" id="priorities" autocomplete="off"></td>
                                             <td><input type="text" class="form-control" name="status" id="status"></td>
                                             <td><input type="text" class="form-control" name="created_at" id="created_at"></td>
                                             <td><input type="text" class="form-control" name="updated_at" id="updated_at"></td>
@@ -48,7 +48,7 @@
                                         </tr>
                                         <tr role="row" class="heading">
                                             <th>Id</th>
-                                            <th>Position</th>
+                                            <th>Priorities</th>
                                             <th>Status</th>
 
                                             <th>Create at</th>
@@ -72,7 +72,7 @@
 @push('scripts')
 <script>
     $(function () {
-        var oTable = $('#banner_datatable_ajax').DataTable({
+        var oTable = $('#bannerjob_datatable_ajax').DataTable({
             "language": { // language settings
                 // metronic spesific
                 "metronicGroupActions": "_TOTAL_ bản ghi được chọn:  ",
@@ -105,21 +105,21 @@
              info: true,
              */
             ajax: {
-                url: `{{ route('admin.advertisementBanner.getAll')}}`,
+                url: `{{ route('admin.advertisementBannerJob.getAll')}}`,
                 dataSrc:"",
                 data: function (d) {
-                    d.id = $('#banner_datatable_ajax #id').val();
-                    d.postion = $('#banner_datatable_ajax #postion').val();
-                    d.status = $('#banner_datatable_ajax #status').val() == 1 ? "Hoạt động":"Không hoạt động";
-                    d.created_at = $('#banner_datatable_ajax #created_at').val();
-                    d.update_at = $('#banner_datatable_ajax #update_at').val();
+                    d.id = $('#bannerjob_datatable_ajax #id').val();
+                    d.priorities = $('#bannerjob_datatable_ajax #priorities').val();
+                    d.status = $('#bannerjob_datatable_ajax #status').val() == 1 ? "Hoạt động":"Không hoạt động";
+                    d.created_at = $('#bannerjob_datatable_ajax #created_at').val();
+                    d.update_at = $('#bannerjob_datatable_ajax #update_at').val();
 
 
                 }
             }, columns: [
                 /*{data: 'id_checkbox', name: 'id_checkbox', orderable: false, searchable: false},*/
-                {data: 'id', name: 'id' ,searchable: true },
-                {data: 'postion', name: 'postion' ,searchable: true },
+                {data: 'id', name: 'id' , searchable: true},
+                {data: 'priorities', name: 'priorities' , searchable: true},
                 {
                     // "status" column with custom rendering
                     data: 'status',
@@ -128,8 +128,7 @@
                         var statusText = data === 0 ? 'Không hoạt động' : 'Hoạt động';
                         var colorClass = data === 0 ? 'text-danger ' : 'text-success ';
                         return '<span class="' + colorClass + '">' + statusText + '</span>';
-                    },
-                    searchable: true
+                    }, searchable: true
                 },
 
 
@@ -145,13 +144,11 @@
                         var year = date.getFullYear().toString();
 
                         return day + '/' + month + '/' + year;
-                    },
-                    searchable: true
+                    }, searchable: true
                 
                 },
-                {data: 'updated_at',name: 'updated_at', 
-
-                    render: function (data) {
+                {data: 'updated_at',name: 'updated_at'
+                    ,render: function (data) {
                         var date = new Date(data);
                 
                     // Format the date as dd/mm/yy
@@ -160,21 +157,17 @@
                         var year = date.getFullYear().toString();
 
                         return day + '/' + month + '/' + year;
-                    },
-                    searchable: true
+                    }, searchable: true
                 },
                 {
                 // Add a delete button for each row
                     data: null,
                     name: 'action',
                     render: function (data, type, row) {
-                        return '<button class="btn btn-danger btn-sm" onclick="delete_banner('+ row.id +')">Delete</button>';
+                        return '<button class="btn btn-danger btn-sm" onclick="delete_bannerjob('+row.id+')">Delete</button>';
                     }
-                    ,
-                    orderable: false, searchable: false
                 }
             ]
-
         });
         $('#banner-search-form').on('submit', function (e) {
             oTable.draw();
@@ -184,18 +177,18 @@
             oTable.draw();
             e.preventDefault();
         });
-        $('#postion').on('keyup', function (e) {
+        $('#priorities').on('keyup', function (e) {
             oTable.draw();
             e.preventDefault();
         });
     });
-    function delete_banner(id) {
+    function delete_bannerjob(id) {
         if (confirm('Are you sure! you want to delete? All content pages will be deleted too.')) {
-            $.post("{{ route('admin.advertisementBanner.delete') }}", {id: id, _method: 'POST', _token: '{{ csrf_token() }}'})
+            $.post("{{ route('admin.advertisementBannerJob.delete') }}", {id: id, _method: 'POST', _token: '{{ csrf_token() }}'})
                     .done(function (response) {
                         if (response == '1')
                         {
-                            var table = $('#banner_datatable_ajax').DataTable({
+                            var table = $('#bannerjob_datatable_ajax').DataTable({
                                 "language": { // language settings
                                     // metronic spesific
                                     "metronicGroupActions": "_TOTAL_ bản ghi được chọn:  ",
@@ -226,6 +219,7 @@
                     });
         }
     }
+
 
 
 </script>

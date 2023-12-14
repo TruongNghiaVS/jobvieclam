@@ -78,6 +78,19 @@
                                                                     <span
                                                                             class="text-danger">{{ $errors->first('slug') }}</span>
                                                                 </div>
+
+                                                                <div
+                                                                        class="form-group {{ $errors->has('content') ? 'has-error' : '' }}">
+                                                                    <label class="control-label"
+                                                                           for="content">Mô tả </label>
+                                                                    <textarea class="form-control" name="description"
+                                                                              id="" cols="40" rows="5"
+                                                                              autofocus>{{ old('content') }}</textarea>
+                                                                    <span
+                                                                            class="text-danger">{{ $errors->first('content') }}</span>
+                                                                </div>
+
+
                                                                 <div
                                                                         class="form-group {{ $errors->has('content') ? 'has-error' : '' }}">
                                                                     <label class="control-label"
@@ -121,6 +134,16 @@
                                                                            class="btn btn-primary">
                                                                     <!--<input type="submit" value="Close" class="btn btn-warning"
                                                                         data-dismiss="modal">-->
+                                                                </div>
+
+                                                                <div class="blogboxint">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label"
+                                                                               for="Upload Image">Ảnh đại diện</label>
+                                                                        <input type="file" class="form-control"
+                                                                               name="imageShare"
+                                                                               id="image" autofocus>
+                                                                    </div>
                                                                 </div>
                                                                
                                                             </div>

@@ -127,6 +127,44 @@ function delete_blog(id) {
 }
 
 
+function delete_blog_article(id) {
+
+    var is_confirm = confirm("Are you sure you want to delete this Blog?");
+
+    if (is_confirm) {
+
+        $.ajax({
+
+            type: 'DELETE',
+
+            url: '/article/delete' + id,
+
+            data: {
+
+                '_token': $('input[name=_token]').val(),
+
+            },
+
+            success: function(data) {
+
+                toastr.success('Successfully deleted Blog!', 'Success Alert', { timeOut: 5000 });
+
+                $('.item' + data['id']).remove();
+
+                $('.col1').each(function(index) {
+
+                    $(this).html(index + 1);
+
+                });
+
+            }
+
+        });
+
+    }
+
+}
+
 
 function string_to_slug(str) {
 

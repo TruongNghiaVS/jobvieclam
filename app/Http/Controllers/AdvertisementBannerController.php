@@ -14,7 +14,7 @@ class AdvertisementBannerController extends Controller
         {       
             
               
-                $possition = $request->input("postion");
+                $possition = $request->input("position");
                 $linkDesktop = $request->input("linkDesktop");
                 $linkMobile = $request->input("linkMobile");
                 $status = $request->input("status");
@@ -48,14 +48,20 @@ class AdvertisementBannerController extends Controller
                 return true;
         }
 
-     public function getAll(Request $request)
+        public function getAll(Request $request)
+
          {
-            $possition = $request->input("postion");
+            
+            $possition = $request->input("position");
             $query = AdvertisementBanner::where("status","1");
             if($possition != "")
             {
                 $query = $query->where("postion",$possition);
             }
+
+
+            
+            
             return $query->get();
         }
 

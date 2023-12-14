@@ -47,7 +47,15 @@ class ArticleController extends Controller
             }
             return true;
     }
-
+    public function getBYid(Request $request)
+    {
+            $title = $request->input("id");
+           
+            $item = ArticlePage::where("id", $slug)
+                    ->first();
+            
+            return $item;
+    }
     public function GetArticle($slug)
     {
        

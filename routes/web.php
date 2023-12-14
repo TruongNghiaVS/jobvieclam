@@ -218,6 +218,7 @@ Route::get('job-email-alert/{token}/confirm', 'JobAlertController@verify')->name
     Route::post('/AdvertisementBannerJob/delete', 'AdvertisementBannerJobController@delete')->name('admin.advertisementBannerJob.delete');
 
     Route::post('/article/createOrUpdate', 'ArticleController@create')->name('admin.article.create');
+    Route::get('/article/getBYid', 'ArticleController@getBYid')->name('admin.article.getBYid');
     Route::get('/article/getAll', 'ArticleController@getAll')->name('admin.article.getAll');
     Route::post('/article/delete', 'ArticleController@delete')->name('admin.article.delete');
 

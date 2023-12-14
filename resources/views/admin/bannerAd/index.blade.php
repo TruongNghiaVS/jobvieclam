@@ -168,7 +168,7 @@
                     data: null,
                     name: 'action',
                     render: function (data, type, row) {
-                        return '<button class="btn btn-danger btn-sm" onclick="delete_banner('+ row.id +')">Delete</button>';
+                        return '<button class="btn btn-danger btn-sm" onclick="delete_banner('+ row.id +')" type="button">Delete</button>';
                     }
                     ,
                     orderable: false, searchable: false
@@ -180,12 +180,14 @@
             oTable.draw();
             e.preventDefault();
         });
-        $('#id').on('keyup', function (e) {
+        $('#banner-search-form #id').on('keyup', function (e) {
             oTable.draw();
             e.preventDefault();
+
         });
         $('#postion').on('keyup', function (e) {
             oTable.draw();
+            $('#banner-search-form').submit();
             e.preventDefault();
         });
     });

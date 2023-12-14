@@ -14,9 +14,9 @@ class ArticleController extends Controller
     public function createOrUpdate(Request $request)
     {
             $title = $request->input("title");
-            $linkDesktop = $request->input("description");
-            $linkMobile = $request->input("imageShare");
-            $status = $request->input("content");
+            $description = $request->input("description");
+            $imageShare = $request->input("imageShare");
+            $content = $request->input("content");
             $meta_keywords = $request->input("meta_keywords");
             $meta_descriptions = $request->input("meta_descriptions");
             $slug = $request->input("slug");

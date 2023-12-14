@@ -38,11 +38,11 @@
                                 <table class="table table-striped table-bordered table-hover" id="bannerjob_datatable_ajax">
                                     <thead>
                                         <tr role="row" class="filter">
-                                            <td><input type="text" class="form-control" name="id" id="id" autocomplete="off"></td>
+                                            <!-- <td><input type="text" class="form-control" name="id" id="id" autocomplete="on"></td>
                                             <td><input type="text" class="form-control" name="priorities" id="priorities" autocomplete="off"></td>
                                             <td><input type="text" class="form-control" name="status" id="status"></td>
                                             <td><input type="text" class="form-control" name="created_at" id="created_at"></td>
-                                            <td><input type="text" class="form-control" name="updated_at" id="updated_at"></td>
+                                            <td><input type="text" class="form-control" name="updated_at" id="updated_at"></td> -->
 
                                             <td></td>
                                         </tr>
@@ -95,10 +95,11 @@
                 }
             },
             procesing: true,
+            destroy: true,
             serverSide: true,
             stateSave: true,
-            searching: true,
-            "order": [[0, "desc"]],
+         searching:false,
+            // "order": [[0, "desc"]],
      
             /*		
              paging: true,
@@ -117,9 +118,9 @@
 
                 }
             }, columns: [
-                /*{data: 'id_checkbox', name: 'id_checkbox', orderable: false, searchable: false},*/
-                {data: 'id', name: 'id' , searchable: true},
-                {data: 'priorities', name: 'priorities' , searchable: true},
+                /*{data: 'id_checkbox', name: 'id_checkbox', orderable: false, },*/
+                {data: 'id', name: 'id' , },
+                {data: 'priorities', name: 'priorities' , },
                 {
                     // "status" column with custom rendering
                     data: 'status',
@@ -128,7 +129,7 @@
                         var statusText = data === 0 ? 'Không hoạt động' : 'Hoạt động';
                         var colorClass = data === 0 ? 'text-danger ' : 'text-success ';
                         return '<span class="' + colorClass + '">' + statusText + '</span>';
-                    }, searchable: true
+                    }, 
                 },
 
 
@@ -144,7 +145,7 @@
                         var year = date.getFullYear().toString();
 
                         return day + '/' + month + '/' + year;
-                    }, searchable: true
+                    }, 
                 
                 },
                 {data: 'updated_at',name: 'updated_at'
@@ -157,14 +158,14 @@
                         var year = date.getFullYear().toString();
 
                         return day + '/' + month + '/' + year;
-                    }, searchable: true
+                    }, 
                 },
                 {
                 // Add a delete button for each row
                     data: null,
                     name: 'action',
                     render: function (data, type, row) {
-                        return '<button class="btn btn-danger btn-sm" onclick="delete_bannerjob('+row.id+')">Delete</button>';
+                        return '<button class="btn btn-danger btn-sm" onclick="delete_bannerjob('+row.id+')" type="button">Delete</button>';
                     }
                 }
             ]
@@ -173,15 +174,16 @@
             oTable.draw();
             e.preventDefault();
         });
-        $('#id').on('keyup', function (e) {
+        $('#banner-search-form #id').on('keyup', function (e) {
             oTable.draw();
             e.preventDefault();
         });
-        $('#priorities').on('keyup', function (e) {
+        $('#banner-search-form #priorities').on('keyup', function (e) {
             oTable.draw();
             e.preventDefault();
         });
     });
+
     function delete_bannerjob(id) {
         if (confirm('Are you sure! you want to delete? All content pages will be deleted too.')) {
             $.post("{{ route('admin.advertisementBannerJob.delete') }}", {id: id, _method: 'POST', _token: '{{ csrf_token() }}'})
@@ -219,6 +221,9 @@
                     });
         }
     }
+
+
+
 
 
 

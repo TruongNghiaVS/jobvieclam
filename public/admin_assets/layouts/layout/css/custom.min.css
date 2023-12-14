@@ -1,0 +1,23 @@
+/* here you can put your own css to customize and override the theme */
+
+
+
+.d-flex {
+    display: flex;
+}
+.justify-content-center{
+    justify-content: center;
+}
+
+.justify-content-end{
+    justify-content: end;
+}
+.text-white {
+    color: white;
+}
+.btn-primary:hover a  {
+    color: white !important;
+    text-decoration: none;
+}
+
+

@@ -6544,6 +6544,14 @@ button.close {
 .affix {
   position: fixed;
 }
+
+.d-flex{
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
 @-ms-viewport {
   width: device-width;
 }

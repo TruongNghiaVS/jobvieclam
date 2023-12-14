@@ -36,6 +36,8 @@
         </li>
         @include('admin/shared/side_bars/bannerAd')
         @include('admin/shared/side_bars/banner')
+        @include('admin/shared/side_bars/article')
+
         <li class="heading">
             <h3 class="uppercase">CMS</h3>
         </li>

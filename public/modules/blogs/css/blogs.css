@@ -117,6 +117,12 @@
             .iradio_square-yellow.checked.disabled {
                 background-position: -216px 0;
             }
+            .d-flex{
+                display: flex;
+            }
+            .justify-content-end{
+                justify-content: end;
+            }
             
             .featured-images-main i {
                 width: 16px;
@@ -141,3 +147,6 @@
                     background-size: 240px 24px;
                 }
             }
+
+
+           

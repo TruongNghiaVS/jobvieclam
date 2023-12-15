@@ -13,7 +13,7 @@ Route::get('them-moi-banner-quang-cao-viec-lam', array_merge(['uses' => 'Admin\A
 
 Route::get('thong-bao-email', array_merge(['uses' => 'Admin\SupportCustomerController@index'], $all_users))->name('support.notificationEmail');
 Route::get('ung-vien-lien-he', array_merge(['uses' => 'Admin\SupportCustomerController@contactInfo'], $all_users))->name('support.contactInfo');
-Route::get('khach-hang-lien-he', array_merge(['uses' => 'Admin\SupportCustomerController@Addvices'], $all_users))->name('support.contactInfo');
+Route::get('khach-hang-lien-he', array_merge(['uses' => 'Admin\SupportCustomerController@Addvices'], $all_users))->name('support.addvices');
 
 
 Route::get('create-cms', array_merge(['uses' => 'Admin\CmsController@createCms'], $all_users))->name('create.cms');

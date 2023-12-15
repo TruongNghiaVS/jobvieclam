@@ -128,7 +128,85 @@
                 {data: 'email', name: 'email' , },
                 {data: 'phoneNumber', name: 'phoneNumber' , },
 
-                {data: 'citys', name: 'citys' , },
+                {data: 'citys', name: 'citys' , 
+                    render: function (data) {
+                        const tmp= [
+                                {"city_id": "", "city_name": "Chọn địa điểm"},
+                                {"city_id": "3", "city_name": "Port Blair"},
+                                {"city_id": "48666", "city_name": "Lào Cai"},
+                                {"city_id": "48667", "city_name": "Yên Bái"},
+                                {"city_id": "48668", "city_name": "Lai Châu"},
+                                {"city_id": "48669", "city_name": "Điện Biên"},
+                                {"city_id": "48670", "city_name": "Sơn La"},
+                                {"city_id": "48671", "city_name": "Hòa Bình"},
+                                {"city_id": "48672", "city_name": "Hà Giang"},
+                                {"city_id": "48673", "city_name": "Tuyên Quang"},
+                                {"city_id": "48674", "city_name": "Phú Thọ"},
+                                {"city_id": "48675", "city_name": "Thái Nguyên"},
+                                {"city_id": "48676", "city_name": "Bắc Kạn"},
+                                {"city_id": "48677", "city_name": "Cao Bằng"},
+                                {"city_id": "48678", "city_name": "Lạng Sơn"},
+                                {"city_id": "48679", "city_name": "Bắc Giang"},
+                                {"city_id": "48680", "city_name": "Quảng Ninh"},
+                                {"city_id": "48681", "city_name": "Tp. Hà Nội"},
+                                {"city_id": "48682", "city_name": "Tp. Hải Phòng"},
+                                {"city_id": "48683", "city_name": "Vĩnh Phúc"},
+                                {"city_id": "48684", "city_name": "Bắc Ninh"},
+                                {"city_id": "48685", "city_name": "Hưng Yên"},
+                                {"city_id": "48686", "city_name": "Hải Dương"},
+                                {"city_id": "48687", "city_name": "Thái Bình"},
+                                {"city_id": "48688", "city_name": "Nam Định"},
+                                {"city_id": "48689", "city_name": "Ninh Bình"},
+                                {"city_id": "48690", "city_name": "Hà Nam"},
+                                {"city_id": "48691", "city_name": "Thanh Hóa"},
+                                {"city_id": "48692", "city_name": "Nghệ An"},
+                                {"city_id": "48693", "city_name": "Hà Tĩnh"},
+                                {"city_id": "48694", "city_name": "Quảng Bình"},
+                                {"city_id": "48695", "city_name": "Quảng Trị"},
+                                {"city_id": "48696", "city_name": "Thừa Thiên Huế"},
+                                {"city_id": "48697", "city_name": "Tp. Đà Nẵng"},
+                                {"city_id": "48698", "city_name": "Quảng Nam"},
+                                {"city_id": "48699", "city_name": "Quảng Ngãi"},
+                                {"city_id": "48700", "city_name": "Bình Định"},
+                                {"city_id": "48701", "city_name": "Phú Yên"},
+                                {"city_id": "48702", "city_name": "Khánh Hòa"},
+                                {"city_id": "48703", "city_name": "Ninh Thuận"},
+                                {"city_id": "48704", "city_name": "Bình Thuận"},
+                                {"city_id": "48705", "city_name": "Kon Tum"},
+                                {"city_id": "48706", "city_name": "Gia Lai"},
+                                {"city_id": "48707", "city_name": "Đắk Lắk"},
+                                {"city_id": "48708", "city_name": "Đắk Nông"},
+                                {"city_id": "48709", "city_name": "Lâm Đồng"},
+                                {"city_id": "48710", "city_name": "TP. Hồ Chí Minh"},
+                                {"city_id": "48711", "city_name": "Đồng Nai"},
+                                {"city_id": "48712", "city_name": "Bà Rịa-Vũng Tàu"},
+                                {"city_id": "48713", "city_name": "Bình Dương"},
+                                {"city_id": "48714", "city_name": "Bình Phước"},
+                                {"city_id": "48715", "city_name": "Tây Ninh"},
+                                {"city_id": "48716", "city_name": "Tp. Cần Thơ"},
+                                {"city_id": "48717", "city_name": "Long An"},
+                                {"city_id": "48718", "city_name": "Tiền Giang"},
+                                {"city_id": "48719", "city_name": "Bến Tre"},
+                                {"city_id": "48720", "city_name": "Vĩnh Long"},
+                                {"city_id": "48721", "city_name": "Trà Vinh"},
+                                {"city_id": "48722", "city_name": "Đồng Tháp"},
+                                {"city_id": "48723", "city_name": "An Giang"},
+                                {"city_id": "48724", "city_name": "Kiên Giang"},
+                                {"city_id": "48725", "city_name": "Hậu Giang"},
+                                {"city_id": "48726", "city_name": "Sóc Trăng"},
+                                {"city_id": "48727", "city_name": "Bạc Liêu"},
+                                {"city_id": "48728", "city_name": "Cà Mau"}
+                                ]
+
+                              
+                        const city = tmp.find(city => city.city_id === data);
+                       
+                        return city ? city.city_name : "";
+                    }, 
+                
+                
+                
+                },
 
                 {
                     // "status" column with custom rendering

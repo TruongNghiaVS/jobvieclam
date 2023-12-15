@@ -36,7 +36,7 @@
                                 <div class="col-md-9">
 
                                     <h1>
-                                        Quản lý Blogs
+                                        Quản lý chính sách
 
                                     </h1>
                                 </div>
@@ -45,7 +45,7 @@
 
                             <ul class="breadcrumb">
                                 <li class="active"><a href="{{ URL::asset('/admin/blog')}}"><i
-                                            class="fa fa-dashboard"></i> Quản lý Blogs </a></li>
+                                            class="fa fa-dashboard"></i> Quản lý chính sách </a></li>
                                 <li><a href="{{ URL::asset('/admin/blog_category')}}"><i class="fa fa-file-text-o"></i>
                                         Quản lý Danh mục</a></li>
 

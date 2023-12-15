@@ -11,6 +11,10 @@ Route::get('banner-quang-cao-viec-lam', array_merge(['uses' => 'Admin\AdJobBanne
 Route::get('banner-quang-cao-viec-lam/{id}/{industry_id?}', array_merge(['uses' => 'Admin\AdJobBannerController@edit'], $all_users))->name('edit.bannerjobAd');
 Route::get('them-moi-banner-quang-cao-viec-lam', array_merge(['uses' => 'Admin\AdJobBannerController@create'], $all_users))->name('create.bannerjob');
 
+Route::get('thong-bao-email', array_merge(['uses' => 'Admin\SupportCustomerController@index'], $all_users))->name('support.notificationEmail');
+Route::get('ung-vien-lien-he', array_merge(['uses' => 'Admin\SupportCustomerController@contactInfo'], $all_users))->name('support.contactInfo');
+Route::get('khach-hang-lien-he', array_merge(['uses' => 'Admin\SupportCustomerController@Addvices'], $all_users))->name('support.contactInfo');
+
 
 Route::get('create-cms', array_merge(['uses' => 'Admin\CmsController@createCms'], $all_users))->name('create.cms');
 Route::post('store-cms', array_merge(['uses' => 'Admin\CmsController@storeCms'], $all_users))->name('store.cms');

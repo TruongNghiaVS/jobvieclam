@@ -63,6 +63,7 @@ class ArticleController extends Controller
     {
        
         $item = ArticlePage::where("slug", $slug)->first();
+        
         if($item)
         {
             return view("templates.vietstar.article.post", compact($item));

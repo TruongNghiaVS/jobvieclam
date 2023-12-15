@@ -49,7 +49,7 @@
                                         <tr role="row" class="heading">
                                             <th>Id</th>
                                             <th>Priorities</th>
-                                            <th>Status</th>
+                                            <th>Trạng thái</th>
 
                                             <th>Create at</th>
                                             <th>Update at</th>

@@ -30,16 +30,19 @@
                 <div class="portlet light portlet-fit portlet-datatable bordered">
                     <div class="portlet-title">
                         <div class="caption"> <i class="icon-settings font-dark"></i> <span class="caption-subject font-dark sbold uppercase">Banner Job</span> </div>
-                        <div class="actions"> <a href="{{ route('create.bannerjob') }}" class="btn btn-xs btn-succes"><i class="glyphicon glyphicon-plus"></i> Thêmm mới</a> </div>
+                       
                     </div>
                     <div class="portlet-body">
                         <div class="table-container">
                             <form method="post" role="form" id="banner-search-form">
-                                <table class="table table-striped table-bordered table-hover" id="bannerjob_datatable_ajax">
+                                <table class="table table-striped table-bordered table-hover" id="contactinfo_datatable_ajax">
                                     <thead>
                                         <tr role="row" class="filter">
                                             <!-- <td><input type="text" class="form-control" name="id" id="id" autocomplete="on"></td>
-                                            <td><input type="text" class="form-control" name="priorities" id="priorities" autocomplete="off"></td>
+                                            <td><input type="text" class="form-control" name="email" id="email" autocomplete="off"></td>
+                                            <td><input type="text" class="form-control" name="phoneNumber" id="phoneNumber" autocomplete="off"></td>
+                                            
+                                            
                                             <td><input type="text" class="form-control" name="status" id="status"></td>
                                             <td><input type="text" class="form-control" name="created_at" id="created_at"></td>
                                             <td><input type="text" class="form-control" name="updated_at" id="updated_at"></td> -->
@@ -48,12 +51,17 @@
                                         </tr>
                                         <tr role="row" class="heading">
                                             <th>Id</th>
-                                            <th>Priorities</th>
-                                            <th>Status</th>
+                                            <th>Tên</th>
 
+                                            <th>Email</th>
+                                            <th>Tiêu đề</th>
+                                            <th>Nội dung</th>
+
+                                            <th>Số điện thoại</th>
+                                            <th>Trạng thái</th>
+                                            
                                             <th>Create at</th>
                                             <th>Update at</th>
-                                            <th>{{__('Action')}}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -72,7 +80,7 @@
 @push('scripts')
 <script>
     $(function () {
-        var oTable = $('#bannerjob_datatable_ajax').DataTable({
+        var oTable = $('#contactinfo_datatable_ajax').DataTable({
             "language": { // language settings
                 // metronic spesific
                 "metronicGroupActions": "_TOTAL_ bản ghi được chọn:  ",
@@ -106,21 +114,29 @@
              info: true,
              */
             ajax: {
-                url: `{{ route('admin.advertisementBannerJob.getAll')}}`,
+                url: `{{ route('admin.contactinfo.getAll')}}`,
                 dataSrc:"",
                 data: function (d) {
-                    d.id = $('#bannerjob_datatable_ajax #id').val();
-                    d.priorities = $('#bannerjob_datatable_ajax #priorities').val();
-                    d.status = $('#bannerjob_datatable_ajax #status').val() == 1 ? "Hoạt động":"Không hoạt động";
-                    d.created_at = $('#bannerjob_datatable_ajax #created_at').val();
-                    d.update_at = $('#bannerjob_datatable_ajax #update_at').val();
+                    d.id = $('#contactinfo_datatable_ajax #id').val();
+                    d.email = $('#contactinfo_datatable_ajax #email').val();
+                    d.phoneNumber = $('#contactinfo_datatable_ajax #phoneNumber').val();
+                    d.status = $('#contactinfo_datatable_ajax #status').val() == 1 ? "Hoạt động":"Không hoạt động";
+                    d.created_at = $('#contactinfo_datatable_ajax #created_at').val();
+                    d.update_at = $('#contactinfo_datatable_ajax #update_at').val();
 
-
+            
                 }
             }, columns: [
                 /*{data: 'id_checkbox', name: 'id_checkbox', orderable: false, },*/
                 {data: 'id', name: 'id' , },
-                {data: 'priorities', name: 'priorities' , },
+                {data: 'fullName', name: 'fullName' , },
+
+                {data: 'email', name: 'email'  },
+                {data: 'title', name: 'title' },
+
+                {data: 'messages', name: 'messages' },
+                {data: 'phoneNumber', name: 'phoneNumber' },
+
                 {
                     // "status" column with custom rendering
                     data: 'status',
@@ -160,14 +176,7 @@
                         return day + '/' + month + '/' + year;
                     }, 
                 },
-                {
-                // Add a delete button for each row
-                    data: null,
-                    name: 'action',
-                    render: function (data, type, row) {
-                        return '<button class="btn btn-danger btn-sm" onclick="delete_bannerjob('+row.id+')" type="button">Delete</button>';
-                    }
-                }
+                
             ]
         });
         $('#banner-search-form').on('submit', function (e) {
@@ -182,45 +191,46 @@
             oTable.draw();
             e.preventDefault();
         });
+
     });
 
-    function delete_bannerjob(id) {
-        if (confirm('Are you sure! you want to delete? All content pages will be deleted too.')) {
-            $.post("{{ route('admin.advertisementBannerJob.delete') }}", {id: id, _method: 'POST', _token: '{{ csrf_token() }}'})
-                    .done(function (response) {
-                        if (response == '1')
-                        {
-                            var table = $('#bannerjob_datatable_ajax').DataTable({
-                                "language": { // language settings
-                                    // metronic spesific
-                                    "metronicGroupActions": "_TOTAL_ bản ghi được chọn:  ",
-                                    "metronicAjaxRequestGeneralError": "Không thể hoàn thành yêu cầu, xin check kết nối mạng",
+    // function delete_bannerjob(id) {
+    //     if (confirm('Are you sure! you want to delete? All content pages will be deleted too.')) {
+    //         $.post("{{ route('admin.advertisementBannerJob.delete') }}", {id: id, _method: 'POST', _token: '{{ csrf_token() }}'})
+    //                 .done(function (response) {
+    //                     if (response == '1')
+    //                     {
+    //                         var table = $('#contactinfo_datatable_ajax').DataTable({
+    //                             "language": { // language settings
+    //                                 // metronic spesific
+    //                                 "metronicGroupActions": "_TOTAL_ bản ghi được chọn:  ",
+    //                                 "metronicAjaxRequestGeneralError": "Không thể hoàn thành yêu cầu, xin check kết nối mạng",
 
-                                    // data tables spesific
-                                    "lengthMenu": "<span class='seperator'></span>Xem _MENU_ bản ghi",
-                                    "info": "<span class='seperator'></span>Tìm thấy tổng số _TOTAL_ bản ghi",
-                                    "infoEmpty": "Không có bản ghì nào để hiển thị/ No records found to show",
-                                    "emptyTable": "Không có dữ liệu trong bảng/ No data available in table",
-                                    "zeroRecords": "Không có bản ghi nào khớp/ No matching records found",
-                                    "paginate": {
-                                        "previous": "Trước/Prev",
-                                        "next": "Tiếp/Next",
-                                        "last": "Cuối/Last",
-                                        "first": "Đầu/First",
-                                        "page": "Trang/Page",
-                                        "pageOf": "trong/of"
-                                    }
-                                }
+    //                                 // data tables spesific
+    //                                 "lengthMenu": "<span class='seperator'></span>Xem _MENU_ bản ghi",
+    //                                 "info": "<span class='seperator'></span>Tìm thấy tổng số _TOTAL_ bản ghi",
+    //                                 "infoEmpty": "Không có bản ghì nào để hiển thị/ No records found to show",
+    //                                 "emptyTable": "Không có dữ liệu trong bảng/ No data available in table",
+    //                                 "zeroRecords": "Không có bản ghi nào khớp/ No matching records found",
+    //                                 "paginate": {
+    //                                     "previous": "Trước/Prev",
+    //                                     "next": "Tiếp/Next",
+    //                                     "last": "Cuối/Last",
+    //                                     "first": "Đầu/First",
+    //                                     "page": "Trang/Page",
+    //                                     "pageOf": "trong/of"
+    //                                 }
+    //                             }
 
-                            });
-                            table.row('row' + id).remove().draw(false);
-                        } else
-                        {
-                            alert('Request Failed!');
-                        }
-                    });
-        }
-    }
+    //                         });
+    //                         table.row('row' + id).remove().draw(false);
+    //                     } else
+    //                     {
+    //                         alert('Request Failed!');
+    //                     }
+    //                 });
+    //     }
+    // }
 
 
 

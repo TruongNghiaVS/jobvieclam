@@ -118,10 +118,7 @@
                                         <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $blog->updated_at)->diffForHumans() }}
                                         </td>
                                         <td>
-                                            <a id="popup" class="edit-modal btn btn-success"
-                                                href="{{route('',$blog->id)}}"><span
-                                                    class="fa fa-pencil"></span>
-                                                Sửa</a>
+                                           
                                             <button id="popup" class="delete-modal btn btn-danger"
                                                 onClick="delete_blog_article({{$blog->id}});"><span class="fa fa-trash"></span>
                                                 Xóa</button>
@@ -403,11 +400,8 @@
             <script src="{{ asset('js/bootstrap-multiselect.js') }}"></script>
             <script src="{{ asset('modules/blogs/js/blogs.js') }}"></script>
 
-
-
-
             <script>
-            < ? php
+             < ? php
             if ($errors - > has('title') || $errors - > has('slug') || $errors - > has('content')) {
                 ?
                 >

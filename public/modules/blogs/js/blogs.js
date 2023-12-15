@@ -128,25 +128,28 @@ function delete_blog(id) {
 
 
 function delete_blog_article(id) {
-
+    console.log(id);
     var is_confirm = confirm("Are you sure you want to delete this Blog?");
 
     if (is_confirm) {
 
         $.ajax({
 
-            type: 'DELETE',
+            type: 'POST',
 
-            url: '/article/delete' + id,
+            url: '/article/delete',
 
             data: {
 
                 '_token': $('input[name=_token]').val(),
-
+                'id':id
             },
 
             success: function(data) {
+                if(data){
 
+                    window.location.reload();;
+                }
                 toastr.success('Successfully deleted Blog!', 'Success Alert', { timeOut: 5000 });
 
                 $('.item' + data['id']).remove();
@@ -156,6 +159,8 @@ function delete_blog_article(id) {
                     $(this).html(index + 1);
 
                 });
+               
+
 
             }
 

@@ -177,7 +177,7 @@
                                 <div class="form-group {{ $errors->has('content') ? 'has-error' : '' }}">
                                     <label class="control-label col-sm-3" for="content">Nội dung</label>
                                     <div class="col-sm-12">
-                                        <textarea class="form-control" name="content" id="content" cols="40" rows="5"
+                                        <textarea class="form-control" name="content" id="content" cols="40" rows="10"
                                             autofocus>{{ old('content') }}</textarea>
                                         <span class="text-danger">{{ $errors->first('content') }}</span>
                                     </div>

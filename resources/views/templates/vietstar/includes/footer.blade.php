@@ -63,9 +63,9 @@
                                 <div class="footer-widget">
                                     <h4 class="widget-title">{{__('Help')}}</h4>
                                     <ul class="list-unstyled footer-links">
-                                        <li><a href="#">{{__('Job search policy')}}</a></li>
-                                        <li><a href="">{{__('Privacy Policy')}}</a></li>
-                                        <li><a href="">{{__('Agreement of use')}}</a></li>
+                                        <li><a href="/dieu-khoan-su-dung-dich-vu-voi-nha-tuyen-dung">{{__('Job search policy')}}</a></li>
+                                        <li><a href="/quy-dinh-bao-mat">{{__('Privacy Policy')}}</a></li>
+                                        <li><a href="/dieu-khoan-su-dung">{{__('Agreement of use')}}</a></li>
                                         
 
                                     </ul>

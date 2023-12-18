@@ -31,6 +31,7 @@
                     if(data) {
                         data.forEach(element => {
                           
+                            console.log(element.postion);
                             if (element.postion == '1') {
                                 $("#bannerSide").append(`
                                     <img src="{{url('/')}}/admin_assets/${element.linkDesktop}" alt="banner">
@@ -45,6 +46,10 @@
                 }
             });
         });
+
+
+
+        
    
 </script>
 @endpush

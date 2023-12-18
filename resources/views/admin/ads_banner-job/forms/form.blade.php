@@ -18,7 +18,12 @@
         <select class="form-control" name="priorities" id="priorities" required>
             <option value="">Select Priorities</option>
             <option value="1">Thứ nhất</option>
-            <option value="2">Thứ hai</option>
+            <option value="2">Vị trí sidebar thứ 1</option>
+            <option value="3">Vị trí sidebar thứ 2</option>
+            <option value="4">Vị trí sidebar thứ 3</option>
+            <option value="5">Vị trí sidebar thứ 4</option>
+
+            
             <!-- Add other options -->
         </select>
         <div class="error" id="positionError"></div>

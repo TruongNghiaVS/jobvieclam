@@ -192,10 +192,7 @@
                             </div>
                         @if($loop->index ==5)
                        
-                            <div class="inpostad">
-                            <img src="https://png.pngtree.com/thumb_back/fh260/back_pic/00/02/44/5056179b42b174f.jpg" alt="">
-                            </div>
-                       
+                           
                         @endif
               
                             @endforeach
@@ -342,6 +339,49 @@
 @push('scripts')
 <script>
     
+    $(document).ready(function() {
+            // Set your API endpoint
+            const apiUrl = `{{ route('admin.advertisementBannerJob.getAll')}}`;
+
+            // Make the API request
+            $.ajax({
+                url: apiUrl,
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    // Handle the data from the API
+                    
+
+                    if(data) {
+                        data.forEach(element => {
+                          
+                            console.log(element.priorities);
+                            if (element.priorities == '1') {
+
+                                console.log(element.linkDesktop);
+                                $('.searchList.jobs-side-list .item-job:nth-child(5)').after(`
+                                    <div class="inpostad">
+                                    <img src="{{url('/')}}/admin_assets/${element.linkDesktop}" alt="">
+                                    </div>  
+                                `);
+                            }
+                        });
+                    }
+                    console.log('API Response:', data);
+                },
+                error: function(xhr, status, error) {
+                    // Handle errors
+                    console.error('Error:', error);
+                }
+            });
+        });
+
+
+    
+
+
+
+
    
    
     function checksalary(salary_from, salary_to) {

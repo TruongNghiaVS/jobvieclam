@@ -6,49 +6,10 @@ $ads = \App\AdBanner::all();
     <!-- Indicators -->
 
     <!-- The slideshow -->
-    <div class="carousel-inner">
+    <div class="carousel-inner" >
 
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-12 ">
-                <div class="item">
-                    <div class="image loadAds">
-                        <a href="#">
-                            <img src="https://ads.careerbuilder.vn/www/images/a5b2628391fac3d894caa7e1a29d12fa.jpg"
-                                alt="#">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-12">
-                <div class="item">
-                    <div class="image loadAds">
-                        <a href="#">
-                            <img src="https://ads.careerbuilder.vn/www/images/6804e96cfe23971714beafba912d8782.jpg"
-                                alt="#">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-12">
-                <div class="item">
-                    <div class="image loadAds">
-                        <a href="#">
-                            <img src="https://ads.careerbuilder.vn/www/images/b818531cf76fdafbf772e3d95f5f102a.png"
-                                alt="#">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-12">
-                <div class="item">
-                    <div class="image loadAds">
-                        <a href="#">
-                            <img src="https://ads.careerbuilder.vn/www/images/cd36bdd64ecdebbeeafc6347057ee992.png"
-                                alt="#">
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="row" id="adbanner-side">
+           
         </div>
     </div>
 </div>
@@ -78,3 +39,50 @@ $ads = \App\AdBanner::all();
 }
 </style>
 @endpush
+
+@push('scripts')
+<script type="text/javascript">
+    $(document).ready(function() {
+            // Set your API endpoint
+            const apiUrl = `{{ route('admin.advertisementBannerJob.getAll')}}`;
+
+            // Make the API request
+            $.ajax({
+                url: apiUrl,
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    // Handle the data from the API
+                    
+
+                    if(data) {
+                        data.forEach(element => {
+                            if (element.priorities != '1') {
+                                $(".carousel-inner #adbanner-side").append(`
+                                    <div class="col-12 col-md-6 col-lg-12 ">
+                                        <div class="item">
+                                            <div class="image loadAds">
+                                                <a href="#">
+                                                    <img src="{{url('/')}}/admin_assets/${element.linkDesktop}"
+                                                        alt="#">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `);
+                            }
+                        });
+                    }
+                    console.log('API Response:', data);
+                },
+                error: function(xhr, status, error) {
+                    // Handle errors
+                    console.error('Error:', error);
+                }
+            });
+        });
+
+</script>
+@endpush
+
+

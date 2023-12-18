@@ -27,13 +27,13 @@
                     </a> --}}
                 </div>
 
-                <div class="card-body contact-bio">
-                    <span class="contact-bio-info me-4 mb-2"><i
-                            class="iconmoon icon-recruiter-location"></i>{{Auth::user()->getLocation()}}</span>
-                    <span class="contact-bio-info me-4 mb-2"><i
-                            class="iconmoon icon-recruiter-phone-call"></i>{{auth()->user()->phone}}</span>
-                    <span class="contact-bio-info me-4 mb-2"><i
-                            class="iconmoon icon-recruiter-email"></i>{{auth()->user()->email}}</span>
+                <div class="row">
+                    <span class="col-lg-12 col-md-12 col-sm-12 card-text"><i
+                            class="iconmoon icon-recruiter-location m-2"></i>{{Auth::user()->getLocation() ? Auth::user()->getLocation() : __('Not update') }}</span>
+                    <span class="col-lg-12 col-md-12 col-sm-12 card-text"><i
+                            class="iconmoon icon-recruiter-phone-call m-2"></i>{{auth()->user()->phone ? auth()->user()->phone : __('Not update') }} </span>
+                    <span class="col-lg-12 col-md-12 col-sm-12 card-text">
+                        <i class="bi bi-envelope text-primary m-2"></i>{{ auth()->user()->email ? auth()->user()->email : __('Not update') }}</span>
                 </div>
 
             </div>

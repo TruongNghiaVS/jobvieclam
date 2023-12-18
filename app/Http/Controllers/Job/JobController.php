@@ -597,9 +597,12 @@ class JobController extends Controller
     public function postApplyJob(Request $request, $job_slug)
     {
         $user = Auth::user();
+    
         $user_id = $user->id;
+        
         $job = Job::where('slug', 'like', $job_slug)->firstOrFail();
         $profileCv = ProfileCv::where('user_id', '=', $user_id)->first();
+       
 
         if($request->your_resume == 0) {
             if(!$profileCv) {
@@ -625,19 +628,27 @@ class JobController extends Controller
                 $file_hash = md5_file($file_path);
                 $file_hash_name = $file_hash . '.' . $file_ext;
                 $file->move('cvs/', $file_hash_name);
+                $itemInsert =  $profileCv;
+                if($itemInsert == null)
+                {
+                    $itemInsert = new ProfileCv();  
+                    $itemInsert->user_id = $user_id;
+                    $itemInsert->title = $file_name;
+                    $itemInsert->cv_file = $file_hash_name;
+                    $itemInsert->save();
+                }
+                else 
+                {
+                    $itemInsert->user_id = $user_id;
+                    $itemInsert->title = $file_name;
+                    $itemInsert->cv_file = $file_hash_name;
+                    $itemInsert->update();
+                }
 
-                $cvId = $profileCv->id;
-                $profileCv->user_id = $user_id;
-                $profileCv->title = $file_name;
-                $profileCv->cv_file = $file_hash_name;
-                $profileCv->update();
+                $cvId = $itemInsert->id;
+
             }
         }
-
-        // if($request->input('cv_id')){
-        //     $cvId = $request->input('cv_id');
-        // }
-
 
         $jobApply = new JobApply();
         $jobApply->user_id = $user_id;

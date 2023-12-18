@@ -29,7 +29,7 @@ class JobAppliedCompanyListener implements ShouldQueue
      */
     public function handle(JobApplied $event)
     {
-       Mail::send(new JobAppliedCompanyMailable($event->job, $event->jobApply));
+    //    Mail::send(new JobAppliedCompanyMailable($event->job, $event->jobApply));
     }
 
 }

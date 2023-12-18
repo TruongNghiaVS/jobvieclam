@@ -56,16 +56,20 @@ trait ProfileSkillTrait
         if (isset($user) && count($user->profileSkills)):
             foreach ($user->profileSkills as $skill):
 
-                $html .= '<li class="col-md-4" id="skill_' . $skill->id . '">
-						<div class="skillbox">
+                $html .= '<li class="col-md-12" id="skill_' . $skill->id . '">
+						<div class="">
 						<div class="row">
-                            <div class="col-8 col-md-8">
+                            <div class="col-10 col-md-10">
                                 <div class="con-skill">
-                                    <span class="text-primary">' . $skill->getJobSkill('job_skill') . '</span><span><strong>' . $skill['job_experience_id'] .'</strong>/5</span> 
+                                    ' . $skill->getJobSkill('job_skill') . '
+                                    <div class="progress">
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: ' . 100 * $skill['job_experience_id']/5 .'%" aria-valuenow="' . 100 * $skill['job_experience_id']/5 .'" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>  
+
                                 </div>
                             </div>
-                            <div class="col-4 col-md-4">
-                                <div class="d-flex justify-content-center ">
+                            <div class="col-2 col-md-2 d-flex justify-content-center align-items-end">
+                                <div class="d-flex justify-content-center align-items-end ">
                                     <a href="javascript:;" onclick="showProfileSkillEditModal(' . $skill->id . ');" class="btn-action  px-1"><span class="iconmoon icon-edit-icon"></span></a>&nbsp;&nbsp;
                                     <a href="javascript:;" onclick="delete_profile_skill('. $skill->id .');" class="btn-action px-1"><span class="iconmoon icon-trash"></span></a>
                                 </div>

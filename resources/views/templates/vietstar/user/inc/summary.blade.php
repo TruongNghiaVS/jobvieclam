@@ -56,11 +56,14 @@
                         <form class="form form-user-profile" id="add_edit_profile_summary" method="POST" action="{{ route('update.front.profile.summary', [$user->id]) }}">
                             {{ csrf_field() }}
                             <div class="form-body">
-                                
                                 <div class="form-group {!! APFrmErrHelp::hasError($errors, 'summary') !!}">
-                                    <textarea name="summary" class="form-control" id="summary" placeholder="{{__('Profile Summary')}}">{{ old('summary', $user->getProfileSummary('summary')) }}</textarea>
-                                    <span class="help-block summary-error"></span>
+                                   <textarea name="summary" class="form-control" id="summary" placeholder="{{__('Profile Summary')}}">{{ old('summary', $user->getProfileSummary('summary')) }}</textarea>
+                                     <span class="help-block summary-error"></span>
                                 </div>
+                                <!-- <div class="form-group {!! APFrmErrHelp::hasError($errors, 'summary') !!}">
+                                   <textarea name="summary" class="form-control" id="summary" placeholder="{{__('Profile Summary')}}">{{ old('summary', $user->getProfileSummary('summary')) }}</textarea>
+                                     <pan class="help-block summary-error"></span>
+                                </div> -->
                             </div>
                             <div class="form-group">
                                 <button id="sumary_submitBtn" type="submit" class="btn btn-primary submit-button" onClick="submitProfileSummaryForm();">{{__('Update Summary')}}</button>

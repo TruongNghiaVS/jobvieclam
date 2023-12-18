@@ -18,7 +18,11 @@
         <select class="form-control" name="position" id="position" required>
             <option value="">Select Position</option>
             <option value="1">Vị trí thứ nhất</option>
-            <option value="2">Vị trí thứ hai</option>
+            <option value="2.1">Vị trí 2.1</option>
+            <option value="2.2">Vị trí 2.2</option>
+            <option value="2.3">Vị trí 2.3</option>
+            <option value="2.4">Vị trí 2.4</option>
+
             <!-- Add other options -->
         </select>
         <div class="error" id="positionError"></div>

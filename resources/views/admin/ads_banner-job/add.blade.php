@@ -85,11 +85,12 @@
 
             if (this.checkValidity()) {
                 event.preventDefault(); // Prevent form submission if validation fails
-
+                var linkDesktop = $('#linkDesktop')[0].files[0];
+                var linkMobile = $('#linkMobile')[0].files[0];
                 // Form is valid, make Ajax call
                 var formData = {
-                    linkDesktop: `${document.getElementById('linkDesktop').value}`,
-                    linkMobile: `${document.getElementById('linkMobile').value}`,
+                    linkDesktop: linkDesktop ? linkDesktop.name:"",
+                    linkMobile: linkMobile ?  linkMobile.name:"",
                     priorities: `${document.getElementById('priorities').value}`,
                     status: `${document.getElementById('status').value}`
                 };

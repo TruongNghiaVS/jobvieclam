@@ -1,42 +1,54 @@
 <section class="advertising-banner cb-section cb-section-border-bottom">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-lg-3">
-                <div class="item">
-                    <div class="image loadAds">
-                        <a href="#">
-                           <img src="https://ads.careerbuilder.vn/www/images/a5b2628391fac3d894caa7e1a29d12fa.jpg" alt="ads">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-                <div class="item">
-                    <div class="image loadAds">
-                        <a href="#">
-                           <img src="https://ads.careerbuilder.vn/www/images/6804e96cfe23971714beafba912d8782.jpg" alt="ads">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-                <div class="item">
-                    <div class="image loadAds">
-                        <a href="#">
-                           <img src="https://ads.careerbuilder.vn/www/images/cd36bdd64ecdebbeeafc6347057ee992.png" alt="ads">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-                <div class="item">
-                    <div class="image loadAds">
-                        <a href="#">
-                            <img src="https://ads.careerbuilder.vn/www/images/b818531cf76fdafbf772e3d95f5f102a.png" alt="ads">
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="row" id="listbannerSide">
+            
         </div>
     </div>
 </section>
+
+
+
+
+@push('scripts')
+<script type="text/javascript">
+    
+        $(document).ready(function() {
+            // Set your API endpoint
+            const apiUrl = `{{ route('admin.advertisementBanner.getAll')}}`;
+
+            // Make the API request
+            $.ajax({
+                url: apiUrl,
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    // Handle the data from the API
+                    if(data) {
+                        data.forEach(element => {
+                            
+                            if (element.postion.startsWith('2.')) {
+                                
+                                $("#listbannerSide").append(`
+                                    <div class="col-sm-6 col-lg-3">
+                                        <div class="item">
+                                            <div class="image loadAds">
+                                                <a href="#">
+                                                <img src="{{url('/')}}/admin_assets/${element.linkDesktop}" alt="ads">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `)
+                            }
+                        });
+                    }
+                },
+                error: function(xhr, status, error) {
+                    // Handle errors
+                    console.error('Error:', error);
+                }
+            });
+        });
+   
+</script>
+@endpush

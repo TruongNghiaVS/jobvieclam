@@ -78,24 +78,27 @@
 
                 reader.readAsDataURL(input.files[0]);
             }
+             
         }
 
-       
+      
         document.getElementById('bannerCreateForm').addEventListener('submit', function (event) {
             // Reset previous error messages
             resetErrors();
 
             if (this.checkValidity()) {
                 event.preventDefault(); // Prevent form submission if validation fails
-
+                var linkDesktop = $('#linkDesktop')[0].files[0];
+                var linkMobile = $('#linkMobile')[0].files[0];
+                
                 // Form is valid, make Ajax call
                 var formData = {
-                    linkDesktop: `${document.getElementById('linkDesktop').value}`,
-                    linkMobile: `${document.getElementById('linkMobile').value}`,
+                    linkDesktop:linkDesktop? linkDesktop.name: "",
+                    linkMobile: linkMobile ? linkMobile.name:"",
                     position: `${document.getElementById('position').value}`,
                     status: `${document.getElementById('status').value}`
                 };
-                console.log(formData);
+                // console.log(formData);
               
                 // Ajax call
                 $.ajax({

@@ -66,7 +66,13 @@
             </div>
 
             <div class="user__infomation" bis_skin_checked="1">
-                <h5 id="">Freelandcer</h5>
+                <h5 id="">{{Auth::user()->getLocation() ? Auth::user()->getLocation() : __('Not update') }}</h5>
+            </div>
+            <div class="user__infomation" bis_skin_checked="1">
+                <h5 id="">{{auth()->user()->phone ? auth()->user()->phone : __('Not update') }}</h5>
+            </div>
+            <div class="user__infomation" bis_skin_checked="1">
+                <h5 id="">{{ auth()->user()->email ? auth()->user()->email : __('Not update') }}</h5>
             </div>
 
             <div class="user__complete_section" bis_skin_checked="1">

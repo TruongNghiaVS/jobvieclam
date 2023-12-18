@@ -25,17 +25,6 @@
               <table class="table table-responsive table-user-information borderless ">
                 <tbody>
                   <tr>
-                    <td class="table_title">
-                      <strong>
-                        <i class="bi bi-envelope"></i> {{__('Email')}}
-                      </strong>
-                    </td>
-                    <td class="text-primary table_value">
-                        {!! Form::text('email', null, array('class'=>'', 'id'=>'email', 'placeholder'=>__('Email'))) !!}
-                        {!! APFrmErrHelp::showErrors($errors, 'email') !!}
-                    </td>
-                  </tr>
-                  <tr>
                      <td  class="table_title">
                       <strong>
                       <i class="bi bi-lock"></i> Password

@@ -294,6 +294,24 @@
         }, false)
         })
     })()
+    $('#carrer_submitBtn').prop('disabled', true);
+
+    // Check form fields on input change
+    $('#careerinformation_form').on('input', 'select, input', function() {
+        var isFormValid = true;
+
+        // Check each input and select for emptiness
+        $('#careerinformation_form select, #careerinformation_form input').each(function() {
+            if (!$(this).val()) {
+                isFormValid = false;
+                return false; // Break the loop if an empty field is found
+            }
+        });
+
+        // Enable or disable the submit button based on form validity
+        $('#carrer_submitBtn').prop('disabled', !isFormValid);
+    });
+
 
 
     $(document).ready(function(){

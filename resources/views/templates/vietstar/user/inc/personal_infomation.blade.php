@@ -369,7 +369,7 @@
                         </div>
                         <div class="form-group">
           
-                            <button id="personal_submitBtn" type="submit" class="btn btn-primary submit-button">{{__(('Update'))}}</button>
+                            <button id="personal_submitBtn" type="submit" class="btn btn-primary submit-button" >{{__(('Update'))}}</button>
                         </div>
                     </div>
                 </form>
@@ -402,21 +402,38 @@
         }, false)
         })
     })()
+    $('#personal_submitBtn').prop('disabled', true);
+
+    // Check form fields on input change
+    $('#persionalinfo_form').on('input', 'select, input', function() {
+        var isFormValid = true;
+
+        // Check each input and select for emptiness
+        $('#persionalinfo_form select, #persionalinfo_form input').each(function() {
+            if (!$(this).val()) {
+                isFormValid = false;
+                return false; // Break the loop if an empty field is found
+            }
+        });
+
+        // Enable or disable the submit button based on form validity
+        $('#personal_submitBtn').prop('disabled', !isFormValid);
+    });
 
 
     $(document).ready(function(){
         $('#persionalinfo_form').submit(function(event) {
         var isValid = true;
+        $('#personal_submitBtn').prop('disabled', true);
         event.preventDefault()
         
         // Check each input field for emptiness
-        $('#persionalinfo_form input').each(function() {
+        $('#persionalinfo_form input,#persionalinfo_form select').each(function() {
             if (!$(this).val()) {
-                isValid = false;
                 $(this).addClass('is-invalid');
-              
             }
         });
+       
 
 
 
@@ -429,15 +446,12 @@
         });
 
         // Log the resulting object to the console
-        console.log(formObject);
+      
 
-        if (!isValid) {
-            event.preventDefault(); // Prevent the form from submitting
-        }
-
+       
+     
 
         if (isValid) { 
-           
             $.ajax({
             type: "PUT",
             url:  `{{ route('put.my.profilev2') }}`,
@@ -471,8 +485,8 @@
                     // // }, 2000);
                     //  window.location.href =  "/home";
                     //  location.reload();
-                    $("#persionalinfo").modal('hide');
-                    location.reload();
+                    // $("#persionalinfo").modal('hide');
+                    // location.reload();
                    
                        
                 })

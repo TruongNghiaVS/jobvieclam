@@ -66,13 +66,13 @@
             </div>
 
             <div class="user__infomation" bis_skin_checked="1">
-                <h5 id="">{{Auth::user()->getLocation() ? Auth::user()->getLocation() : __('Not update') }}</h5>
+                 <h5 id=""><i class="iconmoon icon-recruiter-location mr-2"></i> {{Auth::user()->getLocation() ? Auth::user()->getLocation() : __('Not update') }}</h5>
             </div>
             <div class="user__infomation" bis_skin_checked="1">
-                <h5 id="">{{auth()->user()->phone ? auth()->user()->phone : __('Not update') }}</h5>
+                 <h5 id=""><i class="iconmoon icon-recruiter-phone-call mr-2"></i> {{auth()->user()->phone ? auth()->user()->phone : __('Not update') }}</h5>
             </div>
             <div class="user__infomation" bis_skin_checked="1">
-                <h5 id="">{{ auth()->user()->email ? auth()->user()->email : __('Not update') }}</h5>
+                <h5 id=""><i class="bi bi-envelope text-primary mr-2"></i>  {{ auth()->user()->email ? auth()->user()->email : __('Not update') }}</h5>
             </div>
 
             <div class="user__complete_section" bis_skin_checked="1">

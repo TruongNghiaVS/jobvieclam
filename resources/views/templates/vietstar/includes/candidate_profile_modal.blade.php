@@ -1,4 +1,6 @@
 
+
+
 <div class="card card-bio mb-5 w-100 shadow-sm">
         <div class="row g-0">
             <div class="col-md-2">

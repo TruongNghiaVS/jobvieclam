@@ -55,36 +55,57 @@ trait ProfileEducationTrait
     public function showFrontProfileEducation(Request $request, $user_id)
     {
         $user = User::find($user_id);
-        $html = '<div class="row">';
+        $html = '<ul class="list-sticker">';
         if (isset($user) && count($user->profileEducation)):
             foreach ($user->profileEducation as $education):
                 $degree_type = ($education->Industries) ? ' - '.$education->Industries->industry : '';
-                $html .= '<div class="col-md-6">
-                        <div class="form-card form-card-education mb-3" id="education' . $education->id . '">
-                            <div class="act-dropdown dropdown">
-                                <button type="button" class="btn btn-dropdown dropdown-toggle" id="dropdownMenuEducation_' . $education->id . '" data-toggle="dropdown" aria-expanded="false">
-                                    <span class="iconmoon icon-recruiter-dots"></span>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuEducation_' . $education->id . '">
-                                    <a class="dropdown-item" href="javascript:void(0);" onclick="showProfileEducationEditModal(' . $education->id . ',' . $education->state_id . ',' . $education->city_id . ',' . $education->degree_type_id . ');">' . __('Edit') . '</a>
-                                    <a class="dropdown-item" href="javascript:void(0);" onclick="delete_profile_education(' . $education->id . ');">' . __('Delete') . '</a>
-                                </div>
+                // $html .= '<div class="col-md-6">
+                //         <div class="form-card form-card-education mb-3" id="education' . $education->id . '">
+                //             <div class="act-dropdown dropdown">
+                //                 <button type="button" class="btn btn-dropdown dropdown-toggle" id="dropdownMenuEducation_' . $education->id . '" data-toggle="dropdown" aria-expanded="false">
+                //                     <span class="iconmoon icon-recruiter-dots"></span>
+                //                 </button>
+                //                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuEducation_' . $education->id . '">
+                //                     <a class="dropdown-item" href="javascript:void(0);" onclick="showProfileEducationEditModal(' . $education->id . ',' . $education->state_id . ',' . $education->city_id . ',' . $education->degree_type_id . ');">' . __('Edit') . '</a>
+                //                     <a class="dropdown-item" href="javascript:void(0);" onclick="delete_profile_education(' . $education->id . ');">' . __('Delete') . '</a>
+                //                 </div>
                         
+                //             </div>
+                //             <div class="panel panel-info" id="education_' . $education->id . '">
+                //                 <div class="panel-heading"><h4>' . $education->getDegreeLevel('degree_level') . $degree_type . '</h4></div>
+                //                 <div class="panel-body">
+                //                     <h5>' . $education->degree_title . '</h5>
+                //                     <p class="text-left">' . $education->date_completion . ' | ' . $education->getCity('city') . '</p>
+                //                     <p class="text-left">' . $education->institution . '</p>
+                //                 </div>
+                //             </div>
+                //         </div>
+                //     </div>';
+
+                    $html .= '<li class="item" id="education_' . $education->id . '">
+                    <div class="head-sticker" bis_skin_checked="1">
+                        <div class="title" bis_skin_checked="1" id="education_' . $education->id . '">
+                            <h4>' . $education->getDegreeLevel('degree_level') . $degree_type . '</h4>
+                            <div class="sub-title" bis_skin_checked="1">
+                                <p class="text-primary">IT</p>
                             </div>
-                            <div class="panel panel-info" id="education_' . $education->id . '">
-                                <div class="panel-heading"><h4>' . $education->getDegreeLevel('degree_level') . $degree_type . '</h4></div>
-                                <div class="panel-body">
-                                    <h5>' . $education->degree_title . '</h5>
-                                    <p class="text-left">' . $education->date_completion . ' | ' . $education->getCity('city') . '</p>
-                                    <p class="text-left">' . $education->institution . '</p>
-                                </div>
+                            <div class="date" bis_skin_checked="1">
+                                <p>' . $education->date_completion . ' | ' . $education->getCity('city') . '</p>
+                                <p>' . $education->institution . '</p>
                             </div>
                         </div>
-                    </div>';
+                        <div class="right-head" bis_skin_checked="1">
+                            <ul class="list-action">
+                                <li class="edit-link"><a href="javascript:void(0)" onclick="showProfileEducationEditModal(' . $education->id . ',' . $education->state_id . ',' . $education->city_id . ',' . $education->degree_type_id . ');"><span class="iconmoon icon-edit-icon"></span></a></li>
+                                <li class="delete"><a href="javascript:void(0)" onclick="delete_profile_education(' . $education->id . ');"><span class="iconmoon icon-trash"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>';
             endforeach;
         endif;
 
-        echo $html . '</div>';
+        echo $html . '</ul>';
     }
 
     public function showApplicantProfileEducation(Request $request, $user_id)

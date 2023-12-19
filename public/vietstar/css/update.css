@@ -5180,7 +5180,8 @@ div#industry_id_chosen {
 }
 
 .card-body-profile-seeker {
-    padding-right: 0px;
+    padding: 1rem;
+    padding-left: 0;
     position: relative
 }
 
@@ -6102,18 +6103,18 @@ div#industry_id_chosen {
     max-width: 100%
 }
 
-#sticker_div .sticker .list-sticker {
+.sticker_div .sticker .list-sticker {
     list-style-type: none;
     padding-left: 0
 }
 
-#sticker_div .sticker .list-sticker .item {
+.sticker_div .sticker .list-sticker .item {
     padding: 20px 30px;
     padding-top: 0;
     position: relative
 }
 
-#sticker_div .sticker .list-sticker .item::before {
+.sticker_div .sticker .list-sticker .item::before {
     z-index: 0;
     position: absolute;
     top: -2px;
@@ -6125,7 +6126,7 @@ div#industry_id_chosen {
     content: ""
 }
 
-#sticker_div .sticker .list-sticker .item::after {
+.sticker_div .sticker .list-sticker .item::after {
     z-index: 0;
     position: absolute;
     top: 50%;
@@ -6138,40 +6139,40 @@ div#industry_id_chosen {
     content: ""
 }
 
-#sticker_div .sticker .list-sticker .item .head-sticker .title h4 {
+.sticker_div .sticker .list-sticker .item .head-sticker .title h4 {
     color: var(--text-main);
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 0
 }
 
-#sticker_div .sticker .list-sticker .item .head-sticker .title .sub-title {
+.sticker_div .sticker .list-sticker .item .head-sticker .title .sub-title {
     color: var(--blue);
     opacity: 0.8;
     font-size: 16px;
     font-weight: 400
 }
 
-#sticker_div .sticker .list-sticker .item .head-sticker .title .sub-title p {
+.sticker_div .sticker .list-sticker .item .head-sticker .title .sub-title p {
     color: var(--blue);
     opacity: 0.8;
     font-size: 16px;
     font-weight: 400
 }
 
-#sticker_div .sticker .list-sticker .item .head-sticker .title .date {
+.sticker_div .sticker .list-sticker .item .head-sticker .title .date {
     color: var(--text-main);
     font-size: 16px;
     font-weight: 400
 }
 
-#sticker_div .sticker .list-sticker .item .right-head {
+.sticker_div .sticker .list-sticker .item .right-head {
     position: absolute;
     top: 10px;
     right: 10px
 }
 
-#sticker_div .sticker .list-sticker .item .right-head .list-action {
+.sticker_div .sticker .list-sticker .item .right-head .list-action {
     list-style-type: none;
     padding-left: 0;
     display: -webkit-box;
@@ -6179,13 +6180,13 @@ div#industry_id_chosen {
     display: flex
 }
 
-#sticker_div .sticker .list-sticker .item .right-head .list-action li a {
+.sticker_div .sticker .list-sticker .item .right-head .list-action li a {
     padding: 5px;
     display: block
 }
 
-#sticker_div .sticker .list-sticker .item .right-head .list-action li a:hover .iconmoon::before,
-#sticker_div .sticker .list-sticker .item .right-head .list-action li a:focus .iconmoon::before {
+.sticker_div .sticker .list-sticker .item .right-head .list-action li a:hover .iconmoon::before,
+.sticker_div .sticker .list-sticker .item .right-head .list-action li a:focus .iconmoon::before {
     color: var(--bs-primary)
 }
 
@@ -7088,18 +7089,18 @@ span.iconmoon.icon-eye-icon {
     display: block
 }
 
-.cv-template-1 #sticker_div_cv .sticker .list-sticker {
+.cv-template-1 .sticker_div_cv .sticker .list-sticker {
     list-style-type: none;
     padding-left: 0
 }
 
-.cv-template-1 #sticker_div_cv .sticker .list-sticker .item {
+.cv-template-1 .sticker_div_cv .sticker .list-sticker .item {
     padding: 10px 10px;
     padding-top: 0;
     position: relative
 }
 
-.cv-template-1 #sticker_div_cv .sticker .list-sticker .item::before {
+.cv-template-1 .sticker_div_cv .sticker .list-sticker .item::before {
     z-index: 0;
     position: absolute;
     top: 4px;
@@ -7111,7 +7112,7 @@ span.iconmoon.icon-eye-icon {
     content: ""
 }
 
-.cv-template-1 #sticker_div_cv .sticker .list-sticker .item::after {
+.cv-template-1 .sticker_div_cv .sticker .list-sticker .item::after {
     z-index: 0;
     position: absolute;
     top: 50%;
@@ -7124,11 +7125,11 @@ span.iconmoon.icon-eye-icon {
     content: ""
 }
 
-.cv-template-1 #sticker_div_cv .sticker .list-sticker .item .head-sticker .title h4 {
+.cv-template-1 .sticker_div_cv .sticker .list-sticker .item .head-sticker .title h4 {
     margin-bottom: 0
 }
 
-.cv-template-1 #sticker_div_cv .sticker .list-sticker .item .head-sticker .title .date {
+.cv-template-1 .sticker_div_cv .sticker .list-sticker .item .head-sticker .title .date {
     color: var(--text-main)
 }
 
@@ -7380,18 +7381,18 @@ span.iconmoon.icon-eye-icon {
     display: block
 }
 
-.cv-template-5 #sticker_div_cv .sticker .list-sticker {
+.cv-template-5 .sticker_div_cv .sticker .list-sticker {
     list-style-type: none;
     padding-left: 0
 }
 
-.cv-template-5 #sticker_div_cv .sticker .list-sticker .item {
+.cv-template-5 .sticker_div_cv .sticker .list-sticker .item {
     padding: 10px 10px;
     padding-top: 0;
     position: relative
 }
 
-.cv-template-5 #sticker_div_cv .sticker .list-sticker .item::before {
+.cv-template-5 .sticker_div_cv .sticker .list-sticker .item::before {
     z-index: 0;
     position: absolute;
     top: 4px;
@@ -7403,7 +7404,7 @@ span.iconmoon.icon-eye-icon {
     content: ""
 }
 
-.cv-template-5 #sticker_div_cv .sticker .list-sticker .item::after {
+.cv-template-5 .sticker_div_cv .sticker .list-sticker .item::after {
     z-index: 0;
     position: absolute;
     top: 50%;
@@ -7416,11 +7417,11 @@ span.iconmoon.icon-eye-icon {
     content: ""
 }
 
-.cv-template-5 #sticker_div_cv .sticker .list-sticker .item .head-sticker .title h4 {
+.cv-template-5 .sticker_div_cv .sticker .list-sticker .item .head-sticker .title h4 {
     margin-bottom: 0
 }
 
-.cv-template-5 #sticker_div_cv .sticker .list-sticker .item .head-sticker .title .date {
+.cv-template-5 .sticker_div_cv .sticker .list-sticker .item .head-sticker .title .date {
     color: var(--text-main)
 }
 
@@ -7698,18 +7699,18 @@ span.iconmoon.icon-eye-icon {
     display: block
 }
 
-.cv-template-8 #sticker_div_cv .sticker .list-sticker {
+.cv-template-8 .sticker_div_cv .sticker .list-sticker {
     list-style-type: none;
     padding-left: 0
 }
 
-.cv-template-8 #sticker_div_cv .sticker .list-sticker .item {
+.cv-template-8 .sticker_div_cv .sticker .list-sticker .item {
     padding: 10px 10px;
     padding-top: 0;
     position: relative
 }
 
-.cv-template-8 #sticker_div_cv .sticker .list-sticker .item::before {
+.cv-template-8 .sticker_div_cv .sticker .list-sticker .item::before {
     z-index: 0;
     position: absolute;
     top: 4px;
@@ -7721,7 +7722,7 @@ span.iconmoon.icon-eye-icon {
     content: ""
 }
 
-.cv-template-8 #sticker_div_cv .sticker .list-sticker .item::after {
+.cv-template-8 .sticker_div_cv .sticker .list-sticker .item::after {
     z-index: 0;
     position: absolute;
     top: 50%;
@@ -7734,11 +7735,11 @@ span.iconmoon.icon-eye-icon {
     content: ""
 }
 
-.cv-template-8 #sticker_div_cv .sticker .list-sticker .item .head-sticker .title h4 {
+.cv-template-8 .sticker_div_cv .sticker .list-sticker .item .head-sticker .title h4 {
     margin-bottom: 0
 }
 
-.cv-template-8 #sticker_div_cv .sticker .list-sticker .item .head-sticker .title .date {
+.cv-template-8 .sticker_div_cv .sticker .list-sticker .item .head-sticker .title .date {
     color: var(--text-main)
 }
 

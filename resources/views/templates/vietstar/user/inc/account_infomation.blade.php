@@ -3,8 +3,9 @@
         <div class="figure__image" ><img src="https://icons.veryicon.com/png/o/system/alongthink/ico-user-info.png" alt=""></div>
         <div class="figure__caption">
             <h5 class="">{{__('Account Information')}}</h5>
+
             <div class="status complete" bis_skin_checked="1">
-                <p>Hoàn thành</p>
+                <p>Hoàn thành </p>
             </div>
         </div>
     </div>

@@ -112,7 +112,9 @@ trait ProfileReferencesTrait
         $profileReferences = new profileReferences();
         $profileReferences = $this->assignReferencesValues($profileReferences, $request, $user_id);
         $profileReferences->save();
-
+        $userUpdate = User::where('id','=',$user_id)->first();
+        $userUpdate->isCompleteRefferent = true;
+        $userUpdate->save();
         $returnHTML = view('templates.vietstar.user.forms.activity.activity_thanks')->render();
         return response()->json(array('success' => true, 'status' => 200, 'html' => $returnHTML), 200);
     }

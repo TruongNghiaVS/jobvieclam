@@ -421,4 +421,51 @@ class User extends Authenticatable
         return CompanyMessage::where('seeker_id', '=', $this->id)->where('company_id', '=', $id)->where('status', '=', 'unviewed')->where('type', '=', 'message')->count();
 
     }
+
+    public function getStatusOverview($id)
+
+    {
+       $index = 0;
+       if($this->isCompletePersonal)
+       {
+        $index ++;
+       }
+       if($this->isCompleteExperence)
+       {
+        $index ++;
+       }
+
+       if($this->isCompleteEducation)
+       {
+        $index ++;
+       }
+
+       if($this->isCompleteSkill)
+       {
+        $index ++;
+       }
+
+       $checkResult =  $this->isCompletePersonal && $this->isCompleteExperence 
+        && $this->isCompleteEducation && $this->isCompleteSkill;
+       $percent =$index*25; 
+       $statusComPlete = "Chưa cập nhật";
+       $degreeComplete = "Chưa Hoàn Tất";
+      
+
+       if( $index ==4)
+       {
+        $statusComPlete = "Hoàn thành";
+        $degreeComplete = "Hoàn thành";
+      
+       }
+       $dataObj = new \stdClass();
+       $dataObj->statusComPlete = $statusComPlete;
+       $dataObj->degreeComplete = $degreeComplete;
+       $dataObj->percent = $percent;
+       return $dataObj;
+        
+
+    }
+
+    
 }

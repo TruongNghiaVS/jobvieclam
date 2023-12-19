@@ -4,9 +4,15 @@
                 <div class="figure__image" bis_skin_checked="1"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/University_Diploma_or_Certificate_Flat_Icon_Vector.svg/1024px-University_Diploma_or_Certificate_Flat_Icon_Vector.svg.png" alt=""></div>
                 <div class="figure__caption" bis_skin_checked="1">
                         <h5 class="" onclick="">{{__('Education')}}</h5>
-                        <div class="status complete" bis_skin_checked="1">
+                        @if($user->isCompleteEducation)
+                                <div class="status complete" bis_skin_checked="1">
                                 <p>Hoàn thành</p>
-                        </div>
+                                </div>
+                        @else
+                                <div class="status complete" bis_skin_checked="1">
+                                <p>Chưa hoàn thành</p>
+                                </div>
+                        @endif
                 </div>
         </div>
         <div class="section-head__right-action" bis_skin_checked="1">

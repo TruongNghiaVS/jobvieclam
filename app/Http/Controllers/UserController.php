@@ -91,6 +91,8 @@ class UserController extends Controller
 
     public function myProfile()
     {
+
+       
         $genders = DataArrayHelper::langGendersArray();
         $maritalStatuses = DataArrayHelper::langMaritalStatusesArray();
      
@@ -126,13 +128,13 @@ class UserController extends Controller
         }
       
  
-       
-
+      
+   
         return view(config('app.THEME_PATH').'.user.edit_profile')
                         ->with('genders', $genders)
                         ->with('maritalStatuses', $maritalStatuses)
                         ->with('nationalities', $nationalities)
-                        ->with('countries', $countries)
+                        ->with('countries', $countries) 
                         ->with('jobExperiences', $jobExperiences)
                         ->with('careerLevels', $careerLevels)
                         ->with('industries', $industries)
@@ -443,7 +445,7 @@ class UserController extends Controller
         // $user->mobile_num = $request->input('mobile_num');
         
 		// $user->is_subscribed = $request->input('is_subscribed', 0);
-
+        $user->isCompletePersonal = true;
         $user->save();
 
 
@@ -493,6 +495,8 @@ class UserController extends Controller
         $user->current_salary = str_replace(",","",$request->input('current_salary'));
         $user->expected_salary = str_replace(",","",$request->input('expected_salary'));
         $user->salary_currency = $request->input('salary_currency');
+
+        $user->isCompleteCarrerPath = true;
          $user->save();
      
         // $this->updateUserFullTextSearch($user);

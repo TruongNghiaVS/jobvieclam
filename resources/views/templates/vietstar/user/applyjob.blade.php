@@ -40,7 +40,8 @@
                                 <td>{{__('Online Application')}}</td>
                             </tr>
                             <tr>
-                                <td colspan="2">Nhà tuyển dụng sẽ nhận trực tiếp hồ sơ thông qua hệ thống ngay khi hoàn tất ứng tuyển. Ứng viên vui lòng không liên hệ qua email và số điện thoại.</td>
+                                <td colspan="2">Nhà tuyển dụng sẽ nhận trực tiếp hồ sơ thông qua hệ thống ngay khi hoàn tất ứng tuyển.
+                                     Ứng viên vui lòng không liên hệ qua email và số điện thoại.</td>
                             </tr>
                         </table>
                     </div>

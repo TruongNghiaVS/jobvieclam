@@ -3,9 +3,16 @@
         <div class="figure__image"><img src="https://icons.veryicon.com/png/o/system/alongthink/ico-user-info.png" alt=""></div>
         <div class="figure__caption">
             <h5 class="">{{__('Personal Information')}}</h5>
-            <div class="status complete" bis_skin_checked="1">
-                <p>Hoàn thành</p>
-            </div>
+            @if($user->isCompletePersonal)
+                <div class="status complete" bis_skin_checked="1">
+                    <p>Hoàn thành</p>
+                </div>
+            @else
+                <div class="status complete" bis_skin_checked="1">
+                    <p>Chưa hoàn thành</p>
+                </div>
+            @endif
+            
         </div>
     </div>
     <div class="section-head__right-action" bis_skin_checked="1">

@@ -9,7 +9,7 @@
             <ul class="page-breadcrumb">
                 <li> <li> <a href="{{ route('admin.home') }}">{{__('Home')}}</a> <i class="fa fa-circle"></i> </li>
                 <li> <a href="{{ route('list.job.experiences') }}">{{__('Experiences')}}</a> <i class="fa fa-circle"></i> </li>
-                <li> <span>{{__('Add Experience')}}</span> </li>
+                <li> <span>{{__('Add Experience')}} </span> </li>
             </ul>
         </div>
         <!-- END PAGE BAR -->        

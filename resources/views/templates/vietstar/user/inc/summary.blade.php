@@ -3,9 +3,15 @@
         <div class="figure__image"><img src="https://cdn-icons-png.flaticon.com/512/3862/3862929.png" alt=""></div>
         <div class="figure__caption">
             <h5 class="">{{__('Describe yourself')}}</h5>
-            <div class="status complete" bis_skin_checked="1">
-                <p>Hoàn thành</p>
-            </div>
+                @if($user->isCompleteIntroduction)
+                    <div class="status complete" bis_skin_checked="1">
+                        <p>Hoàn thành</p>
+                    </div>
+                @else
+                    <div class="status complete" bis_skin_checked="1">
+                        <p>Chưa hoàn thành</p>
+                    </div>
+                @endif
         </div>
     </div>
     <div class="section-head__right-action" bis_skin_checked="1">

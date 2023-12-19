@@ -163,6 +163,10 @@ trait ProfileEducationTrait
         $profileEducation->save();
         /*         * ************************************ */
         $this->storeprofileEducationMajorSubjects($request, $profileEducation->id);
+
+
+  
+        return  \Redirect::back()->with('message','Operation Successful !');
         /*         * ************************************ */
         $returnHTML = view('admin.user.forms.education.education_thanks')->render();
         return response()->json(array('success' => true, 'status' => 200, 'html' => $returnHTML), 200);
@@ -174,6 +178,10 @@ trait ProfileEducationTrait
         $profileEducation = new ProfileEducation();
         $profileEducation = $this->assignEducationValues($profileEducation, $request, $user_id);
         $profileEducation->save();
+
+        $userUpdate = User::where('id','=',$user_id)->first();
+        $userUpdate->isCompleteEducation = true;
+        $userUpdate->save();
         /*         * ************************************ */
         $this->storeprofileEducationMajorSubjects($request, $profileEducation->id);
         /*         * ************************************ */

@@ -25,9 +25,9 @@
                     </div>
                 </div>
         </div>
-                <!-- Personal Information -->
+            
         @include('templates.vietstar.user.inc.profile')
-                <!-- Personal Information -->
+   
         <div class="user-account-section">
             <div class="formpanel mt0"> 
             @include('templates.vietstar.user.inc.summary')

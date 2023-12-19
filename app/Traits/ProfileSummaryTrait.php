@@ -3,6 +3,7 @@
 namespace App\Traits;
 
 use App\ProfileSummary;
+use App\User;
 use App\Http\Requests\ProfileSummaryFormRequest;
 
 trait ProfileSummaryTrait
@@ -16,8 +17,12 @@ trait ProfileSummaryTrait
         $ProfileSummary->user_id = $user_id;
         $ProfileSummary->summary = $summary;
         $ProfileSummary->save();
+
+        $userUpdate = User::where('id','=',$user_id)->first();
+        $userUpdate->isCompleteIntroduction = true;
+        $userUpdate->save();
         /*         * ************************************ */
-        return response()->json(array('success' => true, 'status' => 200), 200);
+        return  \Redirect::back()->with('message','Operation Successful !');
     }
 
 }

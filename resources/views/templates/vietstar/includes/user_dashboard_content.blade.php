@@ -34,6 +34,14 @@
                         <i class="bi bi-envelope text-primary m-2"></i>{{ auth()->user()->email ? auth()->user()->email : __('Not update') }}</span>
                 </div>
 
+                <div class="row my-1">
+
+                    <div class="user__complete_section" bis_skin_checked="1">
+                        <span class="font-weight-bold"> {{__('Level of completion')}}:</span>   <p class="font-weight-bold fs-18px  px-1"> {{__('Unfinished')}}</p>
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </div>

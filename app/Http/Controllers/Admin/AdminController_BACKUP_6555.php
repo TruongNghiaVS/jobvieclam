@@ -39,11 +39,7 @@ class AdminController extends Controller
      */
     public function indexAdminUsers()
     {
-<<<<<<< HEAD
-        return view(config('app.THEME_PATH').'.admin.admin.index');
-=======
         return view('admin.admin.index');
->>>>>>> ac0329560734c18d2b808016cc77f0b4c77b8c2a
     }
 
     public function createAdminUser()
@@ -53,11 +49,7 @@ class AdminController extends Controller
           print_r($roles);
           print_r(['0' => 'Select a Role']+$roles);exit;
          */
-<<<<<<< HEAD
-        return view(config('app.THEME_PATH').'.admin.admin.create')->with('roles', $roles);
-=======
         return view('admin.admin.create')->with('roles', $roles);
->>>>>>> ac0329560734c18d2b808016cc77f0b4c77b8c2a
     }
 
     public function storeAdminUser(AdminFormRequest $request)

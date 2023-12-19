@@ -676,7 +676,7 @@ class JobController extends Controller
         $jobs = Job::join('job_apply', 'jobs.id', '=', 'job_apply.job_id')
                 ->where('job_apply.user_id', $user->id)
                 ->orderBy('job_apply.id', 'desc')
-                ->select('jobs.*', 'job_apply.status as status_job_apply')
+                ->select('jobs.*',  'job_apply.created_at as applyDate','job_apply.status as status_job_apply')
                 ->paginate(10);
 
         return view(config('app.THEME_PATH').'.job.my_applied_jobs')
@@ -685,6 +685,7 @@ class JobController extends Controller
 
     public function myFavouriteJobs(Request $request)
     {
+       
        
         $user = Auth::user();
         $jobs = Job::join('favourites_job', 'jobs.slug', '=', 'favourites_job.job_slug')

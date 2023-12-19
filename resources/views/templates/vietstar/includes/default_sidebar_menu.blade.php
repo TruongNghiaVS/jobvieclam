@@ -93,7 +93,7 @@ Dashboard
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <div class="d-flex w-100">
                             <span class="icon-edit-icon fs-24px me-2"></span>
-                            <span class="side-bar-content"> Việc làm của tôi</span>
+                            <span class="side-bar-content"> Việc làm của tôi </span>
                         </div>
                     </a>
                     <ul class="collapse list-unstyled sublist sidebar-item {{ Request::url() == route('my.job.applications') || Request::url() == route('my.favourite.jobs')  ? 'show' : '' }}"  id="pageSubmenu">

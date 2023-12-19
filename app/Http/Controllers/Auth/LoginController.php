@@ -65,8 +65,7 @@ use AuthenticatesUsers;
     public function handleProviderCallback($provider)
     {
         $user = Socialite::driver($provider)->user();
-        dd($user);
-        $authUser = $this->findOrCreateUser($user, $provider);
+        $authUser = $this->findOrCreateUserv2($user, $provider);
         Auth::login($authUser, true);
         return redirect($this->redirectTo);
     }
@@ -102,6 +101,33 @@ use AuthenticatesUsers;
                     'is_active' => 1,
                     'verified' => 1,
         ]);
+    }
+
+    public function findOrCreateUserv2($user, $provider)
+    {
+       
+        if ($user->getEmail() != '') {
+            $authUser = User::where('email', 'like', $user->getEmail())->first();
+            if ($authUser) {
+                  $authUser->provider = $provider;
+                  $authUser->provider_id = $user->getId();
+                  $authUser->update();
+                return $authUser;
+            }
+        }
+        $userInsert = new User();
+        $userInsert->first_name =  $user->getName();
+        $userInsert->name =  $user->getName();
+        $userInsert->email = $user->getEmail();
+        $userInsert->password  = Hash::make("123456789@"); 
+        $userInsert->image = $user->avatar;
+        $userInsert->is_active = 1;
+        $userInsert->verified = 1;
+        $userInsert->provider = $provider;
+        $userInsert->provider_id = $user->getId();
+         
+        $userInsert->save();
+        return $userInsert;
     }
 
     /**

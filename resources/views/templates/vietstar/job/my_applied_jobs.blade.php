@@ -32,7 +32,7 @@
                                 <!-- Title  Start-->
                                 <div class="info-item job-title-box" bis_skin_checked="1">
                                     <div class="job-title" bis_skin_checked="1">
-                                        <span>Mới</span>
+                                        <!-- <span>Mới</span> -->
                                         <h3 class="job-title-name"><a href="{{route('job.detail', [$job->slug])}}" title="Nhân viên bất động sản">{{$job->title}}</a></h3>
                                     </div>
                                     <p class="card-news__content-detail mb-2 status-apply" status="{{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }}">
@@ -42,7 +42,8 @@
                                 <!-- Title  End-->
     
                                 <!-- companyName Start-->
-                                <div class="info-item companyName" bis_skin_checked="1"><a href="http://localhost:8000/company/cong-ty-co-phan-incom-sai-gon-9" title="{{$company->name}}">{{$company->name}}</a>
+                                <div class="info-item companyName" bis_skin_checked="1"><a href="http://localhost:8000/cong-ty/{{$company->slug}}" 
+                                title="{{$company->name}}">{{$company->name}}</a>
                                 </div>
                                 <!-- companyName End-->
                                 <!--rank-salary and place Start-->
@@ -68,35 +69,70 @@
                                 <!--Rank-salary and place End-->
     
                                 <!--Day update and place Start-->
+                                @php
+                                $datetime =   Carbon\Carbon::parse($job->created_at);
+                         $timeCurrent = Carbon\Carbon::now();
+                         $numberDate = $timeCurrent->diffInDays($datetime);
+                                $datetimeText ="";
+                         if($numberDate < 1)
+                         {
+                            $datetimeText = "Hôm nay";
+                         }
+                         else if($numberDate < 2){
+                            $datetimeText = "Hôm qua";
+                         }
+                         else 
+                         {
+                            $datetimeText =  $datetime->format('d-m-Y');
+                         }
+
+
+                         $datetime1 =   Carbon\Carbon::parse($job->applyDate);
+                         $timeCurrent = Carbon\Carbon::now();
+                         $numberDate1 = $timeCurrent->diffInDays($datetime1);
+                          $datetimeText1 ="";
+                         if($numberDate1 < 1)
+                         {
+                            $datetimeText1 = "Hôm nay";
+                         }
+                         else if($numberDate1 < 2){
+                            $datetimeText1 = "Hôm qua";
+                         }
+                         else 
+                         {
+                            $datetimeText1 =  $datetime1->format('d-m-Y');
+                         }
+                                @endphp
                                 <div class="info-item day-update" bis_skin_checked="1">
-                                    Hôm nay
+                                  Ngay đăng tuyển: {{$datetimeText}}
                                 </div>
-                                <div class="info-item Interview" bis_skin_checked="1">
+
+                                <div class="info-item day-update" bis_skin_checked="1">
+                                  Ngày nộp: {{$datetimeText1}}
+                                </div>
+                                <!-- <div class="info-item Interview" bis_skin_checked="1">
                                     <i class="iconmoon icon-calendar-icon1"></i>Interview at: 16:30 20/07/2022
-                                </div>
+                                </div> -->
                                 <!--Day update and place End-->
     
                                 <!-- <div class="short-description">M&amp;ocirc; tả c&amp;ocirc;ng việc</div> -->
                             </div>
                             <div class="caption" bis_skin_checked="1">
-                                <div class="welfare" bis_skin_checked="1">
+                                
+
+                                @isset($job->industry)
+                                   <div class="welfare" bis_skin_checked="1">
                                     <div class="box-meta" bis_skin_checked="1">
                                         <!-- <i class="fas fa-dollar-sign"></i>  -->
                                         <span>
                                             <!-- Chế độ thưởng -->
-                                            Automative
+                                            {{$job->industry->industry}}
                                         </span>
     
                                     </div>
-                                    <div class="box-meta" bis_skin_checked="1">
-                                        <!-- <i class="fas fa-graduation-cap"></i> -->
-                                        <span>
-                                            <!-- Đào tạo -->
-                                            Automative Infomation
-                                        </span>
-                                    </div>
-    
                                 </div>
+                             
+                            @endisset
     
                                 <div class="user-action" bis_skin_checked="1">
                                     <a class="btn-view-details" href="{{route('job.detail', [$job->slug])}}"></span> {{__('View Details')}}</a>

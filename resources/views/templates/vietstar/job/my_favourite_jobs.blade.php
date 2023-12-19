@@ -32,7 +32,7 @@
                             <!-- Title  Start-->
                             <div class="info-item job-title-box" bis_skin_checked="1">
                                 <div class="job-title" bis_skin_checked="1">
-                                    <span>Mới</span>
+                                    <!-- <span>Mới</span> -->
                                     <h3 class="job-title-name"><a
                                             href="http://localhost:8000/job/nhan-vien-bat-dong-san-40"
                                             title="Nhân viên bất động sản">Nhân viên bất động sản</a></h3>
@@ -47,26 +47,48 @@
 
                             <!-- companyName Start-->
                             <div class="info-item companyName" bis_skin_checked="1"><a
-                                    href="http://localhost:8000/company/cong-ty-co-phan-incom-sai-gon-9"
-                                    title="Công Ty Cổ Phần Incom Sài Gòn">Công Ty Cổ Phần Incom Sài Gòn</a>
-                               <!--Day update and place Start-->
+                                    href="http://localhost:8000/cong-ty/{{$company->slug}}"
+                                    title="{{$company->name}}">{{$company->name}}</a>
+                           
+                               @php 
+                            
+                                $datetime =   Carbon\Carbon::parse($job->created_at);
+                         $timeCurrent = Carbon\Carbon::now();
+                         $numberDate = $timeCurrent->diffInDays($datetime);
+                                $datetimeText ="";
+                         if($numberDate < 1)
+                         {
+                            $datetimeText = "Hôm nay";
+                         }
+                         else if($numberDate < 2){
+                            $datetimeText = "Hôm qua";
+                         }
+                         else 
+                         {
+                            $datetimeText =  $datetime->format('d-m-Y');
+                         }
+
+                               @endphp
                                <div class="info-item day-update" bis_skin_checked="1">
-                                Hôm nay
-                            </div>
+                                {{$datetimeText}}
+                              </div>
                             <!--Day update and place End-->
                                 </div>
                             <!-- companyName End-->
                             <!--rank-salary and place Start-->
                             <div class="info-item box-meta" bis_skin_checked="1">
-                                <div class="rank-salary" bis_skin_checked="1">
-                                    <span class="fas fa-money-bill"></span> Thương lượng
-                                </div>
+                            <div class="rank-salary" bis_skin_checked="1">
+                                        <span class="fas fa-money-bill"></span>
+                                      
+                                        {{$job->salary_from.' '.$job->salary_currency}} -
+                                        {{$job->salary_to.' '.$job->salary_currency}}
+                                    </div>
                                 <div class="navbar__link-separator" bis_skin_checked="1"></div>
                                 <!--meta-city-->
                                 <div class="meta-city" bis_skin_checked="1">
-                                    <!-- <i class="far fa-map-marker-alt"></i> -->
-                                    Sơn La
-                                </div>
+                                        <!-- <i class="far fa-map-marker-alt"></i> -->
+                                        {{$job->getCity('city')}}
+                                    </div>
 
 
                                 <!-- Bán thời gian -->
@@ -78,25 +100,19 @@
                             <!-- <div class="short-description">M&amp;ocirc; tả c&amp;ocirc;ng việc</div> -->
                         </div>
                         <div class="caption" bis_skin_checked="1">
-                            <div class="welfare" bis_skin_checked="1">
-                                <div class="box-meta" bis_skin_checked="1">
-                                    <!-- <i class="fas fa-dollar-sign"></i>  -->
-                                    <span>
-                                        <!-- Chế độ thưởng -->
-                                        Automative
-                                    </span>
-
+                          @isset($job->industry)
+                                   <div class="welfare" bis_skin_checked="1">
+                                    <div class="box-meta" bis_skin_checked="1">
+                                        <!-- <i class="fas fa-dollar-sign"></i>  -->
+                                        <span>
+                                            <!-- Chế độ thưởng -->
+                                            {{$job->industry->industry}}
+                                        </span>
+    
+                                    </div>
                                 </div>
-                                <div class="box-meta" bis_skin_checked="1">
-                                    <!-- <i class="fas fa-graduation-cap"></i> -->
-                                    <span>
-                                        <!-- Đào tạo -->
-                                        Automative Infomation
-                                    </span>
-                                </div>
-
-                            </div>
-
+                             
+                            @endisset
                             <div class="user-action" bis_skin_checked="1">
                                 <a class="btn-view-details"
                                     href="{{route('job.detail', [$job->slug])}}"> {{__('View Details')}}</a>

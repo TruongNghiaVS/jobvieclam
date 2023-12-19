@@ -130,8 +130,7 @@ class RegisterController extends Controller
         $this->guard()->login($user);
         UserVerification::generate($user);
         // UserVerification::send($user, 'User Verification', config('mail.recieve_to.address'), config('mail.recieve_to.name'));
-        Log::info($user); 
-   
+      
         return $this->registered($request, $user) ?: redirect($this->redirectPath());
     }
 

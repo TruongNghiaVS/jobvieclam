@@ -1,3 +1,4 @@
+
 <div id="content" class="content">
     <!-- Main -->
     <!-- Bio -->
@@ -38,6 +39,13 @@
 
                     <div class="user__complete_section" bis_skin_checked="1">
                         <span class="font-weight-bold"> {{__('Level of completion')}}:</span>   <p class="font-weight-bold fs-18px  px-1"> {{__('Unfinished')}}</p>
+                    </div>
+
+                    
+                    <div class="py-3">
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                        </div>
                     </div>
 
                 </div>

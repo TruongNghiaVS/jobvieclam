@@ -128,7 +128,7 @@
 <!-- <div class="row">
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'job_experience_id') !!}">
-            <label for="">{{__('Job Experience')}}</label>
+            <label class="required" for="">{{__('Job Experience')}}</label>
             {!! Form::select('job_experience_id', [''=>__('Lựa chọn số năm kinh nghiệm')]+$jobExperiences, null,
             array('class'=>'form-control form-select chosen', 'id'=>'job_experience_id')) !!}
             {!! APFrmErrHelp::showErrors($errors, 'job_experience_id') !!}
@@ -136,7 +136,7 @@
     </div>
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'career_level_id') !!}">
-            <label for="">{{__('Cấp bậc nghề')}}</label>
+            <label class="required" for="">{{__('Cấp bậc nghề')}}</label>
             {!! Form::select('career_level_id', [''=>__('Lựa chọn Cấp bậc Nghề')]+$careerLevels, null,
             array('class'=>'form-control form-select', 'id'=>'career_level_id')) !!}
             {!! APFrmErrHelp::showErrors($errors, 'career_level_id') !!}
@@ -144,7 +144,7 @@
     </div>
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'industry_id') !!}">
-            <label for="">{{__('Lựa chọn Ngành nghề')}}</label>
+            <label class="required" for="">{{__('Lựa chọn Ngành nghề')}}</label>
             {!! Form::select('industry_id', [''=>__('Lựa chọn Ngành nghề')]+$industries, null,
             array('class'=>'form-control form-select chosen', 'id'=>'industry_id')) !!}
             {!! APFrmErrHelp::showErrors($errors, 'industry_id') !!}
@@ -152,7 +152,7 @@
     </div>
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'functional_area_id') !!}">
-            <label for="">{{__('Bộ phận chức năng')}}</label>
+            <label class="required" for="">{{__('Bộ phận chức năng')}}</label>
             {!! Form::select('functional_area_id', [''=>__('Lựa chọn Bộ phận chức năng')]+$functionalAreas, null,
             array('class'=>'form-control form-select chosen', 'id'=>'functional_area_id')) !!}
             {!! APFrmErrHelp::showErrors($errors, 'functional_area_id') !!}
@@ -160,7 +160,7 @@
     </div>
     <div class="col-md-4">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'current_salary') !!}">
-            <label for="">{{__('Mức lương hiện tại')}}</label>
+            <label class="required" for="">{{__('Mức lương hiện tại')}}</label>
             {!! Form::text('current_salary', null, array('class'=>'form-control', 'id'=>'current_salary',
             'placeholder'=>__('Mức lương hiện tại'))) !!}
             {!! APFrmErrHelp::showErrors($errors, 'current_salary') !!}
@@ -168,7 +168,7 @@
     </div>
     <div class="col-md-4">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'expected_salary') !!}">
-            <label for="">{{__('Mức lương kỳ vọng')}}</label>
+            <label class="required" for="">{{__('Mức lương kỳ vọng')}}</label>
             {!! Form::text('expected_salary', null, array('class'=>'form-control', 'id'=>'expected_salary',
             'placeholder'=>__('Mức lương kỳ vọng'))) !!}
             {!! APFrmErrHelp::showErrors($errors, 'expected_salary') !!}
@@ -176,7 +176,7 @@
     </div>
     <div class="col-md-4">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'salary_currency') !!}">
-            <label for="">{{__('Đồng tiền trả lương')}}</label>
+            <label class="required" for="">{{__('Đồng tiền trả lương')}}</label>
             @php
             $salary_currency = Request::get('salary_currency', (isset($user) && !empty($user->salary_currency))?
             $user->salary_currency:$siteSetting->default_currency_code);
@@ -202,7 +202,7 @@
                     <div class="row">
                     <div class="col-md-12">
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'job_experience_id') !!}">
-                            <label for="">{{__('Job Experience')}}</label>
+                            <label class="required" for="">{{__('Job Experience')}}</label>
                             {!! Form::select('job_experience_id', [''=>__('Lựa chọn số năm kinh nghiệm')]+$jobExperiences, null,
                             array('class'=>'form-control form-select', 'id'=>'job_experience_id','name'=>'job_experience_id')) !!}
                             {!! APFrmErrHelp::showErrors($errors, 'job_experience_id') !!}
@@ -210,7 +210,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'career_level_id') !!}">
-                            <label for="">{{__('Cấp bậc nghề')}}</label>
+                            <label class="required" for="">{{__('Cấp bậc nghề')}}</label>
                             {!! Form::select('career_level_id', [''=>__('Lựa chọn Cấp bậc Nghề')]+$careerLevels, null,
                             array('class'=>'form-control form-select', 'id'=>'career_level_id','name'=>'career_level_id')) !!}
                             {!! APFrmErrHelp::showErrors($errors, 'career_level_id') !!}
@@ -218,7 +218,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'industry_id') !!}">
-                            <label for="">{{__('Lựa chọn Ngành nghề')}}</label>
+                            <label class="required" for="">{{__('Lựa chọn Ngành nghề')}}</label>
                             {!! Form::select('industry_id', [''=>__('Lựa chọn Ngành nghề')]+$industries, null,
                             array('class'=>'form-control form-select', 'id'=>'industry_id' ,'name'=>'industry_id')) !!}
                             {!! APFrmErrHelp::showErrors($errors, 'industry_id') !!}
@@ -226,7 +226,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'functional_area_id') !!}">
-                            <label for="">{{__('Functional department')}}</label>
+                            <label class="required" for="">{{__('Functional department')}}</label>
                             {!! Form::select('functional_area_id', [''=>__('Select Functional Department')]+$functionalAreas, null,
                             array('class'=>'form-control form-select', 'id'=>'functional_area_id'  ,'name'=>'functional_area_id')) !!}
                             {!! APFrmErrHelp::showErrors($errors, 'functional_area_id') !!}
@@ -234,7 +234,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'current_salary') !!}">
-                            <label for="">{{__('Mức lương hiện tại')}}</label>
+                            <label class="required" for="">{{__('Mức lương hiện tại')}}</label>
                             {!! Form::text('current_salary', null, array('class'=>'form-control', 'id'=>'current_salary',
                             'placeholder'=>__('Mức lương hiện tại')  ,'name'=>'current_salary')) !!}
                             {!! APFrmErrHelp::showErrors($errors, 'current_salary') !!}
@@ -242,7 +242,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'expected_salary') !!}">
-                            <label for="">{{__('Mức lương kỳ vọng')}}</label>
+                            <label class="required" for="">{{__('Mức lương kỳ vọng')}}</label>
                             {!! Form::text('expected_salary', null, array('class'=>'form-control', 'id'=>'expected_salary',
                             'placeholder'=>__('Mức lương kỳ vọng'))) !!}
                             {!! APFrmErrHelp::showErrors($errors, 'expected_salary') !!}
@@ -250,7 +250,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'salary_currency') !!}">
-                            <label for="">{{__('Đồng tiền trả lương')}}</label>
+                            <label class="required" for="">{{__('Đồng tiền trả lương')}}</label>
                             @php
                             $salary_currency = Request::get('salary_currency', (isset($user) && !empty($user->salary_currency))?
                             $user->salary_currency:$siteSetting->default_currency_code);

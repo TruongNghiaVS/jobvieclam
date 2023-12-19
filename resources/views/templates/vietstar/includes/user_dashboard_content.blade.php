@@ -15,11 +15,9 @@
                     </div>
             </div>
             <div class="col-md-9">
-                <div class="card-body card-body-profile-seeker">
+                <div class="card-body-profile-seeker">
                     <h5 class="card-title text-sub-color">{{auth()->user()->name}}</h5>
-                    <p class="card-text justify-content-between align-items-center">
-                        {{ auth()->user()->getProfileSummary('summary') }}
-                    </p>
+                   
                     {{--<a href="{{ route('view.public.profile', Auth::user()->id) }}" class="btn btn-primary
                     btn-edit-profile">
                     <span class="icon-edit-icon fs-18px me-2 text-white-color"></span>
@@ -28,11 +26,11 @@
                 </div>
 
                 <div class="row">
-                    <span class="col-lg-12 col-md-12 col-sm-12 card-text"><i
+                    <span class="col-lg-12 col-md-12 col-sm-12 card-text p-0"><i
                             class="iconmoon icon-recruiter-location m-2"></i>{{Auth::user()->getLocation() ? Auth::user()->getLocation() : __('Not update') }}</span>
-                    <span class="col-lg-12 col-md-12 col-sm-12 card-text"><i
+                    <span class="col-lg-12 col-md-12 col-sm-12 card-text p-0"><i
                             class="iconmoon icon-recruiter-phone-call m-2"></i>{{auth()->user()->phone ? auth()->user()->phone : __('Not update') }} </span>
-                    <span class="col-lg-12 col-md-12 col-sm-12 card-text">
+                    <span class="col-lg-12 col-md-12 col-sm-12 card-text p-0">
                         <i class="bi bi-envelope text-primary m-2"></i>{{ auth()->user()->email ? auth()->user()->email : __('Not update') }}</span>
                 </div>
 

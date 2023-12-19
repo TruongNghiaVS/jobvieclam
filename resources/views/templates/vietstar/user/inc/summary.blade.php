@@ -3,8 +3,8 @@
         <div class="figure__image"><img src="https://cdn-icons-png.flaticon.com/512/3862/3862929.png" alt=""></div>
         <div class="figure__caption">
             <h5 class="">{{__('Describe yourself')}}</h5>
-            <div class="status complete" bis_skin_checked="1">
-                <p>Hoàn thành</p>
+            <div class="status error" bis_skin_checked="1">
+                <p>{{__('Unfinished')}}</p>
             </div>
         </div>
     </div>
@@ -21,7 +21,7 @@
 
 <div class="section-body">
     <div id="success_msg"></div>
-    <div>{{ old('summary',  $user->getProfileSummary('summary')) }}</div>
+    <div>{{ $user->getProfileSummary('summary') }}</div>
     {{--<div class="row">
         <div class="col-md-12">
             <form class="form form-user-profile" id="add_edit_profile_summary" method="POST" action="{{ route('update.front.profile.summary', [$user->id]) }}">
@@ -82,9 +82,22 @@
 
 @push('scripts')
 <script type="text/javascript">
+
+    $( document ).ready(function() {
+        $('#sumary_submitBtn').prop('disabled', true);
+
+        // Check TinyMCE content on input change
+        tinymce.get('summary').on('input', function () {
+            
+            var isEditorValid = tinymce.get('summary').getContent().trim().length > 0;
+            console.log(isEditorValid);
+            // Enable or disable the submit button based on the editor content validity
+            $('#sumary_submitBtn').prop('disabled', !isEditorValid);
+        });
+    });
     function submitProfileSummaryForm() {
         var form = $('#add_edit_profile_summary');
-
+       
         $.ajax({
             url: form.attr('action'),
             type: form.attr('method'),
@@ -110,7 +123,11 @@
                 }
                 })
                 .done(function(data){
-                    console.log(data);
+                    
+                    if(data){
+                        window.location.reload();
+                    }
+
                     // $("#success_msg").html("<span class='text text-primary'>{{__('Cập nhật thành công')}}</span>");
               
                     

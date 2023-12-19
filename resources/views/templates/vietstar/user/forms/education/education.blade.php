@@ -20,13 +20,14 @@
 </div>
 <div class="section-body"> 
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="" id="show_education_div">
-                
+        <div class="row">
+                <div class="col-md-12">
+                        <div class="sticker_div" id="sticker_div">
+                                <div class="sticker" id="show_education_div">
+                                </div>
+                        </div>
+                </div>
         </div>
-    </div>
-</div>
 
 </div>
 

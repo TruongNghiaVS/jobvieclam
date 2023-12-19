@@ -24,11 +24,22 @@
         color: #6c7eb7;
         font-size: 20px;
     }
+    .cursor-pointer {
+        cursor: pointer;
+    }
+
+    .cursor-pointer {
+        cursor: pointer;
+    }
+    .text-decoration {
+        text-decoration: underline;
+    }
 </style>
 @endpush
 
-
-
+@php
+  $overviewUser = Auth::user()->getStatusOverview();
+@endphp
 <div class="section-head">
     <h3 class="title-form">JobViecLam Profile</h3>
 </div>
@@ -63,16 +74,19 @@
             </div>
         </div>
         <div class="col-md-6 col-lg-8">
-            <div class="user__name" bis_skin_checked="1">
+            <div class="user__name d-flex flex-row justify-content-between" bis_skin_checked="1">
                 <h4 id="">{{auth()->user()->name}}</h4>
+                <a class="cursor-pointer text-decoration text-secondary" data-toggle="modal" data-target="#changepassword"> Đổi mật khẩu<i class="mx-1 bi bi-lock-fill"></i></a>
             </div>
-
+            @if($overviewUser->statusComPlete)
             <div class="status error my-2" bis_skin_checked="1">
-                <p>{{__('Unfinished')}}</p>
+                <p>{{$overviewUser->statusComPlete}}</p>
             </div>
+            @endif
 
             <div class="user__infomation" bis_skin_checked="1">
                  <h5 id=""><i class="iconmoon icon-recruiter-location mr-2"></i> {{Auth::user()->getLocation() ? Auth::user()->getLocation() : __('Not update') }}</h5>
+                 
             </div>
             <div class="user__infomation" bis_skin_checked="1">
                  <h5 id=""><i class="iconmoon icon-recruiter-phone-call mr-2"></i> {{auth()->user()->phone ? auth()->user()->phone : __('Not update') }}</h5>
@@ -80,16 +94,19 @@
             <div class="user__infomation" bis_skin_checked="1">
                 <h5 id=""><i class="bi bi-envelope text-primary mr-2"></i>  {{ auth()->user()->email ? auth()->user()->email : __('Not update') }}</h5>
             </div>
-
+            @if($overviewUser->degreeComplete)
             <div class="user__complete_section" bis_skin_checked="1">
-                <span class="font-weight-bold"> {{__('Level of completion')}}:</span>   <p class="font-weight-bold fs-18px  px-1"> {{__('Unfinished')}}</p>
+                <span class="font-weight-bold"> {{__('Level of completion')}}:</span>   <p class="font-weight-bold fs-18px  px-1"> {{$overviewUser->degreeComplete}}</p>
             </div>
-
+            @endif
+            @if($overviewUser)
             <div class="py-3">
                 <div class="progress">
-                    <div class="progress-bar bg-primary" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                    <div class="progress-bar bg-primary" role="progressbar" style="width: {{$overviewUser->percent}}%;" aria-valuenow="{{$overviewUser->percent}}" aria-valuemin="0" aria-valuemax="100">{{$overviewUser->percent}}</div>
                 </div>
+                
             </div>
+            @endif
         </div>
     </div>
 </div>

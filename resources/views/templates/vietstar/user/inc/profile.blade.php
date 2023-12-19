@@ -8,12 +8,8 @@
     </div>
 </div>
 
-<div class="user-account-section section">
-    <div class="formpanel mt0"> @include('flash::message')
-        <!-- Personal Information -->
-        @include('templates.vietstar.user.inc.account_infomation')
-    </div>
-</div>
+@include('templates.vietstar.user.inc.account_infomation')
+
 
 
 <div class="user-account-section ">

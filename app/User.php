@@ -422,7 +422,7 @@ class User extends Authenticatable
 
     }
 
-    public function getStatusOverview($id)
+    public function getStatusOverview()
 
     {
        $index = 0;

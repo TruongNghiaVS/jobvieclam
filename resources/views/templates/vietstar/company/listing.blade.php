@@ -11,9 +11,6 @@
 
 
 
-<!-- Inner Page Title start -->
-
-
 
 <div class="company-wrapper company-list-wrapper">
     <div class="container company-list-container">
@@ -47,12 +44,15 @@
 
             @if($companies)
             <div class="list-company hideContent">
-                @foreach($companies as $company)
+                @foreach($companies
+                 as $company)
 
                 <div emId="{{$company->id}}" class="company-item-wrapper shadow-sm">
                     <div class="company-item-header">
                         <div class="company-items__background">
-                            <img class="background-img" src="https://www.vietnamworks.com/_next/image?url=https%3A%2F%2Fimages02.vietnamworks.com%2Fcompanyprofile%2Fnull%2Fen%2FB%C3%ACa_%C4%91%E1%BA%A7u_trang_-_Coverc.jpg&w=1920&q=75" alt="">
+                            <!-- <img class="background-img" src="https://www.vietnamworks.com/_next/image?url=https%3A%2F%2Fimages02.vietnamworks.com%2Fcompanyprofile%2Fnull%2Fen%2FB%C3%ACa_%C4%91%E1%BA%A7u_trang_-_Coverc.jpg&w=1920&q=75" alt="">
+                             -->
+                            {{$company->printCompanyCoverImage()}}
                         </div>
                         <a class="company-items__logo shadow" href="#">
                             {{$company->printCompanyImage()}}
@@ -71,7 +71,6 @@
                             </a>
                         </div>
                         <div class ="company-items__shortDes">
-                        " Công ty CP Giáo dục và Đào tạo IMAP Việt Nam với hệ thống các thương hiệu Anh ngữ Ms Hoa (Tiền thân Ms Hoa TOEIC) Ms Hoa Giao tiếp, IELTS Fighter, Aland English, IMAP Pro, Ms Hoa Junio, Globalway, IMAP Tech đang từng ngày lớn mạnh với hệ thống hơn 100 cơ sở tại Hà Nội, TP HCM, Đà Nẵng, Nghệ An, Bắc Ninh, Bình Dương, Đồng Nai và..."
                            {{$company->description}}
                         </div>
                         
@@ -95,9 +94,14 @@
 
             </div>
             @endif
-            <div class="show-more">
+            <!-- <div class="show-more">
                 <button class="btn btn-secondary show-more-btn ">Xem thêm</button>
+            </div> -->
+            <div class="d-flex justify-content-center align-items-center">
+
+                {{ $companies->links() }}
             </div>
+            
         </div>
 
     </div>

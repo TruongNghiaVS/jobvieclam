@@ -18,7 +18,7 @@
                       <div class="card-news w-100">
                         <div class="card-news__icon">
                           <a href="{{route('job.detail', [$suggestedJob->slug])}}" title="{{$suggestedJob->title}}">
-                          <img width="45" height="45" src="{{asset('company_logos/'.$company->logo)}}" alt="vietstar">
+                            {{$company->printCompanyImage(45,45)}}
                           </a>
                         </div>
                         <div class="card-news__content">

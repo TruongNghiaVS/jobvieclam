@@ -452,11 +452,12 @@ i.fas.fa-heart.iconoutline {
 
 .company-items__background {
     width: 100%;
-    height: 117px;
+    height: 125px;
     position: absolute;
 }
 
-.company-items__background .background-img {
+
+.company-items__background img {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -510,6 +511,7 @@ i.fas.fa-heart.iconoutline {
     -webkit-box-orient: vertical;
     display: -webkit-box;
     overflow: hidden;
+    height: 90px;
 }
 
 

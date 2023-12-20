@@ -638,10 +638,26 @@ i.fas.fa-heart.iconoutline {
 
 .box-result .item-company .job-title .companyName {
     margin-right: 20px;
+    
+}
+.box-result .item-company .job-title .companyName a{
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    
 }
 
 .box-result .item-company  .info-item__location ,.box-result .item-company  .info-item__des {
     display: flex;
+}
+
+
+.box-result .item-company  .info-item__location p,.box-result .item-company  .info-item__des p{
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
 }
 .blog-single {
     padding-top: 30px;

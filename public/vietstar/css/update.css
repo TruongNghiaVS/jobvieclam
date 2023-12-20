@@ -1913,6 +1913,21 @@ footer .inner-copyright .copyright {
     line-height: 19px;
     color: #3b4358
 }
+.gad {}
+
+#adbanner,
+.carousel-inner,
+.carousel-inner>.carousel-item {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-inner>.carousel-item>img,
+.carousel-inner>.carousel-item>a>img {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
 
 .job-detail-content .job-information .inner-content * {
     font-style: normal;

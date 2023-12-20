@@ -139,10 +139,10 @@
                         <div class="company-info" bis_skin_checked="1">
                             <div class="info" bis_skin_checked="1">
 
-                                <div class="info-item" bis_skin_checked="1">
-                                    <div class="job-title" bis_skin_checked="1">
-                                        <div class="info-item companyName fs-18px" bis_skin_checked="1"><a class="text-primary" href="{{route('company.detail',$company->slug)}}" title="{{$company->name}}">{{$company->name}}</a></div>
-                                        <span>Đang tuyển 0 vị trí</span> 
+                                <div class="info-item " bis_skin_checked="1">
+                                    <div class="job-title row" bis_skin_checked="1">
+                                        <div class="info-item companyName fs-18px col-8" bis_skin_checked="1"><a class="text-primary" href="{{route('company.detail',$company->slug)}}" title="{{$company->name}}">{{$company->name}}</a></div>
+                                        <span class="col-3 text-right">Đang tuyển 0 vị trí</span> 
                                     </div>
                                 </div>
                             
@@ -173,8 +173,11 @@
                 @endif
             </div>
         </div>
-        <div class="col-lg-3 bg-white">
-            asdasdas
+        <div class="col-lg-3 col-sm-12 pull-right">
+                <!-- Sponsord By -->
+                <div class="sidebar shadow">
+                    @include('templates.vietstar.job.inc.ads')
+                </div>
         </div>
     </div>
 </div>

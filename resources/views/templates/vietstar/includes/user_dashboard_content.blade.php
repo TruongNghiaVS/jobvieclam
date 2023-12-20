@@ -1,4 +1,6 @@
-
+@php
+  $overviewUser = Auth::user()->getStatusOverview();
+@endphp
 <div id="content" class="content">
     <!-- Main -->
     <!-- Bio -->
@@ -43,9 +45,14 @@
 
                     
                     <div class="py-3">
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                        @if($overviewUser)
+                        <div class="py-3">
+                            <div class="progress">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: {{$overviewUser->percent}}%;" aria-valuenow="{{$overviewUser->percent}}" aria-valuemin="0" aria-valuemax="100">{{$overviewUser->percent}}</div>
+                            </div>
+                            
                         </div>
+                        @endif
                     </div>
 
                 </div>

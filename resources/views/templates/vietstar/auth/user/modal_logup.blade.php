@@ -327,7 +327,7 @@ $(document).ready(function() {
         if (isValid) { 
             $.ajax({
             type: "POST",
-            url:  '{{ route('register') }}',
+            url:  `{{ route('register') }}`,
             data: $(this).serialize(),
             statusCode: {
                 202 :  function(responseObject, textStatus, jqXHR) {

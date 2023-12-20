@@ -2580,6 +2580,23 @@ footer .inner-copyright .copyright {
     margin-left: 12px;
 }
 
+
+.pagination li.page-item {
+    background-color: #fff;
+    padding: 5px;
+    margin: 0 3px;
+    border-radius: 5px;
+}
+.pagination li.page-item:hover {
+    opacity: 0.8;
+}
+.pagination li.page-item.active {
+    background: var(--bs-primary);
+}
+.pagination li.page-item.active span {
+    color: #fff;
+}
+
 .jobs-side-list .item-job .jobinfo .info .job-title-name a {
     font-style: normal;
     font-weight: 700;

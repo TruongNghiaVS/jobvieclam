@@ -752,7 +752,7 @@ section.company-job-detail.job-detail-title .job-detail-banner {
 .search-form-box {
 	background-color: white;
 	border-radius: 8px;
-	overflow: hidden;
+
 }
 
 .header-bar .header-bar__title {
@@ -1007,6 +1007,11 @@ h4.tablinks:hover {
 	margin: 10px 0;
 	padding: 0 20px;
 	font-weight: 600;
+	-webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+	height: 45px;
 }
 
 .partner-item__box:hover {
@@ -2174,7 +2179,7 @@ h3.seekertxt span {
 .figure {
 	width: 100%;
 	background: #ffffff;
-	height: 330px;
+	height: 350px;
 	overflow: hidden;
 }
 

@@ -518,6 +518,9 @@
   .about_us_content .content_title {
     padding-left: 10px !important;
   }
+  .cbox-impressive-numbers__item--wrapper{
+    padding:0 10px;
+  }
 
 }
 

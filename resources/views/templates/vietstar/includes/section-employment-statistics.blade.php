@@ -5,7 +5,7 @@
         <div class="section-subtitle">Công ty Cổ phần Tập đoàn Vietstar ( VIETSTAR GROUP JOINT STOCK COMPANY) là một trong những công ty uy tín tại Việt Nam trong lĩnh vực cung cấp giải pháp xử</div>
 
         <div class="row">
-            <div class="col-md-6 col-lg-4 mb-4">
+            <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
                         <span class="iconmoon icon-recruiter-suitcase"></span>
@@ -18,7 +18,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4">
+            <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
                         <span class="iconmoon icon-office-building-icon"></span>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4">
+            <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
                         <span class="iconmoon icon-level-icon"></span>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4">
+            <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
                         <span class="iconmoon icon-recruiter-profile"></span>
@@ -57,7 +57,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4">
+            <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
                         <span class="iconmoon icon-recruiter-search"></span>
@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </div>
-                <div class="col-md-6 col-lg-4 mb-4">
+                <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                     <div class="statistic">
                         <div class="icon">
                             <span class="iconmoon icon-recruiter-total-employee"></span>
@@ -100,7 +100,7 @@
 
 
 
-            <!-- <div class="col-md-6 col-lg-4 mb-4">
+            <!-- <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
                         <span class="iconmoon icon-recruiter-suitcase"></span>
@@ -113,7 +113,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4">
+            <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
                         <span class="iconmoon icon-office-building-icon"></span>
@@ -126,7 +126,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4">
+            <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
                         <span class="iconmoon icon-level-icon"></span>
@@ -139,7 +139,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4">
+            <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
                         <span class="iconmoon icon-recruiter-profile"></span>
@@ -152,7 +152,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4">
+            <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
                         <span class="iconmoon icon-recruiter-search"></span>
@@ -165,7 +165,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4">
+            <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
                         <span class="iconmoon icon-recruiter-total-employee"></span>

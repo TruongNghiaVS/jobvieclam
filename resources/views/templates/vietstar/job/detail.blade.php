@@ -316,17 +316,24 @@ $company = $job->getCompany();
                                     </div>
                                 </div>
                                 <div class="col-xl-5 col-lg-12">
+                                    @if($company->phone)
                                     <div class="banner__due-day mb-3">
                                         <i class="far fa-phone"></i> {{ $company->phone }}
                                     </div>
+                                    @endif
+                                    @if($company->email)
                                     <div class="banner__due-day mb-3">
                                         <i class="far fa-envelope"></i> {{ $company->email }}
                                     </div>
+                                    @endif
+                                    
+                                    @if($company->website)
                                     <div class="banner__due-day mb-3">
                                         <a href="{{ $company->website}}" target="_blank">
                                             <i class="far fa-globe"></i> {{ $company->website }}
                                         </a>
                                     </div>
+                                    @endif
                                     <div class="fs-14px mb-3">
                                         <div class="socials">
                                             <a href="#" class="social"><i class="fab fa-facebook-f fa-lg me-3"></i></a>

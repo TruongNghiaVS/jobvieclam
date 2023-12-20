@@ -9,7 +9,7 @@
 
                  
         <div class="blog-home-content">
-            <div class="blog-content__wrapper row px-4">
+            <div class="blog-content__wrapper row">
 
 
 
@@ -148,7 +148,7 @@
                     image = `{{url('/')}}/uploads/blogs/${item.image}`;
                     slug = `{{url('/')}}/blog/${item.slug}`;
                     if (item) {
-                        return `  <div class="col-6 col-md-4">
+                        return `  <div class="col-md-4 col-lg-4 col-sm-12">
                                
                                 <div class="cardBlock">
                                

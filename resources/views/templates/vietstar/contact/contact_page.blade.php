@@ -2,7 +2,7 @@
 @section('content')
 <!-- Header start -->
 @include('templates.vietstar.includes.header')
-
+@include('templates.vietstar.user.templates.modal_user_info')
 <!-- Header end -->
 <!-- Inner Page Title start -->
 
@@ -11,6 +11,7 @@
     <!-- About -->
     <div class="container">
         <div class="contact-wrap shadow">
+            
             <!-- <h5 class="title">
                 {{__('Thank you for trusting and choosing Jobvieclam.')}}
                 <br>

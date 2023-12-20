@@ -1,3 +1,4 @@
+
 <section class="header-bar">
     <div class="header-bar-bg">
         <div class="swiper slider-hero-banner">
@@ -50,28 +51,28 @@
                 <div class="row form-group-search-box">
                     <div class="col-sm-6">
                         <div class="form-group form-group-search" id="city_dd">
-                            {!! Form::select('city_id[]', ['' => __('Select City')]+$cities, Request::get('city_id',
+                            {!! Form::select('city_id[]', ['' => __('Select City')]+$citiesArray, Request::get('city_id',
                             null), array('class'=>'form-control form-select shadow-sm', 'id'=>'city_id')) !!}
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group form-group-search" id="job_type_dd">
-                            {!! Form::select('job_type_id[]', ['' => __('Select Job Type')] + $jobTypes,
+                            {!! Form::select('job_type_id[]', ['' => __('Select Job Type')] + $jobtypesArray,
                             Request::get('job_type_id', null), array('class'=>'form-control form-select shadow-sm',
                             'id'=>'job_type_id')) !!}
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group form-group-search" id="career_level_dd">
-                            {{--{!! Form::select('functional_area_id[]', ['' => __('Select functional area')]+$funclAreas, Request::get('functional_area_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'functional_area_id')) !!} --}}
-                            {!! Form::select('career_level_id[]',['' => __('Select career level')] + $careerLevels,
-                            Request::get('career_level_id', null), array('class'=>'form-control form-select shadow-sm',
-                            'id'=>'career_level_id')) !!}
+                         
+                            {!! Form::select('degree_level_id[]',['' => __('Academic level')] + $degreeLevelArray,
+                            Request::get('degree_level_id', null), array('class'=>'form-control form-select shadow-sm',
+                            'id'=>'degree_level_id')) !!}
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group form-group-search" id="degree_leve_dd">
-                            {!! Form::select('industry_id[]', ['' => __('Select Industry')] + $industries,
+                            {!! Form::select('industry_id[]', ['' => __('Select Industry')] + $industryArray,
                             Request::get('industry_id', null), array('class'=>'form-control form-select shadow-sm',
                             'id'=>'industry_id')) !!}
                         </div>

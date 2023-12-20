@@ -198,8 +198,9 @@
                             @endforeach
 
                 </div>
-
+            <div class="d-flex justify-content-center">
                 {{ $jobList->links() }}
+            </div>
                 
             </div>
             <div class="col-lg-3 col-sm-12 pull-right">

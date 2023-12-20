@@ -1,4 +1,4 @@
-<div class="section-head">
+<!-- <div class="section-head">
     <div class="section-head__figure">
         <div class="figure__image" ><img src="https://icons.veryicon.com/png/o/system/alongthink/ico-user-info.png" alt=""></div>
         <div class="figure__caption">
@@ -38,7 +38,7 @@
                 </tbody>
             </table>
     </div>
-</div>
+</div> -->
 
 
 

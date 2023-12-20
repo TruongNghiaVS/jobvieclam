@@ -495,8 +495,7 @@ function swiperSlider() {
             autoplay: {
                 delay: 5000,
             },
-        
-            
+            slidesPerView: 1,
             loop: true,
             speed: 1000,
             pagination: {
@@ -512,25 +511,7 @@ function swiperSlider() {
 
 
 
-     if ($('.mySwiper').length) {
-        var allJobsSwiper = new Swiper(".mySwiper", {
-            autoplay: {
-                delay: 5000,
-            },
-        
-            
-            loop: true,
-            speed: 1000,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    }
+     
 
 
     if ($('.introduce_Swiper').length) {

@@ -67,7 +67,13 @@
     color: var(--sub-text);
 }
 
-.user__complete_section {}
+.user__complete_section {
+    display: flex;
+    flex-direction: row;
+}
+.user__complete_section  p{
+    color: #646f79;
+}
 
 
 .section-head__figure {
@@ -100,12 +106,27 @@
 
 }
 
-.figure__caption .status.error p {
-    color: rgb(236, 120, 120);
+.status.error p {
+    color: red;
 }
 
-.figure__caption .status.complete p {
+.status.error {
+    color: red;
+
+}
+
+
+.status.complete  {
     color: #2aba2a;
+}
+
+.status.complete p {
+    color: #2aba2a;
+}
+
+.required:after {
+    content:" *";
+    color: red;
 }
 .section-body table tr{
     

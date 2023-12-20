@@ -29,7 +29,7 @@
 
 <div class="row">
     <div class="col-md-12">
-        <div class="" id="sticker_div">
+        <div class="sticker_div" id="sticker_div">
             <div class="sticker" id="activity_div">         
             </div>
         </div>

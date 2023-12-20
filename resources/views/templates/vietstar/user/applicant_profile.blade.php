@@ -24,6 +24,8 @@ if(null!==($package)){
  {
   $user = Auth::user();
  }
+
+
 ?>
 
 <!-- Public profile cover -->
@@ -35,8 +37,11 @@ if(null!==($package)){
 <section class="container public-profile">
     <div class="card card-bio mb-5 w-100 shadow-sm">
       <div class="row g-0">
-        <div class="col-md-2">
-          <img src="{{ $user->avatar() }}" class="img-bio rounded mx-md-auto mt-md-4 d-block" alt="vietstar">
+        <div class="col-md-2 img-bio rounded mx-md-auto mt-md-4 d-block">
+          <!-- <img src="{{ $user->avatar() }}" class="img-bio rounded mx-md-auto mt-md-4 d-block" alt="vietstar"> -->
+          {{ $user->printUserImage(150,150) }}
+        
+        
         </div>
         <div class="col-md-10">
           <div class="card-body">

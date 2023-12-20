@@ -4,7 +4,7 @@
 @include('templates.vietstar.includes.header')
 <!-- Header end -->
 <!-- Inner Page Title start -->
-<section class="hero-banner-company-profile" style="background-image: url(http://localhost:8000/vietstar/imgs/company-cover.jpg);"></section>
+<section class="hero-banner-company-profile" style="background-image: url(/vietstar/imgs/company-cover.jpg);"></section>
 
 
 <section class="cb-section about-us-section ">

@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col">
                 <div class="item">
-                    <a href="http://localhost:8000/" id="bannerSide">
+                    <a href="/" id="bannerSide">
                         
                     </a>
                 </div>

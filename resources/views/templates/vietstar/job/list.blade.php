@@ -124,7 +124,7 @@
                    <div data-job-id="{{$jobitem->id}}" class="item-job mb-3">
                             <div class="logo-company">
                             <a href="{{$slugCompany}}" title="{{$companyName}}" class="pic">
-                            <img src="http://localhost:8000{{$logo}}" alt="">
+                            <img src="{{$logo}}" alt="">
                             </a>
                             </div>
                             <div class="jobinfo">

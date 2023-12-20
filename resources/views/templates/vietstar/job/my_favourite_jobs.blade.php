@@ -34,7 +34,7 @@
                                 <div class="job-title" bis_skin_checked="1">
                                     <!-- <span>Mới</span> -->
                                     <h3 class="job-title-name"><a
-                                            href="http://localhost:8000/job/nhan-vien-bat-dong-san-40"
+                                            href="/job/nhan-vien-bat-dong-san-40"
                                             title="Nhân viên bất động sản">Nhân viên bất động sản</a></h3>
                                 </div>
                                 @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
@@ -47,7 +47,7 @@
 
                             <!-- companyName Start-->
                             <div class="info-item companyName" bis_skin_checked="1"><a
-                                    href="http://localhost:8000/cong-ty/{{$company->slug}}"
+                                    href="/cong-ty/{{$company->slug}}"
                                     title="{{$company->name}}">{{$company->name}}</a>
                            
                                @php 

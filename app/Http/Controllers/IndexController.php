@@ -81,6 +81,11 @@ class IndexController extends Controller
         $suggestedJobs = $params['suggestedJobs']->get();
         $industries = DataArrayHelper::langIndustriesArray();
 
+        $citiesArray = \App\City::where('lang', \App::getLocale())->active()->pluck('city', 'id')->toArray();
+        $industryArray= \App\Industry::where('lang', \App::getLocale())->active()->pluck('industry', 'id')->toArray();
+        $jobtypesArray = \App\JobType::where('lang', \App::getLocale())->active()->pluck('job_type', 'id')->toArray();
+        $degreeLevelArray =  \App\DegreeLevel::where('lang', \App::getLocale())->active()->pluck('degree_level', 'id')->toArray();
+
         $seo = SEO::where('seo.page_title', 'like', 'front_index_page')->first();
         return view(config('app.THEME_PATH').'.welcome')
                         ->with('topCompanyIds', $topCompanyIds)
@@ -105,7 +110,12 @@ class IndexController extends Controller
                         ->with('topHunterJobs', $topHunterJobs)
                         ->with('suggestedJobs', $suggestedJobs)
                         ->with('industries', $industries)
-                        ->with('seo', $seo);
+                        ->with('seo', $seo)
+                        ->with('citiesArray', $citiesArray)
+                        ->with('industryArray', $industryArray)
+                        ->with('jobtypesArray', $jobtypesArray)
+                        ->with('degreeLevelArray', $degreeLevelArray);
+
     }
 
     public function setLocale(Request $request)

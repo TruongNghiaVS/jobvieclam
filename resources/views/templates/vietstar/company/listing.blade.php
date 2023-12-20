@@ -15,7 +15,7 @@
 <div class="company-wrapper company-list-wrapper">
     <div class="container company-list-container">
         
-    <form method ="get" action="/companies">
+    <form method ="get" action="/cong-ty">
         <div id="topcompanyhead" class="topcompanyhead">
             <h3>Khám phá 1.000+ công ty nổi bật</h3>
             <p>Tìm hiểu văn hoá công ty và chọn cho bạn nơi làm việc phù hợp nhất.</p>

@@ -101,7 +101,7 @@
                         <li>
                             <div class="row">
                                 <div class="col-lg-8 col-md-8">
-                                    <div class="jobimg">{{$jobSeeker->printUserImage(100, 100)}}</div>
+                                    <div class="jobimg">{{$jobSeeker->printCompanyImage(100, 100)}}</div>
                                     <div class="jobinfo">
                                         <h3><a href="{{route('user.profile', $jobSeeker->id)}}">{{$jobSeeker->getName()}}</a>
                                         </h3>

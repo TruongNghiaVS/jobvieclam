@@ -1626,7 +1626,11 @@ button:focus {
     font-size: 14px;
     line-height: 19px;
     text-decoration: none;
-    color: var(--text-main)
+    color: var(--text-main);
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
 }
 
 .card-news .card-news__content .card-news__content-title:hover a,

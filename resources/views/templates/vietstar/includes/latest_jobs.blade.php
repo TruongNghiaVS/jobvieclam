@@ -1,7 +1,7 @@
 @if(isset($latestJobs) && count($latestJobs))
 
 <?php
-$numberOfColumns = 7;
+$numberOfColumns = 9;
 ?>
 <div class="r-news">
     <div class="swiper mySwiper">
@@ -16,7 +16,8 @@ $numberOfColumns = 7;
                         <div class="card-news w-100">
                             <div class="card-news__icon">
                                 <a href="{{route('job.detail', [$latestJobs->slug])}}" title="{{$latestJobs->title}}">
-                                    <img width="45" height="45" src="{{asset('company_logos/'.$company->logo)}}" alt="vietstar">
+                                    {{$company->printCompanyImage(45,45)}}
+                                    
                                 </a>
                             </div>
                             <div class="card-news__content">

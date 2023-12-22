@@ -225,3 +225,4 @@ Route::get('job-email-alert/{token}/confirm', 'JobAlertController@verify')->name
     Route::get('/advise/getAll', 'AdviseController@getAll')->name('admin.advise.getAll');
     Route::get('/mailNotification/getAll', 'MailNotificationController@getAll')->name('admin.mailNotification.getAll');
     Route::get('/contactinfo/getAll', 'ContactInfoController@getAll')->name('admin.contactinfo.getAll');
+

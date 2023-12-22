@@ -466,7 +466,7 @@ $company = $job->getCompany();
                                         <div class="job-title" bis_skin_checked="1">
                                             <span>Mới</span>
                                             <h3 class="job-title-name"><a
-                                                    href="{{url('/')}}/job/{{ $jobitem->slug }}"
+                                                    href="{{url('/')}}/viec-lam/{{ $jobitem->slug }}"
                                                     title="{{ $jobitem->title }}">{{ $jobitem->title }}</a></h3>
                                         </div>
                                         @if(Auth::check() && Auth::user()->isFavouriteJob($jobitem->slug))
@@ -485,7 +485,7 @@ $company = $job->getCompany();
 
                                     <!-- companyName Start-->
                                     <div class="info-item companyName" bis_skin_checked="1"><a
-                                            href="{{url('/')}}/job/{{ $jobitem->slug }}"
+                                            href="{{url('/')}}/viec-lam/{{ $jobitem->slug }}"
                                             title="{{ $company->name }}n">{{ $company->name }}</a>
                                     </div>
                                     <!-- companyName End-->

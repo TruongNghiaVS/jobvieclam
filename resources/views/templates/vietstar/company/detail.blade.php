@@ -199,7 +199,7 @@
                                         <div class="info-item job-title-box" bis_skin_checked="1">
                                             <div class="job-title" bis_skin_checked="1">
                                                 <span>Mới</span>
-                                                <h3 class="job-title-name"><a href="/job/ke-toan-44" title="{{$cjob->title}}">{{$cjob->title}}</a></h3>
+                                                <h3 class="job-title-name"><a href="/viec-lam/{{$cjob->slug}}" title="{{$cjob->title}}">{{$cjob->title}}</a></h3>
                                             </div>
 
                                             @if(Auth::check() && Auth::user()->isFavouriteJob($cjob->slug))

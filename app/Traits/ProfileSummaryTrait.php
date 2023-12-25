@@ -22,7 +22,14 @@ trait ProfileSummaryTrait
         $userUpdate->isCompleteIntroduction = true;
         $userUpdate->save();
         /*         * ************************************ */
-        return  \Redirect::back()->with('message','Operation Successful !');
+        // return  \Redirect::back()->with('message','Operation Successful !');
+        $error = array();
+        if($request->ajax()){
+
+            return response()->json([
+                'sucess'=>true,
+                'error'=> $error ], 200);
+        }
     }
 
 }

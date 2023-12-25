@@ -99,6 +99,7 @@
 
      $('#account_submitBtn').on('click',()=>{
                 if ($('#pwdId').val()) {
+                    showSpinner();
                     // Simulating an AJAX POST request
                     $.ajax({
                         url:  `{{ route('changePasswordUser') }}`,
@@ -109,7 +110,12 @@
                         },
                         success: function (response) {
                             if(response){
-                                location.reload();
+                                hideSpinner();
+                                $('#changepassword').modal("hide");
+                                showModal_Success('Thông báo',`Đổi mật khẩu thành công`, ``);
+                                setTimeout(function(){
+                                    window.location.reload();
+                                }, 3000);
                             }
                         },
                         error: function (xhr, status, error) {

@@ -103,7 +103,7 @@
     });
     function submitProfileSummaryForm() {
         var form = $('#add_edit_profile_summary');
-       
+        showSpinner();
         $.ajax({
             url: form.attr('action'),
             type: form.attr('method'),
@@ -130,9 +130,16 @@
                 })
                 .done(function(data){
                     
-                    if(data){
-                        window.location.reload();
-                    }
+                    hideSpinner();
+                    console.log(data);
+                    
+                    if (data.sucess) {
+                    $('#summary-modal').modal("hide");
+                    showModal_Success('Thông báo', `Cập nhật mô tả bản thân thành công`, ``);
+                    setTimeout(function(){
+                          window.location.reload();
+                    }, 3000);
+                }
 
                     // $("#success_msg").html("<span class='text text-primary'>{{__('Cập nhật thành công')}}</span>");
               

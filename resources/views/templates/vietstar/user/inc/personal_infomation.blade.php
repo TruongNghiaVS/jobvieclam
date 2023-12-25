@@ -456,9 +456,9 @@
       
 
        
-     
-
+        
         if (isValid) { 
+            showSpinner()
             $.ajax({
             type: "PUT",
             url:  `{{ route('put.my.profilev2') }}`,
@@ -486,14 +486,15 @@
                 }
                 })
                 .done(function(data){
-                    // // setTimeout(function() { 
-                    // //     alert(data.message)
-                    // //     window.location.href = data.urlRedirect;
-                    // // }, 2000);
-                    //  window.location.href =  "/home";
-                    //  location.reload();
-                    // $("#persionalinfo").modal('hide');
-                    // location.reload();
+                    hideSpinner();
+                    
+                    if (data.sucess) {
+                    $('#persionalinfo').modal("hide");
+                    showModal_Success('Thông báo', `Cập nhật thông tin cá nhân thành công`, ``);
+                    setTimeout(function(){
+                          window.location.reload();
+                    }, 3000);
+                }
                    
                        
                 })

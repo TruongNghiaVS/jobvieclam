@@ -49,7 +49,7 @@
                                 <a class="sub-item" href="{{route('application.manager')}}" {{$pointerCom}}><span class="iconmoon icon-recruiter-portfolio"></span>
                                     <!--  {{__('Dashboard')}} -->
 
-                                Dashboard
+                                    Dashboard
                                 </a>
                             </li>
                             <li>
@@ -108,9 +108,7 @@
                         </ul>
                     </li>
 
-                    <li><a href="{{ route('contact.us') }}"
-                            class="nav-link  {{ Request::url() == route('contact.us') ? 'header-active' : 'text-main-color' }}"
-                            style="{{ Request::url() == route('contact.us') ? 'color:#981B1E;' : '' }}">{{__('Contact')}}</a>
+                    <li><a href="{{ route('contact.us') }}" class="nav-link  {{ Request::url() == route('contact.us') ? 'header-active' : 'text-main-color' }}" style="{{ Request::url() == route('contact.us') ? 'color:#981B1E;' : '' }}">{{__('Contact')}}</a>
                     </li>
 
                     </li>
@@ -130,7 +128,7 @@
                     </ul>
                     </li> --}}
                 </ul>
-                
+
 
 
             </div>
@@ -154,20 +152,20 @@
                     </li>
                 </ul>
                 <!-- end navbar-lang PC -->
-            
+
                 <div class="user-badge__btn">
 
                     <a class="dropdown_menu__link" href="{{route('home')}}">
-                        <span >
-                        <i class="bi bi-person-circle fs-18px"></i>
+                        <span>
+                            <i class="bi bi-person-circle fs-18px"></i>
                             {{Auth::user()->name}}
                         </span>
                     </a>
                     <div class="user_menu ">
                         <ul class="">
                             <li class="nav-item"><a href="{{route('home')}}" class="nav-link"><i class="jobicon fa fa-tachometer mx-1" aria-hidden="true"></i> <!-- {{__('Dashboard')}} -->
-                                Dashboard
-                            </a>
+                                    Dashboard
+                                </a>
                             </li>
                             <li class="nav-item"><a href="{{ route('my.profile') }}" class="nav-link"><i class="jobicon fa fa-user mx-1" aria-hidden="true"></i> {{__('My Profile')}}</a>
                             </li>
@@ -202,25 +200,78 @@
 
 
                 <a class="btn_for_em" href="http://tuyendung.jobvieclam.com:9999">
-                <!-- <a class="btn_for_em" href="http://tuyendung.jobvieclam.com:9999"> -->
+                    <!-- <a class="btn_for_em" href="http://tuyendung.jobvieclam.com:9999"> -->
 
-                <div  class="btn_for_em__head">
-                {{__('For')}}
-                </div> 
-                <div  class="btn_for_em__body">
-                    {{__('Employer')}}
-                </div>    
+                    <div class="btn_for_em__head">
+                        {{__('For')}}
+                    </div>
+                    <div class="btn_for_em__body">
+                        {{__('Employer')}}
+                    </div>
                 </a>
-                
-          
-             
 
-             
+
+
+
+
             </div>
         </div>
         <!-- end collapse -->
     </div>
 </nav>
+
+<div class="modal fade " id="customModal-success" tabindex="-1" role="dialog" aria-labelledby="customModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal_status">
+            <div class="modal-header ">
+                <h5 class="modal-title text-center fs-18px" id="customModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Google_Material_Design_check.svg/1024px-Google_Material_Design_check.svg.png" alt="">
+                 <p class="text-center fs-18px"></p>
+            </div>
+            <div class="modal-footer">
+           
+                <a id="modalLink" class="btn btn-secondary" href="#">Đóng</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade modal_status" id="customModal-fail" tabindex="-1" role="dialog" aria-labelledby="customModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal_status">
+            <div class="modal-header">
+                <h5 class="modal-title" id="customModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
+                 <h3 class="text-center"></h3>
+            </div>
+            <div class="modal-footer">
+           
+                <a id="modalLink" class="btn btn-secondary" href="#">Đóng</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="spinner-wrapper">
+    <div class="d-flex justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;"  role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    </div>
+</div>
+
 @push('styles')
 <style>
     .header-active {
@@ -278,16 +329,19 @@
     .navbar-lang .nav-item .dropdown__lang_menu.show {
         display: block;
     }
-    .dropdown_menu__link  span{
+
+    .dropdown_menu__link span {
         color: var(--bs-primary);
         font-weight: 500;
     }
+
     .user-badge__btn {
         position: relative;
         border-left: 1px solid #e8e8e8;
         padding: 3px 11px;
     }
-   .user_menu{
+
+    .user_menu {
         display: none;
         z-index: 5;
         position: absolute;
@@ -296,31 +350,41 @@
         width: 100%;
         min-width: 240px;
         padding-top: 26px;
-   }
-   .user-badge__btn:hover .user_menu{
-     display: block;
-   }
-   
-   .user_menu ul {
+    }
+
+    .user-badge__btn:hover .user_menu {
+        display: block;
+    }
+
+    .user_menu ul {
         list-style-type: none;
         padding-left: 0;
         margin-bottom: 0;
         background: #fff;
         box-shadow: 0 2px 14px rgba(46, 46, 46, 0.5);
-   }
-   .user_menu ul .nav-link {
+    }
+
+    .user_menu ul .nav-link {
         font-size: 18px;
         font-weight: 500;
         color: var(--sub-text);
         padding: 12px 14px;
 
-   }
-   .user_menu .nav-link:hover ,.user_menu .nav-link:hover i {
+    }
+
+    .user_menu .nav-link:hover,
+    .user_menu .nav-link:hover i {
         color: var(--bs-primary);
         background: #E9E9E9;
-   }
+    }
 
+    #customModal-success .modal-header {
+        justify-content: center !important;
+    }
 
+    #customModal-success .modal-footer {
+        justify-content: center !important;
+    }
 </style>
 @endpush
 

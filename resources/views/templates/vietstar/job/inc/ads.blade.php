@@ -54,7 +54,7 @@ $ads = \App\AdBanner::all();
                 success: function(data) {
                     // Handle the data from the API
                     
-
+                    console.log(data);
                     if(data) {
                         data.forEach(element => {
                             if (element.priorities != '1') {

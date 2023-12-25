@@ -473,9 +473,12 @@ class UserController extends Controller
 		// }
       
       
-    
+        $error = array();
         if($request->ajax()){
-            
+
+            return response()->json([
+                'sucess'=>true,
+                'error'=> $error ], 200);
         }
         else 
         {

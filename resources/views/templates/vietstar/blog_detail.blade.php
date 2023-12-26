@@ -40,33 +40,7 @@
 </div>
 </div>
 
-<div class="col-lg-3">
 
-    <div class="sidebar">
-        <!-- Search -->
-        <div class="widget">
-            <h5 class="widget-title">{{__('Search')}}</h5>
-            <div class="search">
-                <form action="{{route('blog-search')}}" method="GET">
-                    <input type="text" class="form-control" placeholder="{{__('Search')}}" name="search">
-                    <button type="submit" class="btn"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
-        </div>
-        <!-- Categories -->
-        @if(null!==($categories))
-        <div class="widget">
-            <h5 class="widget-title">{{__('Categories')}}</h5>
-            <ul class="categories">
-                @foreach($categories as $category)
-                <li><a href="{{url('/blog/category/').'/'.$category->slug}}">{{$category->heading}}</a>
-                </li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
-    </div>
-</div>
 </div>
 </div>
 </section>
@@ -124,7 +98,7 @@
     
         ?>
         <div class="row align-items-start">
-            <div class="col-lg-12 m-15px-tb">
+            <div class="col-lg-9">
                 <article class="article">
                     <div class="article-title">
                         <h6><a href="#">KỸ NĂNG CÔNG SỞ</a></h6>
@@ -159,6 +133,32 @@
                 </article>
 
             </div>
+            <div class="col-lg-3">
+                <div class="sidebar my-3">
+                            <!-- Search -->
+                            <div class="widget my-2">
+                                <h5 class="widget-title">{{__('Search')}}</h5>
+                                <div class="search py-3">
+                                    <form action="{{route('blog-search')}}" method="GET">
+                                        <input type="text" class="form-control blog-search-input" placeholder="{{__('Search')}}" name="search">
+                                        <button type="submit" class="btn"><i class="fa fa-search"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- Categories -->
+                            @if(null!==($categories))
+                            <div class="widget my-2">
+                                <h5 class="widget-title">{{__('Categories')}}</h5>
+                                <ul class="categories">
+                                    @foreach($categories as $category)
+                                    <li><a href="{{url('/blog/category/').'/'.$category->slug}}">{{$category->heading}}</a>
+                                    </li>
+                                    @endforeach
+                        </ul>
+                    </div>
+                    @endif
+    </div>
+</div>
         </div>
     </div>
 
@@ -736,6 +736,12 @@
             -ms-transform: rotate(45deg);
             -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
+        }
+        .blog-search-input {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
         }
     </style>
     @endpush

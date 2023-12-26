@@ -6552,17 +6552,17 @@ span.iconmoon.icon-eye-icon {
 
 .template-wrapper .col-tools {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 45%;
-    flex: 0 0 45%;
-    max-width: 45%;
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    max-width: 30%;
     width: 100%
 }
 
 .template-wrapper .col-template {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 55%;
-    flex: 0 0 55%;
-    max-width: 55%;
+    -ms-flex: 0 0 70%;
+    flex: 0 0 70%;
+    max-width: 70%;
     width: 100%
 }
 
@@ -6571,7 +6571,8 @@ span.iconmoon.icon-eye-icon {
     padding: 15px;
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    border-radius: 4px
+    border-radius: 4px;
+   
 }
 
 .template-wrapper .head-tools {
@@ -7220,7 +7221,12 @@ span.iconmoon.icon-eye-icon {
 }
 
 .cv-template-1 #references_div_cv .list-references .item .head-sticker .meta-info ul li {
-    margin-bottom: 5px
+    margin-bottom: 5px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+
 }
 
 .cv-template-1 #references_div_cv .list-references .item .head-sticker .meta-info ul li i {

@@ -123,7 +123,7 @@ $(document).on('click', '#btn-register-now', function() {
         dataType: "json",
         beforeSend: function() {},
         success: function(data) {
-            console.log(data);
+            
             if (data.status == 'success') {
                 toastr.success(data.message);
             } else {

@@ -131,7 +131,7 @@
                 .done(function(data){
                     
                     hideSpinner();
-                    console.log(data);
+                  
                     
                     if (data.sucess) {
                     $('#summary-modal').modal("hide");

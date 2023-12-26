@@ -398,7 +398,7 @@
                        console.log(id);
                     },
                     success: function(data) {
-                        console.log(data);
+                      
                         if (data.success == true) {
                             alert("{{__('Refresh job success!')}}");
                             refreshPage();

@@ -251,7 +251,7 @@
         $('#salary_currency').typeahead({
             source: function (query, process) {
                 return $.get("{{ route('typeahead.currency_codes') }}", {query: query}, function (data) {
-                    console.log(data);
+                   
                     data = $.parseJSON(data);
                     return process(data);
                 });

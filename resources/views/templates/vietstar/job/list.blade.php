@@ -368,7 +368,7 @@
                             }
                         });
                     }
-                    console.log('API Response:', data);
+                    
                 },
                 error: function(xhr, status, error) {
                     // Handle errors

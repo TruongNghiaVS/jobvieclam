@@ -141,7 +141,7 @@
             dataType: 'json',
             success: function(data) {
                 // Process the data
-                console.log(data);
+         
     
 
                 html = data.blogs.data.map((item, id) => {

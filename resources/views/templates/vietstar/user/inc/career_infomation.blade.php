@@ -386,7 +386,7 @@
                     // }, 2000);
                     // window.location.href =  "/home";
                     hideSpinner();
-                    console.log(data);
+                  
                     
                     if (data.sucess) {
                     $('#careerinformation').modal("hide");

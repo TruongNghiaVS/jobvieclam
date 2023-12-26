@@ -9,18 +9,18 @@
 <!-- Search start -->
 @include('templates.vietstar.includes.search')
 <!-- Search End -->
+<!-- Home job list start -->
+@include('templates.vietstar.includes.home_job_list')
+<!-- Home job list end -->
 
-<!-- Top Employers start -->
-@include('templates.vietstar.includes.home_top_partners')
-<!-- Top Employers end -->
 
 <!-- advertising_banner -->
 @include('templates.vietstar.includes.banner')
 <!-- advertising_banner -->
 
-<!-- Home job list start -->
-@include('templates.vietstar.includes.home_job_list')
-<!-- Home job list end -->
+<!-- Top Employers start -->
+@include('templates.vietstar.includes.home_top_partners')
+<!-- Top Employers end -->
 
 
 <!-- Việc làm theo lĩnh vực -->

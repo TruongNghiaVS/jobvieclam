@@ -34,9 +34,25 @@ $numberOfColumns = 9;
                                 </div>
 
                                 <p class="card-news__content-detail"><a href="{{route('company.detail', $company->slug)}}" title="{{$company->name}}">{{$company->name}}</a></p>
-                                <div class="card-news__content-salary">
-                                    {{ $featuredJob->salary_from }} - {{ $featuredJob->salary_to }}
-                                    ({{ $featuredJob->salary_currency }})
+                                <div class="rank-salary text-primary" bis_skin_checked="1">
+                                    @php
+                                        $from = round($featuredJob->salary_from/1000000,0);
+                                        $to = round($featuredJob->salary_to/1000000,0)
+                                    @endphp
+                                    @if($featuredJob->salary_type == \App\Job::SALARY_TYPE_FROM)
+                                    <span class="fas fa-dollar-sign"></span> {{__('From: ')}} {{$from}}
+                                    {{__('million')}} ({{$featuredJob->salary_currency}})
+                                    @elseif($featuredJob->salary_type == \App\Job::SALARY_TYPE_TO)
+                                    <span class="fas fa-dollar-sign"></span> {{__('Up To: ')}} {{$to}}
+                                    {{__('million')}} ({{$featuredJob->salary_currency}})
+                                    @elseif($featuredJob->salary_type == \App\Job::SALARY_TYPE_RANGE)
+                                    <span class="fas fa-dollar-sign"></span> {{$from}} - {{$to}}
+                                    {{__('million')}} ({{$featuredJob->salary_currency}})
+                                    @elseif($featuredJob->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
+                                    <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
+                                    @else
+                                    <span class="fas fa-dollar-sign"></span> {{__('Salary Not provided')}}
+                                    @endif
                                 </div>
                                 <div class="card-news__content-footer">
                                     <div class="card-news__content-footer__location">

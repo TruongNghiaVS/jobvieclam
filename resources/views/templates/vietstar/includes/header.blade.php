@@ -136,7 +136,7 @@
             <!-- user-badge -->
             <div class="user-badge">
                 <!-- navbar-lang PC -->
-                <ul class="navbar-nav navbar-lang navbar-lang-pc ml-auto">
+                {{--<ul class="navbar-nav navbar-lang navbar-lang-pc ml-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link navbar-lang__link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="{{ asset('/vietstar/imgs/flags/') }}/{{config('app.available_locales')[App::getLocale()]['flag-icon']}}.png" alt="vietstar">
@@ -150,7 +150,7 @@
 
                         </div>
                     </li>
-                </ul>
+                </ul>--}}
                 <!-- end navbar-lang PC -->
 
                 <div class="user-badge__btn">
@@ -337,7 +337,7 @@
 
     .user-badge__btn {
         position: relative;
-        border-left: 1px solid #e8e8e8;
+        /* border-left: 1px solid #e8e8e8; */
         padding: 3px 11px;
     }
 

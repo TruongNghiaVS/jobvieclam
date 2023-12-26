@@ -31,7 +31,7 @@
     <div class="mt-3" id="collapseAdvanceSearch">
 
         <div class="row">
-            <div class="col-xl-6 col-md-7 col-lg-7 col-xxl-6 shadow p-4 search-form-box">
+            <div class="col-lg-5  shadow p-4 search-form-box">
 
                 <div class="row">
                     <div class="col-lg-12">

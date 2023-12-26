@@ -97,6 +97,7 @@
 
   .search-form-box {
     box-shadow: none !important;
+    width: 100%;
   }
 
   .recruitment-news {
@@ -583,13 +584,13 @@
   
 
   .header-bar {
-    height: 500px;
+    height: 400px;
   }
 
   .header-bar .header-bar-content-search {
-    height: 500px;
+    height: 400px;
     position: absolute;
-    top: 550px;
+    top: 400px;
     left: 0;
     width: 100%;
     box-shadow: unset !important;
@@ -603,8 +604,8 @@
     max-height: 220px;
   }
 
-  .partner {
-    margin-top: 600px;
+  .recruitment-news {
+    margin-top: 480px;
   }
 
   .search-form-box {
@@ -889,6 +890,7 @@
     display: none;
   }
   
+  
 
 
 
@@ -898,7 +900,9 @@
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 
 @media only screen and (min-width: 1240px) and (max-width: 1399px)  {
-  
+  .header-bar {
+    height: 400px
+  }
   .container {
     max-width: 1400px;
   }

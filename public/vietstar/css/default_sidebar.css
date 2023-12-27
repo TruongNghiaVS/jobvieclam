@@ -214,7 +214,7 @@
     background: #981b1e;
 }
 
-#default-sidebar ul li a:hover span {
+#default-sidebar ul li a:hover i {
     color: white;
 }
 
@@ -229,7 +229,7 @@
 
 #default-sidebar ul li a i {
     font-size: 20px;
-    color: white;
+   
 }
 
 
@@ -245,7 +245,7 @@
     right: 20px;
 }
 
-#default-sidebar .sidebar-item.active>a {
+#default-sidebar .sidebar-item.active>a ,#default-sidebar .sidebar-item.active i{
     background-color: #981b1e;
     color: white;
 }

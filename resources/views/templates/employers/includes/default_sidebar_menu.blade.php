@@ -147,7 +147,7 @@ Dashboard
                 <li class="sidebar-item">
                     <a href="{{ route('site_user.logout') }}" class="list-group-item list-group-item-action">
                         <div class="d-flex w-100">
-                            <span class="icon-logout-icon fs-24px me-2"></span>
+                            <i class="fa-solid fa-arrow-right-from-bracket fs-24px me-2"></i>
                             <span class="side-bar-content"> {{__('Logout')}}</span>
                         </div>
                     </a>

@@ -776,10 +776,10 @@
 
 
   #mobile-sidebar.active .sidebar-header {
-    max-height: 85%;
+    max-height: 80%;
     overflow-x: hidden;
     overflow-y: auto;
-    height: 85%;
+    height: 80%;
   }
 
 

@@ -317,10 +317,10 @@ $company = $job->getCompany();
                                 </div>
                                 <div class="col-xl-5 col-lg-12">
                                     <div class="banner__due-day mb-3">
-                                        <i class="far fa-phone"></i> {{ $company->phone }}
+                                        <i class="fa-solid fa-phone"></i> {{ $company->phone }}
                                     </div>
                                     <div class="banner__due-day mb-3">
-                                        <i class="far fa-envelope"></i> {{ $company->email }}
+                                        <i class="fa-regular fa-envelope"></i> {{ $company->email }}
                                     </div>
                                     <div class="banner__due-day mb-3">
                                         <a href="{{ $company->website}}" target="_blank">
@@ -329,11 +329,11 @@ $company = $job->getCompany();
                                     </div>
                                     <div class="fs-14px mb-3">
                                         <div class="socials">
-                                            <a href="#" class="social"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
-                                            <a href="#" class="social"><i class="fab fa-twitter fa-lg me-3"></i></a>
-                                            <a href="#" class="social"><i class="fab fa-instagram fa-lg me-3"></i></a>
-                                            <a href="#" class="social"><i class="fab fa-linkedin-in fa-lg me-3"></i></a>
-                                            <a href="#" class="social"><i class="fab fa-youtube fa-lg me-3"></i></a>
+                                            <a href="#" class="social"><i class="fa-brands fa-facebook-f fa-lg me-3"></i></a>
+                                            <a href="#" class="social"><i class="fa-brands fa-twitter fa-lg me-3"></i></a>
+                                            <a href="#" class="social"><i class="fa-brands fa-instagram fa-lg me-3"></i></a>
+                                            <a href="#" class="social"><i class="fa-brands fa-linkedin-in fa-lg me-3"></i></a>
+                                            <a href="#" class="social"><i class="fa-brands fa-youtube fa-lg me-3"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -353,7 +353,7 @@ $company = $job->getCompany();
                                     {{__('Favourite company')}} </a>
                                 @else
                                 <a href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"
-                                    class="btn btn-outline-primary"><i class="far fa-heart"></i>
+                                    class="btn btn-outline-primary"><i class="fa-regular fa-heart"></i>
                                     {{__('Follow company')}}</a>
                                 @endif
                             </div>

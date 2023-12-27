@@ -36,7 +36,7 @@
                                 <div class="col-12 col-xs-6 col-md-4 col-lg-3">
                                     <a class="job-industry" href="{{route('job.list').'?fe_industry_id='.$k}}" value="{{$k}}">
                                         <div class="icon">
-                                            <span class="iconmoon icon-office-building-icon"></span>
+                                            <i class="fa-regular fa-building"></i>
                                         </div>
                                         <h3 class="title-job">{{$industry}}</h3>
                                         <div class="job-copunt">({{number_format(random_int(1000,5660),0)}} việc làm)</div>

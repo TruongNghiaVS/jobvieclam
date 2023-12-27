@@ -137,13 +137,13 @@
                             </div>
 
                                    @if(Auth::check() && Auth::user()->isFavouriteJob($jobitem->slug))
-                                    <a class="save-job active" href="{{route('remove.from.favourite', $jobitem->slug)}}"><i class="far fa-heart"></i>
+                                    <a class="save-job active" href="{{route('remove.from.favourite', $jobitem->slug)}}"><i class="fa-regular fa-heart"></i>
                                     </a>
                                     @elseif(Auth::check() && !Auth::user()->isFavouriteJob($jobitem->slug))
-                                    <a class="save-job" href="{{route('add.to.favourite', $jobitem->slug)}}"><i class="far fa-heart"></i>
+                                    <a class="save-job" href="{{route('add.to.favourite', $jobitem->slug)}}"><i class="fa-regular fa-heart"></i>
                                     </a>
                                     @else
-                                    <a class="save-job" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="far fa-heart"></i>
+                                    <a class="save-job" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="fa-regular fa-heart"></i>
                                     </a>
                                     @endif
                             </div>
@@ -539,7 +539,7 @@
 
                                                     
                                                     
-                                                        <a class="save-job" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="far fa-heart"></i>
+                                                        <a class="save-job" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="fa-regular fa-heart"></i>
                                                         </a>
                                                 
 

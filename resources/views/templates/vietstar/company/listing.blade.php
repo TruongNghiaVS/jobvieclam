@@ -175,7 +175,7 @@
                         @if(Auth::check() && Auth::user()->isFavouriteCompany($company->slug))
                         <a class="btn btn-outline-primary" href="{{ route('remove.from.favourite.company', ['company_slug' => $company->slug]) }}"><i class="fas fa-heart iconoutline"></i> Đã theo dõi</a>
                         @else
-                        <a class="btn btn-outline-primary" href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"><i class="far fa-heart"></i> Theo dõi</a>
+                        <a class="btn btn-outline-primary" href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"><i class="fa-regular fa-heart"></i> Theo dõi</a>
                         @endif
                     </div>
 

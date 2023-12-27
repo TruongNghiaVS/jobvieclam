@@ -43,7 +43,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="box-meta">
-                    <i class="far fa-envelope"></i> Email: {{$company->email}}   
+                    <i class="fa-regular fa-envelope"></i> Email: {{$company->email}}   
                 </div>
             </div>
             <div class="col-md-6">
@@ -57,7 +57,7 @@
     @if(Auth::check() && Auth::user()->isFavouriteCompany($company->slug))
     <a class="save-company-favorite" href="{{ route('remove.from.favourite.company', ['company_slug' => $company->slug]) }}"><i class="fas fa-heart iconoutline"></i></a>
     @else
-    <a class="save-company-favorite" href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"><i class="far fa-heart"></i></a>
+    <a class="save-company-favorite" href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"><i class="fa-regular fa-heart"></i></a>
     @endif
 
 </div>
@@ -174,7 +174,7 @@
                         @if(Auth::check() && Auth::user()->isFavouriteCompany($company->slug))
                         <a class="btn btn-outline-primary" href="{{ route('remove.from.favourite.company', ['company_slug' => $company->slug]) }}"><i class="fas fa-heart iconoutline"></i> Đã theo dõi</a>
                         @else
-                        <a class="btn btn-outline-primary" href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"><i class="far fa-heart"></i> Theo dõi</a>
+                        <a class="btn btn-outline-primary" href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"><i class="fa-regular fa-heart"></i> Theo dõi</a>
                         @endif
                     </div>
 
@@ -259,7 +259,7 @@
                         @if(Auth::check() && Auth::user()->isFavouriteCompany($company->slug))
                         <a class="btn btn-outline-primary" href="{{ route('remove.from.favourite.company', ['company_slug' => $company->slug]) }}"><i class="fas fa-heart iconoutline"></i> Đã theo dõi</a>
                         @else
-                        <a class="btn btn-outline-primary" href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"><i class="far fa-heart"></i> Theo dõi</a>
+                        <a class="btn btn-outline-primary" href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"><i class="fa-regular fa-heart"></i> Theo dõi</a>
                         @endif
                     </div>
 

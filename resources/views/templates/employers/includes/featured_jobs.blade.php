@@ -25,7 +25,7 @@ $numberOfColumns = 9;
                                 </a>
                                 @else
                                 <a class="save-job box-meta" href="{{route('add.to.favourite', $featuredJob->slug)}}">
-                                    <button class="btn-pin-job" type="button"><span class="iconmoon icon-flag "></span></button>
+                                    <button class="btn-pin-job" type="button"><i class="fa-regular fa-flag"></i></button>
                                 </a>
                                 @endif
                                 <div class="content-title-box">
@@ -77,7 +77,7 @@ $numberOfColumns = 9;
                                 </a>
                                 @else
                                 <a class="save-job box-meta" href="{{route('add.to.favourite', $featuredJob->slug)}}">
-                                    <button class="btn-pin-job" type="button"><span class="iconmoon icon-flag "></span></button>
+                                    <button class="btn-pin-job" type="button"><i class="fa-regular fa-flag"></i></button>
                                 </a>
                                 @endif
                                 <div class="content-title-box">

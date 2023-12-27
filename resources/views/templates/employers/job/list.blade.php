@@ -70,13 +70,13 @@
                                                     <h3 class="job-title-name"><a href="{{route('job.detail', [$job->slug])}}" title="{{$job->title}}">{{$job->title}}</a></h3>
                                                 </div>
                                                 @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
-                                                <a class="save-job active" href="{{route('remove.from.favourite', $job->slug)}}"><i class="far fa-heart"></i>
+                                                <a class="save-job active" href="{{route('remove.from.favourite', $job->slug)}}"><i class="fa-regular fa-heart"></i>
                                                 </a>
                                                 @elseif(Auth::check() && !Auth::user()->isFavouriteJob($job->slug))
-                                                <a class="save-job" href="{{route('add.to.favourite', $job->slug)}}"><i class="far fa-heart"></i>
+                                                <a class="save-job" href="{{route('add.to.favourite', $job->slug)}}"><i class="fa-regular fa-heart"></i>
                                                 </a>
                                                 @else
-                                                <a class="save-job" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="far fa-heart"></i>
+                                                <a class="save-job" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="fa-regular fa-heart"></i>
                                                 </a>
                                                 @endif
                                                 </a>
@@ -92,18 +92,18 @@
                                                     @php($from = round($job->salary_from/1000000,0))
                                                     @php($to = round($job->salary_to/1000000,0))
                                                     @if($job->salary_type == \App\Job::SALARY_TYPE_FROM)
-                                                    <span class="fas fa-dollar-sign"></span> {{__('From: ')}} {{$from}}
+                                                    <i class="fa-solid fa-dollar-sign"></i> {{__('From: ')}} {{$from}}
                                                     {{__('million')}} ({{$job->salary_currency}})
                                                     @elseif($job->salary_type == \App\Job::SALARY_TYPE_TO)
-                                                    <span class="fas fa-dollar-sign"></span> {{__('Up To: ')}} {{$to}}
+                                                    <i class="fa-solid fa-dollar-sign"></i> {{__('Up To: ')}} {{$to}}
                                                     {{__('million')}} ({{$job->salary_currency}})
                                                     @elseif($job->salary_type == \App\Job::SALARY_TYPE_RANGE)
-                                                    <span class="fas fa-dollar-sign"></span> {{$from}} - {{$to}}
+                                                    <i class="fa-solid fa-dollar-sign"></i> {{$from}} - {{$to}}
                                                     {{__('million')}} ({{$job->salary_currency}})
                                                     @elseif($job->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
                                                     <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
                                                     @else
-                                                    <span class="fas fa-dollar-sign"></span> {{__('Salary Not provided')}}
+                                                    <i class="fa-solid fa-dollar-sign"></i> {{__('Salary Not provided')}}
                                                     @endif
                                                 </div>
                                                 <div class="navbar__link-separator" bis_skin_checked="1"></div>

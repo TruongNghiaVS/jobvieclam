@@ -101,7 +101,7 @@
                             <a href="{{ route('remove.from.favourite.company', ['company_slug' => $company->slug])}}" class="btn btn-outline-primary"><i class="fas fa-heart iconoutline"></i>
                                 {{__('Favourite company')}} </a>
                             @else
-                            <a href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}" class="btn btn-outline-primary"><i class="far fa-heart"></i>
+                            <a href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}" class="btn btn-outline-primary"><i class="fa-regular fa-heart"></i>
                                 {{__('Follow company')}}</a>
                             @endif
                         </div>
@@ -136,7 +136,7 @@
                             <div class="col-md-6">
                                 <div class="item-size">
                                     <div class="size-icon">
-                                        <span class="iconmoon icon-recruiter-total-employee"></span>
+                                        <i class="fa-solid fa-users-rays"></i>
                                     </div>
                                     <div class="size-content">
                                         <p>{{__('Total Employees')}}</p>
@@ -158,7 +158,7 @@
                             <div class="col-md-6">
                                 <div class="item-size">
                                     <div class="size-icon">
-                                        <span class="iconmoon icon-recruiter-suitcase"></span>
+                                        <i class="fa-solid fa-suitcase"></i>
                                     </div>
                                     <div class="size-content">
                                         <p>{{__('Current jobs')}}</p>
@@ -203,13 +203,13 @@
                                             </div>
 
                                             @if(Auth::check() && Auth::user()->isFavouriteJob($cjob->slug))
-                                                <a class="save-job active" href="{{route('remove.from.favourite', $cjob->slug)}}"><i class="far fa-heart"></i>
+                                                <a class="save-job active" href="{{route('remove.from.favourite', $cjob->slug)}}"><i class="fa-regular fa-heart"></i>
                                                 </a>
                                                 @elseif(Auth::check() && !Auth::user()->isFavouriteJob($cjob->slug))
-                                                <a class="save-job" href="{{route('add.to.favourite', $cjob->slug)}}"><i class="far fa-heart"></i>
+                                                <a class="save-job" href="{{route('add.to.favourite', $cjob->slug)}}"><i class="fa-regular fa-heart"></i>
                                                 </a>
                                                 @else
-                                                <a class="save-job" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="far fa-heart"></i>
+                                                <a class="save-job" href="#" data-toggle="modal" data-target="#user_login_Modal"><i class="fa-regular fa-heart"></i>
                                                 </a>
                                             @endif
                                         </div>
@@ -240,18 +240,18 @@
                                                 }
                                             ?>
                                             @if($cjob->salary_type == \App\Job::SALARY_TYPE_FROM)
-                                            <span class="fas fa-dollar-sign"></span> {{__('From: ')}} {{$from}}
+                                            <i class="fa-solid fa-dollar-sign"></i> {{__('From: ')}} {{$from}}
                                             {{__('million')}} ({{$cjob->salary_currency}})
                                             @elseif($cjob->salary_type == \App\Job::SALARY_TYPE_TO)
-                                            <span class="fas fa-dollar-sign"></span> {{__('Up To: ')}} {{$to}}
+                                            <i class="fa-solid fa-dollar-sign"></i> {{__('Up To: ')}} {{$to}}
                                             {{__('million')}} ({{$cjob->salary_currency}})
                                             @elseif($cjob->salary_type == \App\Job::SALARY_TYPE_RANGE)
-                                            <span class="fas fa-dollar-sign"></span> {{$from}} - {{$to}}
+                                            <i class="fa-solid fa-dollar-sign"></i> {{$from}} - {{$to}}
                                             {{__('million')}} ({{$cjob->salary_currency}})
                                             @elseif($cjob->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
                                             <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
                                             @else
-                                            <span class="fas fa-dollar-sign"></span> {{__('Salary Not provided')}}
+                                            <i class="fa-solid fa-dollar-sign"></i> {{__('Salary Not provided')}}
                                             @endif
                                             </div>
 

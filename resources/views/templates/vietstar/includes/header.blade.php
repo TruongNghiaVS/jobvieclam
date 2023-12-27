@@ -157,23 +157,23 @@
 
                     <a class="dropdown_menu__link" href="{{route('home')}}">
                         <span>
-                            <i class="bi bi-person-circle fs-18px"></i>
+                            <i class="fa-solid fa-user m-2"></i>
                             {{Auth::user()->name}}
                         </span>
                     </a>
                     <div class="user_menu ">
                         <ul class="">
-                            <li class="nav-item"><a href="{{route('home')}}" class="nav-link"><i class="jobicon fa fa-tachometer mx-1" aria-hidden="true"></i> <!-- {{__('Dashboard')}} -->
+                            <li class="nav-item"><a href="{{route('home')}}" class="nav-link"><i class="fa-solid fa-gauge mx-1"></i> <!-- {{__('Dashboard')}} -->
                                     Dashboard
                                 </a>
                             </li>
-                            <li class="nav-item"><a href="{{ route('my.profile') }}" class="nav-link"><i class="jobicon fa fa-user mx-1" aria-hidden="true"></i> {{__('My Profile')}}</a>
+                            <li class="nav-item"><a href="{{ route('my.profile') }}" class="nav-link"><i class="fa-solid fa-user mx-1"></i> {{__('My Profile')}}</a>
                             </li>
-                            <li class="nav-item"><a href="#" class="nav-link" data-toggle="modal" data-target="#modal_user_info"><i class="jobicon fa fa-eye mx-1" aria-hidden="true"></i>
+                            <li class="nav-item"><a href="#" class="nav-link" data-toggle="modal" data-target="#modal_user_info"><i class="fa-solid fa-eye  mx-1"></i>
                                     {{__('View Public Profile')}}</a> </li>
-                            <li><a href="{{ route('my.job.applications') }}" class="nav-link"><i class="jobicon fa fa-desktop mx-1" aria-hidden="true"></i>
+                            <li><a href="{{ route('my.job.applications') }}" class="nav-link"><i class="fa-solid fa-table-list mx-1"></i>
                                     {{__('My Job Applications')}}</a> </li>
-                            <li class="nav-item"><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form-header').submit();" class="nav-link"><i class="jobicon fa fa-sign-out mx-1" aria-hidden="true"></i>
+                            <li class="nav-item"><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form-header').submit();" class="nav-link"><i class="fa-solid fa-arrow-right-from-bracket mx-1"></i>
                                     {{__('Logout')}}</a> </li>
                             <form id="logout-form-header" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}

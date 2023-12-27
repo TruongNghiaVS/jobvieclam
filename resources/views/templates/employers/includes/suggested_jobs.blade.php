@@ -28,7 +28,7 @@
                             </a>
                           @else
                             <a class="save-job box-meta" href="{{route('add.to.favourite', $suggestedJob->slug)}}">
-                              <button class="btn-pin-job" type="button"><span class="iconmoon icon-flag "></span></button>
+                              <button class="btn-pin-job" type="button"><i class="fa-regular fa-flag"></i></button>
                             </a>
                           @endif
                           <h6 class="card-news__content-title"><a href="{{route('job.detail', [$suggestedJob->slug])}}" title="{{$suggestedJob->title}}">{{$suggestedJob->title}}</a></h6>

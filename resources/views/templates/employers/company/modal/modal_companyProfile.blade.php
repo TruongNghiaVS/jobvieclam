@@ -53,7 +53,7 @@ $company = Auth::guard('company')->user();
                                         {{__('Favourite company')}} </a>
                                     @else
                                     <a href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"
-                                        class="btn btn-outline-primary"><i class="far fa-heart"></i>
+                                        class="btn btn-outline-primary"><i class="fa-regular fa-heart"></i>
                                         {{__('Follow company')}}</a>
                                     @endif
 
@@ -127,7 +127,7 @@ $company = Auth::guard('company')->user();
                             <div class="col-md-6">
                                 <div class="item-size">
                                     <div class="size-icon">
-                                        <span class="iconmoon icon-recruiter-total-employee"></span>
+                                        <i class="fa-solid fa-users-rays"></i>
                                     </div>
                                     <div class="size-content">
                                         <p>{{__('Total Employees')}}</p>
@@ -149,7 +149,7 @@ $company = Auth::guard('company')->user();
                             <div class="col-md-6">
                                 <div class="item-size">
                                     <div class="size-icon">
-                                        <span class="iconmoon icon-recruiter-suitcase"></span>
+                                        <i class="fa-solid fa-suitcase"></i>
                                     </div>
                                     <div class="size-content">
                                         <p>{{__('Current jobs')}}</p>

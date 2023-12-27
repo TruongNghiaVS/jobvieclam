@@ -8,7 +8,7 @@
             <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
-                        <span class="iconmoon icon-recruiter-suitcase"></span>
+                        <i class="fa-solid fa-suitcase"></i>
                     </div>
                     <div class="content">
                         <h3 class="num">30.000+</h3>
@@ -21,7 +21,7 @@
             <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
-                        <span class="iconmoon icon-office-building-icon"></span>
+                        <i class="fa-regular fa-building"></i>
                     </div>
                     <div class="content">
                         <h3 class="num">150.000+</h3>
@@ -34,7 +34,7 @@
             <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
-                        <span class="iconmoon icon-level-icon"></span>
+                        <i class="fa-regular fa-star"></i>
                     </div>
                     <div class="content">
                         <h3 class="num">350.000+</h3>
@@ -47,7 +47,7 @@
             <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
-                        <span class="iconmoon icon-recruiter-profile"></span>
+                        <i class="fa-regular fa-address-card"></i>
                     </div>
                     <div class="content">
                         <h3 class="num">200.000+</h3>
@@ -60,7 +60,7 @@
             <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
-                        <span class="iconmoon icon-recruiter-search"></span>
+                        <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                     <div class="content">
                         <h3 class="num">3.000.000+</h3>
@@ -73,7 +73,7 @@
                 <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                     <div class="statistic">
                         <div class="icon">
-                            <span class="iconmoon icon-recruiter-total-employee"></span>
+                            <i class="fa-solid fa-users-rays"></i>
                         </div>
                         <div class="content">
                             <h3 class="num">5.000.000+</h3>
@@ -103,7 +103,7 @@
             <!-- <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
-                        <span class="iconmoon icon-recruiter-suitcase"></span>
+                        <i class="fa-solid fa-suitcase"></i>
                     </div>
                     <div class="content">
                         <h3 class="num">30.000+</h3>
@@ -116,7 +116,7 @@
             <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
-                        <span class="iconmoon icon-office-building-icon"></span>
+                        <i class="fa-regular fa-building"></i>
                     </div>
                     <div class="content">
                         <h3 class="num">150.000+</h3>
@@ -129,7 +129,7 @@
             <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
-                        <span class="iconmoon icon-level-icon"></span>
+                        <i class="fa-regular fa-star"></i>
                     </div>
                     <div class="content">
                         <h3 class="num">350.000+</h3>
@@ -142,7 +142,7 @@
             <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
-                        <span class="iconmoon icon-recruiter-profile"></span>
+                        <i class="fa-regular fa-address-card"></i>
                     </div>
                     <div class="content">
                         <h3 class="num">200.000+</h3>
@@ -155,7 +155,7 @@
             <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
-                        <span class="iconmoon icon-recruiter-search"></span>
+                        <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                     <div class="content">
                         <h3 class="num">3.000.000+</h3>
@@ -168,7 +168,7 @@
             <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="statistic">
                     <div class="icon">
-                        <span class="iconmoon icon-recruiter-total-employee"></span>
+                        <i class="fa-solid fa-users-rays"></i>
                     </div>
                     <div class="content">
                         <h3 class="num">5.000.000+</h3>

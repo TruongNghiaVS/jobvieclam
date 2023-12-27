@@ -1578,6 +1578,12 @@ button:focus {
     position: relative;
     margin-bottom: 10px
 }
+.header-bar #collapseAdvanceSearch .form-group i {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+}
+
 
 .nav-custom .nav-link {
     border-radius: 25rem
@@ -2564,6 +2570,7 @@ footer .inner-copyright .copyright {
 .jobs-side-list .item-job .jobinfo .info .job-title {
     display: flex;
     align-items: center;
+    width: 90%;
 }
 
 .jobs-side-list .item-job .jobinfo .info .job-title span {
@@ -3794,7 +3801,7 @@ footer .inner-copyright .copyright {
     font-size: 24px
 }
 
-.section-employment-statistics .statistic .icon .iconmoon::before {
+.section-employment-statistics .statistic .icon i,.section-employment-statistics .statistic .icon span {
     color: var(--bs-primary)
 }
 

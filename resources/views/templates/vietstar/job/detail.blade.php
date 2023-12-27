@@ -318,12 +318,12 @@ $company = $job->getCompany();
                                 <div class="col-xl-5 col-lg-12">
                                     @if($company->phone)
                                     <div class="banner__due-day mb-3">
-                                        <i class="far fa-phone"></i> {{ $company->phone }}
+                                        <i class="fa-solid fa-phone"></i> {{ $company->phone }}
                                     </div>
                                     @endif
                                     @if($company->email)
                                     <div class="banner__due-day mb-3">
-                                        <i class="far fa-envelope"></i> {{ $company->email }}
+                                        <i class="fa-regular fa-envelope"></i> {{ $company->email }}
                                     </div>
                                     @endif
                                     
@@ -336,11 +336,11 @@ $company = $job->getCompany();
                                     @endif
                                     <div class="fs-14px mb-3">
                                         <div class="socials">
-                                            <a href="#" class="social"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
-                                            <a href="#" class="social"><i class="fab fa-twitter fa-lg me-3"></i></a>
-                                            <a href="#" class="social"><i class="fab fa-instagram fa-lg me-3"></i></a>
-                                            <a href="#" class="social"><i class="fab fa-linkedin-in fa-lg me-3"></i></a>
-                                            <a href="#" class="social"><i class="fab fa-youtube fa-lg me-3"></i></a>
+                                            <a href="#" class="social"><i class="fa-brands fa-facebook-f fa-lg me-3"></i></a>
+                                            <a href="#" class="social"><i class="fa-brands fa-twitter fa-lg me-3"></i></a>
+                                            <a href="#" class="social"><i class="fa-brands fa-instagram fa-lg me-3"></i></a>
+                                            <a href="#" class="social"><i class="fa-brands fa-linkedin-in fa-lg me-3"></i></a>
+                                            <a href="#" class="social"><i class="fa-brands fa-youtube fa-lg me-3"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -360,7 +360,7 @@ $company = $job->getCompany();
                                     {{__('Favourite company')}} </a>
                                 @else
                                 <a href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"
-                                    class="btn btn-outline-primary"><i class="far fa-heart"></i>
+                                    class="btn btn-outline-primary"><i class="fa-regular fa-heart"></i>
                                     {{__('Follow company')}}</a>
                                 @endif
                             </div>
@@ -495,18 +495,18 @@ $company = $job->getCompany();
                                             <span class="fas fa-money-bill"></span> 
                                                    
                                                     @if($jobitem->salary_type == \App\Job::SALARY_TYPE_FROM)
-                                                    <span class="fas fa-dollar-sign"></span> {{__('From: ')}} {{$from}}
+                                                    <i class="fa-solid fa-dollar-sign"></i> {{__('From: ')}} {{$from}}
                                                     {{__('million')}} ({{$jobitem->salary_currency}})
                                                     @elseif($jobitem->salary_type == \App\Job::SALARY_TYPE_TO)
-                                                    <span class="fas fa-dollar-sign"></span> {{__('Up To: ')}} {{$to}}
+                                                    <i class="fa-solid fa-dollar-sign"></i> {{__('Up To: ')}} {{$to}}
                                                     {{__('million')}} ({{$jobitem->salary_currency}})
                                                     @elseif($jobitem->salary_type == \App\Job::SALARY_TYPE_RANGE)
-                                                    <span class="fas fa-dollar-sign"></span> {{$from}} - {{$to}}
+                                                    <i class="fa-solid fa-dollar-sign"></i> {{$from}} - {{$to}}
                                                     {{__('million')}} ({{$jobitem->salary_currency}})
                                                     @elseif($jobitem->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
                                                     <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
                                                     @else
-                                                    <span class="fas fa-dollar-sign"></span> {{__('Salary Not provided')}}
+                                                    <i class="fa-solid fa-dollar-sign"></i> {{__('Salary Not provided')}}
                                                     @endif
 
                                         </div>
@@ -794,18 +794,18 @@ $company = $job->getCompany();
                                                     </div>
                                                     <div class="card-news__content-footer__salary" bis_skin_checked="1">
                                                         @if($relatedJob->salary_type == \App\Job::SALARY_TYPE_FROM)
-                                                        <span class="fas fa-dollar-sign"></span> {{__('From: ')}} {{$relatedJob_from}}
+                                                        <i class="fa-solid fa-dollar-sign"></i> {{__('From: ')}} {{$relatedJob_from}}
                                                         {{__('million')}} ({{$relatedJob->salary_currency}})
                                                         @elseif($relatedJob->salary_type == \App\Job::SALARY_TYPE_TO)
-                                                        <span class="fas fa-dollar-sign"></span> {{__('Up To: ')}} {{$relatedJob_to}}
+                                                        <i class="fa-solid fa-dollar-sign"></i> {{__('Up To: ')}} {{$relatedJob_to}}
                                                         {{__('million')}} ({{$relatedJob->salary_currency}})
                                                         @elseif($relatedJob->salary_type == \App\Job::SALARY_TYPE_RANGE)
-                                                        <span class="fas fa-dollar-sign"></span> {{$relatedJob_from}} - {{$relatedJob_to}}
+                                                        <i class="fa-solid fa-dollar-sign"></i> {{$relatedJob_from}} - {{$relatedJob_to}}
                                                         {{__('million')}} ({{$relatedJob->salary_currency}})
                                                         @elseif($relatedJob->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
                                                         <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
                                                         @else
-                                                        <span class="fas fa-dollar-sign"></span> {{__('Salary Not provided')}}
+                                                        <i class="fa-solid fa-dollar-sign"></i> {{__('Salary Not provided')}}
                                                         @endif
                                                     </div>
                                                 </div>
@@ -852,18 +852,18 @@ $company = $job->getCompany();
                                                     </div>
                                                     <div class="card-news__content-footer__salary" bis_skin_checked="1">
                                                         @if($relatedJob->salary_type == \App\Job::SALARY_TYPE_FROM)
-                                                        <span class="fas fa-dollar-sign"></span> {{__('From: ')}} {{$relatedJob_from}}
+                                                        <i class="fa-solid fa-dollar-sign"></i> {{__('From: ')}} {{$relatedJob_from}}
                                                         {{__('million')}} ({{$relatedJob->salary_currency}})
                                                         @elseif($relatedJob->salary_type == \App\Job::SALARY_TYPE_TO)
-                                                        <span class="fas fa-dollar-sign"></span> {{__('Up To: ')}} {{$relatedJob_to}}
+                                                        <i class="fa-solid fa-dollar-sign"></i> {{__('Up To: ')}} {{$relatedJob_to}}
                                                         {{__('million')}} ({{$relatedJob->salary_currency}})
                                                         @elseif($relatedJob->salary_type == \App\Job::SALARY_TYPE_RANGE)
-                                                        <span class="fas fa-dollar-sign"></span> {{$relatedJob_from}} - {{$relatedJob_to}}
+                                                        <i class="fa-solid fa-dollar-sign"></i> {{$relatedJob_from}} - {{$relatedJob_to}}
                                                         {{__('million')}} ({{$relatedJob->salary_currency}})
                                                         @elseif($relatedJob->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
                                                         <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
                                                         @else
-                                                        <span class="fas fa-dollar-sign"></span> {{__('Salary Not provided')}}
+                                                        <i class="fa-solid fa-dollar-sign"></i> {{__('Salary Not provided')}}
                                                         @endif
                                                     </div>
                                                 </div>

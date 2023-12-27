@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <div class="icon-search__inner"></div>
+                            <i class="fa-solid fa-magnifying-glass"></i>
                             <input type="text" class="form-control search-input shadow-sm" style="width: 100%" id="search" name="search" placeholder="{{__('Job search')}}">
                             <div id="suggesstion-box"></div>
                         </div>
@@ -84,8 +84,8 @@
                         <div class="advance-search row">
                             <div class="advance-search__reset col-lg-6">Reset</div>
                             <div class="col-lg-6 advance-search__box">
-                                <div class="advance-search__open" onClick="opensearchbox()"><i class="fas fa-search search-icon"></i><span>Tìm kiếm nâng cao</span></div>
-                                <div class="advance-search__close" onClick="closesearchbox()"><span>Thu nhỏ</span></div>
+                                <div class="advance-search__open" onClick="opensearchbox()"><i class="fa-solid fa-magnifying-glass"></i><span>Tìm kiếm nâng cao</span></div>
+                                <div class="advance-search__close" onClick="closesearchbox()"><i class="fa-solid fa-angle-up"></i> Thu nhỏ</div>
                             </div>
                         </div>
                         <div class="action-search-form">

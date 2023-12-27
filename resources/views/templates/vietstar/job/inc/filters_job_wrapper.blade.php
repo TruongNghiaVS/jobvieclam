@@ -150,7 +150,7 @@ dd($salaryFroms)
             </div>
             <div class="mobile-filter toollips">
                 <button type="button" class="btn btn-filter" id="atcFilters" title="Lọc">
-                    <i class="far fa-filter"></i>  {{__('Filter')}}
+                    <i class="fa-solid fa-filter"></i>  {{__('Filter')}}
                 </button>
             </div>
         </div>
@@ -228,7 +228,7 @@ dd($salaryFroms)
                 </div>
                 <div class="close-filter-box">
                     <div class="close-input-filter">
-                        <i class="fa fa-times" aria-hidden="true"></i>
+                        <i class="fa-solid fa-x"></i>
                     </div>
                 </div>
 
@@ -255,7 +255,7 @@ dd($salaryFroms)
             </div>
             <div class="mobile-filter toollips">
                 <button type="button" class="btn btn-filter" id="#atcFilters-mobile" title="Lọc" onclick="openFilterJob_mobile()">
-                    <i class="far fa-filter"></i> {{__('Filter')}}
+                    <i class="fa-solid fa-filter"></i> {{__('Filter')}}
                 </button>
                 <button class="btn btn-primary" type="submit">
                     <i class="bi bi-search text-white"></i>
@@ -271,7 +271,7 @@ dd($salaryFroms)
     <div class="container">
         <div class="close-filter-box-mobile" onclick="closeFilterJob_mobile()">
             <div class="close-input-filter-mobile">
-                <i class="fa fa-times" aria-hidden="true"></i>
+                <i class="fa-solid fa-x"></i>
             </div>
         </div>
         <div class="filters-wrapper">

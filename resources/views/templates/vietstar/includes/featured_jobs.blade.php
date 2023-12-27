@@ -25,7 +25,7 @@ $numberOfColumns = 9;
                                 </a>
                                 @else
                                 <a class="save-job box-meta" href="{{route('add.to.favourite', $featuredJob->slug)}}">
-                                    <button class="btn-pin-job" type="button"><span class="iconmoon icon-flag "></span></button>
+                                    <button class="btn-pin-job" type="button"><i class="fa-regular fa-flag"></i></button>
                                 </a>
                                 @endif
                                 <div class="content-title-box">
@@ -40,18 +40,18 @@ $numberOfColumns = 9;
                                         $to = round($featuredJob->salary_to/1000000,0)
                                     @endphp
                                     @if($featuredJob->salary_type == \App\Job::SALARY_TYPE_FROM)
-                                    <span class="fas fa-dollar-sign"></span> {{__('From: ')}} {{$from}}
+                                    <i class="fa-solid fa-dollar-sign"></i> {{__('From: ')}} {{$from}}
                                     {{__('million')}} ({{$featuredJob->salary_currency}})
                                     @elseif($featuredJob->salary_type == \App\Job::SALARY_TYPE_TO)
-                                    <span class="fas fa-dollar-sign"></span> {{__('Up To: ')}} {{$to}}
+                                    <i class="fa-solid fa-dollar-sign"></i> {{__('Up To: ')}} {{$to}}
                                     {{__('million')}} ({{$featuredJob->salary_currency}})
                                     @elseif($featuredJob->salary_type == \App\Job::SALARY_TYPE_RANGE)
-                                    <span class="fas fa-dollar-sign"></span> {{$from}} - {{$to}}
+                                    <i class="fa-solid fa-dollar-sign"></i> {{$from}} - {{$to}}
                                     {{__('million')}} ({{$featuredJob->salary_currency}})
                                     @elseif($featuredJob->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
                                     <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
                                     @else
-                                    <span class="fas fa-dollar-sign"></span> {{__('Salary Not provided')}}
+                                    <i class="fa-solid fa-dollar-sign"></i> {{__('Salary Not provided')}}
                                     @endif
                                 </div>
                                 <div class="card-news__content-footer">
@@ -93,7 +93,7 @@ $numberOfColumns = 9;
                                 </a>
                                 @else
                                 <a class="save-job box-meta" href="{{route('add.to.favourite', $featuredJob->slug)}}">
-                                    <button class="btn-pin-job" type="button"><span class="iconmoon icon-flag "></span></button>
+                                    <button class="btn-pin-job" type="button"><i class="fa-regular fa-flag"></i></button>
                                 </a>
                                 @endif
                                 <div class="content-title-box">

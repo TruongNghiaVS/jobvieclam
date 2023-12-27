@@ -148,15 +148,15 @@
                                                     @php($from = round($job->salary_from/1000000,0))
                                                     @php($to = round($job->salary_to/1000000,0))
                                                     @if($job->salary_type == \App\Job::SALARY_TYPE_FROM)
-                                                        <span class="fas fa-dollar-sign"></span> {{__('From: ')}} {{$from}} {{__('million')}} ({{$job->salary_currency}})
+                                                        <i class="fa-solid fa-dollar-sign"></i> {{__('From: ')}} {{$from}} {{__('million')}} ({{$job->salary_currency}})
                                                     @elseif($job->salary_type == \App\Job::SALARY_TYPE_TO)
-                                                        <span class="fas fa-dollar-sign"></span> {{__('Up To: ')}} {{$to}} {{__('million')}} ({{$job->salary_currency}})
+                                                        <i class="fa-solid fa-dollar-sign"></i> {{__('Up To: ')}} {{$to}} {{__('million')}} ({{$job->salary_currency}})
                                                     @elseif($job->salary_type == \App\Job::SALARY_TYPE_RANGE)
-                                                        <span class="fas fa-dollar-sign"></span> {{$from}} - {{$to}} {{__('million')}} ({{$job->salary_currency}})
+                                                        <i class="fa-solid fa-dollar-sign"></i> {{$from}} - {{$to}} {{__('million')}} ({{$job->salary_currency}})
                                                     @elseif($job->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
                                                         <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
                                                     @else
-                                                        <span class="fas fa-dollar-sign"></span> {{__('Salary Not provided')}}
+                                                        <i class="fa-solid fa-dollar-sign"></i> {{__('Salary Not provided')}}
                                                     @endif
 
                                                 </span>
@@ -172,12 +172,12 @@
                                                 <span class="count">{{ $job->appliedUsers->count() }}</span>
                                             </li>
                                             {{-- <li>
-                                            <span class="iconmoon icon-recruiter-profile"></span>
+                                            <i class="fa-regular fa-address-card"></i>
                                             <a href="{{route('list.result-posted-job', [$job->id,'posted-job-2'])}}">{{__('Short-Listed Candidates')}}</a>
                                             <span class="count"></span>
                                         </li> --}}
                                             <li>
-                                                <span class="iconmoon icon-recruiter-profile"></span>
+                                                <i class="fa-regular fa-address-card"></i>
                                                 {{-- <a href="{{route('list.favourite.applied.users', [$job->id])}}">{{__('Short-Listed Candidates')}}</a> --}}
                                                 <a
                                                     href="{{ route('interview.schedule.calendar', [$job->company_id]) }}">{{ __('Interview Candidates') }}</a>

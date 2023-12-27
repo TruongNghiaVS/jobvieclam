@@ -131,7 +131,7 @@
                     formData.append('image', avatarFile);
                  
                     // Simulating an AJAX POST request
-                    console.log(formData);
+                   
                         $.ajaxSetup({
                         headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
@@ -143,13 +143,19 @@
                         data: formData,
                         contentType: false,
                         processData: false,
+                        beforeSend: showSpinner(),
                      
                         success: function (response) {
                             // Handle success response
-                            location.reload();
+                            hideSpinner();
+                            showModal_Success('Thông báo','Cập nhật hình ảnh thành công','')
+                            setTimeout(()=>{
+                                location.reload();
+                            },3000)
                         },
                         error: function (xhr, status, error) {
                             // Handle error
+                            hideSpinner();
                             console.error('Error uploading avatar:', error);
                         }
                     });

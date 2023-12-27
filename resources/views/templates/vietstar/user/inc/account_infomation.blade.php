@@ -120,7 +120,7 @@
                         },
                         error: function (xhr, status, error) {
                             // Handle error
-                            
+                            hideSpinner();
                         }
                     });
                 } else {

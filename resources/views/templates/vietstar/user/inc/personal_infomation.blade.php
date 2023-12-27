@@ -487,7 +487,6 @@
                 })
                 .done(function(data){
                     hideSpinner();
-                    
                     if (data.sucess) {
                     $('#persionalinfo').modal("hide");
                     showModal_Success('Thông báo', `Cập nhật thông tin cá nhân thành công`, ``);
@@ -499,7 +498,7 @@
                        
                 })
                 .fail(function(jqXHR, textStatus){
-                    
+                    hideSpinner();
                 })
                 .always(function(jqXHR, textStatus) {
                 

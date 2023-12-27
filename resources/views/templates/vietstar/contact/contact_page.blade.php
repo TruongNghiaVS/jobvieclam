@@ -177,7 +177,7 @@
     })()
     $(document).ready(function() {
     $('#contactform').submit(function(event) {
-      
+        
         var isValid = true;
       
         var email_valid = true;
@@ -269,7 +269,7 @@
             var token =  $('#contactform #token').val();
             var subject =  $('#contactform #subject').val();
             var text =  $('#contactform #message_txt').val();
-            
+            showSpinner();
             $.ajax({
             type: "POST",
             url:  `{{ route('contact-request') }}`,
@@ -301,19 +301,19 @@
                 }
                 })
                 .done(function(data){
+                    hideSpinner();
                     $('#contact_success').modal('show');
                     $('#contactform')[0].reset();
                     $('#contactform').removeClass("was-validated");
                     $('#contactform input').removeClass('is-valid');
                     $('#contactform input').removeClass('has-error');
                     
-                
                     setTimeout(()=>{
                         $('#contact_success').modal('hide');
                     },3000)
                 })
                 .fail(function(jqXHR, textStatus){
-                    
+                    hideSpinner();
                 })
                 .always(function(jqXHR, textStatus) {
                 

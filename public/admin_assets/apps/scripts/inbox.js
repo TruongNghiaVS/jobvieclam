@@ -4,6 +4,7 @@ var AppInbox = function () {
     var listListing = '';
 
     var loadInbox = function (el, name) {
+        showSpinner()
         var url = 'app_inbox_inbox.html';
         var title = el.attr('data-title');
         listListing = name;
@@ -23,6 +24,7 @@ var AppInbox = function () {
             dataType: "html",
             success: function(res) 
             {
+                hideSpinner()
                 toggleButton(el);
 
                 App.unblockUI('.inbox-content');
@@ -41,6 +43,7 @@ var AppInbox = function () {
             },
             error: function(xhr, ajaxOptions, thrownError)
             {
+                hideSpinner()
                 toggleButton(el);
             },
             async: false
@@ -58,6 +61,7 @@ var AppInbox = function () {
     }
 
     var loadMessage = function (el, name, resetMenu) {
+        showSpinner()
         var url = 'app_inbox_view.html';
 
         App.blockUI({
@@ -78,6 +82,7 @@ var AppInbox = function () {
             data: {'message_id': message_id},
             success: function(res) 
             {
+                hideSpinner()
                 App.unblockUI(content);
 
                 toggleButton(el);
@@ -93,6 +98,7 @@ var AppInbox = function () {
             },
             error: function(xhr, ajaxOptions, thrownError)
             {
+                hideSpinner()
                 toggleButton(el);
             },
             async: false
@@ -129,6 +135,7 @@ var AppInbox = function () {
     }
 
     var loadCompose = function (el) {
+        showSpinner();
         var url = 'app_inbox_compose.html';
 
         App.blockUI({
@@ -147,6 +154,7 @@ var AppInbox = function () {
             dataType: "html",
             success: function(res) 
             {
+                hideSpinner();
                 App.unblockUI(content);
                 toggleButton(el);
 
@@ -164,6 +172,7 @@ var AppInbox = function () {
             },
             error: function(xhr, ajaxOptions, thrownError)
             {
+                hideSpinner();
                 toggleButton(el);
             },
             async: false
@@ -173,7 +182,7 @@ var AppInbox = function () {
     var loadReply = function (el) {
         var messageid = $(el).attr("data-messageid");
         var url = 'app_inbox_reply.html';
-        
+        showSpinner();
         App.blockUI({
             target: content,
             overlayColor: 'none',
@@ -190,6 +199,7 @@ var AppInbox = function () {
             dataType: "html",
             success: function(res) 
             {
+                hideSpinner();
                 App.unblockUI(content);
                 toggleButton(el);
 

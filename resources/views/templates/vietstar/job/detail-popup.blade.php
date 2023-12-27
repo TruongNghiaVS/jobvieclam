@@ -5,7 +5,7 @@
             <div class="col-12 col-md-4">
                 <div class="item-require">
                     <div class="require-card__item-icon">
-                        <div class="icon-salary icon-size-30"></div>
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
                     </div>
                     <div class="require-card__item-content">
                         <p>{{ __('Salary Level') }}</p>
@@ -36,7 +36,7 @@
             <div class="col-12 col-md-4">
                 <div class="item-require">
                     <div class="require-card__item-icon">
-                        <div class="icon-team icon-size-30"></div>
+                        <i class="fa-solid fa-people-group"></i>
                     </div>
                     <div class="require-card__item-content">
                         <p>{{ __('Number of positions') }}</p>
@@ -48,7 +48,7 @@
             <div class="col-12 col-md-4">
                 <div class="item-require">
                     <div class="require-card__item-icon">
-                        <div class="icon-calendar icon-size-30"></div>
+                        <i class="fa-regular fa-calendar-days"></i>
                     </div>
                     <div class="require-card__item-content">
                         <p>{{ __('Job Types') }}</p>
@@ -63,7 +63,7 @@
             <div class="col-12 col-md-4">
                 <div class="item-require item-require-last">
                     <div class="require-card__item-icon">
-                        <div class="icon-level icon-size-30"></div>
+                        <i class="fa-solid fa-ranking-star"></i>
                     </div>
                     <div class="require-card__item-content">
                         <p>{{ __('Career Level') }}</p>
@@ -74,7 +74,7 @@
             <div class="col-12 col-md-4">
                 <div class="item-require item-require-last">
                     <div class="require-card__item-icon">
-                        <div class="icon-gender icon-size-30"></div>
+                        <i class="fa-solid fa-venus-mars"></i>
                     </div>
                     <div class="require-card__item-content">
                         <p>{{ __('Gender') }}</p>
@@ -85,7 +85,7 @@
             <div class="col-12 col-md-4">
                 <div class="item-require item-require-last item-require-end">
                     <div class="require-card__item-icon">
-                        <div class="icon-suicase icon-size-30"></div>
+                        <i class="fa-solid fa-person-burst"></i>
                     </div>
                     <div class="require-card__item-content">
                         <p>{{ __('Experiences') }}</p>

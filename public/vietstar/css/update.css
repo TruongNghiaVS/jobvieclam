@@ -2075,12 +2075,10 @@ footer .inner-copyright .copyright {
     margin-bottom: 32px
 }
 
-.require-card .item-require .require-card__item-icon {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 60px;
-    flex: 0 0 60px;
-    max-width: 60px;
-    width: 100%
+
+.require-card .item-require .require-card__item-icon i {
+    font-size: 30px;
+    color: var(--bs-primary);
 }
 
 .require-card .item-require .require-card__item-content {

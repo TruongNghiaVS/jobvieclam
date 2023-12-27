@@ -51,7 +51,7 @@
                 <li class="sidebar-item {{ Request::url() == route('home') ? 'active' : '' }}">
                     <a href="{{ route('home') }}" class="list-group-item list-group-item-action {{ Request::url() == route('home') ? 'active' : '' }}">
                         <div class="d-flex w-100">
-                            <span class="icon-dashboard-icon fs-24px me-2"></span>
+                            <i class="fa-solid fa-gauge fs-24px me-2"></i>
                             <span class="side-bar-content"><!-- {{__('Dashboard')}} -->
 
 Dashboard
@@ -64,7 +64,7 @@ Dashboard
                 <li class="sidebar-item {{ Request::url() == route('my.profile') ? 'active' : '' }}">
                     <a href="{{ route('my.profile') }}" class="list-group-item list-group-item-action {{ Request::url() == route('my.profile') ? 'active' : '' }}">
                         <div class="d-flex w-100">
-                            <span class="icon-edit-icon fs-24px me-2"></span>
+                            <i class="fa-regular fa-pen-to-square fs-24px me-2"></i>
                             <span class="side-bar-content"> {{__('Edit Profile')}}</span>
 
                         </div>
@@ -74,7 +74,7 @@ Dashboard
                 <li class="sidebar-item {{ Request::url() == route('change.template') ? 'active' : '' }}">
                     <a href="{{ route('change.template') }}" class="list-group-item list-group-item-action {{ Request::url() == route('change.template') ? 'active' : '' }}">
                         <div class="d-flex w-100">
-                            <span class="icon-edit-icon fs-24px me-2"></span>
+                        <i class="fa-regular fa-file fs fa-regular fs-24px me-2"></i>
                             <span class="side-bar-content"> {{__('Change Template')}}</span>
                         </div>
                     </a>
@@ -84,7 +84,7 @@ Dashboard
                     <!-- <a href="{{ route('view.public.profile', Auth::user()->id) }}" class="list-group-item list-group-item-action {{ route('view.public.profile', Auth::user()->id) }}"> -->
                     <a  href="#" data-toggle="modal" data-target="#modal_user_info">
                         <div class="d-flex w-100">
-                                <span class="icon-eye-icon fs-24px me-2"></span>
+                                <i class="fa-solid fa-eye fs-24px me-2"></i>
                                 <span class="side-bar-content">{{__('View Public Profile')}}</span>
                             </div>
                         </a>
@@ -92,7 +92,7 @@ Dashboard
                 <li class="">
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <div class="d-flex w-100">
-                            <span class="icon-edit-icon fs-24px me-2"></span>
+                        <i class="fa-regular fa-bookmark fs-24px me-2"></i>
                             <span class="side-bar-content"> Việc làm của tôi</span>
                         </div>
                     </a>
@@ -100,7 +100,7 @@ Dashboard
                         <li class="{{ Request::url() == route('my.job.applications') ? 'active' : '' }}">
                             <a href="{{ route('my.job.applications') }}" class="list-group-item list-group-item-action {{ Request::url() == route('my.job.applications') ? 'active' : '' }}">
                                 <div class="d-flex w-100">
-                                    <span class="icon-doc-check-icon fs-24px me-2"></span>
+                                    <i class="fa-solid fa-user-check fs-24px me-2"></i>
                                     <span class="side-bar-content"> {{__('My Job Applications')}}</span>
                                 </div>
                             </a>
@@ -108,7 +108,7 @@ Dashboard
                         <li class="{{ Request::url() == route('my.favourite.jobs') ? 'active' : '' }}">
                             <a href="{{ route('my.favourite.jobs') }}" class="list-group-item list-group-item-action {{ Request::url() == route('my.favourite.jobs') ? 'active' : '' }}">
                                 <div class="d-flex w-100">
-                                    <span class="icon-heart-icon fs-24px me-2"></span>
+                                    <i class="fa-regular fa-heart fs-24px me-2"></i>
                                     <span class="side-bar-content">{{__('My Favourite Jobs')}}</spant>
                                 </div>
                             </a>
@@ -119,7 +119,7 @@ Dashboard
                 <li class="sidebar-item {{ Request::url() == route('my-alerts') ? 'active' : '' }}">
                     <a href="{{ route('my-alerts') }}" class="list-group-item list-group-item-action {{ Request::url() == route('my-alerts') ? 'active' : '' }}">
                         <div class="d-flex w-100">
-                            <span class="icon-bell-icon fs-24px me-2"></span>
+                            <i class="fa-regular fa-bell fs-24px me-2"></i>
                             <span class="side-bar-content"> {{__('My Job Alerts')}}</span>
                         </div>
                     </a>
@@ -128,7 +128,7 @@ Dashboard
                 <li class="sidebar-item {{ Request::url() == route('my.messages') ? 'active' : '' }}">
                     <a href="{{route('my.messages')}}" class="list-group-item list-group-item-action {{ Request::url() == route('my.messages') ? 'active' : '' }}">
                         <div class="d-flex w-100">
-                            <span class="icon-message-icon fs-24px me-2 box-message-icon">
+                            <span <i class="fa-regular fa-message fs-24px me-2 box-message-icon"</i>
                                 <span class="badge">{{\App\CompanyMessage::where('seeker_id', Auth::user()->id)->where('status','unviewed')->where('type','reply')->count()}}</span>
                             </span>
                             <span class="side-bar-content"> {{__('My Messages')}}</span>
@@ -139,7 +139,7 @@ Dashboard
                 <li class="sidebar-item {{ Request::url() == route('my.followings') ? 'active' : '' }}">
                     <a href="{{route('my.followings')}}" class="list-group-item list-group-item-action {{ Request::url() == route('my.followings') ? 'active' : '' }}">
                         <div class="d-flex w-100">
-                            <span class="icon-office-building-icon fs-24px me-2"></span>
+                            <i class="fa-solid fa-user-plus  fs-24px me-2"></i>
                             <span class="side-bar-content"> {{__('My Followings')}}</span>
                         </div>
                     </a>

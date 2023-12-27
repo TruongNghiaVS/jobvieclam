@@ -434,7 +434,7 @@
                 <li class="sidebar-item {{ Request::url() == route('index') ? 'active' : '' }}">
                     <a href="{{url('/employers')}}" class="list-group-item list-group-item-action {{ Request::url() == route('employerIndex')  ? 'active' : '' }}">
                         <div class="d-flex w-100">
-                            <i class="bi bi-house fs-24px me-2"></i>
+                            <i class="fa-solid fa-house fs-24px me-2"></i> 
                             <span class="side-bar-content"> {{__('Home')}}</span>
                         </div>
                     </a>

@@ -618,7 +618,9 @@ section.company-job-detail.job-detail-title .job-detail-banner {
 	background-color: var(--white);
 	border-radius: 30px;
 	box-shadow: 0 .25rem 1.25rem rgba(0, 0, 0, .1) !important;
-	padding: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .job-detail-content .require-card .require-card__item-content {
@@ -2202,6 +2204,7 @@ h3.seekertxt span {
 
 .figcaption {
 	padding: 20px;
+	height: 160px;
 }
 
 .figcaption__category-name a {

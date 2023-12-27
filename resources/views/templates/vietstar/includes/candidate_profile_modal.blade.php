@@ -32,7 +32,7 @@
             <div class="summary-card row mx-0">
                 <div class="col-md-4 mb-4 d-flex gap-16">
                     <div class="summary-card__item-icon">
-                        <div class="icon-gender icon-size-30"></div>
+                        <i class="fa-solid fa-venus-mars"></i>
                     </div>
                     <div class="summary-card__item-content">
                         <p>{{__('Gender')}}</p>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="col-md-4 mb-4 d-flex gap-16">
                     <div class="summary-card__item-icon">
-                        <div class="icon-suicase icon-size-30"></div>
+                        <i class="fa-solid fa-person-burst"></i>
                     </div>
                     <div class="summary-card__item-content">
                         <p>{{__('Experience')}}</p>
@@ -68,7 +68,7 @@
                 </div>
                 <div class="col-md-4 mb-4 d-flex gap-16">
                     <div class="summary-card__item-icon">
-                        <div class="icon-salary icon-size-30"></div>
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
                     </div>
                     <div class="summary-card__item-content">
                         <p>{{__('Current salary')}}</p>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="col-md-4 mb-4 d-flex gap-16">
                     <div class="summary-card__item-icon">
-                        <div class="icon-salary icon-size-30"></div>
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
                     </div>
                     <div class="summary-card__item-content">
                         <p>{{__('Expected salary')}}</p>

@@ -227,8 +227,7 @@ $(document).ready(function() {
         if (isValid) { 
 
             var email = $('#form-group-mail #email').val();
-     
-            
+            showSpinner()
             $.ajax({
             type: "POST",
             url:  `{{ route('contact-email') }}`,
@@ -256,12 +255,12 @@ $(document).ready(function() {
                 }
                 })
                 .done(function(data){
+                    hideSpinner();
                     $("#contact_email_success").modal("show")
                     
                     $('#form-group-mail')[0].reset();
                     $('#form-group-mail').removeClass("was-validated")
                    
-                    
 
 
                     setTimeout(()=>{
@@ -271,7 +270,8 @@ $(document).ready(function() {
                     
                 })
                 .fail(function(jqXHR, textStatus){
-                    
+                    hideSpinner();
+                    showModal_Fail("Thông báo","Liên hệ không thành công","")
                 })
                 .always(function(jqXHR, textStatus) {
                 

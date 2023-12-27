@@ -137,6 +137,17 @@
     .btn-area {
         text-align: right;
     }
+    #customModal-success  .modal-header{
+        justify-content: center !important;
+    }
+    #customModal-fail  .modal-header{
+        justify-content: center !important;
+    }
+
+    #customModal-success .modal-footer , #customModal-fail .modal-footer{ 
+        justify-content: center !important;
+
+    }
 </style>
 @endpush
 
@@ -191,6 +202,7 @@
     // }
 
     // Perform AJAX request to check if the email exists
+            showSpinner();  
             $.ajax({
             type: "POST",
             url:  '{{url('/')}}/member/requestResetPassword',
@@ -204,6 +216,7 @@
                 },
                 400: function(responseObject, textStatus, jqXHR) {
                     // No content found (400)
+                    hideSpinner();
                     if(responseObject.responseJSON.error){
 
                         responseObject.responseJSON.error.forEach((element,key) => {
@@ -227,7 +240,8 @@
                 }
                 })
                 .done(function(data){
-                   
+                    hideSpinner();
+                    showModal_Success("Thông báo","Yêu cầu được gửi thành công","")
                     $("#form_reset_content").empty();
                         $("#form_reset_content").append(`<div class="title" bis_skin_checked="1">
                                         <h2 class="text-primary">Quên Mật Khẩu</h2>
@@ -252,7 +266,9 @@
                                         </div>`)
                 })
                 .fail(function(jqXHR, textStatus){
-                    
+                    hideSpinner();
+                    showModal_Fail("Thông báo","Yêu cầu gửi thất bại","")
+
                 })
                 .always(function(jqXHR, textStatus) {
                 

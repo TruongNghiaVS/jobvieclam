@@ -230,7 +230,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Google_Material_Design_check.svg/1024px-Google_Material_Design_check.svg.png" alt="">
+                <img src="{{url('/')}}/admin_assets/success.png" alt="">
                  <p class="text-center fs-18px"></p>
             </div>
             <div class="modal-footer">
@@ -252,8 +252,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
-                 <h3 class="text-center"></h3>
+                <img src="{{url('/')}}/admin_assets/fail-icon.png" alt="">
+                <p class="text-center fs-18px"></p>
             </div>
             <div class="modal-footer">
            

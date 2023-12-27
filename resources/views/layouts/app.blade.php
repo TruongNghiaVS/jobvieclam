@@ -32,9 +32,9 @@ if (!isset($seo)) {
     <link href="{{ asset('/vietstar/css/chosen/chosen.min.css')}}" rel="stylesheet">
     <link href="{{asset('/')}}vendor/bootstrap-date-time-picker/css/bootstrap-datetimepicker.min.css" rel="stylesheet"
     type="text/css" />
-    
-    
-    
+   
+    <link href="{{ asset('/fontawesome-free-6.5.1-web/css/all.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('/vietstar/css/default_sidebar.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/animation.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/font-awsome.min.css')}}" rel="stylesheet">
     <link href="{{ asset('/vietstar/css/custom-chosen.css')}}" rel="stylesheet">

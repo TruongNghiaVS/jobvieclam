@@ -1,7 +1,7 @@
 @if(isset($latestJobs) && count($latestJobs))
 
 <?php
-$numberOfColumns = 9;
+$numberOfColumns = 12;
 ?>
 <div class="r-news">
     <div class="swiper mySwiper">
@@ -12,7 +12,7 @@ $numberOfColumns = 9;
                     @foreach($chunk as $latestJobs)
                     <?php $company =$latestJobs->getCompany(); ?>
                     @if(null !== $company)
-                    <div class="col-md-6 col-lg-4 mb-3">
+                    <div class="col-md-6 col-lg-3 mb-3">
                         <div class="card-news w-100">
                             <div class="card-news__icon">
                                 <a href="{{route('job.detail', [$latestJobs->slug])}}" title="{{$latestJobs->title}}">

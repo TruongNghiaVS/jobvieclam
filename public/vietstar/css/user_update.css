@@ -568,7 +568,7 @@ i.fas.fa-heart.iconoutline {
     font-size: 30px;
 }
 .bottomcompanyconten__head h2 {
-    font-size: 27px;
+    font-size: 24px;
 }
 .company-item-wrapper {
 
@@ -745,7 +745,12 @@ article.article {
     justify-content: center;
     align-items: center;
 }
-
+h3.banner__title {
+    font-size: 22px;
+}
+.banner__company{
+    font-size: 18px;
+}
 
 
 @media only screen and (max-width: 767px) {

@@ -34,7 +34,7 @@
     <div class="info">
         <h3 class="job-title"><a href="{{route('company.detail',$company->slug)}}" title="{{$company->name}}">{{$company->name}}</a></h3>
         <div class="box-meta">
-            <i class="far fa-map-marker-alt"></i> {{__('Street Address')}}:
+            <i class="fa-solid fa-location-dot"></i> {{__('Street Address')}}:
             {{$company->location}}
         </div>
         <div class="box-meta">

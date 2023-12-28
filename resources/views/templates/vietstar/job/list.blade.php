@@ -161,7 +161,7 @@
                             @isset($jobitem->city)
                                 <div class="navbar__link-separator" bis_skin_checked="1"></div>
                                 <div class="meta-city">
-                                <!-- <i class="far fa-map-marker-alt"></i> -->
+                                <!-- <i class="fa-solid fa-location-dot"></i> -->
                                     {{ $jobitem->city->city }}
                                 </div>
                             @endisset
@@ -557,7 +557,7 @@
                                                         <div class="navbar__link-separator" bis_skin_checked="1"></div>
                                                         <!--meta-city-->
                                                         <div class="meta-city">
-                                                            <!-- <i class="far fa-map-marker-alt"></i> -->
+                                                            <!-- <i class="fa-solid fa-location-dot"></i> -->
                                                             ${element.city.city}
                                                         </div>
                                                     </div>

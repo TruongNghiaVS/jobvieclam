@@ -56,7 +56,7 @@
                                     <div class="navbar__link-separator" bis_skin_checked="1"></div>
                                     <!--meta-city-->
                                     <div class="meta-city" bis_skin_checked="1">
-                                        <!-- <i class="far fa-map-marker-alt"></i> -->
+                                        <!-- <i class="fa-solid fa-location-dot"></i> -->
                                         {{$job->getCity('city')}}
                                     </div>
     

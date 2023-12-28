@@ -272,7 +272,7 @@
                                             <!--meta-city-->
                                             <div class="navbar__link-separator" bis_skin_checked="1"></div>
                                             <div class="meta-city" bis_skin_checked="1">
-                                                <!-- <i class="far fa-map-marker-alt"></i> -->
+                                                <!-- <i class="fa-solid fa-location-dot"></i> -->
                                                 @isset($cjob->city)
                                                     {{ $cjob->city->city }}
                                                 @endisset

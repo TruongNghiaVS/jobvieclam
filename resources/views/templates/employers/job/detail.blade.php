@@ -309,10 +309,10 @@ $company = $job->getCompany();
                                         {{ !empty($company->industry)?$company->industry->industry : 'NA' }}
                                     </div>
                                     <div class="banner__due-day mb-3">
-                                        <i class="far fa-user-alt"></i> {{ $company->established_in }}
+                                        <i class="fa-regular fa-calendar"></i> {{ $company->established_in }}
                                     </div>
                                     <div class="banner__due-day mb-3">
-                                        <i class="far fa-map-marker-alt"></i> {{ $company->location }}
+                                        <i class="fa-solid fa-location-dot"></i> {{ $company->location }}
                                     </div>
                                 </div>
                                 <div class="col-xl-5 col-lg-12">
@@ -324,7 +324,7 @@ $company = $job->getCompany();
                                     </div>
                                     <div class="banner__due-day mb-3">
                                         <a href="{{ $company->website}}" target="_blank">
-                                            <i class="far fa-globe"></i> {{ $company->website }}
+                                            <i class="fa-solid fa-globe"></i> {{ $company->website }}
                                         </a>
                                     </div>
                                     <div class="fs-14px mb-3">
@@ -480,7 +480,7 @@ $company = $job->getCompany();
                                         <div class="navbar__link-separator" bis_skin_checked="1"></div>
                                         <!--meta-city-->
                                         <div class="meta-city" bis_skin_checked="1">
-                                            <!-- <i class="far fa-map-marker-alt"></i> -->
+                                            <!-- <i class="fa-solid fa-location-dot"></i> -->
                                             Sơn La
                                         </div>
 
@@ -565,7 +565,7 @@ $company = $job->getCompany();
                                         <div class="navbar__link-separator" bis_skin_checked="1"></div>
                                         <!--meta-city-->
                                         <div class="meta-city" bis_skin_checked="1">
-                                            <!-- <i class="far fa-map-marker-alt"></i> -->
+                                            <!-- <i class="fa-solid fa-location-dot"></i> -->
                                             Sơn La
                                         </div>
 

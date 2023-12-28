@@ -102,7 +102,7 @@ class JobController extends Controller
                                 $featuredIcon = 'check-square-o';
                             }
                             return '
-				<div class="btn-group">
+				<div class="">
 					<button class="btn blue dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Thao tác
 						<i class="fa fa-angle-down"></i>
 					</button>

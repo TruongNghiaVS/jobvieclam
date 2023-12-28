@@ -58,6 +58,8 @@
                                                     <option value="1">{{__('Featured')}}</option>
                                                     <option value="0">{{__('Not Featured')}}</option>
                                                 </select></td>
+                                       
+                                            
                                         </tr>
                                         <tr role="row" class="heading">
                                             <th>{{__('Company')}}</th>
@@ -65,7 +67,10 @@
                                             <th>{{__('Job Desc')}}</th>
                                             <th>{{__('City')}}</th>
                                             <th>{{__('Expiry Date')}}</th>
+                                            <th>{{__('Status')}}</th>
+
                                             <th>{{__('Action')}}</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -134,6 +139,7 @@
                 {data: 'description', name: 'description'},
                 {data: 'city_id', name: 'city_id'},
                 {data: 'expiry_date', name: 'expiry_date'},
+                {data: 'state_id', name: 'state_id'},
                 {data: 'action', name: 'action', orderable: false, searchable: false}
             ],
             columnDefs:[

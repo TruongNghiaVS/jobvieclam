@@ -65,7 +65,7 @@
                                     <tr>
 
                                         <th>Tiêu đề</th>
-                                        <th>Nội dung</th>
+                                        <th>Slug</th>
 
                                         <th>Cập nhật lần cuối</th>
                                         <th>{{__('Action')}}</th>
@@ -78,8 +78,7 @@
 
                                         <td>{{$blog->heading}}</td>
                                         <td>
-                                            {!!
-                                            \Illuminate\Support\Str::words($blog->content, 5,'..') !!}
+                                          {{$blog->slug}}
                                         </td>
 
                                         <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $blog->updated_at)->diffForHumans() }}

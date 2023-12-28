@@ -22,6 +22,7 @@
             <option value="2.2">Vị trí 2.2</option>
             <option value="2.3">Vị trí 2.3</option>
             <option value="2.4">Vị trí 2.4</option>
+            <option value="2.5">Vị trí 2.5</option>
 
             <!-- Add other options -->
         </select>

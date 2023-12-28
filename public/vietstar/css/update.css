@@ -1660,7 +1660,7 @@ button:focus {
 }
 
 .section-static .section-title {
-    margin-bottom: 25px;
+ 
     font-weight: 700;
     font-size: 32px;
     line-height: 44px;
@@ -1669,7 +1669,8 @@ button:focus {
 }
 
 h2.section-title {
-    text-transform: uppercase
+    text-transform: uppercase;
+    font-size: 1.8rem;
 }
 
 .blogs-slider .card-list-item .card-list-item__title a {
@@ -3531,7 +3532,8 @@ footer .inner-copyright .copyright {
 }
 
 .recruitment-news h4.section-title {
-    font-size: 24px
+    font-size: 22px;
+    margin-bottom: unset;
 }
 
 .jobs-side-list .item-job .jobinfo {
@@ -3703,7 +3705,8 @@ footer .inner-copyright .copyright {
     color: #ffffff;
     background-size: 24px;
     text-align: center;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    font-size: 24px;
 }
 
 .section-register-new-jobs .form-group-mail {
@@ -3771,7 +3774,7 @@ footer .inner-copyright .copyright {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 20px 20px 20px 85px
+    padding: 15px 20px 15px 80px;
 }
 
 .section-employment-statistics .statistic .icon {
@@ -3808,14 +3811,14 @@ footer .inner-copyright .copyright {
 }
 
 .section-employment-statistics .statistic .content .num {
-    font-size: 28px;
+    font-size: 25px;
     color: var(--bs-primary);
     line-height: 1.2;
     margin-bottom: 10px
 }
 
 .section-employment-statistics .statistic .content .desc {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.4;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;

@@ -148,9 +148,9 @@
                     image = `{{url('/')}}/uploads/blogs/${item.image}`;
                     slug = `{{url('/')}}/blog/${item.slug}`;
                     if (item) {
-                        return `  <div class="col-md-4 col-lg-4 col-sm-12">
+                        return `  <div class="col-md-3 col-lg-3 col-sm-12">
                                
-                                <div class="cardBlock">
+                                <div class="cardBlock p-0">
                                
                                     <div class="figure" bis_skin_checked="1">
                                         <a href="${slug}" class="figure-images"><img src="${image}" alt="${item.heading}"></a>

@@ -536,6 +536,11 @@
     padding:0 10px;
   }
 
+  .cardBlock {
+    padding-bottom: unset;
+    margin-bottom: 20px;
+  }
+
 }
 
 
@@ -845,6 +850,9 @@
     padding-left: 0px;
   }
   
+  .cardBlock {
+    padding-bottom: unset;
+  }
 
 
 }

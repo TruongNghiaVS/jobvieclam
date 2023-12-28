@@ -896,7 +896,7 @@ h4.tablinks:hover {
 
 .tablinks:before {
 	position: absolute;
-	bottom: -15px;
+	bottom: 0px;
 	left: 0;
 	width: 0;
 	height: 3px;
@@ -1005,16 +1005,16 @@ h4.tablinks:hover {
 
 .partner-item__name {
 	width: 100%;
-	text-align: center;
-	font-size: 18px;
-	margin: 10px 0;
-	padding: 0 20px;
-	font-weight: 600;
-	-webkit-line-clamp: 2;
+    text-align: center;
+    font-size: 16px;
+    margin: 10px 0;
+    padding: 8px 20px;
+    font-weight: 600;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     display: -webkit-box;
     overflow: hidden;
-	height: 45px;
+    height: 47px;
 }
 
 .partner-item__box:hover {
@@ -1224,7 +1224,7 @@ section#flash-badge-banner {
 	-moz-column-gap: 24px;
 	column-gap: 24px;
 	display: flex;
-	font-size: 32px;
+	font-size: 25px;
 	font-weight: 700;
 	justify-content: center;
 	line-height: 40px;
@@ -1244,7 +1244,6 @@ section#flash-badge-banner {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 1100px;
-	min-height: 80px;
 	text-align: center;
 	width: 100%
 }
@@ -2126,12 +2125,12 @@ h3.seekertxt span {
 	margin: 10px 0;
 	text-decoration: none;
 	color: #9c1b1e;
-	font-size: 20px;
+	font-size: 18px;
 	text-align: center
 }
 
 .iner__box-desc span {
-	font-size: 16px;
+	font-size: 15px;
 	color: #8E9094;
 	font-weight: 500;
 }
@@ -2233,7 +2232,7 @@ h3.seekertxt span {
 	-webkit-box-orient: vertical;
 	display: -webkit-box;
 	overflow: hidden;
-	font-size: 23px;
+	font-size: 20px;
 	font-weight: 600;
 	text-overflow: ellipsis;
 	line-height: 40px;

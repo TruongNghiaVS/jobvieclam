@@ -3,15 +3,15 @@
       <div class="container">
           @include('flash::message')
           <div class="tab tab-nav">
-              <h4 class="tablinks section-title text-center mb-3 text-primary active"
+              <h4 class="tablinks section-title text-center  text-primary active"
                   onclick="openCity(event, 'Featured_Jobs')">
                   @lang('Featured Jobs')
               </h4>
-              <h4 class="tablinks section-title text-center mb-3 " onclick="openCity(event, 'New_Jobs')">
+              <h4 class="tablinks section-title text-center  " onclick="openCity(event, 'New_Jobs')">
                   {{__('New Jobs')}}
               </h4>
               @if(auth::check()==true)
-              <h4 class="tablinks section-title text-center mb-3" onclick="openCity(event, 'New_Jobs')">
+              <h4 class="tablinks section-title text-center " onclick="openCity(event, 'New_Jobs')">
                   {{__('Suggested Jobs')}}
               </h4>
               @endif

@@ -417,12 +417,12 @@ function swiperSlider() {
                     grabCursor: false,
                 },
                 992: {
-                    slidesPerView: 3,
+                    slidesPerView: 4,
                     spaceBetween: 20,
                     grabCursor: false,
                 },
                 1200: {
-                    slidesPerView: 5,
+                    slidesPerView: 6,
                     spaceBetween: 20,
                     grabCursor: false,
                 },

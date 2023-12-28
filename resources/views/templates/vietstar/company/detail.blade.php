@@ -240,18 +240,32 @@
                                                 }
                                             ?>
                                             @if($cjob->salary_type == \App\Job::SALARY_TYPE_FROM)
-                                            <i class="fa-solid fa-dollar-sign"></i> {{__('From: ')}} {{$from}}
-                                            {{__('million')}} ({{$cjob->salary_currency}})
+                                            <i class="fa-solid fa-dollar-sign px-1"></i> <span>
+                                                {{__('From: ')}} {{$from}}
+                                                {{__('million')}} ({{$cjob->salary_currency}})
+                                            </span>
                                             @elseif($cjob->salary_type == \App\Job::SALARY_TYPE_TO)
-                                            <i class="fa-solid fa-dollar-sign"></i> {{__('Up To: ')}} {{$to}}
-                                            {{__('million')}} ({{$cjob->salary_currency}})
+                                            <i class="fa-solid fa-dollar-sign px-1"></i> 
+                                            <span>
+                                                {{__('Up To: ')}} {{$to}}
+                                                {{__('million')}} ({{$cjob->salary_currency}})
+                                            </span>
                                             @elseif($cjob->salary_type == \App\Job::SALARY_TYPE_RANGE)
-                                            <i class="fa-solid fa-dollar-sign"></i> {{$from}} - {{$to}}
-                                            {{__('million')}} ({{$cjob->salary_currency}})
+                                            <i class="fa-solid fa-dollar-sign px-1"></i>
+                                            <span>
+                                                {{$from}} - {{$to}}
+                                                {{__('million')}} ({{$cjob->salary_currency}})
+                                            </span>
                                             @elseif($cjob->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
-                                            <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
+                                            <span class="fas fa-money-bill"></span> 
+                                            <span>
+                                                {{__('Negotiable')}}
+                                            </span>
                                             @else
-                                            <i class="fa-solid fa-dollar-sign"></i> {{__('Salary Not provided')}}
+                                            <i class="fa-solid fa-dollar-sign px-1"></i> 
+                                            <span>
+                                                {{__('Salary Not provided')}}
+                                            </span>
                                             @endif
                                             </div>
 

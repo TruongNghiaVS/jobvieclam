@@ -2518,11 +2518,8 @@ footer .inner-copyright .copyright {
 }
 
 .jobs-side-list .item-job .jobinfo .box-meta i {
-    position: absolute;
-    top: 3px;
-    left: 0;
     color: var(--bs-primary);
-    font-size: 14px
+    font-size: 17px;
 }
 
 .jobs-side-list .item-job .jobinfo .box-meta .meta-city {

@@ -1,9 +1,6 @@
 @extends('admin.layouts.admin_layout')
 
-@push('css')
-<link rel="stylesheet" href="{{ asset('public/modules/blogs/css/blogs.css') }}">
-<link href="{{ asset('css/bootstrap-multiselect.css') }}" rel="stylesheet" type="text/css" />
-@endpush
+
 @section('content')
 
 <div class="content-wrapper">
@@ -44,8 +41,7 @@
 
 
                             <ul class="breadcrumb">
-                                <li class="active"><a href="{{ URL::asset('/admin/blog')}}"><i
-                                            class="fa fa-dashboard"></i> Quản lý Blogs </a></li>
+                                <li class="active"><a href="{{ URL::asset('/admin/blog')}}"><i class="fa fa-dashboard"></i> Quản lý Blogs </a></li>
                                 <li><a href="{{ URL::asset('/admin/blog_category')}}"><i class="fa fa-file-text-o"></i>
                                         Quản lý Danh mục</a></li>
 
@@ -56,8 +52,37 @@
 
                     </section>
 
+                    <div class="filter_blog">
+
+
+                        <div class="form-row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="search">Search</label>
+                                    <input type="text" id="search" class="form-control" placeholder="Tìm kiếm">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Example select</label>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Bí Quyết Tìm Việc</option>
+                                    <option>Thị Trường - Xu Hướng</option>
+                                    <option>Góc Thư Giãn</option>
+                                    <option>Tiện Ích</option>
+                                    <option>Góc Báo Chí</option>
+                                    <option>Thị trường lương</option>
+                                    <option>Cẩm nang nghề nghiệp</option>
+                                    </select>
+                                </div>
+                            </div>
+ 
+                        </div>
+
+                    </div>
 
                     <section class="content">
+
 
                         <div class="panel-body">
                             <table class="table" id="blogTable">
@@ -78,18 +103,15 @@
 
                                         <td>{{$blog->heading}}</td>
                                         <td>
-                                          {{$blog->slug}}
+                                            {{$blog->slug}}
                                         </td>
 
                                         <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $blog->updated_at)->diffForHumans() }}
                                         </td>
                                         <td>
-                                            <a id="popup" class="edit-modal btn btn-success"
-                                                href="{{route('edit-blog',$blog->id)}}"><span
-                                                    class="fa fa-pencil"></span>
+                                            <a id="popup" class="edit-modal btn btn-success" href="{{route('edit-blog',$blog->id)}}"><span class="fa fa-pencil"></span>
                                                 Sửa</a>
-                                            <button id="popup" class="delete-modal btn btn-danger"
-                                                onClick="delete_blog({{$blog->id}});"><span class="fa fa-trash"></span>
+                                            <button id="popup" class="delete-modal btn btn-danger" onClick="delete_blog({{$blog->id}});"><span class="fa fa-trash"></span>
                                                 Xóa</button>
                                         </td>
                                     </tr>
@@ -106,8 +128,7 @@
             <div id="addModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <form method="POST" files="true" action="{{ asset('admin/blog/create')}}"
-                            enctype="multipart/form-data">
+                        <form method="POST" files="true" action="{{ asset('admin/blog/create')}}" enctype="multipart/form-data">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title">Thêm Blog</h4>
@@ -130,24 +151,21 @@
                                 <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
                                     <label class="control-label col-sm-3" for="title">Tiêu đề</label>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" name="title" id="title" autofocus
-                                            value="{{ old('title') }}">
+                                        <input type="text" class="form-control" name="title" id="title" autofocus value="{{ old('title') }}">
                                         <span class="text-danger">{{ $errors->first('title') }}</span>
                                     </div>
                                 </div>
                                 <div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
                                     <label class="control-label col-sm-3" for="Slug">Slug</label>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" name="slug" id="slug" autofocus
-                                            value="{{ old('slug') }}">
+                                        <input type="text" class="form-control" name="slug" id="slug" autofocus value="{{ old('slug') }}">
                                         <span class="text-danger">{{ $errors->first('slug') }}</span>
                                     </div>
                                 </div>
                                 <div class="form-group {{ $errors->has('content') ? 'has-error' : '' }}">
                                     <label class="control-label col-sm-3" for="content">Nội dung</label>
                                     <div class="col-sm-12">
-                                        <textarea class="form-control" name="content" id="content" cols="40" rows="5"
-                                            autofocus>{{ old('content') }}</textarea>
+                                        <textarea class="form-control" name="content" id="content" cols="40" rows="5" autofocus>{{ old('content') }}</textarea>
                                         <span class="text-danger">{{ $errors->first('content') }}</span>
                                     </div>
                                 </div>
@@ -172,23 +190,19 @@
                                     <div class="form-group">
                                         <label class="control-label col-sm-3" for="title">Tiêu đề Meta </label>
                                         <div class="col-sm-12">
-                                            <input type="text" class="form-control" name="meta_title" id="meta_title"
-                                                autofocus value="{{ old('meta_title') }}">
+                                            <input type="text" class="form-control" name="meta_title" id="meta_title" autofocus value="{{ old('meta_title') }}">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-sm-3" for="title">Từ khóa Meta </label>
                                         <div class="col-sm-12">
-                                            <input type="text" class="form-control" name="meta_keywords"
-                                                id="meta_keywords" autofocus value="{{ old('meta_keywords') }}">
+                                            <input type="text" class="form-control" name="meta_keywords" id="meta_keywords" autofocus value="{{ old('meta_keywords') }}">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-sm-3" for="title">Mô tả Meta </label>
                                         <div class="col-sm-12">
-                                            <textarea class="form-control" name="meta_descriptions"
-                                                id="meta_descriptions" cols="40" rows="5"
-                                                autofocus>{{ old('meta_description') }}</textarea>
+                                            <textarea class="form-control" name="meta_descriptions" id="meta_descriptions" cols="40" rows="5" autofocus>{{ old('meta_description') }}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -217,8 +231,7 @@
             <div id="editModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <form method="POST" files="true" action="{{ asset('/admin/blog')}}"
-                            enctype="multipart/form-data">
+                        <form method="POST" files="true" action="{{ asset('/admin/blog')}}" enctype="multipart/form-data">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title">Cập nhật Blog</h4>
@@ -232,8 +245,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="title">Chọn Danh mục</label>
                                     <div class="col-sm-12">
-                                        <select id="cate_id_update" name="cate_id_update[]" class="form-control"
-                                            multiple="multiple">
+                                        <select id="cate_id_update" name="cate_id_update[]" class="form-control" multiple="multiple">
                                             @foreach($categories as $cate)
                                             <option value="<?php echo $cate->id; ?>">{!!$cate->heading!!}</option>
                                             @endforeach
@@ -244,24 +256,21 @@
                                 <div class="form-group {{ $errors->has('title_update') ? 'has-error' : '' }}">
                                     <label class="control-label col-sm-3" for="title">Tiêu đề</label>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" name="title_update" id="title_update"
-                                            value="{{ old('title_update') }}">
+                                        <input type="text" class="form-control" name="title_update" id="title_update" value="{{ old('title_update') }}">
                                         <span class="text-danger">{{ $errors->first('title_update') }}</span>
                                     </div>
                                 </div>
                                 <div class="form-group {{ $errors->has('slug_update') ? 'has-error' : '' }}">
                                     <label class="control-label col-sm-3" for="Slug">Slug</label>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" value="{{ old('slug_update') }}"
-                                            name="slug_update" id="slug_update">
+                                        <input type="text" class="form-control" value="{{ old('slug_update') }}" name="slug_update" id="slug_update">
                                         <span class="text-danger">{{ $errors->first('slug_update') }}</span>
                                     </div>
                                 </div>
                                 <div class="form-group {{ $errors->has('content_update') ? 'has-error' : '' }}">
                                     <label class="control-label col-sm-3" for="content">Nội dung</label>
                                     <div class="col-sm-12">
-                                        <textarea class="form-control" name="content_update" id="content_update"
-                                            cols="40" rows="5">{{ old('content_update') }}</textarea>
+                                        <textarea class="form-control" name="content_update" id="content_update" cols="40" rows="5">{{ old('content_update') }}</textarea>
                                         <span class="text-danger">{{ $errors->first('content_update') }}</span>
                                     </div>
                                 </div>
@@ -287,24 +296,19 @@
                                     <div class="form-group">
                                         <label class="control-label col-sm-3" for="title">Tiêu đề Meta</label>
                                         <div class="col-sm-12">
-                                            <input type="text" class="form-control" name="meta_title_update"
-                                                id="meta_title_update" autofocus value="{{ old('meta_title_update') }}">
+                                            <input type="text" class="form-control" name="meta_title_update" id="meta_title_update" autofocus value="{{ old('meta_title_update') }}">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-sm-3" for="title">Từ khóa Meta</label>
                                         <div class="col-sm-12">
-                                            <input type="text" class="form-control" name="meta_keywords_update"
-                                                id="meta_keywords_update" autofocus
-                                                value="{{ old('meta_keywords_update') }}">
+                                            <input type="text" class="form-control" name="meta_keywords_update" id="meta_keywords_update" autofocus value="{{ old('meta_keywords_update') }}">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-sm-3" for="title">Mô tả Meta</label>
                                         <div class="col-sm-12">
-                                            <textarea class="form-control" name="meta_descriptions_update"
-                                                id="meta_descriptions_update" cols="40"
-                                                rows="5">{{ old('meta_description_update') }}</textarea>
+                                            <textarea class="form-control" name="meta_descriptions_update" id="meta_descriptions_update" cols="40" rows="5">{{ old('meta_description_update') }}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -338,8 +342,7 @@
                             <div class="form-group">
 
                                 <div class="col-sm-12">
-                                    <textarea class="form-control" name="contentview" id="contentview" disabled=""
-                                        cols="40" rows="5"></textarea>
+                                    <textarea class="form-control" name="contentview" id="contentview" disabled="" cols="40" rows="5"></textarea>
                                     <p class="errorContent text-center alert alert-danger hidden"></p>
                                 </div>
                             </div>
@@ -362,38 +365,6 @@
 
             @endsection
 
-
-
-            @push('scripts')
-            <script type="text/javascript" src="{{ asset('public/toastr/toastr.min.js') }}"></script>
-            <script src="{{ asset('js/bootstrap-multiselect.js') }}"></script>
-            <script src="{{ asset('modules/blogs/js/blogs.js') }}"></script>
-
-
-
-
-            <script>
-            < ? php
-            if ($errors - > has('title') || $errors - > has('slug') || $errors - > has('content')) {
-                ?
-                >
-                $('#addModal').modal('show'); <
-                ?
-                php
-            } ? >
-            <
-            ?
-            php
-            if ($errors - > has('title_update') || $errors - > has('slug_update') || $errors - > has(
-                    'content_update')) {
-                ?
-                >
-                $('#editModal').modal('show'); <
-                ?
-                php
-            } ? >
-
-            $('#blogTable').dataTable();
-            </script>
-
+            @push('css')
+            <link rel="stylesheet" href="{{ asset('modules/blogs/css/blogs.css') }}">
             @endpush

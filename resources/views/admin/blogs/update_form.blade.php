@@ -61,16 +61,16 @@ $queryString = MiscHelper::getLangQueryStr();
                                                     {{csrf_field()}}
                                                     <input type="hidden" value="{{ $blog-> id }}" name="id" id="id">
                                                     <div class="row">
-                                                        <div class="col-lg-9">
-                                                            <div
-                                                                class="form-group {{ $errors->has('lang') ? 'has-error' : '' }}">
+                                                        <div class="col-lg-9 bg-grey p-2">
+                                                        <div class="user-account-section"> 
+                                                            <h3 class="section-title">Thành phần bài viết</h3>                                                   
+                                                            <div class="form-group {{ $errors->has('lang') ? 'has-error' : '' }}">
                                                                 <label class="control-label" for="lang">{{__("Select a language")}}</label>
                                                                 {!! Form::select('lang', ['' => __('Select')]+$languages, $lang, array('class'=>'form-control', 'id'=>'lang', 'onchange'=>'setLang(this.value)')) !!}
                                                                 <span
                                                                     class="text-danger">{{ $errors->first('lang') }}</span>
                                                             </div>
-                                                            <div
-                                                                class="form-group {{ $errors->has('title_update') ? 'has-error' : '' }}">
+                                                            <div class="form-group {{ $errors->has('title_update') ? 'has-error' : '' }}">
                                                                 <label class="control-label" for="title">{{__("Title")}}</label>
                                                                 <input type="text" class="form-control"
                                                                     name="title_update" id="title_update" autofocus
@@ -78,8 +78,7 @@ $queryString = MiscHelper::getLangQueryStr();
                                                                 <span
                                                                     class="text-danger">{{ $errors->first('title_update') }}</span>
                                                             </div>
-                                                            <div
-                                                                class="form-group {{ $errors->has('slug_update') ? 'has-error' : '' }}">
+                                                            <div class="form-group {{ $errors->has('slug_update') ? 'has-error' : '' }}">
                                                                 <label class="control-label"
                                                                     for="Slug_update">Slug</label>
                                                                 <input type="text" class="form-control"
@@ -88,8 +87,7 @@ $queryString = MiscHelper::getLangQueryStr();
                                                                 <span
                                                                     class="text-danger">{{ $errors->first('slug_update') }}</span>
                                                             </div>
-                                                            <div
-                                                                class="form-group {{ $errors->has('content_update') ? 'has-error' : '' }}">
+                                                            <div class="form-group {{ $errors->has('content_update') ? 'has-error' : '' }}">
                                                                 <label class="control-label"
                                                                     for="content">Nội dung</label>
                                                                 <textarea class="form-control" name="content_update"
@@ -98,37 +96,40 @@ $queryString = MiscHelper::getLangQueryStr();
                                                                 <span
                                                                     class="text-danger">{{ $errors->first('content_update') }}</span>
                                                             </div>
-                                                            <br /><br /><br />
+                                                        </div>
+                                                            
                                                             <div class="clearfix"></div>
-                                                            <div class="blogboxint">
-                                                                <h3>SEO</h3>
-                                                                <div id="div_show_seo_fields">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label" for="title">Meta Title</label>
-                                                                        <input type="text" class="form-control"
-                                                                            name="meta_title_update"
-                                                                            id="meta_title_update" autofocus
-                                                                            value="{{ $blog->meta_title }}">
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label class="control-label" for="title">Meta Keywords</label>
-                                                                        <input type="text" class="form-control"
-                                                                            name="meta_keywords_update"
-                                                                            id="meta_keywords_update" autofocus
-                                                                            value="{{ $blog->meta_keywords }}">
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label class="control-label" for="title">Meta Description</label>
-                                                                        <textarea class="form-control"
-                                                                            name="meta_descriptions_update"
-                                                                            id="meta_descriptions_update" cols="40"
-                                                                            rows="5"
-                                                                            autofocus>{{ $blog->meta_descriptions }}</textarea>
+                                                                <div class="user-account-section">
+                                                                <div class="blogboxint">
+                                                                <h3 class="section-title"> Thành phần SEO</h3>
+                                                                    <div id="div_show_seo_fields">
+                                                                        <div class="form-group">
+                                                                            <label class="control-label" for="title">Meta Title</label>
+                                                                            <input type="text" class="form-control"
+                                                                                name="meta_title_update"
+                                                                                id="meta_title_update" autofocus
+                                                                                value="{{ $blog->meta_title }}">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label class="control-label" for="title">Meta Keywords</label>
+                                                                            <input type="text" class="form-control"
+                                                                                name="meta_keywords_update"
+                                                                                id="meta_keywords_update" autofocus
+                                                                                value="{{ $blog->meta_keywords }}">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label class="control-label" for="title">Meta Description</label>
+                                                                            <textarea class="form-control"
+                                                                                name="meta_descriptions_update"
+                                                                                id="meta_descriptions_update" cols="40"
+                                                                                rows="5"
+                                                                                autofocus>{{ $blog->meta_descriptions }}</textarea>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-3">
+                                                        <div class="col-lg-3 p-2">
                                                             <div class="blogboxint">
                                                                 <input type="submit" value="{{__("Post")}}"
                                                                     class="btn btn-primary">

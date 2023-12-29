@@ -33,10 +33,10 @@
                 vertical-align: baseline;
             }
             
-            .form-group {
-                padding-bottom: 56px;
+          
+            .optionlist {
+                list-style-type: none;
             }
-            
             .btn_submit {
                 text-align: right;
             }
@@ -146,7 +146,7 @@
                 justify-content: end;
             }
             .justify-content-center {
-                justify-content: center;
+                justify-content: center !important;
             }
             .justify-content-between {
                 justify-content:space-between ;
@@ -154,6 +154,41 @@
             .align-items-center {
                 align-items: center;
             }
+            .user-account-section {
+                background: #ffffff;
+                -webkit-box-shadow: 0px 1px 3px rgba(96, 108, 128, 0.1);
+                box-shadow: 0px 1px 3px rgba(96, 108, 128, 0.1);
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 30px;
+            }
+            .bg-grey{
+                background-color: #f0f0f0;
+            }
+            .p-1 {
+                padding: 1rem;
+            }
+            .p-2 {
+                padding: 2rem;
+            }
+            .section-title {
+                font-size: 26px;
+                font-weight: 600;
+            }
+
+            .m-1 {
+                margin: 1rem;
+            }
+            .m-2 {
+                margin: 2rem;
+            }
+
+            .filter_blog {
+                margin: 10px 0 !important;
+            }
+
+           
+
 
             
             @media (-o-min-device-pixel-ratio: 5/4),
@@ -168,5 +203,6 @@
                 }
             }
 
+ 
 
            

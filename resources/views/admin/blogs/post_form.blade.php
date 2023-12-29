@@ -16,7 +16,7 @@
             line-height: 2.42857 !important;
         }
     </style>
-    <div class="page-content-wrapper">
+    <div class="page-content-wrapper ">
         <!-- BEGIN CONTENT BODY -->
         <div class="page-content">
             <!-- BEGIN PAGE HEADER-->
@@ -57,78 +57,79 @@
                                                           enctype="multipart/form-data">
                                                         {{csrf_field()}}
                                                         <div class="row">
-                                                            <div class="col-lg-9">
-                                                                <div
-                                                                        class="form-group {{ $errors->has('lang') ? 'has-error' : '' }}">
-                                                                    <label class="control-label" for="lang">Lựa chọn ngôn ngữ</label>
-                                                                    {!! Form::select('lang', ['' => __('Select')]+$languages, $lang, array('class'=>'form-control', 'id'=>'lang', 'onchange'=>'setLang(this.value)')) !!}
-                                                                    <span
-                                                                            class="text-danger">{{ $errors->first('lang') }}</span>
+                                                            <div class="col-lg-9 bg-grey p-2">
+                                                                <div class="user-account-section">
+                                                                    <h3 class="section-title">Thành phần bài viết</h3>
+                                                                    <div class="form-group {{ $errors->has('lang') ? 'has-error' : '' }}">
+                                                                        <label class="control-label" for="lang">Lựa chọn ngôn ngữ</label>
+                                                                        {!! Form::select('lang', ['' => __('Select')]+$languages, $lang, array('class'=>'form-control', 'id'=>'lang', 'onchange'=>'setLang(this.value)')) !!}
+                                                                        <span
+                                                                                class="text-danger">{{ $errors->first('lang') }}</span>
+                                                                    </div>
+                                                                    <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
+                                                                        <label class="control-label" for="title">Tiêu
+                                                                            đề</label>
+                                                                        <input type="text" class="form-control" name="title"
+                                                                               id="title" autofocus
+                                                                               value="{{ old('title') }}">
+                                                                        <span
+                                                                                class="text-danger">{{ $errors->first('title') }}</span>
+                                                                    </div>
+                                                                    <div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
+                                                                        <label class="control-label" for="Slug">Slug</label>
+                                                                        <input type="text" class="form-control" name="slug"
+                                                                               id="slug" autofocus
+                                                                               value="{{ old('slug') }}">
+                                                                        <span
+                                                                                class="text-danger">{{ $errors->first('slug') }}</span>
+                                                                    </div>
+                                                                    <div class="form-group {{ $errors->has('content') ? 'has-error' : '' }}">
+                                                                        <label class="control-label"
+                                                                               for="content">Nội dung</label>
+                                                                        <textarea class="form-control" name="content"
+                                                                                  id="description" cols="40" rows="5"
+                                                                                  autofocus>{{ old('content') }}</textarea>
+                                                                        <span
+                                                                                class="text-danger">{{ $errors->first('content') }}</span>
+                                                                    </div>
                                                                 </div>
-                                                                <div
-                                                                        class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
-                                                                    <label class="control-label" for="title">Tiêu
-                                                                        đề</label>
-                                                                    <input type="text" class="form-control" name="title"
-                                                                           id="title" autofocus
-                                                                           value="{{ old('title') }}">
-                                                                    <span
-                                                                            class="text-danger">{{ $errors->first('title') }}</span>
-                                                                </div>
-                                                                <div
-                                                                        class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
-                                                                    <label class="control-label" for="Slug">Slug</label>
-                                                                    <input type="text" class="form-control" name="slug"
-                                                                           id="slug" autofocus
-                                                                           value="{{ old('slug') }}">
-                                                                    <span
-                                                                            class="text-danger">{{ $errors->first('slug') }}</span>
-                                                                </div>
-                                                                <div
-                                                                        class="form-group {{ $errors->has('content') ? 'has-error' : '' }}">
-                                                                    <label class="control-label"
-                                                                           for="content">Nội dung</label>
-                                                                    <textarea class="form-control" name="content"
-                                                                              id="description" cols="40" rows="5"
-                                                                              autofocus>{{ old('content') }}</textarea>
-                                                                    <span
-                                                                            class="text-danger">{{ $errors->first('content') }}</span>
-                                                                </div>
-                                                                <br/><br/><br/>
+                                                                
                                                                 <div class="clearfix"></div>
-                                                                <div class="blogboxint">
-                                                                    <h3>SEO</h3>
-                                                                    <div id="div_show_seo_fields">
-                                                                        <div class="form-group">
-                                                                            <label class="control-label" for="title">Tiêu
-                                                                                đề Meta</label>
-                                                                            <input type="text" class="form-control"
-                                                                                   name="meta_title" id="meta_title"
-                                                                                   autofocus
-                                                                                   value="{{ old('meta_title') }}">
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label class="control-label" for="title">Từ
-                                                                                khóa Meta</label>
-                                                                            <input type="text" class="form-control"
-                                                                                   name="meta_keywords"
-                                                                                   id="meta_keywords"
-                                                                                   autofocus
-                                                                                   value="{{ old('meta_keywords') }}">
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label class="control-label" for="title">Mô
-                                                                                tả Meta</label>
-                                                                            <textarea class="form-control"
-                                                                                      name="meta_descriptions"
-                                                                                      id="meta_descriptions" cols="40"
-                                                                                      rows="5"
-                                                                                      autofocus>{{ old('meta_description') }}</textarea>
+                                                                <div class="user-account-section">
+                                                                    <div class="blogboxint">
+                                                                        <h3 class="section-title"> Thành phần SEO</h3>
+                                                                        <div id="div_show_seo_fields">
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="title">Tiêu
+                                                                                    đề Meta</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    name="meta_title" id="meta_title"
+                                                                                    autofocus
+                                                                                    value="{{ old('meta_title') }}">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="title">Từ
+                                                                                    khóa Meta</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    name="meta_keywords"
+                                                                                    id="meta_keywords"
+                                                                                    autofocus
+                                                                                    value="{{ old('meta_keywords') }}">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label class="control-label" for="title">Mô
+                                                                                    tả Meta</label>
+                                                                                <textarea class="form-control"
+                                                                                        name="meta_descriptions"
+                                                                                        id="meta_descriptions" cols="40"
+                                                                                        rows="5"
+                                                                                        autofocus>{{ old('meta_description') }}</textarea>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-lg-3">
+                                                            <div class="col-lg-3 p-2">
                                                                 <div class="blogboxint">
                                                                     <input type="submit" value="Đăng bài"
                                                                            class="btn btn-primary">

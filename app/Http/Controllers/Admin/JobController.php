@@ -102,7 +102,7 @@ class JobController extends Controller
                                 $featuredIcon = 'check-square-o';
                             }
                             return '
-				<div class="">
+				<div class="d-flex justify-content-center position-relative">
 					<button class="btn blue dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Thao tác
 						<i class="fa fa-angle-down"></i>
 					</button>
@@ -118,7 +118,7 @@ class JobController extends Controller
 						</li>
 						<li>
 						<a href="javascript:void(0);" onClick="' . $featuredHref . '" id="onclickFeatured' . $jobs->id . '"><i class="fa fa-' . $featuredIcon . '" aria-hidden="true"></i>' . $featuredTxt . '</a>
-						</li>																																		
+						</li>	    																																	
 					</ul>
 				</div>';
                         })

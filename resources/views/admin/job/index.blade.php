@@ -5,6 +5,20 @@
         font-size: 12px;
         line-height: 2.42857 !important;
     }	
+    .position-relative {
+        position: relative !important;
+    }
+    td .dropdown-menu {
+        left: -70px;
+    }
+    .search-wrapper {
+        margin: 20px 0;
+        max-width: 500px;
+    }
+    .search-wrapper input {
+        width: 100%;
+        
+    }
 </style>
 <div class="page-content-wrapper"> 
     <!-- BEGIN CONTENT BODY -->
@@ -33,8 +47,12 @@
                     <div class="portlet-body">
                         <div class="table-container">
                             <form method="post" role="form" id="job-search-form">
+                                <div class="search-wrapper">
+                                    <input type="text" class="form-control" name="search" id="search" autocomplete="off" placeholder="Tìm kiếm">
+                                </div>
                                 <table class="table table-striped table-bordered table-hover"  id="jobDatatableAjax">
                                     <thead>
+    
                                         <tr role="row" class="filter">
                                             <td>{!! Form::select('company_id', ['' => __('Select')]+$companies, null, array('id'=>'company_id', 'class'=>'form-control')) !!}</td>
                                             <td><input type="text" class="form-control" name="title" id="title" autocomplete="off" placeholder="Chức danh"></td>

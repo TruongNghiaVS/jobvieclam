@@ -13,6 +13,7 @@ if (!isset($seo)) {
     <title>{{__($seo->seo_title) }}</title>
     <meta name="Description" content="{!! $seo->seo_description !!}">
     <meta name="Keywords" content="{!! $seo->seo_keywords !!}">
+    
     {!! $seo->seo_other !!}
     <link rel="icon" type="image/x-icon" href="{{ asset('/vietstar/imgs/jobvieclam.png') }}">
 

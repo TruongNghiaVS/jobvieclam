@@ -13,7 +13,7 @@
         @if($item)
             <div class="article-title" bis_skin_checked="1">
                         <h6><a href="#" class="text-primary">{!! $item->title !!}</a></h6>
-                        <h2>{!! $item->description !!}</h2>
+                        <h1>{!! $item->description !!}</h1>
                         <div class="media" bis_skin_checked="1">
                             
                             <div class="media-body" bis_skin_checked="1">

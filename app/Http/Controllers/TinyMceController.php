@@ -66,7 +66,7 @@ class TinyMceController extends Controller
 
             $fileName = ImgUploader::UploadImageTinyMce('tinymce_images', $image, time());
 
-            echo json_encode(array('location' => asset('/') . '/tinymce_images/' . $fileName));
+            echo json_encode(array('location' => asset('/') . 'tinymce_images/' . $fileName));
 
         } else {
 

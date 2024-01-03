@@ -70,25 +70,40 @@ $company = $job->getCompany();
                   
                     <div class="">
                         @if($job->isJobExpired())
-                        <span class="btn btn-primary jbexpire "><i
-                                                class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
-                                            {{__('Job is expired')}}</span>
+                        <div class="p-1">
+                            <span class="btn btn-primary jbexpire "><i
+                                                    class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
+                                                {{__('Job is expired')}}</span>
+                        </div>
                         @elseif(Auth::check() && Auth::user()->isAppliedOnJob($job->id))
-                        <button class="btn btn-primary apply applied" disabled><i class="fa fa-paper-plane iconawesome"
-                                aria-hidden="true"></i>
-                            {{__('Already Applied')}}</button>
+                        <div class="p-1">
+                            <button class="btn btn-primary apply applied" disabled><i class="fa fa-paper-plane iconawesome"
+                                    aria-hidden="true"></i>
+                                {{__('Already Applied')}}</button>
+                        </div>
                         @else
-                        <a href="{{route('apply.job', $job->slug)}}" class="btn btn-primary apply"><i
-                                class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
+                        <div class="p-1">
+
+                            <a href="{{route('apply.job', $job->slug)}}" class="btn btn-primary apply"><i
+                            class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
                             {{__('Apply')}}
                         </a>
+                        </div>
                         @endif
                         @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
-                        <a href="{{route('remove.from.favourite', $job->slug)}}" class="btn btn-outline-primary">
-                            <i class="fas fa-heart iconoutline"></i> {{__('Favourite Job')}} </a> @else <a
-                            href="{{route('add.to.favourite', $job->slug)}}" class="btn btn-outline-primary"><i
+                            <div class="p-1">
+
+                                <a href="{{route('remove.from.favourite', $job->slug)}}" class="btn btn-outline-primary">
+                                    <i class="fas fa-heart iconoutline"></i> {{__('Favourite Job')}} </a>
+                            </div>
+                                
+                        @else 
+                        <div class="p-1">
+                            <a href="{{route('add.to.favourite', $job->slug)}}" class="btn btn-outline-primary"><i
                                 class="fas fa-heart iconoutline"></i></a>
-                      
+                                
+                        </div>
+                        
                         @endif
                     </div>
                 </div>

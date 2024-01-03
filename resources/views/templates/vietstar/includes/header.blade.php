@@ -100,9 +100,9 @@
                         <ul class="sub-menu" data-ref="findJob_blog" data-target="false">
                             @foreach($categories as $category)
                             <li>
-                                <a class="sub-item" href="{{ url('/blog/category/') . "/" . $category->slug }}"><span class="iconmoon icon-recruiter-portfolio"></span>
+                                <h1 class="sub-item" href="{{ url('/blog/category/') . "/" . $category->slug }}"><span class="iconmoon icon-recruiter-portfolio"></span>
                                     {{$category->heading}}
-                                </a>
+                                </h1>
                             </li>
                             @endforeach
                         </ul>

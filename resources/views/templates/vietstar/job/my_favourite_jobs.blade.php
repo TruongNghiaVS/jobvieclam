@@ -12,7 +12,7 @@
     <div class="content">
 
         <div class="myads">
-            <h3>{{__('Favourite Jobs')}}</h3>
+            <h1 class="fs-25px">{{__('Favourite Jobs')}}</h1>
             @include('flash::message')
             <div class="searchList jobs-side-list">
                 <!-- job start -->

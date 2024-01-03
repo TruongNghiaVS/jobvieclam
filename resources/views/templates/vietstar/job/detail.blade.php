@@ -27,7 +27,7 @@ $company = $job->getCompany();
              
                 <div class="job-detail-banner__group d-flex flex-fill">
                     <div class="job-detail-banner__detail">
-                        <h3 class="banner__title">{{$job->title}}</h3>
+                        <h1 class="banner__title">{{$job->title}}</h1>
                         <div class="banner__company">{{$company->name}}</div>
                    
                         <div class="banner__due-day mb-3">

@@ -16,7 +16,7 @@
         @include('templates.employers.includes.mobile_dashboard_menu')
         <div class="container company-content">
                 <div class="myads message-body">
-                    <h3>{{__('Company Messages')}}</h3>
+                    <h1 class="fs-25px">{{__('Company Messages')}}</h1>
                     <div class="row message-body-content">
                         <div class="col-lg-4 col-md-4">
                             <div class="message-inbox">

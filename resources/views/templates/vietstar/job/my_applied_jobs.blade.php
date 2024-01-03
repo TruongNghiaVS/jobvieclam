@@ -13,7 +13,7 @@
      
 
             <div class="myads">
-                <h3>{{__('Applied Jobs')}}</h3>
+                <h1 class="fs-25px">{{__('Applied Jobs')}}</h1>
                 <div class="searchList jobs-side-list">
                     <!-- job start -->
                     @if(isset($jobs) && count($jobs))

@@ -277,6 +277,11 @@
         font-size: 18px;
         font-weight: 600;
     }
+    #mobile-sidebar ul li a h1{
+        color: #bcc0c8;
+        font-size: 18px;
+        font-weight: 600;
+    }
 
     #mobile-sidebar ul ul a {
      
@@ -537,7 +542,7 @@
 
                                 <div class="d-flex w-100">
 
-                                    <span class="side-bar-content">{{$category->heading}}</span>
+                                    <h1 class="side-bar-content">{{$category->heading}}</h1>
                                 </div>
                             </a>
                         </li>

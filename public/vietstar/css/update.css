@@ -3914,6 +3914,16 @@ div#industry_id_chosen {
     -ms-flex-align: center;
     align-items: center
 }
+.main-menu .main-menu-static li h1, .main-menu .main-menu-static li span {
+    font-size: 15px;
+    line-height: 16px;
+   
+}
+
+.main-menu .main-menu-static li h1 {
+    color: var(--bs-body-color);
+    font-weight: 500;
+}
 
 .main-menu .main-menu-static li .nav-link {
     text-decoration: none;
@@ -4205,7 +4215,7 @@ div#industry_id_chosen {
         -webkit-transition: color .3s ease-in-out;
         transition: color .3s ease-in-out;
         padding: 12px 15px;
-        display: block;
+        display: flex;
         pointer-events: auto !important
     }
 
@@ -4218,12 +4228,18 @@ div#industry_id_chosen {
         color: var(--bs-primary)
     }
 
-    .main-menu .has-child .sub-menu .sub-item:hover {
+    .main-menu .has-child .sub-menu .sub-item:hover  {
         color: var(--bs-primary);
         -webkit-transition: color .3s ease-in-out;
         transition: color .3s ease-in-out;
         background-color: #e4e4e4
     }
+    .main-menu .has-child .sub-menu .sub-item:hover h1 {
+        color: var(--bs-primary);
+        -webkit-transition: color .3s ease-in-out;
+        transition: color .3s ease-in-out;
+    }
+     
 
     .main-menu .has-child:hover .sub-menu {
         top: 100%;

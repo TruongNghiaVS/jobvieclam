@@ -54,7 +54,7 @@
                              -->
                             {{$company->printCompanyCoverImage()}}
                         </div>
-                        <a class="company-items__logo shadow" href="#">
+                        <a class="company-items__logo shadow" href="{{route('company.detail',$company->slug)}}">
                             {{$company->printCompanyImage()}}
                         </a>
                         <!-- <div class="company-items__follower">

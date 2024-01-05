@@ -541,6 +541,11 @@
     margin-bottom: 20px;
   }
 
+
+  .job-detail-title ,.job-detail-body {
+    padding-left: 10px;
+    padding-right: 10px;
+}
 }
 
 
@@ -853,6 +858,11 @@
   .cardBlock {
     padding-bottom: unset;
   }
+  .job-detail-title ,.job-detail-body {
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+ 
 
 
 }

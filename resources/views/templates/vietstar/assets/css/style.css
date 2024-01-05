@@ -774,8 +774,8 @@ a {
 }
 
 .card-news .card-news__icon {
-  width: 40px;
-  height: 40px;
+  width: 100px;
+  height: 100px;
   border-radius: 20px;
   overflow: hidden;
 }

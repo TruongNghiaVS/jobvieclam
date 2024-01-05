@@ -552,6 +552,7 @@
   max-width: 100%;
 }
 .job-detail-banner .action-detail {
+  margin-top: 10px;
   width: 100%;
   max-width: 100%;
   justify-content: center;
@@ -878,6 +879,10 @@
   .job-detail-title ,.job-detail-body {
       padding-left: 10px;
       padding-right: 10px;
+  }
+  .action-detail__apply {
+    display: flex;
+    justify-content: end;
   }
  
 

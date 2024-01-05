@@ -104,6 +104,37 @@
         </div>
         </div>
     </section>
+
+    <div class="bg-primary p-4">
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="text-white p-2">Việc làm Bình Dương</div>
+                                <div class="text-white p-2">Việc làm Đồng Nai</div>
+                                <div class="text-white p-2">Việc làm Vũng Tàu</div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="text-white p-2">Việc làm Đà Nẵng</div>
+                                <div class="text-white p-2">Việc làm Hải Phòng</div>
+                                <div class="text-white p-2">Việc làm Đà Lạt</div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="text-white p-2">Việc làm IT</div>
+                                <div class="text-white p-2">Việc làm Marketing</div>
+                                <div class="text-white p-2">Việc làm Chăm Sóc Khác Hàng</div>
+                
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                                <div class="text-white p-2">Thiết kế CV</div>
+                                <div class="text-white p-2">Bí Quyết Tìm Việc</div>
+                                <div class="text-white p-2">Kỹ năng phỏng vấn</div>
+                </div>
+             </div>
+        </div>
+    </div>
+
+
     <div class="inner-copyright">
         <div class="container">
             <div class="footer-widget footer-widget-contact">

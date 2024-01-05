@@ -76,13 +76,13 @@ $company = $job->getCompany();
                                                 {{__('Job is expired')}}</span>
                         </div>
                         @elseif(Auth::check() && Auth::user()->isAppliedOnJob($job->id))
-                        <div class="p-1 action-detail action-detail__apply">
+                        <div class="p-1  action-detail__apply">
                             <button class="btn btn-primary apply applied" disabled><i class="fa fa-paper-plane iconawesome"
                                     aria-hidden="true"></i>
                                 {{__('Already Applied')}}</button>
                         </div>
                         @else
-                        <div class="p-1 action-detail action-detail__apply">
+                        <div class="p-1  action-detail__apply">
 
                             <a href="{{route('apply.job', $job->slug)}}" class="btn btn-primary apply"><i
                             class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>

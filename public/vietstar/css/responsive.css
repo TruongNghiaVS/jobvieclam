@@ -200,9 +200,7 @@
     text-align: center;
   }
 
-  .job-detail-banner .job-detail-banner__detail {
-    margin-bottom: 10px;
-  }
+  
 
   .job-detail-banner .job-detail-banner__group .btn {
     margin-bottom: 10px;
@@ -546,6 +544,18 @@
     padding-left: 10px;
     padding-right: 10px;
 }
+.job-detail-banner__group {
+  flex-direction: column;
+}
+.job-detail-banner .job-detail-banner__detail {
+  width: 100%;
+  max-width: 100%;
+}
+.job-detail-banner .action-detail {
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+}
 }
 
 
@@ -685,8 +695,15 @@
   }
 
   .job-detail-banner .job-detail-banner__group .btn {
-    margin-bottom: 0;
-    margin-top: 20px;
+    
+  }
+  .job-detail-banner .action-detail {
+      flex-direction: column-reverse;
+      justify-content: start;
+  }
+  .action-detail__love {
+    display: flex;
+    justify-content: end;
   }
 
   .page-job-detail__floating-header .box .col-logo {

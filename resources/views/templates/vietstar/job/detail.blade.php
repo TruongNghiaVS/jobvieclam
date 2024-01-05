@@ -68,21 +68,21 @@ $company = $job->getCompany();
                         </div>
                     </div>
                   
-                    <div class="">
+                    <div class="action-detail">
                         @if($job->isJobExpired())
-                        <div class="p-1">
+                        <div class="p-1 action-detail__apply">
                             <span class="btn btn-primary jbexpire "><i
                                                     class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
                                                 {{__('Job is expired')}}</span>
                         </div>
                         @elseif(Auth::check() && Auth::user()->isAppliedOnJob($job->id))
-                        <div class="p-1">
+                        <div class="p-1 action-detail action-detail__apply">
                             <button class="btn btn-primary apply applied" disabled><i class="fa fa-paper-plane iconawesome"
                                     aria-hidden="true"></i>
                                 {{__('Already Applied')}}</button>
                         </div>
                         @else
-                        <div class="p-1">
+                        <div class="p-1 action-detail action-detail__apply">
 
                             <a href="{{route('apply.job', $job->slug)}}" class="btn btn-primary apply"><i
                             class="fa fa-paper-plane iconawesome" aria-hidden="true"></i>
@@ -91,15 +91,15 @@ $company = $job->getCompany();
                         </div>
                         @endif
                         @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
-                            <div class="p-1">
+                            <div class="p-1 action-detail__love">
 
-                                <a href="{{route('remove.from.favourite', $job->slug)}}" class="btn btn-outline-primary">
-                                    <i class="fas fa-heart iconoutline"></i> {{__('Favourite Job')}} </a>
+                                <a href="{{route('remove.from.favourite', $job->slug)}}" class="btn btn-outline">
+                                    <i class="fas fa-heart iconoutline"></i></a>
                             </div>
                                 
                         @else 
-                        <div class="p-1">
-                            <a href="{{route('add.to.favourite', $job->slug)}}" class="btn btn-outline-primary"><i
+                        <div class="p-1 action-detail__love">
+                            <a href="{{route('add.to.favourite', $job->slug)}}" class="btn btn-outline"><i
                                 class="fas fa-heart iconoutline"></i></a>
                                 
                         </div>
@@ -989,7 +989,7 @@ $company = $job->getCompany();
                                                         @endif
 
                                             </div>
-                                            <div class="navbar__link-separator" bis_skin_checked="1"></div>
+                                          
                                             <!--meta-city-->
                                     
                                             
@@ -1282,6 +1282,60 @@ $company = $job->getCompany();
 <style type="text/css">
 .view_more {
     display: none !important;
+}
+.jobs-side-list .item-job.related-jobs-item  .logo-company {
+    width: 100%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100px;
+    flex: 0 0 100px;
+    max-width: 100px;
+    display: flex;
+    align-items: center;
+}
+.item-job.related-jobs-item  .logo-company  .pic {
+    width: 100%;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 2px 10px #ddd;
+    box-shadow: 0px 2px 5px #ddd;
+    min-height: 100px;
+    border: 1px solid #e9eaec;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.jobs-side-list .item-job.related-jobs-item .jobinfo {
+    padding-left: 20px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(100% - 100px);
+    flex: 0 0 calc(100% - 100px);
+    max-width: calc(100% - 100px);
+    width: 100%;
+}
+.item-job.related-jobs-item .jobinfo .info .job-title-name a {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 1.3;
+    color: var(--text-main);
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+}
+.item-job.related-jobs-item .jobinfo .box-meta {
+    position: relative;
+    font-size: 15px;
+    line-height: 15px;
+    color: var(--sub-text);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+.item-job.related-jobs-item .jobinfo .box-meta div {
+    margin-bottom: 5px;
 }
 </style>
 @endpush

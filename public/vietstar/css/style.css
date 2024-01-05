@@ -420,7 +420,19 @@ a {
 
 .job-detail-banner .job-detail-banner__detail {
 	flex-grow: 1;
-	max-width: 80%;
+	max-width: 70%;
+}
+.job-detail-banner .action-detail {
+	width: 29%;
+	display: flex;
+	justify-content: end;
+}
+.action-detail__apply{
+	width: unset;
+}
+
+.action-detail__love{
+
 }
 
 .job-detail-banner .job-detail-banner__detail .banner__title {

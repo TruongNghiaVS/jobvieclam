@@ -7075,7 +7075,7 @@ span.iconmoon.icon-eye-icon {
 
 .cv-template-1 .temFlex .body-content .bg-main {
     background-color: #ff7c7f;
-    padding: 10px
+
 }
 
 .cv-template-1 .temFlex .body-content .bg-main * {
@@ -7089,7 +7089,7 @@ span.iconmoon.icon-eye-icon {
 }
 
 .cv-template-1 .temFlex .body-content .box {
-    margin-bottom: 30px
+    margin-bottom: 20px
 }
 
 .cv-template-1 .temFlex .body-content .progress-group {
@@ -7131,13 +7131,13 @@ span.iconmoon.icon-eye-icon {
 }
 
 .cv-template-1 .temFlex .timeline .time {
-    width: 80px;
+    width: 100px;
     float: left;
     text-align: center
 }
 
 .cv-template-1 .temFlex .timeline .info {
-    width: calc(100% - 80px);
+    width: calc(100% - 110px);
     float: left
 }
 

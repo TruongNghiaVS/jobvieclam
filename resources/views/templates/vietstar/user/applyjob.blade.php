@@ -22,6 +22,7 @@
                             <tr>
                                 <th>{{__('Job title')}}</th>
                                 <td>{{$job->title}}</td>
+  
                             </tr>
                             <tr>
                                 <th>{{__('Company')}}</th>
@@ -29,7 +30,7 @@
                             </tr>
                             <tr>
                                 <th>{{__('Job location')}}</th>
-                                <td>{{$city->city}}</td>
+                                <td>{{$job->location ?  $job->location : $company->location}}</td>
                             </tr>
                             <tr>
                                 <th>{{__("Expiry Date")}}</th>

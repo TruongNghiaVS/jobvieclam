@@ -10,10 +10,13 @@
             @endphp
             <div class="swiper-wrapper">
                 @foreach($sliders as $slider)
-                <div class="swiper-slide p-0">
-                    <div class="is-pc bg-slider" style="background-image: url({{'slider_images/'.$slider->slider_image}});"></div>
-                    <div class="is-sp bg-slider" style="background-image: url({{'slider_images/'.$slider->slider_image_mobile}});"></div>
-                </div>
+                    @if($slider->is_active)
+
+                        <div class="swiper-slide p-0">
+                            <div class="is-pc bg-slider" style="background-image: url({{'slider_images/'.$slider->slider_image}});"></div>
+                            <div class="is-sp bg-slider" style="background-image: url({{'slider_images/'.$slider->slider_image_mobile}});"></div>
+                        </div>
+                    @endif
                 @endforeach
             </div>
             <div class="swiper-pagination"></div>

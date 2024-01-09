@@ -441,7 +441,7 @@ class UserController extends Controller
         $user->country_id = $request->input('country_id');
         // $user->state_id = $request->input('state_id');
         $user->city_id = $request->input('city_id');
-        // $user->phone = $request->input('phone');
+        $user->phone = $request->input('phone');
         // $user->mobile_num = $request->input('mobile_num');
         
 		// $user->is_subscribed = $request->input('is_subscribed', 0);

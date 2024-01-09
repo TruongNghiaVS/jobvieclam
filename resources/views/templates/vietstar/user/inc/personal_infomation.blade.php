@@ -78,7 +78,7 @@
                         </strong>
                     </td>
                     <td class="table_value">
-                    {{$user->last_name}}
+                    {{ $user->last_name ? $user->last_name :"Chưa cập nhật" }}
                     </td>
                 </tr>
 
@@ -97,6 +97,21 @@
                                 @endif
                             @endforeach
                         @endif
+                         <!-- {{$user->gender_id == 15 ? "Nam": "Nữ" }} -->
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <td class="text-primary table_title">
+                        <strong>
+                            {{__('Mobile Number')}}
+                        </strong>
+                    </td>
+                    <td class="table_value">
+                       
+                    {{ $user->phone ? $user->phone :"Chưa cập nhật" }}
                          <!-- {{$user->gender_id == 15 ? "Nam": "Nữ" }} -->
                     </td>
                 </tr>
@@ -336,6 +351,13 @@
                                 {!! APFrmErrHelp::showErrors($errors, 'gender_id') !!}
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'marital_status_id') !!}">
+                                <label class="required" for="">{{__('Mobile Number')}}</label>
+                                <input type="text" class="form-control" required id="phone" name="phone" value="{{ isset(auth()->user()->phone ) ? auth()->user()->phone : old('phone')}}" placeholder="{{__('Mobile Number')}}">
+                            </div>
+                        </div>
+
                         <div class="col-md-6">
                             <div class="form-group {!! APFrmErrHelp::hasError($errors, 'marital_status_id') !!}">
                                 <label class="required" for="">{{__('Martial Status')}}</label>

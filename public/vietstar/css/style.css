@@ -1376,6 +1376,7 @@ section#flash-badge-banner {
 	width: 100%;
 	-webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+	text-align: start;
 }
 
 .section-jobs-by-industry .alljobs_swiper {
@@ -2112,7 +2113,7 @@ h3.seekertxt span {
 	width: 100%;
 	padding: 10px;
 	border: 2px solid transparent;
-	background: #ffefeb;
+	
 	position: relative;
 	border-radius: 3px;
 }

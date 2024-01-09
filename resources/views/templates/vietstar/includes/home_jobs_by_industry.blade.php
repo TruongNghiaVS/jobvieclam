@@ -10,7 +10,7 @@
                             <div class="industry-slide-box__item">
                                 <div class="item">
                                     <div class="iner__box-icon">
-                                        <img src="https://static.careerbuilder.vn/themes/careerbuilder/images/png/22.png" alt="">
+                                        <img src="{{ asset('/industry_icon') }}/{{$k ? $k : 248 }}.jpg" alt="">
                                     </div>
                                     <div class="iner__box-desc">
                                         <h3>{{$industry}}</h3>

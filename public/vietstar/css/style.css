@@ -2161,8 +2161,9 @@ h3.seekertxt span {
 }
 
 .iner__box-icon img {
-	max-width: 80px;
-	max-height: 80px;
+	max-width: 100px;
+	max-height: 100px;
+	border-radius: 50%;
 }
 
 .iner__box-desc h3 {

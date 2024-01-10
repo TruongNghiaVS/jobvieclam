@@ -13,6 +13,8 @@
   $user = Auth::user();
  }
 
+ 
+
 
 ?>
 
@@ -45,23 +47,36 @@
                     <li>
                       <p><strong>Quốc tịch:</strong></p>
                       
-                      <p>Chưa cập nhật</p>
+                      <p>@if($user->nationality_id)
+                            @foreach ($nationalities as $key => $nationalitie)
+                                @if( $key == $user->nationality_id )
+                                {{$nationalitie }}
+                                @endif
+                            @endforeach
+                        @endif</p>
                     </li>
                     <li>
                       <p><strong>Giới tính:</strong></p>
-                      <p>{{$user->getGender('gender')}} -   </p>
+                      <p>{{$user->getGender('gender')}} - 
+                      
+                      @if($user->marital_status_id)
+                            @foreach ($maritalStatuses as $key => $maritalStatuse)
+                                @if( $key == $user->marital_status_id )
+                                {{$maritalStatuse }}
+                                @endif
+                            @endforeach
+                        @endif
+                    
+                    </p>
                     </li>
-                    <li>
-                      <p><strong>Quốc gia:</strong></p>
-                      <p>Việt Nam</p>
-                    </li>
+                    
                     <li>
                       <p><strong>Tỉnh/Thành Phố:</strong></p>
-                      <p>Chưa cập nhật</p>
+                      <p>{{Auth::user()->getLocation() ? Auth::user()->getLocation() : __('Not update') }}</p>
                     </li>
                     <li>
-                      <p><strong>Địa chỉ:</strong></p>
-                      <p> {{ $user->street_address ?  $user->street_address :"Chưa cập nhật" }}  </p>
+                      <p><strong>Email: </strong></p>
+                      <p> {{ auth()->user()->email ? auth()->user()->email : __('Not update') }}  </p>
                     </li>
                   </ul>
                 </div>

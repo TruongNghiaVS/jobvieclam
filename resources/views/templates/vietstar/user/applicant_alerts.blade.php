@@ -12,7 +12,7 @@
     @include('templates.vietstar.includes.default_sidebar_menu')
     <div class="content">
         <div class="userdashbox">
-            <h3>{{__('My Job Alerts')}}</h3>
+            <h1 class="fs-25px">{{__('My Job Alerts')}}</h1>
             <table class="table">
                 <tbody>
                     <tr>

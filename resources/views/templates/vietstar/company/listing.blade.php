@@ -17,7 +17,7 @@
         
     <form method ="get" action="/cong-ty">
         <div id="topcompanyhead" class="topcompanyhead">
-            <h3>Khám phá 1.000+ công ty nổi bật</h3>
+            <h1>Khám phá 1.000+ công ty nổi bật</h1>
             <p>Tìm hiểu văn hoá công ty và chọn cho bạn nơi làm việc phù hợp nhất.</p>
             <div class="topcompanyhead__search row">
                 <div class="search-company col-6 px-0">
@@ -54,7 +54,7 @@
                              -->
                             {{$company->printCompanyCoverImage()}}
                         </div>
-                        <a class="company-items__logo shadow" href="#">
+                        <a class="company-items__logo shadow" href="{{route('company.detail',$company->slug)}}">
                             {{$company->printCompanyImage()}}
                         </a>
                         <!-- <div class="company-items__follower">

@@ -10,10 +10,13 @@
             @endphp
             <div class="swiper-wrapper">
                 @foreach($sliders as $slider)
-                <div class="swiper-slide">
-                    <div class="is-pc bg-slider" style="background-image: url({{'slider_images/'.$slider->slider_image}});"></div>
-                    <div class="is-sp bg-slider" style="background-image: url({{'slider_images/'.$slider->slider_image_mobile}});"></div>
-                </div>
+                    @if($slider->is_active)
+
+                        <div class="swiper-slide p-0">
+                            <div class="is-pc bg-slider" style="background-image: url({{'slider_images/'.$slider->slider_image}});"></div>
+                            <div class="is-sp bg-slider" style="background-image: url({{'slider_images/'.$slider->slider_image_mobile}});"></div>
+                        </div>
+                    @endif
                 @endforeach
             </div>
             <div class="swiper-pagination"></div>
@@ -82,7 +85,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="advance-search row">
-                            <div class="advance-search__reset col-lg-6">Reset</div>
+                            <div class="advance-search__reset col-lg-6">Đặt lại</div>
                             <div class="col-lg-6 advance-search__box">
                                 <div class="advance-search__open" onClick="opensearchbox()"><i class="fa-solid fa-magnifying-glass"></i><span>Tìm kiếm nâng cao</span></div>
                                 <div class="advance-search__close" onClick="closesearchbox()"><i class="fa-solid fa-angle-up"></i> Thu nhỏ</div>

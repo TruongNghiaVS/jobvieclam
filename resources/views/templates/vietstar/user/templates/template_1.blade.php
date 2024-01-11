@@ -81,18 +81,19 @@
                 </div>
                 <div class="col-6">
                     <div class="bg-main">
-                        <div class="box">
+                        <div class="box p-3">
                             <h3>KINH NGHIỆM VIỆC LÀM</h3>
                             @if(count($user->profileExperience) > 0)
                             @foreach($user->profileExperience as $experience)
                             <div class="timeline">
                                 <div class="time">
-                                    {{ $experience->date_start->format('d M, Y') }} - {{ is_null($experience->date_end) ? 'Hiện đang làm việc' : $experience->date_end->format('d M, Y') }}
+                                    {{ $experience->date_start->format('d M, Y') }} <br>
+                                    {{ is_null($experience->date_end) ? 'Hiện đang làm việc' : $experience->date_end->format('d M, Y') }}
                                 </div>
                                 <div class="info">
-                                    <div><strong>{{ $experience->company }} | {{ $experience->title }}</strong></div>
+                                    <div><strong>- {{ $experience->company }} | {{ $experience->title }}</strong></div>
                                     <div>
-                                        {{ $experience->description }}
+                                        - {{ $experience->description }}
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
@@ -100,34 +101,36 @@
                             @endforeach
                             @endif
                         </div>
-                        <div class="box">
-                            <h3 class="">HOẠT ĐỘNG KHÁC</h3>
-                            <div class="" id="sticker_div_cv">
-                                <div class="sticker">
-                                    <ul class="list-sticker">
-                                        @if(count($user->profileActivity) > 0)
-                                        @foreach($user->profileActivity as $activity)
-                                        <li class="item" id="actList_23064">
-                                            <div class="head-sticker">
-                                                <div class="title">
-                                                    <h4>{{ $activity->company }}</h4>
-                                                    <div class="sub-title">
-                                                        <p>{{ $activity->role }}</p>
-                                                    </div>
-                                                    <div class="date">
-                                                        <p>{{ $activity->date_start->format('d M, Y') }} - {{ ($activity->date_end) ? $activity->date_end->format('d M, Y') : 'Hiện đang làm việc' }}</p>
-                                                    </div>
+                    </div>
+                    <div class="box p-3">
+                        <h3 class="">HOẠT ĐỘNG KHÁC</h3>
+                        <div class="" id="sticker_div_cv">
+                            <div class="sticker">
+                                <ul class="list-sticker">
+                                    @if(count($user->profileActivity) > 0)
+                                    @foreach($user->profileActivity as $activity)
+                                    <li class="item" id="actList_23064">
+                                        <div class="head-sticker">
+                                            <div class="title">
+                                                <h4>{{ $activity->company }}</h4>
+                                                <div class="sub-title">
+                                                    <p>{{ $activity->role }}</p>
                                                 </div>
-                                                
+                                                <div class="date">
+                                                    <p>{{ $activity->date_start->format('d M, Y') }} - {{ ($activity->date_end) ? $activity->date_end->format('d M, Y') : 'Hiện đang làm việc' }}</p>
+                                                </div>
                                             </div>
-                                        </li>
-                                        @endforeach
-                                        @endif
-                                    </ul>
-                                </div>
+                                            
+                                        </div>
+                                    </li>
+                                    @endforeach
+                                    @endif
+                                </ul>
                             </div>
                         </div>
-                        <div class="box">
+                    </div>
+                    <div class="bg-main">
+                        <div class="box p-3">
                             <h3 class="">NGƯỜI THAM KHẢO</h3>
                             <div class="" id="references_div_cv">
 

@@ -28,7 +28,7 @@
 @endpush
 
 <div class="section-head">
-    <h3 class="title-form">JobViecLam Profile</h3>
+    <h1 class="title-form">JobViecLam Profile</h1>
 </div>
 
 <div class="section-body">

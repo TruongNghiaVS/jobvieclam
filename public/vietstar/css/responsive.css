@@ -200,9 +200,7 @@
     text-align: center;
   }
 
-  .job-detail-banner .job-detail-banner__detail {
-    margin-bottom: 10px;
-  }
+  
 
   .job-detail-banner .job-detail-banner__group .btn {
     margin-bottom: 10px;
@@ -541,6 +539,24 @@
     margin-bottom: 20px;
   }
 
+
+  .job-detail-title ,.job-detail-body {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.job-detail-banner__group {
+  flex-direction: column;
+}
+.job-detail-banner .job-detail-banner__detail {
+  width: 100%;
+  max-width: 100%;
+}
+.job-detail-banner .action-detail {
+  margin-top: 10px;
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+}
 }
 
 
@@ -552,8 +568,8 @@
     padding-right: 8px;
     padding: 8px 0;
   }
-  footer {
-    padding:0 40px;
+  footer{
+   
   }
 
   .page-heading-tool.job-detail.mobile input {
@@ -680,8 +696,15 @@
   }
 
   .job-detail-banner .job-detail-banner__group .btn {
-    margin-bottom: 0;
-    margin-top: 20px;
+    
+  }
+  .job-detail-banner .action-detail {
+      flex-direction: column-reverse;
+      justify-content: start;
+  }
+  .action-detail__love {
+    display: flex;
+    justify-content: end;
   }
 
   .page-job-detail__floating-header .box .col-logo {
@@ -853,6 +876,15 @@
   .cardBlock {
     padding-bottom: unset;
   }
+  .job-detail-title ,.job-detail-body {
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+  .action-detail__apply {
+    display: flex;
+    justify-content: end;
+  }
+ 
 
 
 }

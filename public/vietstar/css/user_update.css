@@ -660,8 +660,10 @@ i.fas.fa-heart.iconoutline {
     overflow: hidden;
 }
 .blog-single {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    
+}
+.fs-25px {
+    font-size: 25px;
 }
 
 .gray-bg {

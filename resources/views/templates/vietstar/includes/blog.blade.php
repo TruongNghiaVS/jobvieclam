@@ -85,7 +85,7 @@ $blogs = $data["blogs"]->items();
         <div class="container">
             <div class="head-box" bis_skin_checked="1">
                 <div class="cb-title" bis_skin_checked="1">
-                    <h2 ><a href="{{url('/')}}/blog/category/{{$category -> slug }}" class ="blog-heading" title="Bí quyết tìm việc">{{$heading}}</a></h2>
+                    <h1>{{$heading}}</h1>
                 </div>
                 
             </div>

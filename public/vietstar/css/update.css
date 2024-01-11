@@ -1594,12 +1594,7 @@ button:focus {
 }
 
 .card-news {
-    background: #ffffff;
-    border: 1px solid #d9dbe9;
-    -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 6px;
-    height: 100%;
+ 
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between
@@ -1607,9 +1602,9 @@ button:focus {
 
 .card-news .card-news__icon {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 45px;
-    flex: 0 0 45px;
-    max-width: 45px
+    -ms-flex: 0 0 80px;
+    flex: 0 0 80px;
+    max-width: 80px
 }
 
 .card-news .card-news__icon img {
@@ -1622,9 +1617,12 @@ button:focus {
 
 .card-news .card-news__content {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 calc(100% - 60px);
-    flex: 0 0 calc(100% - 60px);
-    max-width: calc(100% - 60px)
+    -ms-flex: 0 0 calc(100% - 100px);
+    flex: 0 0 calc(100% - 100px);
+    max-width: calc(100% - 100px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-news .card-news__content .card-news__content-title a {
@@ -1648,7 +1646,11 @@ button:focus {
     font-weight: 400;
     font-size: 13px;
     line-height: 18px;
-    color: var(--sub-text)
+    color: var(--sub-text);
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
 }
 
 .card-news .card-news__content .card-news__content-detail .iconmoon {
@@ -1670,7 +1672,7 @@ button:focus {
 
 h2.section-title {
     text-transform: uppercase;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 
 .blogs-slider .card-list-item .card-list-item__title a {
@@ -2461,6 +2463,7 @@ footer .inner-copyright .copyright {
     display: flex;
     align-items: start;
 }
+
 
 .jobs-side-list .item-job .logo-company .pic {
     width: 100%;
@@ -3315,18 +3318,11 @@ footer .inner-copyright .copyright {
     line-height: 1.3
 }
 
-.card-news .card-news__content {
-    position: relative
-}
 
-.card-news .card-news__content .card-news__content-title {
-    padding-right: 15px
-}
+
+
 
 .btn-pin-job {
-    position: absolute;
-    top: -10px;
-    right: -10px;
     background-color: transparent;
     border-width: 0;
     padding: 5px
@@ -3914,6 +3910,16 @@ div#industry_id_chosen {
     -ms-flex-align: center;
     align-items: center
 }
+.main-menu .main-menu-static li h1, .main-menu .main-menu-static li span {
+    font-size: 15px;
+    line-height: 16px;
+   
+}
+
+.main-menu .main-menu-static li h1 {
+    color: var(--bs-body-color);
+    font-weight: 500;
+}
 
 .main-menu .main-menu-static li .nav-link {
     text-decoration: none;
@@ -4205,7 +4211,7 @@ div#industry_id_chosen {
         -webkit-transition: color .3s ease-in-out;
         transition: color .3s ease-in-out;
         padding: 12px 15px;
-        display: block;
+        display: flex;
         pointer-events: auto !important
     }
 
@@ -4218,12 +4224,18 @@ div#industry_id_chosen {
         color: var(--bs-primary)
     }
 
-    .main-menu .has-child .sub-menu .sub-item:hover {
+    .main-menu .has-child .sub-menu .sub-item:hover  {
         color: var(--bs-primary);
         -webkit-transition: color .3s ease-in-out;
         transition: color .3s ease-in-out;
         background-color: #e4e4e4
     }
+    .main-menu .has-child .sub-menu .sub-item:hover h1 {
+        color: var(--bs-primary);
+        -webkit-transition: color .3s ease-in-out;
+        transition: color .3s ease-in-out;
+    }
+     
 
     .main-menu .has-child:hover .sub-menu {
         top: 100%;
@@ -7063,7 +7075,7 @@ span.iconmoon.icon-eye-icon {
 
 .cv-template-1 .temFlex .body-content .bg-main {
     background-color: #ff7c7f;
-    padding: 10px
+
 }
 
 .cv-template-1 .temFlex .body-content .bg-main * {
@@ -7077,7 +7089,7 @@ span.iconmoon.icon-eye-icon {
 }
 
 .cv-template-1 .temFlex .body-content .box {
-    margin-bottom: 30px
+    margin-bottom: 20px
 }
 
 .cv-template-1 .temFlex .body-content .progress-group {
@@ -7119,13 +7131,13 @@ span.iconmoon.icon-eye-icon {
 }
 
 .cv-template-1 .temFlex .timeline .time {
-    width: 80px;
+    width: 100px;
     float: left;
     text-align: center
 }
 
 .cv-template-1 .temFlex .timeline .info {
-    width: calc(100% - 80px);
+    width: calc(100% - 110px);
     float: left
 }
 

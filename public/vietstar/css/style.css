@@ -420,13 +420,26 @@ a {
 
 .job-detail-banner .job-detail-banner__detail {
 	flex-grow: 1;
-	max-width: 80%;
+	max-width: 70%;
+}
+.job-detail-banner .action-detail {
+	width: 29%;
+	display: flex;
+	justify-content: end;
+}
+.action-detail__apply{
+	width: unset;
+}
+
+.action-detail__love{
+
 }
 
 .job-detail-banner .job-detail-banner__detail .banner__title {
 	line-height: 38px;
 	margin-bottom: 16px;
 	font-size: 22px;
+	width: 95%;
 	
 }
 
@@ -1257,16 +1270,32 @@ section#flash-badge-banner {
 }
 
 /* Card News */
-.card-news {
+
+.card-box {
 	display: flex;
-	padding: 16px;
-	background-color: var(--white);
-	border-radius: 6px;
-	margin-top: 2px;
-	box-shadow: unset !important;
+    padding: 16px;
+    flex-direction: column;
+    background-color: var(--white);
+    border-radius: 6px;
+    margin-top: 2px;
+    box-shadow: unset !important;
+    border: 1px solid #d9dbe9;
+    -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    height: 160px;
 }
 
-.card-news:hover {
+
+.card-news {
+	display: flex;
+	-webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-box:hover {
 	outline: 0.5px solid #e5a2a3;
 	background-color: rgb(255 249 249 / 70%);
 }
@@ -1275,6 +1304,9 @@ section#flash-badge-banner {
 	display: flex;
 	align-items: center;
 	text-align: center;
+	justify-content: space-between;
+	overflow: hidden;
+	margin-bottom: 10px;
 }
 
 .content-title-box .label {
@@ -1287,7 +1319,6 @@ section#flash-badge-banner {
 	text-transform: uppercase;
 	vertical-align: middle;
 	color: white;
-	margin-bottom: 7px;
 }
 
 .content-title-box .label.label-danger {
@@ -1317,21 +1348,35 @@ section#flash-badge-banner {
 }
 
 .card-news .card-news__icon {
-	width: 40px;
-	height: 40px;
-	border-radius: 20px;
+	width: 80px;
+	height: 80px;
 	overflow: hidden;
+	border-radius: 5px;
 }
 
 .card-news .card-news__content {
 	flex-grow: 1;
 }
 
-.card-news .card-news__content .card-news__content-title {
-	font-size: 14px;
+.card-news__content-title {
+	font-size: 15px;
 	font-weight: 700;
-	margin: 10px 0;
 	margin-left: 5px;
+	
+    overflow: hidden;
+	margin: 0 20px;
+	display: -webkit-box;
+    width: 100%;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.card-news__content-title a {
+
+    display: -webkit-box;
+	width: 100%;
+	-webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+	text-align: start;
 }
 
 .section-jobs-by-industry .alljobs_swiper {
@@ -1342,7 +1387,6 @@ section#flash-badge-banner {
 	padding: 20px;
 	overflow: hidden;
 }
-
 .section-jobs-by-industry .swiper-slide {
 	text-align: center;
 	font-size: 18px;
@@ -1377,6 +1421,10 @@ section#flash-badge-banner {
 	font-weight: normal !important;
 	margin-bottom: 12px;
 	text-decoration: none;
+	
+}
+.card-news .card-news__content-head {
+	flex: 1;
 }
 
 .card-news .card-news__content-footer {
@@ -2064,7 +2112,7 @@ h3.seekertxt span {
 	width: 100%;
 	padding: 10px;
 	border: 2px solid transparent;
-	background: #ffefeb;
+	
 	position: relative;
 	border-radius: 3px;
 }
@@ -2113,8 +2161,9 @@ h3.seekertxt span {
 }
 
 .iner__box-icon img {
-	max-width: 80px;
-	max-height: 80px;
+	max-width: 100px;
+	max-height: 100px;
+	border-radius: 50%;
 }
 
 .iner__box-desc h3 {

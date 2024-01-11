@@ -26,7 +26,7 @@
                         onclick="Download_CV();">{{ __('Download CV') }}</button>
 
                     <button type="submit" class="btn btn-primary"
-                        onclick="Convert_HTML_To_PDF();">{{ __('Save this CV') }}</button>
+                        onclick="Convert_html_To_PDF();">{{ __('Save this CV') }}</button>
                 </div>
             </div>
         </div>
@@ -171,56 +171,7 @@
 <script type="text/javascript">
 var template_id = 1;
 
-function show_template(template_id) {
-    $.ajax({
-        type: "GET",
-        url: "{{ route('show.template') }}",
-        data: {
-            '_token': $('input[name=_token]').val(),
-            'template_id': template_id
-        },
-        success: function(res) {
-            $(".show-template").empty();
-            $(".show-template").append(res.html);
-            // applyStyleCV();
-            applyCVLangue($('#cv_lang').val());
-            applyCVFontsize($('#cv_font_size').val());
-        }
-    })
-}
-
-function Download_CV() {
-    var elementHTML = document.getElementById('show_template');
-    // Final file name
-    let fileName = "CV-" + '{{ $user->first_name.'
-    '.$user->middle_name.'
-    '.$user->last_name }}' + ".pdf";
-
-    // Assuming "pages" is an array of HTML elements or strings that are separate pages:
-    let pages = [];
-    $('#show_template').each(function() {
-        pages.push($(this)[0]);
-    });
-
-    let worker = html2pdf().from(pages[0]).set({
-        margin: 10,
-        filename: fileName,
-        html2canvas: {
-            scale: 2
-        },
-        jsPDF: {
-            orientation: 'portrait',
-            unit: 'pt',
-            format: 'a4',
-            compressPDF: true
-        }
-    }).toPdf();
-    worker.save()
-}
-
-
-
-function Convert_HTML_To_PDF() {
+function Convert_html_To_PDF() {
     var elementHTML = document.getElementById('show_template');
     // Final file name
     let fileName = "CV-" + '{{ $user->first_name.'
@@ -309,5 +260,56 @@ function Convert_HTML_To_PDF() {
     }
 
 };
+
+function show_template(template_id) {
+    $.ajax({
+        type: "GET",
+        url: "{{ route('show.template') }}",
+        data: {
+            '_token': $('input[name=_token]').val(),
+            'template_id': template_id
+        },
+        success: function(res) {
+            $(".show-template").empty();
+            $(".show-template").append(res.html);
+            // applyStyleCV();
+            applyCVLangue($('#cv_lang').val());
+            applyCVFontsize($('#cv_font_size').val());
+        }
+    })
+}
+
+function Download_CV() {
+    var elementHTML = document.getElementById('show_template');
+    // Final file name
+    let fileName = "CV-" + '{{ $user->first_name.'
+    '.$user->middle_name.'
+    '.$user->last_name }}' + ".pdf";
+
+    // Assuming "pages" is an array of HTML elements or strings that are separate pages:
+    let pages = [];
+    $('#show_template').each(function() {
+        pages.push($(this)[0]);
+    });
+
+    let worker = html2pdf().from(pages[0]).set({
+        margin: 10,
+        filename: fileName,
+        html2canvas: {
+            scale: 2
+        },
+        jsPDF: {
+            orientation: 'portrait',
+            unit: 'pt',
+            format: 'a4',
+            compressPDF: true
+        }
+    }).toPdf();
+    worker.save()
+}
+
+
+
+
 </script>
 @endpush

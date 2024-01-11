@@ -26,7 +26,7 @@
                         onclick="Download_CV();">{{ __('Download CV') }}</button>
 
                     <button type="submit" class="btn btn-primary"
-                        onclick="Convert_HTML_To_PDF();">{{ __('Save this CV') }}</button>
+                        onclick="Convert_html_To_PDF()">{{ __('Save this CV') }}</button>
                 </div>
             </div>
         </div>
@@ -192,9 +192,9 @@ function show_template(template_id) {
 function Download_CV() {
     var elementHTML = document.getElementById('show_template');
     // Final file name
-    let fileName = "CV-" + '{{ $user->first_name.'
-    '.$user->middle_name.'
-    '.$user->last_name }}' + ".pdf";
+    let fileName = "CV-" + `{{ $user->first_name.`
+        `.$user->middle_name.`
+    `.$user->last_name }}` + `.pdf`;
 
     // Assuming "pages" is an array of HTML elements or strings that are separate pages:
     let pages = [];
@@ -220,12 +220,12 @@ function Download_CV() {
 
 
 
-function Convert_HTML_To_PDF() {
+function Convert_html_To_PDF() {
     var elementHTML = document.getElementById('show_template');
     // Final file name
-    let fileName = "CV-" + '{{ $user->first_name.'
-    '.$user->middle_name.'
-    '.$user->last_name }}' + ".pdf";
+    let fileName = "CV-" + `{{ $user->first_name.`
+    `.$user->middle_name.`
+    `.$user->last_name }}` + `.pdf`;
 
     // Assuming "pages" is an array of HTML elements or strings that are separate pages:
     let pages = [];

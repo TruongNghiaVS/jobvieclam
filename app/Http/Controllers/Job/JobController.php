@@ -602,14 +602,26 @@ class JobController extends Controller
         
         $job = Job::where('slug', 'like', $job_slug)->firstOrFail();
         $profileCv = ProfileCv::where('user_id', '=', $user_id)->first();
-       
 
         if($request->your_resume == 0) {
+            
             if(!$profileCv) {
-                flash(__('You need to update the CV file from the template'))->error();
-                return redirect()->back();
+                if($profileCv == null)
+                {
+                    $itemInsert2 = new ProfileCv();
+                    $itemInsert2->user_id = $user_id;
+                    $itemInsert2->title = "sử dụng mẫu hồ sơ";
+                    $itemInsert2->type = 1;
+                    $itemInsert2->cvLink = "http://jobvieclam.com";
+                    $itemInsert2->jobId = $job->id;
+                    $itemInsert2->save();
+                    $cvId = $itemInsert2->id;
+                }
+                
+                // flash(__('You need to update the CV file from the template'))->error();
+                // return redirect()->back();
             }
-            $cvId = $profileCv->id;
+          
 
         }else {
             if($request->file('customFile')){
@@ -635,6 +647,10 @@ class JobController extends Controller
                     $itemInsert->user_id = $user_id;
                     $itemInsert->title = $file_name;
                     $itemInsert->cv_file = $file_hash_name;
+
+                    $itemInsert->type = 0;
+                    $itemInsert->cvLink = "http://jobvieclam.com";
+                    $itemInsert->jobId = $job->id;
                     $itemInsert->save();
                 }
                 else 
@@ -642,6 +658,10 @@ class JobController extends Controller
                     $itemInsert->user_id = $user_id;
                     $itemInsert->title = $file_name;
                     $itemInsert->cv_file = $file_hash_name;
+
+                    $itemInsert->type = 0;
+                    $itemInsert->cvLink = "http://jobvieclam.com";
+                    $itemInsert->jobId = $job->id;
                     $itemInsert->update();
                 }
 

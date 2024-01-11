@@ -97,6 +97,8 @@ class UserController extends Controller
         $maritalStatuses = DataArrayHelper::langMaritalStatusesArray();
      
         $nationalities = DataArrayHelper::langNationalitiesArray();
+        $cities = City::where("lang", "vi")->get();
+   
         $countries = DataArrayHelper::langCountriesArray();
         $jobExperiences = DataArrayHelper::langJobExperiencesArray();
        
@@ -126,8 +128,7 @@ class UserController extends Controller
             $user->expected_salary =0;
 
         }
-      
- 
+
       
    
         return view(config('app.THEME_PATH').'.user.edit_profile')
@@ -141,7 +142,10 @@ class UserController extends Controller
                         ->with('functionalAreas', $functionalAreas)
                         ->with('user', $user)
                         ->with('cv_template', $cv_template)
+                        ->with('cities',$cities)
                         ->with('upload_max_filesize', $upload_max_filesize);
+
+            
     }
     
     public function changeTemplate()

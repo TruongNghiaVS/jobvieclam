@@ -1,3 +1,4 @@
+
 <div class="section-head">
     <div class="section-head__figure">
         <div class="figure__image"><img src="https://icons.veryicon.com/png/o/system/alongthink/ico-user-info.png" alt=""></div>
@@ -352,35 +353,6 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'marital_status_id') !!}">
-                                <label class="required" for="">{{__('Mobile Number')}}</label>
-                                <input type="text" class="form-control" required id="phone" name="phone" value="{{ isset(auth()->user()->phone ) ? auth()->user()->phone : old('phone')}}" placeholder="{{__('Mobile Number')}}">
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'marital_status_id') !!}">
-                                <label class="required" for="">{{__('Martial Status')}}</label>
-                                {!! Form::select('marital_status_id', [''=>__('Select Marital Status')]+$maritalStatuses, null,
-                                array('class'=>'form-control form-select', 'id'=>'marital_status_id')) !!}
-                                {!! APFrmErrHelp::showErrors($errors, 'marital_status_id') !!}
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'city_id') !!}">
-                                <label class="required" for="">{{__('City')}}</label>
-                                <select class="form-control form-select shadow-sm" id="city_id" name="city_id"><option value="" selected="selected">Chọn địa điểm</option><option value="3">Port Blair</option><option value="48666">Lào Cai</option><option value="48667">Yên Bái</option><option value="48668">Lai Châu</option><option value="48669">Điện Biên</option><option value="48670">Sơn La</option><option value="48671">Hòa Bình</option><option value="48672">Hà Giang</option><option value="48673">Tuyên Quang</option><option value="48674">Phú Thọ</option><option value="48675">Thái Nguyên</option><option value="48676">Bắc Kạn</option><option value="48677">Cao Bằng</option><option value="48678">Lạng Sơn</option><option value="48679">Bắc Giang</option><option value="48680">Quảng Ninh</option><option value="48681">Tp. Hà Nội</option><option value="48682">Tp. Hải Phòng</option><option value="48683">Vĩnh Phúc</option><option value="48684">Bắc Ninh</option><option value="48685">Hưng Yên</option><option value="48686">Hải Dương</option><option value="48687">Thái Bình</option><option value="48688">Nam Định</option><option value="48689">Ninh Bình</option><option value="48690">Hà Nam</option><option value="48691">Thanh Hóa</option><option value="48692">Nghệ An</option><option value="48693">Hà Tĩnh</option><option value="48694">Quảng Bình</option><option value="48695">Quảng Trị</option><option value="48696">Thừa Thiên Huế</option><option value="48697">Tp. Đà Nẵng</option><option value="48698">Quảng Nam</option><option value="48699">Quảng Ngãi</option><option value="48700">Bình Định</option><option value="48701">Phú Yên</option><option value="48702">Khánh Hòa</option><option value="48703">Ninh Thuận</option><option value="48704">Bình Thuận</option><option value="48705">Kon Tum</option><option value="48706">Gia Lai</option><option value="48707">Đắk Lắk</option><option value="48708">Đắk Nông</option><option value="48709">Lâm Đồng</option><option value="48710">TP. Hồ Chí Minh</option><option value="48711">Đồng Nai</option><option value="48712">Bà Rịa-Vũng Tàu</option><option value="48713">Bình Dương</option><option value="48714">Bình Phước</option><option value="48715">Tây Ninh</option><option value="48716">Tp. Cần Thơ</option><option value="48717">Long An</option><option value="48718">Tiền Giang</option><option value="48719">Bến Tre</option><option value="48720">Vĩnh Long</option><option value="48721">Trà Vinh</option><option value="48722">Đồng Tháp</option><option value="48723">An Giang</option><option value="48724">Kiên Giang</option><option value="48725">Hậu Giang</option><option value="48726">Sóc Trăng</option><option value="48727">Bạc Liêu</option><option value="48728">Cà Mau</option></select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'nationality_id') !!}">
-                                <label class="required" for="">{{__('Nationality')}}</label>
-                                {!! Form::select('nationality_id', [''=>__('Select Nationality')]+$nationalities, null,
-                                array('class'=>'form-control form-select ', 'id'=>'nationality_id')) !!}
-                                {!! APFrmErrHelp::showErrors($errors, 'nationality_id') !!}
-                            </div>
-                        </div>
-                        <div class="col-md-6">
                             <div class="form-group {!! APFrmErrHelp::hasError($errors, 'date_of_birth') !!}">
                                 <?php
                                 if (!empty($user->date_of_birth)) {
@@ -396,6 +368,59 @@
                                 {!! APFrmErrHelp::showErrors($errors, 'date_of_birth') !!}
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'marital_status_id') !!}">
+                                <label class="required" for="">{{__('Mobile Number')}}</label>
+                                <input type="text" class="form-control" required id="phone" name="phone" value="{{ isset(auth()->user()->phone ) ? auth()->user()->phone : old('phone')}}" placeholder="{{__('Mobile Number')}}">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'marital_status_id') !!}">
+                                <label class="required" for="">{{__('Martial Status')}}</label>
+                                {!! Form::select('marital_status_id', [''=>__('Select Marital Status')]+$maritalStatuses, null,
+                                array('class'=>'form-control form-select', 'id'=>'marital_status_id')) !!}
+                                {!! APFrmErrHelp::showErrors($errors, 'marital_status_id') !!}
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-6">
+                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'city_id') !!}">
+                                <label class="required" for="city_id">Tỉnh/thành</label>
+                                 <select id ="city_id" name ="city_id" class ="form-control form-select" >
+                                             <option  value ="" selected disabled hidden> 
+                                                 Chọn tỉnh thành
+                                            </option>
+                                    @foreach($cities as $itemcity)
+
+                                            @if($itemcity->id == $user->city_id)
+                                            <option selected value ={{$itemcity->id}}> 
+                                                {{$itemcity->city}}
+                                            </option>
+                                            @else 
+                                            <option value ={{$itemcity->id}}> 
+                                                {{$itemcity->city}}
+                                            </option>
+                                            @endif
+                                          
+                                         @endforeach
+
+                                 </select>
+                            </div>
+                        </div>
+
+                      
+                        <div class="col-md-6">
+                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'nationality_id') !!}">
+                                <label class="required" for="">{{__('Nationality')}}</label>
+                                {!! Form::select('nationality_id', [''=>__('Select Nationality')]+$nationalities, 
+                                    $user->nationality_id,
+                                array('class'=>'form-control form-select ', 
+                                'id'=>'nationality_id')) !!}
+                                {!! APFrmErrHelp::showErrors($errors, 'nationality_id') !!}
+                            </div>
+                        </div>
+                       
                         <div class="form-group">
           
                             <button id="personal_submitBtn" type="submit" class="btn btn-primary submit-button" >{{__(('Update'))}}</button>

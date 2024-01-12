@@ -29,7 +29,7 @@
                             if (element.postion.startsWith('2.')) {
                                 
                                 $("#listbannerSide").append(`
-                                    <div class=" col-lg col-sm-12 col-md-12">
+                                    <div class="col-lg col-sm-12 col-md-12">
                                         <div class="item">
                                             <div class="image loadAds">
                                                 <a href="#">

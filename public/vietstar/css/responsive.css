@@ -986,11 +986,11 @@
   }
 
   .section-jobs-by-industry .swiper-button-next {
-    right: 200px;
+    right: 0px;
   }
 
   .section-jobs-by-industry .swiper-button-prev {
-    left: 200px;
+    left: 0px;
   }
   .content-wrapper {
     padding: 0 0px;
@@ -1052,11 +1052,11 @@
   }
 
   .section-jobs-by-industry .swiper-button-next {
-    right: 100px;
+    right: 0px;
   }
 
   .section-jobs-by-industry .swiper-button-prev {
-    left: 100px;
+    left: 0px;
   }
   .content-wrapper {
     padding: 0 80px;

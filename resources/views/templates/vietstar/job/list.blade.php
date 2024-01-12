@@ -104,7 +104,8 @@
                         
 
                          $salaryText  = checksalary($jobitem->salary_from, $jobitem->salary_to);
-                         $datetime =   Carbon\Carbon::parse($jobitem->created_at);
+                         $datetime =   Carbon\Carbon::parse($jobitem->updated_at);
+                         $expriedDate =   Carbon\Carbon::parse($jobitem->expiry_date);
                          $timeCurrent = Carbon\Carbon::now();
                          $numberDate = $timeCurrent->diffInDays($datetime);
                          $datetimeText ="";
@@ -119,6 +120,7 @@
                          {
                             $datetimeText =  $datetime->format('d-m-Y');
                          }
+                         $expriedDateText =  $expriedDate->format('d-m-Y');
                    @endphp
                  
                    <div data-job-id="{{$jobitem->id}}" class="item-job mb-3">
@@ -170,6 +172,9 @@
                             <!--Day update and place Start-->
                             <div class="info-item day-update">
                             Cập nhật: {{ $datetimeText }}
+                            </div>
+                            <div class="info-item day-update">
+                            Hạn nộp: {{ $expriedDateText }}
                             </div>
                             <!--Day update and place End-->
                             </div>

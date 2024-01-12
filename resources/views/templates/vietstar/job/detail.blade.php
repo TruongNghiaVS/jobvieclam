@@ -611,9 +611,9 @@ $company = $job->getCompany();
             <div class="col-lg-4 col-md-12 col-sm-12">
             <section class="related-jobs">
                         <div class="related-jobs-wapper jobs-side-list">
-                    
+                                                                
 
-                                @foreach ($jobOfCompany as $jobitem)
+                                @foreach ($relatedJobs as $jobitem)
                                 @php
                                     
                                         $functionarea = $jobitem->functionalArea;
@@ -700,7 +700,7 @@ $company = $job->getCompany();
 
                                         <!--Day update and place Start-->
                                         <div class="info-item day-update" bis_skin_checked="1">
-                                            {{__('Update')}}: {{$jobitem->created_at->format('d/m/Y')}}  
+                                            Hạn nộp: {{$jobitem->expiry_date->format('d/m/Y')}}  
                                         </div>
                                         <!--Day update and place End-->
 

@@ -29,24 +29,6 @@
 
 
 
-<div class="section-body">
-    <!-- <div class="row">
-        <div class="col-md-6">
-            <div class="formrow {!! APFrmErrHelp::hasError($errors, 'email') !!}">
-                <label for="">{{__('Email')}}</label>
-                {!! Form::text('email', null, array('class'=>'form-control', 'id'=>'email', 'placeholder'=>__('Email'))) !!}
-                {!! APFrmErrHelp::showErrors($errors, 'email') !!}
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="formrow {!! APFrmErrHelp::hasError($errors, 'password') !!}">
-                <label for="">{{__('Password')}}</label>
-                {!! Form::password('password', array('class'=>'form-control', 'id'=>'password',
-                'placeholder'=>__('Password'))) !!}
-                {!! APFrmErrHelp::showErrors($errors, 'password') !!}
-            </div>
-        </div>
-    </div> -->
     <div class="table-responsive">
         <table class="table table-responsive table-user-information borderless ">
             <tbody>
@@ -54,24 +36,13 @@
                 <tr>
                     <td class="text-primary table_title">
                         <strong>
-                            {{__('Last Name')}}
+                           Họ và tên lót
                         </strong>
                     </td>
                     <td class="table_value">
-                      {{$user->first_name}}
+                      {{$user->first_name }}   {{$user->middle_name}}
                     </td>
                 </tr>
-                <tr>
-                    <td class="text-primary table_title">
-                        <strong>
-                            {{__('Midlle Name')}}
-                        </strong>
-                    </td>
-                    <td class="table_value">
-                    {{$user->middle_name}}
-                    </td>
-                </tr>
-
                 <tr>
                     <td class="text-primary table_title">
                         <strong>
@@ -80,6 +51,17 @@
                     </td>
                     <td class="table_value">
                     {{ $user->last_name ? $user->last_name :"Chưa cập nhật" }}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class=" text-primary table_title">
+                        <strong>
+                            {{__('Date of Birth')}}
+                        </strong>
+                    </td>
+                    <td class="table_value">
+                       {{$user->date_of_birth}}
                     </td>
                 </tr>
 
@@ -121,7 +103,7 @@
                 <tr>
                     <td class=" text-primary table_title">
                         <strong>
-                            {{__('Martial Status')}}
+                            {{__('Martial Status')}} 
                         </strong>
                     </td>
                     <td class="table_value">
@@ -158,16 +140,7 @@
                 </tr>
 
 
-                <tr>
-                    <td class=" text-primary table_title">
-                        <strong>
-                            {{__('Date of Birth')}}
-                        </strong>
-                    </td>
-                    <td class="table_value">
-                       {{$user->date_of_birth}}
-                    </td>
-                </tr>
+               
             </tbody>
         </table>
     </div>
@@ -419,6 +392,18 @@
                                 'id'=>'nationality_id')) !!}
                                 {!! APFrmErrHelp::showErrors($errors, 'nationality_id') !!}
                             </div>
+                        </div>
+
+
+
+                        <div class="col-md-12">
+                              
+                                     <div class="form-group ">
+                                <label class="required" for="">Địa chỉ</label>
+                                <input class="form-control cursor-pointer" id="addressInfo" placeholder="Địa chỉ" name="addressInfo" type="text" 
+                                
+                            </div>
+                       
                         </div>
                        
                         <div class="form-group">

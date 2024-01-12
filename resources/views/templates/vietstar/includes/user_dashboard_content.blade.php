@@ -40,7 +40,10 @@
                 <div class="row my-1">
 
                     <div class="user__complete_section" bis_skin_checked="1">
-                        <span class="font-weight-bold"> {{__('Level of completion')}}:</span>   <p class="font-weight-bold fs-18px  px-1"> {{__('Unfinished')}}</p>
+                        <span class="font-weight-bold"> {{__('Level of completion')}}:</span>
+                          <p class="font-weight-bold fs-18px  px-1"> 
+                               {{$overviewUser->degreeComplete}}
+                          </p>
                     </div>
 
                     
@@ -89,7 +92,7 @@
                 <section class="related-jobs card card-bio mb-3 w-100 shadow-sm">
                     <div class="card-body">
                         <div class="related-jobs__title d-flex justify-content-between align-items-center">
-                            <h6>{{__('Matched Jobs')}}</h6>
+                            <h6>Việc làm phù hợp</h6>
                             <button class="btn btn-round btn-link btn-sm main-color"
                                 onclick="window.location='{{ route('job.list') }}'">{{__('View all')}}</button>
                         </div>

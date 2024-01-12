@@ -458,10 +458,14 @@ class User extends Authenticatable
         $degreeComplete = "Hoàn thành";
       
        }
+
+      
        $dataObj = new \stdClass();
        $dataObj->statusComPlete = $statusComPlete;
        $dataObj->degreeComplete = $degreeComplete;
        $dataObj->percent = $percent;
+
+      
        return $dataObj;
         
 

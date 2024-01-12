@@ -1,11 +1,8 @@
 @extends('templates.vietstar.layouts.app')
 @section('content')
-<!-- Header start -->
-@include('templates.vietstar.includes.header')
-<!-- Header end -->
-<!-- Inner Page Title start -->
 
-<!-- Inner Page Title end -->
+@include('templates.vietstar.includes.header')
+
 
 
 @include('templates.vietstar.includes.mobile_dashboard_menu')

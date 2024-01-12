@@ -140,6 +140,7 @@ class JobController extends Controller
         );
 
          $jobOfCompany = Job::where('is_active', 1)
+                              ->where('status','1')
                             ->where('company_id',$job->company_id)
                             ->where('id', '!=', $job->id)
                             ->orderby('created_at', 'desc');
@@ -151,6 +152,8 @@ class JobController extends Controller
         $jobOfCompany=  $jobOfCompany->get();
 
         $relatedJobs = Job::where('is_active', 1)
+        ->where('status','1')
+        ->where('expiry_date','>',Carbon::now() )
         ->where("functional_area_id",$job->functional_area_id)
         ->where("industry_id",$job->industry_id)
         ->where('id', '!=', $job->id)->orderby('created_at', 'desc');
@@ -160,6 +163,7 @@ class JobController extends Controller
         $relatedJobs =$relatedJobs->with('degreeLevel');
         $relatedJobs= $relatedJobs->with('city');
         $relatedJobs = $relatedJobs->paginate(9);
+      
          return view(config('app.THEME_PATH').'.job.detail')
                         ->with('job', $job)
                         ->with('jobOfCompany', $jobOfCompany)
@@ -349,6 +353,8 @@ class JobController extends Controller
       
         
         $query = Job::where('status', Job::POST_ACTIVE);
+
+        $query = $query->where('expiry_date','>',Carbon::now() );
         $token = $this->locdautiengviet($token);
         if (!empty($token)) 
         {

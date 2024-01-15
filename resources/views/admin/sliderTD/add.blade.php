@@ -8,7 +8,7 @@
         <div class="page-bar">
             <ul class="page-breadcrumb">
                 <li> <li> <a href="{{ route('admin.home') }}">{{__('Home')}}</a> <i class="fa fa-circle"></i> </li>
-                <li> <a href="{{ route('list.sliders') }}">Sliders TD</a> <i class="fa fa-circle"></i> </li>
+                <li> <a href="{{ route('listTD.sliders') }}">Sliders TD</a> <i class="fa fa-circle"></i> </li>
                 <li> <span>Thêm Slider TD</span> </li>
             </ul>
         </div>
@@ -26,9 +26,9 @@
                         <ul class="nav nav-tabs">              
                             <li class="active"> <a href="#Details" data-toggle="tab" aria-expanded="false">{{__('Details')}}</a> </li>
                         </ul>
-                        {!! Form::open(array('method' => 'post', 'route' => 'store.slider', 'class' => 'form', 'files'=>true)) !!}
+                        {!! Form::open(array('method' => 'post', 'route' => 'storeTD.slider', 'class' => 'form', 'files'=>true)) !!}
                         <div class="tab-content">              
-                            <div class="tab-pane fade active in" id="Details"> @include('admin.slider.forms.form') </div>
+                            <div class="tab-pane fade active in" id="Details"> @include('admin.sliderTD.forms.form') </div>
                         </div>
                         {!! Form::close() !!}
                     </div>

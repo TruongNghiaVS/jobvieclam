@@ -33,7 +33,7 @@
                     <div class="portlet-body">
                         <div class="table-container">
                             <form method="post" role="form" id="slider-search-form">
-                                <table class="table table-striped table-bordered table-hover"  id="sliderDatatableAjax">
+                                <table class="table table-striped table-bordered table-hover"  id="sliderTDDatatableAjax">
                                     <thead>                                        
                                         <tr role="row" class="filter">
                                             <td>{!! Form::select('lang', ['' => __('Select')]+$languages, config('default_lang'), array('id'=>'lang', 'class'=>'form-control')) !!}</td><td><input type="text" class="form-control" name="slider_heading" id="slider_heading" autocomplete="off" placeholder="Slider"></td><td><select name="is_active" id="is_active"  class="form-control"><option value="-1">{{__('Active?')}}</option><option value="1" selected="selected">{{__('Active')}}</option><option value="0">{{__('Inactive')}}</option></select></td>
@@ -58,7 +58,7 @@
 @push('scripts') 
 <script>
     $(function () {
-        var oTable = $('#sliderDatatableAjax').DataTable({
+        var oTable = $('#sliderTDDatatableAjax').DataTable({
             "language": { // language settings
                 // metronic spesific
                 "metronicGroupActions": "_TOTAL_ bản ghi được chọn:  ",
@@ -90,8 +90,9 @@
              info: true,
              */
             ajax: {
-                url: '{!! route('fetch.data.sliders') !!}',
+                url: '{!! route('fetchTD.data.sliders') !!}',
                 data: function (d) {
+       
                     d.lang = $('#lang').val();
                     d.slider_heading = $('#slider_heading').val();
                     d.is_active = $('#is_active').val();
@@ -127,7 +128,7 @@
                     .done(function (response) {
                         if (response == 'ok')
                         {
-                            var table = $('#sliderDatatableAjax').DataTable();
+                            var table = $('#sliderTDDatatableAjax').DataTable();
                             table.row('sliderDtRow' + id).remove().draw(false);
                         } else
                         {
@@ -141,7 +142,7 @@
                 .done(function (response) {
                     if (response == 'ok')
                     {
-                        var table = $('#sliderDatatableAjax').DataTable();
+                        var table = $('#sliderTDDatatableAjax').DataTable();
                         table.row('sliderDtRow' + id).remove().draw(false);
                     } else
                     {
@@ -154,7 +155,7 @@
                 .done(function (response) {
                     if (response == 'ok')
                     {
-                        var table = $('#sliderDatatableAjax').DataTable();
+                        var table = $('#sliderTDDatatableAjax').DataTable();
                         table.row('sliderDtRow' + id).remove().draw(false);
                     } else
                     {
@@ -162,5 +163,8 @@
                     }
                 });
     }
+
+
+    
 </script> 
 @endpush

@@ -48,8 +48,9 @@ class SliderController_TD extends Controller
                         ->with('sliders', $sliders);
     }
 
-    public function storeSlider(SliderFormRequest $request)
+    public function storeSliderTD(SliderFormRequest $request)
     {
+      
         $slider = new Slider();
 		if ($request->hasFile('slider_image')) {
             $image_name = $request->input('slider_heading');
@@ -132,7 +133,7 @@ class SliderController_TD extends Controller
         /*         * ************************************ */
         $slider->update();
         flash(__('Slider has been updated!'))->success();
-        return \Redirect::route('edit.slider', array($slider->id));
+        return \Redirect::route('editTD.slider', array($slider->id));
     }
 	
 	public function deleteSlider(Request $request)

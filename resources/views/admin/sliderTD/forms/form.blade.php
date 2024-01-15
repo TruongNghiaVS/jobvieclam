@@ -10,10 +10,12 @@ $queryString = MiscHelper::getLangQueryStr();
 @include('flash::message')
 <div class="form-body">        
     {!! Form::hidden('id', null) !!}
+    <input type="text" value="1" name="type" class="hidden">  
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'lang') !!}" id="lang_div">
         {!! Form::select('lang', ['' => __('Select')]+$languages, $lang, ['class'=>'form-control', 'id'=>'lang', 'onchange'=>'setLang(this.value);']) !!}
         {!! APFrmErrHelp::showErrors($errors, 'lang') !!}                                       
-    </div>    
+    </div>  
+
     
     @if(isset($slider))
     <div class="form-group">

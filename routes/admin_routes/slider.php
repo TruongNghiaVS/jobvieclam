@@ -20,7 +20,7 @@ Route::put('slider-sort-update', array_merge(['uses' => 'Admin\SliderController@
 /* * ******  Slider Start TD ********** */
 Route::get('list-sliders-td', array_merge(['uses' => 'Admin\SliderController_TD@indexSliderTD'], $all_users))->name('listTD.sliders');
 Route::get('create-slider-td', array_merge(['uses' => 'Admin\SliderController_TD@createSliderTD'], $all_users))->name('createTD.slider');
-Route::post('store-slider-td', array_merge(['uses' => 'Admin\SliderController_TD@storeSlider'], $all_users))->name('storeTD.slider');
+Route::post('store-slider-td', array_merge(['uses' => 'Admin\SliderController_TD@storeSliderTD'], $all_users))->name('storeTD.slider');
 Route::get('edit-slider-td/{id}', array_merge(['uses' => 'Admin\SliderController_TD@editSlider'], $all_users))->name('editTD.slider');
 Route::put('update-slider-td/{id}', array_merge(['uses' => 'Admin\SliderController_TD@updateSlider'], $all_users))->name('updateTD.slider');
 Route::delete('delete-slider-td', array_merge(['uses' => 'Admin\SliderController_TD@deleteSlider'], $all_users))->name('deleteTD.slider');

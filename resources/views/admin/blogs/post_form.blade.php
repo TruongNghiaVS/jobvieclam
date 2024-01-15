@@ -3,6 +3,49 @@
     <link rel="stylesheet" href="{{ asset('modules/blogs/css/blogs.css') }}">
 @endpush
 @section('content')
+<script>
+
+function stringtoSlug()
+{
+ 
+    var title, slug;
+ 
+    //Lấy text từ thẻ input title 
+    title = document.getElementById("title").value;
+ 
+    //Đổi chữ hoa thành chữ thường
+    slug = title.toLowerCase();
+ 
+    //Đổi ký tự có dấu thành không dấu
+    slug = slug.replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, 'a');
+    slug = slug.replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, 'e');
+    slug = slug.replace(/i|í|ì|ỉ|ĩ|ị/gi, 'i');
+    slug = slug.replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, 'o');
+    slug = slug.replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, 'u');
+    slug = slug.replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, 'y');
+    slug = slug.replace(/đ/gi, 'd');
+    //Xóa các ký tự đặt biệt
+    slug = slug.replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi, '');
+    //Đổi khoảng trắng thành ký tự gạch ngang
+    slug = slug.replace(/ /gi, " - ");
+    //Đổi nhiều ký tự gạch ngang liên tiếp thành 1 ký tự gạch ngang
+    //Phòng trường hợp người nhập vào quá nhiều ký tự trắng
+    slug = slug.replace(/\-\-\-\-\-/gi, '-');
+    slug = slug.replace(/\-\-\-\-/gi, '-');
+    slug = slug.replace(/\-\-\-/gi, '-');
+    slug = slug.replace(/\-\-/gi, '-');
+    //Xóa các ký tự gạch ngang ở đầu và cuối
+    slug = '@' + slug + '@';
+    slug = slug.replace(/\@\-|\-\@|\@/gi, '');
+    //In slug ra textbox có id “slug”
+    //alert(slug);
+    slug=  slug.replace(/\s/g, '');
+    document.getElementById("slugInput").value = slug;
+
+
+
+}
+</script>
     <?php
     $lang = config('default_lang');
     $lang = MiscHelper::getLang($lang);
@@ -59,7 +102,7 @@
                                                         <div class="row">
                                                             <div class="col-lg-9 bg-grey p-2">
                                                                 <div class="user-account-section">
-                                                                    <h3 class="section-title">Thành phần bài viết</h3>
+                                                                    <h3 class="section-title">Thành phần bài viết </h3>
                                                                     <div class="form-group {{ $errors->has('lang') ? 'has-error' : '' }}">
                                                                         <label class="control-label" for="lang">Lựa chọn ngôn ngữ</label>
                                                                         {!! Form::select('lang', ['' => __('Select')]+$languages, $lang, array('class'=>'form-control', 'id'=>'lang', 'onchange'=>'setLang(this.value)')) !!}
@@ -67,22 +110,23 @@
                                                                                 class="text-danger">{{ $errors->first('lang') }}</span>
                                                                     </div>
                                                                     <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
-                                                                        <label class="control-label" for="title">Tiêu
-                                                                            đề</label>
-                                                                        <input type="text" class="form-control" name="title"
+                                                                        <label class="control-label" for="title">Tiêu đề</label>
+                                                                        <input type="text" onchange ="stringtoSlug()" class="form-control" name="title"
                                                                                id="title" autofocus
                                                                                value="{{ old('title') }}">
                                                                         <span
                                                                                 class="text-danger">{{ $errors->first('title') }}</span>
                                                                     </div>
+                                                                 
                                                                     <div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
-                                                                        <label class="control-label" for="Slug">Slug</label>
-                                                                        <input type="text" class="form-control" name="slug"
-                                                                               id="slug" autofocus
+                                                                        <label class="control-label" for="slug">Slug</label>
+                                                                        <input readonly type="text"  class="form-control" name="slug"
+                                                                               id="slugInput" autofocus
                                                                                value="{{ old('slug') }}">
                                                                         <span
                                                                                 class="text-danger">{{ $errors->first('slug') }}</span>
                                                                     </div>
+
                                                                     <div class="form-group {{ $errors->has('content') ? 'has-error' : '' }}">
                                                                         <label class="control-label"
                                                                                for="content">Nội dung</label>

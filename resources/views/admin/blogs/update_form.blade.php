@@ -3,6 +3,49 @@
 <link rel="stylesheet" href="{{ asset('modules/blogs/css/blogs.css') }}">
 @endpush
 @section('content')
+<script>
+
+function stringtoSlug()
+{
+ 
+    var title, slug;
+ 
+    //Lấy text từ thẻ input title 
+    title = document.getElementById("title_update").value;
+ 
+    //Đổi chữ hoa thành chữ thường
+    slug = title.toLowerCase();
+ 
+    //Đổi ký tự có dấu thành không dấu
+    slug = slug.replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, 'a');
+    slug = slug.replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, 'e');
+    slug = slug.replace(/i|í|ì|ỉ|ĩ|ị/gi, 'i');
+    slug = slug.replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, 'o');
+    slug = slug.replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, 'u');
+    slug = slug.replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, 'y');
+    slug = slug.replace(/đ/gi, 'd');
+    //Xóa các ký tự đặt biệt
+    slug = slug.replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi, '');
+    //Đổi khoảng trắng thành ký tự gạch ngang
+    slug = slug.replace(/ /gi, " - ");
+    //Đổi nhiều ký tự gạch ngang liên tiếp thành 1 ký tự gạch ngang
+    //Phòng trường hợp người nhập vào quá nhiều ký tự trắng
+    slug = slug.replace(/\-\-\-\-\-/gi, '-');
+    slug = slug.replace(/\-\-\-\-/gi, '-');
+    slug = slug.replace(/\-\-\-/gi, '-');
+    slug = slug.replace(/\-\-/gi, '-');
+    //Xóa các ký tự gạch ngang ở đầu và cuối
+    slug = '@' + slug + '@';
+    slug = slug.replace(/\@\-|\-\@|\@/gi, '');
+    //In slug ra textbox có id “slug”
+    //alert(slug);
+    slug=  slug.replace(/\s/g, '');
+    document.getElementById("slugInput").value = slug;
+
+
+
+}
+</script>
 <?php
 $lang = config('default_lang');
 if (isset($blog))
@@ -72,21 +115,26 @@ $queryString = MiscHelper::getLangQueryStr();
                                                             </div>
                                                             <div class="form-group {{ $errors->has('title_update') ? 'has-error' : '' }}">
                                                                 <label class="control-label" for="title">{{__("Title")}}</label>
-                                                                <input type="text" class="form-control"
+                                                                <input type="text"
+                                                                onchange ="stringtoSlug()"
+                                                                class="form-control"
                                                                     name="title_update" id="title_update" autofocus
                                                                     value="{{ $blog-> heading }}">
                                                                 <span
                                                                     class="text-danger">{{ $errors->first('title_update') }}</span>
                                                             </div>
-                                                            <div class="form-group {{ $errors->has('slug_update') ? 'has-error' : '' }}">
-                                                                <label class="control-label"
-                                                                    for="Slug_update">Slug</label>
-                                                                <input type="text" class="form-control"
-                                                                    name="slug_update" id="slug_update" autofocus
-                                                                    value="{{ $blog-> slug }}">
-                                                                <span
-                                                                    class="text-danger">{{ $errors->first('slug_update') }}</span>
+                                                          
+
+                                                            <div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
+                                                                        <label class="control-label" for="slug">Slug</label>
+                                                                        <input readonly type="text"  class="form-control"
+                                                                          name="slug_update"
+                                                                               id="slugInput" autofocus
+                                                                               value="{{ $blog-> slug }}">
+                                                                        <span
+                                                                                class="text-danger">{{ $errors->first('slug_update') }}</span>
                                                             </div>
+                                                            
                                                             <div class="form-group {{ $errors->has('content_update') ? 'has-error' : '' }}">
                                                                 <label class="control-label"
                                                                     for="content">Nội dung</label>

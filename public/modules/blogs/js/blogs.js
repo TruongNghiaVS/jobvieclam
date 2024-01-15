@@ -296,6 +296,7 @@ function string_to_slug(titleId, slugId) {
 $(document).ready(function(e) {
 
     $("#title").change(function() {
+        return;
 
         string_to_slug('title', 'slug');
 
@@ -368,3 +369,5 @@ $(function() {
     });
 
 });
+
+

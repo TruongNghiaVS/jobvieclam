@@ -90,7 +90,7 @@ class BlogsController extends Base
         if ($id != '') {
             $row = Blog::findOrFail($id);
             $json_data = json_encode($row);
-            echo $json_data;
+          
             return;
         }
     }

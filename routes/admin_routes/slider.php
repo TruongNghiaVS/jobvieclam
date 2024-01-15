@@ -14,3 +14,20 @@ Route::get('sort-sliders', array_merge(['uses' => 'Admin\SliderController@sortSl
 Route::get('slider-sort-data', array_merge(['uses' => 'Admin\SliderController@sliderSortData'], $all_users))->name('slider.sort.data');
 Route::put('slider-sort-update', array_merge(['uses' => 'Admin\SliderController@sliderSortUpdate'], $all_users))->name('slider.sort.update');
 /* * ****** End Slider ********** */
+
+
+
+/* * ******  Slider Start TD ********** */
+Route::get('list-sliders-td', array_merge(['uses' => 'Admin\SliderController_TD@indexSliderTD'], $all_users))->name('listTD.sliders');
+Route::get('create-slider-td', array_merge(['uses' => 'Admin\SliderController_TD@createSliderTD'], $all_users))->name('createTD.slider');
+Route::post('store-slider-td', array_merge(['uses' => 'Admin\SliderController_TD@storeSlider'], $all_users))->name('storeTD.slider');
+Route::get('edit-slider-td/{id}', array_merge(['uses' => 'Admin\SliderController_TD@editSlider'], $all_users))->name('editTD.slider');
+Route::put('update-slider-td/{id}', array_merge(['uses' => 'Admin\SliderController_TD@updateSlider'], $all_users))->name('updateTD.slider');
+Route::delete('delete-slider-td', array_merge(['uses' => 'Admin\SliderController_TD@deleteSlider'], $all_users))->name('deleteTD.slider');
+Route::get('fetch-sliders-td', array_merge(['uses' => 'Admin\SliderController_TD@fetchSlidersData'], $all_users))->name('fetchTD.data.sliders');
+Route::put('make-active-slider-td', array_merge(['uses' => 'Admin\SliderController_TD@makeActiveSlider'], $all_users))->name('makeTD.active.slider');
+Route::put('make-not-active-slider-td', array_merge(['uses' => 'Admin\SliderController_TD@makeNotActiveSlider'], $all_users))->name('makeTD.not.active.slider');
+Route::get('sort-sliders-td', array_merge(['uses' => 'Admin\SliderController_TD@sortSliders'], $all_users))->name('sortTD.sliders');
+Route::get('slider-sort-data-td', array_merge(['uses' => 'Admin\SliderController_TD@sliderSortData'], $all_users))->name('sliderTD.sort.data');
+Route::put('slider-sort-update-td', array_merge(['uses' => 'Admin\SliderController_TD@sliderSortUpdate'], $all_users))->name('sliderTD.sort.update');
+/* * ****** End Slider TD ********** */

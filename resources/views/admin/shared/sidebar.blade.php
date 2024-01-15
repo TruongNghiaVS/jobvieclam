@@ -51,6 +51,8 @@
         @include('admin/shared/side_bars/video')
         @include('admin/shared/side_bars/testimonial')
         @include('admin/shared/side_bars/slider')
+        @include('admin/shared/side_bars/sliderTD')
+
         @include('admin/shared/side_bars/contact_job')
         @include('admin/shared/side_bars/contact')
      

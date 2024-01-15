@@ -120,7 +120,7 @@ function stringtoSlug()
                                                                  
                                                                     <div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
                                                                         <label class="control-label" for="slug">Slug</label>
-                                                                        <input readonly type="text"  class="form-control" name="slug"
+                                                                        <input  type="text"  class="form-control" name="slug"
                                                                                id="slugInput" autofocus
                                                                                value="{{ old('slug') }}">
                                                                         <span

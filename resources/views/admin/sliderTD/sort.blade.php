@@ -27,7 +27,7 @@
                             <li class="active"> <a href="#Details" data-toggle="tab" aria-expanded="false"> Sort Sliders </a> </li>
                         </ul>
                         <div class="tab-content">              
-                            <div class="tab-pane fade active in" id="Details"> @include('admin.slider.forms.sort') </div>
+                            <div class="tab-pane fade active in" id="Details"> @include('admin.sliderTD.forms.sort') </div>
                         </div>
                     </div>
                 </div>

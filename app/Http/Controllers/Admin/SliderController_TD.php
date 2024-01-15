@@ -224,7 +224,7 @@ class SliderController_TD extends Controller
 					</button>
 					<ul class="dropdown-menu">
 						<li>
-							<a href="' . route('edit.slider', ['id' => $sliders->id]) . '"><i class="fa fa-pencil" aria-hidden="true"></i>Sửa</a>
+							<a href="' . route('editTD.slider', ['id' => $sliders->id]) . '"><i class="fa fa-pencil" aria-hidden="true"></i>Sửa</a>
 						</li>						
 						<li>
 							<a href="javascript:void(0);" onclick="deleteSlider(' . $sliders->id . ', ' . $sliders->is_default . ');" class=""><i class="fa fa-trash-o" aria-hidden="true"></i>Xóa</a>

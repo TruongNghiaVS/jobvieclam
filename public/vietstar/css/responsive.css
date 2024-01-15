@@ -1,5 +1,9 @@
 /* Extra small devices (phones, 767px and down) */
 @media only screen and (max-width: 767px) {
+  .container {
+    max-width: 100%;
+  }
+
     li.page-item {
         display: none;
     }
@@ -78,6 +82,10 @@
     max-width: unset;
 
   }
+  .links {
+    padding: 60px 1.5rem 30px !important;
+  }
+
 
   .advance-search {
     display: flex;
@@ -563,6 +571,11 @@
 
 /* Medium devices (landscape tablets, 600px and up) */
 @media only screen and (min-width: 768px) and (max-width: 992px) {
+
+  .container {
+    max-width: 100%;
+  }
+
   .content {
     padding-left: 8px;
     padding-right: 8px;
@@ -570,6 +583,12 @@
   }
   footer{
    
+  }
+  .links {
+    padding: 60px 1.5rem 30px !important;
+  }
+  footer .inner-copyright{
+    padding: 0 1.5rem;
   }
 
   .page-heading-tool.job-detail.mobile input {
@@ -943,8 +962,8 @@
   .header-bar {
     height: 400px
   }
-  .container {
-    max-width: 1400px;
+ .container {
+    max-width: 1170px;
   }
   .content {
     padding-left: 135px;
@@ -1006,11 +1025,11 @@
 
 @media only screen and (min-width: 1400px) { 
   .container {
-    max-width: 1400px;
+    max-width: 1200px;
   }
 
   .container.company-content {
-    max-width: 1400px;
+    max-width: 1200px;
   }
   .content {
     padding-left: 135px;

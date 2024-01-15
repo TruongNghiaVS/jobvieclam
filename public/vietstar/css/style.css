@@ -2359,7 +2359,8 @@ h3.seekertxt span {
 .advertising-banner .item .image a {
 	display: block;
 	position: relative;
-	padding-top: 87.8787878788%;
+	padding-top: 100%;
+
 }
 
 .advertising-banner .item .image img {

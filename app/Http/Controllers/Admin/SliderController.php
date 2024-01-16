@@ -34,7 +34,8 @@ class SliderController extends Controller
     }
 
     public function indexSliders()
-    {
+    {  
+      
         $languages = DataArrayHelper::languagesNativeCodeArray();
         return view('admin.slider.index')->with('languages', $languages);
     }
@@ -72,6 +73,15 @@ class SliderController extends Controller
         $slider->is_default = $request->input('is_default');
         $slider->slider_id = $request->input('slider_id');
         $slider->is_active = $request->input('is_active');
+        $type = $request->input("type");
+        if($type ==1)
+        {
+            $slider->type = $type;
+        }
+        else 
+        {
+            $slider->type =   0;
+        }
         $slider->save();
         /*         * ************************************ */
         $slider->sort_order = $slider->id;
@@ -123,6 +133,15 @@ class SliderController extends Controller
         $slider->is_default = $request->input('is_default');
         $slider->slider_id = $request->input('slider_id');
         $slider->is_active = $request->input('is_active');
+        $type = $request->input("type");
+        if($type ==1)
+        {
+            $slider->type = $type;
+        }
+        else 
+        {
+            $slider->type =   0;
+        }
         /*         * ************************************ */
         if ((int) $request->input('is_default') == 1) {
             $slider->slider_id = $slider->id;
@@ -177,7 +196,8 @@ class SliderController extends Controller
 
     public function fetchSlidersData(Request $request)
     {
-        $sliders = Slider::select([
+        $sliders = Slider::where("type","0")
+                 ->select([
                     'sliders.id', 'sliders.lang', 'sliders.slider_heading', 'sliders.is_default', 'sliders.slider_id', 'sliders.is_active',
                 ])->sorted();
         return Datatables::of($sliders)

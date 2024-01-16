@@ -26,10 +26,10 @@
                         <ul class="nav nav-tabs">              
                             <li class="active"> <a href="#Details" data-toggle="tab" aria-expanded="false">{{__('Details')}}</a> </li>
                         </ul>
-                        {!! Form::model($slider, array('method' => 'put', 'route' => array('update.slider', $slider->id), 'class' => 'form', 'files'=>true)) !!}
+                        {!! Form::model($slider, array('method' => 'put', 'route' => array('updateTD.slider', $slider->id), 'class' => 'form', 'files'=>true)) !!}
                         {!! Form::hidden('id', $slider->id) !!}            
                         <div class="tab-content">              
-                            <div class="tab-pane fade active in" id="Details"> @include('admin.slider.forms.form') </div>
+                            <div class="tab-pane fade active in" id="Details"> @include('admin.sliderTD.forms.form') </div>
                         </div>
                         {!! Form::close() !!}
                     </div>

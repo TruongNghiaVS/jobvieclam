@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="box-img">
-                    <img src="https://ads.careerbuilder.vn/www/images/6804e96cfe23971714beafba912d8782.jpg" alt="">
+                    <img src="{{ asset('/vietstar/imgs/login.jpg') }}" alt="">
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12" bis_skin_checked="1">

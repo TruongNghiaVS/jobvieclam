@@ -45,11 +45,25 @@ include_once($real_path . 'contact_job.php');
 include_once($real_path . 'ads_banner.php');
 
 Route::group(['namespace' => 'Admin'], function () {
+
+    /*Blog_category ứng viên start*/
+
     Route::get('/blog_category', 'Blog_categoriesController@index');
     Route::post('/blog_category/create', 'Blog_categoriesController@create');
     Route::post('/blog_category', 'Blog_categoriesController@update');
     Route::delete('/blog_category/{blog_category}', 'Blog_categoriesController@destroy');
     Route::get('/blog_category/get_blog_category_by_id/{blog_category}', 'Blog_categoriesController@get_blog_category_by_id');
+    /*Blog_category ứng viên end*/
+
+
+    /*Blog_category tuyển dụng start*/
+    
+    /*Blog_category tuyển dụng end*/
+    
+    
+
+
+    /*Blog ứng viên start*/
 
     Route::get('/blog', 'BlogsController@index')->name('blog');
     Route::get('/blog/add-new-blog', 'BlogsController@show_form')->name('add-new-blog');
@@ -59,6 +73,20 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::get('/blog/remove_blog_feature_image/{blog}', 'BlogsController@remove_blog_feature_image');
     Route::get('/blog/get_blog_by_id/{blog}', 'BlogsController@get_blog_by_id');
     Route::get('/blog/edit-blog/{blog}', 'BlogsController@get_blog')->name('edit-blog');
+    /*Blog ứng viên end*/
+
+    /*Blog tuyển dụng start*/
+
+    Route::get('/blog-td', 'BlogsControllerTD@index')->name('blog-td');
+    Route::get('/blog-td/add-new-blog', 'BlogsControllerTD@show_form')->name('add-new-blog-td');
+    Route::post('/blog-td/create', 'BlogsControllerTD@create');
+    Route::post('/blog-td/update', 'BlogsControllerTD@update');
+    Route::delete('/blog-td/{blog}', 'BlogsControllerTD@destroy');
+    Route::get('/blog-td/remove_blog_feature_image/{blog}', 'BlogsControllerTD@remove_blog_feature_image');
+    Route::get('/blog-td/get_blog_by_id/{blog}', 'BlogsControllerTD@get_blog_by_id');
+    Route::get('/blog-td/edit-blog/{blog}', 'BlogsControllerTD@get_blog')->name('edit-blog-td');
+
+    /*Blog tuyển dụng end*/
 
 
     Route::get('/article-page', 'ArticlePageController@index')->name('article-page');

@@ -46,6 +46,7 @@
         </li>
         
         @include('admin/shared/side_bars/blogs')
+        @include('admin/shared/side_bars/blogsTD')
         @include('admin/shared/side_bars/seo')
         @include('admin/shared/side_bars/faq')
         @include('admin/shared/side_bars/video')

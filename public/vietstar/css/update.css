@@ -2461,7 +2461,7 @@ footer .inner-copyright .copyright {
     flex: 0 0 140px;
     max-width: 140px;
     display: flex;
-    align-items: start;
+    align-items: center;
 }
 
 

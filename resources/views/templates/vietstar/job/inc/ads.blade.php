@@ -60,7 +60,7 @@ $ads = \App\AdBanner::all();
                             if (element.priorities != '1') {
                                 $(".carousel-inner #adbanner-side").append(`
                                     <div class="col-12 col-md-6 col-lg-12 ">
-                                        <div class="item">
+                                        <div class="item" id="banner-${element.id}">
                                             <div class="image loadAds">
                                                 <a href="#">
                                                     <img src="{{url('/')}}/admin_assets/${element.linkDesktop}"

@@ -93,7 +93,7 @@ class SliderController_TD extends Controller
         $slider->update();
         /*         * ************************************ */
         flash(__('Slider has been added!'))->success();
-        return \Redirect::route('edit.slider', array($slider->id));
+        return \Redirect::route('editTD.slider', array($slider->id));
     }
 
     public function editSlider($id)

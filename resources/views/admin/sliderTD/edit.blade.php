@@ -8,7 +8,7 @@
         <div class="page-bar">
             <ul class="page-breadcrumb">
                 <li> <li> <a href="{{ route('admin.home') }}">{{__('Home')}}</a> <i class="fa fa-circle"></i> </li>
-                <li> <a href="{{ route('list.sliders') }}">Slider TD</a> <i class="fa fa-circle"></i> </li>
+                <li> <a href="{{ route('listTD.sliders') }}">Slider TD</a> <i class="fa fa-circle"></i> </li>
                 <li> <span>Sửa Slider TD</span> </li>
             </ul>
         </div>

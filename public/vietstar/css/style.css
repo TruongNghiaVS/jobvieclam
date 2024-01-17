@@ -719,7 +719,7 @@ section.company-job-detail.job-detail-title .job-detail-banner {
 /* Header Bar */
 .header-bar {
 	position: relative;
-	height: 600px;
+	height: 450px;
 	width: 100%;
 }
 .navbar .group-button {
@@ -2394,8 +2394,9 @@ h3.seekertxt span {
 
 .banner .item a img {
 	width: 100%;
-	height: 100%;
-	object-fit: cover;
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 

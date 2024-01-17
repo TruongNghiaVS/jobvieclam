@@ -1,4 +1,4 @@
-<section class="section-employment-statistics" id= "flash-badge-banner">
+<section class="section-employment-statistics" id= "flash-badge-banner"  style="background-image: url({{ asset('/vietstar/imgs') }}/background_main.png);">
         <div class="cbox-impressive-numbers__item--wrapper">
         <div class="container">
         <h2 class="section-title section-title-decorated section-title-decorated-white">Con số ấn tượng</h2>

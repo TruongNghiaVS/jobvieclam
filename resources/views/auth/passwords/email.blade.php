@@ -10,7 +10,7 @@
 
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="box-img">
-                    <img src="{{ asset('/vietstar/imgs/quen_mk.jpg') }}" alt="">
+                    <img src="{{ asset('/vietstar/imgs/quen_mk.png') }}" alt="">
                 </div>
             </div>
             <div class="col-lg-6 col-md-8 col-sm-12" bis_skin_checked="1">

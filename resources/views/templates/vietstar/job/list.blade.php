@@ -528,7 +528,7 @@
 
                 if (id == 5 ) {
                     jobListing.append(`<div class="inpostad">
-                    <img src="https://png.pngtree.com/thumb_back/fh260/back_pic/00/02/44/5056179b42b174f.jpg" alt="">
+                    <img src="{{ asset('/vietstar/imgs') }}/banner_page_vieclam.png" alt="">
                     </div>
 `
                 )

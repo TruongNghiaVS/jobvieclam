@@ -27,7 +27,7 @@ class BlogsController extends Base
         return view('admin/blogs/post_form')->with('categories',$categories)->with('languages',$languages);
     }
     public function create(Request $request)
-    {
+    {  
         $this->validate($request, [
             'title' => 'required',
             'slug' => 'required',

@@ -46,8 +46,6 @@ function showModal_Success(title, message, targetUrl) {
     // Set the message
     $('#customModal-success .modal-body p').text(message);
 
-  
-
     // Show the modal
     $('#customModal-success').modal('show');
 }

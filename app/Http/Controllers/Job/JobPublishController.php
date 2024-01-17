@@ -110,6 +110,7 @@ class JobPublishController extends Controller
         $job = new Job();
         $job->company_id = $company->id;
         $job = $this->assignJobValues($job, $request);
+        $job->status = 2;
         $job->save();
         /*         * ******************************* */
         $job->slug = Str::slug($job->title, '-') . '-' . $job->id;
@@ -144,6 +145,7 @@ class JobPublishController extends Controller
         $degreeLevels = DataArrayHelper::langDegreeLevelsArray();
         $salaryPeriods = DataArrayHelper::langSalaryPeriodsArray();
         $job = Job::findOrFail($id);
+     
         $jobSkillIds = $job->getJobSkillsArray();
         $cities = \App\City::where('lang', \App::getLocale())->active()->pluck('city', 'id')->toArray();
         $selectedSkills = JobSkillManager::where('job_id', '=', $id)->pluck('job_skill_id')->toArray();
@@ -176,9 +178,11 @@ class JobPublishController extends Controller
     public function updateFrontJob($id, request $request)
     {
         $job = Job::findOrFail($id);
-		$job = $this->assignJobValues($job, $request);
+        
+     
         /*         * ******************************* */
-        $job->slug = Str::slug($job->title, '-') . '-' . $job->id;
+        // $job->slug = Str::slug($job->title, '-') . '-' . $job->id;
+
         /*         * ******************************* */
         /*         * ************************************ */
         $job->update();
@@ -204,7 +208,7 @@ class JobPublishController extends Controller
         $job->career_level_id = $request->input('career_level_id') ?? Null;
         $job->functional_area_id = $request->input('functional_area_id') ?? Null;
         $job->industry_id = $request->input('industry_id') ?? Null;
-        $job->status = $request->input('status');
+     
         /**
          * salary
          */

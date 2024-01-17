@@ -9,7 +9,7 @@
         </div>
 
         <div class="profile" bis_skin_checked="1">
-            <div class="avatar" bis_skin_checked="1"><a href="#">
+            <div class="avatar" bis_skin_checked="1">
                             @if(Auth::user())
                             {{Auth::user()->printUserImage()}}
                             @else
@@ -17,29 +17,19 @@
                             @endif
                 </div>
             <div class="username" bis_skin_checked="1">
-                <p><a href="#">{{auth()->user()->name}}</a></p>
+                <p>{{auth()->user()->name}}</p>
             </div>
             <div class="back-menu-normal" bis_skin_checked="1"><i class="bi bi-arrow-left"></i></div>
         </div>
-        @elseif(Auth::guard('company')->user()) 
-
-        <div class="profile" bis_skin_checked="1">
-            <div class="avatar" bis_skin_checked="1"><a href="#">
-                {{$company->printCompanyImage()}}  
-            </div>
-            <div class="username" bis_skin_checked="1">
-                <p><a href="#">{{Auth::guard('company')->user()->name}}</a></p>
-            </div>
-            <div class="back-menu-normal" bis_skin_checked="1"><i class="bi bi-arrow-left"></i></div>
-        </div>
+       
         @else
 
         <div class="profile" bis_skin_checked="1">
-            <div class="avatar" bis_skin_checked="1"><a href="#">
-                    <img class="lazy-bg" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar" style=""></a>
+            <div class="avatar" bis_skin_checked="1">
+                    <img class="lazy-bg" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar" style="">
             </div>
             <div class="username" bis_skin_checked="1">
-                <p><a href="#">Welcome to Jobvieclam</a></p>
+                <p>Welcome to Jobvieclam</p>
             </div>
             <div class="back-menu-normal" bis_skin_checked="1"><i class="bi bi-arrow-left"></i></div>
         </div>
@@ -52,11 +42,9 @@
                     <a href="{{ route('home') }}" class="list-group-item list-group-item-action {{ Request::url() == route('home') ? 'active' : '' }}">
                         <div class="d-flex w-100">
                             <i class="fa-solid fa-gauge fs-24px me-2"></i>
-                            <span class="side-bar-content"><!-- {{__('Dashboard')}} -->
-
-Dashboard
-
-</span>
+                            <span class="side-bar-content">
+                            Dashboard
+                            </span>
                         </div>
                     </a>
                 </li>

@@ -335,12 +335,18 @@
     .dropdown_menu__link span {
         color: var(--bs-primary);
         font-weight: 500;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
     }
 
     .user-badge__btn {
         position: relative;
         /* border-left: 1px solid #e8e8e8; */
         padding: 3px 11px;
+        max-width: 230px;
+        height: 100%;
     }
 
     .user_menu {

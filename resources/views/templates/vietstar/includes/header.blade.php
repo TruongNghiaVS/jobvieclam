@@ -237,7 +237,7 @@
             </div>
             <div class="modal-footer">
            
-                <a id="modalLink" class="btn btn-secondary" href="#">Đóng</a>
+               
             </div>
         </div>
     </div>
@@ -259,7 +259,7 @@
             </div>
             <div class="modal-footer">
            
-                <a id="modalLink" class="btn btn-secondary" href="#">Đóng</a>
+              
             </div>
         </div>
     </div>

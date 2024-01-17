@@ -274,6 +274,7 @@
             type: "POST",
             url:  `{{ route('contact-request') }}`,
             datatype:"JSON",
+            beforeSend:   showSpinner(),
             data: {
                 phone:phone,
                 title:subject,

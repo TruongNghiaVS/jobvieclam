@@ -211,6 +211,7 @@ console.log(isValid);
             type: "POST",
             url:  `{{route('login')}}`,
             data: $(this).serialize(),
+            beforeSend:   showSpinner(),
             statusCode: {
                 202 :  function(responseObject, textStatus, jqXHR) {
                     console.log(responseObject.error);
@@ -245,6 +246,7 @@ console.log(isValid);
                 
                 })
                 .fail(function(jqXHR, textStatus){
+                    hideSpinner();
                     
                 })
                 .always(function(jqXHR, textStatus) {

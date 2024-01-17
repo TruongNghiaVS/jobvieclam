@@ -494,6 +494,7 @@
             $.ajax({
             type: "PUT",
             url:  `{{ route('put.my.profilev2') }}`,
+            beforeSend:   showSpinner(),
             data: {
                 "_token": "{{ csrf_token() }}",
                 ...formObject

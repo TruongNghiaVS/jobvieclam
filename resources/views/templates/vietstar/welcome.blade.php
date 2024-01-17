@@ -232,6 +232,7 @@ $(document).ready(function() {
             type: "POST",
             url:  `{{ route('contact-email') }}`,
             datatype:"JSON",
+            beforeSend:   showSpinner(),
             data: {
                 email:email,
             },

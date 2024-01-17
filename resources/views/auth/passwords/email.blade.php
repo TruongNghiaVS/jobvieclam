@@ -202,10 +202,11 @@
     // }
 
     // Perform AJAX request to check if the email exists
-            showSpinner();  
+        
             $.ajax({
             type: "POST",
             url:  '{{url('/')}}/member/requestResetPassword',
+            beforeSend:   showSpinner(),
             data: {
                 email:email,
             },

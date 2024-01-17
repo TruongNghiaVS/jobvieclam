@@ -298,6 +298,7 @@
             type: "POST",
             url:  '{{ route('login') }}',
             data: $(this).serialize(),
+            beforeSend:   showSpinner(),
             statusCode: {
                 202 :  function(responseObject, textStatus, jqXHR) {
                     console.log(responseObject.error);
@@ -330,6 +331,7 @@
                     
                 })
                 .fail(function(jqXHR, textStatus){
+                    hideSpinner();
                     
                 })
                 .always(function(jqXHR, textStatus) {
@@ -385,6 +387,7 @@
             type: "POST",
             url:  '{{ route('register') }}',
             data: $(this).serialize(),
+            beforeSend:   showSpinner(),
             statusCode: {
                 202 :  function(responseObject, textStatus, jqXHR) {
                     console.log(responseObject.error);
@@ -422,6 +425,7 @@
                     
                 })
                 .fail(function(jqXHR, textStatus){
+                    hideSpinner();
                     
                 })
                 .always(function(jqXHR, textStatus) {

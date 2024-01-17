@@ -109,6 +109,7 @@
             type: form.attr('method'),
             data: form.serialize(),
             dataType: 'json',
+            beforeSend:   showSpinner(),
             statusCode: {
                 202 :  function(responseObject, textStatus, jqXHR) {
                     console.log(responseObject.error);

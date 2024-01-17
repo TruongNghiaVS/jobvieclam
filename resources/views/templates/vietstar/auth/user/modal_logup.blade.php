@@ -329,6 +329,7 @@ $(document).ready(function() {
             type: "POST",
             url:  `{{ route('register') }}`,
             data: $(this).serialize(),
+            beforeSend:   showSpinner(),
             statusCode: {
                 202 :  function(responseObject, textStatus, jqXHR) {
                     console.log(responseObject.error);
@@ -367,6 +368,7 @@ $(document).ready(function() {
                     
                 })
                 .fail(function(jqXHR, textStatus){
+                    hideSpinner();
                     
                 })
                 .always(function(jqXHR, textStatus) {

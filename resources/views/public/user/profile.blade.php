@@ -189,7 +189,7 @@
 <body>
     <main style="padding-top:76px; padding-bottom:76px; ">
         <div class="container company-content CV-profile border rounded p-2" id="CV-{{$data->id ? $data->id : '0' }}">
-            <div class="user-account-section border rounded" bis_skin_checked="1">
+            <div class="user-account-section border" bis_skin_checked="1">
 
                 <div class="box-profile-view" bis_skin_checked="1">
                     <div class="formpanel mt0" bis_skin_checked="1">

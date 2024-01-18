@@ -1,5 +1,6 @@
 /* Extra small devices (phones, 767px and down) */
 @media only screen and (max-width: 767px) {
+  
   .container {
     max-width: 100%;
   }
@@ -35,6 +36,7 @@
   .col-sm-6 {
     width: 100%;
   }
+  
 
 
   /* Header Nav */
@@ -46,15 +48,34 @@
   .header-bar {
     margin-bottom: 0;
     position: relative;
+    top: 0;
+    left: 0;
+    padding-top: 30%;
+  }
+  .header-bar-pc .header-bar-content-search {
+    display: none;
+  }
+  .header-bar.header-bar-mb {
+    padding-top: unset;
   }
 
   .header-bar .header-bar-bg {
     position: absolute;
     top: 0;
     left: 0;
-    height: 400px;
+    height: 100%;
     width: 100%;
   }
+
+  
+  .slider-hero-banner .bg-slider {
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center
+} 
+
   .box-info-signup {
       margin-left: 0 !important;
       margin-top: 20px !important;
@@ -62,7 +83,7 @@
 
   .header-bar .header-bar-content-search {
     position: absolute;
-    top: 400px;
+    top: 0;
     left: 0;
     height: 100%;
   }
@@ -108,9 +129,7 @@
     width: 100%;
   }
 
-  .recruitment-news {
-    margin-top: 150px;
-  }
+  
 
   .section-jobs-by-industry .swiper-button-next {
     right: 0
@@ -621,20 +640,47 @@
     color: white !important;
   }
 
-  
-
-  .header-bar {
-    height: 400px;
-  }
-
-  .header-bar .header-bar-content-search {
-    height: 400px;
-    position: absolute;
-    top: 400px;
+  .header-bar.header-bar-pc{
+    margin-bottom: 0;
+    position: relative;
+    top: 0;
     left: 0;
-    width: 100%;
-    box-shadow: unset !important;
+    padding-top: 30%;
+    height: 0;
   }
+
+
+  .header-bar.header-bar-pc .header-bar-bg {
+    height: 100%;
+  }
+
+
+  .header-bar-pc .header-bar-content-search {
+    display: none;
+  }
+  .header-bar.header-bar-mb {
+    padding-top: unset;
+  }
+
+  .header-bar .header-bar-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  
+  .slider-hero-banner .bg-slider {
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center
+} 
+.header-bar.header-bar-mb {
+  height: unset;
+}
 
   .header-bar .search-form {
     padding: 0;
@@ -644,9 +690,7 @@
     max-height: 220px;
   }
 
-  .recruitment-news {
-    margin-top: 480px;
-  }
+ 
 
   .search-form-box {
     width: 100%;
@@ -914,7 +958,9 @@
   .container {
     max-width: 960px;
   }
-
+  .header-bar.header-bar-mb{
+    display: none;
+  }
   
   .content {
     padding-left: 24px;

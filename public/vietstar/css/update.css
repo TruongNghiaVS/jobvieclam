@@ -5118,13 +5118,6 @@ div#industry_id_chosen {
         width: 100%
     }
 
-    .slider-hero-banner .bg-slider {
-        height: 100%;
-        width: 100%;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom center
-    }
 
     .slider-hero-banner .bg-slider.is-pc {
         display: none
@@ -5135,7 +5128,7 @@ div#industry_id_chosen {
     }
 
     .header-bar {
-        padding-bottom: 40vh
+       
     }
 
     .header-bar .header-bar-bg {

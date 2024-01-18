@@ -604,6 +604,12 @@
   .box-profile-view .section-body .info .info-list {
     padding-left: 0;
   }
+  .box-profile-view .section-body .info-list li p {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+  }
   .box-profile-view .section-body .info-list li p:first-child {
       width: 100px !important;
       min-width: 100px !important;
@@ -613,6 +619,7 @@
     min-width: 150px !important;
     padding-right: 5px;
   }
+
 }
 
 

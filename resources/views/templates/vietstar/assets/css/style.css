@@ -599,9 +599,6 @@ a {
   position: relative;
 }
 
-.header-bar .search-form .form-control {
-  padding-left: 40px;
-}
 
 .header-bar .search-form .icon-search__inner::after {
   position: absolute;

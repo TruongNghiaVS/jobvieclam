@@ -722,6 +722,9 @@ section.company-job-detail.job-detail-title .job-detail-banner {
 	height: 450px;
 	width: 100%;
 }
+.header-bar-pc .header-bar-content-search  {
+	
+}
 .navbar .group-button {
 	height: 76px;
     display: flex;
@@ -795,10 +798,10 @@ section.company-job-detail.job-detail-title .job-detail-banner {
 	width: 100%;
 }
 
-.header-bar .search-form .form-control {
+
+.header-bar .search-form .search-input {
 	padding-left: 40px;
 }
-
 .header-bar .search-form .icon-search__inner::after {
 	position: absolute;
 	width: 20px;

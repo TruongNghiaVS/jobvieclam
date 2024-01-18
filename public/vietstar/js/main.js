@@ -562,13 +562,18 @@ function actionSubMenu() {
     })
 }
 
-const opensearchbox_btn = document.querySelector('.advance-search__open');
-const closesearchbox_btn = document.querySelector('.advance-search__close');
+const opensearchbox_btn = document.querySelectorAll('.advance-search__open');
+const closesearchbox_btn = document.querySelectorAll('.advance-search__close');
 const form_group_search = document.querySelectorAll('.form-group-search-box');
 // Open advance search func
 function opensearchbox() {
-    opensearchbox_btn.style.display = "none";
-    closesearchbox_btn.style.display = "flex";
+    opensearchbox_btn.forEach(item => {
+        item.style.display = "none";
+    })
+    closesearchbox_btn.forEach(item => {
+        item.style.display = "flex";
+    })
+   
     form_group_search.forEach(item => {
         item.classList.add('active');
     })
@@ -582,8 +587,12 @@ if (search_input) {
 
 // Close advance search func
 function closesearchbox() {
-    opensearchbox_btn.style.display = "flex";
-    closesearchbox_btn.style.display = "none";
+    opensearchbox_btn.forEach(item => {
+        item.style.display = "flex";
+    })
+    closesearchbox_btn.forEach(item => {
+        item.style.display = "none";
+    })
     form_group_search.forEach(item => {
         item.classList.remove('active');
     })

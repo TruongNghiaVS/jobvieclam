@@ -99,6 +99,19 @@
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="text-primary table_title">
+                        <strong>
+                           Địa chỉ
+                        </strong>
+                    </td>
+                    <td class="table_value">
+                       
+                    {{ $user->street_address ? $user->street_address :"Chưa cập nhật" }}
+                         <!-- {{$user->gender_id == 15 ? "Nam": "Nữ" }} -->
+                    </td>
+                </tr>
+
 
                 <tr>
                     <td class=" text-primary table_title">
@@ -400,7 +413,8 @@
                               
                                      <div class="form-group ">
                                 <label class="required" for="">Địa chỉ</label>
-                                <input class="form-control cursor-pointer" id="addressInfo" placeholder="Địa chỉ" name="addressInfo" type="text" 
+                               
+                                <input type="text" class="form-control" required id="addressInfo" name="street_address" placeholder="Địa chỉ" value="{{Auth::user()->street_address ? Auth::user()->street_address : __('Not update') }}"
                                 
                             </div>
                        

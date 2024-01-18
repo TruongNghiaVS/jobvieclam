@@ -426,9 +426,12 @@ class UserController extends Controller
         // }
 			
         /*         * ************************************** */
+     
         $user->first_name = $request->input('first_name');
         $user->middle_name = $request->input('middle_name');
         $user->last_name = $request->input('last_name');
+        $user->street_address = $request->input('street_address');
+
         /*         * *********************** */
         $user->name = $user->getName();
         /*         * *********************** */

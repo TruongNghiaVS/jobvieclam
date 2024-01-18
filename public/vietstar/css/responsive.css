@@ -584,6 +584,35 @@
   max-width: 100%;
   justify-content: center;
 }
+.box-profile-view .section-body .info {
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.container.company-content.CV-profile {
+  max-width: 98%;
+}
+.user-account-section {
+   padding: 10px;
+}
+.box-profile-view .section-body .info .image{
+  margin-left: 1.5rem;
+}
+.box-profile-view  .section-body {
+  padding: 0 10px;
+}
+  .box-profile-view .section-body .info .info-list {
+    padding-left: 0;
+  }
+  .box-profile-view .section-body .info-list li p:first-child {
+      width: 100px !important;
+      min-width: 100px !important;
+  }
+  .box-profile-view .job-information .information-list li p:first-child {
+    width: 150px !important;
+    min-width: 150px !important;
+    padding-right: 5px;
+  }
 }
 
 
@@ -603,6 +632,8 @@
   footer{
    
   }
+
+
   .links {
     padding: 60px 1.5rem 30px !important;
   }
@@ -948,8 +979,27 @@
     justify-content: end;
   }
  
+  .box-profile-view .section-body .info {
+    flex-direction: column;
+    padding-left: 20px;
+  }
 
-
+  .container.company-content.CV-profile {
+    max-width: 98%;
+  }
+  .user-account-section {
+     padding: 10px;
+  }
+  .box-profile-view .section-body .info .image{
+    margin-left: 1.5rem;
+  }
+  .box-profile-view  .section-body {
+    padding: 0 10px;
+  }
+  .box-profile-view .section-body .info .info-list {
+    padding-left: 0;
+  }
+  
 }
 
 

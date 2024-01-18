@@ -564,6 +564,8 @@ class JobController extends Controller
         $city = City::where('id', $job->city_id)->first();
 
         $maxFileSize = UploadedFile::getMaxFilesize() / (1048576);
+
+
         
         if ((bool)$user->is_active === false) {
             flash(__('Your account is inactive contact site admin to activate it'))->error();
@@ -581,6 +583,7 @@ class JobController extends Controller
                 exit;
             }
         }
+
         if ($user->isAppliedOnJob($job->id)) {
             flash(__('You have already applied for this job'))->success();
             return \Redirect::route('job.detail', $job_slug);
@@ -608,9 +611,7 @@ class JobController extends Controller
         
         $job = Job::where('slug', 'like', $job_slug)->firstOrFail();
         $profileCv = ProfileCv::where('user_id', '=', $user_id)->first();
-
         if($request->your_resume == 0) {
-            
             if(!$profileCv) {
                 if($profileCv == null)
                 {
@@ -618,16 +619,18 @@ class JobController extends Controller
                     $itemInsert2->user_id = $user_id;
                     $itemInsert2->title = "sử dụng mẫu hồ sơ";
                     $itemInsert2->type = 1;
-                    $itemInsert2->cvLink = "http://jobvieclam.com";
+                    $itemInsert2->cvLink = "http://jobvieclam.com/xem-ho-so-cv/".$user_id;
                     $itemInsert2->jobId = $job->id;
                     $itemInsert2->save();
                     $cvId = $itemInsert2->id;
                 }
-                
-                // flash(__('You need to update the CV file from the template'))->error();
-                // return redirect()->back();
             }
-          
+            else 
+            {
+                $cvId = $profileCv->id;
+            }
+    
+        
 
         }else {
             if($request->file('customFile')){
@@ -655,7 +658,7 @@ class JobController extends Controller
                     $itemInsert->cv_file = $file_hash_name;
 
                     $itemInsert->type = 0;
-                    $itemInsert->cvLink = "http://jobvieclam.com";
+                    $itemInsert->cvLink = "http://jobvieclam.com/xem-ho-so-cv/".$user_id;
                     $itemInsert->jobId = $job->id;
                     $itemInsert->save();
                 }
@@ -666,20 +669,24 @@ class JobController extends Controller
                     $itemInsert->cv_file = $file_hash_name;
 
                     $itemInsert->type = 0;
-                    $itemInsert->cvLink = "http://jobvieclam.com";
+                    $itemInsert->cvLink = "http://jobvieclam.com/xem-ho-so-cv/".$user_id;
+         
                     $itemInsert->jobId = $job->id;
                     $itemInsert->update();
                 }
-
+                
                 $cvId = $itemInsert->id;
 
             }
+           
         }
 
         $jobApply = new JobApply();
         $jobApply->user_id = $user_id;
+ 
         $jobApply->job_id = $job->id;
         $jobApply->cv_id = $cvId;
+    
         $jobApply->save();
 
         /*         * ******************************* */

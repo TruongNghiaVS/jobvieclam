@@ -4,23 +4,23 @@
 
 /*
 
-  |--------------------------------------------------------------------------
+|--------------------------------------------------------------------------
 
-  | Web Routes
+| Web Routes
 
-  |--------------------------------------------------------------------------
+|--------------------------------------------------------------------------
 
-  |
+|
 
-  | Here is where you can register web routes for your application. These
+| Here is where you can register web routes for your application. These
 
-  | routes are loaded by the RouteServiceProvider within a group which
+| routes are loaded by the RouteServiceProvider within a group which
 
-  | contains the "web" middleware group. Now create something great!
+| contains the "web" middleware group. Now create something great!
 
-  |
+|
 
- */
+*/
 
 $real_path = realpath(__DIR__) . DIRECTORY_SEPARATOR . 'front_routes' . DIRECTORY_SEPARATOR;
 
@@ -76,7 +76,7 @@ Route::get('login/jobseeker/{provider}', 'Auth\LoginController@redirectToProvide
 Route::get('login/jobseeker/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
 Route::get('login/employer/{
-  provider}', 'Company\Auth\LoginController@redirectToProvider');
+provider}', 'Company\Auth\LoginController@redirectToProvider');
 
 Route::get('login/employer/{provider}/callback', 'Company\Auth\LoginController@handleProviderCallback');
 
@@ -191,13 +191,13 @@ Route::get('/page/detail/{slug}','IndexController@pageDetail')->name('page');
 
 Route::get('/clear-cache', function () {
 
-  $exitCode = Artisan::call('config:clear');
+$exitCode = Artisan::call('config:clear');
 
-  $exitCode = Artisan::call('cache:clear');
+$exitCode = Artisan::call('cache:clear');
 
-  $exitCode = Artisan::call('config:cache');
+$exitCode = Artisan::call('config:cache');
 
-  return 'DONE'; //Return anything
+return 'DONE'; //Return anything
 
 });
 
@@ -208,21 +208,22 @@ Route::get('job-email-alert', 'JobAlertController@Register')->name('job-email-al
 Route::get('job-email-alert/{token}/confirm', 'JobAlertController@verify')->name('job-email-alert-confirm');
 
 
-    Route::post('/AdvertisementBanner/createOrUpdate', 'AdvertisementBannerController@createOrUpdate')->name('admin.advertisementBanner.createOrUpdate');
-    Route::get('/AdvertisementBanner/getAll', 'AdvertisementBannerController@getAll')->name('admin.advertisementBanner.getAll');
-    Route::post('/AdvertisementBanner/delete', 'AdvertisementBannerController@delete')->name('admin.advertisementBanner.delete');
-  
-  
-    Route::post('/AdvertisementBannerJob/createOrUpdate', 'AdvertisementBannerJobController@create')->name('admin.advertisementBannerJob.create');
-    Route::get('/AdvertisementBannerJob/getAll', 'AdvertisementBannerJobController@getAll')->name('admin.advertisementBannerJob.getAll');
-    Route::post('/AdvertisementBannerJob/delete', 'AdvertisementBannerJobController@delete')->name('admin.advertisementBannerJob.delete');
-    Route::post('/article/createOrUpdate', 'ArticleController@create')->name('admin.article.create');
-    Route::get('/article/getBYid', 'ArticleController@getBYid')->name('admin.article.getBYid');
-    Route::post('/article/createOrUpdate', 'ArticleController@createOrUpdate')->name('admin.article.create');
-    Route::get('/article/getAll', 'ArticleController@getAll')->name('admin.article.getAll');
-    Route::post('/article/delete', 'ArticleController@delete')->name('admin.article.delete');
+Route::post('/AdvertisementBanner/createOrUpdate', 'AdvertisementBannerController@createOrUpdate')->name('admin.advertisementBanner.createOrUpdate');
+Route::get('/AdvertisementBanner/getAll', 'AdvertisementBannerController@getAll')->name('admin.advertisementBanner.getAll');
+Route::post('/AdvertisementBanner/delete', 'AdvertisementBannerController@delete')->name('admin.advertisementBanner.delete');
 
-    Route::get('/advise/getAll', 'AdviseController@getAll')->name('admin.advise.getAll');
-    Route::get('/mailNotification/getAll', 'MailNotificationController@getAll')->name('admin.mailNotification.getAll');
-    Route::get('/contactinfo/getAll', 'ContactInfoController@getAll')->name('admin.contactinfo.getAll');
 
+Route::post('/AdvertisementBannerJob/createOrUpdate', 'AdvertisementBannerJobController@create')->name('admin.advertisementBannerJob.create');
+Route::get('/AdvertisementBannerJob/getAll', 'AdvertisementBannerJobController@getAll')->name('admin.advertisementBannerJob.getAll');
+Route::post('/AdvertisementBannerJob/delete', 'AdvertisementBannerJobController@delete')->name('admin.advertisementBannerJob.delete');
+Route::post('/article/createOrUpdate', 'ArticleController@create')->name('admin.article.create');
+Route::get('/article/getBYid', 'ArticleController@getBYid')->name('admin.article.getBYid');
+Route::post('/article/createOrUpdate', 'ArticleController@createOrUpdate')->name('admin.article.create');
+Route::get('/article/getAll', 'ArticleController@getAll')->name('admin.article.getAll');
+Route::post('/article/delete', 'ArticleController@delete')->name('admin.article.delete');
+
+Route::get('/advise/getAll', 'AdviseController@getAll')->name('admin.advise.getAll');
+Route::get('/mailNotification/getAll', 'MailNotificationController@getAll')->name('admin.mailNotification.getAll');
+Route::get('/contactinfo/getAll', 'ContactInfoController@getAll')->name('admin.contactinfo.getAll');
+
+Route::get('/xem-ho-so-cv/{idUser}', 'PublicController@ViewDetail');

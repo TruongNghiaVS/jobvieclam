@@ -459,7 +459,7 @@ class CompanyController extends Controller
             $when = Carbon::now()->addMinutes(5);
             Mail::send(new ApplicantContactMail($data));
             $msgresponse = ['success' => 'success', 'message' => __('Message sent successfully')];
-            echo json_encode($msgresponse);
+
             exit;
         }
     }
@@ -468,16 +468,26 @@ class CompanyController extends Controller
     {
         $company = Auth::guard('company')->user();
         $jobs = Job::where('company_id', $company->id);
-
         if($request->title) {
             $jobs = $jobs->where('title', 'like', '%'.$request->title.'%');
         }
         if($request->status) {
-            $jobs = $jobs->where('status', $request->status);
+            if($request->status =="1")
+            {  
+                $statusQuerry = [1, 4];
+                 $jobs = $jobs->whereIn('status', $statusQuerry);
+
+            }
+            else
+            {
+                $jobs = $jobs->where('status', $request->status);
+            }
+            
         }
         if($request->city_id) {
             $jobs = $jobs->where('city_id', $request->city_id);
         }
+
         if(isset($request->expired) && $request->expired == 'true') {
             $jobs = $jobs->whereDate('expiry_date', '<', Carbon::now()->format('Y-m-d'));
         }

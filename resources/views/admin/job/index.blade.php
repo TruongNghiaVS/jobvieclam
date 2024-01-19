@@ -149,12 +149,40 @@
 </div>
 
 
+<div class="modal fade" id="reject-job-modal" tabindex="-1" role="dialog" aria-labelledby="reject-job-jobLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reject-job-jobLabel">Duyệt JOB</h5>
+       
+      </div>
+      <div class="modal-body">
+            <form id="reject-job-form" action="">
+                    <div class="form-group {!! APFrmErrHelp::hasError($errors, 'reject') !!}">
+                        {!! Form::label('reject', 'Lý do', ['class' => 'bold']) !!}
+                        {!! Form::textarea('reject', null, array('class'=>'form-control', 'id'=>'reject', 'placeholder'=>'Lý do từ chối')) !!}
+                        {!! APFrmErrHelp::showErrors($errors, 'description') !!}
+                    </div>
+
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+        <button type="button" id="reject-btn"  class="btn btn-primary">Từ chối</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 @endsection
 @push('scripts')
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
 <script>
-    function acceptjob(id,status){
+   
+
+   function acceptjob(id,status){
         console.log(id,status);
         $('#accept-job').modal('show');
         $('#accept-job #accept').on('click',()=>{
@@ -172,6 +200,7 @@
     }
 
 
+    
 
     $(function () {
         var oTable = $('#jobDatatableAjax').DataTable({

@@ -1134,6 +1134,11 @@
   .container.company-content {
     max-width: 1200px;
   }
+  .advertising-banner  .container {
+
+    max-width: 1400px;
+  }
+
   .content {
     padding-left: 135px;
     padding-right: 135px;

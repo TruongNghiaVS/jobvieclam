@@ -142,7 +142,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-        <button type="button" class="btn btn-primary">Duyệt</button>
+        <button type="button" id="accept"  class="btn btn-primary">Duyệt</button>
       </div>
     </div>
   </div>
@@ -154,8 +154,21 @@
 @push('scripts')
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
 <script>
-    function acceptjob(id){
+    function acceptjob(id,status){
+        console.log(id,status);
         $('#accept-job').modal('show');
+        $('#accept-job #accept').on('click',()=>{
+            $.post("/job/changeStatus", {id: id, status: "4", _method: 'POST', _token: '{{ csrf_token() }}'})
+                    .done(function (response) {
+                        if (response == 'ok')
+                        {
+                           alert("ok");
+                        } else
+                        {
+                            alert('Request Failed!');
+                        }
+                    });
+        })
     }
 
 

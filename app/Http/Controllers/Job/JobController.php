@@ -606,8 +606,8 @@ class JobController extends Controller
 
     public function changeStatus(Request $request)
     {
-        $id =$request->intpu("id");
-        $status =$request->intpu("status");
+        $id =$request->intput("id");
+        $status =$request->intput("status");
         if($id)
         {
 

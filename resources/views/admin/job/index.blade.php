@@ -19,6 +19,30 @@
         width: 100%;
         
     }
+    #accept-job .modal-header {
+        position: relative;
+    }
+    #accept-job .modal-title {
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+    }
+    #accept-job  .modal-header button{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 10px;
+        height: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #accept-job  .modal-header button span {
+        font-size: 17px;
+        position: absolute;
+        top: 10px;
+        right: 0;
+    }   
 </style>
 <div class="page-content-wrapper"> 
     <!-- BEGIN CONTENT BODY -->
@@ -103,10 +127,39 @@
     </div>
     <!-- END CONTENT BODY --> 
 </div>
+
+
+
+<div class="modal fade" id="accept-job" tabindex="-1" role="dialog" aria-labelledby="accept-jobLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="accept-jobLabel">Duyệt JOB</h5>
+       
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary">Duyệt</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 @endsection
 @push('scripts')
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
 <script>
+    function acceptjob(id){
+        $('#accept-job').modal('show');
+    }
+
+
+
     $(function () {
         var oTable = $('#jobDatatableAjax').DataTable({
             "language": { // language settings

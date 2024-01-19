@@ -117,7 +117,10 @@ class JobController extends Controller
 						<a href="javascript:void(0);" onClick="' . $activeHref . '" id="onclickActive' . $jobs->id . '"><i class="fa fa-' . $activeIcon . '" aria-hidden="true"></i>' . $activeTxt . '</a>
 						</li>
 						<li>
-						<a href="javascript:void(0);" onClick="' . $featuredHref . '" id="onclickFeatured' . $jobs->id . '"><i class="fa fa-' . $featuredIcon . '" aria-hidden="true"></i>' . $featuredTxt . '</a>
+						    <a href="javascript:void(0);" onClick="' . $featuredHref . '" id="onclickFeatured' . $jobs->id . '"><i class="fa fa-' . $featuredIcon . '" aria-hidden="true"></i>' . $featuredTxt . '</a>
+						</li>	  
+                        <li>
+						    <a  href="javascript:void(0);"  onClick="acceptjob(' . $jobs->id . ')" id="onclickFeatured' . $jobs->id . '"><i class="fa fa-' . $featuredIcon . '" aria-hidden="true"></i>' . $featuredTxt . '</a>
 						</li>	    																																	
 					</ul>
 				</div>';

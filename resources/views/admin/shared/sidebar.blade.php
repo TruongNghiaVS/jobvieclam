@@ -36,7 +36,6 @@
         </li>
         @include('admin/shared/side_bars/bannerAd')
         @include('admin/shared/side_bars/banner')
-        @include('admin/shared/side_bars/article')
         <li class="heading">
             <h3 class="uppercase">Chăm sóc KH</h3>
             @include('admin/shared/side_bars/support')
@@ -45,6 +44,7 @@
             <h3 class="uppercase">CMS</h3>
         </li>
         
+        @include('admin/shared/side_bars/article')
         @include('admin/shared/side_bars/blogs')
         @include('admin/shared/side_bars/blogsTD')
         @include('admin/shared/side_bars/seo')

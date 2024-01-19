@@ -4,6 +4,11 @@
   .container {
     max-width: 100%;
   }
+  .cb-section {
+    padding: 20px 0 ;
+  }
+
+
 
     li.page-item {
         display: none;
@@ -50,7 +55,7 @@
     position: relative;
     top: 0;
     left: 0;
-    padding-top: 25%;
+    padding-top: 66.666%;
   }
   .header-bar-pc .header-bar-content-search {
     display: none;
@@ -69,11 +74,12 @@
 
   
   .slider-hero-banner .bg-slider {
-    height: 100%;
-    width: 100%;
+    min-height: 100%;
+    min-width: 100%;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: bottom center
+    background-position: bottom center;
+  
 } 
 
   .box-info-signup {
@@ -146,6 +152,9 @@
 *************************************************/
   .advertising-banner .item {
     margin-bottom: 10px;
+  }
+  .advertising-banner {
+    margin: 0;
   }
 
   /************************************************
@@ -415,7 +424,7 @@
   button#mobile-sidebarCollapse {
     width: unset;
     position: absolute;
-    top: 0;
+    top: 7px;
     right: 10px;
     font-size: 24px;
     color: black;
@@ -619,6 +628,25 @@
     min-width: 150px !important;
     padding-right: 5px;
   }
+
+  .submit-now {
+    flex-direction: column;
+  }
+  .submit-now .w-50 {
+    width: 100% !important;
+    margin-bottom: 5px;
+  }
+  .section-register-new-jobs {
+
+    padding: 50px  5px;
+  }
+  .banner .item a {
+    height: auto;
+  }
+  .recruitment-news {
+    padding-bottom: 20px;
+  }
+
 
 }
 
@@ -1134,6 +1162,11 @@
   .container.company-content {
     max-width: 1200px;
   }
+  .advertising-banner  .container {
+
+    max-width: 1400px;
+  }
+
   .content {
     padding-left: 135px;
     padding-right: 135px;

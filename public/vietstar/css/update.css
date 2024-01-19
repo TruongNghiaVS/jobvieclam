@@ -1643,8 +1643,8 @@ button:focus {
 }
 
 .card-news .card-news__content .card-news__content-detail a {
-    font-weight: 400;
-    font-size: 13px;
+    font-weight: 700;
+    font-size: 12px;
     line-height: 18px;
     color: var(--sub-text);
     -webkit-line-clamp: 1;
@@ -2661,7 +2661,11 @@ footer .inner-copyright .copyright {
     line-height: 17px;
     color: #333333;
     -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out
+    transition: all 0.3s ease-in-out;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
 }
 
 .jobs-side-list .item-job .jobinfo .info .companyName a:hover,

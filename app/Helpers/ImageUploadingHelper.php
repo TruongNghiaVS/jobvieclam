@@ -27,6 +27,7 @@ class ImageUploadingHelper
             self::$mainImgWidth = $width;
             self::$mainImgHeight = $height;
         }
+
         $destinationPath = ImageUploadingHelper::real_public_path() . $destinationPath;
         $midImagePath = $destinationPath . self::$midFolder;
         $thumbImagePath = $destinationPath . self::$thumbFolder;

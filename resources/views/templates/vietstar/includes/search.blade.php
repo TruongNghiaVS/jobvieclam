@@ -99,10 +99,10 @@
 </section>
 
 <section class="header-bar header-bar-mb">
-    <div class="container content position-relative header-bar-content-search"> 
+    <div class="container position-relative header-bar-content-search"> 
 
-        <form class="search-form row" action="{{route('job.list')}}" method="get" id="search-form">
-            <div class="mt-3" id="collapseAdvanceSearch">
+        <form class="search-form" action="{{route('job.list')}}" method="get" id="search-form">
+            <div class="" id="collapseAdvanceSearch">
 
                 <div class="row">
                     <div class="col-lg-5  shadow p-4 search-form-box">

@@ -1,4 +1,4 @@
-<section class="partner cb-section pt-0">
+<section class="partner cb-section">
     <div class="container">
         <div class="box-title-bg">
             <h2 class="section-title text-uppercase">{{ __('Nhà tuyển dụng hàng đầu') }}</h2>

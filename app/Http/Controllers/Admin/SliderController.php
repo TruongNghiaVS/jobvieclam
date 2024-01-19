@@ -111,17 +111,18 @@ class SliderController extends Controller
     public function updateSlider($id, SliderFormRequest $request)
     {
         $slider = Slider::findOrFail($id);
+     
 		if ($request->hasFile('slider_image')) {
             $this->deleteSliderImage($id);
             $image_name = $request->input('slider_heading');
-            $fileName = ImgUploader::UploadImage('slider_images', $request->file('slider_image'), $image_name, 1920, 600);
+            $fileName = ImgUploader::UploadImage('slider_images', $request->file('slider_image'), $image_name, 1920, 400);
             $slider->slider_image = $fileName;
             $slider->used_for = 0;
         }
 		if ($request->hasFile('slider_image_mobile')) {
             $this->deleteSliderImage($id);
             $image_name = $request->input('slider_heading');
-            $fileName = ImgUploader::UploadImage('slider_images', $request->file('slider_image_mobile'), $image_name, 600, 1920);
+            $fileName = ImgUploader::UploadImage('slider_images', $request->file('slider_image_mobile'), $image_name, 640 , 430);
             $slider->slider_image_mobile = $fileName;
             $slider->used_for = 1;
         }

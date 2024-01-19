@@ -760,6 +760,9 @@ section.company-job-detail.job-detail-title .job-detail-banner {
     margin-bottom: 4px;
 	
 }
+.rank-salary{
+	font-size: 14px;
+}
 
 .btn_for_em__body,
 .btn_for_user__body
@@ -1217,8 +1220,8 @@ section#flash-badge-banner {
 	background-position: 50%;
 	background-repeat: no-repeat;
 	background-size: cover;
-	font-family: Inter, sans-serif;
-	margin-top: 57px;
+
+
 	min-height: 600px;
 	position: relative;
 	width: 100%;
@@ -1309,7 +1312,12 @@ section#flash-badge-banner {
 	text-align: center;
 	justify-content: space-between;
 	overflow: hidden;
-	margin-bottom: 10px;
+
+}
+.submit-now {
+	display: flex;
+	justify-content: start;
+	align-items: center;
 }
 
 .content-title-box .label {
@@ -1380,6 +1388,7 @@ section#flash-badge-banner {
 	-webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
 	text-align: start;
+	font-size: 13px;
 }
 
 .section-jobs-by-industry .alljobs_swiper {
@@ -1419,13 +1428,6 @@ section#flash-badge-banner {
 	margin-bottom: 5px;
 }
 
-.card-news .card-news__content .card-news__content-detail a {
-	font-size: 12px;
-	font-weight: normal !important;
-	margin-bottom: 12px;
-	text-decoration: none;
-	
-}
 .card-news .card-news__content-head {
 	flex: 1;
 }

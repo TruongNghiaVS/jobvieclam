@@ -109,7 +109,7 @@
                                         <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $blog->updated_at)->diffForHumans() }}
                                         </td>
                                         <td>
-                                            <a id="popup" class="edit-modal btn btn-success" href="{{route('edit-blog',$blog->id)}}"><span class="fa fa-pencil"></span>
+                                            <a id="popup" class="edit-modal btn btn-success" href="{{route('edit-blog-td',$blog->id)}}"><span class="fa fa-pencil"></span>
                                                 Sửa</a>
                                             <button id="popup" class="delete-modal btn btn-danger" onClick="delete_blog({{$blog->id}});"><span class="fa fa-trash"></span>
                                                 Xóa</button>

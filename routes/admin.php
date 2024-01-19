@@ -51,7 +51,7 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::get('/blog_category', 'Blog_categoriesController@index');
     Route::post('/blog_category/create', 'Blog_categoriesController@create');
     Route::post('/blog_category', 'Blog_categoriesController@update');
-    Route::delete('/blog_category/{blog_category}', 'Blog_categoriesController@destroy');
+    Route::delete('/blog_category/{idCa}', 'Blog_categoriesController@destroy');
     Route::get('/blog_category/get_blog_category_by_id/{blog_category}', 'Blog_categoriesController@get_blog_category_by_id');
     /*Blog_category ứng viên end*/
 
@@ -141,7 +141,7 @@ Route::group(['namespace' => 'Admin'], function () {
 
 
     Route::get('/delete-widget-page/{widget_page}', 'WidgetPagesController@destroy')->name('admin.widget_pages.delete');
-    
+    Route::get('/job/changeStatus', 'JobController@changeStatus');
     /*Widget data routes End*/
 
 

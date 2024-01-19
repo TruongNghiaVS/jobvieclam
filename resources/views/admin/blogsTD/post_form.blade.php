@@ -137,13 +137,13 @@ function stringtoSlug()
                                                                         <span
                                                                                 class="text-danger">{{ $errors->first('content') }}</span>
                                                                     </div>
-                                                                    <div class="form-group {{ $errors->has('author') ? 'has-error' : '' }}">
-                                                                        <label class="control-label" for="author">Tác giả</label>
-                                                                        <input  type="text"  class="form-control" name="author"
-                                                                               id="slugInput" autofocus
-                                                                               value="{{ old('author') }}">
+                                                                    <div class="form-group {{ $errors->has('authorPost') ? 'has-error' : '' }}">
+                                                                        <label class="control-label" for="authorPost">Tác giả</label>
+                                                                        <input  type="text"  class="form-control" name="authorPost"
+                                                                              autofocus
+                                                                               value="{{ old('authorPost') }}">
                                                                         <span
-                                                                                class="text-danger">{{ $errors->first('author') }}</span>
+                                                                                class="text-danger">{{ $errors->first('authorPost') }}</span>
                                                                     </div>
                                                                 </div>
                                                                 

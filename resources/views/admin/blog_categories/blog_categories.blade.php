@@ -101,8 +101,18 @@
                                         <span class="text-danger">{{ $errors->first('title') }}</span>
                                     </div>
                                 </div>
+                                <input type="hidden" name ="typepost" value = "{{$typepost}}"> 
+
+                                <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
+                                    <label class="control-label col-sm-3" for="title">Tiêu đề</label>
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control" name="title" id="title" autofocus
+                                            value="{{ old('title_add') }}">
+                                        <span class="text-danger">{{ $errors->first('title') }}</span>
+                                    </div>
+                                </div>
                                 <div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
-                                    <label class="control-label col-sm-3" for="Slug">Slug</label>
+                                    <label class="control-label col-sm-3" for="Slug">Slug </label>
                                     <div class="col-sm-12">
                                         <input type="text" class="form-control" name="slug" id="slug" autofocus
                                             value="{{ old('slug') }}">
@@ -142,6 +152,8 @@
                                         <span class="text-danger">{{ $errors->first('title_update') }}</span>
                                     </div>
                                 </div>
+                                <input type="hidden" name ="typepost" value = "{{$typepost}}"> 
+
                                 <div class="form-group {{ $errors->has('slug_update') ? 'has-error' : '' }}">
                                     <label class="control-label col-sm-3" for="Slug">Slug</label>
                                     <div class="col-sm-12">

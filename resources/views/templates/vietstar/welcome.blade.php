@@ -9,14 +9,16 @@
 <!-- Search start -->
 @include('templates.vietstar.includes.search')
 <!-- Search End -->
+
+
 <!-- Home job list start -->
 @include('templates.vietstar.includes.home_job_list')
 <!-- Home job list end -->
 
-
 <!-- advertising_banner -->
 @include('templates.vietstar.includes.banner')
 <!-- advertising_banner -->
+
 
 <!-- Top Employers start -->
 @include('templates.vietstar.includes.home_top_partners')
@@ -26,8 +28,6 @@
 <!-- Việc làm theo lĩnh vực -->
 @include('templates.vietstar.includes.home_jobs_by_industry')
 <!-- Việc làm theo lĩnh vực End -->
-
-
 
 <!-- advertising_banner -->
 @include('templates.vietstar.includes.advertising_banner')
@@ -70,6 +70,7 @@
     </div>
 </section>
 <!-- ./Đăng ký nhận việc làm mới và phù hợp -->
+
 
 <!-- About us -->
 <section class="about-us section-static d-none">
@@ -115,39 +116,9 @@
     </div>
 </section> -->
 
-
-
 <!-- Testimonials start -->
 @include('templates.vietstar.includes.home_blogs')
 <!-- Testimonials End -->
-
-
-<div class="modal fade" id="contact_email_success" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header bg-primary d-flex justify-content-center">
-                        <h5 class="m-0 text-white">{{__('Alert')}}</h5>
-                     </div>
-					
-                    <div class="modal-body">
-                     
-                        <div class="thank-you-pop">
-							<img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
-                            <p class="text-center">
-                                Cảm ơn bạn đã liên hệ với chúng tôi.
-                            </p>
-                            <p class="text-center">
-                               Hệ thống đã nghi nhận mail của bạn.
-                            </p>
- 						</div>
-                         <div class="d-flex justify-content-center">
-                                <button type="button" class="btn btn-primary btn-lg btn-block" data-dismiss="modal">{{__('Close')}}</button>
-                        </div>
-                    </div>
-        </div>
-    </div>
-</div>
-
 
 @include('templates.vietstar.includes.footer')
 @endsection

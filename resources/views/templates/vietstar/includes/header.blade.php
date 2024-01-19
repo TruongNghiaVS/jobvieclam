@@ -64,26 +64,8 @@
                     <li class="has-child">
                         <a href="{{route('company.listing')}}" class="nav-link {{ Request::url() == route('company.listing') ? 'header-active' : 'text-main-color' }}" style="{{ Request::url() == route('company.listing')  || strpos(Request::url(),'job') ? 'color:#981B1E;' : '' }}">{{__('Company')}}</a>
                     </li>
-                    {{-- <li class="has-child">
-                        <a href="{{ route('my.profile') }}" class="nav-link nav-link-parent">{{__('News')}}</a>
-                    <button type="button" class="btn-show-sub-menu" data-ref="findJob2" data-target="false"><span class="iconmoon icon-p-next"></span></button>
-                    <ul class="sub-menu" data-ref="findJob2" data-target="false">
-                        <li>
-                            <a class="sub-item" href="{{route('page-category', ['slug' => 'cam_nang'])}}"><span class="iconmoon icon-recruiter-portfolio"></span>
-                                {{__('Pages')}}
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sub-item" href="{{route('blogs')}}"><span class="iconmoon icon-recruiter-portfolio"></span>
-                                {{__('News')}}
-                            </a>
-                        </li>
-
-                    </ul>
-                    </li> --}}
-                    <!-- <li>
-                        <a href="#" class="nav-link">{{__('Introduce candidate')}}</a>
-                    </li> -->
+                  
+                   
 
                     {{-- @foreach($show_in_top_menu as $top_menu) @php $cmsContent = App\CmsContent::getContentBySlug($top_menu->page_slug); @endphp
                     <li>
@@ -95,7 +77,7 @@
                     <li class="has-child">
                         <a href="#" class="nav-link nav-link-parent" {{ Request::url() == route('blogs') ? 'header-active' : 'text-main-color' }}" style="{{ Request::url() == route('blogs')  ? 'color:#981B1E;' : '' }}">{{__('Blog')}}
                         </a>
-                        @php($categories = \App\Blog_category::get())
+                        @php($categories = \App\Blog_category::where("typePost", '!=' , "1")->get())
                         <button type="button" class="btn-show-sub-menu" data-ref="findJob_blog" data-target="false"><span class="iconmoon icon-p-next"></span></button>
                         <ul class="sub-menu" data-ref="findJob_blog" data-target="false">
                             @foreach($categories as $category)

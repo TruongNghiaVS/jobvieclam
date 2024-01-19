@@ -102,7 +102,6 @@ class BlogsControllerTD extends Base
         if ($id != '') {
             $data['languages'] = DataArrayHelper::languagesNativeCodeArray();
             $row = Blog::findOrFail($id);
-
             $data['blog'] = $row;
             $categories = Blog_category::where("typePost","1")->get();
             $data['categories'] = $categories;

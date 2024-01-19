@@ -133,7 +133,46 @@ class JobController extends Controller
         //$query = $dataTable->getQuery()->get();
         //return $query;
     }
+    public function changeStatus(Request $request)
+    {
+        $id =$request->intput("id");
+        $status =$request->intput("status");
+        if($id)
+        {
 
+        }
+        else 
+        {
+            $id =-1;
+        }
+
+        $itemError = new stdClass();
+        $itemError->success =true;
+        $itemError->message ="Yêu cầu thành công";
+        $job = Job::findOrFail($id);
+        if($job)
+        {
+
+        }
+        else 
+        {
+            $itemError->success =false;
+            $itemError->message ="Yêu cầu thất bại";
+            return response()->json([
+                'success'=>false,
+                'error'=> $itemError ], 200);
+        }
+        
+        if($status =="4")
+        {
+            $job->status ="1";
+        }
+        $job->save();
+        return response()->json([
+            'success'=>true,
+            'error'=> $itemError ], 200);
+       
+    }
     public function makeActiveJob(Request $request)
     {
         $id = $request->input('id');

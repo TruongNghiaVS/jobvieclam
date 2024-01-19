@@ -141,7 +141,7 @@ Route::group(['namespace' => 'Admin'], function () {
 
 
     Route::get('/delete-widget-page/{widget_page}', 'WidgetPagesController@destroy')->name('admin.widget_pages.delete');
-    Route::get('/job/changeStatus', 'JobController@changeStatus');
+    Route::post('/job/changeStatus', 'JobController@changeStatus');
     /*Widget data routes End*/
 
 

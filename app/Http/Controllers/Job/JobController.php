@@ -603,6 +603,8 @@ class JobController extends Controller
                         ->with('myCv', $myCv);
     }
 
+
+  
     public function postApplyJob(Request $request, $job_slug)
     {
         $user = Auth::user();

@@ -48,7 +48,7 @@
         <h3 class="title white">
             Đăng ký theo dõi để cập nhật về cơ hội việc làm mới và phù hợp nhất
         </h3>
-        <div class="d-flex justify-content-center  align-items-start">
+        <div class="submit-now">
 
             <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }} w-50">
                     <input id="email" type="email" class="form-control w-100" name="email" value="{{ old('email') }}" required  placeholder="{{__('Email Address')}}">

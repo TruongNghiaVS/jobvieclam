@@ -122,7 +122,7 @@ class SliderController extends Controller
 		if ($request->hasFile('slider_image_mobile')) {
             $this->deleteSliderImage($id);
             $image_name = $request->input('slider_heading');
-            $fileName = ImgUploader::UploadImage('slider_images', $request->file('slider_image_mobile'), $image_name, 750, 320);
+            $fileName = ImgUploader::UploadImage('slider_images', $request->file('slider_image_mobile'), $image_name, 640 , 430);
             $slider->slider_image_mobile = $fileName;
             $slider->used_for = 1;
         }

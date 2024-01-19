@@ -31,7 +31,7 @@ $numberOfColumns = 9;
                                 @endif
                                 </div>
     
-                            <div class="card-news w-100 h-100">
+                            <div class="card-news w-100">
                                 <div class="card-news__icon">
                                     <a href="{{route('company.detail', $company->slug)}}" title="{{$company->name}}">
                                         {{$company->printCompanyImage(100,100)}}
@@ -61,12 +61,12 @@ $numberOfColumns = 9;
                                             <i class="fa-solid fa-dollar-sign"></i> {{__('Salary Not provided')}}
                                             @endif
                                         </div>
-                                    </div>
-                                    <div class="card-news__content-footer">
                                         <div class="card-news__content-footer__location">
                                             <span class="badge rounded-pill pill pill-location">{{$latestJobs->getCity('city')}}</span>
                                             <span class="badge rounded-pill pill pill-worktime">{{$latestJobs->getJobType('job_type')}}</span>
                                         </div>
+                                    </div>
+                                    <div class="card-news__content-footer">
                                         <div class="card-news__content-footer__salary">
     
                                         </div>

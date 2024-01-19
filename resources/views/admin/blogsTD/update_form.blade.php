@@ -99,7 +99,7 @@ $queryString = MiscHelper::getLangQueryStr();
                                         <div class="col-lg-12">
                                             <div class="">
                                                 <form method="POST" files="true"
-                                                    action="{{ asset('/admin/blog/update')}}"
+                                                    action="{{ asset('/admin/blog-td/update')}}"
                                                     enctype="multipart/form-data">
                                                     {{csrf_field()}}
                                                     <input type="hidden" value="{{ $blog-> id }}" name="id" id="id">
@@ -144,13 +144,12 @@ $queryString = MiscHelper::getLangQueryStr();
                                                                 <span
                                                                     class="text-danger">{{ $errors->first('content_update') }}</span>
                                                             </div>
-                                                            <div class="form-group {{ $errors->has('author') ? 'has-error' : '' }}">
-                                                                        <label class="control-label" for="author">Tác giả</label>
-                                                                        <input  type="text"  class="form-control" name="author"
-                                                                               id="slugInput" autofocus
-                                                                               value="{{ old('author') }}">
+                                                            <div class="form-group {{ $errors->has('authorPost') ? 'has-error' : '' }}">
+                                                                        <label class="control-label" for="authorPost">Tác giả/trích nguồn</label>
+                                                                        <input  type="text"  class="form-control" name="authorPost" autofocus
+                                                                               value="{{ $blog->authorPost}}">
                                                                         <span
-                                                                                class="text-danger">{{ $errors->first('author') }}</span>
+                                                                                class="text-danger">{{ $errors->first('authorPost') }}</span>
                                                             </div>
                                                         </div>
                                                             

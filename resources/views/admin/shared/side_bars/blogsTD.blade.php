@@ -2,6 +2,6 @@
     <ul class="sub-menu">
         <li class="nav-item  "> <a href="{{ route('blog-td') }}" class="nav-link "> <span class="title">Bài viết</span> </a> </li>
         <li class="nav-item  "> <a href="{{ route('add-new-blog-td') }}" class="nav-link "> <span class="title">Thêm mới</span> </a> </li>
- 	<li class="nav-item  "> <a href="{{ URL::asset('/admin/blog_category')}}" class="nav-link "> <span class="title">Danh mục</span> </a> </li>
+ 	<li class="nav-item  "> <a href="/admin/blog_category?typePost=1" class="nav-link "> <span class="title">Danh mục</span> </a> </li>
     </ul>
 </li>

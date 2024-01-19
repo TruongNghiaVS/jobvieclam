@@ -13,16 +13,16 @@ class BlogsController extends Base
 {
     public function index()
     {
-        $user = Blog::get();
+        $user = Blog::where("typePost", '!=' , "1")->get();
         $data['user'] = $user;
-        $categories = Blog_category::get();
+        $categories = Blog_category::where("typePost", '!=' , "1")->get();
         $data['categories'] = $categories;
         return view('admin/blogs/blogs')->with($data);
     }
     public function show_form()
     {
         $languages = DataArrayHelper::languagesNativeCodeArray();
-        $categories = Blog_category::get();
+        $categories = Blog_category::where("typePost", '!=' , "1")->get();
         $data['categories'] = $categories;
         return view('admin/blogs/post_form')->with('categories',$categories)->with('languages',$languages);
     }
@@ -74,6 +74,9 @@ class BlogsController extends Base
         } else {
             $blog->image = '';
         }
+
+        $blog->typePost = "0";
+        $blog->authorPost=  $request->input("authorPost");
         $blog->save();
         if ($blog->save() == true) {
             $request->session()->flash('message.added', 'success');
@@ -100,7 +103,7 @@ class BlogsController extends Base
             $data['languages'] = DataArrayHelper::languagesNativeCodeArray();
             $row = Blog::findOrFail($id);
             $data['blog'] = $row;
-            $categories = Blog_category::get();
+            $categories = Blog_category::where("typePost", '!=' , "1")->get();
             $data['categories'] = $categories;
             return view('admin/blogs/update_form')->with($data);
         }
@@ -135,6 +138,8 @@ class BlogsController extends Base
         $blog->meta_title = $request->meta_title_update;
         $blog->meta_keywords = $request->meta_keywords_update;
         $blog->meta_descriptions = $request->meta_descriptions_update;
+        $blog->typePost = "0";
+        $blog->authorPost=  $request->input("authorPost");
         $blog->update();
         $this->validate($request, [
             'imageupdate' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -154,7 +159,7 @@ class BlogsController extends Base
         if ($image) {
             $blog->image = $input['imagename'];
         }
-        $blog->update();
+        $blog->save();
         if ($blog->save() == true) {
             $request->session()->flash('message.updated', 'success');
             $request->session()->flash('message.content', 'Blog was successfully updated!');

@@ -13,16 +13,16 @@ class BlogsControllerTD extends Base
 {
     public function index()
     {
-        $user = Blog::get();
+        $user = Blog::where("typePost","1")->get();
         $data['user'] = $user;
-        $categories = Blog_category::get();
+        $categories = Blog_category::where("typePost","1")->get();
         $data['categories'] = $categories;
         return view('admin/blogsTD/blogs')->with($data);
     }
     public function show_form()
     {
         $languages = DataArrayHelper::languagesNativeCodeArray();
-        $categories = Blog_category::get();
+        $categories = Blog_category::where("typePost","1")->get();
         $data['categories'] = $categories;
         return view('admin/blogsTD/post_form')->with('categories',$categories)->with('languages',$languages);
     }
@@ -69,6 +69,8 @@ class BlogsControllerTD extends Base
         $blog->meta_title = $request->meta_title;
         $blog->meta_keywords = $request->meta_keywords;
         $blog->lang = $request->lang;
+        $blog->typePost = "1";
+        $blog->authorPost=  $request->input("authorPost");
         $blog->meta_descriptions = $request->meta_descriptions;
         if ($image != '') {
             $blog->image = $input['imagename'];
@@ -100,8 +102,9 @@ class BlogsControllerTD extends Base
         if ($id != '') {
             $data['languages'] = DataArrayHelper::languagesNativeCodeArray();
             $row = Blog::findOrFail($id);
+
             $data['blog'] = $row;
-            $categories = Blog_category::get();
+            $categories = Blog_category::where("typePost","1")->get();
             $data['categories'] = $categories;
             return view('admin/blogsTD/update_form')->with($data);
         }
@@ -135,8 +138,10 @@ class BlogsControllerTD extends Base
         $blog->lang = $request->lang;
         $blog->meta_title = $request->meta_title_update;
         $blog->meta_keywords = $request->meta_keywords_update;
+        $blog->typePost = "1";
+        $blog->authorPost=  $request->input("authorPost");
         $blog->meta_descriptions = $request->meta_descriptions_update;
-        $blog->update();
+        $blog->save();
         $this->validate($request, [
             'imageupdate' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);

@@ -183,11 +183,15 @@
         .progress .line.line-4 {
             left: calc(80% - 2px);
         }
+        .user-account-section {
+            -webkit-box-shadow:unset;
+            box-shadow: unset;
+        }
     </style>
 </head>
 
 <body>
-    <main style="padding-top:76px; padding-bottom:76px; ">
+    <main>
         <div class="container company-content CV-profile border rounded p-2" id="CV-{{$data->id ? $data->id : '0' }}">
             <div class="user-account-section" bis_skin_checked="1">
 
@@ -228,11 +232,11 @@
 
                                             <li>
                                                 <p><strong>Tỉnh/Thành Phố:</strong></p>
-                                                <p>{{Auth::user()->getCity('city') ? Auth::user()->getCity('city') : __('Not update') }}</p>
+                                                <p>HCM</p>
                                             </li>
                                             <li>
                                                 <p><strong>Email: </strong></p>
-                                                <p> {{ auth()->user()->email ? auth()->user()->email : __('Not update') }} </p>
+                                                <p> {{ $data->email ? $data->email : __('Not update') }} </p>
                                             </li>
                                         </ul>
                                     </div>
@@ -271,7 +275,7 @@
                                     </li>
                                     <li>
                                         <p> <strong>Địa điểm:</strong></p>
-                                        <p>{{Auth::user()->getCity('city') ? Auth::user()->getCity('city') : __('Not update') }}</p>
+                                        <p>HCM</p>
                                     </li>
                                     <li>
                                         <p> <strong>{{__('Career Level')}}</strong></p>

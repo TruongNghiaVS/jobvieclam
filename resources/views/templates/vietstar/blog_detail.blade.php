@@ -183,7 +183,7 @@
                     <img src="/uploads/blogs/{{$itemRe->image}}" alt=""></a>
                     <div class="figcaption" bis_skin_checked="1">
                         <h3 class="figcaption__category-name"><a href="/blog/category/{{$blog_relateion->slug}}"> {{$blog_relateion->heading}} </a></h3>
-                        <div class="figcaption__title" bis_skin_checked="1"><a href="#">{{$itemRe->heading}}</a></div>
+                        <div class="figcaption__title" bis_skin_checked="1"><a href="/blog/{{$itemRe->slug}}">{{$itemRe->heading}}</a></div>
 
                     </div>
                 </div>

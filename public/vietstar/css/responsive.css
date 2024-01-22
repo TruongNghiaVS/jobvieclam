@@ -655,6 +655,9 @@
   display: block;
  }
   
+ article.article {
+    padding: 10px;
+ }
 
 
 }

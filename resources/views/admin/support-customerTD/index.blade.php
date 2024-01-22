@@ -1,8 +1,6 @@
 @extends('admin.layouts.admin_layout')
 @section('content')
-
 <style type="text/css">
-    
     .table td,
     .table th {
         font-size: 12px;
@@ -55,8 +53,6 @@
 
                                             <th>Create at</th>
                                             <th>Update at</th>
-                                            <th>Thao tác</th>
-
                                            
                                         </tr>
                                     </thead>
@@ -164,14 +160,6 @@
                         return day + '/' + month + '/' + year;
                     }, 
                 },
-                {
-                data: null,
-                        render: function (data) {
-                            // Create buttons for each row
-                            return '<button class"btn btn-primary">Sửa</button>' +
-                                '<button class"btn btn-danger">Xóa</button>';
-                        }
-                }
                 
             ]
         });
@@ -187,7 +175,48 @@
             oTable.draw();
             e.preventDefault();
         });
-    });        
+    });
+
+    // function delete_bannerjob(id) {
+    //     if (confirm('Are you sure! you want to delete? All content pages will be deleted too.')) {
+    //         $.post("{{ route('admin.advertisementBannerJob.delete') }}", {id: id, _method: 'POST', _token: '{{ csrf_token() }}'})
+    //                 .done(function (response) {
+    //                     if (response == '1')
+    //                     {
+    //                         var table = $('#bannerjob_datatable_ajax').DataTable({
+    //                             "language": { // language settings
+    //                                 // metronic spesific
+    //                                 "metronicGroupActions": "_TOTAL_ bản ghi được chọn:  ",
+    //                                 "metronicAjaxRequestGeneralError": "Không thể hoàn thành yêu cầu, xin check kết nối mạng",
+
+    //                                 // data tables spesific
+    //                                 "lengthMenu": "<span class='seperator'></span>Xem _MENU_ bản ghi",
+    //                                 "info": "<span class='seperator'></span>Tìm thấy tổng số _TOTAL_ bản ghi",
+    //                                 "infoEmpty": "Không có bản ghì nào để hiển thị/ No records found to show",
+    //                                 "emptyTable": "Không có dữ liệu trong bảng/ No data available in table",
+    //                                 "zeroRecords": "Không có bản ghi nào khớp/ No matching records found",
+    //                                 "paginate": {
+    //                                     "previous": "Trước/Prev",
+    //                                     "next": "Tiếp/Next",
+    //                                     "last": "Cuối/Last",
+    //                                     "first": "Đầu/First",
+    //                                     "page": "Trang/Page",
+    //                                     "pageOf": "trong/of"
+    //                                 }
+    //                             }
+
+    //                         });
+    //                         table.row('row' + id).remove().draw(false);
+    //                     } else
+    //                     {
+    //                         alert('Request Failed!');
+    //                     }
+    //                 });
+    //     }
+    // }
+
+   
+        
 
         $( document ).ready(function() {
             $.ajax({

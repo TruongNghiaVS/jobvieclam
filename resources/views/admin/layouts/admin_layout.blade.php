@@ -28,6 +28,8 @@
 
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
 
+
+
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
 
         <link href="{{ asset('/') }}admin_assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -207,6 +209,8 @@
 
         <script src="{{ asset('/') }}admin_assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script> 
 
+     
+        
         <!-- END CORE PLUGINS --> 
 
         <!-- BEGIN THEME GLOBAL SCRIPTS --> 

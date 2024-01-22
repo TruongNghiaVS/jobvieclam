@@ -32,3 +32,39 @@
     margin: 10px;
 
 }
+
+
+
+.page-header.navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    min-width: 60px;
+}
+
+.page-header.navbar .page-header-inner{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+.page-header.navbar .page-logo {
+    position: relative;
+    width: 235px;
+}
+.page-header-fixed .page-container {
+    margin-top: 60px;
+}
+
+.page-header.navbar .menu-toggler.sidebar-toggler {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.page-sidebar .sidebar-toggler, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .sidebar-toggler {
+    margin-top: 0;
+    margin-right: 0;
+}

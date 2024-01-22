@@ -82,7 +82,8 @@ class BlogController extends Controller
         $data['category'] = $category;
         $data['blogs_categories'] = Blog_category::where("id", $category->id)->where("typePost",0)->get();
         $data['blogs'] = Blog::whereRaw("FIND_IN_SET('$category->id',cate_id)")
-                        ->where('lang', 'like', \App::getLocale())->orderBy('id', 'DESC')->paginate(10);
+                        ->where('lang', 'like', \App::getLocale())->orderBy('id', 'DESC')
+                        ->paginate(100);
         
       
         return view(config('app.THEME_PATH').'.blog_categories_details', compact('data'));

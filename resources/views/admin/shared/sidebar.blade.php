@@ -39,7 +39,7 @@
         <li class="heading">
             <h3 class="uppercase">Chăm sóc KH</h3>
             @include('admin/shared/side_bars/support')
-            @include('admin/shared/side_bars/support_TD')
+
         </li>
         <li class="heading">
             <h3 class="uppercase">CMS</h3>

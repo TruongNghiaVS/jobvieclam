@@ -228,10 +228,12 @@ $(document).ready(function() {
                 })
                 .done(function(data){
                     hideSpinner();
-                    $("#contact_email_success").modal("show")
+                    if (data.sucess) {
+                        showModal_Success('Thông báo','Đăng kí thành công');
+                        $('#form-group-mail')[0].reset();
+                        $('#form-group-mail').removeClass("was-validated")
+                    }
                     
-                    $('#form-group-mail')[0].reset();
-                    $('#form-group-mail').removeClass("was-validated")
                    
 
 

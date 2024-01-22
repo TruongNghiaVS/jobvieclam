@@ -883,11 +883,7 @@ section.company-job-detail.job-detail-title .job-detail-banner {
 	height: 95%;
 }
 
-/* Recruitment News */
-.recruitment-news {
-	padding-top: 100px;
-	padding-bottom: 96px;
-}
+
 
 .tab {
 	display: flex;
@@ -990,7 +986,6 @@ h4.tablinks:hover {
 
 /* Partner */
 .partner {
-	padding-top: 80px;
 	padding-bottom: 70px;
 }
 
@@ -1316,7 +1311,7 @@ section#flash-badge-banner {
 }
 .submit-now {
 	display: flex;
-	justify-content: start;
+	justify-content: center;
 	align-items: center;
 }
 
@@ -2352,7 +2347,7 @@ h3.seekertxt span {
 
 
 .advertising-banner {
-	margin: 30px 0;
+	
 	padding: 10px;
 }
 
@@ -2382,8 +2377,9 @@ h3.seekertxt span {
            ==banner==
 
 *************************************************/
-.banner {
+.banner.cb-section {
 	padding-top: 0;
+	padding-bottom: 0;
 }
 
 .banner .item {

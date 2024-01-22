@@ -647,6 +647,15 @@
     padding-bottom: 20px;
   }
 
+ #bannerSide #linkDesktop{
+  display: none;
+ }
+  
+ #bannerSide #linkMobile{
+  display: block;
+ }
+  
+
 
 }
 
@@ -1034,7 +1043,15 @@
   .box-profile-view .section-body .info .info-list {
     padding-left: 0;
   }
-  
+  #bannerSide #linkDesktop{
+    display: block;
+    
+   }
+    
+   #bannerSide #linkMobile{
+    display: none;
+   }  
+
 }
 
 
@@ -1080,10 +1097,15 @@
     display: none;
   }
   
-  
 
-
-
+  #bannerSide #linkDesktop{
+    display: block;
+    
+   }
+    
+   #bannerSide #linkMobile{
+    display: none;
+   }  
 }
 
 
@@ -1151,6 +1173,14 @@
   .section-head, .section-body {
     padding: 20px 20px;
   }
+  #bannerSide #linkDesktop{
+    display: block;
+    
+   }
+    
+   #bannerSide #linkMobile{
+    display: none;
+   }  
 }
 
 
@@ -1231,6 +1261,14 @@
   }
 
 
+  #bannerSide #linkDesktop{
+    display: block;
+    
+   }
+    
+   #bannerSide #linkMobile{
+    display: none;
+   }  
 }
 
 

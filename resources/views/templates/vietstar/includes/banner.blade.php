@@ -29,11 +29,13 @@
                 success: function(data) {
                     // Handle the data from the API
                     if(data) {
+                        console.log(data);
                         data.forEach(element => {
 
                             if (element.postion == '1') {
                                 $("#bannerSide").append(`
-                                    <img src="{{url('/')}}/admin_assets/${element.linkDesktop}" alt="banner">
+                                    <img src="{{url('/')}}/admin_assets/${element.linkDesktop}" alt="banner" id="linkDesktop">
+                                    <img src="{{url('/')}}/admin_assets/${element.linkMobile}" alt="banner" id="linkMobile">
                                 `)
                             }
                         });
@@ -52,3 +54,6 @@
    
 </script>
 @endpush
+
+
+

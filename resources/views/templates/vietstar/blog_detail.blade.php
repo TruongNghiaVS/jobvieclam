@@ -50,7 +50,7 @@
 <section class="">
     <div class="container">
 
-        <h3 class="section-title aline-left mb-3">{{__('Related post')}}</h3>
+        <h3 class="section-title aline-left mb-3">{{__('Related post')}} </h3>
         <div class="blogwrapper">
             <div class="blogList">
                 <div class="row">
@@ -172,42 +172,24 @@
     </div>
 
     <div class="container">
-        <h3 class="section-title aline-left mb-3">{{__('Related post')}}</h3>
+        <h3 class="section-title aline-left mb-3">{{__('Related post')}} </h3>
         <div class="row align-items-start " bis_skin_checked="1">
+           
+          @foreach($blogRelations as $itemRe)
             <div class="col-md-6 col-lg-4 mb-4 " bis_skin_checked="1">
                 <div class="figure" bis_skin_checked="1">
-                    <a href="/blog/cau-chuyn-chn-ngh" class="figure-images"><img src="https://contenthub-static.grammarly.com/blog/wp-content/uploads/2017/11/how-to-write-a-blog-post.jpeg" alt=""></a>
+                    <a href="/blog/{{$itemRe->slug}}" class="figure-images">
+                        
+                    <img src="/uploads/blogs/{{$itemRe->image}}" alt=""></a>
                     <div class="figcaption" bis_skin_checked="1">
-                        <h3 class="figcaption__category-name"><a href="#">KỸ NĂNG CÔNG SỞ</a></h3>
-                        <div class="figcaption__title" bis_skin_checked="1"><a href="#">Flex là gì? Làm sao thoát flexing đồng nghiệp hay
-                                khoe khoang?</a></div>
+                        <h3 class="figcaption__category-name"><a href="/blog/category/{{$blog_relateion->slug}}"> {{$blog_relateion->heading}} </a></h3>
+                        <div class="figcaption__title" bis_skin_checked="1"><a href="#">{{$itemRe->heading}}</a></div>
 
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4 " bis_skin_checked="1">
-                <div class="figure" bis_skin_checked="1">
-                    <a href="" class="figure-images"><img src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/08/do-loi.jpg" alt=""></a>
-                    <div class="figcaption" bis_skin_checked="1">
-                        <h3 class="figcaption__category-name"><a href="#">KỸ NĂNG CÔNG SỞ</a></h3>
-                        <div class="figcaption__title" bis_skin_checked="1"><a href="#">Tìm việc trực tuyến an toàn và cảnh
-                                giác trước
-                                các công việc nhẹ lương cao</a></div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4 " bis_skin_checked="1">
-                <div class="figure" bis_skin_checked="1">
-                    <a href="" class="figure-images"><img src="https://nghenghiep.vieclam24h.vn/wp-content/uploads/2023/08/ket-ban-voi-dong-nghiep.jpg" alt=""></a>
-                    <div class="figcaption" bis_skin_checked="1">
-                        <h3 class="figcaption__category-name"><a href="#">THỊ TRƯỜNG LAO ĐỘNG</a></h3>
-                        <div class="figcaption__title" bis_skin_checked="1"><a href="#">Những nguyên tắc ngầm khi giao tiếp, kết bạn với
-                                đồng nghiệp nơi công sở </a></div>
-
-                    </div>
-                </div>
-            </div>
+            @endforeach
+      
         </div>
     </div>
 

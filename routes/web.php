@@ -41,7 +41,7 @@ Route::post('set-locale', 'IndexController@setLocale')->name('set.locale');
 
 /* * ******** HomeController ************ */
 
-Route::get('home', 'HomeController@index')->name('home');
+Route::get('dashboard', 'HomeController@index')->name('home');
 
 /* * ******** TypeAheadController ******* */
 

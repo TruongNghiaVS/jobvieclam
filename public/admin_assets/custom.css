@@ -44,7 +44,10 @@
 
 .page-header.navbar .page-header-inner{
     width: 100%;
-    max-width: ;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 } 
 
 .page-header.navbar .page-logo {

@@ -3889,7 +3889,7 @@ div#industry_id_chosen {
 
 @media screen and (min-width: 1200px) {
     .header-bar .content {
-        padding: 20px 0!important
+        padding: 20px 10px!important
     }
 }
 

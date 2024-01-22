@@ -17,6 +17,9 @@ use App\Traits\JobTrait;
 use App\Helpers\MiscHelper;
 use App\Helpers\DataArrayHelper;
 use Illuminate\Support\Str;
+use App\Models\HistoryAction;
+use App\Models\NoteForJob;
+
 
 class JobController extends Controller
 {
@@ -135,8 +138,13 @@ class JobController extends Controller
     }
     public function changeStatus(Request $request)
     {
-        $id =$request->intput("id");
-        $status =$request->intput("status");
+     
+        $id =$request->input("id");
+        $status =$request->input("status");
+        $noted =$request->input("noted");
+        $historyAction = new HistoryAction();
+        $noteForJob = new NoteForJob();
+       
         if($id)
         {
 
@@ -146,7 +154,7 @@ class JobController extends Controller
             $id =-1;
         }
 
-        $itemError = new stdClass();
+        $itemError = new \stdClass();
         $itemError->success =true;
         $itemError->message ="Yêu cầu thành công";
         $job = Job::findOrFail($id);
@@ -165,6 +173,21 @@ class JobController extends Controller
         
         if($status =="4")
         {
+            $historyAction->type = "4";
+            $historyAction->jobId =  $id;
+            $historyAction->userId = "1";
+            $historyAction->title ="Admin duyệt";
+            $historyAction->content =  "Việc làm".$job->title." đã được duyệt và được cho đăng";
+            $itemError->message ="Duyệt thành công";
+            $historyAction->link = "";
+            $historyAction->save();
+
+            $noteForJob->title ="";
+            $noteForJob->jobId =  $id;
+            $noteForJob->statusOld =  $job->status;
+            $noteForJob->statusNew =$status;
+            $noteForJob->Noted =$noted;
+            $noteForJob->save();
             $job->status ="1";
         }
         $job->save();

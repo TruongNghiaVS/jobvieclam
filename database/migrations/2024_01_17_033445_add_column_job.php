@@ -21,6 +21,13 @@ class AddColumnJob extends Migration
             
             $table->string('authorPost')->nullable();
         });
+
+        Schema::table('history_actions', function (Blueprint $table) {
+        
+            $table->integer('userId')->nullable();
+            $table->integer('jobId')->nullable();
+            $table->integer('userNotification')->nullable();
+        });
     }
 
     /**

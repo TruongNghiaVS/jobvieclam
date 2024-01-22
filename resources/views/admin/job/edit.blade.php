@@ -30,13 +30,21 @@
                             <div class="item" bis_skin_checked="1">
                             <button class="btn btn-large btn-primary" type="submit">Cập nhật </button>
                             </div>
-                            <div class="item" bis_skin_checked="1">
-                            <button class="btn btn-large btn-success" onclick="acceptjob()" type="button">Duyệt </button> 
+                           @if($job->status =="4")
+                            
+                           <div class="item" bis_skin_checked="1">
+                            <button class="btn btn-large btn-success" onclick="acceptjob({{$job->id}},'4')" type="button">Duyệt  </button> 
                             </div>
-
-                            <div class="item" bis_skin_checked="1">
-                            <button class="btn btn-large btn-danger" onclick="rejectJob()" type="button">Từ chối </button>
+                           @endif
+                       
+                           @if($job->status =="4")
+                            
+                           <div class="item" bis_skin_checked="1">
+                            <button class="btn btn-large btn-danger" onclick="acceptjob({{$job->id}},'3')" type="button">Từ chối </button>
                             </div>
+                            @endif
+                        
+                           
                         </div>
                         </div>     
                         <ul class="nav nav-tabs">              
@@ -57,11 +65,20 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="accept-jobLabel">Duyệt JOB</h5>
+        <h5 class="modal-title" id="accept-jobLabel">Hành động</h5>
        
       </div>
       <div class="modal-body">
+               
 
+
+                <div class="form-group " >
+                            <label for="notedModal" class="bold">Ghi chú</label>
+                            <input id="notedModal" placeholder ="Nhập ghi chú" class="form-control" type= "text" >
+                
+                             </input>
+                                                
+                </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
@@ -123,9 +140,11 @@
         console.log(id,status);
         $('#accept-job').modal('show');
         $('#accept-job #accept').on('click',()=>{
-            $.post("/job/changeStatus", {id: id, status: "4", _method: 'POST', _token: '{{ csrf_token() }}'})
+            $.post("/admin/job/changeStatus", {
+                id: id, status:status, noted: $("#notedModal").val(),
+                 _method: 'POST', _token: '{{ csrf_token() }}'})
                     .done(function (response) {
-                        if (response == 'ok')
+                        if (response.success == true)
                         {
                            alert("ok");
                         } else

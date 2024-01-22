@@ -940,7 +940,7 @@
   }
 
   #mobile-sidebar.active .sidebar-bottom {
-    bottom: 0 !important;
+    bottom: 20px !important;
   }
 
 

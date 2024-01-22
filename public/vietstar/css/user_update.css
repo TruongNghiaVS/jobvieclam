@@ -785,9 +785,7 @@ h3.banner__title {
         max-height: calc(100% - 76px);
     }
 
-    #mobile-sidebar.active .sidebar-bottom {
-        bottom: 0 !important;
-    }
+  
 
     .user-wrapper .content {
         padding-left: 8px;

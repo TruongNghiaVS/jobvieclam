@@ -125,11 +125,16 @@
                         <a href="#">Research</a>
                         <a href="#">Managment</a>
                     </div> -->
+
+
+                    @if($blog->authorPost != null)
+
                     <div class="media">
                             <div class="media-body">
-                                <label>Phạm Thị Thu Hiền</label>
+                                <label>{{$blog->authorPost}}</label>
                             </div>
                         </div>
+                        @endif
                 </article>
 
             </div>

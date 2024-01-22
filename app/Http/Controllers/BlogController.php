@@ -49,7 +49,7 @@ class BlogController extends Controller
     public function index()
     {
         $data['blogs'] = Blog::orderBy('id', 'DESC')->where("typePost",0)->where('lang', 'like', \App::getLocale())->paginate(10);
-        $data['categories'] = Blog_category::get();
+        $data['categories'] = Blog_category::where("typePost", '!=' , "1")->get();
         return view(config('app.THEME_PATH').'.blog')->with($data);
     }
     public function getAllCarrier()
@@ -59,9 +59,10 @@ class BlogController extends Controller
     }
     public function details($slug)
     {
+
         $data['blog'] = Blog::where('slug','like','%'. $slug.'%')->where("typePost",0)->where('lang', 'like', \App::getLocale())->first();
-        $data['blog_categories'] = Blog_category::get();
-		$data['categories'] = Blog_category::get();
+        $data['blog_categories'] = Blog_category::where("typePost", '!=' , "1")->get();
+		$data['categories'] = Blog_category::where("typePost", '!=' , "1")->get();
          $data['seo'] = (object) array(
                     'seo_title' => $data['blog']->meta_title,
                     'seo_description' => $data['blog']->meta_keywords,
@@ -80,13 +81,12 @@ class BlogController extends Controller
 
       
         $data['category'] = $category;
-        $data['blogs_categories'] = Blog_category::where("id", $category->id)->where("typePost",0)->get();
+        $data['blogs_categories'] = Blog_category::where("id", $category->id)
+                                    ->where("typePost", '!=' , "1")->get();
         $data['blogs'] = Blog::whereRaw("FIND_IN_SET('$category->id',cate_id)")
                         ->where('lang', 'like', \App::getLocale())->orderBy('id', 'DESC')
-                        ->paginate(100);
-        
-      
-        return view(config('app.THEME_PATH').'.blog_categories_details', compact('data'));
+                        ->paginate(8);
+     return view(config('app.THEME_PATH').'.blog_categories_details', compact('data'));
     }
     public function search(Request $request)
     { 

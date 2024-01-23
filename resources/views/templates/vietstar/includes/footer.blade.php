@@ -109,26 +109,26 @@
         <div class="container">
              <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-12">
-                                <div class="text-white p-2 fs-18px ">Việc làm Bình Dương</div>
-                                <div class="text-white p-2 fs-18px">Việc làm Đồng Nai</div>
-                                <div class="text-white p-2 fs-18px">Việc làm Vũng Tàu</div>
+                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc làm Bình Dương</a></div>
+                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc làm Đồng Nai</a></div>
+                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc làm Vũng Tàu</a></div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12">
-                                <div class="text-white p-2 fs-18px">Việc làm Đà Nẵng</div>
-                                <div class="text-white p-2 fs-18px">Việc làm Hải Phòng</div>
-                                <div class="text-white p-2 fs-18px">Việc làm Đà Lạt</div>
+                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc làm Đà Nẵng</a></div>
+                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc làm Hải Phòng</a></div>
+                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc làm Đà Lạt</a></div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12">
-                                <div class="text-white p-2 fs-18px">Việc làm IT</div>
-                                <div class="text-white p-2 fs-18px">Việc làm Marketing</div>
-                                <div class="text-white p-2 fs-18px">Việc làm Chăm Sóc Khác Hàng</div>
+                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc làm IT</a></div>
+                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc làm Marketing</a></div>
+                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc làm Chăm Sóc Khác Hàng</a></div>
                 
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-12">
-                                <div class="text-white p-2 fs-18px">Thiết kế CV</div>
-                                <div class="text-white p-2 fs-18px">Bí Quyết Tìm Việc</div>
-                                <div class="text-white p-2 fs-18px">Kỹ năng phỏng vấn</div>
+                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Thiết kế CV</a></div>
+                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Bí Quyết Tìm Việc</a></div>
+                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Kỹ năng phỏng vấn</a></div>
                 </div>
              </div>
         </div>

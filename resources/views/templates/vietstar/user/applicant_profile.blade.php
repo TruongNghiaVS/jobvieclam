@@ -63,7 +63,7 @@
                     </div>
                   
                   </div>
-                  <p class="title-flip">Mô tả bản thân</p>
+                  <p class="title-flip">Mô tả bản thân </p>
                   <div class="p-4 fs-18px">
                     {{ $user->getProfileSummary('summary') }}
                   </div>

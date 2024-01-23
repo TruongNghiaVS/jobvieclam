@@ -6,6 +6,7 @@ use Input;
 use Carbon\Carbon;
 use Redirect;
 use App\User;
+use App\City;
 use App\ProfileExperience;
 use App\Country;
 use App\Http\Requests;
@@ -53,9 +54,9 @@ trait ProfileExperienceTrait
         if (isset($user) && count($user->profileExperience)):
             foreach ($user->profileExperience as $experience):
                 if ($experience->is_currently_working == 1)
-                    $date_end = 'Currently working';
+                    $date_end = 'Đang làm việc';
                 else
-                    $date_end = $experience->date_end->format('d M, Y');
+                    $date_end = $experience->date_end->format('d/m/y');
                     $html .= '<!--experience Start-->
                     <div class="jobster-timeline-item" id="experience_' . $experience->id . '">
                         <div class="act-dropdown dropdown">
@@ -72,7 +73,7 @@ trait ProfileExperienceTrait
                         </div>
                         <div class="jobster-timeline-info">
                                 <div class="dashboard-timeline-info">
-                                        <span class="jobster-timeline-time">'.$experience->date_start->format('d M, Y') . ' - ' . $date_end . '</span>
+                                        <span class="jobster-timeline-time">'.$experience->date_start->format('d/m/y') . ' - ' . $date_end . '</span>
                                         <h6 class="mb-2">' . $experience->title . '</h6>
                                         <span>'.$experience->company.'</span>
                                         <p class="mt-2">'.$experience->description.'</p>
@@ -143,9 +144,12 @@ trait ProfileExperienceTrait
         $countries = DataArrayHelper::defaultCountriesArray();
 
         $user = User::find($user_id);
+        $cities = City::where("lang", "vi")->get();
+
         $returnHTML = view('admin.user.forms.experience.experience_modal')
                 ->with('user', $user)
                 ->with('countries', $countries)
+                ->with('cities', $cities)
                 ->render();
         return response()->json(array('success' => true, 'html' => $returnHTML));
     }
@@ -153,11 +157,14 @@ trait ProfileExperienceTrait
     public function getFrontProfileExperienceForm(Request $request, $user_id)
     {
         $countries = DataArrayHelper::langCountriesArray();
+        $cities = City::where("lang", "vi")->get();
+
 
         $user = User::find($user_id);
         $returnHTML = view('templates.vietstar.user.forms.experience.experience_modal')
                 ->with('user', $user)
                 ->with('countries', $countries)
+                ->with('cities', $cities)
                 ->render();
         return response()->json(array('success' => true, 'html' => $returnHTML));
     }
@@ -194,8 +201,8 @@ trait ProfileExperienceTrait
         $profileExperience->user_id = $user_id;
         $profileExperience->title = $request->input('title');
         $profileExperience->company = $request->input('company');
-        $profileExperience->country_id = $request->input('country_id');
-        $profileExperience->state_id = $request->input('state_id');
+        $profileExperience->country_id = "238";
+        $profileExperience->state_id = "1";
         $profileExperience->city_id = $request->input('city_id');
         $profileExperience->date_start = $request->input('date_start');
         $profileExperience->date_end = $request->input('date_end');
@@ -217,6 +224,7 @@ trait ProfileExperienceTrait
                 ->with('user', $user)
                 ->with('profileExperience', $profileExperience)
                 ->with('countries', $countries)
+                
                 ->render();
         return response()->json(array('success' => true, 'html' => $returnHTML));
     }
@@ -225,7 +233,7 @@ trait ProfileExperienceTrait
     {
         $profile_experience_id = $request->input('profile_experience_id');
         $countries = DataArrayHelper::langCountriesArray();
-
+        $cities = City::where("lang", "vi")->get();
         $profileExperience = ProfileExperience::find($profile_experience_id);
         $user = User::find($user_id);
 
@@ -233,6 +241,7 @@ trait ProfileExperienceTrait
                 ->with('user', $user)
                 ->with('profileExperience', $profileExperience)
                 ->with('countries', $countries)
+                ->with('cities', $cities)
                 ->render();
         return response()->json(array('success' => true, 'html' => $returnHTML));
     }

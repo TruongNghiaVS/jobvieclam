@@ -385,7 +385,7 @@
                     //     alert(data.message)
                     //     window.location.href = data.urlRedirect;
                     // }, 2000);
-                    // window.location.href =  "/home";
+                    // window.location.href =  "/dashboard";
                     hideSpinner();
                   
                     

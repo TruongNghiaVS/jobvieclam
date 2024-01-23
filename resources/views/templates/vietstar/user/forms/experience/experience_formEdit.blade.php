@@ -25,7 +25,7 @@
                                             </option>
                                     @foreach($cities as $itemcity)
 
-                                            @if($itemcity->id == $user->city_id)
+                                            @if($itemcity->id == $profileExperience->city_id)
                                             <option selected value ={{$itemcity->id}}> 
                                                 {{$itemcity->city}}
                                             </option>

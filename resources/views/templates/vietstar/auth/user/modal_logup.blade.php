@@ -363,7 +363,7 @@ $(document).ready(function() {
                     if (data.sucess == true ) { 
                         $("#user_logup_Modal").css("display:none");
                         $("#user_logup_Modal").removeClass("show")
-                        window.location.href =  "/home";
+                        window.location.href =  "/dashboard";
                     }
                     
                 })

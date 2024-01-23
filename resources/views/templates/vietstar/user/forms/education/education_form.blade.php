@@ -18,33 +18,55 @@
             <span class="help-block degree_type_id-error"></span>
         </div>
 
-        <!-- <div class="formrow" id="div_major_subjects">
+     
             <?php
             $profileEducationMajorSubjectIds = old('major_subjects', $profileEducationMajorSubjectIds);
             ?>
-            {!! Form::select('major_subjects[]', $majorSubjects, $profileEducationMajorSubjectIds, array('class'=>'form-select chosen-multiple shadow-sm multiselect', 'id'=>'major_subjects', 'multiple'=>true)) !!}
-            <span class="help-block major_subjects-error"></span>
-        </div> -->
+           
 
-        <div class="formrow" id="div_country_id">
+        <div class="formrow" id="div_country_id" style ="display:none" >
             <?php
             $country_id = (isset($profileEducation) ? $profileEducation->country_id : $siteSetting->default_country_id);
             ?>
             {!! Form::select('country_id', [''=>__('Select Country')]+$countries, $country_id, array('class'=>'form-select', 'id'=>'education_country_id')) !!}
             <span class="help-block country_id-error"></span> </div>
 
-        <div class="formrow" id="div_state_id">
+        <div class="formrow" id="div_state_id" style ="display:none">
             <span id="default_state_education_dd">
                 {!! Form::select('state_id', [''=>__('Select State')], null, array('class'=>'form-select', 'id'=>'education_state_id')) !!}
             </span>
-            <span class="help-block state_id-error"></span> </div>
+            <span class="help-block state_id-error"></span> 
+        
+        </div>
 
+   
+
+      
         <div class="formrow" id="div_city_id">
             <span id="default_city_education_dd">
-                {!! Form::select('city_id', [''=>__('Select City')], null, array('class'=>'form-select', 'id'=>'city_id')) !!}
-            </span>
-            <span class="help-block city_id-error"></span> </div>
+                <select class="form-select" id="city_id" name="city_id">
+                <option value="" selected="selected">Chọn địa điểm</option>
+            
+            
+                @foreach($cities as $itemcity)
 
+                @if($itemcity->id =="-1")
+                <option selected value ={{$itemcity->id}}> 
+                    {{$itemcity->city}}
+                </option>
+                @else 
+                <option value ={{$itemcity->id}}> 
+                    {{$itemcity->city}}
+                </option>
+                @endif
+
+                @endforeach
+            </select>
+
+            </span>
+            <span class="help-block city_id-error"></span>
+        
+        </div>
         <div class="formrow" id="div_institution">
             <input class="form-control" id="institution" placeholder="{{__('Institution')}}" name="institution" type="text" value="{{(isset($profileEducation)? $profileEducation->institution:'')}}">
             <span class="help-block institution-error"></span> </div>

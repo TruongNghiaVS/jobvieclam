@@ -54,7 +54,7 @@ trait ProfileActivityTrait
         $html = '<ul class="list-sticker">';
         if (isset($user) && count($user->profileActivity)):
             foreach ($user->profileActivity as $activity):
-                    $date_end = ($activity->date_end) ? $activity->date_end->format('d M, Y') : 'Currently working';
+                    $date_end = ($activity->date_end) ? $activity->date_end->format('d/m/y') : 'Đang làm việc';
                     $html .= '
                     <li class="item" id="activity_'.$activity->id.'">
                         <div class="head-sticker">
@@ -64,7 +64,7 @@ trait ProfileActivityTrait
                                     <p class="text-primary">'.$activity->role.'</p>
                                 </div>
                                 <div class="date">
-                                    <p>'.Carbon::parse($activity->date_start)->format('d M, Y').' - '.$date_end.'</p>
+                                    <p>'.Carbon::parse($activity->date_start)->format('d/m/y').' - '.$date_end.'</p>
                                 </div>
                             </div>
                             <div class="right-head">

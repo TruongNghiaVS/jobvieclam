@@ -23,6 +23,8 @@ trait ProfileSummaryTrait
         $userUpdate->save();
         /*         * ************************************ */
         // return  \Redirect::back()->with('message','Operation Successful !');
+
+        return \Redirect::route('my.profile');
         $error = array();
         if($request->ajax()){
 

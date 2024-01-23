@@ -327,7 +327,7 @@
                     //     alert(data.message)
                     //     window.location.href = data.urlRedirect;
                     // }, 2000);
-                    window.location.href =  "/home";
+                    window.location.href =  "/dashboard";
                     
                 })
                 .fail(function(jqXHR, textStatus){
@@ -420,7 +420,7 @@
                     // }, 2000);
 
                     if (data.sucess == true ) {
-                        window.location.href =  "/home";
+                        window.location.href =  "/dashboard";
                     }
                     
                 })

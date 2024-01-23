@@ -16,6 +16,7 @@ use App\Industry;
 use App\ResultType;
 use App\MajorSubject;
 use App\Country;
+use App\City;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -162,13 +163,14 @@ trait ProfileEducationTrait
         $majorSubjects = DataArrayHelper::langMajorSubjectsArray();
         $countries = DataArrayHelper::langCountriesArray();
         $profileEducationMajorSubjectIds = array();
-
+        $cities = City::where("lang", "vi")->get();
         $user = User::find($user_id);
         $returnHTML = view('templates.vietstar.user.forms.education.education_modal')
                 ->with('user', $user)
                 ->with('degreeLevels', $degreeLevels)
                 ->with('resultTypes', $resultTypes)
                 ->with('industries', $industries)
+                ->with('cities',$cities)
                 ->with('majorSubjects', $majorSubjects)
                 ->with('profileEducationMajorSubjectIds', $profileEducationMajorSubjectIds)
                 ->with('countries', $countries)

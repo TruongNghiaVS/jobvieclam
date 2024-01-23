@@ -131,7 +131,9 @@
 
     function submitProfileExperienceForm() {
 
+     
     var form = $('#add_edit_profile_experience');
+
 
     $.ajax({
 

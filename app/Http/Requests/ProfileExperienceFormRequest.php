@@ -31,8 +31,8 @@ class ProfileExperienceFormRequest extends Request
                     return [
                         "title" => "required",
                         "company" => "required",
-                        "country_id" => "required",
-                        "state_id" => "required",
+                        // "country_id" => "required",
+                        // "state_id" => "required",
                         "city_id" => "required",
                         "date_start" => "required",
                         "date_end" => "required_if:is_currently_working,0",

@@ -6,7 +6,7 @@
                 <div class="col-md-12">
                     <div class="userccount">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5>Add Experience</h5>            
+                        <h5>Add Experience </h5>            
                         <div class="formpanel">
                             <div class="formrow">
                                 <h3>Experience added successfully</h3>

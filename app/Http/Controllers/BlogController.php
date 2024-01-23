@@ -61,7 +61,17 @@ class BlogController extends Controller
     {
 
         $data['blog'] = Blog::where('slug','like','%'. $slug.'%')->where("typePost",0)->where('lang', 'like', \App::getLocale())->first();
+
+        $data['blogRelations'] = Blog::where("slug","!=",$slug)
+        ->where("cate_id", $data['blog']->cate_id)
+        ->where("typePost",0)
+        ->where('lang', 'like', \App::getLocale())
+        ->take(3)
+        ->get();
+      
         $data['blog_categories'] = Blog_category::where("typePost", '!=' , "1")->get();
+        $data['blog_relateion'] = Blog_category::where("id", $data['blog']->cate_id)->first();
+      
 		$data['categories'] = Blog_category::where("typePost", '!=' , "1")->get();
          $data['seo'] = (object) array(
                     'seo_title' => $data['blog']->meta_title,
@@ -90,7 +100,7 @@ class BlogController extends Controller
     }
     public function search(Request $request)
     { 
-        $data['serach_result'] = $request->get('search');
+$data['serach_result'] = $request->get('search');
         $data['blogs'] =Blog::where('heading', 'like', $request->get('search'))->where("typePost",0)
                 ->orWhere('content', 'like','%' . $request->get('search') . '%')->where('lang', 'like', \App::getLocale())
                 ->paginate(1);

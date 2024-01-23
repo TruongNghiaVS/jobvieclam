@@ -1,7 +1,7 @@
 <?php
 
 /* * ******** UserController ************ */
-Route::get('my-profile', 'UserController@myProfile')->name('my.profile');
+Route::get('sua-ho-so', 'UserController@myProfile')->name('my.profile');
 Route::post('update-avatar', 'UserController@updateAvatar')->name('put.my.updateAvatar');
 Route::post('update-password', 'UserController@updatePassword')->name('changePasswordUser');
 Route::put('my-profile', 'UserController@updateMyProfile')->name('put.my.profile');
@@ -12,7 +12,7 @@ Route::post('update-front-profile-summary/{id}', 'UserController@updateProfileSu
 Route::post('update-immediate-available-status', 'UserController@updateImmediateAvailableStatus')->name('update.immediate.available.status');
 Route::get('add-to-favourite-company/{company_slug}', 'UserController@addToFavouriteCompany')->name('add.to.favourite.company');
 Route::get('remove-from-favourite-company/{company_slug}', 'UserController@removeFromFavouriteCompany')->name('remove.from.favourite.company');
-Route::get('my-followings', 'UserController@myFollowings')->name('my.followings');
+Route::get('danh-sach-nguoi-theo-doi', 'UserController@myFollowings')->name('my.followings');
 /* Route::get('my-messages', 'UserController@myMessages')->name('my.messages'); */
 Route::get('my-messages', 'Job\SeekerSendController@all_messages')->name('my.messages');
 Route::get('seeker-append-messages', 'Job\SeekerSendController@append_messages')->name('seeker-append-messages');
@@ -95,5 +95,5 @@ Route::get('candidate-language-levels/{language_id}', 'UserController@candidateL
 /*************************************/
 
 
-Route::get('my-alerts', 'UserController@myAlerts')->name('my-alerts');
+Route::get('thong-bao-viec-lam', 'UserController@myAlerts')->name('my-alerts');
 Route::get('delete-alert/{id}', 'UserController@delete_alert')->name('delete-alert');

@@ -32,7 +32,7 @@ use AuthenticatesUsers;
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new controller instance.
@@ -217,7 +217,7 @@ use AuthenticatesUsers;
         Auth::login($exitMemeber, true);
         return response()->json([
             'sucess'=>true,
-            'urlRedirect'=> "/home",
+            'urlRedirect'=> "/dashboard",
             "error"=> $error,
             'message' => 'Đăng nhập thành công'], 200);
     }

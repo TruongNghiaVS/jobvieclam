@@ -208,7 +208,7 @@
     background-color: var(--bs-primary);
 }
 
-#default-sidebar ul li.active a span {
+#default-sidebar ul li.active a span ,#default-sidebar ul li.active a i{
     color: white !important;
 }
 

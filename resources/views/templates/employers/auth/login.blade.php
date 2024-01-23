@@ -332,11 +332,15 @@
             beforeSend:   showSpinner(),
             statusCode: {
                 202 :  function(responseObject, textStatus, jqXHR) {
+                    hideSpinner();
+
                     console.log(responseObject.error);
         
                 },
                 401: function(responseObject, textStatus, jqXHR) {
                     // No content found (404)
+                    hideSpinner();
+
                     console.log(responseObject.responseJSON);
                     responseObject.responseJSON.error.forEach(err => {
                         $(`#company_login_tab .invalid-feedback.${err.key}-error`).text(err.textError)
@@ -347,6 +351,8 @@
                 },
                 503: function(responseObject, textStatus, errorThrown) {
                     // Service Unavailable (503)
+                    hideSpinner();
+
                     console.log(responseObject.error);
 
                     // This code will be executed if the server returns a 503 response
@@ -358,6 +364,8 @@
                     //     alert(data.message)
                     //     window.location.href = data.urlRedirect;
                     // }, 2000);
+                    hideSpinner();
+
                     
                 })
                 .fail(function(jqXHR, textStatus){

@@ -301,11 +301,15 @@
             beforeSend:   showSpinner(),
             statusCode: {
                 202 :  function(responseObject, textStatus, jqXHR) {
+                    hideSpinner();
+
                     console.log(responseObject.error);
         
                 },
                 401: function(responseObject, textStatus, jqXHR) {
                     // No content found (404)
+                    hideSpinner();
+
                     console.log(responseObject.responseJSON);
                     responseObject.responseJSON.error.forEach(err => {
                         $(`#form_login_tab .invalid-feedback.${err.key}-error`).text(err.textError)
@@ -315,6 +319,7 @@
                     // This code will be executed if the server returns a 404 response
                 },
                 503: function(responseObject, textStatus, errorThrown) {
+                    hideSpinner();
                     // Service Unavailable (503)
                     console.log(responseObject.error);
 
@@ -327,6 +332,8 @@
                     //     alert(data.message)
                     //     window.location.href = data.urlRedirect;
                     // }, 2000);
+                    hideSpinner();
+
                     window.location.href =  "/home";
                     
                 })
@@ -391,6 +398,8 @@
             statusCode: {
                 202 :  function(responseObject, textStatus, jqXHR) {
                     console.log(responseObject.error);
+                    hideSpinner();
+
                 if(responseObject.error) {
                     responseObject.error.forEach(err => {
                         $(`#form_logup_tab .invalid-feedback.${err.key}-error`).text(err.textError)
@@ -403,10 +412,14 @@
                 }
                 },
                 404: function(responseObject, textStatus, jqXHR) {
+                    hideSpinner();
+
                     // No content found (404)
                     // This code will be executed if the server returns a 404 response
                 },
                 503: function(responseObject, textStatus, errorThrown) {
+                    hideSpinner();
+
                     // Service Unavailable (503)
                     // This code will be executed if the server returns a 503 response
                 }           

@@ -516,16 +516,22 @@
             statusCode: {
                 202 :  function(responseObject, textStatus, jqXHR) {
                     console.log(responseObject.error);
+                    hideSpinner();
+
         
                 },
                 401: function(responseObject, textStatus, jqXHR) {
                     // No content found (404)
+                    hideSpinner();
+
                     console.log(responseObject.responseJSON);
                     
                     // This code will be executed if the server returns a 404 response
                 },
                 503: function(responseObject, textStatus, errorThrown) {
                     // Service Unavailable (503)
+                    hideSpinner();
+
                     console.log(responseObject.error);
 
                     // This code will be executed if the server returns a 503 response

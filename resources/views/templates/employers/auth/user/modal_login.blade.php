@@ -225,11 +225,15 @@ $(document).ready(function() {
             beforeSend:   showSpinner(),
             statusCode: {
                 202 :  function(responseObject, textStatus, jqXHR) {
+                    hideSpinner();
+
                     console.log(responseObject.error);
         
                 },
                 401: function(responseObject, textStatus, jqXHR) {
                     // No content found (404)
+                    hideSpinner();
+
                     console.log(responseObject.responseJSON);
                     responseObject.responseJSON.error.forEach(err => {
                         console.log(err);
@@ -241,6 +245,8 @@ $(document).ready(function() {
                 },
                 503: function(responseObject, textStatus, errorThrown) {
                     // Service Unavailable (503)
+                    hideSpinner();
+
                     console.log(responseObject.error);
 
                     // This code will be executed if the server returns a 503 response
@@ -248,6 +254,7 @@ $(document).ready(function() {
                 }
                 })
                 .done(function(data){
+                    hideSpinner();
                   
                     $("#login_em_success").addClass("show")
                     $("#employer_login_Modal").css("display:none")

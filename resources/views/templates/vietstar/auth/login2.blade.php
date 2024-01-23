@@ -214,11 +214,15 @@ console.log(isValid);
             beforeSend:   showSpinner(),
             statusCode: {
                 202 :  function(responseObject, textStatus, jqXHR) {
+                    hideSpinner();
+
                     console.log(responseObject.error);
         
                 },
                 401: function(responseObject, textStatus, jqXHR) {
                     // No content found (404)
+                    hideSpinner();
+
                     console.log(responseObject.responseJSON);
                     responseObject.responseJSON.error.forEach(err => {
                         $(`#formLogin2_user .invalid-feedback.${err.key}-error`).empty();
@@ -240,6 +244,8 @@ console.log(isValid);
                     // setTimeout(function() { 
                     //     alert(data.message)
                     // }, 2000);
+                    hideSpinner();
+
                     if(data.sucess == true){
                         window.location.href = data.urlRedirect;
                     }

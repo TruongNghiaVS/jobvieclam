@@ -213,6 +213,7 @@
             statusCode: {
                 202 :  function(responseObject, textStatus, jqXHR) {
                     console.log(responseObject.error);
+                    hideSpinner();
         
                 },
                 400: function(responseObject, textStatus, jqXHR) {
@@ -234,6 +235,7 @@
                 },
                 503: function(responseObject, textStatus, errorThrown) {
                     // Service Unavailable (503)
+                    hideSpinner();
                     console.log(responseObject.error);
 
                     // This code will be executed if the server returns a 503 response

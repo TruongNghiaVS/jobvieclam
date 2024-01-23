@@ -333,7 +333,12 @@ $(document).ready(function() {
             statusCode: {
                 202 :  function(responseObject, textStatus, jqXHR) {
                     console.log(responseObject.error);
+                    hideSpinner();
+
                 if(responseObject.error) {
+        
+                    
+
                     responseObject.error.forEach(err => {
                         $(`#candidate_formlogup .invalid-feedback.${err.key}-error`).text(err.textError)
                         $(`#candidate_formlogup .invalid-feedback.${err.key}-error`).addClass('has-error')
@@ -345,11 +350,15 @@ $(document).ready(function() {
                 }
                 },
                 404: function(responseObject, textStatus, jqXHR) {
+                    hideSpinner();
+
                     // No content found (404)
                     // This code will be executed if the server returns a 404 response
                 },
                 503: function(responseObject, textStatus, errorThrown) {
                     // Service Unavailable (503)
+                    hideSpinner();
+
                     // This code will be executed if the server returns a 503 response
                 }           
                 }
@@ -360,6 +369,8 @@ $(document).ready(function() {
                     // $("#logup_success button").click(function(){
                     //     $("#logup_success").removeClass("show")
                     // });
+                    hideSpinner();
+
                     if (data.sucess == true ) { 
                         $("#user_logup_Modal").css("display:none");
                         $("#user_logup_Modal").removeClass("show")

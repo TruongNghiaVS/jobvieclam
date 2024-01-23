@@ -174,24 +174,31 @@
                 $.ajax({
             type: "POST",
             url:  `{{ route('member.ChangePassword') }}`,
-            beforeSend:   showSpinner(),
+            beforeSend:  showSpinner(),
             data: {
                 password:$('#newPassword').val() ? $('#newPassword').val() :"",
                 code:key.code ? key.code :"",
             },
             statusCode: {
+                
                 202 :  function(responseObject, textStatus, jqXHR) {
+                    hideSpinner();
+
                     console.log(responseObject.error);
         
                 },
                 400: function(responseObject, textStatus, jqXHR) {
                     // No content found (400)
+                    hideSpinner();
+
                     console.log(responseObject.responseJSON);
                 
                     // This code will be executed if the server returns a 404 response
                 },
                 503: function(responseObject, textStatus, errorThrown) {
                     // Service Unavailable (503)
+                    hideSpinner();
+
                     console.log(responseObject.error);
 
                     // This code will be executed if the server returns a 503 response
@@ -199,9 +206,12 @@
                 }
                 })
                 .done(function(data){
+                    hideSpinner();
+
                     if(data.sucess){
                         window.location.href = "{{route('login')}}";
                     }
+                    
                         
                 })
                 .fail(function(jqXHR, textStatus){

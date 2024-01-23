@@ -324,6 +324,8 @@ $(document).ready(function() {
             beforeSend:   showSpinner(),
             statusCode: {
                 202 :  function(responseObject, textStatus, jqXHR) {
+                    hideSpinner();
+
                     console.log(responseObject.error);
                 if(responseObject.error) {
                     responseObject.error.forEach(err => {
@@ -337,16 +339,20 @@ $(document).ready(function() {
                 }
                 },
                 404: function(responseObject, textStatus, jqXHR) {
+                    hideSpinner();
                     // No content found (404)
                     // This code will be executed if the server returns a 404 response
                 },
                 503: function(responseObject, textStatus, errorThrown) {
+                    hideSpinner();
                     // Service Unavailable (503)
                     // This code will be executed if the server returns a 503 response
                 }           
                 }
                 })
                 .done(function(data){
+                    hideSpinner();
+
                     if (data.sucess == true ) {
                         $('#logup_em_success').modal('show');
                         

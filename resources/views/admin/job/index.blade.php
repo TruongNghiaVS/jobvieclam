@@ -43,6 +43,12 @@
         top: 10px;
         right: 0;
     }   
+    #jobDatatableAjax .table-scrollable {
+        overflow: auto !important;
+    }
+    #jobDatatableAjax .dropdown-menu:last-child {
+        top: -150px;
+    }
 </style>
 <div class="page-content-wrapper"> 
     <!-- BEGIN CONTENT BODY -->

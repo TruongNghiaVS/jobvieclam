@@ -11,15 +11,20 @@
 
 
 
-
-
 <!-- Main content -->
 <section class="company-wrapper main-content" id="main-content">
     <!-- Hero banner -->
-    <section class="hero-banner-company-profile" style="background-image: url({!!asset('/vietstar/imgs/company-cover.jpg') !!});"></section>
+   
 
 
     <div class="container">
+    @if($company->cover_logo)
+    <section class="hero-banner-company-profile" style="background-image: url('http://jobvieclam.com/company_logos/{{ $company->cover_logo }}')"></section>
+    
+    @else
+        <section class="hero-banner-company-profile" style="background-image: url({!!asset('/vietstar/imgs/company-cover.jpg') !!});"></section>
+
+    @endif
         <section class="section-company-profile">
             <div class="container-hm">
                 <div class="row">

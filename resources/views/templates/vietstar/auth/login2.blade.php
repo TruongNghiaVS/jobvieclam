@@ -234,6 +234,8 @@ console.log(isValid);
                 },
                 503: function(responseObject, textStatus, errorThrown) {
                     // Service Unavailable (503)
+                    hideSpinner();
+
                     console.log(responseObject.error);
 
                     // This code will be executed if the server returns a 503 response

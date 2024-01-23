@@ -504,7 +504,7 @@
        
         
         if (isValid) { 
-            showSpinner()
+          
             $.ajax({
             type: "PUT",
             url:  `{{ route('put.my.profilev2') }}`,

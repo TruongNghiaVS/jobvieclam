@@ -103,7 +103,7 @@
     });
     function submitProfileSummaryForm() {
         var form = $('#add_edit_profile_summary');
-        showSpinner();
+     
         $.ajax({
             url: form.attr('action'),
             type: form.attr('method'),

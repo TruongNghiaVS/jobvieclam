@@ -269,7 +269,7 @@
             var token =  $('#contactform #token').val();
             var subject =  $('#contactform #subject').val();
             var text =  $('#contactform #message_txt').val();
-            showSpinner();
+   
             $.ajax({
             type: "POST",
             url:  `{{ route('contact-request') }}`,

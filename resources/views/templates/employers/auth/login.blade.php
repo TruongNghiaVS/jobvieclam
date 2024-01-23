@@ -428,6 +428,8 @@
             beforeSend:   showSpinner(),
             statusCode: {
                 202 :  function(responseObject, textStatus, jqXHR) {
+                    hideSpinner();
+
                     console.log(responseObject.error);
                 if(responseObject.error) {
                     responseObject.error.forEach(err => {
@@ -441,10 +443,14 @@
                 }
                 },
                 404: function(responseObject, textStatus, jqXHR) {
+                    hideSpinner();
+
                     // No content found (404)
                     // This code will be executed if the server returns a 404 response
                 },
                 503: function(responseObject, textStatus, errorThrown) {
+                    hideSpinner();
+
                     // Service Unavailable (503)
                     // This code will be executed if the server returns a 503 response
                 }           
@@ -456,6 +462,8 @@
                     //     alert("Đang")
                     //     window.location.href = ;
                     // }, 2000);
+                    hideSpinner();
+
                     
                 })
                 .fail(function(jqXHR, textStatus){

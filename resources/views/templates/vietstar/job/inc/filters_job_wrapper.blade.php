@@ -201,10 +201,17 @@ dd($salaryFroms)
 
                             <div class="select-menu">
                                 <div class="select-btn">
+                                    @if(1==2) 
                                     <span class="sBtn-text">{{__('Salary Level')}}</span>
+
+                                    @else
+                                    <span class="sBtn-text">30 triệu</span>
+
+                                    
+                                    @endif
                                     <i class="bx bx-chevron-down"></i>
                                 </div>
-
+                              
                                 <ul class="options">
                                     <form id="custom-salary-form">
                                         <li class="custom-salary-option">
@@ -228,7 +235,7 @@ dd($salaryFroms)
                                             <span class="option-text" key="" salary_max="15" salary_min="10">10 - 15 triệu</span>
                                         </li>
                                         <li class="option">
-                                            <span class="option-text" key="" salary_max="20" salary_min="15">15 - 30 triệu</span>
+                                            <span class="option-text" key="" salary_max="30" salary_min="15">15 - 30 triệu</span>
                                         </li>
                                         <li class="option">
                                             <span class="option-text" key=""  salary_min="30" >Trên 30 triệu</span>
@@ -351,7 +358,14 @@ dd($salaryFroms)
 
                             <div class="select-menu">
                                 <div class="select-btn">
+                                    @if(1==2) 
                                     <span class="sBtn-text">{{__('Salary Level')}}</span>
+
+                                    @else
+                                    <span class="sBtn-text">30 triệu</span>
+
+                                    
+                                    @endif
                                     <i class="bx bx-chevron-down"></i>
                                 </div>
 

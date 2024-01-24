@@ -16,7 +16,7 @@
                 <!-- job start -->
                 @if(isset($companies) && count($companies))
                 @foreach($companies as $company)
-                <div class="item-job">
+                <div class="item-job mb-3">
                     <div class="card-news card-news-applied-jobs gap-16 mb-2">
                         <div class="card-news__icon">
                             {{$company->printCompanyImage()}}

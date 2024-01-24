@@ -47,10 +47,10 @@
                                             <div class="rank-salary">
                                                 {{$user->current_salary}} {{$user->salary_currency}} - {{$user->expected_salary}} {{$user->salary_currency}}
                                             </div>
-                                           <div>
-                                                <a class="btn-veiw-profile"  href="{{route('user.profile', $user->id)}}">{{_('View Profile')}}</a>
-                                           </div>
-                                           
+                                            
+                                        </div>
+                                        <div>
+                                             <a class="btn-veiw-profile"  href="{{route('user.profile', $user->id)}}">{{_('View Profile')}}</a>
                                         </div>
                                         
                                     </div>

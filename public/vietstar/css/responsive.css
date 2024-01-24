@@ -1256,8 +1256,8 @@
     padding: 0px 0px;
   }
   
-  .myads {
-    /* padding: 0 120px; */
+  .user-wrapper .myads {
+    padding: 0 120px;
   } 
   .card-bio {
     padding: 30px;

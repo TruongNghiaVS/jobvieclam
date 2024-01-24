@@ -2,7 +2,7 @@
         <div class="cbox-impressive-numbers__item--wrapper">
         <div class="container">
         <h2 class="section-title section-title-decorated section-title-decorated-white">Con số ấn tượng</h2>
-        <div class="section-subtitle">Công ty Cổ phần Tập đoàn Vietstar ( VIETSTAR GROUP JOINT STOCK COMPANY) là một trong những công ty uy tín tại Việt Nam trong lĩnh vực cung cấp giải pháp xử</div>
+        <div class="section-subtitle">Công ty Cổ phần Tập đoàn Vietstar ( VIETSTAR GROUP JOINT STOCK COMPANY) là một trong những công ty uy tín tại Việt Nam trong lĩnh vực cung cấp giải pháp xử lý trong lĩnh vực cung ứng nhân sự đa ngành nghề.</div>
 
         <div class="row">
             <div class="col-md-6 col-lg-4 col-sm-12 mb-4">

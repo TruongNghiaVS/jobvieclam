@@ -8,7 +8,7 @@
                         <p>Hoàn thành</p>
                     </div>
                 @else
-                    <div class="status complete" bis_skin_checked="1">
+                    <div class="status error" bis_skin_checked="1">
                         <p>Chưa hoàn thành</p>
                     </div>
                 @endif
@@ -27,7 +27,7 @@
 
 <div class="section-body">
     <div id="success_msg"></div>
-    <div>{{ $user->getProfileSummary('summary') }}</div>
+    <div>{!! $user->getProfileSummary('summary') !!}</div>
     {{--<div class="row">
         <div class="col-md-12">
             <form class="form form-user-profile" id="add_edit_profile_summary" method="POST" action="{{ route('update.front.profile.summary', [$user->id]) }}">
@@ -35,7 +35,7 @@
                 <div class="form-body">
                     <div id="success_msg"></div>
                     <div class="formrow {!! APFrmErrHelp::hasError($errors, 'summary') !!}">
-                        <textarea name="summary" class="form-control" id="summary" placeholder="{{__('Profile Summary')}}">{{ old('summary', $user->getProfileSummary('summary')) }}</textarea>
+                        <textarea name="summary" class="form-control" id="summary" placeholder="{{__('Profile Summary')}}">{{ !! old('summary', $user->getProfileSummary('summary')) !! }}</textarea>
                         <span class="help-block summary-error"></span>
                     </div>
                     <button type="button" class="btn btn-primary btn-save-profile" onClick="submitProfileSummaryForm();">{{__('Update Summary')}}</button>
@@ -63,7 +63,7 @@
                             {{ csrf_field() }}
                             <div class="form-body">
                                 <div class="form-group {!! APFrmErrHelp::hasError($errors, 'summary') !!}">
-                                   <textarea name="summary" class="form-control" id="summary" placeholder="{{__('Profile Summary')}}">{{ old('summary', $user->getProfileSummary('summary')) }}</textarea>
+                                   <textarea name="summary" class="form-control" id="summary" placeholder="{{__('Profile Summary')}}">{!! old('summary', $user->getProfileSummary('summary')) !!}</textarea>
                                      <span class="help-block summary-error"></span>
                                 </div>
                                 <!-- <div class="form-group {!! APFrmErrHelp::hasError($errors, 'summary') !!}">

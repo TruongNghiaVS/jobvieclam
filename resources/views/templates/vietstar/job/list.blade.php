@@ -1,3 +1,4 @@
+
 @extends('templates.vietstar.layouts.app')
 @section('content')
 <!-- Header start -->
@@ -69,7 +70,32 @@
                 @php
                    function checksalary( $from, $to)
                    {
-                        return "Thương lượng"; 
+                        $salaryTextFrom = 0;
+                        $salaryTextTo =  0;
+                        $textSalary ='';
+                        if($from > 0 &&  $to > 0) 
+                        {
+                            $salaryTextFrom = number_format($from, 0, '', '.');
+                            $salaryTextTo = number_format($to, 0, '', '.');
+                            return  $salaryTextFrom."-".$salaryTextTo. "  VNĐ";
+
+                        }
+                        if($from < 1 && $to < 1)
+                        {
+                          return  'Thương lượng';
+
+                        }
+                         if($from >0)
+                         {
+                            $salaryTextFrom = number_format($from, 0, '', '.');
+                            return "Từ ".$salaryTextFrom." VNĐ";
+                         }
+                         if($to >0)
+                         {
+                            $salaryTextTo = number_format($to, 0, '', '.');
+                            return "Đến ".$salaryTextTo." VNĐ";
+                         }
+                       
                    }
                 @endphp
                            

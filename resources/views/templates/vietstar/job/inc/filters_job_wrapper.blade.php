@@ -1,3 +1,4 @@
+
 @push('styles')
 <style type="text/css">
 .select-menu {
@@ -130,20 +131,50 @@ dd($salaryFroms)
                     <div class="form-wrap">
                         <div class="form-group form-keyword">
                             <input type="search" class="keyword form-control" id="search" name="search"
-                            value = "{{ isset($requestParam['searchJobv2']) ? $requestParam['searchJobv2'] : '' }}"
+                            value = "{{$requestSearch->input('search')}}"
                             placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
                         </div>
                         <div class="form-group form-select-chosen" id="functional_area_dd">
-                        {!! Form::select('industry_id', ['' => __('Select functional area')]+$Industrys, Request::get('industry_id', Request::get('fe_industry_id', null)), array('name'=>'industry_id' , 'class'=>'form-control form-select shadow-sm', 'id'=>'industry_id')) !!}
+                        
+                            <select name="industry_id" class="form-control form-select shadow-sm" id="industry_id">
+                                         <option value="-1">Chọn lĩnh vực</option>
+                                        @foreach  ($Industrys as $itemSelect)
+                                             @if($itemSelect->industry_id == $requestSearch->industry_idRequest)
+                                                     <option selected value="{{$itemSelect->industry_id}}">{{$itemSelect->industry}}</option>
+                                              @else
+                                                     <option value="{{$itemSelect->industry_id}}">{{$itemSelect->industry}}</option>
+                                              @endif
+                                            
+                                        @endforeach
+                            </select>
+                    
                         </div>
-                        <div class="form-group form-select-chosen" id="city_dd2">
+                        <!-- <div class="form-group form-select-chosen" id="city_dd2">
                         {!! Form::select('city_id', ['' => __('Select City')]+$cities, Request::get('city_id', null), array('class'=>'form-control form-select shadow-sm', 'name'=>'city_id', 'id'=>'city_id')) !!}
                         </div>
+                         -->
+                        <div class="form-group form-select-chosen" id="functional_area_dd">
+                        
+                            <select name="city_id" class="form-control form-select shadow-sm" id="city_id">
+                                         <option value="-1">Tỉnh/Thành</option>
+                                        @foreach  ($cities2 as $itemSelect)
+                                             @if($itemSelect->city_id == $requestSearch->city_idRequest)
+                                                     <option selected value="{{$itemSelect->city_id}}">{{$itemSelect->city}}</option>
+                                              @else
+                                                     <option value="{{$itemSelect->city_id}}">{{$itemSelect->city}}</option>
+                                              @endif
+                                            
+                                        @endforeach
+                            </select>
+                    
+                        </div>
+                        
                         <div class="form-group form-submit">
                             <button class="btn-gradient  filter_submit" type="submit">
                             {{__('Search')}} 
                             </button>
                         </div>
+
 
                     </div>
                 </div>
@@ -215,9 +246,21 @@ dd($salaryFroms)
                     <div class="col-sm-6 col-lg-3">
                         <div class="form-group" id="job_type_dd">
                             <label>Hình thức làm việc</label>
-                            {!! Form::select('job_type_id', ['' => __('Select Job Type')] + $jobTypes, Request::get('job_type_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'job_type_id')) !!}
+                            <select class="form-control form-select shadow-sm" id="job_type_id" name="job_type_id">
+                                         @foreach  ($jobtypes2 as $itemSelect)
+                                             @if($itemSelect->job_type_id == $requestSearch->job_type_idRequest)
+                                                     <option selected value="{{$itemSelect->job_type_id}}">{{$itemSelect->job_type}}</option>
+                                              @else
+                                                     <option value="{{$itemSelect->job_type_id}}">{{$itemSelect->job_type}}</option>
+                                              @endif
+                                            
+                                        @endforeach
+                            </select>
+                           
                         </div>
                     </div>
+
+                    
                     <div class="col-sm-6 col-lg-3">
                         <div class="form-group" id="benefit_id_dd">
                             <label>{{__('Select desired benefits')}}</label>

@@ -33,7 +33,7 @@
                                 <div class="info-item job-title-box" bis_skin_checked="1">
                                     <div class="job-title" bis_skin_checked="1">
                                         <!-- <span>Mới</span> -->
-                                        <h3 class="job-title-name"><a href="{{route('job.detail', [$job->slug])}}" title="Nhân viên bất động sản">{{$job->title}}</a></h3>
+                                        <h3 class="job-title-name"><a href="{{route('job.detail', [$job->slug])}}" title="{{$job->title}}">{{$job->title}}</a></h3>
                                     </div>
                                     <p class="card-news__content-detail mb-2 status-apply" status="{{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }}">
                                         {{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }}
@@ -50,8 +50,25 @@
                                 <div class="info-item box-meta" bis_skin_checked="1">
                                     <div class="rank-salary" bis_skin_checked="1">
                                         <span class="fas fa-money-bill"></span>
-                                        {{$job->salary_from.' '.$job->salary_currency}} -
-                                        {{$job->salary_to.' '.$job->salary_currency}}
+                                        @php 
+                                             $salaryTextFrom = 0;
+
+                                            $salaryTextTo =  0;
+                                            $textSalary ='';
+                                            if($job->salary_from > 0)
+                                            {
+                                                $salaryTextFrom = number_format($job->salary_from, 0, '', '.');
+                                            
+                                            }
+                                            if($job->salary_to > 0)
+                                            {
+                                                $salaryTextTo = number_format($job->salary_to, 0, '', '.');
+                                                
+                                            }
+                                        @endphp
+                                        
+                                        {{$salaryTextFrom}} -
+                                        {{$salaryTextTo}}
                                     </div>
                                     <div class="navbar__link-separator" bis_skin_checked="1"></div>
                                     <!--meta-city-->

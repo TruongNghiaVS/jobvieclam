@@ -70,18 +70,15 @@ class JobController extends Controller
 
     public function jobsBySearch(Request $request)
     {
-        // dd( $this->searchJobv2($request));
-         
         $jobList = $this->searchJobv3($request);
-      
-        
         $params = $this->params2($request); 
-     
 
         /**************************************************** */
-     
-        $seo = Seo::where('seo.page_title', 'like', 'jobs')->first();
-
+         $seo = Seo::where('seo.page_title', 'like', 'jobs')->first();
+         $Industrys = \App\Industry::where('lang', \App::getLocale())->get();
+         $city_ids = \App\City::where('lang', \App::getLocale())->get();
+         $jobtypes2 =  \App\JobType::where('lang', \App::getLocale())->get();
+    
         return view(config('app.THEME_PATH').'.job.list')
                         ->with('functionalAreas', $this->functionalAreas)
                         ->with('countries', $this->countries)
@@ -89,14 +86,17 @@ class JobController extends Controller
                   
                         ->with('jobList',$jobList)
                          ->with('cities', $params['cities'])
+                         ->with('cities2', $city_ids)
                         ->with('funclAreas', $params['funclAreas'])
                         ->with('salaryFroms', $params['salaryFroms'])
                         ->with('degreeLevels', $params['degreeLevels'])
                         ->with('jobTypes', $params['jobTypes'])
+                        ->with('jobtypes2', $jobtypes2)
                         ->with('benefits', $params['benefits'])
                         ->with('requestParam', $request)
-                        ->with('Industrys',$params['Industrys'])
-                        ->with('seo', $seo);
+                        ->with('Industrys',$Industrys)
+                        ->with('seo', $seo)
+                        ->with('requestSearch', $request);
     }
 
     public function jobDetail(Request $request, $job_slug)
@@ -171,6 +171,7 @@ class JobController extends Controller
                         ->with('job_skill_ids', $job_skill_ids)
                         ->with('jobSkills', $jobSkills)
                         ->with('seo', $seo);
+                        
     }
     public function jobRelation(Request $request, $job_slug)
     {
@@ -236,7 +237,7 @@ class JobController extends Controller
          foreach($unicode as $nonUnicode=>$uni){
                 $str = preg_replace("/($uni)/i", $nonUnicode, $str);
          }
-         $str = str_replace(' ','_',$str);
+        //  $str = str_replace(' ','_',$str);
          $str = strtolower($str);
         
          return $str;
@@ -331,11 +332,12 @@ class JobController extends Controller
     {
         $token = $request->input("search");
     
-       
+      
         $industry_id = $request->input("industry_id");
         if ($request->has("fe_industry_id")){
             $industry_id =  $request->input("fe_industry_id");
         }
+      
     
         $locationWork = $request->input("provice");
         $orderby = $request->input("sort");
@@ -350,36 +352,96 @@ class JobController extends Controller
         $benefits = $request->input("benefits");
         $order_by = $request->input("order_by");
         $city_id =  $request->input("city_id");
-      
+       
         
         $query = Job::where('status', Job::POST_ACTIVE);
 
-        $query = $query->where('expiry_date','>',Carbon::now() );
+       $query = $query->where('expiry_date','>',Carbon::now() );
         $token = $this->locdautiengviet($token);
+        
         if (!empty($token)) 
         {
             $query =  $query->where("title",'like',"%{$token}%");
-
+     
         }
-        if ($levelDegree >0 ) 
+   
+      
+        if(is_array($levelDegree))
         {
+            if($levelDegree[0] != null &&  $levelDegree[0]  >0)
+            {
+                $query =  $query->where("degree_level_id",$levelDegree[0]);
+                $request['degree_level_idRequest'] = $levelDegree[0];
+            }
+           
+        }else if($levelDegree>0)
+        {
+            $request['degree_level_idRequest'] = $levelDegree;
             $query =  $query->where("degree_level_id",$levelDegree);
         }
+    
         if ($departmentType >0 ) 
         {
             $query =  $query->where("functional_area_id",$departmentType);
+          
+        }
+
+
+        if(is_array($jobtype))
+        {
+            if($jobtype[0] != null &&  $jobtype[0]  >0)
+            {
+                $query =  $query->where("job_type_id",$jobtype[0]);
+                $request['job_type_idRequest'] = $jobtype[0];
+            }
+        }else if($jobtype>0)
+        {
+            $request['job_type_idRequest'] = $jobtype;
+            $query =  $query->where("job_type_id",$jobtype);
+        }
+        else 
+        {
+
         }
       
-        
-        if ($city_id >0 ) 
+        if(is_array($city_id))
         {
+            if($city_id[0] != null &&  $city_id[0]  >0)
+            {
+                $query =  $query->where("city_id",$city_id[0]);
+                $request['city_idRequest'] = $city_id[0];
+            }
+        }else if($city_id>0)
+        {
+            $request['city_idRequest'] = $city_id;
             $query =  $query->where("city_id",$city_id);
         }
-         //functional_area_id
-        if($industry_id>0)
+        else 
         {
-            $query =  $query->where("industry_id",$industry_id);
+
         }
+      
+         //functional_area_id
+      
+      
+        if(is_array($industry_id))
+        {
+            if($industry_id[0] != null &&  $industry_id[0]  >0)
+            {
+                $query =  $query->where("industry_id",$industry_id[0]);
+                $request['industry_idRequest'] = $industry_id[0];
+            }
+        
+
+        }else if($industry_id>0)
+        {
+            $request['industry_idRequest'] = $industry_id;
+         
+            $query =  $query->where("industry_id",$industry_id);
+         
+        }
+     
+
         if ($wfh == 1 ) 
         {
             $query =  $query->where("wfh",$wfh);
@@ -389,7 +451,7 @@ class JobController extends Controller
         if( $salary_min > 0)
         {
             $query =  $query->where('salary_from', '>=', $salary_min);
-
+       
         }
         
         if( $salary_max > 0)
@@ -397,8 +459,7 @@ class JobController extends Controller
             $query =  $query->where('salary_to', '<=',  $salary_max);
         }
         $order_by = 'new';
-
-    
+     
         if ($order_by== "up_top") // last updated
         {
             $query =  $query->orderBy('updated_at', 'DESC');
@@ -422,8 +483,8 @@ class JobController extends Controller
         $query =$query->with('jobType');
         $query =$query->with('degreeLevel');
         $query= $query->with('city');
-
-      
+     
+       
         //created_at
         return $query->paginate(10);
     }
@@ -728,6 +789,7 @@ class JobController extends Controller
                 ->orderBy('favourites_job.id', 'desc')
                 ->select('jobs.*')
                 ->paginate(10);
+        
 
         return view(config('app.THEME_PATH').'.job.my_favourite_jobs')
                         ->with('jobs', $jobs);

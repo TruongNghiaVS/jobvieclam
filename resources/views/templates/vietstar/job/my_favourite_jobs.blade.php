@@ -34,8 +34,8 @@
                                 <div class="job-title" bis_skin_checked="1">
                                     <!-- <span>Mới</span> -->
                                     <h3 class="job-title-name"><a
-                                            href="/job/nhan-vien-bat-dong-san-40"
-                                            title="Nhân viên bất động sản">Nhân viên bất động sản</a></h3>
+                                            href="/viec-lam/{{$job->slug}}"
+                                            title="Nhân viên bất động sản">{{$job->title}}</a></h3>
                                 </div>
                                 @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
                                 <a class="remove_favouritejob"
@@ -67,7 +67,21 @@
                          {
                             $datetimeText =  $datetime->format('d-m-Y');
                          }
+                            $salaryTextFrom = 0;
 
+                            $salaryTextTo =  0;
+                            $textSalary ='';
+                            if($job->salary_from > 0)
+                            {
+                                $salaryTextFrom = number_format($job->salary_from, 0, '', '.');
+                               
+                            }
+                            if($job->salary_to > 0)
+                            {
+                                $salaryTextTo = number_format($job->salary_to, 0, '', '.');
+                                
+                            }
+                            
                                @endphp
                                <div class="info-item day-update" bis_skin_checked="1">
                                 {{$datetimeText}}
@@ -79,9 +93,9 @@
                             <div class="info-item box-meta" bis_skin_checked="1">
                             <div class="rank-salary" bis_skin_checked="1">
                                         <span class="fas fa-money-bill"></span>
-                                      
-                                        {{$job->salary_from.' '.$job->salary_currency}} -
-                                        {{$job->salary_to.' '.$job->salary_currency}}
+                                        
+                                        {{$salaryTextFrom}} -
+                                        {{$salaryTextTo}}
                                     </div>
                                 <div class="navbar__link-separator" bis_skin_checked="1"></div>
                                 <!--meta-city-->

@@ -185,9 +185,17 @@ class EmployerController extends Controller
 
        $manager = App::getLocale() == 'en' ? '%manager%' : '%quản%';
        $head = App::getLocale() == 'en' ? '%head%' : '%trưởng%';
-       $featuredJobs = Job::active()->featured()->notExpire()->where('status',Job::POST_ACTIVE)->orderBy('refresh_at', 'desc')->orderBy('updated_at','desc')->limit(100);
-       $allJobs = Job::active()->notExpire()->where('status',Job::POST_ACTIVE)->orderBy('id', 'desc')->limit(100);
-       $latestJobs = Job::active()->notExpire()->where('status',Job::POST_ACTIVE)->orderBy('id', 'desc')->where('created_at','>=', \Carbon\Carbon::now()->subMonths(3))->limit(100);
+       $query = Job::active()
+       ->where('status',"1")       
+       ->notExpire();
+       $featuredJobs = $query->clone()->orderBy('is_featured','desc')
+                          ->orderBy('refresh_at', 'desc')
+                          ->orderBy('updated_at','desc')
+                          ->limit(54);
+       $allJobs = $query->clone()->orderBy('id', 'desc')->limit(54);
+       $latestJobs =  $query->clone()
+                            ->orderBy('created_at','desc')
+                             ->limit(54);
        $user = \Auth::user();
        if(!is_null($user)){
            $userCareerLevelId = $user->career_level_id;
@@ -195,7 +203,10 @@ class EmployerController extends Controller
            $userJobExperienceId = $user->job_experience_id;
            $userIndustryId = $user->industry_id;
        }
-       $suggestedJobsQuery = Job::active()->notExpire()->where('status', Job::POST_ACTIVE);
+       $suggestedJobsQuery = $query->clone();
+       if(isset($userIndustryId)) {
+        $suggestedJobsQuery->orWhere('industry_id', $userIndustryId);
+    }
        if(isset($userCareerLevelId)) {
            $suggestedJobsQuery->orWhere('career_level_id', $userCareerLevelId);
        }
@@ -203,12 +214,11 @@ class EmployerController extends Controller
            $suggestedJobsQuery->orWhere('city_id', $userCityId);
        }
        if(isset($userJobExperienceId)) {
-           $suggestedJobsQuery->orWhere('job_experience_id', $userJobExperienceId);
+        //    $suggestedJobsQuery->orWhere('job_experience_id', $userJobExperienceId);
        }
-       if(isset($userIndustryId)) {
-           $suggestedJobsQuery->orWhere('industry_id', $userIndustryId);
-       }
-       $suggestedJobsQuery->where('created_at','>=', \Carbon\Carbon::now()->subMonths(3))->limit(100)->orderBy('id', 'desc');
+       
+       $suggestedJobsQuery =  $suggestedJobsQuery->limit(54)
+                               ->orderBy('created_at', 'desc');
        $VIPJobs = Job::where(function($q) {
            if (App::getLocale() == 'vi') {
                $q->where('salary_currency', 'VND')->where('salary_from', '>=', 25000000);

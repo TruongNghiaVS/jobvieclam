@@ -71,14 +71,14 @@ Dashboard
                     </a>
                 </li>
 
-                <li class="sidebar-item {{ Request::url() == route('change.template') ? 'active' : '' }}">
+                <!-- <li class="sidebar-item {{ Request::url() == route('change.template') ? 'active' : '' }}">
                     <a href="{{ route('change.template') }}" class="list-group-item list-group-item-action {{ Request::url() == route('change.template') ? 'active' : '' }}">
                         <div class="d-flex w-100">
                         <i class="fa-regular fa-file fs fa-regular fs-24px me-2"></i>
                             <span class="side-bar-content"> {{__('Change Template')}}</span>
                         </div>
                     </a>
-                </li>
+                </li> -->
 
                 <li class="sidebar-item">
                     <!-- <a href="{{ route('view.public.profile', Auth::user()->id) }}" class="list-group-item list-group-item-action {{ route('view.public.profile', Auth::user()->id) }}"> -->

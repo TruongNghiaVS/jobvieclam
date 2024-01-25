@@ -43,7 +43,7 @@
                     </li> -->
                     @if(Auth::user())
                     <li class="has-child">
-                        <a href="{{ route('my.profile') }}" class="nav-link nav-link-parent">{{__('Profiles and CVs')}}</a>
+                        <!-- <a href="{{ route('my.profile') }}" class="nav-link nav-link-parent">{{__('Profiles and CVs')}}</a> -->
                         <button type="button" class="btn-show-sub-menu" data-ref="findJob" data-target="false"><span class="iconmoon icon-p-next"></span></button>
                         <ul class="sub-menu" data-ref="findJob" data-target="false">
                             @php

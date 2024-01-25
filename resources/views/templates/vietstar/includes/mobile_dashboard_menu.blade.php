@@ -442,12 +442,12 @@
                 @if(Auth::user())
 
                 <li>
-                    <a href="#cv_sub_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <!-- <a href="#cv_sub_list" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <div class="d-flex w-100">
                             <i class="bi bi-file-person fs-24px me-2"></i>
                             <span class="side-bar-content"> {{__('Profiles and CVs')}}</span>
                         </div>
-                    </a>
+                    </a> -->
                     <ul class="collapse list-unstyled sub_list" data-ref="findJob" data-target="false" id="cv_sub_list">
                         @php
                         $pointer = Auth::check()==true ? '' : 'style=pointer-events:none;';
@@ -556,14 +556,14 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item {{ Request::url() == route('change.template') ? 'active' : '' }}">
+                <!-- <li class="sidebar-item {{ Request::url() == route('change.template') ? 'active' : '' }}">
                     <a href="{{ route('change.template') }}" class="list-group-item list-group-item-action {{ Request::url() == route('change.template') ? 'active' : '' }}">
                         <div class="d-flex w-100">
                         <i class="fa-regular fa-file fs fa-regular fs-24px me-2"></i>
                             <span class="side-bar-content"> {{__('Change Template')}}</span>
                         </div>
                     </a>
-                </li>
+                </li> -->
 
                 <li class="">
                     <a href="#" class="list-group-item list-group-item-action {{ route('view.public.profile', Auth::user()->id) }}"  data-toggle="modal" data-target="#modal_user_info">

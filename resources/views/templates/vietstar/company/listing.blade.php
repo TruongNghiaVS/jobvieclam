@@ -44,9 +44,10 @@
 
             @if($companies)
             <div class="list-company hideContent">
-                @foreach($companies
-                 as $company)
 
+         
+                @foreach($companies  as $company)
+               
                 <div emId="{{$company->id}}" class="company-item-wrapper shadow-sm">
                     <div class="company-item-header">
                         <div class="company-items__background">
@@ -113,8 +114,6 @@
 @push('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
 <script type="text/javascript">
-
-
     $(document).ready(function() {
         $(".show-more-btn").on("click", function() {
       
@@ -125,6 +124,7 @@
             type: 'GET',
             dataType: 'json',
             success: function(data) {
+          
                 // Process the data
               
                html  = data.map(element => {
@@ -172,11 +172,15 @@
                     </div>
 
                     <div class="company-items__bottom">
-                        @if(Auth::check() && Auth::user()->isFavouriteCompany($company->slug))
-                        <a class="btn btn-outline-primary" href="{{ route('remove.from.favourite.company', ['company_slug' => $company->slug]) }}"><i class="fas fa-heart iconoutline"></i> Đã theo dõi</a>
-                        @else
-                        <a class="btn btn-outline-primary" href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"><i class="fa-regular fa-heart"></i> Theo dõi</a>
-                        @endif
+                       @if(isset( $company) == true)
+                        
+                                @if(Auth::check() && Auth::user()->isFavouriteCompany($company->slug))
+                                <a class="btn btn-outline-primary" href="{{ route('remove.from.favourite.company', ['company_slug' => $company->slug]) }}"><i class="fas fa-heart iconoutline"></i> Đã theo dõi</a>
+                                @else
+                                <a class="btn btn-outline-primary" href="{{ route('add.to.favourite.company', ['company_slug' => $company->slug]) }}"><i class="fa-regular fa-heart"></i> Theo dõi</a>
+                                @endif
+
+                      @endif
                     </div>
 
                 </div>
@@ -216,7 +220,7 @@
                     if (res == 'success') {
                         var errorString = '<div role="alert" class="alert alert-success">' +
                             response.message + '</div>';
-                        $('#alert_messages').html(errorString);
+                      
                         $('#send-company-message-form').hide('slow');
                         $(document).scrollTo('.alert', 2000);
                     } else {
@@ -226,7 +230,7 @@
                             errorString += '<li>' + value + '</li>';
                         });
                         errorString += '</ul></div>';
-                        $('#alert_messages').html(errorString);
+               
                         $(document).scrollTo('.alert', 2000);
                     }
                 },

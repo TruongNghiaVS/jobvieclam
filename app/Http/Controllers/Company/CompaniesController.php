@@ -91,6 +91,7 @@ class CompaniesController extends Controller
         $data['industries'] = Industry::all()->pluck('industry', 'industry_id');
         $data['cities'] = City::where('lang', \App::getLocale())->pluck('city', 'city_id');
         $data['companies'] = $query->orderBy('id', 'desc')->paginate(8);
+    
         return view(config('app.THEME_PATH').'.company.listing')->with($data);
     }
 

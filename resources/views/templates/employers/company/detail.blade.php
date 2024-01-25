@@ -154,7 +154,7 @@
                     </div>
 
                     <div class="widget-public-profile widget-job">
-                        <h4 class="title">{{__('Job Openings')}}</h4>
+                        <h4 class="title">{{__('Job Openings')}} 1</h4>
                         @if ($company->jobs->count() > 0)
                         @php( $jobShifts = App\JobShift::all()->pluck('job_shift','id') )
                         <div class="jobs">

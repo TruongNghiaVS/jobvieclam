@@ -177,15 +177,15 @@
                                 {!! $company->description !!}
                             </div>
                         </div>
-
+                        @if ($openingJob->count() > 0)
                     <div class="widget-public-profile widget-job">
-                        <h4 class="title">{{__('Job Openings')}}</h4>
-                        @if ($company->jobs->count() > 0)
+                        <h4 class="title">{{__('Job Openings')}} </h4>
+                   
                         @php( $jobShifts = App\JobShift::all()->pluck('job_shift','id') )
 
                         <div class="searchList jobs-side-list" bis_skin_checked="1">
                         
-                        @foreach ($company->jobs->sortBy('id') as $cjob)
+                        @foreach ($openingJob as $cjob)
                         
                         <div data-job-id="44" class="item-job mb-3" bis_skin_checked="1">
                                 <div class="logo-company" bis_skin_checked="1">
@@ -305,12 +305,12 @@
                         @endforeach
                         </div>
 
-                        @endif
+                     
 
 
                         
                     </div>
-                    
+                    @endif
                 </div>
         </section>
     </div>

@@ -102,6 +102,7 @@ class JobController extends Controller
     public function jobDetail(Request $request, $job_slug)
     {
         $job = Job::where('slug', 'like', $job_slug)->firstOrFail();
+      
         /*         * ************************************************** */
         $search = '';
         $job_titles = array();
@@ -126,7 +127,7 @@ class JobController extends Controller
         $order_by = 'id';
         $limit = 5;
         $jobSkills = DataArrayHelper::defaultJobSkillsArray();
-
+      
         // $relatedJobs = $this->findJobDetails($search, $job_titles, $company_ids, $industry_ids, $job_skill_ids, $functional_area_ids, $country_ids, $state_ids, $city_ids, $is_freelance, $career_level_ids, $job_type_ids, $job_shift_ids, $gender_ids, $degree_level_ids, $job_experience_ids, $salary_from, $salary_to, $salary_currency, $is_featured, $order_by, $limit);
         /*         * ***************************************** */
 
@@ -144,13 +145,14 @@ class JobController extends Controller
                             ->where('company_id',$job->company_id)
                             ->where('id', '!=', $job->id)
                             ->orderby('created_at', 'desc');
+                        
         $jobOfCompany = $jobOfCompany->with('company');
         $qujobOfCompanyery =$jobOfCompany->with('functionalArea');
         $jobOfCompany =$jobOfCompany->with('jobType');
         $jobOfCompany =$jobOfCompany->with('degreeLevel');
         $jobOfCompany= $jobOfCompany->with('city');
         $jobOfCompany=  $jobOfCompany->get();
-
+        
         $relatedJobs = Job::where('is_active', 1)
         ->where('status','1')
         ->where('expiry_date','>',Carbon::now() )
@@ -163,7 +165,7 @@ class JobController extends Controller
         $relatedJobs =$relatedJobs->with('degreeLevel');
         $relatedJobs= $relatedJobs->with('city');
         $relatedJobs = $relatedJobs->paginate(9);
-      
+       
          return view(config('app.THEME_PATH').'.job.detail')
                         ->with('job', $job)
                         ->with('jobOfCompany', $jobOfCompany)
@@ -350,6 +352,7 @@ class JobController extends Controller
         $jobtype = $request->input("job_type_id");
         $departmentType = $request->input("functional_area_id");
         $benefits = $request->input("benefits");
+        
         $order_by = $request->input("order_by");
         $city_id =  $request->input("city_id");
        
@@ -992,8 +995,10 @@ class JobController extends Controller
    
       
         $benefits = \App\Benefit::pluck('name', 'code')->toArray();
+    
+        $benefits = array_map(function($v)
+        {return __($v);}, $benefits);
 
-        $benefits = array_map(function($v){return __($v);}, $benefits);
 
         return [
         

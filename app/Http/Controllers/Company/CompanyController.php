@@ -361,12 +361,22 @@ class CompanyController extends Controller
     public function companyDetail(Request $request, $company_slug)
     {
         $company = Company::where('slug', 'like', $company_slug)->firstOrFail();
+        if(isset($company))
+        {
+            
+        }
         /*         * ************************************************** */
         $seo = $this->getCompanySEO($company);
         /*         * ************************************************** */
+        $openingJob = Job::where('company_id', '=', $company ->id)
+        ->where("status",1)
+        ->notExpire()
+        ->get();
+    
         return view(config('app.THEME_PATH').'.company.detail')
                         ->with('company', $company)
-                        ->with('seo', $seo);
+                        ->with('seo', $seo)
+                        ->with('openingJob',$openingJob);
     }
 
     public function sendContactForm(Request $request)

@@ -5,7 +5,7 @@
             <div class="card widget-dashboard mb-3 w-100 shadow-sm">
                 <div class="box-dasboard-top" bis_skin_checked="1">
                     <div class="head" bis_skin_checked="1">
-                        <h2 class="title-dashboard">Thông tin tài khoản</h2>
+                        <h2 class="title-dashboard">Thông Tin Tài Khoản</h2>
                     </div>
                     <div class="body" bis_skin_checked="1">
                         <ul class="company-account-information">
@@ -51,7 +51,7 @@
             <div class="card widget-dashboard mb-3 w-100 shadow-sm">
                 <div class="box-dasboard-top" bis_skin_checked="1">
                     <div class="head" bis_skin_checked="1">
-                        <h2 class="title-dashboard">Thông tin tài khoản</h2>
+                        <h2 class="title-dashboard">Thông Tin Tài Khoản</h2>
                     </div>
                     <div class="body" bis_skin_checked="1">
                         <ul class="company-account-information">

@@ -991,9 +991,7 @@ h4.tablinks:hover {
 }
 
 /* Partner */
-.partner {
-	padding-bottom: 70px;
-}
+
 
 .partner {
 	display: block;
@@ -1118,7 +1116,7 @@ h4.tablinks:hover {
 /* Blogs slider */
 
 .blogs-slider {
-	padding: 60px  0;
+	padding: 20px  0;
 }
 
 .blogs-slider .section-title-block {
@@ -1226,7 +1224,7 @@ section#flash-badge-banner {
 	min-height: 600px;
 	position: relative;
 	width: 100%;
-	margin-bottom: 60px;
+	
 }
 
 

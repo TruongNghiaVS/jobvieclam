@@ -65,6 +65,12 @@ $(window).resize(function () {
     // setPaddingBody();
 });
 
+$(document).ready(function(){
+    // Setting Pagination Bulma Class
+    $('.pagination').addClass("flex-wrap ml-3");
+
+});
+
 function jobExperienceChange() {
     $('body').on('change', '#job_experience_id', function () {
         $('.numberExperience').html(this.value);

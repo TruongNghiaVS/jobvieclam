@@ -1,6 +1,6 @@
 <section class="advertising-banner cb-section cb-section-border-bottom">
     <div class="container">
-        <div class="row p-4" id="listbannerSide">
+        <div class="row px-4" id="listbannerSide">
             
         </div>
     </div>

@@ -20,7 +20,7 @@
                         </div>
                         <div class="form-group form-select-chosen" id="city_dd2">
                             <select class="form-control form-select" name="city_id" id="city">
-                                <option value="">Chọn địa điểm</option>
+                                <option value="">Chọn Địa Điểm</option>
                                 <option value="3">HCM</option>
                                 <option value="5">Hà Nội</option>
                                 <option value="5">Đà Nẵng</option>
@@ -224,7 +224,7 @@
                     <div class="col-sm-6 col-lg-2">
                         <div class="form-group form-select-chosen" id="functional_area_dd">
                             <select class="form-control form-select" name="functional_area_id" id="functional_area">
-                                <option value="">Chọn phòng ban</option>
+                                <option value="">Chọn Phòng Ban</option>
                                 <option value="Nhân sự">Nhân sự</option>
                                 <option value="Hành chính">Hành chính</option>
                                 <option value="Kế toán">Kế toán</option>
@@ -234,7 +234,7 @@
                     <div class="col-sm-6 col-lg-2">
                         <div class="form-group form-select-chosen" id="city_dd2">
                             <select class="form-control form-select" name="city_id" id="city">
-                                <option value="">Chọn địa điểm</option>
+                                <option value="">Chọn Địa Điểm</option>
                                 <option value="3">HCM</option>
                                 <option value="5">Hà Nội</option>
                                 <option value="5">Đà Nẵng</option>

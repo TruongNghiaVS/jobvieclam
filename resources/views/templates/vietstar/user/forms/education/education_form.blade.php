@@ -45,7 +45,7 @@
         <div class="formrow" id="div_city_id">
             <span id="default_city_education_dd">
                 <select class="form-select" id="city_id" name="city_id">
-                <option value="" selected="selected">Chọn địa điểm</option>
+                <option value="" selected="selected">Chọn Địa Điểm</option>
             
             
                 @foreach($cities as $itemcity)

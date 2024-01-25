@@ -157,7 +157,7 @@
                                 </div>
                                 <div class="caption">
                                     <h3 class="title"><a
-                                            href="#">Giới thiệu ứng viên</a></h3>
+                                            href="#">Giới Thiệu Ứng Viên</a></h3>
                                     <div class="content">
                                         <p><strong>Mở rộng nguồn - đa dạng ứng viên</strong></p>
 

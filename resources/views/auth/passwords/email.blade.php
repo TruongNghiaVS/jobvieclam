@@ -2,6 +2,8 @@
 @section('content')
 <!-- Header start -->
 @include('templates.vietstar.includes.header')
+@include('templates.vietstar.includes.mobile_dashboard_menu')
+
 <!-- Header end -->
 
 <div class="reset-password-section cb-section">

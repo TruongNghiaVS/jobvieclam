@@ -2,6 +2,8 @@
 @section('content')
 <!-- Header start -->
 @include('templates.vietstar.includes.header')
+@include('templates.vietstar.includes.mobile_dashboard_menu')
+
 <!-- Header end -->
 <!-- Inner Page Title start -->
 <section class="hero-banner-company-profile" style="background-image: url(/vietstar/imgs/company-cover.jpg);"></section>

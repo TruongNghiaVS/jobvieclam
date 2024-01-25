@@ -335,11 +335,15 @@ dd($salaryFroms)
 
 
                     <div class="col-sm-6 col-lg-2">
+                        <label>{{__('Select functional area')}}</label>
+
                         <div class="form-group form-select-chosen" id="functional_area_dd">
                         {!! Form::select('functional_area_id', ['' => __('Select functional area')]+$funclAreas, Request::get('functional_area_id', null), array('class'=>'form-control form-select shadow-sm','name' =>"departmentType", 'id'=>'functional_area_id')) !!}
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-2">
+                    <label>{{__('Select City')}}</label>
+
                         <div class="form-group form-select-chosen" id="city_dd2">
                         {!! Form::select('city_id', ['' => __('Select City')]+$cities, Request::get('city_id', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'city_id')) !!}
                         </div>
@@ -405,7 +409,7 @@ dd($salaryFroms)
 
                     <div class="col-sm-6 col-lg-3">
                         <div class="form-group" id="job_type_dd">
-                            <label>Hình thức làm việc</label>
+                            <label>Hình Thức Làm Việc</label>
                             {!! Form::select('job_type_id', ['' => __('Select Job Type')] + $jobTypes, Request::get('job_type_id', null), array('class'=>'form-control form-select shadow-sm', 'name'=>'jobType', 'id'=>'job_type_id')) !!}
 
                         </div>

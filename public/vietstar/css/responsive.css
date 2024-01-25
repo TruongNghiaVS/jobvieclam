@@ -6,7 +6,9 @@
   }
   
 
-
+  .filters-wrapper .form-group {
+    margin-bottom: 10px;
+  }
 
     li.page-item {
         display: none;

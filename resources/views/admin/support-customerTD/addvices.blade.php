@@ -131,7 +131,7 @@
                 {data: 'citys', name: 'citys' , 
                     render: function (data) {
                         const tmp= [
-                                {"city_id": "", "city_name": "Chọn địa điểm"},
+                                {"city_id": "", "city_name": "Chọn Địa Điểm"},
                                 {"city_id": "3", "city_name": "Port Blair"},
                                 {"city_id": "48666", "city_name": "Lào Cai"},
                                 {"city_id": "48667", "city_name": "Yên Bái"},

@@ -168,6 +168,7 @@
     #mobile-sidebar ul li a i {
         font-size: 20px;
         color: var(--text-main);
+        width: 24px;
     }
 
 
@@ -577,7 +578,7 @@
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <div class="d-flex w-100">
                         <i class="fa-regular fa-bookmark fs-24px me-2"></i>
-                            <span class="side-bar-content"> Việc làm của tôi</span>
+                            <span class="side-bar-content">  Việc Làm Của Tôi</span>
                         </div>
                     </a>
                     <ul class="collapse list-unstyled sub_list" id="pageSubmenu">
@@ -648,7 +649,7 @@
             @if(Auth::user())
             <li class="openmyacount">
                 <div class="d-flex w-100">
-                    <span class="side-bar-content">Thông tin tài khoản</span>
+                    <span class="side-bar-content">Thông Tin Tài Khoản</span>
                 </div>
 
             </li>
@@ -657,8 +658,8 @@
                 <div class="d-flex gap-10 my-2 group-button">
                    
                   
-                    <!-- <a href="{{url('/employers')}}" class="btn btn-primary">Dành cho Nhà tuyển dụng</a> -->
-                    <a href="http://tuyendung.jobvieclam.com:9999" class="btn btn-primary">Dành cho Nhà tuyển dụng</a>
+                    <!-- <a href="{{url('/employers')}}" class="btn btn-primary">Dành Cho Nhà Tuyển Dụng</a> -->
+                    <a href="http://tuyendung.jobvieclam.com:9999" class="btn btn-primary">Dành Cho Nhà Tuyển Dụng</a>
 
                  
                 </div>
@@ -667,7 +668,7 @@
             @elseif(!Auth::user())
             <li class="openmyacount">
                 <div class="d-flex w-100">
-                    <span class="side-bar-content">Thông tin tài khoản</span>
+                    <span class="side-bar-content">Thông Tin Tài Khoản</span>
                 </div>
 
             </li>
@@ -676,8 +677,8 @@
                 <div class="d-flex gap-10 my-2 group-button">
                     <a class="nav-link login_link btn btn-primary login-btn" data-toggle="modal" data-target="#user_login_Modal" >{{__('Log in')}} / {{__('Đăng ký')}} </a>
                   
-                    <!-- <a href="{{url('/employers')}}" class="btn btn-primary">Dành cho Nhà tuyển dụng</a> -->
-                    <a href="http://tuyendung.jobvieclam.com:9999" class="btn btn-primary">Dành cho Nhà tuyển dụng</a>
+                    <!-- <a href="{{url('/employers')}}" class="btn btn-primary">Dành Cho Nhà Tuyển Dụng</a> -->
+                    <a href="http://tuyendung.jobvieclam.com:9999" class="btn btn-primary">Dành Cho Nhà Tuyển Dụng</a>
 
                     {{--<a class="btn btn-primary my-2" href="{{route('register')}}" class="nav-link
                     register">{{__('Đăng ký')}}</a> --}}

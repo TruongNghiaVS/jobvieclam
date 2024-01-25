@@ -440,8 +440,14 @@ a {
 	margin-bottom: 16px;
 	font-size: 22px;
 	width: 95%;
+	-webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
 	
 }
+
+
 
 .job-detail-banner .job-detail-banner__detail .banner__company {
 	font-size: 18px;

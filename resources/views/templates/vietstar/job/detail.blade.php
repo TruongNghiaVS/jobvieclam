@@ -99,8 +99,7 @@ $company = $job->getCompany();
                                 
                         @else 
                         <div class="p-1 action-detail__love">
-                            <a href="{{route('add.to.favourite', $job->slug)}}" class="btn btn-outline"><i
-                                class="fas fa-heart iconoutline"></i></a>
+                            <a href="{{route('add.to.favourite', $job->slug)}}" class="btn btn-outline"><i class="far fa-heart fs-24px"></i></a>
                                 
                         </div>
                         
@@ -323,7 +322,7 @@ $company = $job->getCompany();
                                         <div class="col-xl-7 col-lg-12">
                                             <h3 class="banner__title mb-1">{{ $company->name }}</h3>
                                             <div class="banner__company">
-                                                {{ !empty($company->industry)?$company->industry->industry : 'NA' }}
+                                                {{ !empty($company->industry)?$company->industry->industry : 'Chưa cập nhật' }}
                                             </div>
                                             <div class="banner__due-day mb-3">
                                                 <i class="fa-regular fa-calendar"></i> {{ $company->established_in }}
@@ -340,7 +339,9 @@ $company = $job->getCompany();
                                             @endif
                                             @if($company->email)
                                             <div class="banner__due-day mb-3">
-                                                <i class="fa-regular fa-envelope"></i> {{ $company->email }}
+                                                <i class="fa-regular fa-envelope"></i> 
+                                                <a href="mailto:{{$company->email}}"> {{ $company->email }}</a>
+                                               
                                             </div>
                                             @endif
                                             

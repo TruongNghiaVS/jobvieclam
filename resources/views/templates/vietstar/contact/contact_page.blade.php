@@ -2,9 +2,10 @@
 @section('content')
 <!-- Header start -->
 @include('templates.vietstar.includes.header')
-@include('templates.vietstar.user.templates.modal_user_info')
+
 <!-- Header end -->
 <!-- Inner Page Title start -->
+@include('templates.vietstar.includes.mobile_dashboard_menu')
 
 <!-- Inner Page Title end -->
 <div class="inner-page">

@@ -39,7 +39,7 @@
                                             <a href="#">{{__('Introduce candidate')}}</a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('blogs') }}">{{__('Recruitment News')}}</a>
+                                            <a href="#">{{__('Recruitment News')}}</a>
                                         </li>
 
                                     </ul>

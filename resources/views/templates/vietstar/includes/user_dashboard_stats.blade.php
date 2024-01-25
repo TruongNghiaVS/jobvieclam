@@ -28,7 +28,7 @@
             <span class="icon-user-1-icon fs-18px me-2"></span>
             <strong>{{__('My CV List')}}</strong>
             </p>
-            <a href="{{url('my-profile#cvs')}}"><h5 class="card-title text-blue-color text-center fs-36px mt-3">{{Auth::user()->countProfileCvs()}}</h5></a>
+            <a href="#"><h5 class="card-title text-blue-color text-center fs-36px mt-3">{{Auth::user()->countProfileCvs()}}</h5></a>
         </div>
         </div>
     </div>

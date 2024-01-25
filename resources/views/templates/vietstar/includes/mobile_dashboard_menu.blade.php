@@ -493,36 +493,6 @@
                         </div>
                     </a>
 
-                    <!-- <ul class="collapse list-unstyled sub_list" data-ref="findJob1" data-target="false" id="company_sub_list">
-                        <li>
-                            <a class="sub-item" href="{{route('about_us')}}">
-                                <div class="d-flex w-100">
-
-                                    <span class="side-bar-content"> {{__('About us')}}
-                                    </span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sub-item" href="{{route('top-companies')}}">
-                                <div class="d-flex w-100">
-
-                                    <span class="side-bar-content"> {{__('Top companies')}}
-                                    </span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sub-item" href="{{route('company.listing')}}">
-                                <div class="d-flex w-100">
-
-                                    <span class="side-bar-content"> {{__('Companies')}}
-                                    </span>
-                                </div>
-                            </a>
-                        </li>
-
-                    </ul> -->
                 </li>
 
 
@@ -548,6 +518,15 @@
                         </li>
                         @endforeach
                     </ul>
+                </li>
+
+                <li class="sidebar-item {{ Request::url() == route('contact.us') ? 'active' : '' }}">
+                    <a href="{{ route('contact.us') }} " class="list-group-item list-group-item-action {{ Request::url() == route('contact.us') ? 'active' : '' }}">
+                        <div class="d-flex w-100">
+                            <i class="fas fa-phone-alt fs-24px me-2"></i>
+                            <span class="side-bar-content"> {{__('Contact')}}</span>
+                        </div>
+                    </a>
                 </li>
 
 

@@ -322,7 +322,7 @@ $company = $job->getCompany();
                                         <div class="col-xl-7 col-lg-12">
                                             <h3 class="banner__title mb-1">{{ $company->name }}</h3>
                                             <div class="banner__company">
-                                                {{ !empty($company->industry)?$company->industry->industry : 'NA' }}
+                                                {{ !empty($company->industry)?$company->industry->industry : 'Chưa cập nhật' }}
                                             </div>
                                             <div class="banner__due-day mb-3">
                                                 <i class="fa-regular fa-calendar"></i> {{ $company->established_in }}
@@ -339,7 +339,9 @@ $company = $job->getCompany();
                                             @endif
                                             @if($company->email)
                                             <div class="banner__due-day mb-3">
-                                                <i class="fa-regular fa-envelope"></i> {{ $company->email }}
+                                                <i class="fa-regular fa-envelope"></i> 
+                                                <a href="mailto:{{$company->email}}"> {{ $company->email }}</a>
+                                               
                                             </div>
                                             @endif
                                             

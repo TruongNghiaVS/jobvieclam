@@ -58,7 +58,7 @@
 
                             <div class="form-group">
                                 <label for="inputFullName">{{__("Full Name")}}</label>
-                                <input type="text" class="form-control" id="inputFullName" readonly value="{{auth()->user()->last_name . auth()->user()->middle_name . auth()->user()->first_name}}">
+                                <input type="text" class="form-control" id="inputFullName" readonly value="{{auth()->user()->last_name  . ' ' . auth()->user()->middle_name . ' ' . auth()->user()->first_name}}">
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail">Email</label>

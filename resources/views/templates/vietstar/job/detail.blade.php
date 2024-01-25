@@ -99,8 +99,7 @@ $company = $job->getCompany();
                                 
                         @else 
                         <div class="p-1 action-detail__love">
-                            <a href="{{route('add.to.favourite', $job->slug)}}" class="btn btn-outline"><i
-                                class="fas fa-heart iconoutline"></i></a>
+                            <a href="{{route('add.to.favourite', $job->slug)}}" class="btn btn-outline"><i class="far fa-heart fs-24px"></i></a>
                                 
                         </div>
                         

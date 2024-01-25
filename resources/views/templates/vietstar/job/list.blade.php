@@ -211,9 +211,9 @@
                            
                             @isset($jobitem->industry)
                             <div class="box-meta">
-                            <span>
-                                     {{$jobitem->industry->industry}}
-                            </span>
+                                <span>
+                                        {{$jobitem->industry->industry}}
+                                </span>
                             </div>
                             @endisset
                            

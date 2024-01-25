@@ -4,9 +4,7 @@
   .container {
     max-width: 100%;
   }
-  .cb-section {
-    padding: 20px 0 ;
-  }
+  
 
 
 
@@ -643,9 +641,7 @@
   .banner .item a {
     height: auto;
   }
-  .recruitment-news {
-    padding-bottom: 20px;
-  }
+
 
  #bannerSide #linkDesktop{
   display: none;

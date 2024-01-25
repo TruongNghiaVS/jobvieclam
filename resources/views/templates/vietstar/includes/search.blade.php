@@ -32,7 +32,7 @@
 
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <h3 class="header-bar__title mb-3" style="max-width: 100%; width: 100%">Tìm kiếm cơ hội việc làm
+                                    <h3 class="header-bar__title mb-3" style="max-width: 100%; width: 100%">Tìm Kiếm Cơ Hội Việc Làm
                                     </h3>
                                 </div>
                             </div>
@@ -105,11 +105,11 @@
             <div class="" id="collapseAdvanceSearch">
 
                 <div class="row">
-                    <div class="col-lg-5  shadow p-4 search-form-box">
+                    <div class="col-lg-5  shadow p-4 search-form-box pb-1">
 
                         <div class="row">
                             <div class="col-lg-12">
-                                <h3 class="header-bar__title mb-3" style="max-width: 100%; width: 100%">Tìm kiếm cơ hội việc làm
+                                <h3 class="header-bar__title mb-3" style="max-width: 100%; width: 100%">Tìm Kiếm Cơ Hội Việc Làm
                                 </h3>
                             </div>
                         </div>

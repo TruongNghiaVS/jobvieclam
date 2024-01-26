@@ -63,26 +63,12 @@
                                 <div class="footer-widget">
                                     <h4 class="widget-title">{{__('Help')}}</h4>
                                     <ul class="list-unstyled footer-links">
-                                        <li><a href="/dieu-khoan-su-dung-dich-vu-voi-nha-tuyen-dung">{{__('Job search policy')}}</a></li>
-                                        <li><a href="/quy-dinh-bao-mat">{{__('Privacy Policy')}}</a></li>
-                                        <li><a href="/dieu-khoan-su-dung">{{__('Agreement of use')}}</a></li>
-                                        
-
+                                        <li><a href="/dieu-khoan-su-dung-dich-vu-voi-nguoi-tim-viec">{{__('Terms Of Use')}}</a></li>
+                                        <li><a href="/chinh-sach-bao-mat-thong-tin">{{__('Privacy Policy')}}</a></li>
                                     </ul>
                                 </div>
                             </div>
-                            {{-- <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-widget">
-                            <h4 class="widget-title">{{__('Partners')}}</h4>
-                            <ul class="list-unstyled footer-links">
-                                <li><a href="https://www.concentrix.com/" target="_blank">Concentrix</a></li>
-                                <li><a href="https://www.trans-cosmos.com.vn/?locale=en" target="_blank">Transcosmos</a></li>
-                                <li><a href="https://apollo.edu.vn/" target="_blank">Apollo</a></li>
-                                <li><a href="https://bellhoasao.com/" target="_blank">Hoa Sao</a></li>
-
-                            </ul>
-                        </div>
-                    </div> --}}
+                           
 
                     <div class="col-md-6 col-lg-6 col-xl-4">
                         <div class="footer-widget">
@@ -152,8 +138,8 @@
             <p class="copyright">Copyright © 2022</p>
             <div class="term-link">
                 <span class="fs-16px pe-2">All Rights Reserved</span>
-                <div class="d-inline-block border-start"><a class="fs-16px px-2" href="#">{{__('Terms Of Use')}}</a></div>
-                <div class="d-inline-block border-start"><a class="fs-16px ps-2" href="#">{{__('Policies')}}</a></div>
+                <div class="d-inline-block border-start"><a class="fs-16px px-2" href="/dieu-khoan-su-dung-dich-vu-voi-nguoi-tim-viec">{{__('Terms Of Use')}}</a></div>
+                <div class="d-inline-block border-start"><a class="fs-16px ps-2" href="/chinh-sach-bao-mat-thong-tin">{{__('Policies')}}</a></div>
             </div>
         </div>
     </div>

@@ -1,6 +1,6 @@
 <section class="banner cb-section cb-section-border-bottom">
     <div class="container">
-        <div class="row">
+        <div class="row g-0">
             <div class="col">
                 <div class="item">
                     <a href="/" id="bannerSide">

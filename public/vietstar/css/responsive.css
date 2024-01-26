@@ -6,6 +6,8 @@
   }
   
 
+
+
   .filters-wrapper .form-group {
     margin-bottom: 10px;
   }
@@ -33,7 +35,9 @@
     width: 100%;
   }
   
-
+  .sidebar {
+    margin-left: 0 !important;
+  }
 
   /* Header Nav */
   .navbar>.container {
@@ -91,6 +95,9 @@
 
   }
 
+  .related-jobs {
+    margin-left: 0;
+  }
   .header-bar .search-form {
     padding-bottom: 0 !important;
   }
@@ -188,8 +195,21 @@
     padding: 10px;
   }
 
+
+  .jobs-side-list .item-job .jobinfo .info .companyName {
+    font-size: 14px;
+    line-height: 19px;
+    margin-bottom: 4px;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start; 
+    
+}
+
   .jobs-side-list .item-job .jobinfo .info .companyName a {
     font-size: 14px;
+    width: 100%;
+    margin-bottom: 3px;
   }
 
   .jobs-side-list .item-job .jobinfo .info .box-meta .rank-salary span {
@@ -204,9 +224,14 @@
   .jobs-side-list .item-job .jobinfo .caption {
     display: block;
   }
+  .jobs-side-list .item-job .jobinfo .caption .welfare {
+    max-width: calc(100% - 122px);
+    text-align: center;
+  }
 
   .jobs-side-list .item-job .jobinfo .caption .welfare span {
     padding: 5px;
+
   }
 
   .jobs-side-list .item-job .jobinfo .caption .box-meta {
@@ -573,6 +598,7 @@
 }
 .job-detail-banner__group {
   flex-direction: column;
+  width: 100%;
 }
 .job-detail-banner .job-detail-banner__detail {
   width: 100%;
@@ -748,7 +774,9 @@
 .header-bar.header-bar-mb {
   height: unset;
 }
-
+.sidebar {
+  margin-left: 0 !important;
+}
   .header-bar .search-form {
     padding: 0;
   }
@@ -807,6 +835,9 @@
            ==Job page==
 
 *************************************************/
+.related-jobs {
+  margin-left: 0 !important;
+}
   .filters-job-wrapper {
     padding: 20px 27px;
   }

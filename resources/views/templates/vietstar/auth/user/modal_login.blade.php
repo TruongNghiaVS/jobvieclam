@@ -7,7 +7,7 @@
                 </button>
             <div class="modal-body">
                 <div id="candidate" class="formpanel tab-pane ">
-                    <h3>Đăng nhập</h3>
+                    <h3>Đăng Nhập</h3>
                     <form id ="formLogin" class="form-horizontal needs-validation" novalidate >
                         {{ csrf_field() }}
                         <input type="hidden" name="candidate_or_employer" value="candidate" />

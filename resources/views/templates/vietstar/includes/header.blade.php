@@ -82,7 +82,7 @@
                         <ul class="sub-menu" data-ref="findJob_blog" data-target="false">
                             @foreach($categories as $category)
                             <li>
-                                <a class="sub-item" href="tin-tuc/{{$category->slug}}"><span class="iconmoon icon-recruiter-portfolio"></span>
+                                <a class="sub-item" href="/tin-tuc/{{$category->slug}}"><span class="iconmoon icon-recruiter-portfolio"></span>
                                     <h1 class="m-0">
                                         {{$category->heading}}
                                     </h1> 

@@ -14,6 +14,8 @@ class ArticleController extends Controller
 
     public function createOrUpdate(Request $request)
     {
+
+            dd(121);
             $title = $request->input("title");
             $description = $request->input("description");
             $imageShare = $request->input("imageShare");

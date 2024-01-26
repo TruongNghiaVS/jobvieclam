@@ -694,12 +694,14 @@ article.article {
     padding: 15px 0 20px;
 
 }
-.article-content ul li {
+.article-content ul li,.article-content ol li {
     margin-bottom: 10px;
     font-size: 17px;
     font-weight: 500;
     line-height: 1.5rem;
 }
+
+
 .article-content  div{
     margin-bottom: 10px;
     font-size: 18px;

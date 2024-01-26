@@ -28,7 +28,7 @@ $company = $job->getCompany();
                         <h3 class="banner__title">{{$job->title}}</h3>
                         <div class="banner__company">{{$company->name}}</div>
                         <div class="banner__due-day mb-3">
-                            Địa điểm: {{ !empty($job->location) ? $job->location :  $job->getCity('city')}}
+                            Địa Điểm: {{ !empty($job->location) ? $job->location :  $job->getCity('city')}}
                         </div>
                         <div class="banner__due-day mb-3">
                             $

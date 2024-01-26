@@ -209,7 +209,7 @@
                                         </div>
                                         <ul class="info-list">
                                             <li>
-                                                <p> <strong>Ứng viên:</strong></p>
+                                                <p> <strong>Ứng Viên:</strong></p>
                                                 <p class="name"> <strong>{{ $data->name }}</strong></p>
                                             </li>
                                             <li>
@@ -217,12 +217,12 @@
                                                 <p>{{$data->getAge()}} </p>
                                             </li>
                                             <li>
-                                                <p><strong>Quốc tịch:</strong></p>
+                                                <p><strong>Quốc Tịch:</strong></p>
 
                                                 <p>Viet Nam</p>
                                             </li>
                                             <li>
-                                                <p><strong>Giới tính:</strong></p>
+                                                <p><strong>Giới Tính:</strong></p>
                                                 <p>{{$data->getGender('gender')}} -
 
                                                     Đã kết hôn
@@ -254,27 +254,27 @@
                             <div class="job-information" bis_skin_checked="1">
                                 <ul class="information-list">
                                     <li>
-                                        <p> <strong>Năm kinh nghiệm:</strong></p>
+                                        <p> <strong>Năm Kinh Nghiệm:</strong></p>
                                         <p>{{$data->getJobExperience('job_experience')}}</p>
                                     </li>
                                     <li>
-                                        <p> <strong>Bằng cấp cao nhất:</strong></p>
+                                        <p> <strong>Bằng Cấp Cao Nhất:</strong></p>
                                         <p> Thạc sĩ </p>
                                     </li>
                                     <li>
-                                        <p> <strong>Lương hiện tại</strong></p>
+                                        <p> <strong>Lương Hiện Tại:</strong></p>
                                         <p>{{ number_format($data->current_salary)}}</p>
                                     </li>
                                     <li>
-                                        <p> <strong>Mức lương mong muốn:</strong></p>
+                                        <p> <strong>Mức Lương Mong Muốn:</strong></p>
                                         <p>{{number_format($data->expected_salary)}} </p>
                                     </li>
                                     <li>
-                                        <p> <strong>Ngành nghề:</strong></p>
+                                        <p> <strong>Ngành Nghề:</strong></p>
                                         <p>{{$data->getIndustry('industry')}}</p>
                                     </li>
                                     <li>
-                                        <p> <strong>Địa điểm:</strong></p>
+                                        <p> <strong>Địa Điểm:</strong></p>
                                         <p>HCM</p>
                                     </li>
                                     <li>
@@ -283,16 +283,16 @@
                                     </li>
 
                                     <li>
-                                        <p> <strong>Bộ phận</strong></p>
+                                        <p> <strong>Bộ Phận:</strong></p>
                                         <p>Hành Chính</p>
                                     </li>
 
                                     <li>
-                                        <p> <strong>Ngày tạo:</strong></p>
+                                        <p> <strong>Ngày Tạo:</strong></p>
                                         <p>{{ date('d-m-Y', strtotime($data->created_at)) }}</p>
                                     </li>
                                     <li>
-                                        <p> <strong>Cập nhật:</strong></p>
+                                        <p> <strong>Cập Nhật:</strong></p>
                                         <p>{{ date('d-m-Y', strtotime($data->updated_at)) }}</p>
                                     </li>
 

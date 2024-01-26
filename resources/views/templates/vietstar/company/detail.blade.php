@@ -281,7 +281,7 @@
                                         <!--Rank-salary and place End-->
                                         <!--Day update and place Start-->
                                         <div class="info-item day-update" bis_skin_checked="1">
-                                            Cập nhật: {{$datetimeText}}
+                                            Cập Nhật: {{$datetimeText}}
                                         </div>
                                         <!--Day update and place End-->
                                     </div>

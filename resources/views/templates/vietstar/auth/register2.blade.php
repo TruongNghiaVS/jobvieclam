@@ -352,10 +352,7 @@ $(document).ready(function() {
                         
                     
                         $("#employer_logup_Modal").modal("hide")
-                        $('#logup_em_success').click(function () {
-                            // Redirect to the dashboard page
-                            window.location.href = '/company-home';  // Replace with the actual URL
-                        });
+                        window.location.href = '/company-home';  // Replace with the actual URL
                     }
                    
                                 

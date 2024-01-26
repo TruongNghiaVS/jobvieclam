@@ -121,7 +121,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                                 <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc làm IT</a></div>
                                 <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc làm Marketing</a></div>
-                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc làm Chăm Sóc Khác Hàng</a></div>
+                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc làm Chăm Sóc Khách Hàng</a></div>
                 
                 </div>
 

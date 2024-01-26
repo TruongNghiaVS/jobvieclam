@@ -23,13 +23,23 @@
             <!-- BEGIN PAGE BAR -->
             <div class="page-bar">
                 <ul class="page-breadcrumb">
-                    <li><a>Thêm Blog</a> <i class="fa fa-circle"></i></li>
-                    <li><span>Blogs</span></li>
+                    @if($item->id <0 )
+                    <li><a> Chính sách</a> <i class="fa fa-circle"></i></li>
+                    <li><span>Thêm mới</span></li>
+                    @else 
+                    <li><a>Sửa chính sách</a> <i class="fa fa-circle"></i></li>
+                    <li><span>{{$item->title}}</span></li>
+                    @endif
                 </ul>
             </div>
             <!-- END PAGE BAR -->
             <!-- BEGIN PAGE TITLE-->
+          
+            @if($item->id <0 )
             <h3 class="page-title">Thêm Bài viết mới </h3>
+                    @else 
+                    <h3 class="page-title">Sửa chính sách </h3>
+                    @endif
             <!-- END PAGE TITLE-->
             <!-- END PAGE HEADER-->
             <div class="row">
@@ -56,6 +66,8 @@
                                                           action="{{ route('admin.article.create')}}"
                                                           enctype="multipart/form-data">
                                                         {{csrf_field()}}
+
+                                                        <input type ="hidden" value ="{{$item->id}}" name ="id">
                                                         <div class="row">
                                                             <div class="col-lg-9">
                                                                
@@ -65,7 +77,7 @@
                                                                         đề</label>
                                                                     <input type="text" class="form-control" name="title"
                                                                            id="title" autofocus
-                                                                           value="{{ old('title') }}">
+                                                                           value="{{$item->title}}">
                                                                     <span
                                                                             class="text-danger">{{ $errors->first('title') }}</span>
                                                                 </div>
@@ -74,7 +86,7 @@
                                                                     <label class="control-label" for="Slug">Slug</label>
                                                                     <input type="text" class="form-control" name="slug"
                                                                            id="slug" autofocus
-                                                                           value="{{ old('slug') }}">
+                                                                           value="{{$item->slug}}">
                                                                     <span
                                                                             class="text-danger">{{ $errors->first('slug') }}</span>
                                                                 </div>
@@ -85,7 +97,7 @@
                                                                            for="content">Mô tả </label>
                                                                     <textarea class="form-control" name="description"
                                                                               id="" cols="40" rows="5"
-                                                                              autofocus>{{ old('content') }}</textarea>
+                                                                              autofocus>{{$item->description}}</textarea>
                                                                     <span
                                                                             class="text-danger">{{ $errors->first('content') }}</span>
                                                                 </div>
@@ -97,7 +109,7 @@
                                                                            for="content">Nội dung</label>
                                                                     <textarea class="form-control" name="content"
                                                                               id="description" cols="40" rows="5"
-                                                                              autofocus>{{ old('content') }}</textarea>
+                                                                              autofocus>{{$item->content}}</textarea>
                                                                     <span
                                                                             class="text-danger">{{ $errors->first('content') }}</span>
                                                                 </div>
@@ -114,7 +126,7 @@
                                                                                    name="meta_keywords"
                                                                                    id="meta_keywords"
                                                                                    autofocus
-                                                                                   value="{{ old('meta_keywords') }}">
+                                                                                   value="{{$item->meta_keywords}}">
                                                                         </div>
                                                                         <div class="form-group">
                                                                             <label class="control-label" for="title">Mô
@@ -123,20 +135,24 @@
                                                                                       name="meta_descriptions"
                                                                                       id="meta_descriptions" cols="40"
                                                                                       rows="5"
-                                                                                      autofocus>{{ old('meta_description') }}</textarea>
+                                                                                      autofocus>{{$item->meta_descriptions}}</textarea>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-3">
                                                                 <div class="blogboxint">
-                                                                    <input type="submit" value="Đăng bài"
+                                                                    @if($item< 1)
+                                                                    <input type="submit" value="Thêm mới"
                                                                            class="btn btn-primary">
-                                                                    <!--<input type="submit" value="Close" class="btn btn-warning"
-                                                                        data-dismiss="modal">-->
+                                                                    @else 
+                                                                    <input type="submit" value="Cập nhật"
+                                                                           class="btn btn-primary">
+                                                                    @endif
+                                                                
                                                                 </div>
 
-                                                                <div class="blogboxint">
+                                                                <!-- <div class="blogboxint">
                                                                     <div class="form-group">
                                                                         <label class="control-label"
                                                                                for="Upload Image">Ảnh đại diện</label>
@@ -144,7 +160,7 @@
                                                                                name="imageShare"
                                                                                id="image" autofocus>
                                                                     </div>
-                                                                </div>
+                                                                </div> -->
                                                                
                                                             </div>
                                                         </div>

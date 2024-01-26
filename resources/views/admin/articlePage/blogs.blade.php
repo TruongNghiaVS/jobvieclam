@@ -32,7 +32,7 @@
                 <div class="col-lg-12">
                     <section class="content-header">
                         <div class="panel-heading">
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col-md-9">
 
                                     <h1>
@@ -40,14 +40,13 @@
 
                                     </h1>
                                 </div>
-                            </div>
+                            </div> -->
 
 
                             <ul class="breadcrumb">
-                                <li class="active"><a href="{{ URL::asset('/admin/blog')}}"><i
-                                            class="fa fa-dashboard"></i> Quản lý chính sách </a></li>
-                                <li><a href="{{ URL::asset('/admin/blog_category')}}"><i class="fa fa-file-text-o"></i>
-                                        Quản lý Danh mục</a></li>
+                                <li class="active"><a href="{{ URL::asset('/admin/article-page')}}"><i
+                                            class="fa fa-dashboard"></i> Bài Viết Chính Sách </a></li>
+                               
 
                             </ul>
 
@@ -58,7 +57,7 @@
                    
                     <div class="d-flex justify-content-end">
                         <button class="btn btn-primary"><a class="text-white" href="{{ route('add-new-article-page') }}">
-                            Thêm bài viết
+                            Thêm mới
                         </a>
                     </button>
                     </div>
@@ -71,10 +70,9 @@
                                     <tr>
 
                                         <th>Tiêu đề</th>
-                                        <th>Nội dung</th>
+                                      
                                         <th>Mô tả</th>
-                                        <th>Meta keyword</th>
-                                        <th>Meta descriptions</th>
+                                   
 
  
                                         <th>Ngày tạo</th>
@@ -91,25 +89,14 @@
                                     <tr class="item{{$blog->id}}">
 
                                         <td>{{$blog->title}}</td>
-                                        <td>
-                                            {!!
-                                            \Illuminate\Support\Str::words($blog->content, 5,'..') !!}
-                                        </td>
+                                   
 
                                         <td>
                                             {!!
                                             \Illuminate\Support\Str::words($blog->description, 5,'..') !!}
                                         </td>
 
-                                         <td>
-                                            {!!
-                                            \Illuminate\Support\Str::words($blog->meta_keywords, 5,'..') !!}
-                                        </td>
-
-                                        <td>
-                                            {!!
-                                            \Illuminate\Support\Str::words($blog->meta_descriptions, 5,'..') !!}
-                                        </td>
+                                       
 
 
                                         <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $blog->created_at)->diffForHumans() }}
@@ -118,7 +105,8 @@
                                         <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $blog->updated_at)->diffForHumans() }}
                                         </td>
                                         <td>
-                                           
+                                                <a id="editArticle" class="edit-modal btn btn-success" href="/admin/article-page/edit/{{$blog->id}}"><span class="fa fa-pencil"></span>
+                                                Sửa</a>
                                             <button id="popup" class="delete-modal btn btn-danger"
                                                 onClick="delete_blog_article({{$blog->id}});"><span class="fa fa-trash"></span>
                                                 Xóa</button>

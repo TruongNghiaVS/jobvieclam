@@ -146,6 +146,7 @@ Route::post('contact/addEmailNotification', 'Contact\ContactController@Noficatio
 Route::get('/member/login', 'Auth\ComonController@loginPage')->name('memberlogin');
 Route::get('/member/register', 'Auth\ComonController@resisterPage')->name('memberRegister');
 Route::get('blog', 'BlogController@index')->name('blogs');
+
 Route::get('blog/search', 'BlogController@search')->name('blog-search');
 Route::get('blog/get-allcareer', 'BlogController@getAllCarrier')->name('blog-getAllCarrier');
 Route::get('blog/{slug}', 'BlogController@details')->name('blog-detail');
@@ -216,9 +217,9 @@ Route::post('/AdvertisementBanner/delete', 'AdvertisementBannerController@delete
 Route::post('/AdvertisementBannerJob/createOrUpdate', 'AdvertisementBannerJobController@create')->name('admin.advertisementBannerJob.create');
 Route::get('/AdvertisementBannerJob/getAll', 'AdvertisementBannerJobController@getAll')->name('admin.advertisementBannerJob.getAll');
 Route::post('/AdvertisementBannerJob/delete', 'AdvertisementBannerJobController@delete')->name('admin.advertisementBannerJob.delete');
-Route::post('/article/createOrUpdate', 'ArticleController@create')->name('admin.article.create');
+
 Route::get('/article/getBYid', 'ArticleController@getBYid')->name('admin.article.getBYid');
-Route::post('/article/createOrUpdate', 'ArticleController@createOrUpdate')->name('admin.article.create');
+
 Route::get('/article/getAll', 'ArticleController@getAll')->name('admin.article.getAll');
 Route::post('/article/delete', 'ArticleController@delete')->name('admin.article.delete');
 
@@ -227,3 +228,4 @@ Route::get('/mailNotification/getAll', 'MailNotificationController@getAll')->nam
 Route::get('/contactinfo/getAll', 'ContactInfoController@getAll')->name('admin.contactinfo.getAll');
 
 Route::get('/xem-ho-so-cv/{idUser}', 'PublicController@ViewDetail');
+Route::get('/tin-tuc/{category}', 'BlogController@categories2')->name('blogs');

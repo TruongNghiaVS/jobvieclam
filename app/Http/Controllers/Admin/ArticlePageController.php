@@ -11,6 +11,47 @@ use Image;
 
 class ArticlePageController extends Base
 {
+    public function createOrUpdate(Request $request)
+    {
+            $title = $request->input("title");
+            $description = $request->input("description");
+            $imageShare = $request->input("imageShare");
+            $content = $request->input("content");
+            $meta_keywords = $request->input("meta_keywords");
+            $meta_descriptions = $request->input("meta_descriptions");
+            $slug = $request->input("slug");
+            $idInput = $request->input("id");
+            $item = ArticlePage::where("id", $idInput)
+                    ->first();
+     
+
+           
+            if($idInput != '-1' )
+            {
+                $item->title = $title;
+                $item->description = $description;
+                $item->meta_keywords = $meta_keywords;
+                $item->meta_descriptions = $meta_descriptions;
+                $item->imageShare = $imageShare;
+                $item->content = $content;
+                $item->slug = $slug;
+                $item->save();
+            }
+            else 
+            {
+                $itemInsert = new ArticlePage();
+                $itemInsert->title = $title;
+                $itemInsert->description = $description;
+                $itemInsert->imageShare = $imageShare;
+                $itemInsert->content = $content;
+                $itemInsert->meta_keywords = $meta_keywords;
+                $itemInsert->meta_descriptions = $meta_descriptions;
+                $itemInsert->slug = $slug;
+                $itemInsert->save();
+
+            }
+            return redirect('/admin/article-page');
+    }
     public function index()
     {
         $user = ArticlePage::get();
@@ -19,12 +60,34 @@ class ArticlePageController extends Base
         $data['categories'] = $categories;
         return view('admin/articlePage/blogs')->with($data);
     }
-    public function show_form()
+    // public function show_form()
+    // {
+    //     $languages = DataArrayHelper::languagesNativeCodeArray();
+    //     $categories = Blog_category::get();
+    //     $data['categories'] = $categories;
+    //     return view('admin/articlePage/post_form')->with('categories',$categories)->with('languages',$languages);
+    // }
+
+    public function show_form($id = null)
     {
+        $article =null;
+    
+        if($id== null)
+        {
+            $article = new ArticlePage();
+            $article->id = "-1";
+        }
+        else 
+        {
+            $article = ArticlePage::findOrFail($id);
+           
+        }
         $languages = DataArrayHelper::languagesNativeCodeArray();
         $categories = Blog_category::get();
         $data['categories'] = $categories;
-        return view('admin/articlePage/post_form')->with('categories',$categories)->with('languages',$languages);
+        return view('admin/articlePage/post_form')->with('categories',$categories)
+        ->with('item',$article)
+        ->with('languages',$languages);
     }
     public function create(Request $request)
     {

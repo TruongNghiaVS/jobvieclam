@@ -81,8 +81,28 @@ class BlogController extends Controller
         );
         return view(config('app.THEME_PATH').'.blog_detail')->with($data);
     }
+   
+    public function categories2($category,Request $request)
+    {
+        dd("3");
+        $category2 = Blog_category::where('slug', $category)->where("typePost",0)->first();
+        if(!$category2)
+        {
+            dd("not found"); 
+        }
+
+      
+        $data['category'] = $category2;
+        $data['blogs_categories'] = Blog_category::where("id", $category2->id)
+                                    ->where("typePost", '!=' , "1")->get();
+        $data['blogs'] = Blog::whereRaw("FIND_IN_SET('$category2->id',cate_id)")
+                        ->where('lang', 'like', \App::getLocale())->orderBy('id', 'DESC')
+                        ->paginate(8);
+     return view(config('app.THEME_PATH').'.blog_categories_details', compact('data'));
+    }
     public function categories($slug)
     {
+      
         $category = Blog_category::where('slug', $slug)->where("typePost",0)->first();
         if(!$category)
         {
@@ -96,6 +116,8 @@ class BlogController extends Controller
         $data['blogs'] = Blog::whereRaw("FIND_IN_SET('$category->id',cate_id)")
                         ->where('lang', 'like', \App::getLocale())->orderBy('id', 'DESC')
                         ->paginate(8);
+                      
+                      
      return view(config('app.THEME_PATH').'.blog_categories_details', compact('data'));
     }
     public function search(Request $request)

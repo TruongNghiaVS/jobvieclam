@@ -440,6 +440,7 @@ a {
   font-weight: 400;
   line-height: 27px;
   margin-bottom: 12px;
+  overflow: hidden;
 }
 
 .job-detail-banner .job-detail-banner__detail .banner__due-day {

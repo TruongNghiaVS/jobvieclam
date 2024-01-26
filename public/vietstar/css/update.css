@@ -2760,9 +2760,6 @@ footer .inner-copyright .copyright {
     ;
 }
 
-.related-jobs-wapper {
-    margin-top: 20px;
-}
 
 .inpostad {
     width: 100%;
@@ -3963,7 +3960,7 @@ div#industry_id_chosen {
     height: 76px;
     display: block;
     background-color: #ffffff !important;
-    z-index: 10;
+    z-index: 40;
     
 }
 
@@ -4768,11 +4765,7 @@ div#industry_id_chosen {
         margin-bottom: 4px
     }
 
-    .jobs-side-list .item-job .jobinfo .info .companyName {
-        font-size: 14px;
-        line-height: 19px;
-        margin-bottom: 4px
-    }
+   
 
     .jobs-side-list .item-job .jobinfo .caption .welfare {
         -webkit-box-flex: 0;

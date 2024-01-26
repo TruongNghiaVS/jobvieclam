@@ -109,7 +109,7 @@ $company = $job->getCompany();
             </div>
         </section>
 
-        <div class="row job-detail-body"> 
+        <div class="row g-0 job-detail-body"> 
             <div class="col-lg-8 col-md-12 col-sm-12">
                 <!--TAB PANE NAV -->
                 <ul class="nav nav-tabs nav-tabs-default">
@@ -609,9 +609,12 @@ $company = $job->getCompany();
 
                 </div>
             </div>
-            <div class="col-lg-4 col-md-12 col-sm-12">
-            <section class="related-jobs">
-                        <div class="related-jobs-wapper jobs-side-list">
+            <div class="col-lg-4 col-md-12 col-sm-12 ">
+                <section class="related-jobs ">
+                    <div class="related-jobs-title">
+                        <p>Các công việc tương tự</p>
+                    </div>
+                    <div class="related-jobs-wapper jobs-side-list">
                                                                 
 
                                 @foreach ($relatedJobs as $jobitem)
@@ -979,6 +982,15 @@ $company = $job->getCompany();
 .view_more {
     display: none !important;
 }
+.related-jobs-title{
+    padding: 21px 16px;
+}
+.related-jobs-title p{
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
 .jobs-side-list .item-job.related-jobs-item  .logo-company {
     width: 100%;
     -webkit-box-flex: 0;

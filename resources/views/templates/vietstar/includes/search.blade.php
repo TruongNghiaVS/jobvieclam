@@ -104,7 +104,7 @@
         <form class="search-form" action="{{route('job.list')}}" method="get" id="search-form">
             <div class="" id="collapseAdvanceSearch">
 
-                <div class="row">
+                <div class="row g-0">
                     <div class="col-lg-5  shadow p-4 search-form-box pb-1">
 
                         <div class="row">

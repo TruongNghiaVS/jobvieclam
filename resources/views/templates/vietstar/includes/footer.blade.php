@@ -65,24 +65,10 @@
                                     <ul class="list-unstyled footer-links">
                                         <li><a href="/dieu-khoan-su-dung-dich-vu-voi-nha-tuyen-dung">{{__('Job search policy')}}</a></li>
                                         <li><a href="/quy-dinh-bao-mat">{{__('Privacy Policy')}}</a></li>
-                                        <li><a href="/dieu-khoan-su-dung">{{__('Agreement of use')}}</a></li>
-                                        
-
                                     </ul>
                                 </div>
                             </div>
-                            {{-- <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-widget">
-                            <h4 class="widget-title">{{__('Partners')}}</h4>
-                            <ul class="list-unstyled footer-links">
-                                <li><a href="https://www.concentrix.com/" target="_blank">Concentrix</a></li>
-                                <li><a href="https://www.trans-cosmos.com.vn/?locale=en" target="_blank">Transcosmos</a></li>
-                                <li><a href="https://apollo.edu.vn/" target="_blank">Apollo</a></li>
-                                <li><a href="https://bellhoasao.com/" target="_blank">Hoa Sao</a></li>
-
-                            </ul>
-                        </div>
-                    </div> --}}
+                           
 
                     <div class="col-md-6 col-lg-6 col-xl-4">
                         <div class="footer-widget">

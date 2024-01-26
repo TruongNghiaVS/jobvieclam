@@ -23,7 +23,7 @@
             <!-- BEGIN PAGE BAR -->
             <div class="page-bar">
                 <ul class="page-breadcrumb">
-                    @if($item->id <0 )
+                    @if($item->id =="-1" )
                     <li><a> Chính sách</a> <i class="fa fa-circle"></i></li>
                     <li><span>Thêm mới</span></li>
                     @else 
@@ -35,7 +35,7 @@
             <!-- END PAGE BAR -->
             <!-- BEGIN PAGE TITLE-->
           
-            @if($item->id <0 )
+            @if($item->id =="-1"  )
             <h3 class="page-title">Thêm Bài viết mới </h3>
                     @else 
                     <h3 class="page-title">Sửa chính sách </h3>
@@ -142,7 +142,7 @@
                                                             </div>
                                                             <div class="col-lg-3">
                                                                 <div class="blogboxint">
-                                                                    @if($item< 1)
+                                                                    @if($item->id =="-1" )
                                                                     <input type="submit" value="Thêm mới"
                                                                            class="btn btn-primary">
                                                                     @else 

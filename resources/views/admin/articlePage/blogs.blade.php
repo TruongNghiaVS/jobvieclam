@@ -73,7 +73,7 @@
                                       
                                         <th>Mô tả</th>
                                    
-
+                                        <th>Đường dẫn</th>
  
                                         <th>Ngày tạo</th>
                                         <th>Cập nhật lần cuối</th>
@@ -95,7 +95,9 @@
                                             {!!
                                             \Illuminate\Support\Str::words($blog->description, 5,'..') !!}
                                         </td>
-
+                                        <td>
+                                          <a href="/{{$blog->slug}}" target ="_blank">{{$blog->slug}}</a>
+                                        </td>
                                        
 
 

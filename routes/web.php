@@ -160,8 +160,8 @@ Route::get('/seeker-change-message-status', 'Job\SeekerSendController@change_mes
 
 #Route::get('/sitemap/companies', 'SitemapController@companies');
 Route::get('/logout', 'Auth\LoginController@logout')->name('site_user.logout');
-
-
+Route::get('/tin-tuc/{cate}', 'BlogController@categories2');
+Route::get('/tin-tuc/{cate}/{slug}', 'BlogController@details2');
 
 Route::get('job8', 'Job8Controller@job8')->name('job8');
 Route::get('cronjob/delete-jobs', 'Job8Controller@delete_jobs')->name('delete-jobs');

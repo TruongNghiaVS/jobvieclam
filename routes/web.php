@@ -228,4 +228,3 @@ Route::get('/mailNotification/getAll', 'MailNotificationController@getAll')->nam
 Route::get('/contactinfo/getAll', 'ContactInfoController@getAll')->name('admin.contactinfo.getAll');
 
 Route::get('/xem-ho-so-cv/{idUser}', 'PublicController@ViewDetail');
-Route::get('/tin-tuc/{category}', 'BlogController@categories2')->name('blogs');

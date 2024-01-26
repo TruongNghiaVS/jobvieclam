@@ -197,7 +197,7 @@
                             <!--Rank-salary and place End-->
                             <!--Day update and place Start-->
                             <div class="info-item day-update">
-                            Cập nhật: {{ $datetimeText }}
+                            Cập Nhật: {{ $datetimeText }}
                             </div>
                             <div class="info-item day-update">
                             Hạn nộp: {{ $expriedDateText }}

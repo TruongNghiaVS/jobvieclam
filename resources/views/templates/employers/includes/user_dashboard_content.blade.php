@@ -112,7 +112,7 @@
                 <section class="related-jobs card card-bio mb-3 w-100 shadow-sm">
                     <div class="card-body">
                         <div class="related-jobs__title d-flex justify-content-between align-items-center mb-2">
-                            <h6>Danh sách theo dõi</h6>
+                            <h6>Danh Sách Theo Dõi</h6>
                             <a href="{{route('my.followings')}}"><button
                                     class="btn btn-round btn-linsk btn-sm main-color">Xem tất cả</button></a>
                         </div>

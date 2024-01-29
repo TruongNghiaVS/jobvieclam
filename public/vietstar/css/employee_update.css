@@ -252,6 +252,7 @@ ul.list-unstyled.components.sidebar-bottom__item li{
     }
     .company-wrapper .company-content {
         padding: 10px 5px;
+        overflow: hidden;
     }
     .company-content .widget-dashboard {
         height: unset;
@@ -323,6 +324,7 @@ ul.list-unstyled.components.sidebar-bottom__item li{
     }
     .company-wrapper .company-content {
         padding: 20px 10px;
+        overflow: hidden;
     }
     .company-content .widget-dashboard {
         height: unset;

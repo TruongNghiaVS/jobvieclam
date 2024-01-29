@@ -20,7 +20,7 @@
     <div class="container Jobpage__content">
    
             <!-- Search Result and sidebar start -->
-            <div class="row">
+            <div class="row g-0">
                 <div class="col-lg-9 col-sm-12">
                     <div class="job-sorting-section">
                         <div class="sort-wrapped">

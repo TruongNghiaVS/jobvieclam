@@ -36,7 +36,7 @@
                 <tr>
                     <td class="text-primary table_title">
                         <strong>
-                           Họ và tên lót
+                           Họ Và Tên Lót
                         </strong>
                     </td>
                     <td class="table_value">

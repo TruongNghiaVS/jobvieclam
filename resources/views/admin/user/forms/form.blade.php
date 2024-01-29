@@ -55,12 +55,12 @@
         {!! APFrmErrHelp::showErrors($errors, 'father_name') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'date_of_birth') !!}">
-        {!! Form::label('date_of_birth', 'Ngày sinh', ['class' => 'bold']) !!}
-        {!! Form::text('date_of_birth', null, array('class'=>'form-control datepicker', 'id'=>'date_of_birth', 'placeholder'=>'Ngày sinh', 'autocomplete'=>'off')) !!}
+        {!! Form::label('date_of_birth', 'Ngày Sinh', ['class' => 'bold']) !!}
+        {!! Form::text('date_of_birth', null, array('class'=>'form-control datepicker', 'id'=>'date_of_birth', 'placeholder'=>'Ngày Sinh', 'autocomplete'=>'off')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'date_of_birth') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'gender_id') !!}">
-        {!! Form::label('gender_id', 'Giới tính', ['class' => 'bold']) !!}
+        {!! Form::label('gender_id', 'Giới Tính', ['class' => 'bold']) !!}
         {!! Form::select('gender_id', [''=>'Lựa chọn']+[1=>'Nữ', 2=>'Nam'], null, array('class'=>'form-control', 'id'=>'gender_id')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'gender_id') !!}                                       
     </div>

@@ -11,7 +11,7 @@ $queryString = MiscHelper::getLangQueryStr();
 <div class="form-body">        
     {!! Form::hidden('id', null) !!}
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'lang') !!}" id="lang_div">
-        {!! Form::label('lang', 'Ngôn ngữ', ['class' => 'bold']) !!}
+        {!! Form::label('lang', 'Ngôn Ngữ', ['class' => 'bold']) !!}
         {!! Form::select('lang', ['' => __('Select')]+$languages, $lang, array('class'=>'form-control', 'id'=>'lang', 'onchange'=>'setLang(this.value)')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'lang') !!}                                       
     </div>

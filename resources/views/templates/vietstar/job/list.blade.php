@@ -200,7 +200,7 @@
                             Cập Nhật: {{ $datetimeText }}
                             </div>
                             <div class="info-item day-update">
-                            Hạn nộp: {{ $expriedDateText }}
+                            Hạn Nộp: {{ $expriedDateText }}
                             </div>
                             <!--Day update and place End-->
                             </div>

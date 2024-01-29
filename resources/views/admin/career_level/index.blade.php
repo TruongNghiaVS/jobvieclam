@@ -45,7 +45,7 @@
                                                 </select></td></tr>
                                         <tr role="row" class="heading">                                            
                                             <th>{{__('Language')}}</th>
-                                            <th>Cấp bậc nghề</th>
+                                            <th>Cấp Bậc Nghề</th>
                                             <th>{{__('Action')}}</th>
                                         </tr>
                                     </thead>

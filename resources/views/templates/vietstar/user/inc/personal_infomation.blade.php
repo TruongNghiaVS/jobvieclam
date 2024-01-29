@@ -36,7 +36,7 @@
                 <tr>
                     <td class="text-primary table_title">
                         <strong>
-                           Họ và tên lót
+                           Họ Và Tên Lót
                         </strong>
                     </td>
                     <td class="table_value">
@@ -102,7 +102,7 @@
                 <tr>
                     <td class="text-primary table_title">
                         <strong>
-                           Địa chỉ
+                           Địa Chỉ
                         </strong>
                     </td>
                     <td class="table_value">
@@ -372,7 +372,7 @@
                     
                         <div class="col-md-6">
                             <div class="form-group {!! APFrmErrHelp::hasError($errors, 'city_id') !!}">
-                                <label class="required" for="city_id">Tỉnh/thành</label>
+                                <label class="required" for="city_id">Tỉnh/Thành</label>
                                  <select id ="city_id" name ="city_id" class ="form-control form-select" >
                                              <option  value ="" selected disabled hidden> 
                                                  Chọn tỉnh thành
@@ -412,9 +412,9 @@
                         <div class="col-md-12">
                               
                                      <div class="form-group ">
-                                <label class="required" for="">Địa chỉ</label>
+                                <label class="required" for="">Địa Chỉ</label>
                                
-                                <input type="text" class="form-control" required id="addressInfo" name="street_address" placeholder="Địa chỉ" value="{{Auth::user()->street_address ? Auth::user()->street_address : __('Not update') }}"
+                                <input type="text" class="form-control" required id="addressInfo" name="street_address" placeholder="Địa Chỉ" value="{{Auth::user()->street_address ? Auth::user()->street_address : __('Not update') }}"
                                 
                             </div>
                        

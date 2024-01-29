@@ -51,8 +51,8 @@
                                             <th>Priorities</th>
                                             <th>Trạng thái</th>
 
-                                            <th>Create at</th>
-                                            <th>Update at</th>
+                                            <th>Ngày Tạo</th>
+                                            <th>Cập Nhật</th>
                                            
                                         </tr>
                                     </thead>

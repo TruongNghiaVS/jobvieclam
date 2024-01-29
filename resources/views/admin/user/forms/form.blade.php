@@ -55,17 +55,17 @@
         {!! APFrmErrHelp::showErrors($errors, 'father_name') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'date_of_birth') !!}">
-        {!! Form::label('date_of_birth', 'Ngày sinh', ['class' => 'bold']) !!}
-        {!! Form::text('date_of_birth', null, array('class'=>'form-control datepicker', 'id'=>'date_of_birth', 'placeholder'=>'Ngày sinh', 'autocomplete'=>'off')) !!}
+        {!! Form::label('date_of_birth', 'Ngày Sinh', ['class' => 'bold']) !!}
+        {!! Form::text('date_of_birth', null, array('class'=>'form-control datepicker', 'id'=>'date_of_birth', 'placeholder'=>'Ngày Sinh', 'autocomplete'=>'off')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'date_of_birth') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'gender_id') !!}">
-        {!! Form::label('gender_id', 'Giới tính', ['class' => 'bold']) !!}
+        {!! Form::label('gender_id', 'Giới Tính', ['class' => 'bold']) !!}
         {!! Form::select('gender_id', [''=>'Lựa chọn']+[1=>'Nữ', 2=>'Nam'], null, array('class'=>'form-control', 'id'=>'gender_id')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'gender_id') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'marital_status_id') !!}">
-        {!! Form::label('marital_status_id', 'Tình trạng hôn nhân', ['class' => 'bold']) !!}
+        {!! Form::label('marital_status_id', 'Tình Trạng Hôn Nhân', ['class' => 'bold']) !!}
         {!! Form::select('marital_status_id', [''=>'Lựa chọn']+$maritalStatuses, null, array('class'=>'form-control', 'id'=>'marital_status_id')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'marital_status_id') !!}                                       
     </div>
@@ -129,22 +129,22 @@
         {!! APFrmErrHelp::showErrors($errors, 'functional_area_id') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'current_salary') !!}">
-        {!! Form::label('current_salary', 'Mức lương hiện tại', ['class' => 'bold']) !!}
-        {!! Form::text('current_salary', null, array('class'=>'form-control', 'id'=>'current_salary', 'placeholder'=>'Mức lương hiện tại')) !!}
+        {!! Form::label('current_salary', 'Mức Lương Hiện Tại', ['class' => 'bold']) !!}
+        {!! Form::text('current_salary', null, array('class'=>'form-control', 'id'=>'current_salary', 'placeholder'=>'Mức Lương Hiện Tại')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'current_salary') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'expected_salary') !!}">
-        {!! Form::label('expected_salary', 'Mức lương kỳ vọng', ['class' => 'bold']) !!}
-        {!! Form::text('expected_salary', null, array('class'=>'form-control', 'id'=>'expected_salary', 'placeholder'=>'Mức lương kỳ vọng')) !!}
+        {!! Form::label('expected_salary', 'Mức Lương Kỳ Vọng', ['class' => 'bold']) !!}
+        {!! Form::text('expected_salary', null, array('class'=>'form-control', 'id'=>'expected_salary', 'placeholder'=>'Mức Lương Kỳ Vọng')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'expected_salary') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'salary_currency') !!}">
-        {!! Form::label('salary_currency', 'Đồng tiền trả lương', ['class' => 'bold']) !!}
-        {!! Form::text('salary_currency', null, array('class'=>'form-control', 'id'=>'salary_currency', 'placeholder'=>'Đồng tiền trả lương', 'autocomplete'=>'off')) !!}
+        {!! Form::label('salary_currency', 'Đồng Tiền Trả Lương', ['class' => 'bold']) !!}
+        {!! Form::text('salary_currency', null, array('class'=>'form-control', 'id'=>'salary_currency', 'placeholder'=>'Đồng Tiền Trả Lương', 'autocomplete'=>'off')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'salary_currency') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'street_address') !!}">
-        {!! Form::label('street_address', 'Địa chỉ chi tiết', ['class' => 'bold']) !!}
+        {!! Form::label('street_address', 'Địa Chỉ chi tiết', ['class' => 'bold']) !!}
         {!! Form::textarea('street_address', null, array('class'=>'form-control', 'id'=>'street_address', 'placeholder'=>'Địa chỉ chi tiết')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'street_address') !!}                                       
     </div>

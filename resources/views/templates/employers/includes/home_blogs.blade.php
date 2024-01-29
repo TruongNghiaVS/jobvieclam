@@ -112,7 +112,7 @@
             </div>
         </div>
         <div class="show-more">
-                <a href="#" class="btn btn-secondary show-more-btn bg-white ">Xem thêm</a>
+                <a href="#" class="btn btn-secondary show-more-btn bg-white ">Xem Thêm</a>
         </div>
     </div>
 </section>

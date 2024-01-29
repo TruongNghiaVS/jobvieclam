@@ -54,14 +54,14 @@
                                             <th>Tên</th>
 
                                             <th>Email</th>
-                                            <th>Tiêu đề</th>
-                                            <th>Nội dung</th>
+                                            <th>Tiêu Đề</th>
+                                            <th>Nội Dung</th>
 
-                                            <th>Số điện thoại</th>
-                                            <th>Trạng thái</th>
+                                            <th>Số Điện Thoại</th>
+                                            <th>Trạng Thái</th>
                                             
-                                            <th>Create at</th>
-                                            <th>Update at</th>
+                                            <th>Ngày Tạo</th>
+                                            <th>Cập Nhật</th>
                                         </tr>
                                     </thead>
                                     <tbody>

@@ -181,7 +181,7 @@
             {!! APFrmErrHelp::showErrors($errors, 'degree_level_id') !!}                                       
         </div>
         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'job_experience_id') !!}" id="job_experience_id_div">
-            {!! Form::label('job_experience_id', 'Kinh nghiệm yêu cầu', ['class' => 'bold']) !!}
+            {!! Form::label('job_experience_id', 'Kinh Nghiệm Yêu Cầu', ['class' => 'bold']) !!}
             {!! Form::select('job_experience_id', ['' => 'Lựa chọn']+$jobExperiences, null, array('class'=>'form-control', 'id'=>'job_experience_id')) !!}
             {!! APFrmErrHelp::showErrors($errors, 'job_experience_id') !!}                                       
         </div>

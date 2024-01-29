@@ -243,7 +243,7 @@
                                 </div>
 
                             </div>
-                            <p class="title-flip">Mô tả bản thân </p>
+                            <p class="title-flip">Mô Tả Bản Thân  </p>
                             <div class="p-4 fs-18px">
                                 {{ $data->getProfileSummary('summary') }}
                             </div>
@@ -299,7 +299,7 @@
                                 </ul>
 
                             </div>
-                            <p class="title-flip">Kinh nghiệm làm việc</p>
+                            <p class="title-flip">Kinh Nghiệm Làm Việc</p>
                             <div class="job-information" bis_skin_checked="1">
                                 <div class="row  gy-3">
                                     @if(count($data->profileExperience) > 0)
@@ -322,7 +322,7 @@
                                     @endif
                                 </div>
                             </div>
-                            <p class="title-flip">Học vấn</p>
+                            <p class="title-flip">Học Vấn</p>
                             <div class="job-information" bis_skin_checked="1">
                                 <div class="row  gy-3">
 

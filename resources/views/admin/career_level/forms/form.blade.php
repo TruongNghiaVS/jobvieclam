@@ -9,7 +9,7 @@ $queryString = MiscHelper::getLangQueryStr();
 {!! APFrmErrHelp::showErrorsNotice($errors) !!}
 @include('flash::message')
 <div class="form-body">
-    <div class="form-group {!! APFrmErrHelp::hasError($errors, 'lang') !!}"> {!! Form::label('lang', 'Ngôn ngữ', ['class' => 'bold']) !!}
+    <div class="form-group {!! APFrmErrHelp::hasError($errors, 'lang') !!}"> {!! Form::label('lang', 'Ngôn Ngữ', ['class' => 'bold']) !!}
         {!! Form::select('lang', ['' => __('Select')]+$languages, $lang, array('class'=>'form-control', 'id'=>'lang', 'onchange'=>'setLang(this.value)')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'lang') !!} </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'career_level') !!}"> {!! Form::label('career_level', 'Career Level', ['class' => 'bold']) !!}                    

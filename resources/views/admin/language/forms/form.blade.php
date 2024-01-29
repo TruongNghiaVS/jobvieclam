@@ -11,8 +11,8 @@ $queryString = MiscHelper::getLangQueryStr();
 <div class="form-body">        
     {!! Form::hidden('id', null) !!}
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'lang') !!}">
-        {!! Form::label('lang', 'Ngôn ngữ', ['class' => 'bold']) !!}
-        {!! Form::text('lang', null, array('class'=>'form-control', 'id'=>'lang', 'placeholder'=>'Ngôn ngữ')) !!}
+        {!! Form::label('lang', 'Ngôn Ngữ'', ['class' => 'bold']) !!}
+        {!! Form::text('lang', null, array('class'=>'form-control', 'id'=>'lang', 'placeholder'=>'Ngôn Ngữ'')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'lang') !!}
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'native') !!}">

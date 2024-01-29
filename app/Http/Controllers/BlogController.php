@@ -156,9 +156,6 @@ class BlogController extends Controller
         {
             dd("not found"); 
         }
-        
-
-      
         $data['category'] = $category;
         $data['blogs_categories'] = Blog_category::where("id", $category->id)
                                     ->where("typePost", '!=' , "1")->get();

@@ -19,8 +19,8 @@ $queryString = MiscHelper::getLangQueryStr();
         {!! APFrmErrHelp::showErrors($errors, 'page_id') !!}                                       
     </div>    
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'page_title') !!}">
-        {!! Form::label('page_title', 'Tiêu đề Trang', ['class' => 'bold']) !!}
-        {!! Form::text('page_title', null, array('class'=>'form-control', 'id'=>'page_title', 'placeholder'=>'Tiêu đề Trang', 'dir'=>$direction)) !!}
+        {!! Form::label('page_title', 'Tiêu Đề Trang', ['class' => 'bold']) !!}
+        {!! Form::text('page_title', null, array('class'=>'form-control', 'id'=>'page_title', 'placeholder'=>'Tiêu Đề Trang', 'dir'=>$direction)) !!}
         {!! APFrmErrHelp::showErrors($errors, 'page_title') !!}                                       
     </div>    
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'page_slug') !!}">

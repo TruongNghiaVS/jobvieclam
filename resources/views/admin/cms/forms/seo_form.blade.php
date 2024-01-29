@@ -1,8 +1,8 @@
 {!! APFrmErrHelp::showErrorsNotice($errors) !!}
 <div class="form-body">
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'seo_title') !!}">
-        {!! Form::label('seo_title', 'Tiêu đề SEO', ['class' => 'bold']) !!}
-        {!! Form::text('seo_title', null, array('class'=>'form-control', 'id'=>'seo_title', 'placeholder'=>'Tiêu đề SEO')) !!}
+        {!! Form::label('seo_title', 'Tiêu Đề SEO', ['class' => 'bold']) !!}
+        {!! Form::text('seo_title', null, array('class'=>'form-control', 'id'=>'seo_title', 'placeholder'=>'Tiêu Đề SEO')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'seo_title') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'seo_description') !!}">

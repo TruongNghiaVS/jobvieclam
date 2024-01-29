@@ -296,7 +296,7 @@ $user = Auth::user();
       </div>
 
       <!-- <div class="modal-footer">
-            <a href="{{ route('view.public.profile', Auth::user()->id) }}" class=" {{ route('view.public.profile', Auth::user()->id) }}" target="_blank">Xem thêm</a>
+            <a href="{{ route('view.public.profile', Auth::user()->id) }}" class=" {{ route('view.public.profile', Auth::user()->id) }}" target="_blank">Xem Thêm</a>
         </div> -->
     </div>
   </div>

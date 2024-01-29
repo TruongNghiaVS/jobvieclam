@@ -414,7 +414,7 @@
                     <img class="lazy-bg" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar" style=""></a>
             </div>
             <div class="username" bis_skin_checked="1">
-                <p><a href="#">Welcome to Jobvieclam</a></p>
+                <p><a href="javascript:void(0)">Welcome to Jobvieclam</a></p>
             </div>
             <div class="back-menu-normal" bis_skin_checked="1"><i class="bi bi-arrow-left"></i></div>
         </div>

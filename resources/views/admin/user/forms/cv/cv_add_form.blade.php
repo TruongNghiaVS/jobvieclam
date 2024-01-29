@@ -6,7 +6,7 @@
     <div class="modal-body">
         <div class="form-body">
             <div class="form-group" id="div_name">
-                <label for="name" class="bold">Tiêu đề CV</label>
+                <label for="name" class="bold">Tiêu Đề CV</label>
                 <input class="form-control" id="title" placeholder="Cv title" name="title" type="text" value="{{(isset($profileCv)? $profileCv->title:'')}}">
                 <span class="help-block title-error"></span> </div>
 

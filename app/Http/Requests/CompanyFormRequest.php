@@ -68,7 +68,7 @@ class CompanyFormRequest extends Request
             'no_of_employees.required' => 'Số nhân viên là bắt buộc/ Number of employees required',
             'established_in.required' => 'Năm thành lập là bắt buộc/ Company established in year required',
 
-            'phone.required' => 'Số Điện thoại là bắt buộc/ Phone number required',
+            'phone.required' => 'Số Điện Thoại là bắt buộc/ Phone number required',
             // 'logo.required' => 'Logo Công ty là bắt buộc/ Company logo is required',
             'country_id.required' => 'Lựa chọn Quốc gia/ Please select country',
             'state_id.required' => 'Lựa Chọn vùng miền/ Please select state',

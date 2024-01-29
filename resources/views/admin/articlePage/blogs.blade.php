@@ -69,7 +69,7 @@
                                 <thead>
                                     <tr>
 
-                                        <th>Tiêu đề</th>
+                                        <th>Tiêu Đề</th>
                                       
                                         <th>Mô tả</th>
                                    
@@ -149,7 +149,7 @@
                                 </div>
                                 @endif
                                 <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
-                                    <label class="control-label col-sm-3" for="title">Tiêu đề</label>
+                                    <label class="control-label col-sm-3" for="title">Tiêu Đề</label>
                                     <div class="col-sm-12">
                                         <input type="text" class="form-control" name="title" id="title" autofocus
                                             value="{{ old('title') }}">
@@ -191,7 +191,7 @@
                                 <div id="div_show_seo_fields" style="display: none">
 
                                     <div class="form-group">
-                                        <label class="control-label col-sm-3" for="title">Tiêu đề Meta </label>
+                                        <label class="control-label col-sm-3" for="title">Tiêu Đề Meta </label>
                                         <div class="col-sm-12">
                                             <input type="text" class="form-control" name="meta_title" id="meta_title"
                                                 autofocus value="{{ old('meta_title') }}">
@@ -263,7 +263,7 @@
                                 </div>
                                 @endif
                                 <div class="form-group {{ $errors->has('title_update') ? 'has-error' : '' }}">
-                                    <label class="control-label col-sm-3" for="title">Tiêu đề</label>
+                                    <label class="control-label col-sm-3" for="title">Tiêu Đề</label>
                                     <div class="col-sm-12">
                                         <input type="text" class="form-control" name="title_update" id="title_update"
                                             value="{{ old('title_update') }}">
@@ -306,7 +306,7 @@
                                 <div style="clear:both"></div>
                                 <div id="div_show_seo_fields_for_update" style="display: none">
                                     <div class="form-group">
-                                        <label class="control-label col-sm-3" for="title">Tiêu đề Meta</label>
+                                        <label class="control-label col-sm-3" for="title">Tiêu Đề Meta</label>
                                         <div class="col-sm-12">
                                             <input type="text" class="form-control" name="meta_title_update"
                                                 id="meta_title_update" autofocus value="{{ old('meta_title_update') }}">

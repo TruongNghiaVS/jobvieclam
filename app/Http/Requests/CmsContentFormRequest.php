@@ -41,7 +41,7 @@ class CmsContentFormRequest extends Request
     {
         return [
             'page_id.required' => 'Chọn trang/ Please select page.',
-            'page_title.required' => 'Nhập tiêu đề trang/ Please enter page title.',
+            'page_title.required' => 'Nhập Tiêu Đề trang/ Please enter page title.',
             'page_content.required' => 'Nhập nội dung trang/ Please enter page content.',
             'lang.required' => 'Lựa chọn/ Please select language.',
         ];

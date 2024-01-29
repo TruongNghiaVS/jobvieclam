@@ -36,7 +36,7 @@ class Blog_categoriesController extends Base
             'title' => 'required',
             'slug' => 'required',
         ], [
-            'title.required' => ' Tiêu đề là trường bắt buộc/ The title field is required.',
+            'title.required' => ' Tiêu Đề là trường bắt buộc/ The title field is required.',
             'slug.required' => ' Slug là trường bắt buộc/ The slug field is required.',
         ]);
         $blog_category = new Blog_category();
@@ -72,7 +72,7 @@ class Blog_categoriesController extends Base
             'title_update' => 'required',
             'slug_update' => 'required',
         ], [
-            'title_update.required' => ' Tiêu đề là trường bắt buộc/ The title field is required.',
+            'title_update.required' => ' Tiêu Đề là trường bắt buộc/ The title field is required.',
             'slug_update.required' => ' Slug là trường bắt buộc/ The slug field is required.',
         ]);
      

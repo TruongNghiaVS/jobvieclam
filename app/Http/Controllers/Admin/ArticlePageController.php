@@ -97,7 +97,7 @@ class ArticlePageController extends Base
             'content' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ], [
-            'title.required' => 'Tiêu đề là trường bắt buộc/ The title field is required.',
+            'title.required' => 'Tiêu Đề là trường bắt buộc/ The title field is required.',
             'slug.required' => ' Slug là trường bắt buộc/ The slug field is required.',
             'content.required' => ' Nội dung là trường bắt buộc/ The content field is required.',
         ]);

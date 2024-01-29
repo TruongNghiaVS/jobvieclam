@@ -235,7 +235,7 @@
         phone_valid = false;
         // Invalid phone number
         $('.phone-error').empty();
-        $('.phone-error').text("Số điện thoại không hợp lệ");
+        $('.phone-error').text("Số Điện Thoại không hợp lệ");
         $('.phone-error').show();
         $('#phoneId').removeClass("is-valid")
         $('#phoneId').addClass("is-invalid")

@@ -34,7 +34,7 @@ class SeoFormRequest extends Request
     public function messages()
     {
         return [
-            'seo_title.required' => 'Nhập Tiêu đề SEO/ Please enter SEO title.',
+            'seo_title.required' => 'Nhập Tiêu Đề SEO/ Please enter SEO title.',
             'seo_description.required' => 'Nhập mô tả SEO/ Please enter SEO description.',
             'seo_keywords.required' => 'Nhập từ khóa SEO/ Please enter SEO keywords.',
         ];

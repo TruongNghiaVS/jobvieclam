@@ -110,7 +110,7 @@ function stringtoSlug()
                                                                                 class="text-danger">{{ $errors->first('lang') }}</span>
                                                                     </div>
                                                                     <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
-                                                                        <label class="control-label" for="title">Tiêu đề</label>
+                                                                        <label class="control-label" for="title">Tiêu Đề</label>
                                                                         <input type="text" onchange ="stringtoSlug()" class="form-control" name="title"
                                                                                id="title" autofocus
                                                                                value="{{ old('title') }}">

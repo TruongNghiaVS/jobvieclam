@@ -59,7 +59,7 @@
                 
             </div>
             <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <button type="submit" class="btn btn-primary" id="btn-register-now">Đăng ký ngay</button>
+                    <button type="submit" class="btn btn-primary" id="btn-register-now">Đăng Ký Ngay</button>
                     <div class="invalid-feedback email-error">
                         
                     </div>            

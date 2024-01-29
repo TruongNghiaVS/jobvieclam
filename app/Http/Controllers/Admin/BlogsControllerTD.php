@@ -35,7 +35,7 @@ class BlogsControllerTD extends Base
             'content' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ], [
-            'title.required' => 'Tiêu đề là trường bắt buộc/ The title field is required.',
+            'title.required' => 'Tiêu Đề là trường bắt buộc/ The title field is required.',
             'slug.required' => ' Slug là trường bắt buộc/ The slug field is required.',
             'content.required' => ' Nội dung là trường bắt buộc/ The content field is required.',
         ]);
@@ -118,7 +118,7 @@ class BlogsControllerTD extends Base
             'content_update' => 'required',
             'imageupdate' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ], [
-            'title_update.required' => ' Tiêu đề là trường bắt buộc/ The title field is required.',
+            'title_update.required' => ' Tiêu Đề là trường bắt buộc/ The title field is required.',
             'slug_update.required' => ' Slug là trường bắt buộc/ The slug field is required.',
             'content_update.required' => ' Nội dung là trường bắt buộc/ The content field is required.',
         ]);

@@ -24,7 +24,7 @@
                 <div class="swiper-slide">
                      <h3>Gợi ý 2</h3>
                     <div class="text">
-                      <p>Một trong những điều tối kỵ nhưng khá nhiều người mắc phải là trình bày các thông tin trong CV không nhất quán. Việc tuỳ tiện in đậm, in nghiêng, lúc viết hoa lúc viết thường làm CV trở nên cực kỳ rối mắt! Lời khuyên từ các chuyên gia là bạn chỉ nên nhấn mạnh bằng cách in đậm và viết hoa cho các tiêu đề quan trọng như Chức danh, Công ty, Trình độ học vấn, … mà thôi</p>
+                      <p>Một trong những điều tối kỵ nhưng khá nhiều người mắc phải là trình bày các thông tin trong CV không nhất quán. Việc tuỳ tiện in đậm, in nghiêng, lúc viết hoa lúc viết thường làm CV trở nên cực kỳ rối mắt! Lời khuyên từ các chuyên gia là bạn chỉ nên nhấn mạnh bằng cách in đậm và viết hoa cho các Tiêu Đề quan trọng như Chức danh, Công ty, Trình độ học vấn, … mà thôi</p>
                     </div>
                 </div>
                 <div class="swiper-slide">

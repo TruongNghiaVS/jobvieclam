@@ -36,7 +36,7 @@
                 <ul>
                     <li>[Họ tên của bạn]</li>
                     <li>[Địa chỉ của bạn]</li>
-                    <li>[Số điện thoại của bạn]</li>
+                    <li>[Số Điện Thoại của bạn]</li>
                     <li>[Email của bạn]</li>
                 </ul>
                 </div>

@@ -52,7 +52,7 @@
                             <table class="table" id="blog_categoryTable">
                                 <thead>
                                     <tr>
-                                        <th>Tiêu đề</th>
+                                        <th>Tiêu Đề</th>
                                         <th>Cập nhật lần cuối</th>
                                         <th>{{__('Action')}}</th>
                                     </tr>
@@ -94,7 +94,7 @@
                             <div class="modal-body">
                                 {{csrf_field()}}
                                 <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
-                                    <label class="control-label col-sm-3" for="title">Tiêu đề</label>
+                                    <label class="control-label col-sm-3" for="title">Tiêu Đề</label>
                                     <div class="col-sm-12">
                                         <input type="text" class="form-control" name="title" id="title" autofocus
                                             value="{{ old('title_add') }}">
@@ -104,7 +104,7 @@
                                 <input type="hidden" name ="typepost" value = "{{$typepost}}"> 
 
                                 <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
-                                    <label class="control-label col-sm-3" for="title">Tiêu đề</label>
+                                    <label class="control-label col-sm-3" for="title">Tiêu Đề</label>
                                     <div class="col-sm-12">
                                         <input type="text" class="form-control" name="title" id="title" autofocus
                                             value="{{ old('title_add') }}">
@@ -145,7 +145,7 @@
                                 {{csrf_field()}}
                                 <input type="hidden" name="id" id="id">
                                 <div class="form-group {{ $errors->has('title_update') ? 'has-error' : '' }}">
-                                    <label class="control-label col-sm-3" for="title">Tiêu đề</label>
+                                    <label class="control-label col-sm-3" for="title">Tiêu Đề</label>
                                     <div class="col-sm-12">
                                         <input type="text" class="form-control" name="title_update" id="title_update"
                                             value="{{ old('title_update') }}">

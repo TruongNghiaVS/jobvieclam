@@ -36,10 +36,10 @@
                                 <table class="table table-striped table-bordered table-hover"  id="videoDatatableAjax">
                                     <thead>                                        
                                         <tr role="row" class="filter">
-                                            <td>{!! Form::select('lang', ['' => __('Select')]+$languages, null, array('id'=>'lang', 'class'=>'form-control')) !!}</td><td><input type="text" class="form-control" name="video_title" id="video_title" autocomplete="off" placeholder="Tiêu đề Video"></td><td><select name="is_active" id="is_active"  class="form-control"><option value="-1">{{__('Active?')}}</option><option value="1" selected="selected">{{__('Active')}}</option><option value="0">{{__('Inactive')}}</option></select></td>
+                                            <td>{!! Form::select('lang', ['' => __('Select')]+$languages, null, array('id'=>'lang', 'class'=>'form-control')) !!}</td><td><input type="text" class="form-control" name="video_title" id="video_title" autocomplete="off" placeholder="Tiêu Đề Video"></td><td><select name="is_active" id="is_active"  class="form-control"><option value="-1">{{__('Active?')}}</option><option value="1" selected="selected">{{__('Active')}}</option><option value="0">{{__('Inactive')}}</option></select></td>
                                         </tr>
                                         <tr role="row" class="heading">
-                                            <th>{{__('Language')}}</th><th>Tiêu đề Video </th><th>{{__('Action')}}</th>
+                                            <th>{{__('Language')}}</th><th>Tiêu Đề Video </th><th>{{__('Action')}}</th>
                                         </tr>
                                     </thead>
                                     <tbody>

@@ -43,7 +43,7 @@ class CmsFormRequest extends Request
             'page_slug.required' => 'Nhập page slug/ Please enter page slug.',
             'page_slug.alpha_dash' => 'Page slug có thể chứa chữ cái, số, gạch ngang và gạch chân/ The page slug may have alpha-numeric characters, as well as dashes and underscores.',
             'page_slug.unique' => 'Page slug đã tồn tại/ Some other C.M.S page already has this Slug (Page SlUG should be unique).',
-            'seo_title.required' => 'Nhập Tiêu đề SEO/ Please enter SEO title.',
+            'seo_title.required' => 'Nhập Tiêu Đề SEO/ Please enter SEO title.',
             'seo_description.required' => 'Nhập mô tả SEO/ Please enter SEO description.',
             'seo_keywords.required' => 'Nhập từ khóa SEO/ Please enter SEO keywords.',
         ];

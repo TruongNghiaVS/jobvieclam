@@ -40,7 +40,7 @@ class ContactFormRequest extends Request
             'full_name.required' => __('Tên là trường bắt buộc/ Name is required'),
             'email.required' => __('Email là trường bắt buộc/ E-mail address is required'),
             'email.email' => __('Email phải hợp lệ/ Valid e-mail address is required'),
-            'subject.required' => __('Tiêu đề là trường bắt buộc/ Subject is required'),
+            'subject.required' => __('Tiêu Đề là trường bắt buộc/ Subject is required'),
             'message_txt.required' => __('Tin nhắn là trường bắt buộc/ Message is required'),
         ];
     }

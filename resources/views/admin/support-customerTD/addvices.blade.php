@@ -51,7 +51,7 @@
                                             <th>Id</th>
                                             <th>Tên</th>
                                             <th>Email</th>
-                                            <th>Số điện thoại</th>
+                                            <th>Số Điện Thoại</th>
                                             <th>Thành phố</th>
                                             <th>Trạng thái</th>
 

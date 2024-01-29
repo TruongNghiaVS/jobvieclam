@@ -55,8 +55,8 @@ class VideoFormRequest extends Request
             'is_default.required' => 'Video mặc định?/ Is this Video default?',
             'video_id.required_if' => 'Lựa chọn Video mặc đinh/ dự phòng/ Please select default/fallback Video.',
             'is_active.required' => 'Video này hiển thị?/ Is this Video active?',
-            'video_title.required' => 'Tiêu đề Video là bắt buộc/ Video title required.',
-            'video_title.unique' => 'Tiêu đề Video phải duy nhất/ Video title must be unique.',
+            'video_title.required' => 'Tiêu Đề Video là bắt buộc/ Video title required.',
+            'video_title.unique' => 'Tiêu Đề Video phải duy nhất/ Video title must be unique.',
             'video_text.required' => 'Nội dung Video là bắt buộc/ Video text required.',
             'video_link.required' => 'Đường dẫn Video là bắt buộc/ Video link required.',
         ];

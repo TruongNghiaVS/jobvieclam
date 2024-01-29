@@ -48,7 +48,7 @@ class ContactController extends Controller
         {
             $itemError = new stdClass();
             $itemError->key ="phone";
-             $itemError->textError ="Yêu cầu nhập số điện thoại";
+             $itemError->textError ="Yêu cầu nhập Số Điện Thoại";
              array_push($error, $itemError);   
            
         }
@@ -57,7 +57,7 @@ class ContactController extends Controller
         {
             $itemError = new stdClass();
             $itemError->key ="title";
-             $itemError->textError ="Yêu cầu nhập tiêu đề";
+             $itemError->textError ="Yêu cầu nhập Tiêu Đề";
              array_push($error, $itemError);   
            
         }
@@ -109,7 +109,7 @@ class ContactController extends Controller
         {
             $itemError = new stdClass();
             $itemError->key ="phone";
-             $itemError->textError ="Yêu cầu nhập số điện thoại";
+             $itemError->textError ="Yêu cầu nhập Số Điện Thoại";
              array_push($error, $itemError);   
            
         }

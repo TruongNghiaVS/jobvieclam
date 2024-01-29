@@ -15,8 +15,8 @@ $queryString = MiscHelper::getLangQueryStr();
         {!! APFrmErrHelp::showErrors($errors, 'lang') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'video_title') !!}">
-        {!! Form::label('video_title', 'Tiêu đề Video', ['class' => 'bold']) !!}
-        {!! Form::text('video_title', null, array('class'=>'form-control', 'id'=>'video_title', 'placeholder'=>'Tiêu đề Video', 'dir'=>$direction)) !!}
+        {!! Form::label('video_title', 'Tiêu Đề Video', ['class' => 'bold']) !!}
+        {!! Form::text('video_title', null, array('class'=>'form-control', 'id'=>'video_title', 'placeholder'=>'Tiêu Đề Video', 'dir'=>$direction)) !!}
         {!! APFrmErrHelp::showErrors($errors, 'video_title') !!}
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'video_text') !!}">

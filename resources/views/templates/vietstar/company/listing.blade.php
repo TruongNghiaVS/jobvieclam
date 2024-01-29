@@ -96,7 +96,7 @@
             </div>
             @endif
             <!-- <div class="show-more">
-                <button class="btn btn-secondary show-more-btn ">Xem thêm</button>
+                <button class="btn btn-secondary show-more-btn ">Xem Thêm</button>
             </div> -->
             <div class="d-flex justify-content-center align-items-center">
 

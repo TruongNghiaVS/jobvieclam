@@ -54,10 +54,10 @@
                                             <th>Tên</th>
 
                                             <th>Email</th>
-                                            <th>Tiêu đề</th>
+                                            <th>Tiêu Đề</th>
                                             <th>Nội dung</th>
 
-                                            <th>Số điện thoại</th>
+                                            <th>Số Điện Thoại</th>
                                             <th>Trạng thái</th>
                                             
                                             <th>Create at</th>

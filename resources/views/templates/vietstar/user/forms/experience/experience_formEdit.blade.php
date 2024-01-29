@@ -18,7 +18,7 @@
  
   <div class="col-6">
                             <div class="form-group {!! APFrmErrHelp::hasError($errors, 'city_id') !!}">
-                                <!-- <label class="required" for="city_id">Tỉnh/thành</label> -->
+                                <!-- <label class="required" for="city_id">Tỉnh/Thành</label> -->
                                  <select id ="city_id" name ="city_id" class ="form-control form-select" >
                                              <option  value ="" selected disabled hidden> 
                                                  Chọn tỉnh thành

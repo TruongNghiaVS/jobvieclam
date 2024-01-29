@@ -255,7 +255,7 @@
                     </div>
                   </div>
 
-                  <p class="title-flip">Người giới thiệu</p>
+                  <p class="title-flip">Người Giới Thiệu</p>
                   <div class="job-information" bis_skin_checked="1">
                     <div class="row  gy-3">
 

@@ -12,7 +12,7 @@
                 <h2 class="name">{{ $user->last_name.' '.$user->middle_name.' '.$user->first_name }}</h2>
                <div class="contact-info">
                     <div><strong>Số Điện Thoại</strong> {{ $user->phone }}</div>
-                    <div><strong>Địa chỉ</strong> {{ $user->street_address }}</div>
+                    <div><strong>Địa Chỉ</strong> {{ $user->street_address }}</div>
                     <div><strong>Email</strong> {{ $user->email }}</div>
                     <div><strong>Ngày Sinh</strong> {{ $user->date_of_birth->format('d-m-Y') }}</div>
                 </div>

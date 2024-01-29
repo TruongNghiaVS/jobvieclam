@@ -144,7 +144,7 @@
         {!! APFrmErrHelp::showErrors($errors, 'salary_currency') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'street_address') !!}">
-        {!! Form::label('street_address', 'Địa chỉ chi tiết', ['class' => 'bold']) !!}
+        {!! Form::label('street_address', 'Địa Chỉ chi tiết', ['class' => 'bold']) !!}
         {!! Form::textarea('street_address', null, array('class'=>'form-control', 'id'=>'street_address', 'placeholder'=>'Địa chỉ chi tiết')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'street_address') !!}                                       
     </div>

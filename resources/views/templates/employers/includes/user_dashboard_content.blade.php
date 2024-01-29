@@ -114,7 +114,7 @@
                         <div class="related-jobs__title d-flex justify-content-between align-items-center mb-2">
                             <h6>Danh Sách Theo Dõi</h6>
                             <a href="{{route('my.followings')}}"><button
-                                    class="btn btn-round btn-linsk btn-sm main-color">Xem tất cả</button></a>
+                                    class="btn btn-round btn-linsk btn-sm main-color">Xem Tất Cả</button></a>
                         </div>
                         @if(isset($followers) && null!==($followers))
                         @foreach($followers as $follow)

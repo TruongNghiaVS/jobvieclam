@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="text" name="salary" id="yoursalary" maxlength="19" value=""
-                                        placeholder=" Mức lương hiện tại hoặc mong muốn (VND) " autocomplete="off">
+                                        placeholder=" Mức Lương Hiện Tại hoặc mong muốn (VND) " autocomplete="off">
                                 </div>
                                 <div class="form-group">
                                     <input type="number" name="exp" id="yourexp" value="" min="0"

@@ -49,13 +49,15 @@
         {!! APFrmErrHelp::showErrors($errors, 'site_slogan') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'site_phone_primary') !!}">
-        {!! Form::label('site_phone_primary', 'Số Điện Thoại chính#', ['class' => 'bold']) !!}
-        {!! Form::text('site_phone_primary', null, array('class'=>'form-control', 'id'=>'site_phone_primary', 'placeholder'=>'Số Điện Thoại chính#')) !!}
+
+        {!! Form::label('site_phone_primary', 'Số Điện Thoại Chính#', ['class' => 'bold']) !!}
+        {!! Form::text('site_phone_primary', null, array('class'=>'form-control', 'id'=>'site_phone_primary', 'placeholder'=>'Số Điện Thoại Chính#')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'site_phone_primary') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'site_phone_secondary') !!}">
-        {!! Form::label('site_phone_secondary', 'Số Điện Thoại phụ#', ['class' => 'bold']) !!}
-        {!! Form::text('site_phone_secondary', null, array('class'=>'form-control', 'id'=>'site_phone_secondary', 'placeholder'=>'Số Điện Thoại phụ#')) !!}
+ 
+        {!! Form::label('site_phone_secondary', 'Số Điện Thoại Phụ#', ['class' => 'bold']) !!}
+        {!! Form::text('site_phone_secondary', null, array('class'=>'form-control', 'id'=>'site_phone_secondary', 'placeholder'=>'Số Điện Thoại Phụ#')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'site_phone_secondary') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'mail_from_address') !!}">

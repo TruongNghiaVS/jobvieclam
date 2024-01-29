@@ -51,12 +51,13 @@
                                             <th>Id</th>
                                             <th>Tên</th>
                                             <th>Email</th>
+                                           
                                             <th>Số Điện Thoại</th>
-                                            <th>Thành phố</th>
-                                            <th>Trạng thái</th>
+                                            <th>Thành Phố</th>
+                                            <th>Trạng Thái</th>
 
-                                            <th>Create at</th>
-                                            <th>Update at</th>
+                                            <th>Ngày Tạo</th>
+                                            <th>Cập Nhật</th>
                                            
                                         </tr>
                                     </thead>

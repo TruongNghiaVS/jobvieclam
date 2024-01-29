@@ -90,7 +90,7 @@
                             </ul>
                         </div>
                         <div class="scroller-footer">
-                            <div class="btn-arrow-link pull-right"> <a href="{{ route('list.users') }}">Xem tất cả các Ứng viên</a> <i class="icon-arrow-right"></i> </div>
+                            <div class="btn-arrow-link pull-right"> <a href="{{ route('list.users') }}">Xem Tất Cả Các Ứng viên</a> <i class="icon-arrow-right"></i> </div>
                         </div>
                     </div>
                 </div>
@@ -120,7 +120,7 @@
                             </ul>
                         </div>
                         <div class="scroller-footer">
-                            <div class="btn-arrow-link pull-right"> <a href="{{ route('list.jobs') }}">Xem tất cả Việc làm</a> <i class="icon-arrow-right"></i> </div>
+                            <div class="btn-arrow-link pull-right"> <a href="{{ route('list.jobs') }}">Xem Tất Cả Việc Làm</a> <i class="icon-arrow-right"></i> </div>
                         </div>
                     </div>
                 </div>

@@ -459,7 +459,7 @@ $company = $job->getCompany();
                             <h4>Công việc liên quan</h4>
                             <a class="btn btn-round btn-link btn-sm main-color"
                                 href="http://jobvieclam.com/jobs?job_titles%5B%5D=Nh%C3%A2n%20Vi%C3%AAn%20Nh%C3%A2n%20S%E1%BB%B1%20-%20Tuy%E1%BB%83n%20D%E1%BB%A5ng%20%28HR%29&amp;country_ids%5B%5D=&amp;state_ids%5B%5D=&amp;city_ids%5B%5D=48710">
-                                Xem tất cả công việc<i class="fas fa-arrow-right ms-2"></i></a>
+                                Xem Tất Cả Công Việc<i class="fas fa-arrow-right ms-2"></i></a>
                         </div>
                         <!-- related jobs Slider -->
                     
@@ -704,7 +704,7 @@ $company = $job->getCompany();
 
                                         <!--Day update and place Start-->
                                         <div class="info-item day-update" bis_skin_checked="1">
-                                            Hạn nộp: {{$jobitem->expiry_date->format('d/m/Y')}}  
+                                            Hạn Nộp: {{$jobitem->expiry_date->format('d/m/Y')}}  
                                         </div>
                                         <!--Day update and place End-->
 

@@ -166,7 +166,7 @@
             {!! APFrmErrHelp::showErrors($errors, 'num_of_positions') !!}                                       
         </div>
         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'gender_id') !!}" id="gender_id_div">
-            {!! Form::label('gender_id', 'Giới tính', ['class' => 'bold']) !!}
+            {!! Form::label('gender_id', 'Giới Tính', ['class' => 'bold']) !!}
             {!! Form::select('gender_id', ['' => __('Không yêu cầu')]+[1=>'Nữ',2=>"Nam"], null, array('class'=>'form-control', 'id'=>'gender_id')) !!}
             {!! APFrmErrHelp::showErrors($errors, 'gender_id') !!}                                       
         </div>
@@ -181,7 +181,7 @@
             {!! APFrmErrHelp::showErrors($errors, 'degree_level_id') !!}                                       
         </div>
         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'job_experience_id') !!}" id="job_experience_id_div">
-            {!! Form::label('job_experience_id', 'Kinh nghiệm yêu cầu', ['class' => 'bold']) !!}
+            {!! Form::label('job_experience_id', 'Kinh Nghiệm Yêu Cầu', ['class' => 'bold']) !!}
             {!! Form::select('job_experience_id', ['' => 'Lựa chọn']+$jobExperiences, null, array('class'=>'form-control', 'id'=>'job_experience_id')) !!}
             {!! APFrmErrHelp::showErrors($errors, 'job_experience_id') !!}                                       
         </div>

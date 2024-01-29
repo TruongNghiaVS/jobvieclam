@@ -11,13 +11,13 @@ $queryString = MiscHelper::getLangQueryStr();
 <div class="form-body">        
     {!! Form::hidden('id', null) !!}
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'lang') !!}" id="lang_div">
-        {!! Form::label('lang', 'Ngôn ngữ', ['class' => 'bold']) !!}
+        {!! Form::label('lang', 'Ngôn Ngữ'', ['class' => 'bold']) !!}
         {!! Form::select('lang', ['' => __('Select')]+$languages, $lang, array('class'=>'form-control', 'id'=>'lang')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'lang') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'marital_status') !!}">
-        {!! Form::label('marital_status', 'Tình trạng hôn nhân', ['class' => 'bold']) !!}
-        {!! Form::text('marital_status', null, array('class'=>'form-control', 'id'=>'marital_status', 'placeholder'=>'Tình trạng hôn nhân', 'dir'=>$direction)) !!}
+        {!! Form::label('marital_status', 'Tình Trạng Hôn Nhân', ['class' => 'bold']) !!}
+        {!! Form::text('marital_status', null, array('class'=>'form-control', 'id'=>'marital_status', 'placeholder'=>'Tình Trạng Hôn Nhân', 'dir'=>$direction)) !!}
         {!! APFrmErrHelp::showErrors($errors, 'marital_status') !!}
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'is_default') !!}">

@@ -10,19 +10,19 @@
       <div class="modal-body">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#infoPanel" role="tab">Công ty</a>
+            <a class="nav-link active" data-toggle="tab" href="#infoPanel" role="tab">Công Ty</a>
           <li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#ads" role="tab">Mô tả</a>
+            <a class="nav-link" data-toggle="tab" href="#ads" role="tab">Mô Tả</a>
           <li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#placementPanel" role="tab">Địa chỉ</a>
+            <a class="nav-link" data-toggle="tab" href="#placementPanel" role="tab">Địa Chỉ</a>
           <li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#detail" role="tab">Chi tiết</a>
+            <a class="nav-link" data-toggle="tab" href="#detail" role="tab">Chi Tiết</a>
           <li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#review" role="tab">Năm thành lập</a>
+            <a class="nav-link" data-toggle="tab" href="#review" role="tab">Năm Thành Lập</a>
           <li>
         </ul>
         <div class="tab-content mt-2">

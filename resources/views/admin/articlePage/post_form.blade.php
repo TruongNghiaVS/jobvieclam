@@ -24,10 +24,10 @@
             <div class="page-bar">
                 <ul class="page-breadcrumb">
                     @if($item->id =="-1" )
-                    <li><a href="/admin/article-page"> Chính sách</a> <i class="fa fa-circle"></i></li>
+                    <li><a href="/admin/article-page"> Chính Sách</a> <i class="fa fa-circle"></i></li>
                     <li><span>Thêm mới</span></li>
                     @else 
-                    <li><a href="/admin/article-page"> Chính sách</a> <i class="fa fa-circle"></i></li>
+                    <li><a href="/admin/article-page"> Chính Sách</a> <i class="fa fa-circle"></i></li>
                     <li><span>{{$item->title}}</span></li>
                     @endif
                 </ul>

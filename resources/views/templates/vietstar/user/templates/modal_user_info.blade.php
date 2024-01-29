@@ -67,7 +67,7 @@ $user = Auth::user();
                   </div>
                   <p class="title-flip">Mô Tả Bản Thân </p>
                   <div class="p-4 fs-18px">
-                    {{ $user->getProfileSummary('summary') }}
+                    {!! $user->getProfileSummary('summary') !!}
                   </div>
 
                   <p class="title-flip">Thông tin nghề nghiệp</p>

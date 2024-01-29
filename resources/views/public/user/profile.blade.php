@@ -245,7 +245,7 @@
                             </div>
                             <p class="title-flip">Mô Tả Bản Thân  </p>
                             <div class="p-4 fs-18px">
-                                {{ $data->getProfileSummary('summary') }}
+                                {!! $data->getProfileSummary('summary') !!}
                             </div>
 
                             <p class="title-flip">Thông tin nghề nghiệp</p>

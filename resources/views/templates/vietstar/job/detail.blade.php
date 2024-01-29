@@ -704,7 +704,7 @@ $company = $job->getCompany();
 
                                         <!--Day update and place Start-->
                                         <div class="info-item day-update" bis_skin_checked="1">
-                                            Hạn nộp: {{$jobitem->expiry_date->format('d/m/Y')}}  
+                                            Hạn Nộp: {{$jobitem->expiry_date->format('d/m/Y')}}  
                                         </div>
                                         <!--Day update and place End-->
 

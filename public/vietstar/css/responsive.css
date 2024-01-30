@@ -1276,6 +1276,17 @@
   .header-bar {
     height: 400px
   }
+  .page-heading-tool.job-detail.mobile {
+    display: none;
+  }
+
+  .page-heading-tool .search-job #search{
+    width: 100% !important;
+  }
+
+  .filters-job-wrapper-mobile {
+    display: none;
+  }
   #mobile-sidebar.active {
     display: none !important;
   }
@@ -1377,6 +1388,33 @@
   .container {
     max-width: 1200px;
   }
+
+  .page-heading-tool.job-detail.mobile {
+    display: none;
+  }
+
+  .page-heading-tool .search-job #search{
+    width: 100% !important;
+  }
+
+  .filters-job-wrapper-mobile {
+    display: none;
+  }
+  #mobile-sidebar.active {
+    display: none !important;
+  }
+
+  #mobile-sidebar  {
+    display: none !important;
+  }
+  button#mobile-sidebarCollapse {
+    display: none !important;
+  }
+
+  section.header-bar.header-bar-mb {
+    display: none;
+  }
+
 
   .container.company-content {
     max-width: 1200px;

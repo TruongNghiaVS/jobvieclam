@@ -1074,6 +1074,10 @@
    #bannerSide #linkMobile{
     display: none;
    }  
+   div#about_us_feature  div{
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+   }
 
 }
 

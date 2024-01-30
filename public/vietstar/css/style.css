@@ -414,7 +414,7 @@ a {
 
 .job-detail-banner .job-detail-banner__icon img {
 	width: 100%;
-	height: inherit;
+	
 	object-fit: cover;
 }
 

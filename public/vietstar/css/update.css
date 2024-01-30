@@ -3866,13 +3866,8 @@ div#industry_id_chosen {
     background-position: center right
 }
 
-.slider-hero-banner .bg-slider.is-pc {
-    display: block
-}
 
-.slider-hero-banner .bg-slider.is-sp {
-    display: none
-}
+
 
 .card-job-related {
     height: auto
@@ -5128,14 +5123,7 @@ div#industry_id_chosen {
     }
 
 
-    .slider-hero-banner .bg-slider.is-pc {
-        display: none
-    }
-
-    .slider-hero-banner .bg-slider.is-sp {
-        display: block
-    }
-
+  
     .header-bar {
        
     }

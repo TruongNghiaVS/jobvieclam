@@ -21,7 +21,7 @@
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#culture" role="tab" data-toggle="tab"> 
+    <a class="nav-link " href="#culture" role="tab" data-toggle="tab"> 
         <h4 class="text-center text-uppercase text-primary  mb-0">
             Về Văn Hóa
         </h4>
@@ -34,7 +34,7 @@
 
 <!-- Tab panes -->
 <div class="tab-content">
-  <div role="tabpanel" class="tab-pane fade in active" id="about-us">
+  <div role="tabpanel" class="tab-pane active show " id="about-us">
         
         <section class="about-us-section ">
              
@@ -196,8 +196,143 @@
 
     
   </div>
-  <div role="tabpanel" class="tab-pane fade" id="culture">
-sá
+  <div role="tabpanel" class="tab-pane fade in " id="culture">
+    <section class="culture-section ">
+        <div class="container">
+            <h1 class="text-primary">Văn Hóa Jobvieclam</h1>
+                <div class="culture-img">
+                        <img src="http://localhost:8000\uploads/blogs/tim-viec-lam-anh-dai-dien_542_742.png" alt="tim-viec-lam-anh-dai-dien_542_742.png" title="tim-viec-lam-anh-dai-dien_542_742.png">
+                </div>
+            <div class="title">
+                <i class="fas fa-hand-point-right text-primary"></i> Văn Hóa Tập Trung vào Con Người:
+            </div>
+            <p>
+                Jobvieclam.com xây dựng một văn hóa tổ chức tập trung vào giá trị con người. Đồng nghiệp ở đây không chỉ là những người làm việc mà còn là những đối tác đồng hành, cùng nhau xây dựng và chia sẻ sứ mệnh tạo ra những cơ hội nghề nghiệp tốt nhất cho mọi người.
+            </p>
+
+            <strong>
+                Tôn Trọng sự Đa Dạng:
+            </strong>
+
+            <p>
+                Jobvieclam.com coi trọng sự đa dạng trong nền tảng nhân sự của mình. Chúng tôi tin rằng sự đa dạng mang lại sức mạnh sáng tạo và tích cực. Chúng tôi cam kết tạo ra một môi trường làm việc công bằng, tôn trọng quyền lợi và độc lập của mỗi cá nhân.
+            </p>
+
+            <strong>
+                Tương Tác Cộng Đồng:
+            </strong>
+
+            <p>
+                Jobvieclam.com không chỉ là một nền tảng tuyển dụng, mà còn là một phần của cộng đồng tuyển dụng việc làm. Chúng tôi tổ chức sự kiện, hội thảo và hoạt động tương tác để tạo ra cơ hội gặp gỡ, chia sẻ kinh nghiệm và mở rộng mạng lưới liên kết các chuyên ngành.
+            
+            </p>
+
+            <strong>
+                Trách Nhiệm Xã Hội:
+            </strong>
+
+            <p>
+                Chúng tôi hiểu rằng doanh nghiệp có trách nhiệm đối với xã hội. Jobvieclam.com cam kết thực hiện các hoạt động trách nhiệm xã hội, đóng góp vào sự phát triển của cộng đồng và hỗ trợ những người có nhu cầu đặc biệt trong thị trường lao động.
+              
+            </p>
+
+            <p>
+                Với những giá trị văn hóa này, Jobvieclam.com không chỉ là một đối tác nhân sự mà còn là một đồng minh đáng tin cậy, hỗ trợ doanh nghiệp xây dựng và phát triển nguồn lực nhân sự của mình theo hướng bền vững và tích cực.
+
+            </p>
+
+
+            <div class="title">
+                <i class="fas fa-hand-point-right text-primary"></i> Tầm nhìn - sứ mệnh của Jobvieclam.com
+            </div>
+            <strong>
+                Tầm Nhìn của Jobvieclam.com:
+            </strong>
+
+            <p>
+                Jobvieclam.com hướng tới việc trở thành nền tảng hàng đầu, định hình và đổi mới trong lĩnh vực cung ứng nhân sự, kết nối doanh nghiệp với những tài năng xuất sắc và đáp ứng mọi nhu cầu nhân sự của họ.
+            </p>
+
+
+            <strong>
+                Sứ Mệnh của Jobvieclam.com:
+            </strong>
+
+            <p>
+                Sứ mệnh của Jobvieclam là mang lại giải pháp nhân sự toàn diện, tạo cơ hội và tăng cường sức mạnh cho cả doanh nghiệp và ứng viên. Chúng tôi cung cấp không chỉ là dịch vụ tuyển dụng, mà còn là một đối tác chiến lược đồng hành, giúp doanh nghiệp xây dựng và phát triển đội ngũ nhân sự mạnh mẽ và linh hoạt để đối mặt với những thách thức và những biến đổi của thị trường.
+            </p>
+
+            <div class="title">
+
+            <i class="fas fa-hand-point-right text-primary"></i>   Giá Trị Cốt Lõi của Jobvieclam.com:
+
+            </div>
+            <strong>
+                Chất Lượng và Hiệu Suất:
+            </strong>
+           
+
+            <ul>
+                <li>
+                    Chúng tôi tập trung vào việc mang lại chất lượng cao nhất cho cả trải nghiệm người dùng và dịch vụ tuyển dụng. Chất lượng là tiêu chí hàng đầu để hỗ trợ doanh nghiệp đạt được hiệu suất tối ưu và đạt được mục tiêu tuyển dụng.
+                </li>
+            </ul>
+
+
+            <strong>
+                Sáng Tạo và Linh Hoạt:
+
+            </strong>
+
+
+            <ul>
+                <li>
+                    Chúng tôi khuyến khích và tôn trọng sự sáng tạo, linh hoạt trong cách chúng tôi xây dựng và phát triển nền tảng. Điều này giúp doanh nghiệp và ứng viên tận dụng mọi cơ hội để khai thác tìm năng của mình 
+                </li>
+            </ul>
+
+            <strong>
+             Đa Dạng và Bình Đẳng:
+
+            </strong>
+
+
+            <ul>
+                <li>
+                    Chúng tôi cam kết tạo ra môi trường làm việc đa dạng, bình đẳng, và tôn trọng. Mọi người có cơ hội công bằng để phát triển và góp phần vào sự đa dạng của đội ngũ nhân sự.
+                </li>
+            </ul>
+
+            <strong>
+                Trách Nhiệm Xã Hội:
+
+            </strong>
+
+            
+            <ul>
+                <li>
+                Chúng tôi xem xét mọi quyết định và hành động dưới góc độ trách nhiệm xã hội. Chúng tôi đóng góp tích cực vào cộng đồng và giữ vững các tiêu chuẩn bền vững.
+
+                </li>
+            </ul>
+
+
+            <strong>
+                Tận Tâm và Hỗ Trợ Chuyên Nghiệp:
+
+            </strong>
+
+            
+            <ul>
+                <li>
+                Đội ngũ chuyên gia của chúng tôi không chỉ tận tâm trong từng tương tác mà còn chuyên nghiệp trong cách họ hỗ trợ doanh nghiệp và ứng viên. Chúng tôi luôn sẵn sàng cung cấp giải pháp và đưa ra những lời khuyên có giá trị.
+
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+
   </div>
 
 </div>
@@ -280,6 +415,7 @@ sá
         color: #141414;
         margin-bottom: 10px;
 
+
     }
 
 
@@ -290,6 +426,69 @@ sá
         -webkit-box-orient: vertical;
         display: -webkit-box;
         overflow: hidden;
+
+    }
+
+    .culture-section  .container {
+        padding: 30px 40px;
+        border: 1px solid #f0f0f0;
+    }
+    .culture-img {
+        width: 50%;
+        padding-top: 32%;
+        position: relative;
+        height: 350px;
+        margin-bottom: 10px;
+    }
+
+    .culture-img  img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        object-fit: contain;
+    }
+
+    .culture-section p {
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 2.0rem;
+        text-align: justify;
+    }
+    .culture-section strong {
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 2.0rem;
+        color: var(--bs-primary);
+    }
+    .culture-section h1 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+
+    }
+    .culture-section .title  {
+        color: var(--bs-primary);
+        font-weight: 700;
+        margin-bottom: 15px;
+        line-height: 1.2;
+        font-size: 23px;
+
+    }
+
+    .culture-section ul li {
+        margin-bottom: 10px;
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 1.5rem;
+        text-align: justify;
+
     }
 
 

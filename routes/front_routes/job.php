@@ -24,6 +24,6 @@ Route::get('job-seekers', 'Job\JobSeekerController@jobSeekersBySearch')->name('j
 Route::post('submit-message', 'Job\SeekerSendController@submit_message')->name('submit-message');
 
 Route::get('subscribe-alert', 'SubscriptionController@submitAlert')->name('subscribe.alert');
-
+Route::get('/jobaply/detail/{appId}', 'Job\JobController@getInformationAplyJob')->name('getInformationAplyJob');
 
 Route::get('/salary-calculation', 'Job\JobController@salaryCalc')->name('salaryCalc');

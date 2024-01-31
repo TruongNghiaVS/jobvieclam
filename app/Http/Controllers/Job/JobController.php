@@ -776,7 +776,13 @@ class JobController extends Controller
         return view(config('app.THEME_PATH').'.job.my_applied_jobs')
                         ->with('jobs', $jobs);
     }
-
+    public function getInformationAplyJob($appId)
+    {  
+        $idRequest = $appId;
+        $infoJob =  JobApply::where("id",$idRequest )->first();
+        return view(config('app.THEME_PATH').'.job.modal_job_info')
+                        ->with('infoJob', $infoJob);
+    }
     public function myFavouriteJobs(Request $request)
     {
        

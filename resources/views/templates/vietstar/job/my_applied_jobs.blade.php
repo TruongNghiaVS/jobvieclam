@@ -241,7 +241,7 @@
             <strong>Trạng thái:</strong> ${status}
         </p>
         `;
-        console.log(company_p);
+        
         // Set the message
         $('#CV_Status .modal-body').html(company_p);
 

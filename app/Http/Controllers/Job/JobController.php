@@ -626,8 +626,7 @@ class JobController extends Controller
         $job = Job::where('slug', 'like', $job_slug)->first();
         $company = Company::where('id', $job->company_id)->first();
         $city = City::where('id', $job->city_id)->first();
-
-        $maxFileSize = UploadedFile::getMaxFilesize() / (1048576);
+         $maxFileSize = UploadedFile::getMaxFilesize() / (1048576);
 
 
         
@@ -654,8 +653,6 @@ class JobController extends Controller
             exit;
         }
         
-
-        #$myCvs = ProfileCv::where('user_id', '=', $user->id)->pluck('title', 'id')->toArray();
         $myCv = ProfileCv::where('user_id', '=', $user->id)->first();
 
         return view(config('app.THEME_PATH').'.user.applyjob') //.job.apply_job_form') //
@@ -672,9 +669,7 @@ class JobController extends Controller
     public function postApplyJob(Request $request, $job_slug)
     {
         $user = Auth::user();
-    
         $user_id = $user->id;
-        
         $job = Job::where('slug', 'like', $job_slug)->firstOrFail();
         $profileCv = ProfileCv::where('user_id', '=', $user_id)->first();
         if($request->your_resume == 0) {
@@ -771,11 +766,11 @@ class JobController extends Controller
     {
         $myAppliedJobIds = Auth::user()->getAppliedJobIdsArray();
         $user = Auth::user();
-        // $jobs = Job::whereIn('id', $myAppliedJobIds)->paginate(10);
+        
         $jobs = Job::join('job_apply', 'jobs.id', '=', 'job_apply.job_id')
                 ->where('job_apply.user_id', $user->id)
                 ->orderBy('job_apply.id', 'desc')
-                ->select('jobs.*',  'job_apply.created_at as applyDate','job_apply.status as status_job_apply')
+                ->select('jobs.*','job_apply.id as jobApplyId',  'job_apply.created_at as applyDate','job_apply.status as status_job_apply')
                 ->paginate(10);
 
         return view(config('app.THEME_PATH').'.job.my_applied_jobs')

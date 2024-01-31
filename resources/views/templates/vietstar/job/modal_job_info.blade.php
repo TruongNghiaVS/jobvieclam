@@ -7,7 +7,7 @@
                         <strong>Vị Trí:</strong>
                     </td>
                     <td class="table_value">
-                        IT
+                        <a href="/viec-lam/{{$job->slug}}"> {{$job->title}} </a>
                     </td>
                 </tr>
 
@@ -16,7 +16,7 @@
                         <strong>Ngày Ứng Tuyển:</strong>
                     </td>
                     <td class="table_value">
-                        31/12/2023
+                        {{$infoJob->created_at->format('d/m/Y H:i:s');}}
                     </td>
                 </tr>
                 <tr>
@@ -24,27 +24,44 @@
                         <strong>Trạng thái:</strong>
                     </td>
                     <td class="table_value status-apply accept" status="CV tiếp nhận">
-                        CV tiep nhan
+                       
+                        @if($infoJob->status =="1")
+                                  CV tiếp nhận
+                        @elseif($infoJob->status =="2")
+                                Phù hợp
+                        @elseif($infoJob->status =="3")
+                                Hẹn phỏng vấn
+                        @elseif($infoJob->status =="4")
+                                Gửi đề nghị
+                        @elseif($infoJob->status =="5")
+                               Nhận việc
+                        @elseif($infoJob->status =="6")
+                               Từ chối
+                        @endif
+                        
                     </td>
                 </tr>
+                @if($noteForJob)
                 <tr>
                     <td class="text-primary" >
                         <strong>Phản Hồi Từ NTD:</strong>
                     </td>
                     <td class="table_value ">
-                    CV tiep nhan, vui lòng check email
+                     {{$noteForJob->Noted}}
                     </td>
                 </tr>
+
+             
                 <tr>
                     <td class="text-primary">
                         <strong>Cập Nhật Lần Cuối:</strong>
                     </td>
                     <td class="table_value">
-                    31/01/2001
+                    {{$noteForJob->created_at->format('d/m/Y H:i:s');}}
                     </td>
                 </tr>
 
-
+                @endif
                
             </tbody>
         </table>

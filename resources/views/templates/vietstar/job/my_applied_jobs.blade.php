@@ -35,7 +35,7 @@
                                         <!-- <span>Mới</span> -->
                                         <h3 class="job-title-name"><a href="{{route('job.detail', [$job->slug])}}" title="{{$job->title}}">{{$job->title}}</a></h3>
                                     </div>
-                                    <a class="card-news__content-detail mb-2 status-apply cursor-pointer"  onclick="CV_statusmodal('{{ $job->id }}')"   status="{{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }}">
+                                    <a class="card-news__content-detail mb-2 status-apply cursor-pointer"  onclick="CV_statusmodal('{{ $job->jobApplyId }}')"   status="{{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }}">
                                         {{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }}
                                     </a>
                                 </div>
@@ -73,19 +73,13 @@
                                     <div class="navbar__link-separator" bis_skin_checked="1"></div>
                                     <!--meta-city-->
                                     <div class="meta-city" bis_skin_checked="1">
-                                        <!-- <i class="fa-solid fa-location-dot"></i> -->
+                                      
                                         {{$job->getCity('city')}}
                                     </div>
     
-                                    <!--meta-city-->
-    
-    
-    
-                                    <!-- Bán thời gian -->
+                                  
                                 </div>
-                                <!--Rank-salary and place End-->
-    
-                                <!--Day update and place Start-->
+                              
                                 @php
                                 $datetime =   Carbon\Carbon::parse($job->created_at);
                          $timeCurrent = Carbon\Carbon::now();
@@ -127,12 +121,7 @@
                                 <div class="info-item day-update" bis_skin_checked="1">
                                   Ngày nộp: {{$datetimeText1}}
                                 </div>
-                                <!-- <div class="info-item Interview" bis_skin_checked="1">
-                                    <i class="iconmoon icon-calendar-icon1"></i>Interview at: 16:30 20/07/2022
-                                </div> -->
-                                <!--Day update and place End-->
-    
-                                <!-- <div class="short-description">M&amp;ocirc; tả c&amp;ocirc;ng việc</div> -->
+                             
                             </div>
                             <div class="caption" bis_skin_checked="1">
                                 
@@ -152,7 +141,7 @@
                             @endisset
     
                                 <div class="user-action" bis_skin_checked="1">
-                                    <a class="btn-view-details" href="{{route('job.detail', [$job->slug])}}"></span> {{__('View Details')}}</a>
+                                    <a class="btn-view-details" href="javascript:void(0)" onclick ="CV_statusmodal('{{ $job->jobApplyId }}')"   status="{{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }}"></span> {{__('View Details')}}</a>
                                 </div>
                             </div>
                         </div>

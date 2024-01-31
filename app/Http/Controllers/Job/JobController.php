@@ -42,6 +42,7 @@ use App\Http\Requests\Front\ApplyJobFormRequest;
 use App\Http\Controllers\Controller;
 use App\Traits\FetchJobs;
 use App\Events\JobApplied;
+use App\Models\NoteForJob;
 use Illuminate\Http\UploadedFile;
 
 class JobController extends Controller
@@ -780,9 +781,12 @@ class JobController extends Controller
     {  
         $idRequest = $appId;
         $infoJob =  JobApply::where("id",$idRequest )->first();
-
+        $job=  Job::where("id", $infoJob->job_id )->first();
+        $noteForJob = NoteForJob::where("jobId", $infoJob->job_id)->orderBy ("created_at",'desc')->first();
         $view = view(config('app.THEME_PATH').'.job.modal_job_info')
         ->with('infoJob', $infoJob)
+        ->with('noteForJob', $noteForJob)
+        ->with('job', $job)
         ->render();
          return $view;            
     }

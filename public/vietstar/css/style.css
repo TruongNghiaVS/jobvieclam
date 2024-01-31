@@ -411,6 +411,9 @@ a {
 	height: 120px;
 	overflow: hidden;
 }
+.cursor-pointer {
+	cursor: pointer;
+}
 
 .job-detail-banner .job-detail-banner__icon img {
 	width: 100%;

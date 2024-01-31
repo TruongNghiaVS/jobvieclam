@@ -201,6 +201,10 @@
 
 @include('templates.vietstar.includes.footer')
 @endsection
+
+
+
+
 @push('scripts')
 <script>
     const apply_status = document.querySelectorAll(".status-apply");

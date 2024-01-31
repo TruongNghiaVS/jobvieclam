@@ -35,7 +35,7 @@
                                         <!-- <span>Mới</span> -->
                                         <h3 class="job-title-name"><a href="{{route('job.detail', [$job->slug])}}" title="{{$job->title}}">{{$job->title}}</a></h3>
                                     </div>
-                                    <a class="card-news__content-detail mb-2 status-apply cursor-pointer"  onclick="CV_statusmodal('Trạng thái CV','{{$company->name}}','{{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }} ',' {{$job->title}} ')"   status="{{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }}">
+                                    <a class="card-news__content-detail mb-2 status-apply cursor-pointer"  onclick="CV_statusmodal('{{ $job->id }}')"   status="{{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }}">
                                         {{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }}
                                     </a>
                                 </div>
@@ -181,7 +181,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="CV_Statustitle">Modal title</h5>
+        <h5 class="modal-title" id="CV_Statustitle">Thông báo việc làm</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -226,26 +226,46 @@
 
 
 
-    function CV_statusmodal(title,company_name, status,position) {
+    function CV_statusmodal(id) {
+        if(id){
+            $('#CV_Status .modal-body').empty()
+            $.ajax({
+            type: "GET",
+            url:  `jobaply/detail/${id}`,
+            beforeSend:   showSpinner(),
+            statusCode: {
+                202 :  function(responseObject, textStatus, jqXHR) {
+                    console.log(responseObject.error);
+                    hideSpinner();
         
-        // Set the title
-        $('#CV_Status #CV_Statustitle').text(title);
-        const company_p =  `
-        <p class="mb-2">
-            <strong>Tên Công ty:</strong> ${company_name}
-        </p>
-        <p class="mb-2">
-            <strong>Vị trí:</strong> ${position}
-        </p>
-        <p class="mb-2">
-            <strong>Trạng thái:</strong> ${status}
-        </p>
-        `;
-        
-        // Set the message
-        $('#CV_Status .modal-body').html(company_p);
+                },
+                401: function(responseObject, textStatus, jqXHR) {
+                    // No content found (404)
+                    hideSpinner();
+                   
+                },
+                503: function(responseObject, textStatus, errorThrown) {
+                    hideSpinner();
+           
+                }           
+                }
+                })
+                .done(function(data){
+                    hideSpinner();
 
-
+                    if (data) {
+                        $('#CV_Status .modal-body').append(data);
+                    }
+                })
+                .fail(function(jqXHR, textStatus){
+                    hideSpinner();
+                 
+                    
+                })
+                .always(function(jqXHR, textStatus) {
+                
+                });
+        }
         // Show the modal
         $('#CV_Status').modal('show');
     }

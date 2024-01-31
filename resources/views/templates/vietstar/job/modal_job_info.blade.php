@@ -1,10 +1,49 @@
+<div class="table-responsive">
+        <table class="table table-responsive table-job-info borderless ">
+            <tbody>
 
-<p class="mb-2">
-    <strong>Tên Công ty:</strong> 
-</p>
-<p class="mb-2">
-    <strong>Vị trí:</strong> 
-</p>
-<p class="mb-2">
-    <strong>Trạng thái:</strong>
-</p>
+                <tr>
+                    <td class="text-primary">
+                        <strong>Vị trí:</strong>
+                    </td>
+                    <td class="table_value">
+                        IT
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-primary">
+                        <strong>Trạng thái:</strong>
+                    </td>
+                    <td class="table_value status-apply accept" status="CV tiếp nhận">
+                        CV tiep nhan
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-primary" >
+                        <strong>Phản Hồi Từ NTD:</strong>
+                    </td>
+                    <td class="table_value ">
+                    CV tiep nhan, vui lòng check email
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-primary">
+                        <strong>Cập Nhật Lần Cuối:</strong>
+                    </td>
+                    <td class="table_value">
+                    31/01/2001
+                    </td>
+                </tr>
+               
+            </tbody>
+        </table>
+</div>
+
+
+@push('styles')
+<style>
+    .table-job-info .table-job-info_title {
+        width: unset !important;
+    }
+</style>
+@endpush

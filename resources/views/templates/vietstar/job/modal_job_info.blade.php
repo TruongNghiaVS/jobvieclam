@@ -13,7 +13,7 @@
 
                 <tr>
                     <td class="text-primary">
-                        <strong>Ngày Ứng Tuyển</strong>
+                        <strong>Ngày Ứng Tuyển:</strong>
                     </td>
                     <td class="table_value">
                         31/12/2023

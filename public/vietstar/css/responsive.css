@@ -674,6 +674,19 @@
     padding: 10px;
  }
 
+.slider-hero-banner .bg-slider.is-pc {
+  display: none
+}
+
+.slider-hero-banner .bg-slider.is-pc-sm {
+  display: none
+}
+
+
+.slider-hero-banner .bg-slider.is-sp {
+  display: block
+}
+
 
 }
 
@@ -1074,18 +1087,37 @@
    #bannerSide #linkMobile{
     display: none;
    }  
+   div#about_us_feature  div{
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+   }
+
+
+   .slider-hero-banner .bg-slider.is-pc {
+    display: block
+  }
+  
+  .slider-hero-banner .bg-slider.is-pc-sm {
+    display: none
+  }
+  
+  
+  .slider-hero-banner .bg-slider.is-sp {
+    display: none
+  }
 
 }
 
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  
+  
   .container {
-    max-width: 960px;
+    max-width: 100%;
   }
-  .header-bar.header-bar-mb{
-    display: none;
-  }
+ 
+
   
   .content {
     padding-left: 24px;
@@ -1104,21 +1136,11 @@
     display: none;
   }
 
-  #mobile-sidebarCollapse {
-    display: none;
-  }
 
-  #mobile-sidebar {
-    display: none !important;
-  }
+ 
 
-  #mobile-sidebar.active {
-    display: none !important;
-  }
 
-  #mobile-sidebar-main-nav {
-    display: none;
-  }
+
   
 
   #bannerSide #linkDesktop{
@@ -1129,14 +1151,155 @@
    #bannerSide #linkMobile{
     display: none;
    }  
+
+
+   .slider-hero-banner .bg-slider.is-pc {
+    display: block
+  }
+  
+  .slider-hero-banner .bg-slider.is-pc-sm {
+    display: none
+  }
+  
+  
+  .slider-hero-banner .bg-slider.is-sp {
+    display: none
+  }
+
+  #mobile-sidebar ul li a {
+    padding: 5px !important;
+  }
+
+  #mobile-sidebar.active {
+    max-height: 100%;
+    height: 100%;
+  }
+
+  #mobile-sidebar.active .sidebar-header {
+    max-height: 70%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 70%
+  }
+
+  #mobile-sidebar.active .sidebar-bottom {
+    max-height: 20%;
+    height: 20%;
+  }
+
+
+
+  #navbarDropdownMenuLink {
+    padding: 0 !important;
+  }
+
+  #mobile-sidebar ul ul a {
+    padding-left: 40px ;
+  }
+  #mobile-sidebar ul ul a#navbarDropdownMenuLink {
+    padding-left: 0 !important;
+  }
+
+  #default-sidebar {
+    display: none;
+  }
+
+  #default-sidebar {
+    display: none !important;
+  }
+
+  .header-bar-pc .header-bar-content-search {
+    display: none;
+  }
+
+  .header-bar.header-bar-pc{
+    margin-bottom: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding-top: 25%;
+    height: 0;
+  }
+
+
+  .header-bar.header-bar-pc .header-bar-bg {
+    height: 100%;
+  }
+
+
+  .header-bar-pc .header-bar-content-search {
+    display: none;
+  }
+  .header-bar.header-bar-mb {
+    padding-top: unset;
+  }
+
+  .header-bar .header-bar-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  
+  .slider-hero-banner .bg-slider {
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center
+} 
+
+.header-bar.header-bar-mb{
+  height: unset;
+}
+.search-form-box {
+  width: 100%;
+}
+
+.advance-search__box {
+  display: none;
+}
+.form-group-search-box {
+  max-height: unset;
+}
+
+
+
 }
 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 
-@media only screen and (min-width: 1240px) and (max-width: 1399px)  {
+@media only screen and (min-width: 1200px) and (max-width: 1399px)  {
   .header-bar {
     height: 400px
+  }
+  .page-heading-tool.job-detail.mobile {
+    display: none;
+  }
+
+  .page-heading-tool .search-job #search{
+    width: 100% !important;
+  }
+
+  .filters-job-wrapper-mobile {
+    display: none;
+  }
+  #mobile-sidebar.active {
+    display: none !important;
+  }
+
+  #mobile-sidebar  {
+    display: none !important;
+  }
+  button#mobile-sidebarCollapse {
+    display: none !important;
+  }
+
+  section.header-bar.header-bar-mb {
+    display: none;
   }
  .container {
     max-width: 1170px;
@@ -1204,6 +1367,20 @@
    #bannerSide #linkMobile{
     display: none;
    }  
+
+   .slider-hero-banner .bg-slider.is-pc {
+    display: none
+  }
+  
+  .slider-hero-banner .bg-slider.is-pc-sm {
+    display: block
+  }
+  
+  
+  .slider-hero-banner .bg-slider.is-sp {
+    display: none
+  }
+
 }
 
 
@@ -1211,6 +1388,33 @@
   .container {
     max-width: 1200px;
   }
+
+  .page-heading-tool.job-detail.mobile {
+    display: none;
+  }
+
+  .page-heading-tool .search-job #search{
+    width: 100% !important;
+  }
+
+  .filters-job-wrapper-mobile {
+    display: none;
+  }
+  #mobile-sidebar.active {
+    display: none !important;
+  }
+
+  #mobile-sidebar  {
+    display: none !important;
+  }
+  button#mobile-sidebarCollapse {
+    display: none !important;
+  }
+
+  section.header-bar.header-bar-mb {
+    display: none;
+  }
+
 
   .container.company-content {
     max-width: 1200px;
@@ -1292,7 +1496,22 @@
    #bannerSide #linkMobile{
     display: none;
    }  
-}
+
+
+   .slider-hero-banner .bg-slider.is-pc {
+    display: block
+  }
+  
+  .slider-hero-banner .bg-slider.is-pc-sm {
+    display: none
+  }
+  
+  
+  .slider-hero-banner .bg-slider.is-sp {
+    display: none
+  }
+
+  }
 
 
 

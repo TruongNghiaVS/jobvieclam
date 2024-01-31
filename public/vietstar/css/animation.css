@@ -19,6 +19,24 @@
     animation: fade-right 0.7s ease-in;
   }
 
+  .active.fade-in-out {
+    animation: fade-in-out 0.7s ease-in;
+  }
+
+
+
+  @keyframes fade-in-out  {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
   @keyframes fade-top {
     0% {
       transform: translateY(-100px);

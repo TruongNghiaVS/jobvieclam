@@ -30,7 +30,7 @@
                         <a href="{{ route('vietnam-salary') }}" class="nav-link {{ Request::url() == route('vietnam-salary')  ? 'header-active' : 'text-main-color' }}"
                         style="{{ Request::url() == route('vietnam-salary')  ? 'color:#981B1E;' : '' }}">{{__('Vietnam Salary')}}</a>
                     </li> -->
-                    @if(Auth::user())
+                   {{-- @if(Auth::user())
                     <li class="has-child">
                         <!-- <a href="{{ route('my.profile') }}" class="nav-link nav-link-parent">{{__('Profiles and CVs')}}</a> -->
                         <button type="button" class="btn-show-sub-menu" data-ref="findJob" data-target="false"><span class="iconmoon icon-p-next"></span></button>
@@ -60,7 +60,7 @@
 
                         </ul>
                     </li>
-                    @endif
+                    @endif--}}
                     <li class="has-child">
                         <a href="{{route('company.listing')}}" class="nav-link {{ Request::url() == route('company.listing') ? 'header-active' : 'text-main-color' }}" style="{{ Request::url() == route('company.listing')  || strpos(Request::url(),'job') ? 'color:#981B1E;' : '' }}">{{__('Company')}}</a>
                     </li>

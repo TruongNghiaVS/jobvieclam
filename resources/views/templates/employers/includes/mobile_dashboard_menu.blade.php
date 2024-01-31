@@ -135,9 +135,7 @@
         display: none;
     }
 
-    #mobile-sidebar ul.components {
-      
-    }
+
 
     #mobile-sidebar ul p {
         color: #063146;
@@ -672,7 +670,7 @@
 @include('templates.employers.user.templates.modal_user_info')
 @push('scripts')
 <script type="text/javascript">
-     if ($(window).width() < 992) {
+     if ($(window).width() < 1240) {
         $('#mobile-sidebar').removeClass("active");
     }
     $(document).ready(function() {

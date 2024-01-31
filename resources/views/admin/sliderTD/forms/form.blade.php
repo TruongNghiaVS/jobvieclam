@@ -36,6 +36,17 @@ $queryString = MiscHelper::getLangQueryStr();
         {!! Form::label('slider_image_mobile', 'Ảnh Slider cho Mobile ', ['class' => 'bold']) !!}
         {!! Form::File('slider_image_mobile', array('class'=>'form-control', 'id'=>'slider_image_mobile')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'slider_image_mobile') !!}
+
+    @if(isset($slider))
+        <div class="form-group">
+            {{ ImgUploader::print_image("slider_images/thumb/$slider->linkImage3") }}
+        </div>
+    @endif
+    <div class="form-group {!! APFrmErrHelp::hasError($errors, 'slider_image_mobile') !!}">
+        {!! Form::label('linkImage3', 'Ảnh PC SM', ['class' => 'bold']) !!}
+        {!! Form::File('linkImage3', array('class'=>'form-control', 'id'=>'linkImage3')) !!}
+        {!! APFrmErrHelp::showErrors($errors, 'linkImage3') !!}
+
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'slider_heading') !!}">
         {!! Form::label('slider_heading', 'Slider heading', ['class' => 'bold']) !!}
         {!! Form::text('slider_heading', null, array('class'=>'form-control', 'id'=>'slider_heading', 'placeholder'=>'Slider heading', 'dir'=>$direction)) !!}

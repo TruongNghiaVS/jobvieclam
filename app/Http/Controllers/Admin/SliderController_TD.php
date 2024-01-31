@@ -66,7 +66,7 @@ class SliderController_TD extends Controller
         }
         if ($request->hasFile('linkImage3')) {
             $image_name = $request->input('slider_heading');
-            $fileName = ImgUploader::UploadImage('slider_images', $request->file('linkImage3'), $image_name, 600, 1368);
+            $fileName = ImgUploader::UploadImage('slider_images', $request->file('linkImage3'), $image_name, 1368, 600);
             $slider->linkImage3 = $fileName;
             $slider->used_for = 1;
         }

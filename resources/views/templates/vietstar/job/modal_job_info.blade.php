@@ -4,10 +4,19 @@
 
                 <tr>
                     <td class="text-primary">
-                        <strong>Vị trí:</strong>
+                        <strong>Vị Trí:</strong>
                     </td>
                     <td class="table_value">
                         IT
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="text-primary">
+                        <strong>Ngày Ứng Tuyển</strong>
+                    </td>
+                    <td class="table_value">
+                        31/12/2023
                     </td>
                 </tr>
                 <tr>
@@ -34,6 +43,8 @@
                     31/01/2001
                     </td>
                 </tr>
+
+
                
             </tbody>
         </table>

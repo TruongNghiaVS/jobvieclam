@@ -222,10 +222,10 @@
 
                 <a class="btn_for_user" href="http://127.0.0.1:8000/">
                 <div  class="btn_for_user__head">
-                    Dành cho
+                    Dành Cho
                 </div> 
                 <div  class="btn_for_user__body">
-                    Người tìm việc
+                    Người Tìm Việc
                 </div>    
                 </a>
             

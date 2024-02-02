@@ -92,7 +92,7 @@
                                         <th>Tiêu Đề</th>
                                         <th>Slug</th>
 
-                                        <th>Cập nhật lần cuối</th>
+                                        <th>Cập Nhật Lần Cuối</th>
                                         <th>{{__('Action')}}</th>
                                     </tr>
                                     {{ csrf_field() }}

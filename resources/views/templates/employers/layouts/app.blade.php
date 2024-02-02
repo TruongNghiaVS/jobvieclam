@@ -17,7 +17,7 @@ if (!isset($seo)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     
     {!! $seo->seo_other !!}
-    <link rel="icon" type="image/x-icon" href="{{ asset('/vietstar/imgs/login.jpg') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('/vietstar/imgs/jobvieclam.png') }}">
 
     <link href="{{ asset('/vietstar/css/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('/vietstar/css/swiper-bundle.min.css')}}" />

@@ -137,7 +137,7 @@ dd($salaryFroms)
                         <div class="form-group form-select-chosen" id="functional_area_dd">
                         
                             <select name="industry_id" class="form-control form-select shadow-sm" id="industry_id">
-                                         <option value="-1">Chọn lĩnh vực</option>
+                                         <option value="-1">Chọn Lĩnh Vực</option>
                                         @foreach  ($Industrys as $itemSelect)
                                              @if($itemSelect->industry_id == $requestSearch->industry_idRequest)
                                                      <option selected value="{{$itemSelect->industry_id}}">{{$itemSelect->industry}}</option>

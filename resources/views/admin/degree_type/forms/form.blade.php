@@ -16,17 +16,17 @@ $queryString = MiscHelper::getLangQueryStr();
         {!! APFrmErrHelp::showErrors($errors, 'lang') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'degree_level_id') !!}" id="degree_level_id_div">
-        {!! Form::label('degree_level_id', 'Bằng cấp', ['class' => 'bold']) !!}
+        {!! Form::label('degree_level_id', 'Bằng Cấp', ['class' => 'bold']) !!}
         {!! Form::select('degree_level_id', ['' => 'Lựa chọn']+$degreeLevels, null, array('class'=>'form-control', 'id'=>'degree_level_id')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'degree_level_id') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'degree_type') !!}">
-        {!! Form::label('degree_type', 'Ngành học', ['class' => 'bold']) !!}
+        {!! Form::label('degree_type', 'Ngành Học', ['class' => 'bold']) !!}
         {!! Form::text('degree_type', null, array('class'=>'form-control', 'id'=>'degree_type', 'placeholder'=>'Ngành học', 'dir'=>$direction)) !!}
         {!! APFrmErrHelp::showErrors($errors, 'degree_type') !!}
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'is_default') !!}">
-        {!! Form::label('is_default', 'Mặc định?', ['class' => 'bold']) !!}
+        {!! Form::label('is_default', 'Mặc Định?', ['class' => 'bold']) !!}
         <div class="radio-list">
             <?php
             $is_default_1 = 'checked="checked"';

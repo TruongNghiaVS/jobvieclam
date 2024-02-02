@@ -5,7 +5,6 @@
 }
 .company-wrapper.company-list-wrapper {
     top: 0;
-    margin-top: 50px;
 }
 
 .content.addjob {
@@ -366,7 +365,7 @@ i.fas.fa-heart.iconoutline {
 }
 
 .topcompanyhead__search {
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .search-company .search__box {
@@ -402,7 +401,7 @@ i.fas.fa-heart.iconoutline {
 
 .topcompanyhead,
 .bottomcompanycontent {
-    padding: 10px 25px;
+    padding: 0px 25px;
 }
 
 
@@ -426,7 +425,6 @@ i.fas.fa-heart.iconoutline {
 }
 
 .list-company {
-    margin-top: 20px;
     width: 100%;
     margin-right: -16px;
 }
@@ -549,7 +547,6 @@ i.fas.fa-heart.iconoutline {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
 }
 
 .hide {
@@ -808,19 +805,28 @@ h3.banner__title {
     }
     .topcompanyhead__search .col-6 {
         width: 100%;
-        margin: 10px 0;
+        margin-bottom: 10px;
+      }
+
+      .topcompanyhead__search .col-6  button {
+        width: 100%;
       }
       .topcompanyhead, .bottomcompanycontent {
-        padding: 10px 10px !important;
+        padding: 0px 10px !important;
+      }
+      .company-list-container {
+        padding: 20px 0;
       }
     
       .bottomcompanyconten__head{
          flex-direction: column !important;
          justify-content: flex-start !important;
          align-items: flex-start !important;
+         margin-bottom: 10px;
       }
       .bottomcompanyconten__head h2 {
-        margin: 20px 0;
+        margin: 0px 0;
+        font-size: 20px;
       }
       .filter-company {
         width: 100% !important;

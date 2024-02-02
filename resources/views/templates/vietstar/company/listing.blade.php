@@ -20,14 +20,14 @@
             <h1>Khám phá 1.000+ công ty nổi bật</h1>
             <p>Tìm hiểu văn hoá công ty và chọn cho bạn nơi làm việc phù hợp nhất.</p>
             <div class="topcompanyhead__search row">
-                <div class="search-company col-6 px-0">
+                <div class="search-company col-6 col-sm-12 px-0">
 
                     <div class="d-flex flex-row search__box">
                         <input type="search" class="" id="keyword" name="keyword" placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
                     </div>
 
                 </div>
-                <div class="col-6 px-0">
+                <div class="col-6 col-sm-12 px-0">
                         <button class="btn btn-primary" type="submit">
                             Tìm kiếm
                         </button>

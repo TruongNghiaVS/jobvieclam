@@ -49,12 +49,12 @@
                                 <div class="footer-widget">
                                     <h4 class="widget-title">{{__('About Us')}}</h4>
                                     <ul class="list-unstyled footer-links">
-                                        <li><a href="{{ route('contact.us') }}">{{__('Contact')}}</a></li>
                                         <li>
                                             <a href="{{route('about_us')}}">
                                                 {{__('About us')}}
                                             </a>
                                         </li>
+                                        <li><a href="{{ route('contact.us') }}">{{__('Contact')}}</a></li>
                                     </ul>
                                 </div>
                             </div>

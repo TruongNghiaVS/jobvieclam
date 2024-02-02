@@ -98,26 +98,26 @@
         <div class="container">
              <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-12">
-                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc Làm Bình Dương</a></div>
-                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc Làm Đồng Nai</a></div>
-                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc Làm Vũng Tàu</a></div>
+                                <div class="text-white py-2 fs-18px"><a href="" class="text-white py-2 fs-18px">Việc Làm Bình Dương</a></div>
+                                <div class="text-white py-2 fs-18px"><a href="" class="text-white py-2 fs-18px">Việc Làm Đồng Nai</a></div>
+                                <div class="text-white py-2 fs-18px"><a href="" class="text-white py-2 fs-18px">Việc Làm Vũng Tàu</a></div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12">
-                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc Làm Đà Nẵng</a></div>
-                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc Làm Hải Phòng</a></div>
-                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc Làm Đà Lạt</a></div>
+                                <div class="text-white py-2 fs-18px"><a href="" class="text-white py-2 fs-18px">Việc Làm Đà Nẵng</a></div>
+                                <div class="text-white py-2 fs-18px"><a href="" class="text-white py-2 fs-18px">Việc Làm Hải Phòng</a></div>
+                                <div class="text-white py-2 fs-18px"><a href="" class="text-white py-2 fs-18px">Việc Làm Đà Lạt</a></div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12">
-                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc Làm IT</a></div>
-                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc Làm Marketing</a></div>
-                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Việc Làm Chăm Sóc Khách Hàng</a></div>
+                                <div class="text-white py-2 fs-18px"><a href="" class="text-white py-2 fs-18px">Việc Làm IT</a></div>
+                                <div class="text-white py-2 fs-18px"><a href="" class="text-white py-2 fs-18px">Việc Làm Marketing</a></div>
+                                <div class="text-white py-2 fs-18px"><a href="" class="text-white py-2 fs-18px">Việc Làm Chăm Sóc Khách Hàng</a></div>
                 
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-12">
-                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Thiết Kế CV</a></div>
-                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Bí Quyết Tìm Việc</a></div>
-                                <div class="text-white p-2 fs-18px"><a href="" class="text-white p-2 fs-18px">Kỹ Năng Phỏng Vấn</a></div>
+                                <div class="text-white py-2 fs-18px"><a href="" class="text-white py-2 fs-18px">Thiết Kế CV</a></div>
+                                <div class="text-white py-2 fs-18px"><a href="" class="text-white py-2 fs-18px">Bí Quyết Tìm Việc</a></div>
+                                <div class="text-white py-2 fs-18px"><a href="" class="text-white py-2 fs-18px">Kỹ Năng Phỏng Vấn</a></div>
                 </div>
              </div>
         </div>

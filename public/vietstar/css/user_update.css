@@ -547,6 +547,7 @@ i.fas.fa-heart.iconoutline {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top :10px;
 }
 
 .hide {
@@ -759,7 +760,11 @@ h3.banner__title {
 
 .topcompanyhead__search   #btn-search-cp {
     margin-left: 10px;
-  }
+}
+.show-more-btn:hover {
+    background-color: var(--bs-primary);
+    color: white;
+}
 
 
 @media only screen and (max-width: 767px) {

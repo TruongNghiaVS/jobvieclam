@@ -13,7 +13,7 @@ $numberOfColumns = 9;
                     <?php $company =$latestJobs->getCompany(); 
                     ?>
                     @if(null !== $company)
-                    <div class="col-md-6 col-lg-4 mb-3">
+                    <div class="col-md-6 col-lg-4">
                         <div class="card-box">
                             <div class="content-title-box">
                                 <div class="w-100 h-100 d-flex  align-items-center">

@@ -700,6 +700,15 @@
 .topcompanyhead__search {
   margin: 0;
 }
+  .custom-swiper-button-next {
+    right:0 !important
+  }
+  .custom-swiper-button-prev{
+    left: 0 !important; 
+  }
+
+
+
 }
 
 
@@ -709,6 +718,12 @@
 
   .container {
     max-width: 100%;
+  }
+  .custom-swiper-button-next {
+    right:0 !important
+  }
+  .custom-swiper-button-prev{
+    left: 0 !important; 
   }
 
   .content {
@@ -1129,6 +1144,12 @@
     max-width: 100%;
   }
  
+  .custom-swiper-button-next {
+    right:0 !important
+  }
+  .custom-swiper-button-prev{
+    left: 0 !important; 
+  }
 
   
   .content {
@@ -1400,7 +1421,9 @@
   .container {
     max-width: 1200px;
   }
+  .mySwiper {
 
+  }
   .page-heading-tool.job-detail.mobile {
     display: none;
   }

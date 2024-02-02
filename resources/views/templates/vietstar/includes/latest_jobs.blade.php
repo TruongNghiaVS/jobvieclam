@@ -82,16 +82,55 @@ $numberOfColumns = 9;
             </div>
             @endforeach
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
         <div class="swiper-pagination"></div>
     </div>
+    <div class="custom-swiper-button-next"><i class="fas fa-chevron-right"></i></div>
+    <div class="custom-swiper-button-prev"><i class="fas fa-chevron-left"></i></div>
 
 </div>
+@endif
 
 
 
-    @endif
+@push('styles')
+<style>
+    .r-news {
+        position: relative;
+    }
+
+
+    .custom-swiper-button-next{
+        position: absolute;
+        top: 50%;
+        font-size: 30px;
+        z-index: 10;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: -20px;
+        color: var(--bs-blue);
+
+    }
+
+    .custom-swiper-button-prev {
+        position: absolute;
+        top: 50%;
+        font-size: 30px;
+        font-weight: 500;
+        z-index: 10;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: -20px;
+        color: var(--bs-blue);
+    }
+    .custom-swiper-button-next i ,.custom-swiper-button-prev i{
+        color: var(--bs-blue);
+    }
+</style>
+@endpush
 
 @push('scripts')
 <script type="text/javascript">

@@ -47,9 +47,9 @@
                     </div>
 
                     
-                    <div class="py-3">
+                    <div class="">
                         @if($overviewUser)
-                        <div class="py-3">
+                        <div class="pt-3">
                             <div class="progress">
                                 <div class="progress-bar bg-primary" role="progressbar" style="width: {{$overviewUser->percent}}%;" aria-valuenow="{{$overviewUser->percent}}" aria-valuemin="0" aria-valuemax="100">{{$overviewUser->percent}}</div>
                             </div>

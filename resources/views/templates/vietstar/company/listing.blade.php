@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
                         <button class="btn btn-primary" id="btn-search-cp" type="submit">
-                            Tìm kiếm
+                            Tìm Kiếm
                         </button>
                 </div>
             </div>

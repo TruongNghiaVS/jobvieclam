@@ -59,7 +59,7 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="search">Search</label>
-                                    <input type="text" id="search" class="form-control" placeholder="Tìm kiếm">
+                                    <input type="text" id="search" class="form-control" placeholder="Tìm Kiếm">
                                 </div>
                             </div>
                             <div class="col-lg-6">

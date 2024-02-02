@@ -78,7 +78,7 @@
                         <div class="table-container">
                             <form method="post" role="form" id="job-search-form">
                                 <div class="search-wrapper">
-                                    <input type="text" class="form-control" name="search" id="search" autocomplete="off" placeholder="Tìm kiếm">
+                                    <input type="text" class="form-control" name="search" id="search" autocomplete="off" placeholder="Tìm Kiếm">
                                 </div>
                                 <table class="table table-striped table-bordered table-hover"  id="jobDatatableAjax">
                                     <thead>

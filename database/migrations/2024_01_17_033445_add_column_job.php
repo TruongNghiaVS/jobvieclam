@@ -14,19 +14,19 @@ class AddColumnJob extends Migration
     public function up()
     {
         Schema::table('jobs', function (Blueprint $table) {
-            $table->json('tags')->nullable();
+            // $table->json('tags')->nullable();
         });
 
         Schema::table('blogs', function (Blueprint $table) {
             
-            $table->string('authorPost')->nullable();
+            // $table->string('authorPost')->nullable();
         });
 
-        Schema::table('history_actions', function (Blueprint $table) {
-            $table->integer('userId')->nullable();
-            $table->integer('jobId')->nullable();
-            $table->integer('userNotification')->nullable();
-        });
+        // Schema::table('history_actions', function (Blueprint $table) {
+        //     $table->integer('userId')->nullable();
+        //     $table->integer('jobId')->nullable();
+        //     $table->integer('userNotification')->nullable();
+        // });
     }
 
     /**

@@ -1,6 +1,37 @@
 @php
   $overviewUser = Auth::user()->getStatusOverview();
+  function checksalary( $from, $to)
+                   {
+                        $salaryTextFrom = 0;
+                        $salaryTextTo =  0;
+                        $textSalary ='';
+                        if($from > 0 &&  $to > 0) 
+                        {
+                            $salaryTextFrom = number_format($from, 0, '', '.');
+                            $salaryTextTo = number_format($to, 0, '', '.');
+                            return  $salaryTextFrom."-".$salaryTextTo. "  VNĐ";
+
+                        }
+                        if($from < 1 && $to < 1)
+                        {
+                          return  'Thương lượng';
+
+                        }
+                         if($from >0)
+                         {
+                            $salaryTextFrom = number_format($from, 0, '', '.');
+                            return "Từ ".$salaryTextFrom." VNĐ";
+                         }
+                         if($to >0)
+                         {
+                            $salaryTextTo = number_format($to, 0, '', '.');
+                            return "Đến ".$salaryTextTo." VNĐ";
+                         }
+                       
+                   }
 @endphp
+
+
 <div id="content" class="content">
     <!-- Main -->
     <!-- Bio -->
@@ -86,18 +117,18 @@
         @endif
         @endif
         <div class="row">
-            <div class="col-md-7">
-                @if(null!==($matchingJobs) && count($matchingJobs) > 0)
+            <div class="col-md-6 col-sm-12 col-lg-6">
+            @if(null!==($matchingJobs) && count($matchingJobs) > 0)
                 <!-- realated jobs -->
-                <section class="related-jobs card card-bio mb-3 w-100 shadow-sm">
+                <section class="card card-bio mb-3 w-100 shadow-sm ">
                     <div class="card-body">
                         <div class="related-jobs__title d-flex justify-content-between align-items-center">
                             <h6>Việc làm phù hợp</h6>
                             <button class="btn btn-round btn-link btn-sm main-color"
                                 onclick="window.location='{{ route('job.list') }}'">{{__('View all')}}</button>
                         </div>
-                        <div class="row related-jobs__jobs px-12px mb-2">
-                            @foreach($matchingJobs as $match)
+                        <div class="row related-jobs__jobs  mb-2">
+                            {{--@foreach($matchingJobs as $match)
                             <div class="col-12 card-news gap-16">
                                 <div class="card-news__icon">
 
@@ -117,9 +148,47 @@
                                                 class="badge rounded-pill pill pill-worktime">{{$match->getJobType('job_type')}}</span>
                                         </div>
                                         <div class="card-news__content-footer__salary">
-                                            {{$match->salary_from.' '.$match->salary_currency}} -
+                                            {{$match->salary_from}} -
                                             {{$match->salary_to.' '.$match->salary_currency}}
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                            --}}
+                            @foreach($matchingJobs as $match)
+                            @php
+                                $salaryText  = checksalary($match->salary_from, $match->salary_to);
+                              
+                            @endphp
+                            <div class="col-12 card-news ">
+                                <a href="/viec-lam/{{ $match->slug ? $match->slug :"" }}">
+                                <div class="company-logo">
+                                    <img src="{{ asset('company_logos/'.( !empty($match->getCompany()) ? $match->getCompany()->logo : 'no-logo.png')) }}"
+                                            alt="{{!empty($match->getCompany()) ? $match->getCompany()->name : ''}}">
+                                </div>
+                                </a>
+                                
+                                <div class="card-news__content">
+                                    <a href="/viec-lam/{{ $match->slug ? $match->slug :"" }}">
+                                        <h6 class="jobtilte"> {{ $match->title }}</h6>
+                                    </a>
+                                    <p class="companyname">
+                                    {{!empty($match->getCompany()) ? $match->getCompany()->name : ''}}
+                                    </p>
+                                    <div class="card-news__content-info">
+                                      
+                                        <div class="rank-salary">
+                                         
+                                            {{$salaryText }} -
+                                            {{$match->salary_currency}}
+                                        </div>
+
+                                    </div>
+                                    <div class="card-news__content-info__salary">
+                                        <span class="badge rounded-pill pill pill-worktime">{{$match->getJobType('job_type')}}</span>
+                                      
+                                            
                                     </div>
                                 </div>
                             </div>
@@ -128,12 +197,12 @@
                         </div>
                     </div>
                 </section>
-                @endif
+            @endif
             </div>
-            <div class="col-md-5">
+            <div class="col-md-6 col-sm-12 col-lg-6">
                 <!--My following -->
 
-                <section class="related-jobs card card-bio mb-3 w-100 shadow-sm">
+                <section class="card card-bio mb-3 w-100 shadow-sm">
                     <div class="card-body">
                         <div class="related-jobs__title d-flex justify-content-between align-items-center mb-2">
                             <h6>Danh Sách Theo Dõi</h6>
@@ -168,3 +237,54 @@
         </div>
 </div>
 </div>
+
+@push('styles')
+<style>
+    .related-jobs__jobs .card-news {
+        padding: 10px; 
+        border-radius: 4px;
+        margin-bottom: 5px;
+    }
+    .related-jobs__jobs .card-news:hover {
+        background: #f9dfdf;
+        outline: 1px solid var(--bs-primary);
+    }
+
+    .company-logo {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 80px;
+        flex: 0 0 80px;
+        max-width: 80px;
+        display: flex;
+        align-items:center;
+    }
+
+    .company-logo img{
+        width: 100%;
+        overflow: hidden;
+        border-radius: 5px;
+    }
+
+    .related-jobs .related-jobs__title {
+        margin-bottom: unset; 
+    }
+    .jobtilte {
+        font-size: 13px;
+        width: 95%;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+    }
+    .companyname {
+        font-size: 12px;
+    }
+    .rank-salary {
+        color: #981b1e;
+        font-size: 13px;
+        font-weight: 700;
+    }
+</style>
+@endpush
+
+

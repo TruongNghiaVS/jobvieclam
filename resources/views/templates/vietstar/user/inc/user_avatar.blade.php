@@ -75,13 +75,13 @@
         </div>
         <div class="col-md-6 col-lg-8">
             <div class="user__name d-flex flex-row justify-content-between" bis_skin_checked="1">
-                <h4 id="">{{auth()->user()->name}}</h4>
+                <h4 id="">{{auth()->user()->getName()}}</h4>
                 <a class="cursor-pointer text-decoration text-secondary" data-toggle="modal" data-target="#changepassword"> Đổi mật khẩu<i class="mx-1 bi bi-lock-fill"></i></a>
             </div>
             @if($overviewUser->statusComPlete)
-            <div class="status error my-2" bis_skin_checked="1">
-                <p>{{$overviewUser->statusComPlete}}</p>
-            </div>
+                <div class="status error my-2" bis_skin_checked="1">
+                    <p>{{$overviewUser->statusComPlete}}</p>
+                </div>
             @endif
 
             <div class="user__infomation" bis_skin_checked="1">

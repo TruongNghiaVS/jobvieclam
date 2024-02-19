@@ -71,9 +71,7 @@ class BlogController extends Controller
             return redirect('/tin-tuc/'.$category->slug."/".$slug);
         }
         return;
-
-
-        $data['blog'] = Blog::where('slug','like','%'. $slug.'%')
+         $data['blog'] = Blog::where('slug','like','%'. $slug.'%')
         ->where("typePost",0)->where('lang', 'like', \App::getLocale())->first();
 
         $data['blogRelations'] = Blog::where("slug","!=",$slug)

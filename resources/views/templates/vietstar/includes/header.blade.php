@@ -142,7 +142,7 @@
                     <a class="dropdown_menu__link" href="{{route('home')}}">
                         <span>
                             <i class="fa-solid fa-user m-2"></i>
-                            {{Auth::user()->name}}
+                            {{Auth::user()->getName()}}
                         </span>
                     </a>
                     <div class="user_menu ">

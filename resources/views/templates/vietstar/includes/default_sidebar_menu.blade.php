@@ -11,13 +11,13 @@
         <div class="profile" bis_skin_checked="1">
             <div class="avatar" bis_skin_checked="1">
                             @if(Auth::user())
-                            {{Auth::user()->printUserImage()}}
+                                {{Auth::user()->printUserImage()}}
                             @else
-                            <img id="avatar" class="avatar" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar">
+                                <img id="avatar" class="avatar" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar">
                             @endif
                 </div>
             <div class="username" bis_skin_checked="1">
-                <p>{{auth()->user()->name}}</p>
+                <p>{{auth()->user()->getName() }}</p>
             </div>
             <div class="back-menu-normal" bis_skin_checked="1"><i class="bi bi-arrow-left"></i></div>
         </div>

@@ -222,7 +222,7 @@
                                     <img src="{{ asset('company_logos/'.$company->logo) }}" alt="{{$company->name}}">
                                 </div>
                                 <div class="card-news__content">
-                                    <h6 class="card-news__content-title">{{$company->name}}</h6>
+                                    <h6 class="card-news__content-title m-0">{{$company->name}}</h6>
                                     <p class="card-news__content-detail">{{$company->location}}</p>
                                 </div>
                             </div>

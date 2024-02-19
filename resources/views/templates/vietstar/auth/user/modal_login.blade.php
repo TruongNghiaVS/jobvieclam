@@ -242,11 +242,14 @@ $(document).ready(function() {
                         $(`#formLogin .invalid-feedback.${err.key}-error`).addClass('has-error')
                         $(`#formLogin input[name*='${err.key}']`).addClass('has-error')
                     })
+                    hideSpinner();
+
                     // This code will be executed if the server returns a 404 response
                 },
                 503: function(responseObject, textStatus, errorThrown) {
                     // Service Unavailable (503)
                     console.log(responseObject.error);
+                    hideSpinner();
 
                     // This code will be executed if the server returns a 503 response
                 }           
@@ -254,6 +257,7 @@ $(document).ready(function() {
                 })
                 .done(function(data){
                     // $("#login_success").addClass("show")
+                    hideSpinner();
                    
                     // setTimeout(()=> {
                     //     $("#login_success").removeClass("show")

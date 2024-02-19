@@ -302,6 +302,7 @@
             statusCode: {
                 202 :  function(responseObject, textStatus, jqXHR) {
                     console.log(responseObject.error);
+                    hideSpinner();
         
                 },
                 401: function(responseObject, textStatus, jqXHR) {
@@ -312,11 +313,15 @@
                         $(`#form_login_tab .invalid-feedback.${err.key}-error`).addClass('has-error')
                         $(`#form_login_tab input[name*='${err.key}']`).addClass('has-error')
                     })
+
+                    hideSpinner();
+
                     // This code will be executed if the server returns a 404 response
                 },
                 503: function(responseObject, textStatus, errorThrown) {
                     // Service Unavailable (503)
                     console.log(responseObject.error);
+                    hideSpinner();
 
                     // This code will be executed if the server returns a 503 response
                 }           
@@ -327,6 +332,8 @@
                     //     alert(data.message)
                     //     window.location.href = data.urlRedirect;
                     // }, 2000);
+                    hideSpinner();
+
                     window.location.href =  "/dashboard";
                     
                 })

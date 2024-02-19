@@ -11,7 +11,7 @@ dd($user);
             </div>
             <div class="col-md-10">
                 <div class="card-body">
-                    <h5 class="card-title text-sub-color">{{ $user->name }}</h5>
+                    <h5 class="card-title text-sub-color">{{ $user->getName() }}</h5>
                     <p class="card-text">{{ $user->getProfileSummary('summary') }}</p>
 
                 </div>

@@ -40,7 +40,7 @@
                         </strong>
                     </td>
                     <td class="table_value">
-                      {{$user->first_name }}   {{$user->middle_name}}
+                      {{$user->last_name }}   {{$user->middle_name}}
                     </td>
                 </tr>
                 <tr>
@@ -50,7 +50,7 @@
                         </strong>
                     </td>
                     <td class="table_value">
-                    {{ $user->last_name ? $user->last_name :"Chưa cập nhật" }}
+                    {{ $user->first_name ? $user->first_name :"Chưa cập nhật" }}
                     </td>
                 </tr>
 
@@ -305,14 +305,15 @@
             <div class="modal-body">
                 <form id="persionalinfo_form" class="needs-validation" novalidate>
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'first_name') !!}">
+                    <div class="col-md-6">
+                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'last_name') !!}">
                                 <label class="required" for="">{{__('Last Name')}}</label>
-                                {!! Form::text('first_name', null, array('class'=>'form-control cursor-pointer', 'id'=>'first_name',
-                                'placeholder'=>__('First Name'))) !!}
-                                {!! APFrmErrHelp::showErrors($errors, 'first_name') !!}
+                                {!! Form::text('last_name', null, array('class'=>'form-control', 'id'=>'last_name', 'placeholder'=>__('Last
+                                Name'))) !!}
+                                {!! APFrmErrHelp::showErrors($errors, 'last_name') !!}
                             </div>
-                        </div>
+                        </div> 
+                   
                         <div class="col-md-6">
                             <div class="form-group {!! APFrmErrHelp::hasError($errors, 'middle_name') !!}">
                                 <label class="required" for="">{{__('Midlle Name')}}</label>
@@ -322,11 +323,11 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'last_name') !!}">
+                            <div class="form-group {!! APFrmErrHelp::hasError($errors, 'first_name') !!}">
                                 <label class="required" for="">{{__('First Name')}}</label>
-                                {!! Form::text('last_name', null, array('class'=>'form-control', 'id'=>'last_name', 'placeholder'=>__('Last
-                                Name'))) !!}
-                                {!! APFrmErrHelp::showErrors($errors, 'last_name') !!}
+                                {!! Form::text('first_name', null, array('class'=>'form-control cursor-pointer', 'id'=>'first_name',
+                                'placeholder'=>__('First Name'))) !!}
+                                {!! APFrmErrHelp::showErrors($errors, 'first_name') !!}
                             </div>
                         </div>
                         <div class="col-md-6">

@@ -16,7 +16,7 @@
             </div>
             <div class="col-md-9">
                 <div class="card-body card-body-profile-seeker">
-                    <h5 class="card-title text-sub-color">{{auth()->user()->name}}</h5>
+                    <h5 class="card-title text-sub-color">{{auth()->user()->getName()}}</h5>
                     <p class="card-text justify-content-between align-items-center">
                         {{ auth()->user()->getProfileSummary('summary') }}
                     </p>

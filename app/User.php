@@ -235,14 +235,14 @@ class User extends Authenticatable
     public function getName()
     {
         $html = '';
-        if (!empty($this->first_name))
-            $html .= $this->first_name;
+        if (!empty($this->last_name))
+            $html .= $this->last_name;
 
         if (!empty($this->middle_name))
             $html .= ' ' . $this->middle_name;
 
-        if (!empty($this->last_name))
-            $html .= ' ' . $this->last_name;
+        if (!empty($this->first_name))
+            $html .= ' ' . $this->first_name;
 
         return $html;
     }

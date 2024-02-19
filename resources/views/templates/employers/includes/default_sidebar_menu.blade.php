@@ -17,7 +17,7 @@
                             @endif
                 </div>
             <div class="username" bis_skin_checked="1">
-                <p><a href="#">{{auth()->user()->name}}</a></p>
+                <p><a href="#">{{auth()->user()->getName()}}</a></p>
             </div>
             <div class="back-menu-normal" bis_skin_checked="1"><i class="bi bi-arrow-left"></i></div>
         </div>

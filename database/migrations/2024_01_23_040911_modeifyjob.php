@@ -14,7 +14,7 @@ class Modeifyjob extends Migration
     public function up()
     {
         Schema::table('jobs', function (Blueprint $table) {
-            $table->string('benefit_id')->nullable();
+            // $table->string('benefit_id')->nullable();
         });
     }
 

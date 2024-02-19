@@ -376,7 +376,7 @@ $(document).ready(function() {
                     hideSpinner();
                     
                 })
-                .always(function(jqXHR, textStatus) {
+                 .always(function(jqXHR, textStatus) {
                 
                 });
                 }

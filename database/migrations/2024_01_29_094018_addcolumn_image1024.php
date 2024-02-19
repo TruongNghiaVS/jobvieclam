@@ -14,7 +14,7 @@ class AddcolumnImage1024 extends Migration
     public function up()
     {
          Schema::table('sliders', function (Blueprint $table) {
-            $table->string('linkImage3')->nullable(); 
+            // $table->string('linkImage3')->nullable(); 
         });
     }
 

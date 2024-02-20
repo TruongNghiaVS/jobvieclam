@@ -207,9 +207,12 @@
                         if (response.success == true)
                         {
                            alert("ok");
+                           $('#accept-job').modal('hide');
                         } else
                         {
                             alert('Request Failed!');
+                           $('#accept-job').modal('hide');
+
                         }
                     });
         })

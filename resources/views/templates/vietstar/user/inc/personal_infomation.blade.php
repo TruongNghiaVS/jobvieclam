@@ -61,7 +61,7 @@
                         </strong>
                     </td>
                     <td class="table_value">
-                       {{$user->date_of_birth}}
+                            {{$user->date_of_birth}}
                     </td>
                 </tr>
 
@@ -72,7 +72,6 @@
                         </strong>
                     </td>
                     <td class="table_value">
-                       
                         @if($user->gender_id)
                             @foreach ($genders as $key => $gender)
                                 @if( $key == $user->gender_id )
@@ -80,8 +79,7 @@
                                 @endif
                             @endforeach
                         @endif
-                         <!-- {{$user->gender_id == 15 ? "Nam": "Nữ" }} -->
-                    </td>
+                     </td>
                 </tr>
 
 
@@ -124,7 +122,7 @@
                         @if($user->marital_status_id)
                             @foreach ($maritalStatuses as $key => $maritalStatuse)
                                 @if( $key == $user->marital_status_id )
-                                {{$maritalStatuse }}
+                                    {{$maritalStatuse }}
                                 @endif
                             @endforeach
                         @endif

@@ -35,7 +35,7 @@ Route::get('/', 'IndexController@index')->name('index');
 
 Route::get('/employers', 'EmployerController@index')->name('employerIndex');
 Route::get('/employers/active', 'EmployerController@Active')->name('employerActive');
-Route::get('/-usabout', 'IndexController@aboutUs')->name('about_us');
+Route::get('/ve-chung-toi', 'IndexController@aboutUs')->name('about_us');
 Route::get('/check-time', 'IndexController@checkTime')->name('check-time');
 Route::post('set-locale', 'IndexController@setLocale')->name('set.locale');
 

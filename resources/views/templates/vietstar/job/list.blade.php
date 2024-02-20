@@ -29,7 +29,7 @@
                                 <form id="sort_form_by">
                                     <div class="form-check-inline p-1">
                                         <input class="form-check-input" type="radio" name="sort_by" id="default" value="" checked>
-                                        <label class="form-check-label px-1" for="default">Mặc định</label>
+                                        <label class="form-check-label px-1" for="default">Mặc Định</label>
                                     </div>
 
                                     

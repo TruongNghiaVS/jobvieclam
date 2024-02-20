@@ -69,7 +69,7 @@
                                         @if($company->website)
                                         <div class="company-info__item">
                                             <i class="bi bi-link"></i>
-                                            {{__('Website')}}: {{ $company->website }}
+                                            {{__('Website')}}: <a class="text-pray" href="{{ $company->website }}">{{ $company->website }}</a>
                                         </div>
                                         @endif
                                         <div class="socials">

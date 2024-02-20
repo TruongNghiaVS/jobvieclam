@@ -1378,10 +1378,10 @@ section#flash-badge-banner {
 .card-news__content-title {
 	font-size: 15px;
 	font-weight: 700;
-	margin-left: 5px;
+
 	
     overflow: hidden;
-	margin: 0 20px;
+
 	display: -webkit-box;
     width: 100%;
     -webkit-line-clamp: 1;

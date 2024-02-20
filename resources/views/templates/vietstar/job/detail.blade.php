@@ -29,10 +29,11 @@ $company = $job->getCompany();
                     <div class="job-detail-banner__detail">
                         <h1 class="banner__title">{{$job->title}}</h1>
                         <div class="banner__company">{{$company->name}}</div>
-                   
-                        <div class="banner__due-day mb-3">
-                        {{__('Location')}} {{ !empty($job->location) ? $job->location :  $job->getCity('city')}}
-                        </div>
+                        @if($job->location)
+                            <div class="banner__due-day mb-3">
+                                {{__('Location')}} {{ !empty($job->location) ? $job->location :  $job->getCity('city')}}
+                            </div>
+                        @endif
                        
                         <div class="banner__due-day mb-3">
                             $
@@ -321,15 +322,24 @@ $company = $job->getCompany();
                                     <div class="row">
                                         <div class="col-xl-7 col-lg-12">
                                             <h3 class="banner__title mb-1">{{ $company->name }}</h3>
+                                            @if($company->industry)
                                             <div class="banner__company">
                                                 {{ !empty($company->industry)?$company->industry->industry : 'Chưa cập nhật' }}
                                             </div>
+                                            @endif
+                                            @if($company->established_in)
+
                                             <div class="banner__due-day mb-3">
                                                 <i class="fa-regular fa-calendar"></i> {{ $company->established_in }}
                                             </div>
+                                            @endif
+
+                                            @if($company->location)
                                             <div class="banner__due-day mb-3">
                                                 <i class="fa-solid fa-location-dot"></i> {{ $company->location }}
                                             </div>
+                                            @endif
+
                                         </div>
                                         <div class="col-xl-5 col-lg-12">
                                             @if($company->phone)

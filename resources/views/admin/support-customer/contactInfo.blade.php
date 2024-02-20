@@ -16,12 +16,12 @@
             <ul class="page-breadcrumb">
                 <li>
                 <li> <a href="{{ route('admin.home') }}">{{__('Home')}}</a> <i class="fa fa-circle"></i> </li>
-                <li> <span>BANNER Việc Làm</span> </li>
+                <li> <span>Ứng Viên Liên Hệ</span> </li>
             </ul>
         </div>
         <!-- END PAGE BAR -->
         <!-- BEGIN PAGE TITLE-->
-        <h3 class="page-title">Quản lý Banner <small>BANNER Việc Làm</small> </h3>
+        <h3 class="page-title">Ứng Viên Liên Hệ <small>Danh Sách Ứng Viên</small> </h3>
         <!-- END PAGE TITLE-->
         <!-- END PAGE HEADER-->
         <div class="row">
@@ -29,7 +29,7 @@
                 <!-- Begin: life time stats -->
                 <div class="portlet light portlet-fit portlet-datatable bordered">
                     <div class="portlet-title">
-                        <div class="caption"> <i class="icon-settings font-dark"></i> <span class="caption-subject font-dark sbold uppercase">Banner Job</span> </div>
+                        <div class="caption"> <i class="icon-settings font-dark"></i> <span class="caption-subject font-dark sbold uppercase">Bảng Thông Tin</span> </div>
                        
                     </div>
                     <div class="portlet-body">

@@ -2143,11 +2143,16 @@ footer .inner-copyright .copyright {
 
 .company-job-detail .job-detail-banner__detail .banner__due-day {
     padding-left: 28px;
-    position: relative
+    position: relative;
+
 }
 
 .company-job-detail .job-detail-banner__detail .banner__due-day a {
     color: var(--bs-primary);
+    cursor: pointer;
+    max-width: 200px;
+    overflow-wrap: break-word;
+
 }
 
 .company-job-detail .job-detail-banner__detail .banner__due-day i {

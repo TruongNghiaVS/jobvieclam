@@ -18,12 +18,12 @@
             <ul class="page-breadcrumb">
                 <li>
                 <li> <a href="{{ route('admin.home') }}">{{__('Home')}}</a> <i class="fa fa-circle"></i> </li>
-                <li> <span>Danh sách Email theo dõi/span> </li>
+                <li> <span>Danh Sách Ứng Viên Yêu Cầu</span> </li>
             </ul>
         </div>
         <!-- END PAGE BAR -->
         <!-- BEGIN PAGE TITLE-->
-        <h3 class="page-title">Quản lý Email theo dõi </span> <small>Email theo dõi Việc Làm</small> </h3>
+        <h3 class="page-title">Danh Sách Ứng Viên </span> </h3>
         <!-- END PAGE TITLE-->
         <!-- END PAGE HEADER-->
         <div class="row">
@@ -31,7 +31,7 @@
                 <!-- Begin: life time stats -->
                 <div class="portlet light portlet-fit portlet-datatable bordered">
                     <div class="portlet-title">
-                        <div class="caption"> <i class="icon-settings font-dark"></i> <span class="caption-subject font-dark sbold uppercase">Email theo dõi</span> </div>
+                        <div class="caption"> <i class="icon-settings font-dark"></i> <span class="caption-subject font-dark sbold uppercase">Bảng Thông Tin</span> </div>
                         
                     </div>
                     <div class="portlet-body">

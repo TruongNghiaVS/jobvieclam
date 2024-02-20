@@ -140,11 +140,20 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="accept-jobLabel">Duyệt JOB</h5>
+        <h5 class="modal-title" id="accept-jobLabel">Hành động</h5>
        
       </div>
       <div class="modal-body">
+               
 
+
+                <div class="form-group " >
+                            <label for="notedModal" class="bold">Ghi chú</label>
+                            <input id="notedModal" placeholder ="Nhập ghi chú" class="form-control" type= "text" >
+                
+                             </input>
+                                                
+                </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
@@ -159,7 +168,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="reject-job-jobLabel">Duyệt JOB</h5>
+        <h5 class="modal-title" id="reject-job-jobLabel">Từ chối JOB</h5>
        
       </div>
       <div class="modal-body">
@@ -181,7 +190,6 @@
 </div>
 
 
-
 @endsection
 @push('scripts')
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
@@ -192,14 +200,19 @@
         console.log(id,status);
         $('#accept-job').modal('show');
         $('#accept-job #accept').on('click',()=>{
-            $.post("/job/changeStatus", {id: id, status: "4", _method: 'POST', _token: '{{ csrf_token() }}'})
+            $.post("/admin/job/changeStatus", {
+                id: id, status:status, noted: $("#notedModal").val(),
+                 _method: 'POST', _token: '{{ csrf_token() }}'})
                     .done(function (response) {
-                        if (response == 'ok')
+                        if (response.success == true)
                         {
                            alert("ok");
+                           $('#accept-job').modal('hide');
                         } else
                         {
                             alert('Request Failed!');
+                           $('#accept-job').modal('hide');
+
                         }
                     });
         })

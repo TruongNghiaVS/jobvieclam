@@ -46,6 +46,8 @@ if (!isset($seo)) {
     {!! $siteSetting->ganalytics !!}
     {!! $siteSetting->google_tag_manager_for_head !!}
 
+
+
 </head>
 
 <body class="default-page">
@@ -53,7 +55,8 @@ if (!isset($seo)) {
         <b class="screen-overlay"></b>
         @yield('content')
     </main>
-   
+    
+
 
     <script src="{{asset('/')}}js/popper.js"></script>
     <script src="{{asset('/')}}js/bootstrap.min.js"></script>
@@ -116,6 +119,34 @@ if (!isset($seo)) {
 		
         </script>
 
+    <!-- Schema Structure -->
+    <script id="app-ld-json" type="application/ld+json">{
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "url": "http://jobvieclam.com/",
+        "name": "Jobvieclam",
+        "logo": "http://jobvieclam.com/vietstar/imgs/logo-new.svg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Quận Tân Bình",
+            "addressRegion": "Hồ Chí Minh",
+            "addressCountry": "Việt Nam",
+            "postalCode": "700000",
+            "streetAddress": "54/31 Đ. Phổ Quang, Phường 2, Tân Bình, Thành phố Hồ Chí Minh, Việt Nam"
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "02871000 555",
+                "contactType": "customer service"
+            }
+        ],
+        "foundingDate": "2018",
+        "parentOrganization": "VIETSTAR GROUP JOINT STOCK COMPANY",
+        "sameAs": [
+            "https://www.facebook.com/headhunter.vietstargroup",
+        ]
+    }</script>
 </body>
 
 </html>

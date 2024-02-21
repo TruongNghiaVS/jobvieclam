@@ -25,7 +25,7 @@
 
                             <div class="card-news__content-footer card-news__content-footer-applied-jobs">
                                 <div class="applied-jobs-information">
-                                    <h6 class="card-news__content-title"><a href="{{route('company.detail', $company->slug)}}" title="{{$company->name}}">{{$company->name}}</a></h6>
+                                    <h6 class="card-news__content-title m-0"><a href="{{route('company.detail', $company->slug)}}" title="{{$company->name}}">{{$company->name}}</a></h6>
                                     <p class="card-news__content-detail mb-1"><span class="iconmoon icon-recruiter-website"></span> {{$company->website}} </p>
                                     <p class="card-news__content-detail mb-1"><span class="iconmoon icon-recruiter-phone-call"></span> {{$company->phone}} </p>
                                     <p class="card-news__content-detail mb-1"><span class="iconmoon icon-recruiter-email"></span> {{$company->email}} </p>

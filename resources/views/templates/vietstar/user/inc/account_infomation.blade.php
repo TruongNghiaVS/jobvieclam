@@ -81,8 +81,10 @@
 <script type="text/javascript">
     $(document).ready(function(){
       // Check if passwords match
-      $('#pwdId, #cPwdId').on('keyup', function () {
-        if ($('#pwdId').val() != '' && $('#cPwdId').val() != '' && $('#pwdId').val() == $('#cPwdId').val()) {
+      $('#changepassword #pwdId, #changepassword #cPwdId').on('keyup', function () {
+        var pwd = $('#changepassword #pwdId').val();
+        var cPwd = $('#changepassword #cPwdId').val();
+        if (pwd != '' && cPwd != '' && pwd == cPwd && pwd.length >= 6 && pwd.length <= 15 && cPwd.length >= 6 && cPwd.length <= 15 ) {
           $("#account_submitBtn").attr("disabled",false);
           $('#cPwdValid').show();
           $('#cPwdInvalid').hide();
@@ -92,13 +94,17 @@
           $("#account_submitBtn").attr("disabled",true);
           $('#cPwdValid').hide();
           $('#cPwdInvalid').show();
-          $('#cPwdInvalid').html(`{{__('Not Matching')}}`).css('color', 'red');
-          $('.pwds').addClass('is-invalid')
+          if (!(pwd.length >= 6 && pwd.length <= 15)) {
+                $('#cPwdInvalid').html(`{{__(('Password must be 6-15 characters.'))}}`).css('color', 'red');
+            } else {
+                $('#cPwdInvalid').html(`Passwords do not match`).css('color', 'red');
+            }
+            $('.pwds').addClass('is-invalid');
           }
       });
 
      $('#account_submitBtn').on('click',()=>{
-                if ($('#pwdId').val()) {
+                if ($('#changepassword #pwdId').val()) {
                     showSpinner();
                     // Simulating an AJAX POST request
                     $.ajax({
@@ -106,7 +112,7 @@
                         type: 'post',
                         data:  {
                             _token: '{{ csrf_token() }}',
-                            password:$('#pwdId').val(),
+                            password:$('#changepassword #pwdId').val(),
                         },
                         success: function (response) {
                             if(response){

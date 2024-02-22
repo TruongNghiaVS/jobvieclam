@@ -242,7 +242,7 @@
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'current_salary') !!}">
                             <label class="required" for="">{{__('Mức Lương Hiện Tại')}}</label>
                             {!! Form::text('current_salary', null, array('class'=>'form-control', 'id'=>'current_salary',
-                            'placeholder'=>__('Mức Lương Hiện Tại')  ,'name'=>'current_salary')) !!}
+                            'placeholder'=>__('triệu')  ,'name'=>'current_salary')) !!}
                             {!! APFrmErrHelp::showErrors($errors, 'current_salary') !!}
                         </div>
                     </div>
@@ -250,7 +250,7 @@
                         <div class="form-group {!! APFrmErrHelp::hasError($errors, 'expected_salary') !!}">
                             <label class="required" for="">{{__('Mức Lương Kỳ Vọng')}}</label>
                             {!! Form::text('expected_salary', null, array('class'=>'form-control', 'id'=>'expected_salary',
-                            'placeholder'=>__('Mức Lương Kỳ Vọng'))) !!}
+                            'placeholder'=>__('triệu'))) !!}
                             {!! APFrmErrHelp::showErrors($errors, 'expected_salary') !!}
                         </div>
                     </div>

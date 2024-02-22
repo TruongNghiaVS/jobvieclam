@@ -90,8 +90,8 @@ class Company extends Authenticatable
     {
 
         $logo = (string)$this->logo;
-        $logo = (!empty($logo)) ? $logo : '/company_logos/no_company.png';
-        return \ImgUploader::print_image("company_logos/$logo", $width, $height, '/company_logos/no_company.png', $this->name);
+        $logo = (!empty($logo)) ? $logo : '/admin_assets/no-image.png';
+        return \ImgUploader::print_image("company_logos/$logo", $width, $height, '/admin_assets/no-image.png', $this->name);
 
     }
 
@@ -100,8 +100,8 @@ class Company extends Authenticatable
     {
 
         $cover_logo = (string)$this->cover_logo;
-        $cover_logo = (!empty($cover_logo)) ? $cover_logo : '/company_logos/no_cover_company.jpg';
-        return \ImgUploader::print_image("company_logos/$cover_logo", $width, $height, '/company_logos/no_cover_company.jpg', $this->name);
+        $cover_logo = (!empty($cover_logo)) ? $cover_logo : '/admin_assets/no-cover.jpg';
+        return \ImgUploader::print_image("company_logos/$cover_logo", $width, $height, '/admin_assets/no-cover.jpg', $this->name);
 
     }
 

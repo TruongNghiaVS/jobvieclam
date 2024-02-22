@@ -635,15 +635,15 @@ $company = $job->getCompany();
                                         $from = round($jobitem->salary_from/1000000,0);
                                         $to = round($jobitem->salary_to/1000000,0);
                                     
-                                     
+                                
                                 @endphp
                                 <div class="related-jobs-item item-job mb-3">
                                 <div class="logo-company">
                                     <a href="#"
                                         title="Công Ty Cổ Phần Incom Sài Gòn" class="pic">
-                                        <img src="{{ asset('company_logos/'.$company->logo) }}"
-                                            style="max-width:140px; max-height:140px;" alt="Công Ty Cổ Phần Incom Sài Gòn"
-                                            title="Công Ty Cổ Phần Incom Sài Gòn">
+                                        <img src="{{ asset('company_logos/'.$jobitem->logo) }}"
+                                            style="max-width:140px; max-height:140px;" alt="{{$jobitem->getCompany('name')}}"
+                                            title="{{$jobitem->getCompany('name')}}">
                                     </a>
                                 </div>
 
@@ -674,7 +674,7 @@ $company = $job->getCompany();
                                         <!-- companyName Start-->
                                         <div class="info-item companyName" bis_skin_checked="1"><a
                                                 href="{{url('/')}}/viec-lam/{{ $jobitem->slug }}"
-                                                title="{{ $company->name }}n">{{ $company->name }}</a>
+                                                title="{{ $jobitem->getCompany('name') }}n">{{$jobitem->getCompany('name') }}</a>
                                         </div>
                                         <!-- companyName End-->
                                         <!--rank-salary and place Start-->

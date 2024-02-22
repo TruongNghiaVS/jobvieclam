@@ -72,7 +72,7 @@ $user = Auth::user();
 
                   <p class="title-flip">Thông tin nghề nghiệp</p>
 
-
+               
                   <div class="job-information" bis_skin_checked="1">
                     <ul class="information-list">
                       <li>
@@ -86,14 +86,14 @@ $user = Auth::user();
                       <li>
                         <p> <strong>Lương Hiện Tại:</strong></p>
                         <p>{{ number_format($user->current_salary)}}</p>
-                      </li>
+                      </li> 
                       <li>
                         <p> <strong>Mức Lương Mong Muốn:</strong></p>
                         <p>{{number_format($user->expected_salary)}} </p>
                       </li>
                       <li>
                         <p> <strong>Ngành Nghề:</strong></p>
-                        <p>{{$user->getIndustry('industry')}}</p>
+                        <p>{{$user->getIndustry('industry') ? $user->getIndustry('industry') :"Chưa cập nhật"}}</p>
                       </li>
                       <li>
                         <p> <strong>Địa Điểm:</strong></p>
@@ -101,12 +101,14 @@ $user = Auth::user();
                       </li>
                       <li>
                         <p> <strong>{{__('Career Level')}}</strong></p>
-                        <p>Nhân viên</p>
+                        <p>{{Auth::user()->getCareerLevel('careerLevel') ? Auth::user()->getCareerLevel('careerLevel') : __('Not update') }}</p>
                       </li>
 
                       <li>
                         <p> <strong>Bộ Phận:</strong></p>
-                        <p>Hành Chính</p>
+                       
+                        <p>{{Auth::user()->getFunctionalArea('functionalArea') ? Auth::user()->getFunctionalArea('functionalArea') : __('Not update') }}</p>
+
                       </li>
 
                       <li>

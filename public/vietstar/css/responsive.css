@@ -733,7 +733,9 @@
     padding: 8px 0;
   }
  
-
+  .show-more {
+    margin-top: unset !important;
+  }
 
   .links {
     padding: 60px 1.5rem 30px !important;

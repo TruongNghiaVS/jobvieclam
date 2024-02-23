@@ -3761,9 +3761,7 @@ footer .inner-copyright .copyright {
     margin-bottom: 15px
 }
 
-.blogs-slider {
-    padding-bottom: 20px
-}
+
 
 .section-employment-statistics {
     padding: 35px 0 50px 0;
@@ -4666,7 +4664,9 @@ div#industry_id_chosen {
         margin-bottom: 0
     }
 
-
+    .blogs-slider .section-title-block {
+        justify-content: center;
+    }
 
     .header-bar .header-bar__title {
         width: 520px !important;
@@ -4841,7 +4841,7 @@ div#industry_id_chosen {
 
     .blogs-slider {
 
-        padding: 30px 10px 30px 10px
+        padding: 30px 10px 20px 10px;
     }
 
     .blogs-slider .__row {

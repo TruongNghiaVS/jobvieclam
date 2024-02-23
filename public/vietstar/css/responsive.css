@@ -807,6 +807,10 @@
     padding: 10px;
     height: 130px;
   }
+  .figcaption__title a {
+    margin: 5px;
+
+  }
   .slider-hero-banner .bg-slider {
     height: 100%;
     width: 100%;

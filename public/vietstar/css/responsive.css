@@ -803,7 +803,10 @@
     width: 100%;
   }
 
-  
+  .figcaption {
+    padding: 10px;
+    height: 130px;
+  }
   .slider-hero-banner .bg-slider {
     height: 100%;
     width: 100%;

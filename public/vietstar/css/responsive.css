@@ -508,7 +508,7 @@
   }
 
   .blogs-slider .section-title-block{
-    margin-left: 10px;
+	  justify-content: center;
   }
 
   .tab.tab-nav {

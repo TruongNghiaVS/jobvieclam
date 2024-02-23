@@ -75,7 +75,7 @@
     background-repeat: no-repeat;
     background-position: bottom center;
   
-} 
+  } 
 
   .box-info-signup {
       margin-left: 0 !important;
@@ -595,38 +595,38 @@
   .job-detail-title ,.job-detail-body {
     padding-left: 10px;
     padding-right: 10px;
-}
-.job-detail-banner__group {
-  flex-direction: column;
-  width: 100%;
-}
-.job-detail-banner .job-detail-banner__detail {
-  width: 100%;
-  max-width: 100%;
-}
-.job-detail-banner .action-detail {
-  margin-top: 10px;
-  width: 100%;
-  max-width: 100%;
-  justify-content: center;
-}
-.box-profile-view .section-body .info {
-  flex-direction: column;
-  padding-left: 10px;
-}
+  }
+  .job-detail-banner__group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .job-detail-banner .job-detail-banner__detail {
+    width: 100%;
+    max-width: 100%;
+  }
+  .job-detail-banner .action-detail {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+  }
+  .box-profile-view .section-body .info {
+    flex-direction: column;
+    padding-left: 10px;
+  }
 
-.container.company-content.CV-profile {
-  max-width: 98%;
-}
-.user-account-section {
-   padding: 10px;
-}
-.box-profile-view .section-body .info .image{
-  margin-left: 1.5rem;
-}
-.box-profile-view  .section-body {
-  padding: 0 10px;
-}
+  .container.company-content.CV-profile {
+    max-width: 98%;
+  }
+  .user-account-section {
+    padding: 10px;
+  }
+  .box-profile-view .section-body .info .image{
+    margin-left: 1.5rem;
+  }
+  .box-profile-view  .section-body {
+    padding: 0 10px;
+  }
   .box-profile-view .section-body .info .info-list {
     padding-left: 0;
   }
@@ -663,51 +663,52 @@
 
 
  #bannerSide #linkDesktop{
-  display: none;
- }
-  
- #bannerSide #linkMobile{
-  display: block;
- }
-  
- article.article {
-    padding: 10px;
- }
+    display: none;
+  }
+    
+  #bannerSide #linkMobile{
+    display: block;
+  }
+    
+  article.article {
+      padding: 10px;
+  }
 
-.slider-hero-banner .bg-slider.is-pc {
-  display: none
-}
+  .slider-hero-banner .bg-slider.is-pc {
+    display: none
+  }
 
-.slider-hero-banner .bg-slider.is-pc-sm {
-  display: none
-}
+  .slider-hero-banner .bg-slider.is-pc-sm {
+    display: none
+  }
 
 
 .slider-hero-banner .bg-slider.is-sp {
-  display: block
-}
+    display: block
+  }
 
 
-.box-title-bg {
-  margin-top: 10px;
-}
-#listbannerSide{
-  padding: 0px 0px !important;
-}
-.section-employment-statistics {
-  margin-bottom: 20px;
-}
-.topcompanyhead__search {
-  margin: 0;
-}
+  .box-title-bg {
+    margin-top: 10px;
+  }
+  #listbannerSide{
+    padding: 0px 0px !important;
+  }
+  .section-employment-statistics {
+    margin-bottom: 20px;
+  }
+  .topcompanyhead__search {
+    margin: 0;
+  }
   .custom-swiper-button-next {
     right:0 !important
   }
   .custom-swiper-button-prev{
     left: 0 !important; 
   }
-
-
+  .show-more {
+    margin-top: unset !important;
+  }
 
 }
 

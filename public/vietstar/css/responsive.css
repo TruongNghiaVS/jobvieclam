@@ -884,9 +884,9 @@
            ==Job page==
 
 *************************************************/
-.related-jobs {
-  margin-left: 0 !important;
-}
+  .related-jobs {
+    margin-left: 0 !important;
+  }
   .filters-job-wrapper {
     padding: 20px 27px;
   }
@@ -1195,6 +1195,10 @@
     display: none;
    }  
 
+  .slider-hero-banner .bg-slider {
+    background-size: contain;
+  } 
+
 
    .slider-hero-banner .bg-slider.is-pc {
     display: block
@@ -1287,26 +1291,24 @@
 
   
   .slider-hero-banner .bg-slider {
-    height: 100%;
-    width: 100%;
+   
     background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom center
-} 
+  
+  } 
 
-.header-bar.header-bar-mb{
-  height: unset;
-}
-.search-form-box {
-  width: 100%;
-}
+  .header-bar.header-bar-mb{
+    height: unset;
+  }
+  .search-form-box {
+    width: 100%;
+  }
 
-.advance-search__box {
-  display: none;
-}
-.form-group-search-box {
-  max-height: unset;
-}
+  .advance-search__box {
+    display: none;
+  }
+  .form-group-search-box {
+    max-height: unset;
+  }
 
 
 
@@ -1327,6 +1329,7 @@
     width: 100% !important;
   }
 
+  
   .filters-job-wrapper-mobile {
     display: none;
   }
@@ -1542,7 +1545,10 @@
     display: none;
    }  
 
-
+   .slider-hero-banner .bg-slider {
+    background-size: cover;
+    
+   }
    .slider-hero-banner .bg-slider.is-pc {
     display: block
   }

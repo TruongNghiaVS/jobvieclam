@@ -41,7 +41,7 @@
 
 
 <div class="modal fade" id="summary-modal" tabindex="-1" role="dialog" aria-labelledby="summary-modalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="summary-modalLabel">{{__('Describe yourself')}}</h5>

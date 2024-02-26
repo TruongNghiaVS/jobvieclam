@@ -1,4 +1,4 @@
-<div class="modal-dialog modal-lg">
+<div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
         <form class="form" id="add_edit_profile_activity" method="PUT" action="{{ route('update.front.profile.activity', [$profileActivity->id,$user->id]) }}">{{ csrf_field() }}
             <div class="modal-header">

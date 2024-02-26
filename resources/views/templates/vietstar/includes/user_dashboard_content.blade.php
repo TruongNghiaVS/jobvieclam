@@ -214,19 +214,23 @@
                         @php
                         $company =
                         DB::table('companies')->where('slug',$follow->company_slug)->where('is_active',1)->first();
+               
                         @endphp
                         @if (!empty($company))
-                        <li class="list-group-item p-0 mt-3">
-                            <div class="no-shadow col-12 card-news gap-16 p-0">
-                                <div class="card-news__icon">
-                                    <img src="{{ asset('company_logos/'.$company->logo) }}" alt="{{$company->name}}">
+                        <div class="company-follow-item mt-3">
+                            <a href="/cong-ty/{{$company->slug ? $company->slug :""}}" target="_blank" rel="noopener noreferrer">
+                                <div class="no-shadow col-12 card-news gap-16 p-0">
+                                    <div class="card-news__icon d-flex  justify-content-center  align-items-center">
+                                        <img src="{{ asset('company_logos/'.$company->logo) }}" alt="{{$company->name}}">
+                                    </div>
+                                    <div class="card-news__content">
+                                        <h6 class="card-news__content-title m-0">{{$company->name}}</h6>
+                                        <p class="card-news__content-detail">{{$company->location}}</p>
+                                    </div>
                                 </div>
-                                <div class="card-news__content">
-                                    <h6 class="card-news__content-title m-0">{{$company->name}}</h6>
-                                    <p class="card-news__content-detail">{{$company->location}}</p>
-                                </div>
-                            </div>
-                        </li>
+                            </a>
+                        </div>
+                        
                         @endif
                         @endforeach
                         @endif
@@ -276,6 +280,8 @@
         display: -webkit-box;
         overflow: hidden;
     }
+
+    
     .companyname {
         font-size: 12px;
     }
@@ -283,6 +289,20 @@
         color: #981b1e;
         font-size: 13px;
         font-weight: 700;
+    }
+    .company-follow-item {
+        border: 1px solid #f4f4f4;
+        border-radius: 5px;
+        box-sizing: border-box;
+        margin-bottom: 16px;
+        padding: 8px;
+        width: 100%;
+        display: flex;
+    }
+
+    .company-follow-item a{
+        width: 100%;
+        height: 100%;
     }
 </style>
 @endpush

@@ -2,7 +2,7 @@
 @include('flash::message')
 <div class="form-body">
     <div class="form-group">
-        <button class="btn purple btn-outline sbold" onclick="showProfileSkillModal();"> Thêm Kỹ năng </button>
+        <button class="btn purple btn-outline sbold" onclick="showProfileSkillModal();"> Thêm Kỹ Năng </button>
     </div>
     <div class="row">
         <div class="col-md-12">

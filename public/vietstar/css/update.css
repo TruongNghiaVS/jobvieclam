@@ -1790,6 +1790,12 @@ footer .footer-widget.footer-widget-contact .contact-detail li {
     color: #0a142f
 }
 
+footer .footer-widget.footer-widget-contact .contact-detail li a {
+    color: var(--text-main);
+}
+footer .footer-widget.footer-widget-contact .contact-detail li a:hover {
+    text-decoration: underline;
+}
 footer .footer-widget.footer-widget-contact .contact-detail li i {
     position: absolute;
     top: 0;

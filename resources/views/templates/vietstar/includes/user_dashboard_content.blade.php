@@ -224,8 +224,8 @@
                                         <img src="{{ asset('company_logos/'.$company->logo) }}" alt="{{$company->name}}">
                                     </div>
                                     <div class="card-news__content">
-                                        <h6 class="card-news__content-title m-0">{{$company->name}}</h6>
-                                        <p class="card-news__content-detail">{{$company->location}}</p>
+                                        <h6 class="company-follow-item__name m-0">{{$company->name}}</h6>
+                                        <p class="company-follow-item__location">{{$company->location}}</p>
                                     </div>
                                 </div>
                             </a>
@@ -280,6 +280,30 @@
         display: -webkit-box;
         overflow: hidden;
     }
+    .company-follow-item__name {
+        font-size: 15px;
+        font-weight: 700;
+        overflow: hidden;
+        display: -webkit-box;
+        width: 100%;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+   
+    }
+
+    .company-follow-item__location {
+       
+        overflow: hidden;
+        display: -webkit-box;
+        width: 100%;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        font-size: 13px;
+        font-weight: 400;
+        margin-bottom: 5px;
+    }
+
+
 
     
     .companyname {

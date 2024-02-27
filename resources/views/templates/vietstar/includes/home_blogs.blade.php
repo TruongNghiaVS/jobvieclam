@@ -10,11 +10,7 @@
                  
         <div class="blog-home-content">
             <div class="blog-content__wrapper row">
-
-
-
-
-                
+            
             </div>
         </div>
         <div class="show-more">
@@ -41,12 +37,12 @@
                 // Process the data
          
     
-
+               
                 html = data.blogs.data.map((item, id) => {
                     image = `{{url('/')}}/uploads/blogs/${item.image}`;
                     slug = `{{url('/')}}/blog/${item.slug}`;
                     if (item) {
-                        return `  <div class="col-md-3 col-lg-3 col-sm-12">
+                        return `  <div class="col-md-6 col-lg-3 col-sm-12 mb-4">
                                
                                 <div class="cardBlock p-0">
                                
@@ -54,7 +50,7 @@
                                         <a href="${slug}" class="figure-images"><img src="${image}" alt="${item.heading}"></a>
                                         <div class="figcaption" bis_skin_checked="1">
 
-                                            <h3 class="figcaption__category-name"><a href="#"></a></h3>
+                                            <h3 class="figcaption__category-name"><a href="#"></a>${item.heading}</h3>
                                         
                                             <div class="figcaption__title" bis_skin_checked="1"><a href="${slug}">${item.heading}</a></div>
                                         </div>

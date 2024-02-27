@@ -85,7 +85,7 @@ class BlogController extends Controller
         $data['blog_relateion'] = Blog_category::where("id", $data['blog']->cate_id)->first();
       
 		$data['categories'] = Blog_category::where("typePost", '!=' , "1")->get();
-         $data['seo'] = (object) array(
+        $data['seo'] = (object) array(
                     'seo_title' => $data['blog']->meta_title,
                     'seo_description' => $data['blog']->meta_keywords,
                     'seo_keywords' => $data['blog']->meta_descriptions,

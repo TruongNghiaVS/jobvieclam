@@ -19,7 +19,7 @@ class AddColumnSlugs extends Migration
         Schema::table('industries', function (Blueprint $table) {
             $table->string('slug',100)->nullable(); 
         });
-    
+    }
 
     /**
      * Reverse the migrations.

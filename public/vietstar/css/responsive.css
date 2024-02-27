@@ -4,7 +4,10 @@
   .container {
     max-width: 100%;
   }
-  
+  .Jobpage__content {
+    padding-left: 10px !important;
+    padding-right: 10px  !important;
+  }
 
 
 
@@ -538,7 +541,7 @@
     width: 100%;
   }
   .blog-content {
-    padding: 40px  15px;
+    padding: 40px  10px;
   }
   section.all-product-service.cb-section {
     padding-left: 10px;

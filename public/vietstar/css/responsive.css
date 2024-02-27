@@ -107,8 +107,11 @@
     max-width: unset;
 
   }
-  .links {
+
+
+  footer section.links {
     padding: 0px 1.5rem 30px !important;
+    text-align: left;
   }
 
 
@@ -517,10 +520,7 @@
     padding: 0 10px;
   }
 
-  footer section.links {
-    padding: 20px;
-    text-align: left;
-  }
+ 
 
   .footer-widget .socials a {
     font-size: 20px;
@@ -651,7 +651,7 @@
   }
   .submit-now .w-50 {
     width: 100% !important;
-    margin-bottom: 5px;
+    margin-bottom: 50px;
   }
   .section-register-new-jobs {
 
@@ -737,9 +737,10 @@
     margin-top: unset !important;
   }
 
-  .links {
+  footer section.links {
     padding: 60px 1.5rem 30px !important;
   }
+
   footer .inner-copyright{
     padding: 0 1.5rem;
   }
@@ -883,9 +884,9 @@
            ==Job page==
 
 *************************************************/
-.related-jobs {
-  margin-left: 0 !important;
-}
+  .related-jobs {
+    margin-left: 0 !important;
+  }
   .filters-job-wrapper {
     padding: 20px 27px;
   }
@@ -1194,6 +1195,10 @@
     display: none;
    }  
 
+  .slider-hero-banner .bg-slider {
+    background-size: contain;
+  } 
+
 
    .slider-hero-banner .bg-slider.is-pc {
     display: block
@@ -1286,26 +1291,24 @@
 
   
   .slider-hero-banner .bg-slider {
-    height: 100%;
-    width: 100%;
+   
     background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom center
-} 
+  
+  } 
 
-.header-bar.header-bar-mb{
-  height: unset;
-}
-.search-form-box {
-  width: 100%;
-}
+  .header-bar.header-bar-mb{
+    height: unset;
+  }
+  .search-form-box {
+    width: 100%;
+  }
 
-.advance-search__box {
-  display: none;
-}
-.form-group-search-box {
-  max-height: unset;
-}
+  .advance-search__box {
+    display: none;
+  }
+  .form-group-search-box {
+    max-height: unset;
+  }
 
 
 
@@ -1326,6 +1329,7 @@
     width: 100% !important;
   }
 
+  
   .filters-job-wrapper-mobile {
     display: none;
   }
@@ -1541,8 +1545,27 @@
     display: none;
    }  
 
-
+   .slider-hero-banner .bg-slider {
+    background-size: cover;
+    
+   }
    .slider-hero-banner .bg-slider.is-pc {
+    display: none
+  }
+  
+  .slider-hero-banner .bg-slider.is-pc-sm {
+    display: block
+  }
+  
+  
+  .slider-hero-banner .bg-slider.is-sp {
+    display: none
+  }
+
+}
+
+@media only screen and (min-width: 1600px) {
+  .slider-hero-banner .bg-slider.is-pc {
     display: block
   }
   
@@ -1554,8 +1577,7 @@
   .slider-hero-banner .bg-slider.is-sp {
     display: none
   }
-
-  }
+}
 
 
 

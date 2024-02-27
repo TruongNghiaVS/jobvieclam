@@ -344,11 +344,7 @@
     overflow: hidden;
   }
 
-  .box-profile-view .section-body .info .image img {
-    width: 100%;
-    height: 100%;
-  }
-
+  
   .box-profile-view .section-body .info .info-list {
     margin-top: 25px;
     list-style-type: none;

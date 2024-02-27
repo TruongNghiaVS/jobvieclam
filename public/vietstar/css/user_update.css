@@ -765,6 +765,15 @@ h3.banner__title {
 }
 
 
+.modal.fade .modal-dialog {
+    transition: transform 0.5s ease-out;
+}
+
+.modal.fade.show .modal-dialog {
+    transform: translate(0, 0);
+}
+
+
 @media only screen and (max-width: 767px) {
     section#main-content.company-wrapper{
         margin-top: 0 !important;

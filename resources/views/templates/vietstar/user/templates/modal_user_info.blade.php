@@ -362,7 +362,9 @@ $user = Auth::user();
   .box-profile-view .section-body .info .image img {
     width: 100%;
     height: 100%;
+    min-width:150px;
   }
+
 
   .box-profile-view .section-body .info .info-list {
     margin-top: 25px;

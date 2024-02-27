@@ -147,7 +147,7 @@
         font-size: 1.1em;
         display: block;
     }
-    #mobile-sidebar ul .sidebar-item   a {
+    #mobile-sidebar ul .sidebar-item >a {
         background-color: white;
     }
 
@@ -391,6 +391,15 @@
     .sub_list li{
         margin-left: 40px;
     }
+
+    #blog_sub_list li.active  ,ul#pageSubmenu li.active , ul#pageSubmenu li.active>a{
+        background:var(--bs-primary);
+        color:white;
+    
+    }
+    #blog_sub_list li.active .side-bar-content ,ul#pageSubmenu li.active .side-bar-content ,ul#pageSubmenu li.active i {
+        color:white;
+    }
 </style>
 
 @endpush
@@ -428,7 +437,7 @@
                         </div>
                     </a>
                 </li>
-                <li class="sidebar-item {{ Request::url() == route('job.list') || strpos(Request::url(),'/job/') > 0 ? 'active' : '' }}">
+                <li class="sidebar-item {{ Request::url() == route('job.list') || strpos(Request::url(),'/viec-lam/') > 0 ? 'active' : '' }}">
                     <a href="{{ route('job.list') }}" class="list-group-item list-group-item-action {{ Request::url() == route('job.list') || strpos(Request::url(),'/job/') > 0 ? 'active' : '' }}">
 
                         <div class="d-flex w-100">
@@ -484,7 +493,7 @@
 
                 @endif
 
-                <li>
+                <li class="sidebar-item {{ Request::url() == route('company.listing') || strpos(Request::url(),'/cong-ty/') > 0 ? 'active' : '' }}">
                     <a href="{{route('company.listing')}}">
                         <div class="d-flex w-100">
                             <i class="fa-regular fa-building fs-24px me-2"></i>
@@ -504,9 +513,10 @@
                     </a>
                     @php($categories = \App\Blog_category::get())
 
-                    <ul class="collapse list-unstyled sub_list" data-ref="findJob_blog" data-target="false" id="blog_sub_list">
+                    <ul class="collapse list-unstyled sub_list {{ strpos(Request::url(),'/tin-tuc/') > 0 ? 'show' : '' }}" data-ref="findJob_blog" data-target="false" id="blog_sub_list">
                         @foreach($categories as $category)
-                        <li>
+                         
+                        <li class="{{ basename(Request::url()) == $category->slug ? 'active' : '' }}">
                             <a class="sub-item" href="{{ url('/blog/category/') . "/" . $category->slug }}">
 
                                 <div class="d-flex w-100">
@@ -572,16 +582,16 @@
                         </div>
                     </a>
                 </li>
-                <li class="sidebar-item {{ Request::url() == route('my.job.applications') || Request::url() == route('my.favourite.jobs')  ? 'active' : '' }}">
+                <li class="sidebar-item">
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <div class="d-flex w-100">
                         <i class="fa-regular fa-bookmark fs-24px me-2"></i>
                             <span class="side-bar-content">  Việc Làm Của Tôi</span>
                         </div>
                     </a>
-                    <ul class="collapse list-unstyled sub_list" id="pageSubmenu">
+                    <ul class="collapse list-unstyled sub_list {{ Request::url() == route('my.job.applications') || Request::url() == route('my.favourite.jobs')  ? 'show' : '' }}" id="pageSubmenu">
                         <li class="{{ Request::url() == route('my.job.applications') ? 'active' : '' }}">
-                            <a href="{{ route('my.job.applications') }}" class="list-group-item list-group-item-action {{ Request::url() == route('my.job.applications') ? 'active' : '' }}">
+                            <a href="{{ route('my.job.applications') }}" class="list-group-item list-group-item-action">
                                 <div class="d-flex w-100">
                                     <i class="fa-solid fa-user-check fs-24px me-2"></i>
                                     <span class="side-bar-content"> {{__('My Job Applications')}}</span>
@@ -589,7 +599,7 @@
                             </a>
                         </li>
                         <li class="{{ Request::url() == route('my.favourite.jobs') ? 'active' : '' }}">
-                            <a href="{{ route('my.favourite.jobs') }}" class="list-group-item list-group-item-action {{ Request::url() == route('my.favourite.jobs') ? 'active' : '' }}">
+                            <a href="{{ route('my.favourite.jobs') }}" class="list-group-item list-group-item-action">
                                 <div class="d-flex w-100">
                                     <i class="fa-regular fa-heart fs-24px me-2"></i>
                                     <span class="side-bar-content">{{__('My Favourite Jobs')}}</spant>

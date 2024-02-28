@@ -48,8 +48,7 @@
                                
                                     <div class="figure" bis_skin_checked="1">
                                         <a href="${slug}" class="figure-images"><img src="${image}" alt="${item.heading}"></a>
-                                        <div class="figcaption" bis_skin_checked="1">      
-                                            <h3 class="figcaption__category-name"><a href=""></a></h3>  
+                                        <div class="figcaption__home" bis_skin_checked="1">        
                                             <div class="figcaption__title" bis_skin_checked="1"><a href="${slug}">${item.heading}</a></div>
                                         </div>
                                     </div>

@@ -1222,13 +1222,10 @@ h4.tablinks:hover {
 
 section#flash-badge-banner {
 
-	background: url("https://static.topcv.vn/v4/image/welcome/box-flash-badge/cover.png");
-	background-position: 50%;
+	
+	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-
-
-	min-height: 600px;
 	position: relative;
 	width: 100%;
 	
@@ -1253,7 +1250,7 @@ section#flash-badge-banner {
 	font-size: 25px;
 	font-weight: 700;
 	justify-content: center;
-	line-height: 40px;
+	line-height: 25px;
 	margin: 0 0 16px;
 	position: relative;
 	text-align: center;
@@ -2272,7 +2269,7 @@ h3.seekertxt span {
 }
 .figcaption__home {
 	padding: 10px;
-	min-height: 130px;
+	min-height: 100px;
 
 	display: flex;
 }
@@ -2295,11 +2292,15 @@ h3.seekertxt span {
 }
 
 
-
+.figcaption__title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
 .figcaption__title a {
 	margin: 10px;
-	-webkit-line-clamp: 3;
+	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 	display: -webkit-box;
 	overflow: hidden;
@@ -2308,6 +2309,7 @@ h3.seekertxt span {
 	text-overflow: ellipsis;
 	line-height: 30px;
 	color: var(--text-main);
+
 }
 
 .figcaption__title.big a {

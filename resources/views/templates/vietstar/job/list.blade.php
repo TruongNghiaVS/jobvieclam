@@ -104,7 +104,7 @@
                     @php
                          $companyItem = $jobitem->company;
 
-                         $logo = "/admin_assets/no-image.png";
+                         $logo = "/admin_assets/no-company.png";
                          $slugCompany = "javascript:void(0)";
                          $companyName =  "Công ty vô danh";
                          
@@ -117,7 +117,7 @@
                                 if($logo =="" || $logo == null)
                                 {
 
-                                $logo = "/admin_assets/no-image.png";
+                                $logo = "/admin_assets/no-company.png";
                                 }
                                 else 
                                 {

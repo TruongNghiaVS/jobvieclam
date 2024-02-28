@@ -659,11 +659,10 @@
   }
   .submit-now .w-50 {
     width: 100% !important;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
   .section-register-new-jobs {
-
-    padding: 50px  5px;
+    padding: 20px  1.5rem;
   }
   .banner .item a {
     height: auto;

@@ -387,7 +387,7 @@
                     if(data) {
                         data.forEach(element => {
                           
-                            console.log(element.priorities);
+                            console.log(element);
                             if (element.priorities == '1') {
 
                                 console.log(element.linkDesktop);

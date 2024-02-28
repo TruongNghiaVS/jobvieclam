@@ -857,7 +857,7 @@
   }
 
   .form-group-search-box {
-    margin-bottom: 10px;
+   
   }
 
   .advance-search {
@@ -1194,6 +1194,9 @@
 
  
 
+  .header-bar .search-form .form-control {
+    margin-bottom: 10px;
+  }
 
 
   

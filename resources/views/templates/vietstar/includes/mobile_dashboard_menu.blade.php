@@ -405,9 +405,10 @@
 @endpush
 <nav id="mobile-sidebar">
     <div class="sidebar-header">
-        @if(Auth::user())
+        @if(auth::check()==true)
         <div class="profile" bis_skin_checked="1">
             <div class="avatar" bis_skin_checked="1"><a href="#">
+                    {{auth()->user()->printUserImage()}}
                 </a>
             </div>
             <div class="username" bis_skin_checked="1">
@@ -418,6 +419,8 @@
         @else 
         <div class="profile" bis_skin_checked="1">
             <div class="avatar" bis_skin_checked="1"><a href="#">
+            
+                <img src="/admin_assets/no-user.jpg" alt="Chưa đăng nhập">
                 </a>
             </div>
             <div class="username" bis_skin_checked="1">

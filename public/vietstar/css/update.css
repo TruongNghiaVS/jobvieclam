@@ -4685,7 +4685,8 @@ div#industry_id_chosen {
     }
 
     .header-bar .search-form .form-control {
-        width: 100%
+        width: 100%l;
+        margin-bottom:10px;
     }
 
     .header-bar .search-form .action-search-form {
@@ -5010,7 +5011,9 @@ div#industry_id_chosen {
     }
 
     .header-bar .search-form .form-control {
-        width: 100%
+        width: 100%;
+        margin-bottom:10px;
+
     }
 
     .header-bar .search-form .action-search-form {

@@ -2269,9 +2269,11 @@ h3.seekertxt span {
 }
 .figcaption__home {
 	padding: 10px;
-	min-height: 100px;
+	min-height: 120px;
 
 	display: flex;
+	width: 100%;
+	overflow: hidden;
 }
 
 .figcaption__category-name a {
@@ -2296,11 +2298,13 @@ h3.seekertxt span {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	width: 100%;
+	overflow: hidden;
 }
 
 .figcaption__title a {
 	margin: 10px;
-	-webkit-line-clamp: 2;
+	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
 	display: -webkit-box;
 	overflow: hidden;

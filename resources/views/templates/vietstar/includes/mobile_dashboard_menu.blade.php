@@ -408,7 +408,7 @@
         @if(Auth::user())
         <div class="profile" bis_skin_checked="1">
             <div class="avatar" bis_skin_checked="1"><a href="#">
-                {{ auth()->user()->printUserImage() }}</a>
+                </a>
             </div>
             <div class="username" bis_skin_checked="1">
                 <p><a href="#">{{auth()->user()->name}}</a></p>
@@ -418,7 +418,7 @@
         @else 
         <div class="profile" bis_skin_checked="1">
             <div class="avatar" bis_skin_checked="1"><a href="#">
-                {{ auth()->user()->printUserImage() }}</a>
+                </a>
             </div>
             <div class="username" bis_skin_checked="1">
                 <p><a href="javascript:void(0)">Welcome to Jobvieclam</a></p>

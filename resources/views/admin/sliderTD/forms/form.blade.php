@@ -43,7 +43,7 @@ $queryString = MiscHelper::getLangQueryStr();
         </div>
     @endif
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'slider_image_mobile') !!}">
-        {!! Form::label('linkImage3', 'Ảnh PC SM', ['class' => 'bold']) !!}
+        {!! Form::label('linkImage3', 'Ảnh PC SM ', ['class' => 'bold']) !!}
         {!! Form::File('linkImage3', array('class'=>'form-control', 'id'=>'linkImage3')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'linkImage3') !!}
 

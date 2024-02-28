@@ -130,6 +130,14 @@ class SliderController_TD extends Controller
             $slider->slider_image_mobile = $fileName;
             $slider->used_for = 1;
         }
+
+        if ($request->hasFile('linkImage3')) {
+            $this->deleteSliderImage($id);
+            $image_name = $request->input('linkImage3');
+            $fileName = ImgUploader::UploadImage('slider_images', $request->file('linkImage3'), $image_name, 600, 1920);
+            $slider->linkImage3 = $fileName;
+
+        }
         $slider->lang = $request->input('lang');
         $slider->slider_heading = $request->input('slider_heading');
 		$slider->slider_description = $request->input('slider_description');

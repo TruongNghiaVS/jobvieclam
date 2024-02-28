@@ -2245,6 +2245,8 @@ h3.seekertxt span {
 	width: 100%;
 	background: #ffffff;
 	overflow: hidden;
+	display: flex;
+    flex-direction: column;
 }
 
 .figure-images {
@@ -2265,7 +2267,7 @@ h3.seekertxt span {
 }
 
 .figcaption {
-	padding: 20px;
+	padding: 10px;
 	height: 160px;
 }
 .figcaption__home {

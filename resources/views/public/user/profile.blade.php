@@ -70,9 +70,10 @@
             width: 160px;
             height: 160px;
             margin-top: 20px;
-            margin-right: 40px;
+            min-width: 160px;
             margin-left: 0;
             overflow: hidden;
+            margin-right: 40px;
         }
 
         .box-profile-view .section-body .info .image img {
@@ -81,8 +82,12 @@
         }
 
         .box-profile-view .section-body .info .info-list {
-            margin-top: 25px;
-            list-style-type: none;
+            
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 calc(100% - 160px);
+            flex: 0 0 calc(100% - 160px);
+            max-width: calc(100% - 160px);
+            width: 100%;
         }
 
         .box-profile-view .section-body .info-list li {

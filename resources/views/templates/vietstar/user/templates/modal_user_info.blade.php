@@ -307,7 +307,8 @@ $user = Auth::user();
 @push('styles')
 <style>
   .modal-dialog.modal_user_dialog {
-    max-width: 60%;
+    max-width: 70%;
+    min-width: 70%;
     height: 100vh;
   }
 
@@ -342,21 +343,23 @@ $user = Auth::user();
   }
 
   .box-profile-view .section-body .info .image {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 160px;
-    height: 160px;
-    margin-top: 20px;
-    margin-right: 40px;
-    margin-left: 0;
-    overflow: hidden;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 160px;
+            height: 160px;
+            margin-top: 20px;
+            min-width: 160px;
+            margin-left: 0;
+            overflow: hidden;
+            margin-right: 40px;
+        
   }
 
   .box-profile-view .section-body .info .image img {
@@ -367,8 +370,12 @@ $user = Auth::user();
 
 
   .box-profile-view .section-body .info .info-list {
-    margin-top: 25px;
-    list-style-type: none;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(100% - 160px);
+        flex: 0 0 calc(100% - 160px);
+        max-width: calc(100% - 160px);
+        width: 100%;
+        margin-top:20px
   }
 
   .box-profile-view .section-body .info-list li {
@@ -378,16 +385,19 @@ $user = Auth::user();
   }
 
   .box-profile-view .section-body .info-list li p:first-child {
-    width: 200px;
-    min-width: 200px;
+    width: 100px;
+    min-width: 100px;
     padding-right: 10px;
+
   }
 
   .box-profile-view .section-body .info-list li p {
     color: #182642;
-    font-size: 17;
+    font-size: 17px;
     padding: 1px;
-
+    max-width: 100%;
+    display: flex;
+    overflow: hidden;
   }
 
   .box-profile-view .title-flip {

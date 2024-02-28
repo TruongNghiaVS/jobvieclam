@@ -134,7 +134,7 @@ class SliderController_TD extends Controller
         if ($request->hasFile('linkImage3')) {
             $this->deleteSliderImage($id);
             $image_name = $request->input('linkImage3');
-            $fileName = ImgUploader::UploadImage('slider_images', $request->file('linkImage3'), $image_name, 600, 1920);
+            $fileName = ImgUploader::UploadImage('slider_images', $request->file('linkImage3'), $image_name, 1300, 600);
             $slider->linkImage3 = $fileName;
 
         }

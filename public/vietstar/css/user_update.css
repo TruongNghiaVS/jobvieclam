@@ -550,6 +550,12 @@ i.fas.fa-heart.iconoutline {
     justify-content: center;
     margin-top :20px;
 }
+.show-more-home {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: unset;
+}
 
 .hide {
     display: none;

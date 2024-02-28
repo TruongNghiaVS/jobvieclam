@@ -157,7 +157,7 @@
 
                         <div class="row">
                             <div class="col-lg-6 col-sm-12 col-md-12">
-                                <div class="advance-search row">
+                                <div class="advance-search row pt-0">
                                     <div class="advance-search__reset col-lg-6">Đặt Lại</div>
                                     <div class="col-lg-6 advance-search__box">
                                         <div class="advance-search__open" onClick="opensearchbox()"><i class="fa-solid fa-magnifying-glass"></i><span>Tìm Kiếm Nâng Cao</span></div>

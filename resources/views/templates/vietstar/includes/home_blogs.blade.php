@@ -13,7 +13,7 @@
             
             </div>
         </div>
-        <div class="show-more">
+        <div class="show-more show-more-home">
             <a href="{{ url('/') }}/blog/category/cam-nang-nghe-nghiep" class="btn btn-secondary show-more-btn">Xem Thêm</a>
         </div>
     </div>

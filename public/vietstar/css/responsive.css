@@ -616,6 +616,8 @@
   .box-profile-view .section-body .info {
     flex-direction: column;
     padding-left: 10px;
+    justify-content: center;
+    align-items: center;
   }
 
   .container.company-content.CV-profile {
@@ -645,8 +647,8 @@
     overflow: hidden;
   }
   .box-profile-view .section-body .info-list li p:first-child {
-      width: 100px !important;
-      min-width: 100px !important;
+      width: 150px !important;
+      min-width: 150px !important;
   }
   .box-profile-view .job-information .information-list li p:first-child {
     width: 150px !important;
@@ -1104,8 +1106,9 @@
   }
  
   .box-profile-view .section-body .info {
-    flex-direction: column;
+    flex-direction: row;
     padding-left: 20px;
+
   }
 
   .container.company-content.CV-profile {

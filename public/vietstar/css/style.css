@@ -4991,6 +4991,14 @@ ul.skillslist li a:hover {
 	margin-top: 10px;
 }
 
+.myads .searchList .job-title h3 {
+	margin-left: 0 !important;
+}
+
+
+.status-apply:hover{
+	text-decoration: underline;
+}
 .status-apply.accept {
 	color: #00b14f;
 }

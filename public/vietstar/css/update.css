@@ -2592,6 +2592,11 @@ footer .inner-copyright .copyright {
     align-items: center;
     width: 90%;
 }
+.myads .searchList  .item-job .jobinfo .info .job-title {
+    width: 80%;
+
+}
+
 
 .jobs-side-list .item-job .jobinfo .info .job-title span {
     text-align: center;
@@ -2631,7 +2636,7 @@ footer .inner-copyright .copyright {
     line-height: 1.3;
 
     color: var(--text-main);
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     display: -webkit-box;
     overflow: hidden;
@@ -2988,7 +2993,7 @@ footer .inner-copyright .copyright {
     top: 155px;
     left: 0;
     right: 0;
-    z-index: 2;
+    z-index: 15;
 }
 
 

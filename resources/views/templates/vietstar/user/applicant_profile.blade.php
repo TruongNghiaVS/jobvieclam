@@ -64,7 +64,7 @@
                   
                   </div>
                   <p class="title-flip">Mô Tả Bản Thân  </p>
-                  <div class="p-4 fs-18px">
+                  <div class="py-4 px-2 fs-18px">
                     {!! $user->getProfileSummary('summary') !!}
                   </div>
 

@@ -107,7 +107,7 @@
             <div class="" id="collapseAdvanceSearch">
 
                 <div class="row g-0">
-                    <div class="col-lg-5  shadow p-4 search-form-box pb-1">
+                    <div class="col-lg-5 p-4 search-form-box pb-1">
 
                         <div class="row">
                             <div class="col-lg-6 col-sm-12 col-md-6">

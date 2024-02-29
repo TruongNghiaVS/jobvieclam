@@ -51,22 +51,15 @@
         </h3>
         <div class="submit-now">
 
-            <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }} w-50">
-                    <input id="email" type="email" class="form-control w-100" name="email" value="{{ old('email') }}" required  placeholder="{{__('Email Address')}}">
-                    <div class="invalid-feedback email-error">
-                            {{__('Email is required')}}
-                    </div>  
-                             
-                
+            <div class="submit-now-box">
+                    <input id="email" type="email" class="form-control flex-grow-1 border-t-r-ra-0 border-b-r-ra-0" name="email" value="{{ old('email') }}" required  placeholder="{{__('Email Address')}}">
+                    <button type="submit" class="btn btn-primary  border-t-l-ra-0 border-b-l-ra-0" id="btn-register-now">Đăng Ký Ngay</button>
             </div>
-            <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <button type="submit" class="btn btn-primary" id="btn-register-now">Đăng Ký Ngay</button>
-                    <div class="invalid-feedback email-error">
-                        
-                    </div>            
-            </div>
-           
+          
         </div>
+        <div class="invalid-feedback email-error text-center">
+            {{__('Email is required')}}
+        </div>  
         </form>
     </div>
 </section>
@@ -185,7 +178,8 @@ $(document).ready(function() {
            
             $('#email').removeClass('is-valid');
             $('#email').addClass('is-invalid');
-            $('.email-error').text('{{__('The email must be a valid email address')}}')
+            $('#form-group-mail .invalid-feedback.email-error').text('{{__('The email must be a valid email address')}}')
+            $('#form-group-mail .invalid-feedback.email-error').css("display","block")
         }
 
 

@@ -1,0 +1,70 @@
+@charset "utf-8";
+/* CSS Document */
+
+.plus {
+    background: url('images/details_open.png') no-repeat center center !important;
+    cursor: pointer;
+}
+
+.minus {
+    background: url('images/details_close.png') no-repeat center center !important;
+    cursor: pointer;
+}
+
+#sortable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#sortable li {
+    margin: 15px;
+    padding: 2px;
+    font-size: 16px;
+    background: #cedc98;
+    border: 1px solid #DDDDDD;
+    color: #333333;
+    cursor: pointer;
+}
+
+.nav-tabs__item {
+    margin: 10px;
+
+}
+
+
+
+.page-header.navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    min-width: 60px;
+}
+
+.page-header.navbar .page-header-inner{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+.page-header.navbar .page-logo {
+    position: relative;
+    width: 235px;
+}
+.page-header-fixed .page-container {
+    margin-top: 60px;
+}
+
+.page-header.navbar .menu-toggler.sidebar-toggler {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.page-sidebar .sidebar-toggler, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .sidebar-toggler {
+    margin-top: 0;
+    margin-right: 0;
+}

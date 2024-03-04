@@ -44,30 +44,23 @@
 <section class="section-register-new-jobs"
     style="background-image: url({{ asset('/vietstar/imgs') }}/banner-register-new-jobs.jpg);">
     <div class="container">@include('flash::message')
-        <form id="form-group-mail"  class="form-horizontal needs-validation" novalidate>
+    <form id="form-group-mail" class="form-horizontal needs-validation" novalidate="">
      
         <h3 class="title white">
             Đăng ký theo dõi để cập nhật về cơ hội việc làm mới và phù hợp nhất
         </h3>
         <div class="submit-now">
 
-            <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }} w-50">
-                    <input id="email" type="email" class="form-control w-100" name="email" value="{{ old('email') }}" required  placeholder="{{__('Email Address')}}">
-                    <div class="invalid-feedback email-error">
-                            {{__('Email is required')}}
-                    </div>  
-                             
-                
+            <div class="submit-now-box">
+                    <input id="email" type="email" class="form-control flex-grow-1 border-t-r-ra-0 border-b-r-ra-0" name="email" value="" required="" placeholder="Địa Chỉ Email">
+                    <button type="submit" class="btn btn-primary  border-t-l-ra-0 border-b-l-ra-0" id="btn-register-now">Đăng Ký Ngay</button>
             </div>
-            <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <button type="submit" class="btn btn-primary" id="btn-register-now">Đăng Ký Ngay</button>
-                    <div class="invalid-feedback email-error">
-                        
-                    </div>            
-            </div>
-           
+        
         </div>
-        </form>
+        <div class="invalid-feedback email-error text-center">
+            Email là trường bắt buộc
+        </div>  
+     </form>
     </div>
 </section>
 <!-- ./Đăng ký nhận việc làm mới và phù hợp -->
@@ -169,23 +162,25 @@ $(document).ready(function() {
         $("#form-group-mail").find(":input").prop("disabled", false);
 
 
-        var email = $('#email').val();
+        var email = $('#form-group-mail #email').val();
 
         // Simple email validation using a regular expression
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (emailRegex.test(email)) {
             // Email is valid
-            $('#email').removeClass('is-invalid');
-            $('#email').addClass('is-valid');
-
+            $('#form-group-mail #email').removeClass('is-invalid');
+            $('#form-group-mail #email').addClass('is-valid');
+            $('.email-error').css("display","none")
            
         } else {
             // Email is invalid
            
-            $('#email').removeClass('is-valid');
-            $('#email').addClass('is-invalid');
-            $('.email-error').text('{{__('The email must be a valid email address')}}')
+            $('#form-group-mail #email').removeClass('is-valid');
+            $('#form-group-mail #email').addClass('is-invalid');
+            $('#form-group-mail .email-error').text('{{__('The email must be a valid email address')}}')
+            $('.email-error').css("display","block")
+
         }
 
 

@@ -18,7 +18,7 @@
     <form method ="get" action="/cong-ty">
         <div id="topcompanyhead" class="topcompanyhead">
             <h1>Khám phá 1.000+ công ty nổi bật</h1>
-            <p>Tìm hiểu văn hoá công ty và chọn cho bạn nơi làm việc phù hợp nhất.</p>
+            <p style="margin-bottom:10px;">Tìm hiểu văn hoá công ty và chọn cho bạn nơi làm việc phù hợp nhất.</p>
             <div class="topcompanyhead__search row g-0">
                 <div class="search-company col-lg-6 col-md-6 col-sm-12">
 

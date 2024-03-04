@@ -168,7 +168,7 @@
                             <div class="col-lg-6 col-sm-12 col-md-12">
 
                                 <div class="action-search-form">
-                                    <button type="submit" class="btn btn-primary mb-3 btn-submit-search">{{__('Search')}}</button>
+                                    <button type="submit" class="btn btn-primary btn-submit-search">{{__('Search')}}</button>
                                 </div>
                             </div>
 

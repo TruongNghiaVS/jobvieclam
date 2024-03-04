@@ -9,7 +9,9 @@
     padding-right: 10px  !important;
   }
 
-
+  .submit-now-box {
+    width: 100%;
+  }
 
   .filters-wrapper .form-group {
     margin-bottom: 10px;

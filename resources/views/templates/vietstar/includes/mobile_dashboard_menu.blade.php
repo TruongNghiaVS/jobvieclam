@@ -659,8 +659,8 @@
         <ul class="list-unstyled components sidebar-bottom__item">
             @if(Auth::user())
             <li class="openmyacount">
-                <div class="d-flex w-100">
-                    <span class="side-bar-content">Thông Tin Tài Khoản</span>
+                <div class="btn  btn-primary btn-sm  w-100">
+                    <span class="side-bar-content text-white"><i class="fas fa-arrow-circle-right text-white"></i> Thông Tin Tài Khoản</span>
                 </div>
 
             </li>
@@ -722,7 +722,7 @@
             $('.menu').addClass('active');
             $('.sidebar-user-nav').addClass('active');
             $('.back-menu-normal').addClass('active');
-
+            $('.openmyacount').addClass('disabled')
         });
 
         $('.back-menu-normal').click(function() {
@@ -731,6 +731,8 @@
             $('.menu').removeClass('active');
             $('.sidebar-user-nav').removeClass('active');
             $('.back-menu-normal').removeClass('active');
+            $('.openmyacount').removeClass('disabled')
+
         });
     });
 </script>

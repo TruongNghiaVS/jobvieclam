@@ -343,8 +343,8 @@
         .slider:before {
             position: absolute;
             content: "";
-            height: 26px;
-            width: 26px;
+            height: 25px;
+            width: 25px;
             left: 3px;
             bottom: 3px;
             background-color: white;

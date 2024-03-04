@@ -377,7 +377,7 @@ $company = $job->getCompany();
                                         </div>
                                     </div>
                                     <div
-                                        class="job-detail-banner__actions job-detail-banner_info_actions d-flex flex-row gap-16">
+                                        class="job-detail-banner__actions job-detail-banner_info_actions d-flex flex-row">
                                         <form
                                             action="{{ route('seeker.submit-message', ['message' => 'Xin chào!', 'company_id' => $company->id, 'new' => true]) }}"
                                             method="post">

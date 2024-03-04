@@ -473,7 +473,7 @@ a {
 .job-detail-banner .job-detail-banner__actions {
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
+	
 }
 
 
@@ -2309,6 +2309,10 @@ h3.seekertxt span {
     overflow: hidden;
     text-overflow: ellipsis;
 	
+}
+
+.blog-box {
+	margin-bottom: 15px;
 }
 
 

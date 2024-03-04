@@ -4820,7 +4820,7 @@ div#industry_id_chosen {
     }
 
     .job-detail-banner .job-detail-banner__actions {
-    
+        flex-direction: column !important; 
     }
     .job-detail-banner {
         padding: 20px;

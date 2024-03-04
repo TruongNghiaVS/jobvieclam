@@ -49,7 +49,7 @@
                                     <div class="figure" bis_skin_checked="1">
                                         <a href="${slug}" class="figure-images"><img src="${image}" alt="${item.heading}"></a>
                                         <div class="figcaption__home" bis_skin_checked="1">        
-                                            <div class="figcaption__title" bis_skin_checked="1"><a href="${slug}">${item.heading}</a></div>
+                                            <div class="figcaption__title" bis_skin_checked="1"><a  href="${slug}">${item.heading}</a></div>
                                         </div>
                                     </div>
                                 </div>

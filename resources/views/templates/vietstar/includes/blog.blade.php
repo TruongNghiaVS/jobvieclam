@@ -26,7 +26,7 @@ $blogs = $data["blogs"]->items();
                 </div>
                 
             </div>
-            <div class="row align-items-start ">
+            <div class="row align-items-start blog-box">
 
             
                 @foreach($blogs as $blog)
@@ -41,7 +41,7 @@ $blogs = $data["blogs"]->items();
                         </a>
                         <div class="figcaption">
                             <h3 class="figcaption__category-name"><a href="{{url('/')}}/blog/category/{{$category -> slug }}">{{$heading}}</a></h3>
-                            <div class="figcaption__title"><a href="{{url('/')}}/blog/{{ $blog-> slug }}">{{ $blog-> heading}} </a></div>
+                            <div class="figcaption__title"><a class="mt-0" href="{{url('/')}}/blog/{{ $blog-> slug }}">{{ $blog-> heading}} </a></div>
 
                         </div>
                     </div>

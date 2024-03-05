@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-3 mb-4">
         <div class="card card-bio mb-3 w-100 h-100 shadow-sm">
-        <div class="card-body p-0">
+        <div class="card-body p-0 d-flex flex-column justify-content-center align-items-center">
             <p class="card-text fs-14px text-center">
             <i class="far fa-user fa__icon-black me-1"></i>
             <strong>{{__('Profile Views')}}</strong>
@@ -12,7 +12,7 @@
     </div>
     <div class="col-lg-3 mb-4">
         <div class="card card-bio mb-3 w-100 h-100 shadow-sm">
-        <div class="card-body p-0">
+        <div class="card-body p-0 d-flex flex-column justify-content-center align-items-center">
             <p class="card-text fs-14px text-center">
             <span class="icon-office-building-icon fs-18px me-2"></span>
             <strong>{{__('Followings')}}</strong>
@@ -23,7 +23,7 @@
     </div>
     <div class="col-lg-3 mb-4">
         <div class="card card-bio mb-3 w-100 h-100 shadow-sm">
-        <div class="card-body p-0">
+        <div class="card-body p-0 d-flex flex-column justify-content-center align-items-center">
             <p class="card-text fs-14px text-center">
             <span class="icon-user-1-icon fs-18px me-2"></span>
             <strong>{{__('My CV List')}}</strong>
@@ -34,7 +34,7 @@
     </div>
     <div class="col-lg-3 mb-4">
         <div class="card card-bio mb-3 w-100 h-100 shadow-sm">
-        <div class="card-body p-0">
+        <div class="card-body p-0 d-flex flex-column justify-content-center align-items-center">
             <p class="card-text fs-14px text-center">
             <i class="far fa-comment-alt-dots fa__icon-black me-1"></i>
             <strong>{{__('Messages')}}</strong>

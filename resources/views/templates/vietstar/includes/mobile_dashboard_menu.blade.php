@@ -326,6 +326,8 @@
         position: absolute;
         top: 0px;
         left: 0px;
+        height: 100%;
+        overflow-y: auto;
     }
 
     .sidebar-main-nav.active {

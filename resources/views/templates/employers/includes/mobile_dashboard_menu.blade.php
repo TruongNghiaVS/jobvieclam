@@ -320,6 +320,7 @@
         position: absolute;
         top: 0px;
         left: 0px;
+        
     }
 
     .sidebar-main-nav.active {

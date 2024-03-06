@@ -10,7 +10,9 @@ $numberOfColumns = 9;
             <div class="swiper-slide">
                 <div class="row g-2">
                     @foreach($chunk as $latestJobs)
-                    <?php $company =$latestJobs->getCompany(); 
+                    <?php 
+                        
+                        $company =$latestJobs->getCompany(); 
                     ?>
                     @if(null !== $company)
                     <div class="col-md-6 col-lg-4">

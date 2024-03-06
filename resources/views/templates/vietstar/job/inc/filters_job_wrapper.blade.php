@@ -20,9 +20,12 @@
   position: absolute;
   width: 360px;
   overflow-y: auto;
+  display:none;
   max-height: 295px;
   padding: 10px;
   margin-top: 10px;
+  top:70px;
+  left:0;
   border-radius: 8px;
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -80,7 +83,7 @@
 .box-field {
     align-items: center;
     display: flex;
-    justify-content: space-between;
+  
     margin-bottom: 10px;
 
 }
@@ -93,6 +96,11 @@
     height: 40px;
     padding: 8px 12px;
     width: 105.5px!important;
+    margin-right:10px;
+}
+.box-field span {
+    margin-right:10px;
+
 }
 .custom-salary-option {
     margin:10px 0;
@@ -355,7 +363,7 @@ dd($salaryFroms)
                             {!! Form::select('salary_from',['' => __('Salary Level')]+$salaryFroms, Request::get('salary_from', null), array('class'=>'form-control form-select shadow-sm', 'id'=>'salary_from')) !!}
                         </div>
                     </div> -->
-                    <div class="form-group col-sm-6 col-lg-2">
+                    <div class="form-group col-sm-6 col-lg-2 position-relative">
                         
                             <label>{{__('Salary Level')}}</label>
        

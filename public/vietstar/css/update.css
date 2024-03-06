@@ -1602,7 +1602,10 @@ button:focus {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 80px;
     flex: 0 0 80px;
-    max-width: 80px
+    max-width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card-news .card-news__icon img {

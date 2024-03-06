@@ -651,6 +651,9 @@
   .company-items__logo {
     margin-top: 100px;
   }
+  .section-company-profile-detail {
+    padding: 10px;
+  }
   .box-profile-view .section-body .info-list li p:first-child {
       width: 150px !important;
       min-width: 150px !important;

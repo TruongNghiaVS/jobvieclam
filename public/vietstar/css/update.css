@@ -2154,6 +2154,7 @@ footer .inner-copyright .copyright {
 .company-job-detail .job-detail-banner__detail .banner__due-day {
     padding-left: 28px;
     position: relative;
+    text-align: justify;
 
 }
 

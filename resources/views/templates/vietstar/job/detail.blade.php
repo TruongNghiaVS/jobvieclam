@@ -637,8 +637,8 @@ $company = $job->getCompany();
                                         $city = $jobitem->city ? $jobitem->city->city :" ";
                                         $from = round($jobitem->salary_from/1000000,0);
                                         $to = round($jobitem->salary_to/1000000,0);
-                                    
-                                
+                                                            
+                                       
                                 @endphp
                                 <div class="related-jobs-item item-job mb-3">
                                 <div class="logo-company">
@@ -676,7 +676,7 @@ $company = $job->getCompany();
 
                                         <!-- companyName Start-->
                                         <div class="info-item companyName" bis_skin_checked="1"><a
-                                                href="{{url('/')}}/viec-lam/{{ $jobitem->slug }}"
+                                                href="{{url('/')}}/cong-ty/{{ $jobitem->getCompany('slug') }}"
                                                 title="{{ $jobitem->getCompany('name') }}n">{{$jobitem->getCompany('name') }}</a>
                                         </div>
                                         <!-- companyName End-->

@@ -361,6 +361,27 @@
     padding: 20px 0 10px 0 !important;
   }
 
+  .culture-img {
+    width: 100% !important;
+  }
+  .culture-section .container {
+    padding: 30px 20px !important;
+  }
+  .about_us_content .content_title {
+      padding-left: unset !important;
+      padding: 0 10px !important;
+  }
+  .about_us_content .content_title .title {
+    margin-top: 25px;
+    text-align: center;
+  }
+  .content_title .text {
+    padding-right: unset !important;
+  }
+  .content_title .text p {
+    padding-right: unset !important;
+  }
+
   .group-button {
     display: block !important;
   }
@@ -586,7 +607,7 @@
   }
   .about-us-section .about_us_img {
     justify-content:center !important;
-    margin-bottom: 20px;
+   
 
   }
   .about-us-section .about_us_img img {

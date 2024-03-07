@@ -351,8 +351,14 @@
     padding-left:  10px;
     padding-right: 10px;
   }
+  .section-employment-statistics .statistic {
+    margin-bottom: 10px !important;
+  }
   .section-company-profile .box-content {
     max-width: unset
+  }
+  section#flash-badge-banner {
+    padding: 20px 0 10px 0 !important;
   }
 
   .group-button {

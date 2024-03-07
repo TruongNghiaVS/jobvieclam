@@ -959,6 +959,7 @@ h4.tablinks:hover {
 	margin: 20px 0;
 	-webkit-animation: fadeEffect 1s;
 	animation: fadeEffect 1s;
+	margin-bottom: 0;
 }
 
 .tabcontent.active {
@@ -2216,6 +2217,7 @@ h3.seekertxt span {
 	overflow: hidden;
 	display: flex;
     flex-direction: column;
+	border-radius: 5px;
 }
 
 .figure-images {

@@ -6362,7 +6362,7 @@ span.iconmoon.icon-eye-icon {
     flex: 0 0 80px;
     max-width: 80px;
     height: 80px;
-    border-radius: 50%
+
 }
 
 .card-news-applied-jobs .card-news__content {
@@ -6395,11 +6395,15 @@ span.iconmoon.icon-eye-icon {
 @media screen and (max-width: 767px) {
     .card-news-applied-jobs .card-news__icon {
         -webkit-box-flex: 0;
-        -ms-flex: 0 0 65px;
-        flex: 0 0 65px;
-        max-width: 65px;
-        height: 65px;
-        border-radius: 50%
+        -ms-flex: 0 0 80px;
+        flex: 0 0 80px;
+        max-width: 80px;
+        height: 80px;
+
+    }
+    .card-news .card-news__content .card-news__content-title a {
+        width: 100% !important;
+        max-width: 100% !important;
     }
 
     .card-news-applied-jobs .card-news__content {

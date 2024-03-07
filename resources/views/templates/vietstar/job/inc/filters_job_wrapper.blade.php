@@ -335,11 +335,7 @@ dd($salaryFroms)
         <div class="filters-wrapper">
             <form action="{{route('job.list')}}" method="get">
                 <div class="row">
-                    <div class="col-sm-6 col-lg-2">
-                        <div class="form-group form-keyword">
-                            <input type="search" class="keyword form-control" id="search" name="search" value=""  placeholder="{{__('Skills or Job Titles')}}" autocomplete="off">
-                        </div>
-                    </div>
+                    
 
 
                     <div class="col-sm-6 col-lg-2">
@@ -432,7 +428,7 @@ dd($salaryFroms)
 
                 <div class="row">
                     <div class="form-group form-submit">
-                        <button class="btn btn-primary filter_submit" type="button">
+                        <button class="btn btn-primary filter_submit" type="submit">
                             {{__('Search')}} 
                         </button>
                     </div>

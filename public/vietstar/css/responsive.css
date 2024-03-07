@@ -588,7 +588,7 @@
     padding-left: 10px !important;
   }
   .cbox-impressive-numbers__item--wrapper{
-    padding:0 10px;
+    padding:10px 10px;
   }
 
   .cardBlock {
@@ -710,9 +710,6 @@
   }
   #listbannerSide{
     padding: 0px 0px !important;
-  }
-  .section-employment-statistics {
-    margin-bottom: 20px;
   }
   .topcompanyhead__search {
     margin: 0;

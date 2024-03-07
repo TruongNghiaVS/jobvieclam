@@ -347,8 +347,10 @@
            ==Login==
 
     *************************************************/
- 
-
+  #flash-badge-banner  .container {
+    padding-left:  10px;
+    padding-right: 10px;
+  }
   .section-company-profile .box-content {
     max-width: unset
   }

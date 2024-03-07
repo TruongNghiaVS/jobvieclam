@@ -346,7 +346,7 @@
             height: 25px;
             width: 25px;
             left: 3px;
-            bottom: 3px;
+            bottom: 2px;
             background-color: white;
             border-radius: 50%;
             -webkit-transition: .4s;

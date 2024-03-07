@@ -102,7 +102,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
+            <div class="col-md-6 col-lg-4 col-sm-12">
                 <div class="statistic">
                     <div class="icon">
                         <i class="fa-solid fa-suitcase"></i>
@@ -115,7 +115,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
+            <div class="col-md-6 col-lg-4 col-sm-12">
                 <div class="statistic">
                     <div class="icon">
                         <i class="fa-regular fa-building"></i>
@@ -128,7 +128,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
+            <div class="col-md-6 col-lg-4 col-sm-12">
                 <div class="statistic">
                     <div class="icon">
                         <i class="fa-regular fa-star"></i>
@@ -141,7 +141,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
+            <div class="col-md-6 col-lg-4 col-sm-12">
                 <div class="statistic">
                     <div class="icon">
                         <i class="fa-regular fa-address-card"></i>
@@ -154,7 +154,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
+            <div class="col-md-6 col-lg-4 col-sm-12">
                 <div class="statistic">
                     <div class="icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -167,7 +167,7 @@
                     </div>
                 </div>
             </div>
-                <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
+                <div class="col-md-6 col-lg-4 col-sm-12">
                     <div class="statistic">
                         <div class="icon">
                             <i class="fa-solid fa-users-rays"></i>
@@ -252,6 +252,9 @@
         -ms-flex-pack: justify;
         justify-content: space-between;
         padding: 15px 20px 15px 80px;
+        min-height: 160px;
+        max-height: 160px;
+        margin-bottom:20px
     }
 
     .section-employment-statistics .statistic .icon {

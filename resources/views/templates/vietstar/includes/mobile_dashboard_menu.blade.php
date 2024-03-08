@@ -167,6 +167,9 @@
         font-size: 20px;
         color: var(--text-main);
         width: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
 
@@ -500,8 +503,8 @@
 
                 <li class="sidebar-item {{ Request::url() == route('company.listing') || strpos(Request::url(),'/cong-ty/') > 0 ? 'active' : '' }}">
                     <a href="{{route('company.listing')}}">
-                        <div class="d-flex w-100">
-                            <i class="fa-regular fa-building fs-24px me-2"></i>
+                        <div class="d-flex w-100">                         
+                            <i class="fas fa-hotel fs-24px me-2"></i>
                             <span class="side-bar-content">{{__('Company')}}</span>
                         </div>
                     </a>

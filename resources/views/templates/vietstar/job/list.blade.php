@@ -343,9 +343,9 @@
         .slider:before {
             position: absolute;
             content: "";
-            height: 25px;
-            width: 25px;
-            left: 3px;
+            height: 26px;
+            width: 26px;
+            left: 2px;
             bottom: 2px;
             background-color: white;
             border-radius: 50%;
@@ -362,9 +362,9 @@
         }
 
         input:checked + .slider:before {
-            -webkit-transform: translateX(26px);
-            -ms-transform: translateX(26px);
-            transform: translateX(26px);
+            -webkit-transform: translateX(30px);
+            -ms-transform: translateX(30px);
+            transform: translateX(30px);
         }
 </style>
 @endpush

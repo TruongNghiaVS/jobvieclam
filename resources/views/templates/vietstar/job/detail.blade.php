@@ -423,7 +423,7 @@ $company = $job->getCompany();
                                                         <i class="fa-solid fa-people-group"></i>
                                                     </div>
                                                     <div class="require-card__item-content">
-                                                        <p>Quy mô</p>
+                                                        <p>Quy Mô</p>
                                                         <strong>{{ $company->no_of_employees }}</strong>
                                                     </div>
                                                 </div>
@@ -436,7 +436,7 @@ $company = $job->getCompany();
                                                         <i class="fa-regular fa-calendar-days"></i>
                                                     </div>
                                                     <div class="require-card__item-content">
-                                                        <p>Thời gian thành lập</p>
+                                                        <p>Thời Gian Thành Lập</p>
                                                         <strong>{{ $company->established_in }}</strong>
                                                     </div>
                                                 </div>
@@ -447,7 +447,7 @@ $company = $job->getCompany();
                                                         <i class="fa-solid fa-person-burst"></i>
                                                     </div>
                                                     <div class="require-card__item-content">
-                                                        <p>Vị trí đang tuyển</p>
+                                                        <p>Vị Trí Đang Tuyển</p>
                                                         <strong>{{ $company->jobs->count() }}</strong>
                                                     </div>
                                                 </div>

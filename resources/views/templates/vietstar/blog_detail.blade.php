@@ -170,7 +170,7 @@
     </div>
 
     <div class="container">
-        <h3 class="section-title aline-left mb-3">{{__('Related post')}} </h3>
+        <h3 class="section-title aline-left mb-3 pb-0">{{__('Related post')}} </h3>
         <div class="row align-items-start " bis_skin_checked="1">
            
           @foreach($blogRelations as $itemRe)
@@ -180,8 +180,8 @@
                         
                     <img src="/uploads/blogs/{{$itemRe->image}}" alt=""></a>
                     <div class="figcaption" bis_skin_checked="1">
-                        <h3 class="figcaption__category-name"><a href="/tin-tuc/{{$categoryCurrent->slug}}"> {{$categoryCurrent->heading}} </a></h3>
-                        <div class="figcaption__title" bis_skin_checked="1"><a href="/tin-tuc/{{$categoryCurrent->slug}}/{{$itemRe->slug}}">{{$itemRe->heading}}</a></div>
+                        <h3 class="figcaption__category-name mb-0"><a href="/tin-tuc/{{$categoryCurrent->slug}}"> {{$categoryCurrent->heading}} </a></h3>
+                        <div class="figcaption__title" bis_skin_checked="1"><a class="mt-0" href="/tin-tuc/{{$categoryCurrent->slug}}/{{$itemRe->slug}}">{{$itemRe->heading}}</a></div>
 
                     </div>
                 </div>

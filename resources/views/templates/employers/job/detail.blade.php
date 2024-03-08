@@ -373,7 +373,7 @@ $company = $job->getCompany();
                                                     <i class="fa-solid fa-hand-holding-dollar"></i>
                                                 </div>
                                                 <div class="require-card__item-content">
-                                                    <p>Mức lương trung bình</p>
+                                                    <p>Mức Lương Trung Bình</p>
                                                     <strong>NA</strong>
                                                 </div>
                                             </div>

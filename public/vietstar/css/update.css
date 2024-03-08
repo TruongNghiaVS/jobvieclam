@@ -4709,6 +4709,15 @@ div#industry_id_chosen {
         margin-bottom: 4px
     }
 
+    .item-job.related-jobs-item .jobinfo .info .job-title-name a  {
+        font-weight: 700 !important;
+        font-size: 14px !important;
+        line-height: 19px !important;
+        margin-bottom: 4px !important ;
+    }
+
+
+
    
 
     .jobs-side-list .item-job .jobinfo .caption .welfare {

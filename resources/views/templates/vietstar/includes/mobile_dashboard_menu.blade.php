@@ -675,7 +675,7 @@
                    
                   
                     <!-- <a href="{{url('/employers')}}" class="btn btn-primary">Dành Cho Nhà Tuyển Dụng</a> -->
-                    <a href="http://tuyendung.jobvieclam.com:9999" class="btn btn-primary btn-sm">Dành Cho Nhà Tuyển Dụng</a>
+                    <a href="https://tuyendung.jobvieclam.com" class="btn btn-primary btn-sm">Dành Cho Nhà Tuyển Dụng</a>
 
                  
                 </div>
@@ -689,7 +689,7 @@
                     <a class="nav-link login_link btn btn-primary login-btn btn-sm" data-toggle="modal" data-target="#user_login_Modal" >{{__('Log in')}} / {{__('Đăng Ký')}} </a>
                   
                     <!-- <a href="{{url('/employers')}}" class="btn btn-primary">Dành Cho Nhà Tuyển Dụng</a> -->
-                    <a href="http://tuyendung.jobvieclam.com:9999" class="btn btn-primary btn-sm">Dành Cho Nhà Tuyển Dụng</a>
+                    <a href="https://tuyendung.jobvieclam.com" class="btn btn-primary btn-sm">Dành Cho Nhà Tuyển Dụng</a>
 
                     {{--<a class="btn btn-primary my-2" href="{{route('register')}}" class="nav-link
                     register">{{__('Đăng Ký')}}</a> --}}

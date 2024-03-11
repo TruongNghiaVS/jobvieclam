@@ -9,7 +9,7 @@
             <ul class="page-breadcrumb">
                 <li> <li> <a href="{{ route('admin.home') }}">{{__('Home')}}</a> <i class="fa fa-circle"></i> </li>
                 <li> <a href="{{ route('list.videos') }}">Ngôn ngữ Video</a> <i class="fa fa-circle"></i> </li>
-                <li> <span>Chỉnh sửa ngôn ngữ Video </span> </li>
+                <li> <span>Chỉnh Sửa Ngôn ngữ Video </span> </li>
             </ul>
         </div>
         <!-- END PAGE BAR -->        

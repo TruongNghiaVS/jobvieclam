@@ -15,7 +15,7 @@
         @include('templates.employers.includes.mobile_dashboard_menu')
             <div class="container company-content">
                 <div class="card card-bio">
-                    <h1 class="fs-25px">{{__('Company Messages')}}</h1>
+                    <h1 class="fs-25px mb-3">{{__('Company Messages')}}</h1>
                     <ul class="searchList">
                         <!-- job start --> 
                         @if(isset($messages) && count($messages))

@@ -11,7 +11,7 @@
     @include('templates.employers.includes.default_sidebar_menu')
     <div class="content">
         <div class="myads">
-            <h1 class="fs-25px">{{__('My Followings')}}</h1>
+            <h1 class="fs-25px mb-3">{{__('My Followings')}}</h1>
             <div class="searchList jobs-apply-list">
                 <!-- job start -->
                 @if(isset($companies) && count($companies))

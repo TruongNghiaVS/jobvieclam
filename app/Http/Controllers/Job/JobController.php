@@ -681,7 +681,7 @@ class JobController extends Controller
                     $itemInsert2->user_id = $user_id;
                     $itemInsert2->title = "sử dụng mẫu hồ sơ";
                     $itemInsert2->type = 1;
-                    $itemInsert2->cvLink = "http://jobvieclam.com/xem-ho-so-cv/".$user_id;
+                    $itemInsert2->cvLink = "https://jobvieclam.com/xem-ho-so-cv/".$user_id;
                     $itemInsert2->jobId = $job->id;
                     $itemInsert2->save();
                     $cvId = $itemInsert2->id;
@@ -720,7 +720,7 @@ class JobController extends Controller
                     $itemInsert->cv_file = $file_hash_name;
 
                     $itemInsert->type = 0;
-                    $itemInsert->cvLink = "http://jobvieclam.com/xem-ho-so-cv/".$user_id;
+                    $itemInsert->cvLink = "https://jobvieclam.com/xem-ho-so-cv/".$user_id;
                     $itemInsert->jobId = $job->id;
                     $itemInsert->save();
                 }
@@ -731,7 +731,7 @@ class JobController extends Controller
                     $itemInsert->cv_file = $file_hash_name;
 
                     $itemInsert->type = 0;
-                    $itemInsert->cvLink = "http://jobvieclam.com/xem-ho-so-cv/".$user_id;
+                    $itemInsert->cvLink = "https://jobvieclam.com/xem-ho-so-cv/".$user_id;
          
                     $itemInsert->jobId = $job->id;
                     $itemInsert->update();

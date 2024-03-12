@@ -30,7 +30,7 @@
         foreach ($data as $cat) {
             $cate_array[] = "<a href='" . url('/blog/category/') . "/" . $cat->slug . "'>$cat->heading</a>";
         }
-        dd($blog);
+
         ?>
         
         @section('title', 'Your Blog Title')

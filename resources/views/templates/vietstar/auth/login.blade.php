@@ -52,8 +52,8 @@
                                 </div>
                             </div>
                             <div class="user-action" bis_skin_checked="1">
-                                <div class="btn-area" bis_skin_checked="1">
-                                    <button type="submit" class="btn btn-primary" value="Gửi">Gửi</button>
+                                <div class="btn-area d-grid" bis_skin_checked="1">
+                                    <button type="submit" class="btn btn-primary" value="Gửi">Đăng nhập</button>
                                 </div>
                                 <p> <a class="register" href="#" data-toggle="modal" data-target="#company_logup_Modal">Quý khách chưa có tài khoản?</a> Đăng ký dễ dàng, hoàn toàn miễn phí</p>
 

@@ -72,6 +72,7 @@
     .box-img {
         margin-right: -50px;
         width: 100%;
+        
     }
 
     .box-img img {

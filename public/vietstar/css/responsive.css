@@ -765,9 +765,12 @@
   }
   .box-img {
     display: none;
+    
   }
 
-  /* END 767px */
+
+
+  /* END-767px */
 }
 
 
@@ -1206,7 +1209,17 @@
   .slider-hero-banner .bg-slider.is-sp {
     display: none
   }
+  .second-login-section.cb-section  {
+    padding: 60px 10px !important;
+  }
+  .box-img {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
+  /* END-992px */
 }
 
 

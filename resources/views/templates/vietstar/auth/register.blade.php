@@ -8,15 +8,15 @@
 <!-- Dashboard menu end -->
 <div class="second-login-section cb-section">
     <div class="container">
-        <div class="row justify-content-md-center g-5">
+        <div class="row justify-content-md-center">
 
-            <div class="col-lg-6 col-md-4 col-sm-12">
+            <div class="col-lg-5 col-md-6 col-sm-12">
                 <div class="box-img">
                     <img src="{{ asset('/vietstar/imgs/login.jpg') }}" alt="">
                 </div>
             </div>
-            <div class="col-lg-4 col-md-8 col-sm-12" bis_skin_checked="1">
-                <div class="formpanel" id="login" bis_skin_checked="1">
+            <div class="col-lg-4 col-md-6 col-sm-12" bis_skin_checked="1">
+                <div class="formpanel mt-0" id="login" bis_skin_checked="1">
                     <div class="title" bis_skin_checked="1">
                         <h2 class="text-primary text-center py-3"> {{__('Register')}}</h2>
                     </div>
@@ -29,7 +29,7 @@
                         <div class="row">
                             <div class="formrow col {{ $errors->has('last_name') ? ' has-error' : '' }}">
 
-                                <input type="text" name="last_name" class="form-control" required="required" placeholder="{{__('Last Name')}}" value="{{old('last_name')}}">
+                                <input type="text" name="last_name" class="form-control  " required="required" placeholder="{{__('Last Name')}}" value="{{old('last_name')}}">
                                 
                          
                               
@@ -41,7 +41,7 @@
 
                             <div class="formrow col {{ $errors->has('middle_name') ? ' has-error' : '' }}">
 
-                                <input type="text" name="middle_name" class="form-control" required="required" placeholder="{{__('Middle Name')}}" value="{{old('middle_name')}}">
+                                <input type="text" name="middle_name" class="form-control  " required="required" placeholder="{{__('Middle Name')}}" value="{{old('middle_name')}}">
                                 
                                 
                              
@@ -53,7 +53,7 @@
                             </div>
                             <div class="formrow col {{ $errors->has('first_name') ? ' has-error' : '' }}">
 
-                                <input type="text" name="first_name" class="form-control" required="required" placeholder="{{__('First Name')}}" value="{{old('first_name')}}">
+                                <input type="text" name="first_name" class="form-control  " required="required" placeholder="{{__('First Name')}}" value="{{old('first_name')}}">
                        
 
                                 <div class="invalid-feedback first_name-error">
@@ -66,7 +66,7 @@
 
                         <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }}">
 
-                            <input type="email" name="email" class="form-control" required="required" placeholder="{{__('Email')}}" value="{{old('email')}}">
+                            <input type="email" name="email" class="form-control  " required="required" placeholder="{{__('Email')}}" value="{{old('email')}}">
                             <div class="invalid-feedback email-error">
                                 {{__('Email is required')}}
                             </div>
@@ -74,7 +74,7 @@
 
                         <div class="formrow{{ $errors->has('password') ? ' has-error' : '' }}">
 
-                            <input id="company_passId2" type="password" name="password" class="form-control" required="required" placeholder="{{__('Password')}}" >
+                            <input id="company_passId2" type="password" name="password" class="form-control  " required="required" placeholder="{{__('Password')}}" >
 
                     
                             <div class="invalid-feedback password-error">
@@ -85,7 +85,7 @@
 
                         <div class="formrow{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
 
-                            <input id="company_comfirmId2" type="password" name="password_confirmation" class="form-control" required="required" placeholder="{{__('Password Confirmation')}}" >
+                            <input id="company_comfirmId2" type="password" name="password_confirmation" class="form-control " required="required" placeholder="{{__('Password Confirmation')}}" >
 
                             <div class="invalid-feedback password-error">
                                 {{__('Password Incorrect')}}
@@ -173,7 +173,7 @@
     }
 
     .box-info-signup {
-        margin-left: 50px;
+        
         height: 100%;
         display: flex;
         flex-direction: column;

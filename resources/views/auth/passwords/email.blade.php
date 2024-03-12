@@ -10,12 +10,12 @@
     <div class="container">
         <div class="row justify-content-md-center">
 
-            <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="col-lg-5 col-md-6 col-sm-12">
                 <div class="box-img">
                     <img src="{{ asset('/vietstar/imgs/quen_mk.jpg') }}" alt="">
                 </div>
             </div>
-            <div class="col-lg-6 col-md-8 col-sm-12" bis_skin_checked="1">
+            <div class="col-lg-4 col-md-6 col-sm-12" bis_skin_checked="1">
                 <div class="box-info-signup forgot-password" id="form_reset_content" bis_skin_checked="1">
                     <div class="title" bis_skin_checked="1">
                         <h2 class="text-primary">Quên Mật Khẩu</h2>
@@ -32,14 +32,15 @@
                                     <span>Email</span>
                                 </div>
                                 <div class="form-input" bis_skin_checked="1">
-                                    <input type="text" name="email" id="email" class="form-control" placeholder=" Vui lòng nhập thông tin" onkeyup="this.setAttribute('value', this.value);" value="" onfocus="javascript:if(this.value=='Email/Tên đăng nhập') this.value='';">
+                                    <input type="text" name="email" id="email" 
+                                    class="form-control border-t-l-ra-0 border-b-l-ra-0" placeholder=" Vui lòng nhập thông tin" onkeyup="this.setAttribute('value', this.value);" value="" onfocus="javascript:if(this.value=='Email/Tên đăng nhập') this.value='';">
                                     <div class="invalid-feedback email-error">
                                         {{__('Email is required')}}
                                     </div>
                                 </div>
                             </div>
                             <div class="user-action" bis_skin_checked="1">
-                                <div class="btn-area" bis_skin_checked="1">
+                                <div class="btn-area d-grid" bis_skin_checked="1">
                                     <button type="button" id="resetPasswordBtn_company" class="btn btn-primary" value="Gửi">Gửi</button>
                                 </div>
                                 <p> <a class="register" href="#" data-toggle="modal" data-target="#company_logup_Modal">Quý khách chưa có tài khoản?</a> Đăng ký dễ dàng, hoàn toàn miễn phí</p>
@@ -78,7 +79,7 @@
     }
 
     .box-info-signup {
-        margin-left: 50px;
+        
         height: 100%;
         display: flex;
         flex-direction: column;

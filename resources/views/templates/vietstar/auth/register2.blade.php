@@ -9,15 +9,15 @@
 <!-- Dashboard menu end -->
 <div class="second-login-section cb-section">
     <div class="container">
-        <div class="row justify-content-md-center g-5">
+        <div class="row justify-content-md-center">
 
-            <div class="col-lg-6 col-md-4 col-sm-12">
+            <div class="col-lg-5 col-md-6 col-sm-12">
                 <div class="box-img">
                     <img src="{{ asset('/vietstar/imgs/login.jpg') }}" alt="">
                 </div>
             </div>
-            <div class="col-lg-4 col-md-8 col-sm-12" bis_skin_checked="1">
-                <div class="formpanel" id="login" bis_skin_checked="1">
+            <div class="col-lg-4 col-md-6 col-sm-12" bis_skin_checked="1">
+                <div class="formpanel mt-0" id="login" bis_skin_checked="1">
                     <div class="title" bis_skin_checked="1">
                         <h2 class="text-primary text-center py-3"> {{__('Register')}}</h2>
                     </div>
@@ -30,7 +30,7 @@
                         <div class="row">
                             <div class="formrow col {{ $errors->has('last_name') ? ' has-error' : '' }}">
 
-                                <input type="text" name="last_name" class="form-control" required="required" placeholder="{{__('Last Name')}}" value="{{old('last_name')}}">
+                                <input type="text" name="last_name" class="form-control  " required="required" placeholder="{{__('Last Name')}}" value="{{old('last_name')}}">
                                 
                          
                               
@@ -42,7 +42,7 @@
 
                             <div class="formrow col {{ $errors->has('middle_name') ? ' has-error' : '' }}">
 
-                                <input type="text" name="middle_name" class="form-control" required="required" placeholder="{{__('Middle Name')}}" value="{{old('middle_name')}}">
+                                <input type="text" name="middle_name" class="form-control  " required="required" placeholder="{{__('Middle Name')}}" value="{{old('middle_name')}}">
                                 
                                 
                              
@@ -174,7 +174,7 @@
     }
 
     .box-info-signup {
-        margin-left: 50px;
+       
         height: 100%;
         display: flex;
         flex-direction: column;

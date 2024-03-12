@@ -82,10 +82,7 @@
   
   } 
 
-  .box-info-signup {
-      margin-left: 0 !important;
-      margin-top: 20px !important;
-  }
+
 
   .header-bar .header-bar-content-search {
     position: absolute;
@@ -753,6 +750,24 @@
     margin-top: unset !important;
   }
 
+  .main-form .form-group .form-info {
+    flex: 0 0 100px !important;
+    max-width: 100px !important;
+  }
+  .main-form .form-group .form-input {
+    -ms-flex: 0 0 calc(100% - 100px) !important;
+    flex: 0 0 calc(100% - 100px) !important;
+    max-width: calc(100% - 100px) !important;
+  }
+  .box-info-signup {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .box-img {
+    display: none;
+  }
+
+  /* END 767px */
 }
 
 

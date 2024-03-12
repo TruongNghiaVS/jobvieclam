@@ -125,7 +125,7 @@
         color: #fff;
         text-transform: uppercase;
         padding-left: 15px;
-        height: 45px;
+        height: 46px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;

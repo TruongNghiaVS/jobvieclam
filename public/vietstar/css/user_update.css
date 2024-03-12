@@ -77,9 +77,12 @@
 }
 
 .user__infomation h5 {
-    font-size: 19;
+    font-size: 19px;
     font-weight: 500;
     color: var(--sub-text);
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .user__complete_section {

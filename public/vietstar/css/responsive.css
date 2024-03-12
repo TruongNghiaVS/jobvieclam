@@ -767,7 +767,24 @@
     display: none;
     
   }
+  .sticker_div .sticker .list-sticker .item .right-head {
+    top: 20px;
+    right: 10px;
+  }
+  .sticker_div .sticker .list-sticker .item .head-sticker .title .sub-title p {
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+  }
+  .sticker_div .sticker .list-sticker .item .head-sticker .title .date {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+  }
 
+  
 
 
   /* END-767px */

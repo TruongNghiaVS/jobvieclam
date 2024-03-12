@@ -359,6 +359,17 @@
         align-items: center;
         left: 0;
         right: 0;
+        opacity: 1;
+        pointer-events: auto;
+        -webkit-transform: translateX(-300px);
+        -ms-transform: translateX(-300px);
+        transform: translateX(-300px);
+        transition: 0.4s ease-out all;
+        
+    }
+    #mobile-sidebar.active .sidebar-bottom.active {
+      
+        transform: translateX(0);
     }
 
     .profile .back-menu-normal {
@@ -660,7 +671,7 @@
 
     </div>
 
-    <div class="sidebar-bottom">
+    <div class="sidebar-bottom active">
         <ul class="list-unstyled components sidebar-bottom__item">
             @if(Auth::user())
             <li class="openmyacount">
@@ -724,6 +735,7 @@
         $('.openmyacount').click(function() {
             // Remove 'active' class from all li elements
             $('.sidebar-main-nav').addClass('active');
+            $('.sidebar-bottom').removeClass('active');
             $('.menu').addClass('active');
             $('.sidebar-user-nav').addClass('active');
             $('.back-menu-normal').addClass('active');
@@ -733,6 +745,7 @@
         $('.back-menu-normal').click(function() {
             // Remove 'active' class from all li elements
             $('.sidebar-main-nav').removeClass('active');
+            $('.sidebar-bottom').addClass('active');
             $('.menu').removeClass('active');
             $('.sidebar-user-nav').removeClass('active');
             $('.back-menu-normal').removeClass('active');

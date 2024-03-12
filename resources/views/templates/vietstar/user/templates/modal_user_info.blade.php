@@ -13,7 +13,7 @@ $user = Auth::user();
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body p-0">
         <div class="container company-content" bis_skin_checked="1">
           <div class="user-account-section" bis_skin_checked="1">
 

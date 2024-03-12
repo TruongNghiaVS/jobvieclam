@@ -1574,7 +1574,7 @@ button:focus {
 
 .header-bar #collapseAdvanceSearch .form-group {
     position: relative;
-    margin-bottom: unset;
+    margin-bottom: 10px;
 }
 .header-bar #collapseAdvanceSearch .form-group i {
     position: absolute;

@@ -1,8 +1,8 @@
-@extends('templates.vietstar.layouts.app')
 
 @section('title', $blog->title ??  "")
 @section('meta_description', $blog->meta_des??  "" )
 @section('meta_keywords', $blog->meta_keywords ??  "")
+@extends('templates.vietstar.layouts.app')
 
 
 @section('content')

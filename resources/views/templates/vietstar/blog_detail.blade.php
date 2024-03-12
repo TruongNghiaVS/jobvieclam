@@ -1,87 +1,24 @@
 @extends('templates.vietstar.layouts.app')
+
+@section('title', $blog->title ??  "")
+@section('meta_description', $blog->meta_des??  "" )
+@section('meta_keywords', $blog->meta_keywords ??  "")
+
+
 @section('content')
 @include('templates.vietstar.includes.header')
 
 @include('templates.vietstar.includes.mobile_dashboard_menu')
 
-<!-- Inner Page Title start -->
-<!-- Inner Page Title end -->
-{{-- @if(null!==($blog)) 
-
-
-<div class="">
-    <section id="blog-content">
-        <div class="container">
-            <?php
-            $cate_ids = explode(",", $blog->cate_id);
-            $data = DB::table('blog_categories')->whereIn('id', $cate_ids)->get();
-            $cate_array = array();
-            foreach ($data as $cat) {
-                $cate_array[] = "<a href='" . url('/blog/category/') . "/" . $cat->slug . "'>$cat->heading</a>";
-            }
-            ?>
-            <!-- Blog start -->
-            <div class="row">
-                <div class="col-lg-9">
-                    <!-- Blog List start -->
-                    <div class="blogWraper">
-                        <div class="blogList">
-                            <div class="blog-detail bloginner pb-5">
-                                <h2>{{$blog->heading}}</h2>
-<div class="postimg">{{$blog->printBlogImage()}}</div>
-<div class="post-header">
-    <!-- <div class="postmeta">Category : {!!implode(', ',$cate_array)!!}</div> -->
-</div>
-<p>{!! $blog->content !!}</p>
-</div>
-</div>
-</div>
-</div>
-
-
-</div>
-</div>
-</section>
-<div class="container">
-    <hr>
-</div>
-<section class="">
-    <div class="container">
-
-        <h3 class="section-title aline-left mb-3">{{__('Related post')}} </h3>
-        <div class="blogwrapper">
-            <div class="blogList">
-                <div class="row">
-                    @if(!empty($data))
-                    @foreach($data as $item)
-                    @php($posts = \App\Blog::where('cate_id', 'like', $item->id)->where('id','!=',$blog->id)->get())
-                    @foreach($posts as $related_post)
-                    <div class="col-xl-3 col-lg-4 col-md-4 mb-3">
-                        <a href="{{route('blog-detail',$related_post->slug)}}" class="bloginner">
-                            <div class="postimg">{{$related_post->printBlogImage()}}</div>
-                            <div class="post-header li-text">
-
-                                <h4>
-                                    <span class="li-head">{{$related_post->heading}}</span>
-                                </h4>
-
-                            </div>
-
-                        </a>
-                    </div>
-                    @endforeach
-                    @endforeach
-                    @endif
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-</div>
-
-@endif
-
---}}
+    <?php
+    $cate_ids = explode(",", $blog->cate_id);
+    $data = DB::table('blog_categories')->whereIn('id', $cate_ids)->get();
+    $cate_array = array();
+    foreach ($data as $cat) {
+        $cate_array[] = "<a href='" . url('/blog/category/') . "/" . $cat->slug . "'>$cat->heading</a>";
+        }
+    ?>
+            
 
 
 <div class="blog-single gray-bg">
@@ -93,75 +30,67 @@
         foreach ($data as $cat) {
             $cate_array[] = "<a href='" . url('/blog/category/') . "/" . $cat->slug . "'>$cat->heading</a>";
         }
-    
+        dd($blog);
         ?>
+        
+        @section('title', 'Your Blog Title')
+        @section('meta_description', 'Your meta description goes here')
+
         <div class="row align-items-start">
             <div class="col-lg-9">
                 <article class="article">
-                    <div class="article-title">
-                        <h6><a href="#">KỸ NĂNG CÔNG SỞ</a></h6>
-                        <h1>{{$blog->heading}}</h1>
-                        <div class="media">
-                            
-                            <div class="media-body">
-                                <span class="time">{{$blog->updated_at}}</span>
+                        <div class="article-title">
+                            <h6><a href="#">KỸ NĂNG CÔNG SỞ</a></h6>
+                            <h1>{{$blog->heading}}</h1>
+                            <div class="media">
+                                
+                                <div class="media-body">
+                                    <span class="time">{{$blog->updated_at}}</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="article-img">
-                        {{$blog->printBlogImage()}}
-                    </div>
-                    <div class="article-content" bis_skin_checked="1">
-                    {!! $blog->content !!}
-                    </div>
-                    <!-- <div class="nav tag-cloud">
-                        <a href="#">Design</a>
-                        <a href="#">Development</a>
-                        <a href="#">Travel</a>
-                        <a href="#">Web Design</a>
-                        <a href="#">Marketing</a>
-                        <a href="#">Research</a>
-                        <a href="#">Managment</a>
-                    </div> -->
-
-
+                        <div class="article-img">
+                            {{$blog->printBlogImage()}}
+                        </div>
+                        <div class="article-content" bis_skin_checked="1">
+                        {!! $blog->content !!}
+                        </div>
                     @if($blog->authorPost != null)
-
-                    <div class="media">
+                        <div class="media">
                             <div class="media-body">
                                 <label>{{$blog->authorPost}}</label>
                             </div>
                         </div>
-                        @endif
+                    @endif
                 </article>
 
             </div>
             <div class="col-lg-3">
                 <div class="sidebar my-3">
-                            <!-- Search -->
-                            <div class="widget my-2">
-                                <h5 class="widget-title">{{__('Search')}}</h5>
-                                <div class="search py-3">
+                    <!-- Search -->
+                    <div class="widget my-2">
+                        <h5 class="widget-title">{{__('Search')}}</h5>
+                            <div class="search py-3">
                                     <form action="{{route('blog-search')}}" method="GET">
                                         <input type="text" class="form-control blog-search-input" placeholder="{{__('Search')}}" name="search">
                                         <button type="submit" class="btn"><i class="fa fa-search"></i></button>
                                     </form>
-                                </div>
+                                    </div>
                             </div>
-                            <!-- Categories -->
-                            @if(null!==($categories))
-                            <div class="widget my-2">
-                                <h5 class="widget-title">{{__('Categories')}}</h5>
-                                <ul class="categories">
-                                    @foreach($categories as $category)
-                                    <li><a href="{{url('/blog/category/').'/'.$category->slug}}">{{$category->heading}}</a>
+                                <!-- Categories -->
+                    @if(null !== ($categories))
+                    <div class="widget my-2">
+                        <h5 class="widget-title">{{__('Categories')}}</h5>
+                            <ul class="categories">
+                                @foreach($categories as $category)
+                                    <li><a href="{{url('/blog/category/') . '/' . $category->slug}}">{{$category->heading}}</a>
                                     </li>
-                                    @endforeach
-                        </ul>
+                                @endforeach
+                            </ul>
                     </div>
                     @endif
-    </div>
-</div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -189,7 +118,7 @@
             @endforeach
       
         </div>
-    </div>
+</div>
 
 
 

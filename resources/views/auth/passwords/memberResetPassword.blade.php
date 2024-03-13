@@ -7,7 +7,7 @@
 <div class="reset-password-section cb-section">
     <div class="container mt-5">
         <div class="cb-title cb-title-center" bis_skin_checked="1">
-            <h2> Thay đổi mật khẩu</h2>
+            <h2> Thay Đổi Mật Khẩu</h2>
         </div>
         <!-- <form id="passwordForm" novalidate>
         <div class="form-group">

@@ -14,7 +14,7 @@
             <i class="bi bi-lightbulb"></i>
             <p>Tips</p>
         </div>
-        <div class="right-action__link-edit" ><a data-toggle="modal" data-target="#changepassword"><i class="bi bi-pen"></i>Đổi mật khẩu</a></div>
+        <div class="right-action__link-edit" ><a data-toggle="modal" data-target="#changepassword"><i class="bi bi-pen"></i>Đổi Mật Khẩu</a></div>
         <div class="right-action__link-edit-mobile"><a data-toggle="modal" data-target="#changepassword"><i class="bi bi-pen"></i></a></div>
     </div>
 </div>
@@ -118,7 +118,7 @@
                             if(response){
                                 hideSpinner();
                                 $('#changepassword').modal("hide");
-                                showModal_Success('Thông báo',`Đổi mật khẩu thành công`, ``);
+                                showModal_Success('Thông báo',`Đổi Mật Khẩu thành công`, ``);
                                 setTimeout(function(){
                                     window.location.reload();
                                 }, 3000);

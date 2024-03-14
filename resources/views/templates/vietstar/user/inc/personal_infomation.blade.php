@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="section-head__right-action" bis_skin_checked="1">
-        <div class="right-action__tips" bis_skin_checked="1">
+        <div class="right-action__tips" bis_skin_checked="1" data-toggle="modal" data-target="#persionalinfo-tip">
             <i class="bi bi-lightbulb"></i>
             <p>Tips</p>
         </div>

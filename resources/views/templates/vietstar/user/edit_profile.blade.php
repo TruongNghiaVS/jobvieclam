@@ -75,6 +75,9 @@
         </div>
     </div>
 </div>
+
+@include('templates.vietstar.user.templates.modal_tip_info')
+
 <div class="row" style="display:none;">
     <div class="col-template">
         <div class="tools-schemes show-template" id="show_template">

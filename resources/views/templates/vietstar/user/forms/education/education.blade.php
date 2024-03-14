@@ -16,12 +16,12 @@
                 </div>
         </div>
         <div class="section-head__right-action" bis_skin_checked="1">
-                <div class="right-action__tips" bis_skin_checked="1">
+                <div class="right-action__tips" bis_skin_checked="1" data-toggle="modal" data-target="#education-tip">
                         <i class="bi bi-lightbulb"></i>
                         <p>Tips</p>
                 </div>
-                <div class="right-action__link-edit" bis_skin_checked="1"><a a="" href="javascript:;" onclick="showProfileEducationModal();"><i class="bi bi-pen"></i>Thêm mới</a></div>
-                <div class="right-action__link-edit-mobile" bis_skin_checked="1"><a a="" href="javascript:;" onclick="showProfileEducationModal();"><i class="bi bi-pen"></i></a></div>
+                <div class="right-action__link-edit" bis_skin_checked="1"><a  href="javascript:;" onclick="showProfileEducationModal();"><i class="bi bi-pen"></i>Thêm mới</a></div>
+                <div class="right-action__link-edit-mobile" bis_skin_checked="1"><a  href="javascript:;" onclick="showProfileEducationModal();"><i class="bi bi-pen"></i></a></div>
         </div>
 </div>
 <div class="section-body"> 

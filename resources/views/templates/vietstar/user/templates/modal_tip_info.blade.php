@@ -1,12 +1,12 @@
 <!-- careerinformation Tip  Start-->
 <div id="careerinformation-tip" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
 
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header justify-content-center">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Thông Tin Công Việc</h4>
+        <h4 class="modal-title text-center">Thông Tin Công Việc</h4>
       </div>
       <div class="modal-body">
         Thông tin nghề nghiệp:<br>
@@ -23,13 +23,13 @@
 
 <!-- #summary Tip  Start-->
 <div id="summary-tip" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
 
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header justify-content-center">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Cập Nhật Mô Tả Bản Thân</h4>
+        <h4 class="modal-title text-center">Cập Nhật Mô Tả Bản Thân</h4>
       </div>
       <div class="modal-body">
     
@@ -49,13 +49,13 @@
 <!-- Persionalinfo Tip Start-->
 
 <div id="persionalinfo-tip" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
 
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header justify-content-center">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Cập Nhật Thông Tin Cá Nhân</h4>
+        <h4 class="modal-title text-center">Cập Nhật Thông Tin Cá Nhân</h4>
       </div>
       <div class="modal-body">
       
@@ -76,13 +76,13 @@
 <!-- Experience Tip Start-->
 
 <div id="experience-tip" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
 
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header justify-content-center">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Cập Nhật Kinh Nghiệm Làm Việc</h4>
+        <h4 class="modal-title text-center">Cập Nhật Kinh Nghiệm Làm Việc</h4>
       </div>
       <div class="modal-body">
 
@@ -103,13 +103,13 @@
 <!-- education Tip Start-->
 
 <div id="education-tip" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
 
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header justify-content-center">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Cập Nhật Học Vấn</h4>
+        <h4 class="modal-title text-center">Cập Nhật Học Vấn</h4>
       </div>
       <div class="modal-body">
 
@@ -131,13 +131,13 @@
 <!-- skill Tip Start-->
 
 <div id="skill-tip" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
 
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header justify-content-center">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Cập Nhật Kĩ Năng</h4>
+        <h4 class="modal-title text-center">Cập Nhật Kĩ Năng</h4>
       </div>
       <div class="modal-body">
 
@@ -157,13 +157,13 @@
 <!-- Language Tip Start-->
 
 <div id="language-tip" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
 
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header justify-content-center">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Cập Nhật Ngôn Ngữ </h4>
+        <h4 class="modal-title text-center">Cập Nhật Ngôn Ngữ </h4>
       </div>
       <div class="modal-body">
 
@@ -185,13 +185,13 @@
 <!-- Activity Tip Start-->
 
 <div id="activity-tip" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
 
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header justify-content-center">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Cập Nhật Hoạt Động </h4>
+        <h4 class="modal-title text-center">Cập Nhật Hoạt Động </h4>
       </div>
       <div class="modal-body">
         Những hoạt động khác:<br>
@@ -209,13 +209,13 @@
 <!-- References Tip Start-->
 
 <div id="references-tip" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
 
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header justify-content-center">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Cập Nhật Người Giới Thiệu </h4>
+        <h4 class="modal-title text-center">Cập Nhật Người Giới Thiệu </h4>
       </div>
       <div class="modal-body">
         Người Giới Thiệu:<br>

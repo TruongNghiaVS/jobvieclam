@@ -72,7 +72,7 @@
                             </a>
                         </div>
                         <div class ="company-items__shortDes">
-                           {{$company->description}}
+                           {!! $company->description !!}
                         </div>
                         
 

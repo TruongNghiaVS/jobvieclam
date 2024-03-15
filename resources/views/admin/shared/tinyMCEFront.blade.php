@@ -3,16 +3,18 @@
 <script>
 tinymce.init({
     selector: '#description',
-    height: 150,
+    height: 300,
     entity_encoding : "raw",
     forced_root_block: '',
     convert_urls: false,
     plugins: [
         'advlist autolink lists image',
         'searchreplace visualblocks code fullscreen',
-        'media table contextmenu paste code'
+        'media table contextmenu paste code',
+        'toc',
     ],
-    toolbar: 'insertfile undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | image',
+    toolbar: 'insertfile undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | image | toc ',
+    toc_depth: 3,
     relative_urls: true,
     images_upload_url: "{{ route('tinymce.image_upload.front') }}",
     images_upload_handler: function (blobInfo, success, failure) {

@@ -2240,6 +2240,17 @@ h3.seekertxt span {
 .figcaption {
 	padding: 10px;
 	height: 160px;
+	/* tesst */
+	padding: 10px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+
+}
+.figcaption__category-name {
+	
 }
 .figcaption__home {
 	padding: 10px;

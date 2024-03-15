@@ -40,7 +40,7 @@ $blogs = $data["blogs"]->items();
                             @endif
                         </a>
                         <div class="figcaption">
-                            <h3 class="figcaption__category-name"><a href="{{url('/')}}/blog/category/{{$category -> slug }}">{{$heading}}</a></h3>
+                            {{--<h3 class="figcaption__category-name"><a href="{{url('/')}}/blog/category/{{$category -> slug }}">{{$heading}}</a></h3>--}}
                             <div class="figcaption__title"><a class="mt-0" href="{{url('/')}}/blog/{{ $blog-> slug }}">{{ $blog-> heading}} </a></div>
 
                         </div>

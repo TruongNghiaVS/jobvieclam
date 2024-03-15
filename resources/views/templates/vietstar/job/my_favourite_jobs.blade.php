@@ -50,23 +50,24 @@
                                     href="/cong-ty/{{$company->slug}}"
                                     title="{{$company->name}}">{{$company->name}}</a>
                            
-                               @php 
-                            
-                                $datetime =   Carbon\Carbon::parse($job->created_at);
-                         $timeCurrent = Carbon\Carbon::now();
-                         $numberDate = $timeCurrent->diffInDays($datetime);
-                                $datetimeText ="";
-                         if($numberDate < 1)
-                         {
-                            $datetimeText = "Hôm nay";
-                         }
-                         else if($numberDate < 2){
-                            $datetimeText = "Hôm qua";
-                         }
-                         else 
-                         {
-                            $datetimeText =  $datetime->format('d-m-Y');
-                         }
+                        @php 
+                            $datetime =   Carbon\Carbon::parse($job->created_at);
+                            $timeCurrent = Carbon\Carbon::now();
+                            $numberDate = $timeCurrent->diffInDays($datetime);
+                                    $datetimeText ="";
+                            if($numberDate < 1)
+                            {
+                                $datetimeText = "Hôm nay";
+                            }
+                            else if($numberDate < 2){
+                                $datetimeText = "Hôm qua";
+                            }
+                            else 
+                            {
+                                $datetimeText =  $datetime->format('d-m-Y');
+                            }
+
+                        
                             $salaryTextFrom = 0;
 
                             $salaryTextTo =  0;
@@ -82,21 +83,30 @@
                                 
                             }
                             
-                               @endphp
-                               <div class="info-item day-update" bis_skin_checked="1">
-                                {{$datetimeText}}
-                              </div>
+                        @endphp
+                            
                             <!--Day update and place End-->
-                                </div>
+                            </div>
                             <!-- companyName End-->
                             <!--rank-salary and place Start-->
                             <div class="info-item box-meta" bis_skin_checked="1">
-                            <div class="rank-salary" bis_skin_checked="1">
-                                        <span class="fas fa-money-bill"></span>
-                                        
-                                        {{$salaryTextFrom}} -
-                                        {{$salaryTextTo}}
-                                    </div>
+                                <div class="rank-salary" bis_skin_checked="1">
+                                            @if($job->salary_type == \App\Job::SALARY_TYPE_FROM)
+                                            <i class="fa-solid fa-dollar-sign"></i> {{__('From: ')}} {{$salaryTextFrom}}
+                                            {{__('million')}} ({{$job->salary_currency}})
+                                            @elseif($job->salary_type == \App\Job::SALARY_TYPE_TO)
+                                            <i class="fa-solid fa-dollar-sign"></i> {{__('Up To: ')}} {{$salaryTextTo}}
+                                            {{__('million')}} ({{$job->salary_currency}})
+                                            @elseif($job->salary_type == \App\Job::SALARY_TYPE_RANGE)
+                                            <i class="fa-solid fa-dollar-sign"></i> {{$salaryTextFrom}} - {{$salaryTextTo}}
+                                            {{__('million')}} ({{$job->salary_currency}})
+                                            @elseif($job->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
+                                            <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
+                                            @else
+                                            <i class="fa-solid fa-dollar-sign"></i> {{__('Salary Not provided')}}
+                                            @endif
+                                </div>
+                           
                                 <div class="navbar__link-separator" bis_skin_checked="1"></div>
                                 <!--meta-city-->
                                 <div class="meta-city" bis_skin_checked="1">
@@ -108,7 +118,10 @@
                                 <!-- Bán thời gian -->
                             </div>
                             <!--Rank-salary and place End-->
-
+                            <div class="info-item day-update" bis_skin_checked="1">
+                                Ngay đăng tuyển: {{$datetimeText}}
+                            </div>
+                            
                            
 
                             <!-- <div class="short-description">M&amp;ocirc; tả c&amp;ocirc;ng việc</div> -->

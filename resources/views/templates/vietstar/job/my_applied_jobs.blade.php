@@ -49,10 +49,9 @@
                                 <!--rank-salary and place Start-->
                                 <div class="info-item box-meta" bis_skin_checked="1">
                                     <div class="rank-salary" bis_skin_checked="1">
-                                        <span class="fas fa-money-bill"></span>
+                                        
                                         @php 
-                                             $salaryTextFrom = 0;
-
+                                            $salaryTextFrom = 0;
                                             $salaryTextTo =  0;
                                             $textSalary ='';
                                             if($job->salary_from > 0)
@@ -66,9 +65,20 @@
                                                 
                                             }
                                         @endphp
-                                        
-                                        {{$salaryTextFrom}} -
-                                        {{$salaryTextTo}}
+                                            @if($job->salary_type == \App\Job::SALARY_TYPE_FROM)
+                                            <i class="fa-solid fa-dollar-sign"></i> {{__('From: ')}} {{$salaryTextFrom}}
+                                            {{__('million')}} ({{$job->salary_currency}})
+                                            @elseif($job->salary_type == \App\Job::SALARY_TYPE_TO)
+                                            <i class="fa-solid fa-dollar-sign"></i> {{__('Up To: ')}} {{$salaryTextTo}}
+                                            {{__('million')}} ({{$job->salary_currency}})
+                                            @elseif($job->salary_type == \App\Job::SALARY_TYPE_RANGE)
+                                            <i class="fa-solid fa-dollar-sign"></i> {{$salaryTextFrom}} - {{$salaryTextTo}}
+                                            {{__('million')}} ({{$job->salary_currency}})
+                                            @elseif($job->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
+                                            <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
+                                            @else
+                                            <i class="fa-solid fa-dollar-sign"></i> {{__('Salary Not provided')}}
+                                            @endif
                                     </div>
                                     <div class="navbar__link-separator" bis_skin_checked="1"></div>
                                     <!--meta-city-->
@@ -97,7 +107,7 @@
                             $datetimeText =  $datetime->format('d-m-Y');
                          }
 
-
+                  
                          $datetime1 =   Carbon\Carbon::parse($job->applyDate);
                          $timeCurrent = Carbon\Carbon::now();
                          $numberDate1 = $timeCurrent->diffInDays($datetime1);

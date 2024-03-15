@@ -29,7 +29,12 @@
                             <div class="col-lg-3 col-md-3 col-sm-12">
                                 <div class="logo">
                                     {{ $company->locale_get_display_region }}
+                                @if(isset($company->logo) )
                                     <img src="{{url('/')}}/company_logos/{{$company->logo}}" alt="{{ $company->name }}">
+
+                                @else 
+                                    <img src="{{url('/')}}/admin_assets/no-company.png" alt="{{ $company->name }}">
+                                @endif
                                 </div>
 
                             </div>

@@ -14,7 +14,7 @@ tinymce.init({
         'toc',
     ],
     toolbar: 'insertfile undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | image | toc ',
-    toc_depth: 3,
+    toc_depth: 6,
     relative_urls: true,
     images_upload_url: "{{ route('tinymce.image_upload.front') }}",
     images_upload_handler: function (blobInfo, success, failure) {
@@ -78,11 +78,6 @@ tinymce.init({
 });
 </script>
 
-@push('styles')
-<style>
-    /* Example styles for TOC list */
 
-</style>
-@endpush
 
 

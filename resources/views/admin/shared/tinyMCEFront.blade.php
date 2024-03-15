@@ -77,3 +77,12 @@ tinymce.init({
     },
 });
 </script>
+
+@push('styles')
+<style>
+    /* Example styles for TOC list */
+
+</style>
+@endpush
+
+

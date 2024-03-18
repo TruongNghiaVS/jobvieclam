@@ -263,14 +263,22 @@ $company = $job->getCompany();
                                             <div class="inner-content">{!! $job->benefits !!}</div>
                                         </div>
 
-                                        <h6 class="mb-2">{{ __('Skills') }}</h6>
-                                        <div class="mb-5">
-                                            @if (!empty($job_skill_ids) && count($job_skill_ids) > 0)
+                                        @if (!empty($job_skill_ids) && count($job_skill_ids) > 0)
+                                            <h6 class="mb-2">{{ __('Skills') }}</h6>
+                                            <div class="mb-5">
                                             @foreach ($job_skill_ids as $jobSkillId)
-                                            <span class="badge badge-light">{{ $jobSkills[$jobSkillId] ?? 'N/A' }}</span>
+
+                                                <?php
+                                                    $jobskill =  $jobSkills[$jobSkillId];
+                                                ?>
+
+                                                @if(isset($jobskill) && !empty($jobskill) && strlen($jobskill) > 1)
+                                                        <span class="badge badge-light">{{ $jobskill ?? 'N/A' }}</span>
+                                                        
+                                                @endif
                                             @endforeach
-                                            @endif
-                                        </div>
+                                            </div>
+                                        @endif
 
                                         <div class="share-detail">
                                             <div class="share-detail__social">
@@ -609,16 +617,20 @@ $company = $job->getCompany();
                     </section>
                     @endif
                     <!-- map company -->
+                    @if(1==2)
                     <section class="related-jobs">
                         <div class="related-jobs__title">
                             <h6>Map</h6>
 
                             <div class="gmap">
-                                {!!$company->map!!}
-                            </div>
-                        </div>
-                    </section>
 
+                                    {!!$company->map!!}
+                                    
+                                </div>
+                            </div>
+                    </section>
+                        
+                    @endif
                 </div>
             </div>
             <div class="col-lg-4 col-md-12 col-sm-12 ">
@@ -641,12 +653,22 @@ $company = $job->getCompany();
                                 @endphp
                                 <div class="related-jobs-item item-job mb-3">
                                 <div class="logo-company">
+                                    @if($jobitem->logo)
                                     <a href="#"
-                                        title="Công Ty Cổ Phần Incom Sài Gòn" class="pic">
+                                        title="{{$jobitem->getCompany('name')}}" class="pic">
                                         <img src="{{ asset('company_logos/'.$jobitem->logo) }}"
                                             style="max-width:140px; max-height:140px;" alt="{{$jobitem->getCompany('name')}}"
                                             title="{{$jobitem->getCompany('name')}}">
                                     </a>
+                                    @else
+
+                                    <a href="#"
+                                        title="{{$jobitem->getCompany('name')}}" class="pic">
+                                        <img src="{{ asset('/') }}admin_assets/no-company.png"
+                                        style="max-width:140px; max-height:140px;" alt="{{$jobitem->getCompany('name')}}"
+                                        title="{{$jobitem->getCompany('name')}}">
+                                    </a>
+                                    @endif
                                 </div>
 
                                 <div class="jobinfo">

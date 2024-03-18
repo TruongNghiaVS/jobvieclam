@@ -22,7 +22,7 @@
                             @else
 
                             <a alt="1 slide" href="{{route('company.detail', $company->slug)}}" title="{{$company->name}}">
-                                <img src="{{ asset('/') }}admin_assets/no-image.png" class="partner-item__img" alt="1 slide">
+                                <img src="{{ asset('/') }}admin_assets/no-company.png" class="partner-item__img" alt="1 slide">
                             </a>
                             @endif
                             <h3 class="partner-item__name">{{$company->name}}</h3>

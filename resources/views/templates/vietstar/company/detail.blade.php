@@ -23,10 +23,10 @@
         <section class="section-company-profile">
             <div class="container-hm">
                 <div class="row">
-                    <div class="col-lg-9  col-md-9 col-sm-12">
+                    <div class="col-lg-9  col-md-12 col-sm-12">
 
                         <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-12">
+                            <div class="col-lg-3 col-md-3 col-sm-12 d-flex justify-content-center align-items-center">
                                 <div class="logo">
                                     {{ $company->locale_get_display_region }}
                                 @if(isset($company->logo) )
@@ -95,7 +95,7 @@
 
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-md-12 d-flex flex-column justify-content-start align-items-center">
+                    <div class="col-lg-3 col-md-12 col-sm-12 d-flex flex-column justify-content-start align-items-center">
 
                         <div class="group-button job-detail-banner__actions job-detail-banner_info_actions d-flex flex-row gap-16">
                             {{--<form action="{{ route('seeker.submit-message', ['message' => 'Xin chào!', 'company_id' => $company->id, 'new' => true]) }}" method="post">

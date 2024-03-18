@@ -810,7 +810,9 @@
     padding-right: 8px;
     padding: 8px 0;
   }
- 
+  .section-company-profile-detail {
+      padding:10px;
+  }
   .show-more {
     margin-top: unset !important;
   }

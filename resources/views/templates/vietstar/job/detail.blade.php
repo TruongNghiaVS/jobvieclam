@@ -22,9 +22,8 @@ $company = $job->getCompany();
         <section class="job-detail-title">
             <div class="job-detail-banner d-flex gap-24">
                 <div class="job-detail-banner__icon">
-                    
-              
-                    <img src="{{url('/')}}/company_logos/{{$company->logo}}" alt="{{ $company->name }}">
+
+                    {{$company->printCompanyImage()}}
                 </div>
              
                 <div class="job-detail-banner__group d-flex flex-fill">
@@ -942,8 +941,9 @@ $company = $job->getCompany();
             <div class="row">
                 <!-- Employer Logo -->
                 <div class="col-md-1 col-logo hidden-sm hidden-xs col-logo hidden-sm hidden-xs">
+                 
                     <a href="#">
-                        <img src="{{ asset('company_logos/') }}" alt="{{ $company->name }}">
+                        {{$company->printCompanyImage()}}
                     </a>
                 </div>
                 <div class="col-md-11 col-xs-12 col-info">

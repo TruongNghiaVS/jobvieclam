@@ -326,7 +326,7 @@ $company = $job->getCompany();
                         <section class="company-job-detail">
                             <div class="job-detail-banner d-flex gap-24 justify-content-between">
                                 <div class="job-detail-banner__icon">
-                                    <img src="{{ asset('/company_logos/'.$company->logo) }}" alt="{{ $company->name }}">
+                                    {{$company->printCompanyImage()}}
                                 </div>
                                 <div class="job-detail-banner__detail">
                                     <div class="row">

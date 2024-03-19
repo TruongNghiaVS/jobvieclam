@@ -262,21 +262,25 @@ $company = $job->getCompany();
                                             <h3 class="job-information__title">{{__('Benefits')}}</h3>
                                             <div class="inner-content">{!! $job->benefits !!}</div>
                                         </div>
-
-                                        @if (!empty($job_skill_ids) && count($job_skill_ids) > 0)
+                                        @php 
+                                            $skillsFound = false;
+                                            $badgeHtml = '';
+                                            if (!empty($job_skill_ids) && is_array($job_skill_ids)){
+                                                foreach ($job_skill_ids as $jobSkillId) {
+                                                    if (array_key_exists($jobSkillId, $jobSkills) && !empty($jobSkills[$jobSkillId]) && strlen($jobSkills[$jobSkillId]) > 1) {
+                                                
+                                                        $skillsFound = true;
+                                                        $badgeHtml .= '<span class="badge badge-light me-2">' . htmlspecialchars($jobSkills[$jobSkillId]) . '</span>';
+                                                    }
+                                                }
+                                            }
+                                            
+                        
+                                        @endphp
+                                        @if ($skillsFound)
                                             <h6 class="mb-2">{{ __('Skills') }}</h6>
                                             <div class="mb-5">
-                                            @foreach ($job_skill_ids as $jobSkillId)
-
-                                                <?php
-                                                    $jobskill =  $jobSkills[$jobSkillId];
-                                                ?>
-
-                                                @if(isset($jobskill) && !empty($jobskill) && strlen($jobskill) > 1)
-                                                        <span class="badge badge-light">{{ $jobskill ?? 'N/A' }}</span>
-                                                        
-                                                @endif
-                                            @endforeach
+                                                {!! $badgeHtml !!}
                                             </div>
                                         @endif
 

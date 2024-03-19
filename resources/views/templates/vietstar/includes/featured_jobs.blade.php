@@ -45,18 +45,18 @@ $numberOfColumns = 9;
                                                 $to = round($featuredJob->salary_to/1000000,0)
                                             @endphp
                                             @if($featuredJob->salary_type == \App\Job::SALARY_TYPE_FROM)
-                                            <i class="fa-solid fa-dollar-sign"></i> {{__('From: ')}} {{$from}}
+                                             {{__('From: ')}} {{$from}}
                                             {{__('million')}} ({{$featuredJob->salary_currency}})
                                             @elseif($featuredJob->salary_type == \App\Job::SALARY_TYPE_TO)
-                                            <i class="fa-solid fa-dollar-sign"></i> {{__('Up To: ')}} {{$to}}
+                                             {{__('Up To: ')}} {{$to}}
                                             {{__('million')}} ({{$featuredJob->salary_currency}})
                                             @elseif($featuredJob->salary_type == \App\Job::SALARY_TYPE_RANGE)
-                                            <i class="fa-solid fa-dollar-sign"></i> {{$from}} - {{$to}}
+                                             {{$from}} - {{$to}}
                                             {{__('million')}} ({{$featuredJob->salary_currency}})
                                             @elseif($featuredJob->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
                                             <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
                                             @else
-                                            <i class="fa-solid fa-dollar-sign"></i> {{__('Salary Not provided')}}
+                                             {{__('Salary Not provided')}}
                                             @endif
                                         </div>
                                     </div>

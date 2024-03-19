@@ -49,18 +49,18 @@ $numberOfColumns = 9;
                                                 $to = round($latestJobs->salary_to/1000000,0)
                                             @endphp
                                             @if($latestJobs->salary_type == \App\Job::SALARY_TYPE_FROM)
-                                            <i class="fa-solid fa-dollar-sign"></i> {{__('From: ')}} {{$from}}
+                                             {{__('From: ')}} {{$from}}
                                             {{__('million')}} ({{$latestJobs->salary_currency}})
                                             @elseif($latestJobs->salary_type == \App\Job::SALARY_TYPE_TO)
-                                            <i class="fa-solid fa-dollar-sign"></i> {{__('Up To: ')}} {{$to}}
+                                             {{__('Up To: ')}} {{$to}}
                                             {{__('million')}} ({{$latestJobs->salary_currency}})
                                             @elseif($latestJobs->salary_type == \App\Job::SALARY_TYPE_RANGE)
-                                            <i class="fa-solid fa-dollar-sign"></i> {{$from}} - {{$to}}
+                                             {{$from}} - {{$to}}
                                             {{__('million')}} ({{$latestJobs->salary_currency}})
                                             @elseif($latestJobs->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
                                             <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
                                             @else
-                                            <i class="fa-solid fa-dollar-sign"></i> {{__('Salary Not provided')}}
+                                             {{__('Salary Not provided')}}
                                             @endif
                                         </div>
                                         <div class="card-news__content-footer__location">

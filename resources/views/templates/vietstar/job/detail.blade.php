@@ -668,9 +668,7 @@ $company = $job->getCompany();
 
                                     <a href="#"
                                         title="{{$jobitem->getCompany('name')}}" class="pic">
-                                        <img src="{{ asset('/') }}admin_assets/no-company.png"
-                                        style="max-width:140px; max-height:140px;" alt="{{$jobitem->getCompany('name')}}"
-                                        title="{{$jobitem->getCompany('name')}}">
+                                        {{$company->printCompanyImage()}}
                                     </a>
                                     @endif
                                 </div>

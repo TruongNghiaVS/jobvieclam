@@ -672,26 +672,28 @@ class JobController extends Controller
         $user = Auth::user();
         $user_id = $user->id;
         $job = Job::where('slug', 'like', $job_slug)->firstOrFail();
-        $profileCv = ProfileCv::where('user_id', '=', $user_id)->first();
+        // $profileCv = ProfileCv::where('user_id', '=', $user_id)->first();
         if($request->your_resume == 0) {
-            if(!$profileCv) {
-                if($profileCv == null)
-                {
-                    $itemInsert2 = new ProfileCv();
-                    $itemInsert2->user_id = $user_id;
-                    $itemInsert2->title = "sử dụng mẫu hồ sơ";
-                    $itemInsert2->type = 1;
-                    $itemInsert2->cvLink = "https://jobvieclam.com/xem-ho-so-cv/".$user_id;
-                    $itemInsert2->jobId = $job->id;
-                    $itemInsert2->save();
-                    $cvId = $itemInsert2->id;
-                }
-            }
-            else 
-            {
-                $cvId = $profileCv->id;
-            }
-    
+            // if(!$profileCv) {
+            //     if($profileCv == null)
+            //     {
+                    
+            //     }
+            // }
+            // else 
+            // {
+            //     $cvId = $profileCv->id;
+            // }
+
+            $itemInsert2 = new ProfileCv();
+            $itemInsert2->user_id = $user_id;
+            $itemInsert2->title = "sử dụng mẫu hồ sơ";
+            $itemInsert2->type = 1;
+            $itemInsert2->cvLink = "https://jobvieclam.com/xem-ho-so-cv/".$user_id;
+            $itemInsert2->jobId = $job->id;
+            $itemInsert2->save();
+            $cvId = $itemInsert2->id;
+        
         
 
         }else {
@@ -711,31 +713,16 @@ class JobController extends Controller
                 $file_hash = md5_file($file_path);
                 $file_hash_name = $file_hash . '.' . $file_ext;
                 $file->move('cvs/', $file_hash_name);
-                $itemInsert =  $profileCv;
-                if($itemInsert == null)
-                {
-                    $itemInsert = new ProfileCv();  
-                    $itemInsert->user_id = $user_id;
-                    $itemInsert->title = $file_name;
-                    $itemInsert->cv_file = $file_hash_name;
+          
+                $itemInsert = new ProfileCv();  
+                $itemInsert->user_id = $user_id;
+                $itemInsert->title = $file_name;
+                $itemInsert->cv_file = $file_hash_name;
 
-                    $itemInsert->type = 0;
-                    $itemInsert->cvLink = "https://jobvieclam.com/xem-ho-so-cv/".$user_id;
-                    $itemInsert->jobId = $job->id;
-                    $itemInsert->save();
-                }
-                else 
-                {
-                    $itemInsert->user_id = $user_id;
-                    $itemInsert->title = $file_name;
-                    $itemInsert->cv_file = $file_hash_name;
-
-                    $itemInsert->type = 0;
-                    $itemInsert->cvLink = "https://jobvieclam.com/xem-ho-so-cv/".$user_id;
-         
-                    $itemInsert->jobId = $job->id;
-                    $itemInsert->update();
-                }
+                $itemInsert->type = 0;
+                $itemInsert->cvLink = "https://jobvieclam.com/xem-ho-so-cv/".$user_id;
+                $itemInsert->jobId = $job->id;
+                $itemInsert->save();
                 
                 $cvId = $itemInsert->id;
 

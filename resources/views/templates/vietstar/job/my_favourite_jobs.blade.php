@@ -119,7 +119,7 @@
                             </div>
                             <!--Rank-salary and place End-->
                             <div class="info-item day-update" bis_skin_checked="1">
-                                Ngay đăng tuyển: {{$datetimeText}}
+                                Ngay Đăng Tuyển: {{$datetimeText}}
                             </div>
                             
                            

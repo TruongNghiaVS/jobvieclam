@@ -125,11 +125,11 @@
                          }
                                 @endphp
                                 <div class="info-item day-update" bis_skin_checked="1">
-                                  Ngay đăng tuyển: {{$datetimeText}}
+                                  Ngay Đăng Tuyển: {{$datetimeText}}
                                 </div>
 
                                 <div class="info-item day-update" bis_skin_checked="1">
-                                  Ngày nộp: {{$datetimeText1}}
+                                  Ngày Nộp: {{$datetimeText1}}
                                 </div>
                              
                             </div>

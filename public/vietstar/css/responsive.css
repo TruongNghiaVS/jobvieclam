@@ -784,9 +784,11 @@
     overflow: hidden;
   }
 
-  
-
-
+  .jobs-side-list .item-job .jobinfo .info .job-title span {
+    padding: 1px 5px;
+    width: unset;
+    height: unset;
+  }
   /* END-767px */
 }
 

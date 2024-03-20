@@ -361,7 +361,7 @@ $company = $job->getCompany();
                     </div>
                 </section>
                 <div class="row">
-                    <div class="col-xxl-12 col-lg-12 pe-xxl-4">
+                    <div class="col-xxl-12 col-lg-12">
                         <!-- company detail -->
                         <section class="job-detail-content company-detail mb-4">
                             <div class="require-card">
@@ -491,7 +491,7 @@ $company = $job->getCompany();
 
                                     <!--Day update and place Start-->
                                     <div class="info-item day-update" bis_skin_checked="1">
-                                        Hôm nay
+                                        Hôm Nay
                                     </div>
                                     <!--Day update and place End-->
 
@@ -576,7 +576,7 @@ $company = $job->getCompany();
 
                                     <!--Day update and place Start-->
                                     <div class="info-item day-update" bis_skin_checked="1">
-                                        Hôm nay
+                                        Hôm Nay
                                     </div>
                                     <!--Day update and place End-->
 

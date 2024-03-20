@@ -69,7 +69,7 @@
     
                                 <!--Day update and place Start-->
                                 <div class="info-item day-update" bis_skin_checked="1">
-                                    Hôm nay
+                                    Hôm Nay
                                 </div>
                                 <div class="info-item Interview" bis_skin_checked="1">
                                     <i class="iconmoon icon-calendar-icon1"></i>Interview at: 16:30 20/07/2022
@@ -131,7 +131,7 @@
     apply_status.forEach((item) => {
         // console.log(item.getAttribute('status'));
         switch (item.getAttribute('status')) {
-            case "CV tiếp nhận":
+            case "CV Tiếp Nhận":
                 item.classList.add('accept');
                 item.classList.remove('reject');
                 break;

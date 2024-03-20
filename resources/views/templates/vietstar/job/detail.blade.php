@@ -294,9 +294,10 @@ $company = $job->getCompany();
                                             <div class="share-detail__social">
                                                 <h4>{{__('Share this job')}}:</h4>
                                                 <div class="socials">
-                                                    <a class="social" href=""><i class="fab fa-linkedin-in fa-lg"></i></a>
-                                                    <a class="social" href=""><i class="fab fa-facebook-f fa-lg"></i></a>
-                                                    <a class="social" href=""><i class="fab fa-twitter fa-lg"></i></a>
+
+                                                    <a class="social" href="{{ isset($company->linkedin) ? $company->linkedin:""   }}"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                                                    <a class="social" href=" {{ isset($company->facebook) ? $company->facebook:""   }} "><i class="fab fa-facebook-f fa-lg"></i></a>
+                                                    <a class="social" href="{{ isset($company->twitter) ? $company->twitter:""   }}"><i class="fab fa-twitter fa-lg"></i></a>
                                                 </div>
                                             </div>
                                             <div class="__actions">
@@ -384,11 +385,13 @@ $company = $job->getCompany();
                                             @endif
                                             <div class="fs-14px mb-3">
                                                 <div class="socials">
-                                                    <a href="#" class="social"><i class="fa-brands fa-facebook-f fa-lg me-3"></i></a>
-                                                    <a href="#" class="social"><i class="fa-brands fa-twitter fa-lg me-3"></i></a>
-                                                    <a href="#" class="social"><i class="fa-brands fa-instagram fa-lg me-3"></i></a>
-                                                    <a href="#" class="social"><i class="fa-brands fa-linkedin-in fa-lg me-3"></i></a>
-                                                    <a href="#" class="social"><i class="fa-brands fa-youtube fa-lg me-3"></i></a>
+                                                
+                                                    <a class="social" href=" {{ isset($company->facebook) ? $company->facebook:""   }} "><i class="fab fa-facebook-f fa-lg me-3"></i></a>
+                                                    <a class="social" href="{{ isset($company->linkedin) ? $company->linkedin:""   }}"><i class="fab fa-linkedin-in fa-lg me-3"></i></a>
+                                                    <a class="social" href="{{ isset($company->twitter) ? $company->twitter:""   }}"><i class="fab fa-twitter fa-lg me-3"></i></a>
+
+                                                    <a class="social" href="{{ isset($company->google_plus) ? $company->google_plus:""   }}"><i class="fa-brands fa-google-plus fa-lg me-3"></i></a>
+                                                  
                                                 </div>
                                             </div>
                                         </div>
@@ -416,7 +419,7 @@ $company = $job->getCompany();
                             </div>
                         </section>
                         <div class="row">
-                            <div class="col-xxl-12 col-lg-12 pe-xxl-4">
+                            <div class="col-xxl-12 col-lg-12">
                                 <!-- company detail -->
                                 <section class="job-detail-content company-detail mb-4">
                                     <div class="require-card">
@@ -428,8 +431,11 @@ $company = $job->getCompany();
                                                             <i class="fa-solid fa-hand-holding-dollar"></i>
                                                         </div>
                                                         <div class="require-card__item-content">
-                                                            <p>Mức Lương Trung Bình</p>
-                                                            <strong>NA</strong>
+                                                            <p>Số lượng văn phòng</p>
+                                                            @php
+                                                            
+                                                            @endphp
+                                                            <strong>{{ isset($company->no_of_offices) ? $company->no_of_offices :""  }}</strong>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -441,7 +447,7 @@ $company = $job->getCompany();
                                                     </div>
                                                     <div class="require-card__item-content">
                                                         <p>Quy Mô</p>
-                                                        <strong>{{ $company->no_of_employees }}</strong>
+                                                        <strong>{{ isset($company->no_of_employees) ?  $company->no_of_employees  : "" }}</strong>
                                                     </div>
                                                 </div>
                                             </div>
@@ -454,7 +460,7 @@ $company = $job->getCompany();
                                                     </div>
                                                     <div class="require-card__item-content">
                                                         <p>Thời Gian Thành Lập</p>
-                                                        <strong>{{ $company->established_in }}</strong>
+                                                        <strong>{{ isset($company->established_in) ?  $company->established_in: ""  }}</strong>
                                                     </div>
                                                 </div>
                                             </div>
@@ -645,12 +651,20 @@ $company = $job->getCompany();
             </div>
             <div class="col-lg-4 col-md-12 col-sm-12 ">
                 <section class="related-jobs ">
+                @php 
+                $relatedJobcheck = false;
+                if (!empty($relatedJobs)){ 
+                    $relatedJobcheck =  true;
+                
+                }
+                @endphp
+
+                @if ($relatedJobcheck) 
+
                     <div class="related-jobs-title">
                         <p>Các công việc tương tự</p>
                     </div>
                     <div class="related-jobs-wapper jobs-side-list">
-                                                                
-
                                 @foreach ($relatedJobs as $jobitem)
                                 @php
                                     
@@ -659,7 +673,7 @@ $company = $job->getCompany();
                                         $from = round($jobitem->salary_from/1000000,0);
                                         $to = round($jobitem->salary_to/1000000,0);
                                                             
-                                       
+                                    
                                 @endphp
                                 <div class="related-jobs-item item-job mb-3">
                                 <div class="logo-company">
@@ -715,22 +729,22 @@ $company = $job->getCompany();
                                             
                                                     
                                                         @if($jobitem->salary_type == \App\Job::SALARY_TYPE_FROM)
-                                                        <i class="fa-solid fa-dollar-sign"></i> {{__('From: ')}} {{$from}}
+                                                        {{__('From: ')}} {{$from}}
                                                         {{__('million')}} ({{$jobitem->salary_currency}})
                                                         @elseif($jobitem->salary_type == \App\Job::SALARY_TYPE_TO)
-                                                        <i class="fa-solid fa-dollar-sign"></i> {{__('Up To: ')}} {{$to}}
+                                                        {{__('Up To: ')}} {{$to}}
                                                         {{__('million')}} ({{$jobitem->salary_currency}})
                                                         @elseif($jobitem->salary_type == \App\Job::SALARY_TYPE_RANGE)
-                                                        <i class="fa-solid fa-dollar-sign"></i> {{$from}} - {{$to}}
+                                                        {{$from}} - {{$to}}
                                                         {{__('million')}} ({{$jobitem->salary_currency}})
                                                         @elseif($jobitem->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
                                                         <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
                                                         @else
-                                                        <i class="fa-solid fa-dollar-sign"></i> {{__('Salary Not provided')}}
+                                                        {{__('Salary Not provided')}}
                                                         @endif
 
                                             </div>
-                                          
+                                        
                                             <!--meta-city-->
                                     
                                             
@@ -777,188 +791,9 @@ $company = $job->getCompany();
                             </div>
 
                                 @endforeach
-
-
-                            {{--<div class="related-jobs-item item-job mb-3">
-                                <div class="logo-company">
-                                    <a href="/company/cong-ty-co-phan-incom-sai-gon-9"
-                                        title="Công Ty Cổ Phần Incom Sài Gòn" class="pic">
-                                        <img src="/company_logos/-1692007134-455.png"
-                                            style="max-width:140px; max-height:140px;" alt="Công Ty Cổ Phần Incom Sài Gòn"
-                                            title="Công Ty Cổ Phần Incom Sài Gòn">
-                                    </a>
-                                </div>
-
-                                <div class="jobinfo">
-                                    <div class="info" bis_skin_checked="1">
-                                        <!-- Title  Start-->
-                                        <div class="info-item job-title-box" bis_skin_checked="1">
-                                            <div class="job-title" bis_skin_checked="1">
-                                                <span>Mới</span>
-                                                <h3 class="job-title-name"><a
-                                                        href="/job/nhan-vien-bat-dong-san-40"
-                                                        title="Nhân viên bất động sản">Nhân viên bất động sản</a></h3>
-                                            </div>
-                                            @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug))
-                                            <a class="save-job active"
-                                                href="/add-to-favourite-job/nhan-vien-bat-dong-san-40"><i
-                                                    class="far fa-heart"></i>
-                                            </a>
-                                            @else
-                                            <a class="save-job"
-                                                href="/add-to-favourite-job/nhan-vien-bat-dong-san-40"><i
-                                                    class="far fa-heart"></i>
-                                            </a>
-                                            @endif
-                                        </div>
-                                        <!-- Title  End-->
-
-                                        <!-- companyName Start-->
-                                        <div class="info-item companyName" bis_skin_checked="1"><a
-                                                href="/company/cong-ty-co-phan-incom-sai-gon-9"
-                                                title="Công Ty Cổ Phần Incom Sài Gòn">Công Ty Cổ Phần Incom Sài Gòn</a>
-                                        </div>
-                                        <!-- companyName End-->
-                                        <!--rank-salary and place Start-->
-                                        <div class="info-item box-meta" bis_skin_checked="1">
-                                            <div class="rank-salary" bis_skin_checked="1">
-                                                <span class="fas fa-money-bill"></span> Thương Lượng
-                                            </div>
-                                            <div class="navbar__link-separator" bis_skin_checked="1"></div>
-                                            <!--meta-city-->
-                                            <div class="meta-city" bis_skin_checked="1">
-                                                <!-- <i class="fa-solid fa-location-dot"></i> -->
-                                                Sơn La
-                                            </div>
-
-
-                                            <!-- Bán thời gian -->
-                                        </div>
-                                        <!--Rank-salary and place End-->
-
-                                        <!--Day update and place Start-->
-                                        <div class="info-item day-update" bis_skin_checked="1">
-                                            Hôm nay
-                                        </div>
-                                        <!--Day update and place End-->
-
-                                        <!-- <div class="short-description">M&amp;ocirc; tả c&amp;ocirc;ng việc</div> -->
-                                    </div>
-                                    <div class="caption" bis_skin_checked="1">
-                                        <div class="welfare" bis_skin_checked="1">
-                                            <div class="box-meta" bis_skin_checked="1">
-                                                <!-- <i class="fas fa-dollar-sign"></i>  -->
-                                                <span>
-                                                    <!-- Chế độ thưởng -->
-                                                    Automative
-                                                </span>
-
-                                            </div>
-                                            <div class="box-meta" bis_skin_checked="1">
-                                                <!-- <i class="fas fa-graduation-cap"></i> -->
-                                                <span>
-                                                    <!-- Đào tạo -->
-                                                    Automative Infomation
-                                                </span>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="user-actio" bis_skin_checked="1">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="related-jobs-item item-job mb-3">
-                                <div class="logo-company">
-                                    <a href="/company/cong-ty-co-phan-incom-sai-gon-9"
-                                        title="Công Ty Cổ Phần Incom Sài Gòn" class="pic">
-                                        <img src="/company_logos/-1692007134-455.png"
-                                            style="max-width:140px; max-height:140px;" alt="Công Ty Cổ Phần Incom Sài Gòn"
-                                            title="Công Ty Cổ Phần Incom Sài Gòn">
-                                    </a>
-                                </div>
-
-                                <div class="jobinfo">
-                                    <div class="info" bis_skin_checked="1">
-                                        <!-- Title  Start-->
-                                        <div class="info-item job-title-box" bis_skin_checked="1">
-                                            <div class="job-title" bis_skin_checked="1">
-                                                <span>Mới</span>
-                                                <h3 class="job-title-name"><a
-                                                        href="/job/nhan-vien-bat-dong-san-40"
-                                                        title="Nhân viên bất động sản">Nhân viên bất động sản</a></h3>
-                                            </div>
-                                            <a class="save-job"
-                                                href="/add-to-favourite-job/nhan-vien-bat-dong-san-40"><i
-                                                    class="far fa-heart"></i>
-                                            </a>
-                                        </div>
-                                        <!-- Title  End-->
-
-                                        <!-- companyName Start-->
-                                        <div class="info-item companyName" bis_skin_checked="1"><a
-                                                href="/company/cong-ty-co-phan-incom-sai-gon-9"
-                                                title="Công Ty Cổ Phần Incom Sài Gòn">Công Ty Cổ Phần Incom Sài Gòn</a>
-                                        </div>
-                                        <!-- companyName End-->
-                                        <!--rank-salary and place Start-->
-                                        <div class="info-item box-meta" bis_skin_checked="1">
-                                            <div class="rank-salary" bis_skin_checked="1">
-                                                <span class="fas fa-money-bill"></span> Thương Lượng
-                                            </div>
-                                            <div class="navbar__link-separator" bis_skin_checked="1"></div>
-                                            <!--meta-city-->
-                                            <div class="meta-city" bis_skin_checked="1">
-                                                <!-- <i class="fa-solid fa-location-dot"></i> -->
-                                                Sơn La
-                                            </div>
-
-
-                                            <!-- Bán thời gian -->
-                                        </div>
-                                        <!--Rank-salary and place End-->
-
-                                        <!--Day update and place Start-->
-                                        <div class="info-item day-update" bis_skin_checked="1">
-                                            Hôm nay
-                                        </div>
-                                        <!--Day update and place End-->
-
-                                        <!-- <div class="short-description">M&amp;ocirc; tả c&amp;ocirc;ng việc</div> -->
-                                    </div>
-                                    <div class="caption" bis_skin_checked="1">
-                                        <div class="welfare" bis_skin_checked="1">
-                                            <div class="box-meta" bis_skin_checked="1">
-                                                <!-- <i class="fas fa-dollar-sign"></i>  -->
-                                                <span>
-                                                    <!-- Chế độ thưởng -->
-                                                    Automative
-                                                </span>
-
-                                            </div>
-                                            <div class="box-meta" bis_skin_checked="1">
-                                                <!-- <i class="fas fa-graduation-cap"></i> -->
-                                                <span>
-                                                    <!-- Đào tạo -->
-                                                    Automative Infomation
-                                                </span>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="user-action" bis_skin_checked="1">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>--}}
-                        </div>
-
-
-                    </section>
+                    </div>
+                @endif
+                </section>
             </div>
         
         </div>                    

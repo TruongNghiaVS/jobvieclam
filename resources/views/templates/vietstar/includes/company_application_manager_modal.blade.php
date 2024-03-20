@@ -16,23 +16,23 @@
                         <div>
                             <div class="d-inline-block mb-3"><span role="button" data-value="1"
                                     class="btn btn-cv-application rounded-30 mr-2 d-block px-3 status active">
-                                    CV tiếp nhận
+                                    CV Tiếp Nhận
                                 </span></div>
                             <div class="d-inline-block mb-3"><span role="button" data-value="2"
                                     class="btn btn-cv-application rounded-30 mr-2 d-block px-3 status">
-                                    Phù hợp
+                                    Phù Hợp
                                 </span></div>
                             <div class="d-inline-block mb-3"><span role="button" data-value="3"
                                     class="btn btn-cv-application rounded-30 mr-2 d-block px-3 status">
-                                    Hẹn phỏng vấn
+                                    Hẹn Phỏng Vấn
                                 </span></div>
                             <div class="d-inline-block mb-3"><span role="button" data-value="4"
                                     class="btn btn-cv-application rounded-30 mr-2 d-block px-3 status">
-                                    Gửi đề nghị
+                                    Gửi Đề Nghị
                                 </span></div>
                             <div class="d-inline-block mb-3"><span role="button" data-value="5"
                                     class="btn btn-cv-application rounded-30 mr-2 d-block px-3 status">
-                                    Nhận việc
+                                    Nhận Việc
                                 </span></div>
                             <div class="d-inline-block mb-3"><span role="button" data-value="6"
                                     class="btn btn-cv-application rounded-30 mr-2 d-block px-3 status">

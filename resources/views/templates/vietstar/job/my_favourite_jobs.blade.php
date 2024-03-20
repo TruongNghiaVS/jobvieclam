@@ -57,10 +57,10 @@
                                     $datetimeText ="";
                             if($numberDate < 1)
                             {
-                                $datetimeText = "Hôm nay";
+                                $datetimeText = "Hôm Nay";
                             }
                             else if($numberDate < 2){
-                                $datetimeText = "Hôm qua";
+                                $datetimeText = "Hôm Qua";
                             }
                             else 
                             {
@@ -119,7 +119,7 @@
                             </div>
                             <!--Rank-salary and place End-->
                             <div class="info-item day-update" bis_skin_checked="1">
-                                Ngay đăng tuyển: {{$datetimeText}}
+                                Ngay Đăng Tuyển: {{$datetimeText}}
                             </div>
                             
                            

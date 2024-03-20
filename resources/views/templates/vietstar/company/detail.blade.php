@@ -78,10 +78,10 @@
                                         </div>
                                         @endif
                                         <div class="socials">
-                                            <a href="{{ $company->facebook }}" class="social" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
-                                            <a href="{{ $company->twitter }}" class="social" target="_blank"><i class="fa-brands fa-square-twitter"></i></a>
-                                            <a href="{{ $company->linkedin }}" class="social" target="_blank"><i class="fa-brands fa-linkedin"></i></span></a>
-                                            <a href="{{ $company->google_plus }}" class="social" target="_blank"><i class="fa-brands fa-google-plus"></i></a>
+                                            <a href="{{ isset($company->facebook) ? $company->facebook:""   }}" class="social" target="_blank"><i class="fab fa-facebook-f  me-3"></i></a>
+                                            <a href="{{ isset($company->linkedin) ? $company->linkedin:""   }}" class="social" target="_blank"><i class="fab fa-linkedin-in  me-3"></i></span></a>
+                                            <a href="{{ isset($company->twitter) ? $company->twitter:""   }}" class="social" target="_blank"><i class="fab fa-twitter  me-3"></i></a>
+                                            <a href="{{ isset($company->google_plus) ? $company->google_plus:""   }}" class="social" target="_blank"><i class="fa-brands fa-google-plus  me-3"></i></a>
                                         </div>
 
 
@@ -234,10 +234,10 @@
                                                 $datetimeText ="";
                                                 if($numberDate < 1)
                                                 {
-                                                   $datetimeText = "Hôm nay";
+                                                   $datetimeText = "Hôm Nay";
                                                 }
                                                 else if($numberDate < 2){
-                                                   $datetimeText = "Hôm qua";
+                                                   $datetimeText = "Hôm Qua";
                                                 }
                                                 else 
                                                 {

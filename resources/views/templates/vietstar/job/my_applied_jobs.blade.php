@@ -97,10 +97,10 @@
                                 $datetimeText ="";
                          if($numberDate < 1)
                          {
-                            $datetimeText = "Hôm nay";
+                            $datetimeText = "Hôm Nay";
                          }
                          else if($numberDate < 2){
-                            $datetimeText = "Hôm qua";
+                            $datetimeText = "Hôm Qua";
                          }
                          else 
                          {
@@ -114,10 +114,10 @@
                           $datetimeText1 ="";
                          if($numberDate1 < 1)
                          {
-                            $datetimeText1 = "Hôm nay";
+                            $datetimeText1 = "Hôm Nay";
                          }
                          else if($numberDate1 < 2){
-                            $datetimeText1 = "Hôm qua";
+                            $datetimeText1 = "Hôm Qua";
                          }
                          else 
                          {
@@ -125,11 +125,11 @@
                          }
                                 @endphp
                                 <div class="info-item day-update" bis_skin_checked="1">
-                                  Ngay đăng tuyển: {{$datetimeText}}
+                                  Ngay Đăng Tuyển: {{$datetimeText}}
                                 </div>
 
                                 <div class="info-item day-update" bis_skin_checked="1">
-                                  Ngày nộp: {{$datetimeText1}}
+                                  Ngày Nộp: {{$datetimeText1}}
                                 </div>
                              
                             </div>
@@ -210,16 +210,15 @@
     apply_status.forEach((item) => {
         // console.log(item.getAttribute('status'));
         switch (item.getAttribute('status')) {
-            case "CV tiếp nhận":
-                item.classList.add('accept');
-                item.classList.remove('reject');
-                break;
+        
             case "Từ chối":
                 item.classList.remove('accept');
                 item.classList.add('reject');
                 break;
             default:
-                break;
+            item.classList.add('accept');
+                item.classList.remove('reject');
+                break;               
         }
     })
 

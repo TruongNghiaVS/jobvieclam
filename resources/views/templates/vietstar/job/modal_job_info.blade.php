@@ -23,23 +23,34 @@
                     <td class="text-primary">
                         <strong>Trạng thái:</strong>
                     </td>
-                    <td class="table_value status-apply accept" status="CV tiếp nhận">
-                       
-                        @if($infoJob->status =="1")
-                                  CV tiếp nhận
+                    @if($infoJob->status =="6")
+                        <td class="table_value status-apply reject" status="Từ chối">
+                            Từ Chối
+                        </td>
+                    @elseif($infoJob->status =="1")
+                            <td class="table_value status-apply accept" status="CV Tiếp Nhận">
+                                    CV Tiếp Nhận
+                            </td>     
                         @elseif($infoJob->status =="2")
-                                Phù hợp
+                            <td class="table_value status-apply accept" status="CV Tiếp Nhận">
+                                Phù Hợp
+                            </td>    
                         @elseif($infoJob->status =="3")
-                                Hẹn phỏng vấn
+                            <td class="table_value status-apply accept" status="CV Tiếp Nhận">
+                                Hẹn Phỏng Vấn
+                            </td> 
                         @elseif($infoJob->status =="4")
-                                Gửi đề nghị
+                            <td class="table_value status-apply accept" status="CV Tiếp Nhận">
+                                Gửi Đề Nghị
+                            </td> 
                         @elseif($infoJob->status =="5")
-                               Nhận việc
-                        @elseif($infoJob->status =="6")
-                               Từ chối
-                        @endif
+                            
+                            <td class="table_value status-apply accept" status="CV Tiếp Nhận">
+                               Nhận Việc
+                            </td> 
+                    @endif
+                   
                         
-                    </td>
                 </tr>
                 @if($noteForJob)
                 <tr>

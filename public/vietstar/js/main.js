@@ -307,7 +307,7 @@ function swiperSlider() {
 
             breakpoints: {
                 320: {
-                    slidesPerView: 2.1,
+                    slidesPerView: 2,
                     spaceBetween: 0, grabCursor: false,
                 },
                 768: {

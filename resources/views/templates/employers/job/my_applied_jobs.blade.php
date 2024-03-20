@@ -131,7 +131,7 @@
     apply_status.forEach((item) => {
         // console.log(item.getAttribute('status'));
         switch (item.getAttribute('status')) {
-            case "CV tiếp nhận":
+            case "CV Tiếp Nhận":
                 item.classList.add('accept');
                 item.classList.remove('reject');
                 break;

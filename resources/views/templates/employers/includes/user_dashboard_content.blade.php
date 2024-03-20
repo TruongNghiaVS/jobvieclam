@@ -68,7 +68,7 @@
                 <section class="related-jobs card card-bio mb-3 w-100 shadow-sm">
                     <div class="card-body">
                         <div class="related-jobs__title d-flex justify-content-between align-items-center">
-                            <h6>Công việc phù hợp</h6>
+                            <h6>Công Việc Phù Hợp</h6>
                             <button class="btn btn-round btn-link btn-sm main-color"
                                 onclick="window.location='{{ route('job.list') }}'">{{__('View all')}}</button>
                         </div>

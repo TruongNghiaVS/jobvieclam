@@ -25,29 +25,29 @@
                     </td>
                     @if($infoJob->status =="6")
                         <td class="table_value status-apply reject" status="Từ chối">
-                            Từ chối
+                            Từ Chối
                         </td>
                     @elseif($infoJob->status =="1")
-                            <td class="table_value status-apply accept" status="CV tiếp nhận">
-                                    CV tiếp nhận
+                            <td class="table_value status-apply accept" status="CV Tiếp Nhận">
+                                    CV Tiếp Nhận
                             </td>     
                         @elseif($infoJob->status =="2")
-                            <td class="table_value status-apply accept" status="CV tiếp nhận">
-                                Phù hợp
+                            <td class="table_value status-apply accept" status="CV Tiếp Nhận">
+                                Phù Hợp
                             </td>    
                         @elseif($infoJob->status =="3")
-                            <td class="table_value status-apply accept" status="CV tiếp nhận">
-                                Hẹn phỏng vấn
+                            <td class="table_value status-apply accept" status="CV Tiếp Nhận">
+                                Hẹn Phỏng Vấn
                             </td> 
                         @elseif($infoJob->status =="4")
-                            <td class="table_value status-apply accept" status="CV tiếp nhận">
-                                Gửi đề nghị
+                            <td class="table_value status-apply accept" status="CV Tiếp Nhận">
+                                Gửi Đề Nghị
                             </td> 
                         @elseif($infoJob->status =="5")
-                            Nhận việc
-                            <td class="table_value status-apply accept" status="CV tiếp nhận">
-                               Nhận việc
-                        </td> 
+                            
+                            <td class="table_value status-apply accept" status="CV Tiếp Nhận">
+                               Nhận Việc
+                            </td> 
                     @endif
                    
                         

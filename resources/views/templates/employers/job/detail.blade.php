@@ -361,7 +361,7 @@ $company = $job->getCompany();
                     </div>
                 </section>
                 <div class="row">
-                    <div class="col-xxl-12 col-lg-12 pe-xxl-4">
+                    <div class="col-xxl-12 col-lg-12">
                         <!-- company detail -->
                         <section class="job-detail-content company-detail mb-4">
                             <div class="require-card">

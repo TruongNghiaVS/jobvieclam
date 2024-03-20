@@ -210,16 +210,15 @@
     apply_status.forEach((item) => {
         // console.log(item.getAttribute('status'));
         switch (item.getAttribute('status')) {
-            case "CV tiếp nhận":
-                item.classList.add('accept');
-                item.classList.remove('reject');
-                break;
+        
             case "Từ chối":
                 item.classList.remove('accept');
                 item.classList.add('reject');
                 break;
             default:
-                break;
+            item.classList.add('accept');
+                item.classList.remove('reject');
+                break;               
         }
     })
 

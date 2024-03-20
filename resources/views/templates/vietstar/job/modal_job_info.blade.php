@@ -23,23 +23,34 @@
                     <td class="text-primary">
                         <strong>Trạng thái:</strong>
                     </td>
-                    <td class="table_value status-apply accept" status="CV tiếp nhận">
-                       
-                        @if($infoJob->status =="1")
-                                  CV tiếp nhận
+                    @if($infoJob->status =="6")
+                        <td class="table_value status-apply reject" status="Từ chối">
+                            Từ chối
+                        </td>
+                    @elseif($infoJob->status =="1")
+                            <td class="table_value status-apply accept" status="CV tiếp nhận">
+                                    CV tiếp nhận
+                            </td>     
                         @elseif($infoJob->status =="2")
+                            <td class="table_value status-apply accept" status="CV tiếp nhận">
                                 Phù hợp
+                            </td>    
                         @elseif($infoJob->status =="3")
+                            <td class="table_value status-apply accept" status="CV tiếp nhận">
                                 Hẹn phỏng vấn
+                            </td> 
                         @elseif($infoJob->status =="4")
+                            <td class="table_value status-apply accept" status="CV tiếp nhận">
                                 Gửi đề nghị
+                            </td> 
                         @elseif($infoJob->status =="5")
+                            Nhận việc
+                            <td class="table_value status-apply accept" status="CV tiếp nhận">
                                Nhận việc
-                        @elseif($infoJob->status =="6")
-                               Từ chối
-                        @endif
+                        </td> 
+                    @endif
+                   
                         
-                    </td>
                 </tr>
                 @if($noteForJob)
                 <tr>

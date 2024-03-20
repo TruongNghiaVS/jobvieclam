@@ -294,9 +294,10 @@ $company = $job->getCompany();
                                             <div class="share-detail__social">
                                                 <h4>{{__('Share this job')}}:</h4>
                                                 <div class="socials">
-                                                    <a class="social" href=""><i class="fab fa-linkedin-in fa-lg"></i></a>
-                                                    <a class="social" href=""><i class="fab fa-facebook-f fa-lg"></i></a>
-                                                    <a class="social" href=""><i class="fab fa-twitter fa-lg"></i></a>
+
+                                                    <a class="social" href="{{ isset($company->linkedin) ? $company->linkedin:""   }}"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                                                    <a class="social" href=" {{ isset($company->facebook) ? $company->facebook:""   }} "><i class="fab fa-facebook-f fa-lg"></i></a>
+                                                    <a class="social" href="{{ isset($company->twitter) ? $company->twitter:""   }}"><i class="fab fa-twitter fa-lg"></i></a>
                                                 </div>
                                             </div>
                                             <div class="__actions">
@@ -384,11 +385,13 @@ $company = $job->getCompany();
                                             @endif
                                             <div class="fs-14px mb-3">
                                                 <div class="socials">
-                                                    <a href="#" class="social"><i class="fa-brands fa-facebook-f fa-lg me-3"></i></a>
-                                                    <a href="#" class="social"><i class="fa-brands fa-twitter fa-lg me-3"></i></a>
-                                                    <a href="#" class="social"><i class="fa-brands fa-instagram fa-lg me-3"></i></a>
-                                                    <a href="#" class="social"><i class="fa-brands fa-linkedin-in fa-lg me-3"></i></a>
-                                                    <a href="#" class="social"><i class="fa-brands fa-youtube fa-lg me-3"></i></a>
+                                                
+                                                    <a class="social" href=" {{ isset($company->facebook) ? $company->facebook:""   }} "><i class="fab fa-facebook-f fa-lg me-3"></i></a>
+                                                    <a class="social" href="{{ isset($company->linkedin) ? $company->linkedin:""   }}"><i class="fab fa-linkedin-in fa-lg me-3"></i></a>
+                                                    <a class="social" href="{{ isset($company->twitter) ? $company->twitter:""   }}"><i class="fab fa-twitter fa-lg me-3"></i></a>
+
+                                                    <a class="social" href="{{ isset($company->google_plus) ? $company->google_plus:""   }}"><i class="fa-brands fa-google-plus fa-lg me-3"></i></a>
+                                                  
                                                 </div>
                                             </div>
                                         </div>

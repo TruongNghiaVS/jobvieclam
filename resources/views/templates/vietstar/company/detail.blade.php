@@ -234,10 +234,10 @@
                                                 $datetimeText ="";
                                                 if($numberDate < 1)
                                                 {
-                                                   $datetimeText = "Hôm nay";
+                                                   $datetimeText = "Hôm Nay";
                                                 }
                                                 else if($numberDate < 2){
-                                                   $datetimeText = "Hôm qua";
+                                                   $datetimeText = "Hôm Qua";
                                                 }
                                                 else 
                                                 {

@@ -428,8 +428,11 @@ $company = $job->getCompany();
                                                             <i class="fa-solid fa-hand-holding-dollar"></i>
                                                         </div>
                                                         <div class="require-card__item-content">
-                                                            <p>Mức Lương Trung Bình</p>
-                                                            <strong>NA</strong>
+                                                            <p>Số lượng văn phòng</p>
+                                                            @php
+                                                            
+                                                            @endphp
+                                                            <strong>{{ isset($company->no_of_offices) ? $company->no_of_offices :""  }}</strong>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -441,7 +444,7 @@ $company = $job->getCompany();
                                                     </div>
                                                     <div class="require-card__item-content">
                                                         <p>Quy Mô</p>
-                                                        <strong>{{ $company->no_of_employees }}</strong>
+                                                        <strong>{{ isset($company->no_of_employees) ?  $company->no_of_employees  : "" }}</strong>
                                                     </div>
                                                 </div>
                                             </div>
@@ -454,7 +457,7 @@ $company = $job->getCompany();
                                                     </div>
                                                     <div class="require-card__item-content">
                                                         <p>Thời Gian Thành Lập</p>
-                                                        <strong>{{ $company->established_in }}</strong>
+                                                        <strong>{{ isset($company->established_in) ?  $company->established_in: ""  }}</strong>
                                                     </div>
                                                 </div>
                                             </div>

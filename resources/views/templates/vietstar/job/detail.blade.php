@@ -32,35 +32,43 @@ $company = $job->getCompany();
                         <div class="banner__company">{{$company->name}}</div>
                         @if($job->location)
                             <div class="banner__due-day mb-3">
-                                {{__('Location')}} {{ !empty($job->location) ? $job->location :  $job->getCity('city')}}
+                                {{__('Location')}}: {{ !empty($job->location) ? $job->location :  $job->getCity('city')}}
                             </div>
                         @endif
                        
                         <div class="banner__due-day mb-3">
 
-                            $
+                            Mức lương: 
                             @php
                             $salaryType = $job->salary_type;
 
                             switch ($salaryType) {
                             case \App\Job::SALARY_TYPE_RANGE:
-                            $html = MiscHelper::formatCurrency($job->salary_from) . ' - ' .
-                            MiscHelper::formatCurrency($job->salary_to) . '(' .
-                            $job->salary_currency . ')';
+                            $html = MiscHelper::formatCurrency(round($job->salary_from/1000000,0)) . ' - ' .
+                            MiscHelper::formatCurrency(round($job->salary_to/1000000,0)) . ' ' . __('million') ;
                             break;
                             case \App\Job::SALARY_TYPE_NEGOTIABLE:
                             $html = __('Negotiable');
                             break;
                             case \App\Job::SALARY_TYPE_FROM:
-                            $html = __('From') . ' ' . MiscHelper::formatCurrency($job->salary_from)
-                            . '(' . $job->salary_currency . ')';
+                            $html = __('From') . ' ' . MiscHelper::formatCurrency(round($job->salary_from/1000000,0))
+                            . ' ' . __('million') ;
                             break;
                             case \App\Job::SALARY_TYPE_TO:
-                            $html = __('To') . ' ' . MiscHelper::formatCurrency($job->salary_to) .
-                            '(' . $job->salary_currency . ')';
+                            $html = __('To') . ' ' . MiscHelper::formatCurrency(round($job->salary_to/1000000,0)) . ' ' .
+                            __('million') ;
                             break;
                             }
                             @endphp
+
+                            
+
+
+
+
+
+
+
                             @if(!(bool)$job->hide_salary)
                             <strong>{{$html}}</strong>
                             @endif
@@ -160,24 +168,22 @@ $company = $job->getCompany();
 
                                                             switch ($salaryType) {
                                                             case \App\Job::SALARY_TYPE_RANGE:
-                                                            $html = MiscHelper::formatCurrency($job->salary_from) . ' - ' .
-                                                            MiscHelper::formatCurrency($job->salary_to) . '(' .
-                                                            $job->salary_currency . ')';
+                                                                $html = MiscHelper::formatCurrency(round($job->salary_from/1000000,0)) . ' - ' .
+                                                                MiscHelper::formatCurrency(round($job->salary_to/1000000,0)) . ' ' . __('million') ;
                                                             break;
                                                             case \App\Job::SALARY_TYPE_NEGOTIABLE:
                                                             $html = __('Negotiable');
                                                             break;
                                                             case \App\Job::SALARY_TYPE_FROM:
-                                                            $html = __('From') . ' ' .
-                                                            MiscHelper::formatCurrency($job->salary_from)
-                                                            . '(' . $job->salary_currency . ')';
+                                                                $html = __('From') . ' ' . MiscHelper::formatCurrency(round($job->salary_from/1000000,0))
+                                                                . ' ' . __('million') ;
                                                             break;
                                                             case \App\Job::SALARY_TYPE_TO:
-                                                            $html = __('To') . ' ' . MiscHelper::formatCurrency($job->salary_to)
-                                                            .
-                                                            '(' . $job->salary_currency . ')';
+                                                                $html = __('To') . ' ' . MiscHelper::formatCurrency(round($job->salary_to/1000000,0)) . ' ' .
+                                                                __('million') ;
                                                             break;
                                                             }
+                                                         
                                                             @endphp
                                                             @if(!(bool)$job->hide_salary)
                                                             <strong>{{$html}}</strong>

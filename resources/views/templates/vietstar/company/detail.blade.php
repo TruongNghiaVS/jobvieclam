@@ -16,8 +16,12 @@
 <!-- Main content -->
 <section class="company-wrapper main-content" id="main-content">
     <!-- Hero banner -->
-    <section class="hero-banner-company-profile" style="background-image: url({!!asset('/vietstar/imgs/company-cover.jpg') !!});"></section>
-
+   
+    @if(isset($company->cover_logo) )
+        <section class="hero-banner-company-profile" style="background-image: url({{url('/')}}/company_logos/{{$company->cover_logo}});"></section>
+    @else 
+        <section class="hero-banner-company-profile" style="background-image: url({{url('/')}}/admin_assets/no-cover.jpg);"></section>
+    @endif
 
     <div class="container">
         <section class="section-company-profile">

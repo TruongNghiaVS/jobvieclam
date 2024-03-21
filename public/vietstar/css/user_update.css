@@ -502,7 +502,7 @@ i.fas.fa-heart.iconoutline {
     left: 0;
     right: 0;
     bottom: 0;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .company-items__logo {

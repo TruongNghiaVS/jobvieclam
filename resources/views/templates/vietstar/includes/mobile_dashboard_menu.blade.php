@@ -697,8 +697,12 @@
 
             <li>
                 <div class="my-2 group-button">
-                    <a class="nav-link login_link btn btn-primary login-btn btn-sm" data-toggle="modal" data-target="#user_login_Modal" >{{__('Log in')}} / {{__('Đăng Ký')}} </a>
-                  
+                    <div class="d-flex">
+
+                        <a class="nav-link login_link btn btn-primary login-btn btn-sm me-2" data-toggle="modal" data-target="#user_login_Modal" >{{__('Log in')}}</a>
+                      
+                        <a class="nav-link login_link btn btn-primary login-btn btn-sm" data-toggle="modal" data-target="#user_logup_Modal" > {{__('Đăng Ký')}} </a>
+                    </div>
                     <!-- <a href="{{url('/employers')}}" class="btn btn-primary">Dành Cho Nhà Tuyển Dụng</a> -->
                     <a href="https://tuyendung.jobvieclam.com" class="btn btn-primary btn-sm">Dành Cho Nhà Tuyển Dụng</a>
 

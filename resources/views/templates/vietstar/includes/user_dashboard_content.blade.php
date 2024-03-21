@@ -128,34 +128,7 @@
                                 onclick="window.location='{{ route('job.list') }}'">{{__('View all')}}</button>
                         </div>
                         <div class="row related-jobs__jobs  mb-2">
-                            {{--@foreach($matchingJobs as $match)
-                            <div class="col-12 card-news gap-16">
-                                <div class="card-news__icon">
-
-                                    <img src="{{ asset('company_logos/'.( !empty($match->getCompany()) ? $match->getCompany()->logo : 'no-logo.png')) }}"
-                                        alt="{{!empty($match->getCompany()) ? $match->getCompany()->name : ''}}">
-                                </div>
-                                <div class="card-news__content">
-                                    <h6 class="card-news__content-title">{{ $match->name }}</h6>
-                                    <p class="card-news__content-detail">
-                                        {{!empty($match->getCompany()) ? $match->getCompany()->name : ''}}
-                                    </p>
-                                    <div class="card-news__content-footer">
-                                        <div class="card-news__content-footer__location">
-                                            <span
-                                                class="badge rounded-pill pill pill-location">{{!empty($match->getCompany()) ? $match->getCompany()->name : ''}}</span>
-                                            <span
-                                                class="badge rounded-pill pill pill-worktime">{{$match->getJobType('job_type')}}</span>
-                                        </div>
-                                        <div class="card-news__content-footer__salary">
-                                            {{$match->salary_from}} -
-                                            {{$match->salary_to.' '.$match->salary_currency}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                            --}}
+                           
                             @foreach($matchingJobs as $match)
                             @php
                                 $salaryText  = checksalary($match->salary_from, $match->salary_to);
@@ -193,6 +166,7 @@
                                 </div>
                             </div>
                             @endforeach
+                            
                             {!! $matchingJobs->appends(Request::except(['page','_token']))->render() !!}
                         </div>
                     </div>
@@ -327,6 +301,9 @@
     .company-follow-item a{
         width: 100%;
         height: 100%;
+    }
+    .related-jobs__jobs .pagination {
+        justify-content: center;
     }
 </style>
 @endpush

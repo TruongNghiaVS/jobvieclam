@@ -555,7 +555,7 @@ i.fas.fa-heart.iconoutline {
 
 .company-items__name h3 {
 
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     display: -webkit-box;
     overflow: hidden;

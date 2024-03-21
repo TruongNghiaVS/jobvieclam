@@ -18,9 +18,9 @@
     <!-- Hero banner -->
    
     @if(isset($company->cover_logo) )
-        <section class="hero-banner-company-profile" style="background-image: url({{url('/')}}/company_logos/{{$company->cover_logo}});"></section>
+        <section class="hero-banner-company-profile container" style="background-image: url({{url('/')}}/company_logos/{{$company->cover_logo}});"></section>
     @else 
-        <section class="hero-banner-company-profile" style="background-image: url({{url('/')}}/admin_assets/no-cover.png);"></section>
+        <section class="hero-banner-company-profile container" style="background-image: url({{url('/')}}/admin_assets/no-cover.png);"></section>
     @endif
 
     <div class="container">

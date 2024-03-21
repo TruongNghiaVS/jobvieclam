@@ -11,7 +11,7 @@
 @include('templates.employers.includes.company_dashboard_menu')
 
 <!-- Hero banner -->
-<section class="hero-banner-company-profile" style="background-image: url({!!  asset('/vietstar/imgs/company-cover.jpg') !!});"></section>
+<section class="hero-banner-company-profile container" style="background-image: url({!!  asset('/vietstar/imgs/company-cover.jpg') !!});"></section>
 
 
 <!-- Main content -->

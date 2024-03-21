@@ -137,7 +137,7 @@
                             <div class="col-12 card-news ">
                                 <a href="/viec-lam/{{ $match->slug ? $match->slug :"" }}">
                                 <div class="company-logo">
-                                    <img src="{{ asset('company_logos/'.( !empty($match->getCompany()) ? $match->getCompany()->logo : 'no-logo.png')) }}"
+                                    <img src="{{ asset('company_logos/'.( !empty($match->getCompany()) ? $match->getCompany()->logo : 'no-company.png')) }}"
                                             alt="{{!empty($match->getCompany()) ? $match->getCompany()->name : ''}}">
                                 </div>
                                 </a>

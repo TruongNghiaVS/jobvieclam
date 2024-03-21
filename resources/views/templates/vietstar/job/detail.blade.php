@@ -523,7 +523,7 @@ $company = $job->getCompany();
                                                     </div>
                                                     @else 
                                                     <div class="card-news__icon" bis_skin_checked="1">
-                                                        <img src="{{url('/')}}/company_logos/no-logo.png"
+                                                        <img src="{{url('/')}}/admin_assets/no-company.png"
                                                             alt="{{$relatedJob->title}}">
                                                     </div>
                                                     @endif
@@ -581,7 +581,7 @@ $company = $job->getCompany();
                                                     </div>
                                                     @else 
                                                     <div class="card-news__icon" bis_skin_checked="1">
-                                                        <img src="{{url('/')}}/company_logos/no-logo.png"
+                                                        <img src="{{url('/')}}/admin_assets/no-company.png"
                                                             alt="{{$relatedJob->title}}">
                                                     </div>
                                                     @endif

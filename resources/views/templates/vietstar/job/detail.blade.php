@@ -653,10 +653,11 @@ $company = $job->getCompany();
                 <section class="related-jobs ">
                 @php 
                 $relatedJobcheck = false;
-                if (!empty($relatedJobs)){ 
+                if (!empty($relatedJobs) && is_array($relatedJobs)){ 
                     $relatedJobcheck =  true;
                 
                 }
+               
                 @endphp
 
                 @if ($relatedJobcheck) 

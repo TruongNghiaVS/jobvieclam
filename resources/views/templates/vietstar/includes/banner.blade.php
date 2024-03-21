@@ -29,7 +29,7 @@
                 success: function(data) {
                     // Handle the data from the API
                     if(data) {
-                        console.log(data);
+                        
                         data.forEach(element => {
 
                             if (element.postion == '1') {

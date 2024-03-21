@@ -69,7 +69,7 @@
                     <div class="modal-body">
                      
                         <div class="thank-you-pop">
-							<img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
+							
 							<h3>{{__('Sign In Success')}}</h3>		
  						</div>
                     </div>

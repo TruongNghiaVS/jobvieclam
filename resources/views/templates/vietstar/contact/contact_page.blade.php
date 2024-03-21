@@ -134,7 +134,7 @@
                     <div class="modal-body">
                      
                         <div class="thank-you-pop">
-							<img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
+							
                             <p class="text-center">
                                 Cảm ơn bạn đã liên hệ với chúng tôi.
                             </p>

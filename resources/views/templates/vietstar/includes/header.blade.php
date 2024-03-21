@@ -177,7 +177,8 @@
 
             <div class="d-flex  group-button">
                 @if(!Auth::check())
-                <a class="nav-link login-link" data-toggle="modal" data-target="#user_login_Modal">{{__('Log in')}} / {{__('Đăng Ký')}} </a>
+                    <a class="nav-link login-link" data-toggle="modal" data-target="#user_login_Modal">{{__('Log in')}}</a>
+                    <a class="nav-link login-link me-3" data-toggle="modal" data-target="#user_logup_Modal">{{__('Đăng Ký')}} </a>
                 @endif
 
 

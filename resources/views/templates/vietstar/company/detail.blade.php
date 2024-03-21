@@ -20,7 +20,7 @@
     @if(isset($company->cover_logo) )
         <section class="hero-banner-company-profile" style="background-image: url({{url('/')}}/company_logos/{{$company->cover_logo}});"></section>
     @else 
-        <section class="hero-banner-company-profile" style="background-image: url({{url('/')}}/admin_assets/no-cover.jpg);"></section>
+        <section class="hero-banner-company-profile" style="background-image: url({{url('/')}}/admin_assets/no-cover.png);"></section>
     @endif
 
     <div class="container">

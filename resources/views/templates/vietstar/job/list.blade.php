@@ -386,11 +386,7 @@
 
                     if(data) {
                         data.forEach(element => {
-                          
-                            console.log(element);
                             if (element.priorities == '1') {
-
-                                console.log(element.linkDesktop);
                                 $('.searchList.jobs-side-list .item-job:nth-child(5)').after(`
                                     <div class="inpostad">
                                     <img src="{{url('/')}}/admin_assets/${element.linkDesktop}" alt="">

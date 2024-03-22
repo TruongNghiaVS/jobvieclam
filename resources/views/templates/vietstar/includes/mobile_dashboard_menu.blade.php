@@ -123,16 +123,13 @@
         width: 100%;
     }
 
-    #mobile-sidebar.active .sidebar-header.active {
-        display: flex;
-        flex-direction: column;
-    }
-
+   
     #mobile-sidebar.active .sidebar-header {
         padding: 20px;
         background: white;
         width: 100%;
-        display: none;
+        display: flex;
+        flex-direction: column;
     }
 
 
@@ -435,7 +432,7 @@
 
 @endpush
 <nav id="mobile-sidebar">
-    <div class="sidebar-header active">
+    <div class="sidebar-header">
         @if(auth::check()==true)
         <div class="profile" bis_skin_checked="1">
             <div class="avatar" bis_skin_checked="1"><a href="#">

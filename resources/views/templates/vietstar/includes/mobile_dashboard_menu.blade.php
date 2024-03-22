@@ -123,16 +123,13 @@
         width: 100%;
     }
 
+   
     #mobile-sidebar.active .sidebar-header {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #mobile-sidebar .sidebar-header {
         padding: 20px;
         background: white;
         width: 100%;
-        display: none;
+        display: flex;
+        flex-direction: column;
     }
 
 
@@ -143,7 +140,7 @@
     }
 
     #mobile-sidebar ul li a {
-        padding: 20px 20px;
+        padding: 5px 5px;
         font-size: 1.1em;
         display: block;
     }
@@ -309,21 +306,6 @@
         overflow-y: auto;
     }
 
-    .sidebar-main-nav {
-
-        transform: translateX(0);
-        opacity: 1;
-        pointer-events: auto;
-        transition: 0.4s ease-in-out all;
-    }
-
-    .sidebar-user-nav {
-        -webkit-transform: translateX(-300px);
-        -ms-transform: translateX(-300px);
-        transform: translateX(-300px);
-        transition: 0.4s ease-out all;
-    }
-
     .sidebar-main-nav,
     .sidebar-user-nav {
         position: absolute;
@@ -333,12 +315,37 @@
         overflow-y: auto;
     }
 
-    .sidebar-main-nav.active {
+    .sidebar-main-nav {
 
         -webkit-transform: translateX(-300px);
         -ms-transform: translateX(-300px);
         transform: translateX(-300px);
+        opacity: 1;
+        pointer-events: auto;
+        transition: 0.4s ease-in-out all;
+      
     }
+
+
+    .sidebar-main-nav.active {
+
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+        
+    }
+
+
+    .sidebar-user-nav {
+        -webkit-transform: translateX(-300px);
+        -ms-transform: translateX(-300px);
+        transform: translateX(-300px);
+        transition: 0.4s ease-out all;
+        
+    }
+
+  
+
 
     .sidebar-user-nav.active {
         transform: translateX(0);
@@ -353,7 +360,7 @@
     #mobile-sidebar.active .sidebar-bottom {
         display: flex;
         width: 100%;
-        position: absolute;
+        margin-bottom: 20px;
         bottom: 20px;
         justify-content: end;
         align-items: center;
@@ -365,11 +372,16 @@
         -ms-transform: translateX(-300px);
         transform: translateX(-300px);
         transition: 0.4s ease-out all;
-        
+        max-height:0%;
+        height:0%;
+        display: none;
     }
     #mobile-sidebar.active .sidebar-bottom.active {
       
         transform: translateX(0);
+        max-height:20%;
+        height:20%;
+        display:block;
     }
 
     .profile .back-menu-normal {
@@ -447,7 +459,7 @@
 
         @endif
         <div class="menu">
-            <ul class="list-unstyled components sidebar-main-nav" id="sidebar-main-nav">
+            <ul class="list-unstyled components sidebar-main-nav active" id="sidebar-main-nav">
                 <li class="sidebar-item {{ Request::url() == route('index') ? 'active' : '' }}">
                     <a href="{{url('/')}}" class="list-group-item list-group-item-action {{ Request::url() == route('index') ? 'active' : '' }}">
                         <div class="d-flex w-100">
@@ -672,7 +684,7 @@
     </div>
 
     <div class="sidebar-bottom active">
-        <ul class="list-unstyled components sidebar-bottom__item">
+        <ul class="list-unstyled components sidebar-bottom__item m-0">
             @if(Auth::user())
             <li class="openmyacount">
                 <div class="btn  btn-primary btn-sm  w-100">
@@ -696,8 +708,8 @@
        
 
             <li>
-                <div class="my-2 group-button">
-                    <div class="d-flex">
+                <div class="group-button">
+                    <div class="d-flex mb-1">
 
                         <a class="nav-link login_link btn btn-primary login-btn btn-sm me-2" data-toggle="modal" data-target="#user_login_Modal" >{{__('Log in')}}</a>
                       
@@ -738,17 +750,17 @@
 
         $('.openmyacount').click(function() {
             // Remove 'active' class from all li elements
-            $('.sidebar-main-nav').addClass('active');
-            $('.sidebar-bottom').removeClass('active');
             $('.menu').addClass('active');
+            $('.sidebar-main-nav').removeClass('active');
+            $('.sidebar-bottom').removeClass('active');
             $('.sidebar-user-nav').addClass('active');
             $('.back-menu-normal').addClass('active');
-            $('.openmyacount').addClass('disabled')
+            $('.openmyacount').addClass('disabled');
         });
 
         $('.back-menu-normal').click(function() {
             // Remove 'active' class from all li elements
-            $('.sidebar-main-nav').removeClass('active');
+            $('.sidebar-main-nav').addClass('active');
             $('.sidebar-bottom').addClass('active');
             $('.menu').removeClass('active');
             $('.sidebar-user-nav').removeClass('active');

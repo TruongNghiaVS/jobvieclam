@@ -35,6 +35,7 @@ class UserRegisterdListener implements ShouldQueue
     public function handle(UserRegistered $event)
 {     
         $data = $event->user;
+        $password =$event->password;
         
         if($data)
         {
@@ -46,6 +47,7 @@ class UserRegisterdListener implements ShouldQueue
         }
         $response = Http::post('http://localhost:8082/sendMailRegisterUV', [
                 'emailTo' => $data->email,
+                'password'=>   $password,
                 'fullName' =>  $data->name
         ]);
     }

@@ -124,9 +124,10 @@ class RegisterController extends Controller
         /*         * *********************** */
         $user->name = $user->getName();
         $user->update();
+
         /*         * *********************** */
         event(new Registered($user));
-        event(new UserRegistered($user));
+        event(new UserRegistered($user,$request->input('password')));
         $this->guard()->login($user);
         UserVerification::generate($user);
         // UserVerification::send($user, 'User Verification', config('mail.recieve_to.address'), config('mail.recieve_to.name'));

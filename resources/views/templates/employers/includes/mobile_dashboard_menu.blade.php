@@ -123,7 +123,7 @@
         width: 100%;
     }
 
-    #mobile-sidebar.active .sidebar-header {
+    #mobile-sidebar.active .sidebar-header.active {
         display: flex;
         flex-direction: column;
     }
@@ -323,7 +323,7 @@
         
     }
 
-    .sidebar-main-nav.active {
+    .sidebar-main-nav {
 
         -webkit-transform: translateX(-300px);
         -ms-transform: translateX(-300px);

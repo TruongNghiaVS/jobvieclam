@@ -3,7 +3,7 @@
 <!-- Header start -->
 @include('templates.vietstar.includes.header')
 <!-- Header end -->
-
+@include('templates.vietstar.includes.mobile_dashboard_menu')
 <div class="reset-password-section cb-section">
     <div class="container mt-5">
         <div class="cb-title cb-title-center" bis_skin_checked="1">
@@ -46,7 +46,7 @@
     </form> -->
         <div class="box-shadown" bis_skin_checked="1">
             <div class="row" bis_skin_checked="1">
-                    <div class="main-form d-flex justify-content-center" bis_skin_checked="1">
+                    <div class="main-form d-flex justify-content-center mb-4" bis_skin_checked="1">
                         <div class="form-reset-password " bis_skin_checked="1">
                             <form id="passwordForm" novalidate>
                                 <div class="form-group">

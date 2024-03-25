@@ -159,7 +159,9 @@
   .advertising-banner {
     margin: 0;
   }
-
+  .hero-banner-company-profile {
+    height: 73.68px;
+  }
   /************************************************
 
            ==Job page==
@@ -806,7 +808,9 @@
   .custom-swiper-button-prev{
     left: 0 !important; 
   }
-
+  .hero-banner-company-profile {
+    height: 162px;
+  }
   .content {
     padding-left: 8px;
     padding-right: 8px;

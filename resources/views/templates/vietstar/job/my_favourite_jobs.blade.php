@@ -16,6 +16,7 @@
             @include('flash::message')
             <div class="searchList jobs-side-list">
                 <!-- job start -->
+                
                 @if(isset($jobs) && count($jobs))
                 @foreach($jobs as $job)
                 @php $company = $job->getCompany(); @endphp
@@ -152,6 +153,9 @@
                 <!-- job end -->
                 @endif
                 @endforeach
+                            <p class="non-item">Hãy thêm những công việc mà bạn yêu thích</p>
+                @else
+                  
                 @endif
             </div>
         </div>

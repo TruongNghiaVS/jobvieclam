@@ -17,150 +17,159 @@
                 <div class="searchList jobs-side-list">
                     <!-- job start -->
                     @if(isset($jobs) && count($jobs))
-                    @foreach($jobs as $job)
-                    @php $company = $job->getCompany(); @endphp
-                    @if(null !== $company)
-                    <div class="item-job mb-3">
-    
-                        <div class="logo-company">
-                            <div class="pic">
-                                {{$company->printCompanyImage()}}
+                        @php $validJobExists = false; @endphp
+                        @foreach($jobs as $job)
+                        @php $company = $job->getCompany(); @endphp
+                        @if(null !== $company)
+                            @php $validJobExists = true; @endphp
+                        <div class="item-job mb-3">
+        
+                            <div class="logo-company">
+                                <div class="pic">
+                                    {{$company->printCompanyImage()}}
+                                </div>
                             </div>
-                        </div>
-                        <div class="jobinfo">
-                            <div class="info" bis_skin_checked="1">
-                                <!-- Title  Start-->
-                                <div class="info-item job-title-box" bis_skin_checked="1">
-                                    <div class="job-title" bis_skin_checked="1">
-                                        <!-- <span>Mới</span> -->
-                                        <h3 class="job-title-name"><a href="{{route('job.detail', [$job->slug])}}" title="{{$job->title}}">{{$job->title}}</a></h3>
+                            <div class="jobinfo">
+                                <div class="info" bis_skin_checked="1">
+                                    <!-- Title  Start-->
+                                    <div class="info-item job-title-box" bis_skin_checked="1">
+                                        <div class="job-title" bis_skin_checked="1">
+                                            <!-- <span>Mới</span> -->
+                                            <h3 class="job-title-name"><a href="{{route('job.detail', [$job->slug])}}" title="{{$job->title}}">{{$job->title}}</a></h3>
+                                        </div>
+                                        <a class="card-news__content-detail mb-2 status-apply cursor-pointer"  onclick="CV_statusmodal('{{ $job->jobApplyId }}')"   status="{{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }}">
+                                            {{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }}
+                                        </a>
                                     </div>
-                                    <a class="card-news__content-detail mb-2 status-apply cursor-pointer"  onclick="CV_statusmodal('{{ $job->jobApplyId }}')"   status="{{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }}">
-                                        {{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }}
-                                    </a>
-                                </div>
-                                <!-- Title  End-->
-    
-                                <!-- companyName Start-->
-                                <div class="info-item companyName" bis_skin_checked="1"><a href="/cong-ty/{{$company->slug}}" 
-                                title="{{$company->name}}">{{$company->name}}</a>
-                                </div>
-                                <!-- companyName End-->
-                                <!--rank-salary and place Start-->
-                                <div class="info-item box-meta" bis_skin_checked="1">
-                                    <div class="rank-salary" bis_skin_checked="1">
-                                        
-                                        @php 
-                                            $salaryTextFrom = 0;
-                                            $salaryTextTo =  0;
-                                            $textSalary ='';
-                                            if($job->salary_from > 0)
-                                            {
-                                                $salaryTextFrom = number_format($job->salary_from, 0, '', '.');
+                                    <!-- Title  End-->
+        
+                                    <!-- companyName Start-->
+                                    <div class="info-item companyName" bis_skin_checked="1"><a href="/cong-ty/{{$company->slug}}" 
+                                    title="{{$company->name}}">{{$company->name}}</a>
+                                    </div>
+                                    <!-- companyName End-->
+                                    <!--rank-salary and place Start-->
+                                    <div class="info-item box-meta" bis_skin_checked="1">
+                                        <div class="rank-salary" bis_skin_checked="1">
                                             
-                                            }
-                                            if($job->salary_to > 0)
-                                            {
-                                                $salaryTextTo = number_format($job->salary_to, 0, '', '.');
+                                            @php 
+                                                $salaryTextFrom = 0;
+                                                $salaryTextTo =  0;
+                                                $textSalary ='';
+                                                if($job->salary_from > 0)
+                                                {
+                                                    $salaryTextFrom = number_format($job->salary_from, 0, '', '.');
                                                 
-                                            }
-                                        @endphp
-                                            @if($job->salary_type == \App\Job::SALARY_TYPE_FROM)
-                                            <i class="fa-solid fa-dollar-sign"></i> {{__('From: ')}} {{$salaryTextFrom}}
-                                            {{__('million')}} ({{$job->salary_currency}})
-                                            @elseif($job->salary_type == \App\Job::SALARY_TYPE_TO)
-                                            <i class="fa-solid fa-dollar-sign"></i> {{__('Up To: ')}} {{$salaryTextTo}}
-                                            {{__('million')}} ({{$job->salary_currency}})
-                                            @elseif($job->salary_type == \App\Job::SALARY_TYPE_RANGE)
-                                            <i class="fa-solid fa-dollar-sign"></i> {{$salaryTextFrom}} - {{$salaryTextTo}}
-                                            {{__('million')}} ({{$job->salary_currency}})
-                                            @elseif($job->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
-                                            <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
-                                            @else
-                                            <i class="fa-solid fa-dollar-sign"></i> {{__('Salary Not provided')}}
-                                            @endif
+                                                }
+                                                if($job->salary_to > 0)
+                                                {
+                                                    $salaryTextTo = number_format($job->salary_to, 0, '', '.');
+                                                    
+                                                }
+                                            @endphp
+                                                @if($job->salary_type == \App\Job::SALARY_TYPE_FROM)
+                                                <i class="fa-solid fa-dollar-sign"></i> {{__('From: ')}} {{$salaryTextFrom}}
+                                                {{__('million')}} ({{$job->salary_currency}})
+                                                @elseif($job->salary_type == \App\Job::SALARY_TYPE_TO)
+                                                <i class="fa-solid fa-dollar-sign"></i> {{__('Up To: ')}} {{$salaryTextTo}}
+                                                {{__('million')}} ({{$job->salary_currency}})
+                                                @elseif($job->salary_type == \App\Job::SALARY_TYPE_RANGE)
+                                                <i class="fa-solid fa-dollar-sign"></i> {{$salaryTextFrom}} - {{$salaryTextTo}}
+                                                {{__('million')}} ({{$job->salary_currency}})
+                                                @elseif($job->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
+                                                <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
+                                                @else
+                                                <i class="fa-solid fa-dollar-sign"></i> {{__('Salary Not provided')}}
+                                                @endif
+                                        </div>
+                                        <div class="navbar__link-separator" bis_skin_checked="1"></div>
+                                        <!--meta-city-->
+                                        <div class="meta-city" bis_skin_checked="1">
+                                        
+                                            {{$job->getCity('city')}}
+                                        </div>
+        
+                                    
                                     </div>
-                                    <div class="navbar__link-separator" bis_skin_checked="1"></div>
-                                    <!--meta-city-->
-                                    <div class="meta-city" bis_skin_checked="1">
-                                      
-                                        {{$job->getCity('city')}}
-                                    </div>
-    
-                                  
-                                </div>
-                              
-                                @php
-                                $datetime =   Carbon\Carbon::parse($job->created_at);
-                         $timeCurrent = Carbon\Carbon::now();
-                         $numberDate = $timeCurrent->diffInDays($datetime);
-                                $datetimeText ="";
-                         if($numberDate < 1)
-                         {
-                            $datetimeText = "Hôm Nay";
-                         }
-                         else if($numberDate < 2){
-                            $datetimeText = "Hôm Qua";
-                         }
-                         else 
-                         {
-                            $datetimeText =  $datetime->format('d-m-Y');
-                         }
-
-                  
-                         $datetime1 =   Carbon\Carbon::parse($job->applyDate);
-                         $timeCurrent = Carbon\Carbon::now();
-                         $numberDate1 = $timeCurrent->diffInDays($datetime1);
-                          $datetimeText1 ="";
-                         if($numberDate1 < 1)
-                         {
-                            $datetimeText1 = "Hôm Nay";
-                         }
-                         else if($numberDate1 < 2){
-                            $datetimeText1 = "Hôm Qua";
-                         }
-                         else 
-                         {
-                            $datetimeText1 =  $datetime1->format('d-m-Y');
-                         }
-                                @endphp
-                                <div class="info-item day-update" bis_skin_checked="1">
-                                  Ngay Đăng Tuyển: {{$datetimeText}}
-                                </div>
-
-                                <div class="info-item day-update" bis_skin_checked="1">
-                                  Ngày Nộp: {{$datetimeText1}}
-                                </div>
-                             
-                            </div>
-                            <div class="caption" bis_skin_checked="1">
                                 
+                                    @php
+                                    $datetime =   Carbon\Carbon::parse($job->created_at);
+                            $timeCurrent = Carbon\Carbon::now();
+                            $numberDate = $timeCurrent->diffInDays($datetime);
+                                    $datetimeText ="";
+                            if($numberDate < 1)
+                            {
+                                $datetimeText = "Hôm Nay";
+                            }
+                            else if($numberDate < 2){
+                                $datetimeText = "Hôm Qua";
+                            }
+                            else 
+                            {
+                                $datetimeText =  $datetime->format('d-m-Y');
+                            }
 
-                                @isset($job->industry)
-                                   <div class="welfare" bis_skin_checked="1">
-                                    <div class="box-meta" bis_skin_checked="1">
-                                        <!-- <i class="fas fa-dollar-sign"></i>  -->
-                                        <span>
-                                            <!-- Chế độ thưởng -->
-                                            {{$job->industry->industry}}
-                                        </span>
-    
+                    
+                            $datetime1 =   Carbon\Carbon::parse($job->applyDate);
+                            $timeCurrent = Carbon\Carbon::now();
+                            $numberDate1 = $timeCurrent->diffInDays($datetime1);
+                            $datetimeText1 ="";
+                            if($numberDate1 < 1)
+                            {
+                                $datetimeText1 = "Hôm Nay";
+                            }
+                            else if($numberDate1 < 2){
+                                $datetimeText1 = "Hôm Qua";
+                            }
+                            else 
+                            {
+                                $datetimeText1 =  $datetime1->format('d-m-Y');
+                            }
+                                    @endphp
+                                    <div class="info-item day-update" bis_skin_checked="1">
+                                    Ngay Đăng Tuyển: {{$datetimeText}}
+                                    </div>
+
+                                    <div class="info-item day-update" bis_skin_checked="1">
+                                    Ngày Nộp: {{$datetimeText1}}
+                                    </div>
+                                
+                                </div>
+                                <div class="caption" bis_skin_checked="1">
+                                    
+
+                                    @isset($job->industry)
+                                    <div class="welfare" bis_skin_checked="1">
+                                        <div class="box-meta" bis_skin_checked="1">
+                                            <!-- <i class="fas fa-dollar-sign"></i>  -->
+                                            <span>
+                                                <!-- Chế độ thưởng -->
+                                                {{$job->industry->industry}}
+                                            </span>
+        
+                                        </div>
+                                    </div>
+                                
+                                @endisset
+        
+                                    <div class="user-action" bis_skin_checked="1">
+                                        <a class="btn-view-details" href="javascript:void(0)" onclick ="CV_statusmodal('{{ $job->jobApplyId }}')"   status="{{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }}"></span> {{__('View Details')}}</a>
                                     </div>
                                 </div>
-                             
-                            @endisset
-    
-                                <div class="user-action" bis_skin_checked="1">
-                                    <a class="btn-view-details" href="javascript:void(0)" onclick ="CV_statusmodal('{{ $job->jobApplyId }}')"   status="{{ ($job->appliedUsers) ? __(\App\JobApply::getListStatus()[$job->status_job_apply]) : '' }}"></span> {{__('View Details')}}</a>
-                                </div>
                             </div>
+        
+                            <!-- <p>{{\Illuminate\Support\Str::limit(strip_tags($job->description), 150, '...')}}</p> -->
                         </div>
-    
-                        <!-- <p>{{\Illuminate\Support\Str::limit(strip_tags($job->description), 150, '...')}}</p> -->
-                    </div>
-                    <!-- job end -->
-                    @endif
-                    @endforeach
+                        <!-- job end -->
+                        @endif
+                        @endforeach
+                        @if(!$validJobExists)
+                        <p class="non-item">Hãy thêm những công việc mà bạn yêu thích</p>
+                        @endif
+
+
+                    @else
+                        <p class="non-item">Hãy thêm những công việc mà bạn yêu thích</p>
                     @endif
                 </div>
             </div>

@@ -8,12 +8,13 @@
       </div> -->
         <div class="swiper partnerSlider">
             <div class="swiper-wrapper">
-                @if(isset($topCompanyIds) && count($topCompanyIds))
-                @foreach($topCompanyIds as $company_id_num_jobs)
-                <?php
-                $company = App\Company::where('id', '=', $company_id_num_jobs->company_id)->active()->first();
-                if (null !== $company) { ?>
-                    <div class="swiper-slide">
+                @php 
+                $companyData = App\Company::where('is_active', 1)->get();
+                @endphp
+
+                @if(isset($companyData) && count($companyData))
+                @foreach($companyData as $company)
+                <div class="swiper-slide">
                         <div class="partner-item__box">
                             @if($company->logo)
                             <a alt="1 slide" href="{{route('company.detail', $company->slug)}}" title="{{$company->name}}">
@@ -28,7 +29,6 @@
                             <h3 class="partner-item__name">{{$company->name}}</h3>
                         </div>
                     </div>
-                <?php } ?>
                 @endforeach
                 @endif
             </div>

@@ -369,10 +369,9 @@ class CompanyController extends Controller
         $seo = $this->getCompanySEO($company);
         /*         * ************************************************** */
         $openingJob = Job::where('company_id', '=', $company ->id)
-        ->where("status",1)
-        ->notExpire()
-        ->get();
-    
+        ->whereIn("status",["1","4", "2"])
+         ->get();
+         
         return view(config('app.THEME_PATH').'.company.detail')
                         ->with('company', $company)
                         ->with('seo', $seo)

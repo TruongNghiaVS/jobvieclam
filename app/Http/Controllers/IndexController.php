@@ -56,9 +56,13 @@ class IndexController extends Controller
     public function index()
     {
        
+       
 
         $params = $this->params(request());
         $topCompanyIds = $this->getCompanyIdsAndNumJobs(4);
+       
+        $company2 = App\Company::where('is_active', 1);
+       
         $topFunctionalAreaIds = $this->getFunctionalAreaIdsAndNumJobs(32);
         $topIndustryIds = $this->getIndustryIdsFromCompanies(32);
         $topCityIds = $this->getCityIdsAndNumJobs(32);

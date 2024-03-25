@@ -37,6 +37,7 @@ trait CompanyTrait
                         ->get();
     }
 
+
     private function getIndustryIdsFromCompanies($limit = 16)
     {
         $companies = Company::select('industry_id')->active()->whereHas('jobs', function ($query) {

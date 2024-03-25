@@ -58,9 +58,10 @@ class EmployerController extends Controller
     public function index()
     {
        
-       
+     
         $params = $this->params(request());
         $topCompanyIds = $this->getCompanyIdsAndNumJobs(4);
+    
         $topFunctionalAreaIds = $this->getFunctionalAreaIdsAndNumJobs(32);
         $topIndustryIds = $this->getIndustryIdsFromCompanies(32);
         $topCityIds = $this->getCityIdsAndNumJobs(32);

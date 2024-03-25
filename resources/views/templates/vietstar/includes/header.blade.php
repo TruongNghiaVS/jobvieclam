@@ -206,7 +206,7 @@
 </nav>
 
 <div class="modal fade " id="customModal-success" tabindex="-1" role="dialog" aria-labelledby="customModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-dialog-centered " role="document">
         <div class="modal-content modal_status">
             <div class="modal-header ">
                 <h5 class="modal-title text-center fs-18px" id="customModalLabel">Modal title</h5>
@@ -215,7 +215,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <img src="{{url('/')}}/admin_assets/success.png" alt="">
+                <img src="{{url('/')}}/admin_assets/success-img.png" alt="">
                  <p class="text-center fs-18px"></p>
             </div>
             <div class="modal-footer">
@@ -228,7 +228,7 @@
 
 
 <div class="modal fade modal_status" id="customModal-fail" tabindex="-1" role="dialog" aria-labelledby="customModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content modal_status">
             <div class="modal-header">
                 <h5 class="modal-title" id="customModalLabel">Modal title</h5>
@@ -237,7 +237,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <img src="{{url('/')}}/admin_assets/fail-icon.png" alt="">
+                <img src="{{url('/')}}/admin_assets/fail-img.png" alt="">
                 <p class="text-center fs-18px"></p>
             </div>
             <div class="modal-footer">

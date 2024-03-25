@@ -1,3 +1,10 @@
+.non-item {
+    color: #6f7882;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 500;
+    line-height: 16px;
+}
 .user-wrapper .content {
     padding: 40px 80px;
     width: 100%;

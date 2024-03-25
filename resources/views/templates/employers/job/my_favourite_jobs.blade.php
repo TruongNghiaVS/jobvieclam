@@ -109,6 +109,10 @@
                 <!-- job end -->
                 @endif
                 @endforeach
+
+                @elseif
+
+                <p>Không có công việc yêu thích</p>
                 @endif
             </div>
         </div>

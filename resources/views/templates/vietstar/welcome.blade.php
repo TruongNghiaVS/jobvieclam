@@ -234,9 +234,9 @@ $(document).ready(function() {
 
 
                     setTimeout(()=>{
-                        $("#contact_email_success").modal("hide")
+                        $("#customModal-success").modal("hide")
 
-                    },3000)
+                    },1500)
                     
                 })
                 .fail(function(jqXHR, textStatus){

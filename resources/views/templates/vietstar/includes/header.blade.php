@@ -215,7 +215,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <img src="{{url('/')}}/admin_assets/success.png" alt="">
+                <img src="{{url('/')}}/admin_assets/success-img.png" alt="">
                  <p class="text-center fs-18px"></p>
             </div>
             <div class="modal-footer">
@@ -237,7 +237,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <img src="{{url('/')}}/admin_assets/fail-icon.png" alt="">
+                <img src="{{url('/')}}/admin_assets/fail-img.png" alt="">
                 <p class="text-center fs-18px"></p>
             </div>
             <div class="modal-footer">

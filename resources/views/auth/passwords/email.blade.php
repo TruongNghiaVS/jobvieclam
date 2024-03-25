@@ -269,11 +269,15 @@
                                                 <p>Email: <a href="#" target="_blank">support@jobvieclam.com</a></p>
                                             </div>
                                         </div>`)
+                    setTimeout(() => {
+                       
+                        $('#customModal-success').modal('hide')
+
+                        window.location.href = "/";
+                    }, 1500);
                 })
                 .fail(function(jqXHR, textStatus){
                     hideSpinner();
-                    showModal_Fail("Thông báo","Yêu cầu gửi thất bại","")
-
                 })
                 .always(function(jqXHR, textStatus) {
                 

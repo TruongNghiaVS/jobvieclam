@@ -157,10 +157,10 @@
                     @endforeach
 
                     @if(!$validJobExists)
-                        <p class="non-item">Hãy thêm những công việc mà bạn yêu thích</p>
+                        <p class="non-item text-primary">Hãy thêm những công việc mà bạn yêu thích</p>
                     @endif
                 @else
-                    <p class="non-item">Hãy thêm những công việc mà bạn yêu thích</p>
+                    <p class="non-item text-primary">Hãy thêm những công việc mà bạn yêu thích</p>
                 @endif
             </div>
         </div>

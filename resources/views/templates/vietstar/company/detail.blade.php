@@ -138,7 +138,7 @@
                                         @if(isset($company->description))
                                             {!! $company->description !!}
                                         @else
-                                            <p class="non-item">Chưa có mô tả cho công ty</p>
+                                            <p class="non-item text-primary">Chưa có mô tả cho công ty</p>
                                         @endif
 
                                     </div>
@@ -157,9 +157,9 @@
                         <div class="col-lg-4 col-md-12 col-sm-12 ">  
                             <div class="widget-public-profile widget-about"> 
                         
-                            <h4 class="title">VIỆC LÀM ĐANG TUYỂN</h4>
-                                <div class="company-jobs-wapper jobs-side-list">
-                                    @if ($openingJob !== null && count($openingJob) > 0)
+                                <h4 class="title">VIỆC LÀM ĐANG TUYỂN</h4>
+                                @if ($openingJob !== null && count($openingJob) > 0)
+                                    <div class="company-jobs-wapper jobs-side-list">
                                             @foreach ($openingJob as $cjob)
                                                 <?php
                                                     $functionarea = $cjob->functionalArea;
@@ -284,10 +284,10 @@
                                                     </div>
                                                 
                                             @endforeach
-                                    @else
-                                        <p class="non-item">Chưa có việc làm</p>
-                                    @endif                                
-                                </div>
+                                        </div>
+                                @else
+                                    <p class="non-item text-primary">Chưa có việc làm</p>
+                                @endif                                
                             </div>
                         </div>
                         <!-- Công ty liên quan -->

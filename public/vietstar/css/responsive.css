@@ -218,6 +218,12 @@
     width: 100%;
     margin-bottom: 3px;
   }
+  .item-job.related-jobs-item .jobinfo .box-meta {
+    flex-direction: column;
+  }
+  .item-job.related-jobs-item .jobinfo .box-meta .navbar__link-separator{
+    display: none;
+  }
 
   .jobs-side-list .item-job .jobinfo .info .box-meta .rank-salary span {
     display: flex;

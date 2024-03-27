@@ -654,149 +654,149 @@ $company = $job->getCompany();
             </div>
             <div class="col-lg-4 col-md-12 col-sm-12 ">
                 <section class="related-jobs ">
-                @php 
-                $relatedJobcheck = false;
-                if (!empty($relatedJobs) && is_array($relatedJobs)){ 
-                    $relatedJobcheck =  true;
+                    @php 
+                    $relatedJobcheck = false;
+                    if (!empty($relatedJobs) && is_array($relatedJobs)){ 
+                        $relatedJobcheck =  true;
+                    
+                    }
                 
-                }
-               
-                @endphp
+                    @endphp
 
-                @if ($relatedJobcheck) 
+                    @if ($relatedJobcheck) 
 
-                    <div class="related-jobs-title">
-                        <p>Các công việc tương tự</p>
-                    </div>
-                    <div class="related-jobs-wapper jobs-side-list">
-                                @foreach ($relatedJobs as $jobitem)
-                                @php
-                                    
-                                        $functionarea = $jobitem->functionalArea;
-                                        $city = $jobitem->city ? $jobitem->city->city :" ";
-                                        $from = round($jobitem->salary_from/1000000,0);
-                                        $to = round($jobitem->salary_to/1000000,0);
-                                                            
-                                    
-                                @endphp
-                                <div class="related-jobs-item item-job mb-3">
-                                <div class="logo-company">
-                                    @if($jobitem->logo)
-                                    <a href="#"
-                                        title="{{$jobitem->getCompany('name')}}" class="pic">
-                                        <img src="{{ asset('company_logos/'.$jobitem->logo) }}"
-                                            style="max-width:140px; max-height:140px;" alt="{{$jobitem->getCompany('name')}}"
-                                            title="{{$jobitem->getCompany('name')}}">
-                                    </a>
-                                    @else
-
-                                    <a href="#"
-                                        title="{{$jobitem->getCompany('name')}}" class="pic">
-                                        {{$company->printCompanyImage()}}
-                                    </a>
-                                    @endif
-                                </div>
-
-                                <div class="jobinfo">
-                                    <div class="info" bis_skin_checked="1">
-                                        <!-- Title  Start-->
-                                        <div class="info-item job-title-box" bis_skin_checked="1">
-                                            <div class="job-title" bis_skin_checked="1">
-                                                <span>Mới</span>
-                                                <h3 class="job-title-name"><a
-                                                        href="{{url('/')}}/viec-lam/{{ $jobitem->slug }}"
-                                                        title="{{ $jobitem->title }}">{{ $jobitem->title }}</a></h3>
-                                            </div>
-                                            @if(Auth::check() && Auth::user()->isFavouriteJob($jobitem->slug))
-                                            <a class="save-job active"
-                                                href="{{url('/')}}/add-to-favourite-job/{{ $jobitem->slug }}"><i
-                                                    class="far fa-heart"></i>
+                        <div class="related-jobs-title">
+                            <p>Các công việc tương tự</p>
+                        </div>
+                        <div class="related-jobs-wapper jobs-side-list">
+                                    @foreach ($relatedJobs as $jobitem)
+                                    @php
+                                        
+                                            $functionarea = $jobitem->functionalArea;
+                                            $city = $jobitem->city ? $jobitem->city->city :" ";
+                                            $from = round($jobitem->salary_from/1000000,0);
+                                            $to = round($jobitem->salary_to/1000000,0);
+                                                                
+                                        
+                                    @endphp
+                                    <div class="related-jobs-item item-job mb-3">
+                                        <div class="logo-company">
+                                            @if($jobitem->logo)
+                                            <a href="#"
+                                                title="{{$jobitem->getCompany('name')}}" class="pic">
+                                                <img src="{{ asset('company_logos/'.$jobitem->logo) }}"
+                                                    style="max-width:140px; max-height:140px;" alt="{{$jobitem->getCompany('name')}}"
+                                                    title="{{$jobitem->getCompany('name')}}">
                                             </a>
                                             @else
-                                            <a class="save-job"
-                                                href="{{url('/')}}/add-to-favourite-job/{{ $jobitem->slug }}"><i
-                                                    class="far fa-heart"></i>
+
+                                            <a href="#"
+                                                title="{{$jobitem->getCompany('name')}}" class="pic">
+                                                {{$company->printCompanyImage()}}
                                             </a>
                                             @endif
                                         </div>
-                                        <!-- Title  End-->
 
-                                        <!-- companyName Start-->
-                                        <div class="info-item companyName" bis_skin_checked="1"><a
-                                                href="{{url('/')}}/cong-ty/{{ $jobitem->getCompany('slug') }}"
-                                                title="{{ $jobitem->getCompany('name') }}n">{{$jobitem->getCompany('name') }}</a>
-                                        </div>
-                                        <!-- companyName End-->
-                                        <!--rank-salary and place Start-->
-                                        <div class="info-item box-meta" bis_skin_checked="1">
-                                            <div class="rank-salary" bis_skin_checked="1">
-                                            
+                                        <div class="jobinfo">
+                                            <div class="info" bis_skin_checked="1">
+                                                <!-- Title  Start-->
+                                                <div class="info-item job-title-box" bis_skin_checked="1">
+                                                    <div class="job-title" bis_skin_checked="1">
+                                                        <span>Mới</span>
+                                                        <h3 class="job-title-name"><a
+                                                                href="{{url('/')}}/viec-lam/{{ $jobitem->slug }}"
+                                                                title="{{ $jobitem->title }}">{{ $jobitem->title }}</a></h3>
+                                                    </div>
+                                                    @if(Auth::check() && Auth::user()->isFavouriteJob($jobitem->slug))
+                                                    <a class="save-job active"
+                                                        href="{{url('/')}}/add-to-favourite-job/{{ $jobitem->slug }}"><i
+                                                            class="far fa-heart"></i>
+                                                    </a>
+                                                    @else
+                                                    <a class="save-job"
+                                                        href="{{url('/')}}/add-to-favourite-job/{{ $jobitem->slug }}"><i
+                                                            class="far fa-heart"></i>
+                                                    </a>
+                                                    @endif
+                                                </div>
+                                                <!-- Title  End-->
+
+                                                <!-- companyName Start-->
+                                                <div class="info-item companyName" bis_skin_checked="1"><a
+                                                        href="{{url('/')}}/cong-ty/{{ $jobitem->getCompany('slug') }}"
+                                                        title="{{ $jobitem->getCompany('name') }}n">{{$jobitem->getCompany('name') }}</a>
+                                                </div>
+                                                <!-- companyName End-->
+                                                <!--rank-salary and place Start-->
+                                                <div class="info-item box-meta" bis_skin_checked="1">
+                                                    <div class="rank-salary" bis_skin_checked="1">
                                                     
-                                                        @if($jobitem->salary_type == \App\Job::SALARY_TYPE_FROM)
-                                                        {{__('From: ')}} {{$from}}
-                                                        {{__('million')}} ({{$jobitem->salary_currency}})
-                                                        @elseif($jobitem->salary_type == \App\Job::SALARY_TYPE_TO)
-                                                        {{__('Up To: ')}} {{$to}}
-                                                        {{__('million')}} ({{$jobitem->salary_currency}})
-                                                        @elseif($jobitem->salary_type == \App\Job::SALARY_TYPE_RANGE)
-                                                        {{$from}} - {{$to}}
-                                                        {{__('million')}} ({{$jobitem->salary_currency}})
-                                                        @elseif($jobitem->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
-                                                        <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
-                                                        @else
-                                                        {{__('Salary Not provided')}}
-                                                        @endif
+                                                            
+                                                                @if($jobitem->salary_type == \App\Job::SALARY_TYPE_FROM)
+                                                                {{__('From: ')}} {{$from}}
+                                                                {{__('million')}} ({{$jobitem->salary_currency}})
+                                                                @elseif($jobitem->salary_type == \App\Job::SALARY_TYPE_TO)
+                                                                {{__('Up To: ')}} {{$to}}
+                                                                {{__('million')}} ({{$jobitem->salary_currency}})
+                                                                @elseif($jobitem->salary_type == \App\Job::SALARY_TYPE_RANGE)
+                                                                {{$from}} - {{$to}}
+                                                                {{__('million')}} ({{$jobitem->salary_currency}})
+                                                                @elseif($jobitem->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
+                                                                <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
+                                                                @else
+                                                                {{__('Salary Not provided')}}
+                                                                @endif
 
+                                                    </div>
+                                                
+                                                    <!--meta-city-->
+                                                    <div class="navbar__link-separator" bis_skin_checked="1"></div>
+                                                    
+                                                    <div class="meta-city" bis_skin_checked="1">
+                                                        {{$city}}
+                                                
+                                                    </div>
+
+
+                                                    <!-- Bán thời gian -->
+                                                </div>
+                                                <!--Rank-salary and place End-->
+
+                                                <!--Day update and place Start-->
+                                                <div class="info-item day-update" bis_skin_checked="1">
+                                                    Hạn Nộp: {{$jobitem->expiry_date->format('d/m/Y')}}  
+                                                </div>
+                                                <!--Day update and place End-->
+
+                                                <!-- <div class="short-description">M&amp;ocirc; tả c&amp;ocirc;ng việc</div> -->
                                             </div>
-                                        
-                                            <!--meta-city-->
-                                    
-                                            
-                                            <div class="meta-city" bis_skin_checked="1">
-                                                {{$city}}
-                                        
+                                            <div class="caption" bis_skin_checked="1">
+                                                <div class="welfare" bis_skin_checked="1">
+                                                @if($functionarea)
+
+                                                    <div class="box-meta" bis_skin_checked="1">
+                                                        <!-- <i class="fas fa-dollar-sign"></i>  -->
+                                                        <span>
+                                                            <!-- Chế độ thưởng -->
+                                                            {{$functionarea->functional_area }}
+                                                        </span>
+
+                                                    </div>
+                                                    @endif
+                                                    
+
+                                                </div>
+
+                                                <div class="user-actio" bis_skin_checked="1">
+
+                                                </div>
                                             </div>
-
-
-                                            <!-- Bán thời gian -->
                                         </div>
-                                        <!--Rank-salary and place End-->
-
-                                        <!--Day update and place Start-->
-                                        <div class="info-item day-update" bis_skin_checked="1">
-                                            Hạn Nộp: {{$jobitem->expiry_date->format('d/m/Y')}}  
-                                        </div>
-                                        <!--Day update and place End-->
-
-                                        <!-- <div class="short-description">M&amp;ocirc; tả c&amp;ocirc;ng việc</div> -->
                                     </div>
-                                    <div class="caption" bis_skin_checked="1">
-                                        <div class="welfare" bis_skin_checked="1">
-                                        @if($functionarea)
 
-                                            <div class="box-meta" bis_skin_checked="1">
-                                                <!-- <i class="fas fa-dollar-sign"></i>  -->
-                                                <span>
-                                                    <!-- Chế độ thưởng -->
-                                                    {{$functionarea->functional_area }}
-                                                </span>
-
-                                            </div>
-                                            @endif
-                                            
-
-                                        </div>
-
-                                        <div class="user-actio" bis_skin_checked="1">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                                @endforeach
-                    </div>
-                @endif
+                                    @endforeach
+                        </div>
+                    @endif
                 </section>
             </div>
         
@@ -917,7 +917,7 @@ $company = $job->getCompany();
 .item-job.related-jobs-item .jobinfo .info .job-title-name a {
     font-style: normal;
     font-weight: 700;
-    font-size: 19px;
+    font-size: 14px;
     line-height: 1.3;
     color: var(--text-main);
     -webkit-line-clamp: 2;
@@ -927,16 +927,45 @@ $company = $job->getCompany();
 }
 .item-job.related-jobs-item .jobinfo .box-meta {
     position: relative;
-    font-size: 15px;
-    line-height: 15px;
+    font-size: 13px;
+    line-height: 13px;
     color: var(--sub-text);
     text-decoration: none;
     display: flex;
-    flex-direction: column;
+ 
+}
+
+
+.item-job.related-jobs-item .jobinfo .info .companyName a {
+    font-size: 13px;
+}
+
+
+.item-job.related-jobs-item .jobinfo .info .box-meta .rank-salary {
+
+    font-size: 13px;
+}
+
+.item-job.related-jobs-item .jobinfo .info .box-meta .meta-city {
+    font-size: 13px;
+}
+
+
+.item-job.related-jobs-item .navbar__link-separator {
+    height: 14px;
+}
+
+.item-job.related-jobs-item .jobinfo .info .day-update {
+    font-size: 13px;
 }
 .item-job.related-jobs-item .jobinfo .box-meta div {
     margin-bottom: 5px;
 }
+.jobs-side-list .item-job.related-jobs-item .jobinfo .info .job-title-box .save-job {
+    width: 30px;
+    height: 30px;
+}
+
 </style>
 @endpush
 @push('scripts')

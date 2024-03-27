@@ -147,7 +147,7 @@
                                         </div>
                                 </div>
                             @endif
-                              
+                            
                         </div>
                         <div class="col-lg-4 col-md-12 col-sm-12 ">  
                             <div class="widget-public-profile widget-about"> 
@@ -281,6 +281,139 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Công ty liên quan -->
+                        <div class="col-12">
+                            <div class="widget-public-profile widget-about"> 
+                                <h4 class="title">CÁC CÔNG TY NỔI BẬT</h4>
+                                <div class="swiper partnerSlider swiper-initialized swiper-horizontal swiper-pointer-events">
+            <div class="swiper-wrapper" id="swiper-wrapper-64a841582f2e843b" aria-live="off" style="transform: translate3d(-1936px, 0px, 0px); transition-duration: 0ms;"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="2" role="group" aria-label="3 / 7" style="width: 232px; margin-right: 10px;">
+                        <div class="partner-item__box">
+                                                        <a alt="1 slide" href="https://jobvieclam.com/cong-ty/cong-ty-tnhh-concentrix-service-vietnam-182" title="Công ty TNHH Concentrix Service Vietnam">
+                                <img src="https://jobvieclam.com/company_logos/cong-ty-tnhh-concentrix-service-vietnam-1710919659-829.png" class="partner-item__img" alt="1 slide">
+                            </a>
+                                                        <h3 class="partner-item__name">Công ty TNHH Concentrix Service Vietnam</h3>
+                        </div>
+                    </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="3" role="group" aria-label="4 / 7" style="width: 232px; margin-right: 10px;">
+                        <div class="partner-item__box">
+                                                        <a alt="1 slide" href="https://jobvieclam.com/cong-ty/cong-ty-tnhh-tu-van-va-dich-vu-hung-cuong-183" title="Công Ty TNHH Tư Vấn Và Dịch Vụ Hùng Cường">
+                                <img src="https://jobvieclam.com/company_logos/cong-ty-tnhh-tu-van-va-dich-vu-hung-cuong-1710920301-208.jpg" class="partner-item__img" alt="1 slide">
+                            </a>
+                                                        <h3 class="partner-item__name">Công Ty TNHH Tư Vấn Và Dịch Vụ Hùng Cường</h3>
+                        </div>
+                    </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="4" role="group" aria-label="5 / 7" style="width: 232px; margin-right: 10px;">
+                        <div class="partner-item__box">
+                                                        <a alt="1 slide" href="https://jobvieclam.com/cong-ty/cong-ty-co-phan-bpo-mat-bao-184" title="Công Ty Cổ Phần BPO Mắt Bảo">
+                                <img src="https://jobvieclam.com/company_logos/cong-ty-co-phan-bpo-mat-bao-1710920753-929.jpg" class="partner-item__img" alt="1 slide">
+                            </a>
+                                                        <h3 class="partner-item__name">Công Ty Cổ Phần BPO Mắt Bảo</h3>
+                        </div>
+                    </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="5" role="group" aria-label="6 / 7" style="width: 232px; margin-right: 10px;">
+                        <div class="partner-item__box">
+                                                        <a alt="1 slide" href="https://jobvieclam.com/cong-ty/trung-tam-anh-ngu-apollo-english-185" title="Trung tâm Anh ngữ Apollo English">
+                                <img src="https://jobvieclam.com/company_logos/trung-tam-anh-ngu-apollo-english-1710921682-857.png" class="partner-item__img" alt="1 slide">
+                            </a>
+                                                        <h3 class="partner-item__name">Trung tâm Anh ngữ Apollo English</h3>
+                        </div>
+                    </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="6" role="group" aria-label="7 / 7" style="width: 232px; margin-right: 10px;">
+                        <div class="partner-item__box">
+                            
+                            <a alt="1 slide" href="https://jobvieclam.com/cong-ty/cong-ty-b-188" title="Công ty B">
+                                <img src="https://jobvieclam.com/admin_assets/no-company.png" class="partner-item__img" alt="1 slide">
+                            </a>
+                                                        <h3 class="partner-item__name">Công ty B</h3>
+                        </div>
+                    </div>
+                
+                                                <div class="swiper-slide" data-swiper-slide-index="0" role="group" aria-label="1 / 7" style="width: 232px; margin-right: 10px;">
+                        <div class="partner-item__box">
+                                                        <a alt="1 slide" href="https://jobvieclam.com/cong-ty/cong-ty-co-phan-tap-doan-vietstar-178" title="Công Ty Cổ Phần Tập Đoàn Vietstar">
+                                <img src="https://jobvieclam.com/company_logos/-1710745917-344.png" class="partner-item__img" alt="1 slide">
+                            </a>
+                                                        <h3 class="partner-item__name">Công Ty Cổ Phần Tập Đoàn Vietstar</h3>
+                        </div>
+                    </div>
+                                <div class="swiper-slide" data-swiper-slide-index="1" role="group" aria-label="2 / 7" style="width: 232px; margin-right: 10px;">
+                        <div class="partner-item__box">
+                                                        <a alt="1 slide" href="https://jobvieclam.com/cong-ty/cong-ty-tnhh-transcosmos-viet-nam-181" title="CÔNG TY TNHH TRANSCOSMOS VIỆT NAM">
+                                <img src="https://jobvieclam.com/company_logos/cong-ty-tnhh-transcosmos-viet-nam-1710921997-733.png" class="partner-item__img" alt="1 slide">
+                            </a>
+                                                        <h3 class="partner-item__name">CÔNG TY TNHH TRANSCOSMOS VIỆT NAM</h3>
+                        </div>
+                    </div>
+                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="2" role="group" aria-label="3 / 7" style="width: 232px; margin-right: 10px;">
+                        <div class="partner-item__box">
+                                                        <a alt="1 slide" href="https://jobvieclam.com/cong-ty/cong-ty-tnhh-concentrix-service-vietnam-182" title="Công ty TNHH Concentrix Service Vietnam">
+                                <img src="https://jobvieclam.com/company_logos/cong-ty-tnhh-concentrix-service-vietnam-1710919659-829.png" class="partner-item__img" alt="1 slide">
+                            </a>
+                                                        <h3 class="partner-item__name">Công ty TNHH Concentrix Service Vietnam</h3>
+                        </div>
+                    </div>
+                                <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="3" role="group" aria-label="4 / 7" style="width: 232px; margin-right: 10px;">
+                        <div class="partner-item__box">
+                                                        <a alt="1 slide" href="https://jobvieclam.com/cong-ty/cong-ty-tnhh-tu-van-va-dich-vu-hung-cuong-183" title="Công Ty TNHH Tư Vấn Và Dịch Vụ Hùng Cường">
+                                <img src="https://jobvieclam.com/company_logos/cong-ty-tnhh-tu-van-va-dich-vu-hung-cuong-1710920301-208.jpg" class="partner-item__img" alt="1 slide">
+                            </a>
+                                                        <h3 class="partner-item__name">Công Ty TNHH Tư Vấn Và Dịch Vụ Hùng Cường</h3>
+                        </div>
+                    </div>
+                                <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="4" role="group" aria-label="5 / 7" style="width: 232px; margin-right: 10px;">
+                        <div class="partner-item__box">
+                                                        <a alt="1 slide" href="https://jobvieclam.com/cong-ty/cong-ty-co-phan-bpo-mat-bao-184" title="Công Ty Cổ Phần BPO Mắt Bảo">
+                                <img src="https://jobvieclam.com/company_logos/cong-ty-co-phan-bpo-mat-bao-1710920753-929.jpg" class="partner-item__img" alt="1 slide">
+                            </a>
+                                                        <h3 class="partner-item__name">Công Ty Cổ Phần BPO Mắt Bảo</h3>
+                        </div>
+                    </div>
+                                <div class="swiper-slide" data-swiper-slide-index="5" role="group" aria-label="6 / 7" style="width: 232px; margin-right: 10px;">
+                        <div class="partner-item__box">
+                                                        <a alt="1 slide" href="https://jobvieclam.com/cong-ty/trung-tam-anh-ngu-apollo-english-185" title="Trung tâm Anh ngữ Apollo English">
+                                <img src="https://jobvieclam.com/company_logos/trung-tam-anh-ngu-apollo-english-1710921682-857.png" class="partner-item__img" alt="1 slide">
+                            </a>
+                                                        <h3 class="partner-item__name">Trung tâm Anh ngữ Apollo English</h3>
+                        </div>
+                    </div>
+                                
+                                            <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group" aria-label="1 / 7" style="width: 232px; margin-right: 10px;">
+                        <div class="partner-item__box">
+                                                        <a alt="1 slide" href="https://jobvieclam.com/cong-ty/cong-ty-co-phan-tap-doan-vietstar-178" title="Công Ty Cổ Phần Tập Đoàn Vietstar">
+                                <img src="https://jobvieclam.com/company_logos/-1710745917-344.png" class="partner-item__img" alt="1 slide">
+                            </a>
+                                                        <h3 class="partner-item__name">Công Ty Cổ Phần Tập Đoàn Vietstar</h3>
+                        </div>
+                    </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1" role="group" aria-label="2 / 7" style="width: 232px; margin-right: 10px;">
+                        <div class="partner-item__box">
+                                                        <a alt="1 slide" href="https://jobvieclam.com/cong-ty/cong-ty-tnhh-transcosmos-viet-nam-181" title="CÔNG TY TNHH TRANSCOSMOS VIỆT NAM">
+                                <img src="https://jobvieclam.com/company_logos/cong-ty-tnhh-transcosmos-viet-nam-1710921997-733.png" class="partner-item__img" alt="1 slide">
+                            </a>
+                                                        <h3 class="partner-item__name">CÔNG TY TNHH TRANSCOSMOS VIỆT NAM</h3>
+                        </div>
+                    </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="2" role="group" aria-label="3 / 7" style="width: 232px; margin-right: 10px;">
+                        <div class="partner-item__box">
+                                                        <a alt="1 slide" href="https://jobvieclam.com/cong-ty/cong-ty-tnhh-concentrix-service-vietnam-182" title="Công ty TNHH Concentrix Service Vietnam">
+                                <img src="https://jobvieclam.com/company_logos/cong-ty-tnhh-concentrix-service-vietnam-1710919659-829.png" class="partner-item__img" alt="1 slide">
+                            </a>
+                                                        <h3 class="partner-item__name">Công ty TNHH Concentrix Service Vietnam</h3>
+                        </div>
+                    </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="3" role="group" aria-label="4 / 7" style="width: 232px; margin-right: 10px;">
+                        <div class="partner-item__box">
+                                                        <a alt="1 slide" href="https://jobvieclam.com/cong-ty/cong-ty-tnhh-tu-van-va-dich-vu-hung-cuong-183" title="Công Ty TNHH Tư Vấn Và Dịch Vụ Hùng Cường">
+                                <img src="https://jobvieclam.com/company_logos/cong-ty-tnhh-tu-van-va-dich-vu-hung-cuong-1710920301-208.jpg" class="partner-item__img" alt="1 slide">
+                            </a>
+                                                        <h3 class="partner-item__name">Công Ty TNHH Tư Vấn Và Dịch Vụ Hùng Cường</h3>
+                        </div>
+                    </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="4" role="group" aria-label="5 / 7" style="width: 232px; margin-right: 10px;">
+                        <div class="partner-item__box">
+                                                        <a alt="1 slide" href="https://jobvieclam.com/cong-ty/cong-ty-co-phan-bpo-mat-bao-184" title="Công Ty Cổ Phần BPO Mắt Bảo">
+                                <img src="https://jobvieclam.com/company_logos/cong-ty-co-phan-bpo-mat-bao-1710920753-929.jpg" class="partner-item__img" alt="1 slide">
+                            </a>
+                                                        <h3 class="partner-item__name">Công Ty Cổ Phần BPO Mắt Bảo</h3>
+                        </div>
+                    </div></div>
+            <div class="swiper-pagination"></div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                            </div>
+                        </div>
+                        <!-- End Công ty liên quan -->
                     </div>
                 </section>
             </div>

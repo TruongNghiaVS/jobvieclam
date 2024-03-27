@@ -338,6 +338,62 @@
         max-width: calc(100% - 100px);
         width: 100%;
     }
+
+    .company-jobs-item.item-job.mb-3 .jobinfo .info .job-title-name a {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.3;
+        color: var(--text-main);
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+    }
+    .company-jobs-item.item-job.mb-3 .jobinfo .box-meta {
+        position: relative;
+        font-size: 13px;
+        line-height: 13px;
+        color: var(--sub-text);
+        text-decoration: none;
+        display: flex;
+    
+    }
+
+
+    .company-jobs-item.item-job.mb-3 .jobinfo .info .companyName a {
+        font-size: 13px;
+    }
+
+
+    .company-jobs-item.item-job.mb-3 .jobinfo .info .box-meta .rank-salary {
+
+        font-size: 13px;
+    }
+
+    .company-jobs-item.item-job.mb-3 .jobinfo .info .box-meta .meta-city {
+        font-size: 13px;
+    }
+
+
+    .company-jobs-item.item-job.mb-3 .navbar__link-separator {
+        height: 14px;
+    }
+
+    .company-jobs-item.item-job.mb-3 .jobinfo .info .day-update {
+        font-size: 13px;
+    }
+    .company-jobs-item.item-job.mb-3 .jobinfo .box-meta div {
+        margin-bottom: 5px;
+    }
+    .jobs-side-list .company-jobs-item.item-job.mb-3 .jobinfo .info .job-title-box .save-job {
+        width: 30px;
+        height: 30px;
+    }
+
+
+
+
 </style>
 
 @endpush

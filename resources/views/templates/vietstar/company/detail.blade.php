@@ -286,7 +286,10 @@
                                             @endforeach
                                         </div>
                                 @else
-                                    <p class="non-item text-primary">Chưa có việc làm</p>
+                                    <div class="d-flex justify-content-center flex-column align-items-center">
+                                        <img src="{{url('/')}}/admin_assets/no-job.png" alt="None suitable job" width="30%">
+                                        <p class="non-item text-primary mt-3">Chưa có việc làm</p>
+                                    </div>
                                 @endif                                
                             </div>
                         </div>

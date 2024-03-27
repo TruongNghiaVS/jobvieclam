@@ -212,7 +212,10 @@
     align-items: start; 
     
 }
-
+  .company-map iframe 
+  {
+    max-height: 250px;
+  }
   .jobs-side-list .item-job .jobinfo .info .companyName a {
     font-size: 14px;
     width: 100%;

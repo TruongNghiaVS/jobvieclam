@@ -645,7 +645,7 @@ $company = $job->getCompany();
 
                                     {!!$company->map!!}
                                     
-                                </div>
+                            </div>
                             </div>
                     </section>
                         

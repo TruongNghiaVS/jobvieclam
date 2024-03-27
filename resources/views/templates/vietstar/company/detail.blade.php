@@ -30,7 +30,7 @@
     @endif
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-md-12 col-sm-12 ">
+            <div class="col-lg-12 col-md-12 col-sm-12 ">
                 <section class="section-company-profile">
                     <div class="container-hm">
                         <div class="row">
@@ -130,151 +130,161 @@
                
                 <section class="section-company-profile-detail">
                     <div class="row">
-                        <div class="col-lg-12 col-md-12">
+                        <div class="col-lg-8 col-md-12 col-sm-12 ">
                             <div class="widget-public-profile widget-about">
                                     <h4 class="title">{{__('About Company')}}</h4>
 
                                     <div class="about-company">
                                         {!! $company->description !!}
                                     </div>
+                            </div>
+                            @if(isset($company->map))
+                                <div class="widget-public-profile widget-about">
+                                        <h4 class="title">Map</h4>
+
+                                        <div class="company-map">
+                                            {!!$company->map!!}
+                                        </div>
                                 </div>
+                            @endif
                               
                         </div>
-                </section>
-            </div>
-            <div class="col-lg-4 col-md-12 col-sm-12 ">
-                        <div class="related-jobs-title">
-                            <p>Các công việc tương tự</p>
-                        </div>
-                        <div class="company-jobs-wapper jobs-side-list">
-                                    @foreach ($openingJob as $cjob)
-                                    <?php
-                                        $functionarea = $cjob->functionalArea;
-                                        
-                                        $city = $cjob->city ? $cjob->city->city :" ";
-                                        $from = round($cjob->salary_from/1000000,0);
-                                        $to = round($cjob->salary_to/1000000,0);
-                                    ?>
-                                        <div class="company-jobs-item item-job mb-3">
-                                            <div class="logo-company">
-                                                @if($cjob->logo)
-                                                <a href="#"
-                                                    title="{{$cjob->getCompany('name')}}" class="pic">
-                                                    <img src="{{ asset('company_logos/'.$cjob->logo) }}"
-                                                        style="max-width:140px; max-height:140px;" alt="{{$cjob->getCompany('name')}}"
-                                                        title="{{$cjob->getCompany('name')}}">
-                                                </a>
-                                                @else
-
-                                                <a href="#"
-                                                    title="{{$cjob->getCompany('name')}}" class="pic">
-                                                    {{$company->printCompanyImage()}}
-                                                </a>
-                                                @endif
-                                            </div>
-
-                                            <div class="jobinfo">
-                                                <div class="info" bis_skin_checked="1">
-                                                    <!-- Title  Start-->
-                                                    <div class="info-item job-title-box" bis_skin_checked="1">
-                                                        <div class="job-title" bis_skin_checked="1">
-                                                            <span>Mới</span>
-                                                            <h3 class="job-title-name"><a
-                                                                    href="{{url('/')}}/viec-lam/{{ $cjob->slug }}"
-                                                                    title="{{ $cjob->title }}">{{ $cjob->title }}</a></h3>
-                                                        </div>
-                                                        @if(Auth::check() && Auth::user()->isFavouriteJob($cjob->slug))
-                                                        <a class="save-job active"
-                                                            href="{{url('/')}}/add-to-favourite-job/{{ $cjob->slug }}"><i
-                                                                class="far fa-heart"></i>
+                        <div class="col-lg-4 col-md-12 col-sm-12 ">  
+                            <div class="widget-public-profile widget-about"> 
+                        
+                            <h4 class="title">VIỆC LÀM ĐANG TUYỂN</h4>
+                                <div class="company-jobs-wapper jobs-side-list">
+                                        @foreach ($openingJob as $cjob)
+                                            <?php
+                                                $functionarea = $cjob->functionalArea;
+                                                
+                                                $city = $cjob->city ? $cjob->city->city :" ";
+                                                $from = round($cjob->salary_from/1000000,0);
+                                                $to = round($cjob->salary_to/1000000,0);
+                                            ?>
+                                                <div class="company-jobs-item item-job mb-3">
+                                                    <div class="logo-company">
+                                                        @if($cjob->logo)
+                                                        <a href="#"
+                                                            title="{{$cjob->getCompany('name')}}" class="pic">
+                                                            <img src="{{ asset('company_logos/'.$cjob->logo) }}"
+                                                                style="max-width:140px; max-height:140px;" alt="{{$cjob->getCompany('name')}}"
+                                                                title="{{$cjob->getCompany('name')}}">
                                                         </a>
                                                         @else
-                                                        <a class="save-job"
-                                                            href="{{url('/')}}/add-to-favourite-job/{{ $cjob->slug }}"><i
-                                                                class="far fa-heart"></i>
+
+                                                        <a href="#"
+                                                            title="{{$cjob->getCompany('name')}}" class="pic">
+                                                            {{$company->printCompanyImage()}}
                                                         </a>
                                                         @endif
                                                     </div>
-                                                    <!-- Title  End-->
 
-                                                    <!-- companyName Start-->
-                                                    <div class="info-item companyName" bis_skin_checked="1"><a
-                                                            href="{{url('/')}}/cong-ty/{{ $cjob->getCompany('slug') }}"
-                                                            title="{{ $cjob->getCompany('name') }}n">{{$cjob->getCompany('name') }}</a>
-                                                    </div>
-                                                    <!-- companyName End-->
-                                                    <!--rank-salary and place Start-->
-                                                    <div class="info-item box-meta" bis_skin_checked="1">
-                                                        <div class="rank-salary" bis_skin_checked="1">
-                                                        
+                                                    <div class="jobinfo">
+                                                        <div class="info" bis_skin_checked="1">
+                                                            <!-- Title  Start-->
+                                                            <div class="info-item job-title-box" bis_skin_checked="1">
+                                                                <div class="job-title" bis_skin_checked="1">
+                                                                    <span>Mới</span>
+                                                                    <h3 class="job-title-name"><a
+                                                                            href="{{url('/')}}/viec-lam/{{ $cjob->slug }}"
+                                                                            title="{{ $cjob->title }}">{{ $cjob->title }}</a></h3>
+                                                                </div>
+                                                                @if(Auth::check() && Auth::user()->isFavouriteJob($cjob->slug))
+                                                                <a class="save-job active"
+                                                                    href="{{url('/')}}/add-to-favourite-job/{{ $cjob->slug }}"><i
+                                                                        class="far fa-heart"></i>
+                                                                </a>
+                                                                @else
+                                                                <a class="save-job"
+                                                                    href="{{url('/')}}/add-to-favourite-job/{{ $cjob->slug }}"><i
+                                                                        class="far fa-heart"></i>
+                                                                </a>
+                                                                @endif
+                                                            </div>
+                                                            <!-- Title  End-->
+
+                                                            <!-- companyName Start-->
+                                                            <div class="info-item companyName" bis_skin_checked="1"><a
+                                                                    href="{{url('/')}}/cong-ty/{{ $cjob->getCompany('slug') }}"
+                                                                    title="{{ $cjob->getCompany('name') }}n">{{$cjob->getCompany('name') }}</a>
+                                                            </div>
+                                                            <!-- companyName End-->
+                                                            <!--rank-salary and place Start-->
+                                                            <div class="info-item box-meta" bis_skin_checked="1">
+                                                                <div class="rank-salary" bis_skin_checked="1">
                                                                 
-                                                                    @if($cjob->salary_type == \App\Job::SALARY_TYPE_FROM)
-                                                                    {{__('From: ')}} {{$from}}
-                                                                    {{__('million')}} ({{$cjob->salary_currency}})
-                                                                    @elseif($cjob->salary_type == \App\Job::SALARY_TYPE_TO)
-                                                                    {{__('Up To: ')}} {{$to}}
-                                                                    {{__('million')}} ({{$cjob->salary_currency}})
-                                                                    @elseif($cjob->salary_type == \App\Job::SALARY_TYPE_RANGE)
-                                                                    {{$from}} - {{$to}}
-                                                                    {{__('million')}} ({{$cjob->salary_currency}})
-                                                                    @elseif($cjob->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
-                                                                    <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
-                                                                    @else
-                                                                    {{__('Salary Not provided')}}
-                                                                    @endif
+                                                                        
+                                                                            @if($cjob->salary_type == \App\Job::SALARY_TYPE_FROM)
+                                                                            {{__('From: ')}} {{$from}}
+                                                                            {{__('million')}} ({{$cjob->salary_currency}})
+                                                                            @elseif($cjob->salary_type == \App\Job::SALARY_TYPE_TO)
+                                                                            {{__('Up To: ')}} {{$to}}
+                                                                            {{__('million')}} ({{$cjob->salary_currency}})
+                                                                            @elseif($cjob->salary_type == \App\Job::SALARY_TYPE_RANGE)
+                                                                            {{$from}} - {{$to}}
+                                                                            {{__('million')}} ({{$cjob->salary_currency}})
+                                                                            @elseif($cjob->salary_type == \App\Job::SALARY_TYPE_NEGOTIABLE)
+                                                                            <span class="fas fa-money-bill"></span> {{__('Negotiable')}}
+                                                                            @else
+                                                                            {{__('Salary Not provided')}}
+                                                                            @endif
 
+                                                                </div>
+                                                            
+                                                                <!--meta-city-->
+                                                                <div class="navbar__link-separator" bis_skin_checked="1"></div>
+                                                                
+                                                                <div class="meta-city" bis_skin_checked="1">
+                                                                    {{$city}}
+                                                            
+                                                                </div>
+
+
+                                                                <!-- Bán thời gian -->
+                                                            </div>
+                                                            <!--Rank-salary and place End-->
+
+                                                            <!--Day update and place Start-->
+                                                            <div class="info-item day-update" bis_skin_checked="1">
+                                                                Hạn Nộp: {{$cjob->expiry_date->format('d/m/Y')}}  
+                                                            </div>
+                                                            <!--Day update and place End-->
+
+                                                            <!-- <div class="short-description">M&amp;ocirc; tả c&amp;ocirc;ng việc</div> -->
                                                         </div>
-                                                    
-                                                        <!--meta-city-->
-                                                        <div class="navbar__link-separator" bis_skin_checked="1"></div>
-                                                        
-                                                        <div class="meta-city" bis_skin_checked="1">
-                                                            {{$city}}
-                                                    
+                                                        <div class="caption" bis_skin_checked="1">
+                                                            <div class="welfare" bis_skin_checked="1">
+                                                            @if($functionarea)
+
+                                                                <div class="box-meta" bis_skin_checked="1">
+                                                                    <!-- <i class="fas fa-dollar-sign"></i>  -->
+                                                                    <span>
+                                                                        <!-- Chế độ thưởng -->
+                                                                        {{$functionarea->functional_area }}
+                                                                    </span>
+
+                                                                </div>
+                                                            @endif
+                                                                
+
+                                                            </div>
+
+                                                            <div class="user-actio" bis_skin_checked="1">
+
+                                                            </div>
                                                         </div>
-
-
-                                                        <!-- Bán thời gian -->
                                                     </div>
-                                                    <!--Rank-salary and place End-->
-
-                                                    <!--Day update and place Start-->
-                                                    <div class="info-item day-update" bis_skin_checked="1">
-                                                        Hạn Nộp: {{$cjob->expiry_date->format('d/m/Y')}}  
-                                                    </div>
-                                                    <!--Day update and place End-->
-
-                                                    <!-- <div class="short-description">M&amp;ocirc; tả c&amp;ocirc;ng việc</div> -->
                                                 </div>
-                                                <div class="caption" bis_skin_checked="1">
-                                                    <div class="welfare" bis_skin_checked="1">
-                                                    @if($functionarea)
-
-                                                        <div class="box-meta" bis_skin_checked="1">
-                                                            <!-- <i class="fas fa-dollar-sign"></i>  -->
-                                                            <span>
-                                                                <!-- Chế độ thưởng -->
-                                                                {{$functionarea->functional_area }}
-                                                            </span>
-
-                                                        </div>
-                                                    @endif
-                                                        
-
-                                                    </div>
-
-                                                    <div class="user-actio" bis_skin_checked="1">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    
-                                   @endforeach
+                                            
+                                        @endforeach
+                                </div>
+                            </div>
                         </div>
-
-                       
+                    </div>
+                </section>
             </div>
+            
         </div>
     </div>
     
@@ -301,7 +311,9 @@
 
     .section-company-profile .box-content {}
 
-
+    .company-map iframe{
+        width: 100%;
+    }
     .company-jobs-wapper .item-job .logo-company {
         width: 100%;
         -webkit-box-flex: 0;
@@ -311,6 +323,8 @@
         display: flex;
         align-items: center;
     }
+
+    
 
 
     .company-jobs-wapper .item-job .logo-company .pic {

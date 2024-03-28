@@ -57,6 +57,7 @@ class IndexController extends Controller
     {
        
        
+     
 
         $params = $this->params(request());
         $topCompanyIds = $this->getCompanyIdsAndNumJobs(4);
@@ -160,9 +161,18 @@ class IndexController extends Controller
 
        $manager = App::getLocale() == 'en' ? '%manager%' : '%quản%';
        $head = App::getLocale() == 'en' ? '%head%' : '%trưởng%';
-       $featuredJobs = Job::active()->featured()->notExpire()->where('status',Job::POST_ACTIVE)->orderBy('refresh_at', 'desc')->orderBy('updated_at','desc')->limit(100);
+    //    $featuredJobs = Job::active()->featured()->notExpire()->where('status',Job::POST_ACTIVE)->orderBy('refresh_at', 'desc')->orderBy('updated_at','desc')->limit(100);
+
+       $featuredJobs = Job::whereIn("status",["1","4", "2"])
+       ->orderby("is_featured","desc")
+       ->orderBy('refresh_at', 'desc')
+       ->orderBy('created_at','desc')
+       ->limit(100);
+
        $allJobs = Job::active()->notExpire()->where('status',Job::POST_ACTIVE)->orderBy('id', 'desc')->limit(100);
-       $latestJobs = Job::active()->notExpire()->where('status',Job::POST_ACTIVE)->orderBy('id', 'desc')->where('created_at','>=', \Carbon\Carbon::now()->subMonths(3))->limit(100);
+       $latestJobs = Job::active()->notExpire()
+       ->where('status',Job::POST_ACTIVE)
+       ->orderBy('id', 'desc')->where('created_at','>=', \Carbon\Carbon::now()->subMonths(3))->limit(100);
        $user = \Auth::user();
        if(!is_null($user)){
            $userCareerLevelId = $user->career_level_id;

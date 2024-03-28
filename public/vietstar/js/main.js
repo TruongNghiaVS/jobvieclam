@@ -321,6 +321,46 @@ function swiperSlider() {
             },
         });
     }
+    if ($('.Jobofcompany_swiper').length) {
+        var mySwiperSuggestions = new Swiper('.Jobofcompany_swiper', {
+            direction: "vertical",
+            slidesPerView: 4,
+            loop: true,
+            speed: 1000,
+            spaceBetween: 5,
+            autoplay: {
+                delay: 3000,
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 4,
+                    spaceBetween: 0,
+                    grabCursor: true,
+                },
+                567: {
+                    slidesPerView: 4,
+                    spaceBetween: 5,
+                    grabCursor: false,
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 5,
+                    grabCursor: false,
+                },
+                992: {
+                    slidesPerView: 4,
+                    spaceBetween: 5,
+                    grabCursor: false,
+                },
+                1200: {
+                    slidesPerView: 4,
+                    spaceBetween: 5,
+                    grabCursor: false,
+                },
+            }
+        })
+    }
+
     if ($('.swiper-blogs-slider').length) {
         var partnerSlider = new Swiper('.swiper-blogs-slider', {
             slidesPerView: 1,

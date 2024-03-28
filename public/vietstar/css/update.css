@@ -1649,7 +1649,7 @@ button:focus {
     font-size: 12px;
     line-height: 18px;
     color: var(--sub-text);
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     display: -webkit-box;
     overflow: hidden;

@@ -6,7 +6,7 @@
 
 <!-- Header end -->
 <!-- Inner Page Title start -->
-<section class="about-us-banner" style="background-image: url(/vietstar/imgs/company-cover.jpg);"></section>
+<section class="about-us-banner" style="background-image: url(/admin_assets/no-cover.png);"></section>
     <!-- Bootstrap CSS -->
 <!-- jQuery first, then Bootstrap JS. -->
 <!-- Nav tabs -->
@@ -41,7 +41,7 @@
             <div class="container">
                 <div class="row about_us_content justify-content-md-center " bis_skin_checked="1">
                     <div class="col-lg-5 col-md-12 col-sm-12  about_us_img animation fade-left ">
-                        <img src="/admin_assets/hoatdong.jpeg" class="img_left_about">
+                        <img src="/admin_assets/hoatdong.jpg" class="img_left_about">
                     </div>
                     <div class="col-lg-7  col-md-12  col-sm-12  d-flex align-items-center animation fade-right">
                         <div class="content_title" bis_skin_checked="1">

@@ -151,3 +151,25 @@
 @media only screen and (min-width: 992px) {
 
 }
+
+
+
+
+
+/* CSS chiều cao màn hình dưới 1080px */
+@media screen and (max-height: 1080px) {
+	#user_login_Modal h3, #user_logup_Modal h3 {
+		margin-bottom: 5px;
+	}
+	#user_login_Modal .formpanel,#user_logup_Modal  .formpanel {
+		margin-top: unset;
+	}
+	#user_login_Modal .formpanel .formrow ,#user_logup_Modal  .formpanel .formrow {
+		margin-bottom: 5px;
+	}
+
+	#user_login_Modal .form-group,#user_logup_Modal .form-group {
+		margin-bottom: 5px;
+	}
+}
+

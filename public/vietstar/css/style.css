@@ -1363,7 +1363,7 @@ h4.tablinks:hover {
 
     display: -webkit-box;
 	width: 100%;
-	-webkit-line-clamp: 1;
+	-webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 	text-align: start;
 	font-size: 13px;

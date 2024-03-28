@@ -144,11 +144,14 @@ $queryString = MiscHelper::getLangQueryStr();
                                                                 <span
                                                                     class="text-danger">{{ $errors->first('content_update') }}</span>
                                                             </div>
+
+                                                              
+                                                          
                                                             <div class="form-group {{ $errors->has('author') ? 'has-error' : '' }}">
                                                                         <label class="control-label" for="author">Tác giả</label>
-                                                                        <input  type="text"  class="form-control" name="author"
-                                                                               id="slugInput" autofocus
-                                                                               value="{{ old('author') }}">
+                                                                        <input  type="text"  class="form-control" name="authorPost"
+                                                                               id="author" autofocus
+                                                                               value="{{isset($blog->authorPost) ? $blog->authorPost:""  }}">
                                                                         <span
                                                                                 class="text-danger">{{ $errors->first('author') }}</span>
                                                             </div>

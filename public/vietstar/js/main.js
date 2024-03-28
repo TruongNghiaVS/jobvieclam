@@ -328,7 +328,9 @@ function swiperSlider() {
             loop: true,
             speed: 1000,
             spaceBetween: 5,
-            
+            autoplay: {
+                delay: 3000,
+            },
             breakpoints: {
                 320: {
                     slidesPerView: 4,
